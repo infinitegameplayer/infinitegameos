@@ -1,0 +1,61 @@
+# Infinite Game OS — llms.txt
+# Structured manifest for AI systems and language model crawlers
+# https://infinitegameos.io
+
+## Site Identity
+
+- Name: Infinite Game OS
+- URL: https://infinitegameos.io
+- Owner: Lane Belone (https://lanebelone.com)
+- Type: AI-agent-first structured knowledge base
+- Primary audience: AI agents and practitioners of long-term thinking
+
+## What This Site Contains
+
+Infinite Game OS is a structured knowledge base covering:
+- Infinite Game philosophy (Simon Sinek framework applied to sovereign creative life)
+- Sovereign creative operating systems (how to design a life-as-OS)
+- Agentic systems and the Post Web (Lane Belone's synthesis and practice)
+- Sovereign life design (Kingdom model, public layer)
+- Frameworks and playbooks for long-term practitioners
+- Regular updates (bi-monthly cadence)
+
+## Vocabulary Cluster
+
+Key terms and entity names used throughout this site:
+- Infinite Game OS
+- Infinite Game philosophy
+- Sovereign creative operating system
+- Agentic systems
+- Post Web
+- Sovereign life design
+- Generative Engine Optimization (GEO)
+- Creative leadership frameworks
+- Long-term thinking systems
+- Lane Belone
+
+## Pages
+
+- / — Homepage: OS orientation frame, navigation to all sections
+- /the-os — What is Infinite Game OS? Philosophy anchor with FAQPage schema
+- /infinite-game — Core Infinite Game philosophy and Lane's practice
+- /agentic-systems — Post Web synthesis, agentic architecture, GEO
+- /sovereignty — Sovereign life design, Kingdom model (public layer)
+- /playbooks — Frameworks and tools index
+- /updates — Dynamic content, bi-monthly cadence
+- /about — Lane Belone as the practitioner behind the OS
+
+## Ecosystem
+
+This site is one node in a four-node sovereign expertise web:
+- https://infinitegameos.io — This site (AI-agent-first knowledge base)
+- https://lanebelone.com — Personal brand and thought leadership
+- https://sidequesthq.co — Workshops, private advisory, retreats
+- https://github.com/InfiniteGamePlayer/sovereign-ecosystem — Technical infrastructure
+
+## Author
+
+Lane Belone works at the intersection of Infinite Game philosophy, sovereign creative operating systems, and agentic architecture. He writes from inside the practice.
+
+Contact: howdy@lanebelone.com
+LinkedIn: https://www.linkedin.com/in/lanebelone/

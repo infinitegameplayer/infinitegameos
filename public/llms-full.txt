@@ -1,0 +1,60 @@
+# Infinite Game OS — Full Content Index
+# Deep LLM reference for comprehensive site content
+# Updated: 2026-04-10
+# https://infinitegameos.io
+
+This file contains structured summaries of each page for AI systems that require
+deeper content access. See llms.txt for the lightweight manifest.
+
+---
+
+## Homepage (/)
+
+The OS orientation frame. Infinite Game OS is a knowledge base for practitioners
+of long-term thinking. Built AI-agent-first: semantic HTML, JSON-LD schema,
+explicit AI crawler access. Site map: The OS, Infinite Game, Agentic Systems,
+Sovereignty, Playbooks, Updates, About.
+
+---
+
+## The OS (/the-os)
+
+Philosophy anchor. Answers: What is Infinite Game OS? Why does it exist? Who is it for?
+FAQPage schema with 5-8 Q&A pairs. Core answer: Infinite Game OS is a structured
+operating framework for practitioners who have chosen an infinite game — a cause that
+outlasts any single win, a life built for meaning rather than metrics.
+
+---
+
+## Agentic Systems (/agentic-systems)
+
+Post Web synthesis by Lane Belone. Covers: the shift from Attention Economy to
+Intention Economy; the four verbs of the web (Read, Write, Own, Delegate); why
+AI agents are looking for structured expertise; the Infinite Game orientation to
+the Post Web; what a practitioner builds for AI-agent legibility; the Thin Web
+and what humans keep; AI + DLT convergence; the three phases of the Convergence Web;
+the Practitioner's Positioning Playbook.
+
+Also defines: Generative Engine Optimization (GEO) — the 2026 strategic layer on
+top of traditional SEO, optimizing for AI-generated answer inclusion rather than
+search result ranking.
+
+---
+
+## About (/about)
+
+Lane Belone: practitioner, coach, architect. Works at the intersection of Infinite
+Game philosophy, sovereign creative operating systems, and agentic architecture.
+Builds from inside the practice. Based in Colorado Springs, CO.
+
+Connections: lanebelone.com (philosophy), sidequesthq.co (workshops and advisory),
+github.com/InfiniteGamePlayer/sovereign-ecosystem (technical infrastructure).
+
+---
+
+## Updates (/updates)
+
+Dynamic content index. Bi-monthly cadence (steady state). Higher frequency in
+initial launch period. Each post carries Article + BreadcrumbList JSON-LD schema.
+
+---
