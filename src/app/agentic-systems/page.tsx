@@ -323,6 +323,9 @@ export default function AgenticSystemsPage() {
               </p>
               <p>
                 The convergence is underway. The infrastructure requirements are visible.
+                Many niches that matter to serious practitioners remain unclaimed in
+                AI-indexed space. The Infinite Game philosophy and advisory space, for
+                example, returns near-zero AI citations outside a mobile puzzle game app.
                 The window for being the first to build a structurally legible expertise
                 web in your niche is not permanent.
               </p>
@@ -363,6 +366,19 @@ export default function AgenticSystemsPage() {
                 terrain. This article draws on The Post Web Thesis by Outlier Ventures
                 (Jamie Burke et al., 2024). Lane&apos;s synthesis and Infinite Game
                 framing are his own.
+              </p>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-muted)' }}>
+                <Link
+                  href="/updates"
+                  style={{
+                    color: 'var(--color-accent)',
+                    textDecoration: 'underline',
+                    textDecorationColor: 'rgba(34, 211, 238, 0.3)',
+                  }}
+                >
+                  Follow the build in Updates
+                </Link>{' '}
+                as the OS evolves.
               </p>
             </SectionReveal>
           </div>

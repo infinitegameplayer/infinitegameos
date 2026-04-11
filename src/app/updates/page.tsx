@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
+import { getAllUpdates } from '@/lib/updates'
 
 export const metadata: Metadata = {
   title: 'Updates — From Inside the Practice',
@@ -23,6 +24,8 @@ const breadcrumbSchema = {
 }
 
 export default function UpdatesPage() {
+  const updates = getAllUpdates()
+
   return (
     <>
       <script
@@ -61,75 +64,58 @@ export default function UpdatesPage() {
         </header>
 
         <div className="section" style={{ paddingTop: '0' }}>
-          <SectionReveal>
-            <div
-              style={{
-                padding: '2.5rem',
-                background: 'var(--color-surface)',
-                border: '1px solid var(--color-border)',
-                borderLeft: '2px solid var(--color-accent)',
-                borderRadius: 'var(--radius)',
-                maxWidth: '640px',
-              }}
-            >
-              <p className="label" style={{ marginBottom: '0.75rem' }}>
-                April 2026
-              </p>
-              <h2
-                style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: '1.5rem',
-                  fontWeight: 600,
-                  marginBottom: '1rem',
-                }}
+          {updates.map((update, i) => (
+            <SectionReveal key={update.slug} delay={i * 60}>
+              <Link
+                href={`/updates/${update.slug}`}
+                style={{ display: 'block', textDecoration: 'none', maxWidth: '640px', marginBottom: '1.5rem' }}
               >
-                The OS is live.
-              </h2>
-              <p
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '0.95rem',
-                  color: 'rgba(226, 232, 240, 0.75)',
-                  lineHeight: 1.7,
-                  marginBottom: '1rem',
-                }}
-              >
-                Infinite Game OS launched with the foundation: the philosophy sections,
-                the Agentic Systems article, and the framework architecture for the
-                Playbooks section. This is a living build.
-              </p>
-              <p
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '0.95rem',
-                  color: 'rgba(226, 232, 240, 0.75)',
-                  lineHeight: 1.7,
-                  marginBottom: '1rem',
-                }}
-              >
-                What comes next: the first Playbooks, deeper content in the Sovereignty
-                and Infinite Game sections, and ongoing documentation of what Lane is
-                building and applying in practice.
-              </p>
-              <p
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '0.95rem',
-                  color: 'rgba(226, 232, 240, 0.75)',
-                  lineHeight: 1.7,
-                }}
-              >
-                The Updates section will build out over the coming weeks. High cadence
-                early while the energy is moving. Bi-monthly steady state after the first
-                month.
-              </p>
-            </div>
-          </SectionReveal>
+                <div
+                  style={{
+                    padding: '2.5rem',
+                    background: 'var(--color-surface)',
+                    border: '1px solid var(--color-border)',
+                    borderLeft: '2px solid var(--color-accent)',
+                    borderRadius: 'var(--radius)',
+                  }}
+                >
+                  <p className="label" style={{ marginBottom: '0.75rem' }}>
+                    {new Date(update.date + 'T00:00:00Z').toLocaleDateString('en-US', {
+                      month: 'long',
+                      year: 'numeric',
+                    })}
+                  </p>
+                  <h2
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: '1.5rem',
+                      fontWeight: 600,
+                      marginBottom: '1rem',
+                      color: 'var(--color-text)',
+                    }}
+                  >
+                    {update.title}
+                  </h2>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      fontSize: '0.95rem',
+                      color: 'rgba(226, 232, 240, 0.75)',
+                      lineHeight: 1.7,
+                      margin: 0,
+                    }}
+                  >
+                    {update.summary}
+                  </p>
+                </div>
+              </Link>
+            </SectionReveal>
+          ))}
 
           <SectionReveal delay={100}>
             <div
               style={{
-                marginTop: '3rem',
+                marginTop: '2rem',
                 padding: '1.5rem',
                 background: 'rgba(34, 211, 238, 0.04)',
                 border: '1px solid rgba(34, 211, 238, 0.12)',
