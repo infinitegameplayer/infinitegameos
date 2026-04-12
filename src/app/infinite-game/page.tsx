@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: 'What is the Infinite Game?',
-    a: "The Infinite Game, in Simon Sinek's framework, is any endeavor where the goal is not to win but to keep playing, to grow the cause, and to outlast the systems that mistake it for a competition. Life, creative practice, relationships, and meaningful work are infinite games. They have no endpoint, no final score, no single winner.",
+    a: "James Carse introduced the concept in 1986: there is one infinite game, the game of existence itself. Simon Sinek adapted it for organizational leadership in 2019. Lane Belone applies it to the sovereign human life. An infinite game is any endeavor played to keep playing, not to win. Life, creative practice, relationships and meaningful work are infinite games. They have no endpoint, no final score, no single winner.",
   },
   {
     q: 'What is a Finite Game?',

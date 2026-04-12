@@ -5,13 +5,13 @@ import SectionReveal from '@/components/SectionReveal'
 export const metadata: Metadata = {
   title: 'What is Infinite Game OS?',
   description:
-    'Infinite Game OS is a structured operating framework for practitioners of long-term thinking, sovereign life design, and agentic systems. Explore the philosophy.',
+    'Infinite Game OS is a structured operating system for practitioners of long-term thinking, sovereign life design and agentic systems. Explore the philosophy.',
 }
 
 const faqItems = [
   {
     q: 'What is Infinite Game OS?',
-    a: 'Infinite Game OS is a structured knowledge base and operating framework for practitioners who have chosen an infinite game. An infinite game is a cause, a practice, or a creative life that has no endpoint, no final score, and no single winner. The OS provides the philosophy, frameworks, and systems for sustaining that kind of life.',
+    a: 'Infinite Game OS is a structured knowledge base and operating system for practitioners who have chosen an infinite game. An infinite game is a cause, a practice, or a creative life that has no endpoint, no final score, and no single winner. The OS provides the philosophy, frameworks and systems for sustaining that kind of life.',
   },
   {
     q: 'What is an Infinite Game?',
@@ -90,7 +90,7 @@ export default function TheOsPage() {
                 lineHeight: 1.7,
               }}
             >
-              A structured operating framework for practitioners who have chosen an
+              A structured operating system for practitioners who have chosen an
               infinite game.
             </p>
           </SectionReveal>
