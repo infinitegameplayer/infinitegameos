@@ -62,7 +62,7 @@ export default function HomePage() {
           <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '2rem' }}>
             <div style={{ maxWidth: '52ch' }}>
               <p className="label" style={{ marginBottom: '0.75rem' }}>The practitioner</p>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'rgba(226, 232, 240, 0.75)', lineHeight: 1.7 }}>Lane Belone works at the intersection of Infinite Game philosophy, sovereign creative operating systems, and agentic architecture. This OS is built from inside the practice.</p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'rgba(226, 232, 240, 0.75)', lineHeight: 1.7 }}>Lane Belone is a thought doer. Former Green Beret, strategic advisor and sovereign systems builder operating from inside the practice. Infinite Game OS is not theory. It is architecture running live, documented in real time.</p>
             </div>
             <Link href="/about" className="btn-outline">About Lane</Link>
           </div>

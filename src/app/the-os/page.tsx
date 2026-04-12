@@ -15,7 +15,7 @@ const faqItems = [
   },
   {
     q: 'What is an Infinite Game?',
-    a: "An Infinite Game, in Simon Sinek's framework, is any endeavor where the goal is not to win but to keep playing, to grow the cause, and to outlast the finite-game thinkers who mistake meaningful work for competitions with a winner and a loser. Infinite games include creative practice, sovereign life design, and any work aimed at contribution over decades.",
+    a: "James Carse introduced the concept in 1986: there is one infinite game, the game of existence itself. Simon Sinek adapted this for organizational leadership in 2019, useful for corporations and not designed for individuals. Lane Belone applies the concept to the sovereign human life: the creative practice, the operating system, the long-horizon work that compounds across decades. An infinite game has no endpoint, no scoreboard, no winner. The goal is to keep playing well, for as long as possible, for reasons that matter.",
   },
   {
     q: 'Who is Infinite Game OS for?',
@@ -112,9 +112,20 @@ export default function TheOsPage() {
                 not to win. The goal is to grow the cause and keep playing well.
               </p>
               <p>
-                Simon Sinek introduced this framework. Lane Belone has spent years
-                applying it as a lived practice: building a sovereign creative operating
-                system and documenting that architecture publicly so others can find their
+                James Carse wrote the original text in 1986. Profound, philosophical
+                and built for a religion professor's audience. Not a practitioner's
+                toolkit. Simon Sinek adapted it for Fortune 500 organizations in 2019.
+                Five useful pillars, explicitly designed for corporations, not people.
+              </p>
+              <p>
+                Neither built an operating system for the individual human being who
+                wants to play their entire life as a designed infinite game. That is the
+                gap. That is what this OS addresses.
+              </p>
+              <p>
+                Lane Belone built Infinite Game OS from inside a sovereign life. Not as
+                theory, but as architecture that is running now. The Kingdom vault is the
+                demo. The practice is documented publicly so practitioners can find their
                 own version of it.
               </p>
             </SectionReveal>
