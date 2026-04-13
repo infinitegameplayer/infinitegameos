@@ -33,10 +33,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  icons: {
-    icon: '/images/sqhq-logo-white.png',
-    apple: '/images/sqhq-logo-white.png',
-  },
 }
 
 const websiteSchema = {
