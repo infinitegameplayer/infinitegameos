@@ -5,7 +5,7 @@ import SectionReveal from '@/components/SectionReveal'
 export const metadata: Metadata = {
   title: 'Playbooks and Frameworks',
   description:
-    'Practical frameworks for long-term thinking, sovereign life design, and agentic systems. Concrete tools built from inside the practice.',
+    'Infinite Game playbooks give you enough structure to improvise freely. Practical frameworks for sovereign life design, long-term thinking and agentic systems.',
 }
 
 const breadcrumbSchema = {
@@ -81,9 +81,9 @@ export default function PlaybooksPage() {
                 lineHeight: 1.7,
               }}
             >
-              Practical frameworks for long-term thinking, sovereign systems, and
-              agentic life design. Built from inside the practice, not from the
-              outside in.
+              Most playbooks optimize for a specific outcome and end. These
+              playbooks give you enough structure to improvise freely. The goal
+              is not execution. The goal is fluency. Fluency creates freedom.
             </p>
           </SectionReveal>
         </header>
@@ -92,16 +92,28 @@ export default function PlaybooksPage() {
           <SectionReveal>
             <div className="prose" style={{ marginBottom: '3rem' }}>
               <p>
-                Playbooks are Lane&apos;s term for the concrete, hand-overable
-                frameworks that come out of years of applying Infinite Game philosophy to
-                real decisions. These are not theoretical. Each one is something Lane uses
-                or has used to govern his own life and practice.
+                The design philosophy behind these frameworks draws from three
+                traditions. In sports, mastery of the playbook leads paradoxically
+                to transcendence of it. A quarterback studies the playbook until
+                he can scrap the called play at the line and call an audible.
+                In jazz, the lead sheet gives you the skeleton. What happens next
+                belongs to the player. In game design, the meta is a living
+                playbook shaped by the community exploring the edges of the game.
               </p>
               <p>
-                The Playbooks section will grow as the OS builds out. Each framework will
-                have its own page with the full rationale, the usage guide, and in some
-                cases a standalone deliverable. Some will be available for purchase as
-                downloadable guides.
+                What all three share: the playbook creates shared language, mastery
+                leads to transcendence, the right play depends on reading the
+                moment and the best playbooks evolve. A static playbook is a signal
+                that the game has stopped.
+              </p>
+              <p>
+                Every playbook in this system operates at one of three layers. The
+                initiatory layer hands you the shared foundation. The role layer
+                helps you make it yours. The living compendium is what you build
+                over time through experimentation and contribution. These
+                frameworks are concrete tools built from inside the practice.
+                Each one will have its own page with the full rationale and usage
+                guide as the OS builds out.
               </p>
             </div>
           </SectionReveal>
