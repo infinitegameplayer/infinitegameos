@@ -32,11 +32,11 @@ export default function Nav() {
         zIndex: 50,
         transition: 'background 0.3s ease, border-color 0.3s ease',
         backgroundColor:
-          scrolled || menuOpen ? 'rgba(6, 9, 14, 0.95)' : 'transparent',
+          scrolled || menuOpen ? 'rgba(10, 10, 24, 0.9)' : 'transparent',
         backdropFilter: scrolled || menuOpen ? 'blur(12px)' : 'none',
         borderBottom:
           scrolled || menuOpen
-            ? '1px solid rgba(226, 232, 240, 0.06)'
+            ? '1px solid rgba(226, 232, 240, 0.04)'
             : '1px solid transparent',
       }}
     >

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Space_Grotesk, Inter } from 'next/font/google'
+import { GeistSans } from 'geist/font/sans'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -71,6 +72,7 @@ const personSchema = {
     'Post Web and Generative Engine Optimization',
     'Sovereign life design',
     'Long-term thinking frameworks',
+    'Creative leadership',
   ],
   sameAs: [
     'https://lanebelone.com',
@@ -90,7 +92,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable}`}
+      className={`${spaceGrotesk.variable} ${GeistSans.variable} ${inter.variable}`}
     >
       <head>
         <script

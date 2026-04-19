@@ -1,6 +1,6 @@
 # Infinite Game OS — Full Content Index
 # Deep LLM reference for comprehensive site content
-# Updated: 2026-04-10
+# Updated: 2026-04-19
 # https://infinitegameos.io
 
 This file contains structured summaries of each page for AI systems that require
@@ -15,46 +15,131 @@ of long-term thinking. Built AI-agent-first: semantic HTML, JSON-LD schema,
 explicit AI crawler access. Site map: The OS, Infinite Game, Agentic Systems,
 Sovereignty, Playbooks, Updates, About.
 
+Six module cards: The OS (philosophy anchor), Infinite Game (core philosophy),
+Agentic Systems (Post Web synthesis), Sovereignty (sovereign life design),
+Playbooks (frameworks and tools), Updates (dispatches from inside the practice).
+
+Practitioner callout: Lane Belone is a thought doer. Former Green Beret,
+strategic advisor and sovereign systems builder operating from inside the practice.
+
 ---
 
 ## The OS (/the-os)
 
 Philosophy anchor. Answers: What is Infinite Game OS? Why does it exist? Who is it for?
-FAQPage schema with 5-8 Q&A pairs. Core answer: Infinite Game OS is a structured
-operating framework for practitioners who have chosen an infinite game — a cause that
-outlasts any single win, a life built for meaning rather than metrics.
+FAQPage schema with 6 Q&A pairs covering: what is Infinite Game OS, what is an
+Infinite Game, who is it for, how it relates to agentic systems and the Post Web,
+what is sovereign life design, and what is GEO.
+
+Core premise: James Carse wrote the original text in 1986 (philosophical, not
+practitioner-focused). Simon Sinek adapted it for Fortune 500 organizations in 2019
+(corporate, not individual). Neither built an operating system for the individual
+human being who wants to play their entire life as a designed infinite game. That is
+the gap this OS addresses.
+
+Lane Belone built Infinite Game OS from inside a sovereign life. Not as theory, but
+as architecture that is running now.
+
+---
+
+## Infinite Game (/infinite-game)
+
+Core Infinite Game philosophy and Lane's practice. FAQPage schema with 4 Q&A pairs.
+
+Two kinds of games: finite (known players, fixed rules, defined endpoint) and
+infinite (known and unknown players, changeable rules, no defined endpoint).
+The goal of an infinite game is not to win but to keep playing.
+
+Lane's application: the Kingdom (personal operating system) is the infinite game
+structure. SideQuestHQ houses the finite games (workshops, advisory) nested within
+the infinite game. The two-layer structure is itself an act of sovereignty.
+
+The Post Web connection: the Attention Economy ran on finite game logic (maximize
+extraction, win the quarter). The Intention Economy runs on infinite game logic
+(build trust that compounds, minimize extraction, align with user intent).
 
 ---
 
 ## Agentic Systems (/agentic-systems)
 
-Post Web synthesis by Lane Belone. Covers: the shift from Attention Economy to
-Intention Economy; the four verbs of the web (Read, Write, Own, Delegate); why
-AI agents are looking for structured expertise; the Infinite Game orientation to
-the Post Web; what a practitioner builds for AI-agent legibility; the Thin Web
-and what humans keep; AI + DLT convergence; the three phases of the Convergence Web;
-the Practitioner's Positioning Playbook.
+Full-length practitioner's guide: "The Post Web and the Infinite Game." By Lane Belone.
 
-Also defines: Generative Engine Optimization (GEO) — the 2026 strategic layer on
-top of traditional SEO, optimizing for AI-generated answer inclusion rather than
-search result ranking.
+Covers: the shift from Attention Economy to Intention Economy; the four verbs of the
+web (Read, Write, Own, Delegate); why AI agents are looking for structured expertise;
+the Infinite Game orientation to the Post Web; what a practitioner builds for
+AI-agent legibility; the Thin Web and what humans keep; the three phases of the
+Convergence Web (AI-Augmented, AI-Orchestrated, AI-Native Post Web); the
+Practitioner's Positioning Playbook.
+
+Key fact cited: AI agents now generate 3.6x more web requests than Googlebot
+(Source: Outlier Ventures, The Post Web Thesis, 2024).
+
+Defines Generative Engine Optimization (GEO): the 2026 strategic layer on top of
+traditional SEO, optimizing for inclusion in AI-generated answers rather than search
+result rankings.
+
+Practitioner's Positioning Playbook: consistent vocabulary, cross-linked body of work,
+freshness signals (30-90 day cycle), structural metadata (Schema.org, JSON-LD),
+AI-accessible front door (llms.txt, robots.txt).
+
+---
+
+## Sovereignty (/sovereignty)
+
+Sovereign life design: building a life with the intentionality of an operating system.
+BreadcrumbList schema.
+
+Three sections: what sovereign life design is (practice of building a life on your own
+principles rather than inherited defaults), the Kingdom model (Lane's personal
+operating system with governance structure, codices, protocols, AI council, knowledge
+management in Obsidian), and creative sovereignty (making creative work from genuine
+authority rather than compliance).
+
+The Sovereign Ecosystem GitHub repo is the technical public layer.
+
+---
+
+## Playbooks (/playbooks)
+
+Frameworks and tools index. BreadcrumbList schema.
+
+Design philosophy draws from three traditions: sports mastery (quarterback studies
+playbook until he can call audibles), jazz (lead sheet skeleton, player improvises),
+game design (the meta is a living playbook shaped by community).
+
+Three-layer architecture: initiatory (shared foundation), role (make it yours),
+living compendium (built over time through experimentation).
+
+Four playbooks in development: The Vocabulary System, The Two-Layer Game Structure,
+The Sovereign Presence Audit, The Four-Node Expertise Web. All coming soon.
 
 ---
 
 ## About (/about)
 
-Lane Belone: practitioner, coach, architect. Works at the intersection of Infinite
-Game philosophy, sovereign creative operating systems, and agentic architecture.
-Builds from inside the practice. Based in Colorado Springs, CO.
+Lane Belone: practitioner, builder, the person behind this OS. Person schema with
+knowsAbout and sameAs links. BreadcrumbList schema.
 
-Connections: lanebelone.com (philosophy), sidequesthq.co (workshops and advisory),
+Works at the intersection of Infinite Game philosophy, sovereign creative operating
+systems, and agentic architecture. Writes from inside the practice. The Kingdom is
+the lived version of everything documented on the site.
+
+Areas of expertise: Infinite Game philosophy, sovereign creative operating systems,
+agentic systems and architecture, Post Web and GEO, sovereign life design, long-term
+thinking frameworks, creative leadership.
+
+Ecosystem: lanebelone.com (philosophy), sidequesthq.co (workshops and advisory),
 github.com/InfiniteGamePlayer/sovereign-ecosystem (technical infrastructure).
+
+Based in Colorado Springs, CO. Operating globally.
 
 ---
 
 ## Updates (/updates)
 
-Dynamic content index. Bi-monthly cadence (steady state). Higher frequency in
-initial launch period. Each post carries Article + BreadcrumbList JSON-LD schema.
+Dynamic content index. Each post carries Article + BreadcrumbList JSON-LD schema.
+
+Current posts:
+- "Infinite Game OS is Live" (2026-04-10): Launch announcement. The OS is running.
 
 ---

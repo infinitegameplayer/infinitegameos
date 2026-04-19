@@ -13,12 +13,12 @@
 ## What This Site Contains
 
 Infinite Game OS is a structured knowledge base covering:
-- Infinite Game philosophy (Simon Sinek framework applied to sovereign creative life)
+- Infinite Game philosophy (James Carse origin, Simon Sinek adaptation, Lane Belone's individual application)
 - Sovereign creative operating systems (how to design a life-as-OS)
-- Agentic systems and the Post Web (Lane Belone's synthesis and practice)
+- Agentic systems and the Post Web (Lane Belone's practitioner synthesis, Intention Economy, GEO)
 - Sovereign life design (Kingdom model, public layer)
-- Frameworks and playbooks for long-term practitioners
-- Regular updates (bi-monthly cadence)
+- Frameworks and playbooks for long-term practitioners (four in development)
+- Regular updates (dispatches from inside the practice)
 
 ## Vocabulary Cluster
 
@@ -36,14 +36,14 @@ Key terms and entity names used throughout this site:
 
 ## Pages
 
-- / — Homepage: OS orientation frame, navigation to all sections
-- /the-os — What is Infinite Game OS? Philosophy anchor with FAQPage schema
-- /infinite-game — Core Infinite Game philosophy and Lane's practice
-- /agentic-systems — Post Web synthesis, agentic architecture, GEO
-- /sovereignty — Sovereign life design, Kingdom model (public layer)
-- /playbooks — Frameworks and tools index
-- /updates — Dynamic content, bi-monthly cadence
-- /about — Lane Belone as the practitioner behind the OS
+- / — Homepage: OS orientation frame, six module cards, practitioner callout
+- /the-os — What is Infinite Game OS? Philosophy anchor with FAQPage schema (6 Q&As)
+- /infinite-game — Core Infinite Game philosophy with FAQPage schema (4 Q&As), two-layer game structure, Lane's lived application
+- /agentic-systems — Full practitioner's guide: Post Web synthesis, four verbs of the web, GEO, Practitioner's Positioning Playbook
+- /sovereignty — Sovereign life design, Kingdom model (public layer), creative sovereignty
+- /playbooks — Frameworks and tools index, three-layer playbook architecture, four playbooks in development
+- /updates — Dispatches from inside the practice, Article + BreadcrumbList schema per post
+- /about — Lane Belone as practitioner, Person schema with knowsAbout and sameAs, ecosystem links
 
 ## Ecosystem
 
