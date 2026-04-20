@@ -65,6 +65,10 @@ const nextConfig: NextConfig = {
             value:
               '<https://infinitegameos.io/llms.txt>; rel="ai-agent"; type="text/plain", <https://infinitegameos.io/sitemap.xml>; rel="sitemap"; type="application/xml"',
           },
+          {
+            key: 'Content-Signal',
+            value: 'ai-train=yes, search=yes, ai-input=yes',
+          },
         ],
       },
     ]
