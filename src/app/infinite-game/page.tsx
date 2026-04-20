@@ -37,6 +37,20 @@ const faqSchema = {
   })),
 }
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Infinite Game Philosophy',
+  description:
+    'The Infinite Game is any endeavor played to keep playing, not to win. Explore the philosophy, why it matters, and how Lane Belone applies it to sovereign creative life.',
+  author: { '@id': 'https://infinitegameos.io/#person' },
+  publisher: { '@id': 'https://infinitegameos.io/#website' },
+  url: 'https://infinitegameos.io/infinite-game',
+  mainEntityOfPage: 'https://infinitegameos.io/infinite-game',
+  datePublished: '2026-04-14',
+  dateModified: '2026-04-19',
+}
+
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -57,6 +71,10 @@ export default function InfiniteGamePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <script
         type="application/ld+json"

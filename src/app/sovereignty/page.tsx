@@ -8,6 +8,20 @@ export const metadata: Metadata = {
     'Sovereign life design is building a life with the intentionality of an operating system. Explore the philosophy, the Kingdom model, and creative sovereignty.',
 }
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Sovereign Life Design',
+  description:
+    'Sovereign life design is building a life with the intentionality of an operating system. Explore the philosophy, the Kingdom model, and creative sovereignty.',
+  author: { '@id': 'https://infinitegameos.io/#person' },
+  publisher: { '@id': 'https://infinitegameos.io/#website' },
+  url: 'https://infinitegameos.io/sovereignty',
+  mainEntityOfPage: 'https://infinitegameos.io/sovereignty',
+  datePublished: '2026-04-14',
+  dateModified: '2026-04-19',
+}
+
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -25,6 +39,10 @@ const breadcrumbSchema = {
 export default function SovereigntyPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

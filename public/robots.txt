@@ -23,7 +23,13 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-User-agent: Bytespider
+User-agent: Diffbot
+Allow: /
+
+User-agent: AI2Bot
+Allow: /
+
+User-agent: MistralAI-User
 Allow: /
 
 # AI search and citation bots — explicitly permitted
@@ -41,5 +47,30 @@ Allow: /
 
 User-agent: PerplexityBot
 Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: BraveBot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Google-NotebookLM
+Allow: /
+
+User-agent: GoogleAgent-Mariner
+Allow: /
+
+# Blocked — low-value scraping
+User-agent: Bytespider
+Disallow: /
+
+# Content signals — explicit opt-in posture
+# Content-Signal: ai-train=yes, search=yes, ai-input=yes
 
 Sitemap: https://infinitegameos.io/sitemap.xml

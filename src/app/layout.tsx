@@ -29,6 +29,16 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Infinite Game OS',
     locale: 'en_US',
+    title: 'Infinite Game OS',
+    description:
+      'A structured knowledge base for practitioners of Infinite Game philosophy, sovereign life design and agentic systems.',
+    url: 'https://infinitegameos.io',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Infinite Game OS',
+    description:
+      'Philosophy, frameworks and systems for the long game. Built for practitioners.',
   },
   robots: {
     index: true,

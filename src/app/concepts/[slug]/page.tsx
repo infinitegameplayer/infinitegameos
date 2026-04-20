@@ -76,7 +76,7 @@ export default async function ConceptPage({ params }: PageProps) {
 
   const articleSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': ['Article', 'LearningResource'],
     headline: concept.title,
     description: concept.capsule,
     author: { '@id': 'https://infinitegameos.io/#person' },
@@ -84,6 +84,8 @@ export default async function ConceptPage({ params }: PageProps) {
     url: `https://infinitegameos.io/concepts/${concept.slug}`,
     mainEntityOfPage: `https://infinitegameos.io/concepts/${concept.slug}`,
     about: { '@id': `https://infinitegameos.io/concepts/${concept.slug}#term` },
+    learningResourceType: 'concept definition',
+    educationalLevel: 'practitioner',
   }
 
   return (

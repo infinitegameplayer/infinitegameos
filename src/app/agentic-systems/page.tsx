@@ -8,6 +8,20 @@ export const metadata: Metadata = {
     'The internet is shifting from an Attention Economy to an Intention Economy. AI agents now generate 3.6x more web requests than Googlebot. This is what that means for practitioners.',
 }
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'The Post Web and the Infinite Game: A Practitioner\u2019s Guide',
+  description:
+    'The internet is shifting from an Attention Economy to an Intention Economy. AI agents now generate 3.6x more web requests than Googlebot. This is what that means for practitioners.',
+  author: { '@id': 'https://infinitegameos.io/#person' },
+  publisher: { '@id': 'https://infinitegameos.io/#website' },
+  url: 'https://infinitegameos.io/agentic-systems',
+  mainEntityOfPage: 'https://infinitegameos.io/agentic-systems',
+  datePublished: '2026-04-14',
+  dateModified: '2026-04-19',
+}
+
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -25,6 +39,10 @@ const breadcrumbSchema = {
 export default function AgenticSystemsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

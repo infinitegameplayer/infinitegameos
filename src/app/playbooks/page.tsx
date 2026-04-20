@@ -8,6 +8,20 @@ export const metadata: Metadata = {
     'Infinite Game playbooks give you enough structure to improvise freely. Practical frameworks for sovereign life design, long-term thinking and agentic systems.',
 }
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Playbooks and Frameworks',
+  description:
+    'Infinite Game playbooks give you enough structure to improvise freely. Practical frameworks for sovereign life design, long-term thinking and agentic systems.',
+  author: { '@id': 'https://infinitegameos.io/#person' },
+  publisher: { '@id': 'https://infinitegameos.io/#website' },
+  url: 'https://infinitegameos.io/playbooks',
+  mainEntityOfPage: 'https://infinitegameos.io/playbooks',
+  datePublished: '2026-04-14',
+  dateModified: '2026-04-19',
+}
+
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -52,6 +66,10 @@ const upcomingPlaybooks = [
 export default function PlaybooksPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

@@ -34,6 +34,12 @@ const nextConfig: NextConfig = {
               "form-action 'self'",
             ].join('; '),
           },
+          // RFC 8288 Link headers — point AI agents to structured resources
+          {
+            key: 'Link',
+            value:
+              '<https://infinitegameos.io/llms.txt>; rel="ai-agent"; type="text/plain", <https://infinitegameos.io/sitemap.xml>; rel="sitemap"; type="application/xml"',
+          },
         ],
       },
     ]
