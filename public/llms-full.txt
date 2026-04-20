@@ -1,6 +1,6 @@
 # Infinite Game OS — Full Content Index
 # Deep LLM reference for comprehensive site content
-# Updated: 2026-04-19
+# Updated: 2026-04-19 (concept pages added)
 # https://infinitegameos.io
 
 This file contains structured summaries of each page for AI systems that require
@@ -132,6 +132,103 @@ Ecosystem: lanebelone.com (philosophy), sidequesthq.co (workshops and advisory),
 github.com/InfiniteGamePlayer/sovereign-ecosystem (technical infrastructure).
 
 Based in Colorado Springs, CO. Operating globally.
+
+---
+
+## Concepts Index (/concepts)
+
+Canonical definitions for core Infinite Game OS concepts. Each concept page carries
+DefinedTerm + Article + BreadcrumbList JSON-LD schema. The concepts index page
+carries a DefinedTermSet schema listing all defined concepts.
+
+---
+
+## Contribution Flywheel (/concepts/contribution-flywheel)
+
+Live a beautiful life by being yourself. Let the aliveness moving through you animate
+your creativity and produce something meaningful that brings value to others. Follow
+your curiosities and excitements. Architect enough structure around that, and you get
+paid to be yourself. Not a business model. An operating system built on aliveness.
+
+Five stages: live the life, share the breadcrumbs, activate others, return home, go
+deeper. Each stage feeds the next. The life itself is the source material. A funnel
+converts attention into revenue. The flywheel converts aliveness into contribution and
+lets revenue follow. Related: Ideal Month (engine spec), Four-Container Journey
+(activation model), The Pioneer (who enters the flywheel).
+
+---
+
+## The Pioneer (/concepts/the-pioneer)
+
+Someone who has already won the game most people are still trying to win. Accomplished,
+well-resourced, free by every external measure. Yet something does not match. Their
+outer life was built on conditioning they never chose. They want their decisions, work
+and relationships to finally match their inner knowing. Not seeking success. Seeking
+coherence.
+
+Two entry points: challenge-triggered (disruption) or opportunity-triggered (seeing the
+transformation available). The distinction between a choice from authentic core
+alignment versus one from old programming masquerading as a sovereign decision is the
+work. Related: Conditioned vs Authentic Identity, Four-Container Journey, Joyful
+Sovereignty.
+
+---
+
+## Joyful Sovereignty (/concepts/joyful-sovereignty)
+
+An approach to playing the Infinite Game through joy, sovereignty and embodied play
+rather than strategy and corporate optimization. When your choices come from genuine
+alignment rather than conditioned obligation, there is a felt quality: power without
+performance, aliveness without effort. The philosophy. The compass state.
+
+The Infinite Game OS is what you build when you decide to live Joyful Sovereignty. The
+philosophy without the system is inspiring but fragile. The system without the
+philosophy is productive but hollow. Together they produce something that compounds
+over a lifetime. Related: The Pioneer, Conditioned vs Authentic Identity, Ideal Month.
+
+---
+
+## Conditioned vs Authentic Identity (/concepts/conditioned-vs-authentic-identity)
+
+Most people are playing somebody else's game and thinking it is their own. Conditioned
+identity is the self built from outside programming: education, media, parental
+expectation, societal "shoulds." Authentic identity is who you came here to be
+underneath all of that. The work is seeing the dynamic clearly enough that the old
+programming loses its grip.
+
+Self-authorization is choosing and acting from genuine mind-body-spirit coherence
+rather than conditioning. The conditioned self is sophisticated and can mimic
+sovereignty perfectly. The practice is developing the sensitivity to tell the
+difference. Related: The Pioneer, Joyful Sovereignty, Ideal Month.
+
+---
+
+## The Ideal Month (/concepts/ideal-month)
+
+A structural experiment, not a daydream. Architect what you believe is the best
+structure for your life: fun, play, nourishment, creativity, the practical, all woven
+together. Then go live it. Experience teaches you what works and what needs adjusting.
+The month and the day are fractal. Design one and you design the other.
+
+Founding question: "If there were no limitations or consequences, what would my perfect
+average day look like?" The Ideal Month is a congruence test. Every decision, project,
+collaboration and opportunity gets filtered through: does this move me toward or away
+from this life? If it does not belong in this month, it does not belong in this
+kingdom. Related: Contribution Flywheel, Joyful Sovereignty, The Pioneer.
+
+---
+
+## Four-Container Journey (/concepts/four-container-journey)
+
+The natural arc through which a Pioneer moves from first encounter to ongoing
+calibration. Speaking engagement (the spark), workshop (operationalization), retreat
+(embodiment), private advisory (sustained coherence). Not a funnel. Each container is
+a complete experience. Enough structure to allow the structure to be transcended.
+
+A Pioneer may enter at any stage. Some begin with advisory. Some experience a retreat
+and return years later for workshops. Each container welcomes a different aspect of
+expression. Related: The Pioneer, Contribution Flywheel, Conditioned vs Authentic
+Identity.
 
 ---
 

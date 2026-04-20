@@ -96,6 +96,15 @@ export default function InfiniteGamePage() {
         <div className="section" style={{ paddingTop: '1rem' }}>
           <div className="prose">
             <SectionReveal>
+              <p>
+                The Infinite Game is any endeavor played to keep playing, not to win.
+                Your creative practice, your body of work, your sovereign life. There
+                is no endpoint, no scoreboard, no final winner. The goal is to grow the
+                cause and keep playing well, for as long as possible, for reasons that
+                matter. Lane Belone applies this as the governing logic of a sovereign
+                creative life.
+              </p>
+
               <h2>Two kinds of games</h2>
               <p>
                 James Carse first articulated the distinction. Simon Sinek brought it

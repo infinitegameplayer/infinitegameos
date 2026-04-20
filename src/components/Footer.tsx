@@ -29,6 +29,7 @@ const siteLinks = [
   { href: '/agentic-systems', label: 'Agentic Systems' },
   { href: '/sovereignty', label: 'Sovereignty' },
   { href: '/playbooks', label: 'Playbooks' },
+  { href: '/concepts', label: 'Concepts' },
   { href: '/updates', label: 'Updates' },
   { href: '/about', label: 'About' },
 ]

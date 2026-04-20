@@ -99,6 +99,15 @@ export default function TheOsPage() {
         <div className="section" style={{ paddingTop: '1rem' }}>
           <div className="prose">
             <SectionReveal>
+              <p>
+                Infinite Game OS is a structured knowledge base and operating system
+                for practitioners who have chosen an infinite game: a creative practice,
+                a body of work, a sovereign life that has no endpoint and no final
+                score. It provides the philosophy, frameworks and systems for sustaining
+                that kind of life across decades. Built by Lane Belone from inside a
+                sovereign life, not as theory.
+              </p>
+
               <h2>The premise</h2>
               <p>
                 A finite game is played to win. A championship, a deal, a launch. There

@@ -62,6 +62,14 @@ export default function AgenticSystemsPage() {
           <div className="prose">
             <SectionReveal>
               <p>
+                Agentic systems are AI-powered tools that act on your behalf: retrieving
+                information, orchestrating across platforms, and navigating digital
+                infrastructure with your intent rather than your attention. The internet
+                is shifting from an Attention Economy to an Intention Economy, and
+                practitioners who build structurally legible bodies of work are the ones
+                these agents will find and recommend.
+              </p>
+              <p>
                 The internet is changing in a way most people are not tracking correctly.
               </p>
               <p>

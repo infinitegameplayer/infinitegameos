@@ -9,6 +9,7 @@ const navLinks = [
   { href: '/agentic-systems', label: 'Agentic Systems' },
   { href: '/sovereignty', label: 'Sovereignty' },
   { href: '/playbooks', label: 'Playbooks' },
+  { href: '/concepts', label: 'Concepts' },
   { href: '/about', label: 'About' },
 ]
 

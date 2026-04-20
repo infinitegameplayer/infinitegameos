@@ -153,11 +153,14 @@ export default function SovereigntyPage() {
                 flexWrap: 'wrap',
               }}
             >
-              <Link href="/playbooks" className="btn-accent">
-                Playbooks
+              <Link href="/concepts/ideal-month" className="btn-accent">
+                The Ideal Month
               </Link>
-              <Link href="/about" className="btn-outline">
-                About Lane
+              <Link href="/concepts/joyful-sovereignty" className="btn-outline">
+                Joyful Sovereignty
+              </Link>
+              <Link href="/playbooks" className="btn-outline">
+                Playbooks
               </Link>
             </div>
           </SectionReveal>
