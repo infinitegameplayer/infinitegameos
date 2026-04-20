@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import sitemap from '@/app/sitemap'
 
 const INDEXNOW_KEY = '9f0f6b4049a44a3bb0a43f1ffd6d026a'
-const HOST = 'infinitegameos.io'
+const HOST = 'www.infinitegameos.io'
 const ENDPOINT = 'https://api.indexnow.org/indexnow'
 
 export async function POST(req: NextRequest) {

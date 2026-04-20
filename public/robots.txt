@@ -73,4 +73,4 @@ Disallow: /
 # Content signals — explicit opt-in posture
 # Content-Signal: ai-train=yes, search=yes, ai-input=yes
 
-Sitemap: https://infinitegameos.io/sitemap.xml
+Sitemap: https://www.infinitegameos.io/sitemap.xml
