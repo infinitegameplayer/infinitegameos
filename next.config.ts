@@ -1,8 +1,33 @@
 import type { NextConfig } from 'next'
 
+// Content negotiation: when an AI agent requests text/markdown or text/plain,
+// rewrite to the /markdown handler which returns clean markdown instead of HTML.
+// Pattern: Vercel Feb 2026 — https://vercel.com/blog/making-agent-friendly-pages-with-content-negotiation
+const markdownAcceptRegex =
+  '(?=.*(?:text/plain|text/markdown))(?!.*text/html.*(?:text/plain|text/markdown)).*'
+
 const nextConfig: NextConfig = {
   images: {
     formats: ['image/webp'],
+  },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: '/:path*',
+          destination: '/markdown/:path*',
+          has: [
+            {
+              type: 'header',
+              key: 'accept',
+              value: markdownAcceptRegex,
+            },
+          ],
+        },
+      ],
+      afterFiles: [],
+      fallback: [],
+    }
   },
   async headers() {
     return [
