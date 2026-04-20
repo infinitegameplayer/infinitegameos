@@ -16,8 +16,13 @@ src/app/
   playbooks/page.tsx          Frameworks index — brief descriptions, individual pages added as content builds
   updates/page.tsx            Dynamic content index (bi-monthly steady-state cadence)
   updates/[slug]/page.tsx     Individual update posts — Article + BreadcrumbList schema
+  concepts/page.tsx            Concepts index — DefinedTermSet schema, card grid
+  concepts/[slug]/page.tsx     Individual concept — DefinedTerm + Article + BreadcrumbList schema
   about/page.tsx              Lane as practitioner — Person schema anchor
   not-found.tsx               Branded 404
+
+src/data/
+  concepts.ts                 Concept page data — all content for /concepts/[slug] lives here
 
 src/components/
   Nav.tsx                     Navigation ('use client' — scroll detection)
@@ -30,6 +35,10 @@ public/
   llms-full.txt               Full content for deep LLM reads (update quarterly)
   sitemap.xml                 All routes
 ```
+
+## Concept Pages
+
+Content-driven pages at `/concepts/[slug]`. All concept data lives in `src/data/concepts.ts` (typed array). The dynamic route renders capsule, sections, related concepts, and CTAs from the data file. To add a new concept: add an entry to the concepts array, rebuild. Sitemap, llms.txt, and llms-full.txt must be updated manually.
 
 ## JSON-LD Locations
 

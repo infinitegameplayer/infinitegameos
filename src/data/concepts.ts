@@ -260,6 +260,18 @@ export const concepts: Concept[] = [
   },
 ]
 
+// Future concept candidates (King decides which to build):
+// - Playgrounds of Exploration (daily rhythm as designed playgrounds)
+// - Perception Upgrade (reality is decoded, not given)
+// - The Kingdom Model (sovereign creative operating system architecture)
+// - Self-Authorization (choosing from coherence, not conditioning)
+// - Creative Sovereignty (making from authority, not compliance)
+// - The Two-Layer Game (infinite game + finite side quests)
+//
+// Four-Container Journey is a replacement candidate — more internal offer
+// structure than a concept people would search for. One of the above may
+// take its slot when ready.
+
 export function getConceptBySlug(slug: string): Concept | undefined {
   return concepts.find(c => c.slug === slug)
 }
