@@ -162,6 +162,43 @@ export default function SovereigntyPage() {
             </SectionReveal>
           </div>
 
+          <SectionReveal delay={200}>
+            <div
+              style={{
+                marginTop: '3rem',
+                padding: '2rem',
+                border: '1px solid var(--color-border)',
+                borderRadius: '0.5rem',
+                maxWidth: '56ch',
+              }}
+            >
+              <p
+                className="label"
+                style={{ marginBottom: '0.75rem' }}
+              >
+                The practitioner&apos;s companion
+              </p>
+              <p
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '1rem',
+                  lineHeight: 1.7,
+                  marginBottom: '1.25rem',
+                }}
+              >
+                The Sovereign Life Playbook is the applied companion to this
+                page. The philosophy here, rendered as a protocol you can
+                actually run.
+              </p>
+              <a
+                href="https://sidequesthq.co/products/sovereign-life-playbook"
+                className="btn-outline"
+              >
+                Explore the Playbook
+              </a>
+            </div>
+          </SectionReveal>
+
           <SectionReveal delay={220}>
             <div
               style={{
