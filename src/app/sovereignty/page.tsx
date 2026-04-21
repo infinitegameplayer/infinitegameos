@@ -186,9 +186,8 @@ export default function SovereigntyPage() {
                   marginBottom: '1.25rem',
                 }}
               >
-                The Sovereign Life Playbook is the applied companion to this
-                page. The philosophy here, rendered as a protocol you can
-                actually run.
+                The Sovereign Life Playbook renders this philosophy as a
+                protocol you can run.
               </p>
               <a
                 href="https://sidequesthq.co/products/sovereign-life-playbook"
