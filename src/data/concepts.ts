@@ -111,7 +111,7 @@ export const concepts: Concept[] = [
         heading: 'What Joyful Sovereignty is',
         paragraphs: [
           'Joyful Sovereignty is Lane Belone\'s named approach to playing the Infinite Game. It is a philosophy and a practice, not a concept to understand but a way of operating.',
-          'The Infinite Game, in James Carse\'s original framing, is the game played for the purpose of continuing play. Most interpretations of this idea land in corporate strategy or competitive positioning. Joyful Sovereignty brings it home. It asks: what does it look like to play an infinite game with your own life, from a place of joy and sovereignty rather than obligation and optimization?',
+          'The Infinite Game, in James Carse\'s original framing, is the game played for the purpose of continuing play. Most interpretations of this idea land in corporate strategy or competitive positioning. Joyful Sovereignty brings it home. It asks: what does it look like to play the Infinite Game with your own life, from a place of joy and sovereignty rather than obligation and optimization?',
         ],
       },
       {
@@ -320,10 +320,65 @@ export const concepts: Concept[] = [
       ctaLabel: 'Explore the Playbook',
     },
   },
+  {
+    slug: 'infinite-playlist',
+    title: 'The Infinite Playlist',
+    label: 'Framework',
+    capsule:
+      'The Infinite Playlist is the soundtrack to the movie of your life. An eternal sequence of songs, some chosen and some received, always playing in the background of a sovereign day. Where Playgrounds of Exploration are what the Pioneer engages through the senses, the Infinite Playlist is the invisible music floating in the air. You cannot see it, but you can hear it, dance to it, play with it.',
+    subtitle:
+      'The invisible music floating in the air, always playing, waiting to be heard.',
+    sections: [
+      {
+        heading: 'What it is',
+        paragraphs: [
+          'The Infinite Playlist is not a concept to adopt. It is a posture toward life. A willingness to move through the day as if dancing to music that is already playing. Some songs the Pioneer chose. Some songs the universe delivered. Both belong to the same playlist.',
+          'Where Playgrounds of Exploration live in touch, taste and sight (the physical act, the domain entered through the senses), the Infinite Playlist lives in sound. An encompassing, ethereal wrapping around every Playground. The Pioneer\'s daily architecture sits inside the Playlist, not outside of it. The Playlist is what gives the architecture its aliveness.',
+        ],
+      },
+      {
+        heading: 'The Playground is the physical act. The Playlist is what plays through it.',
+        paragraphs: [
+          'The Playground is what the Pioneer engages with physically. A dinner with a friend. A hike in the open air. The focused hours of creative work. Things met through the body and the senses.',
+          'The Playlist is ethereal. The soundtrack to the dinner. The rhythm of the hike. The energy carrying the creative session. The music moves with the physical act because it is the invisible layer the physical act takes place inside. A Playground without a Playlist is mechanical. A Playlist with no Playground has nothing to play through. Together, the Pioneer has a day that feels like a dance.',
+        ],
+      },
+      {
+        heading: 'Leading and following',
+        paragraphs: [
+          'The Playlist asks the Pioneer to hold two capacities at once. Leading and following. Architecting and receiving.',
+          'Leading is the familiar move. The Pioneer designs their Playgrounds, chooses what they engage with, builds a day from authentic self. The Playlist honors that and responds to it. Following is less familiar. It is the willingness to be given a song the Pioneer did not request. A synchronicity. An unexpected conversation. A door that opens at the right moment without being pushed. The practice for most Pioneers is the following step. Trusting that the dance has its own intelligence.',
+          'When both capacities are present, something integrates. The Pioneer holds the ability to lead with intention and follow with openness simultaneously. Not alternating. Woven.',
+        ],
+      },
+      {
+        heading: 'Degrees of openness',
+        paragraphs: [
+          'The Pioneer does not choose one degree of openness and stay there. The ratio shifts with the season.',
+          'Sometimes the opening is precise. A clear intention, a known Playground, a specific song. Sometimes it is thematic. A general direction, a felt sense of what the season is about, room for the Playlist to fill in the details. Sometimes the opening is wide. Everything welcome, the Playlist playing songs from every direction, a season of receiving. Sometimes life just slips something in. Unexpected. A conversation that rearranges a perspective. A person who arrives at the moment they were needed, without ever being asked for. All of these are the same posture at different volumes. The capacity is holding the opening, in whatever proportion the moment calls for.',
+        ],
+      },
+      {
+        heading: 'The architecture is the instrument. The Playlist is the music.',
+        paragraphs: [
+          'The Playgrounds give the day its shape. The Playlist gives it its feel. Both are required. One without the other is half of a dance.',
+          'When the Pioneer holds the architecture loosely enough that life can play through it, the day stops feeling like a list of things to get through. It starts feeling like a song. Sometimes the body is leading. Sometimes the music is leading. The distinction matters less the longer the Pioneer dances. This is what the Infinite Game feels like from the inside. Not conquest, not performance. A day built with care and held with openness, the invisible music floating through every Playground, the Pioneer dancing with existence itself.',
+        ],
+      },
+    ],
+    relatedSlugs: ['playgrounds-of-exploration', 'joyful-sovereignty', 'the-pioneer'],
+    ctaLinks: [
+      { href: '/infinite-game', label: 'The Infinite Game', variant: 'outline' },
+    ],
+    productCard: {
+      body: 'The Sovereign Life Playbook is where the Infinite Playlist becomes a daily posture. Chapter 5 is dedicated to this practice: how to hold your Playgrounds loosely enough that life can play through them, how to maintain the opening that lets the unexpected arrive.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'Explore the Playbook',
+    },
+  },
 ]
 
 // Future concept candidates (King decides which to build):
-// - Infinite Playlist (the invisible music floating in the air)
 // - Perception Upgrade (reality is decoded, not given)
 // - The Kingdom Model (sovereign creative operating system architecture)
 // - Self-Authorization (choosing from coherence, not conditioning)

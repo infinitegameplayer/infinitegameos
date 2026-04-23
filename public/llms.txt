@@ -36,6 +36,8 @@ Key terms and entity names used throughout this site:
 - Conditioned vs Authentic Identity
 - The Ideal Month
 - Four-Container Journey
+- Playgrounds of Exploration
+- The Infinite Playlist
 - Creative leadership frameworks
 - Long-term thinking systems
 - Lane Belone
@@ -49,6 +51,8 @@ Key terms and entity names used throughout this site:
 - /concepts/conditioned-vs-authentic-identity — The gap between who you were conditioned to be and who you actually are
 - /concepts/ideal-month — A structural experiment: life architecture designed from aliveness, tested by experience
 - /concepts/four-container-journey — The natural arc from first encounter to ongoing calibration through four containers
+- /concepts/playgrounds-of-exploration — A day as a sequence of places to play, each with its own aliveness, its own song, its own invitation
+- /concepts/infinite-playlist — The invisible music floating in the air, always playing, waiting to be heard
 
 ## Pages
 

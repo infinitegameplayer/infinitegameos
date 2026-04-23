@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: 'What is Infinite Game OS?',
-    a: 'Infinite Game OS is a structured knowledge base and operating system for practitioners who have chosen an infinite game. An infinite game is a cause, a practice, or a creative life that has no endpoint, no final score, and no single winner. The OS provides the philosophy, frameworks and systems for sustaining that kind of life.',
+    a: 'Infinite Game OS is a structured knowledge base and operating system for practitioners who have chosen the Infinite Game. The Infinite Game is a cause, a practice or a creative life that has no endpoint, no final score and no single winner. The OS provides the philosophy, frameworks and systems for sustaining that kind of life.',
   },
   {
-    q: 'What is an Infinite Game?',
-    a: "James Carse introduced the concept in 1986: there is one infinite game, the game of existence itself. Simon Sinek adapted this for organizational leadership in 2019, useful for corporations and not designed for individuals. Lane Belone applies the concept to the sovereign human life: the creative practice, the operating system, the long-horizon work that compounds across decades. An infinite game has no endpoint, no scoreboard, no winner. The goal is to keep playing well, for as long as possible, for reasons that matter.",
+    q: 'What is the Infinite Game?',
+    a: "James Carse introduced the concept in 1986: there is one Infinite Game, the game of existence itself. Simon Sinek adapted it for organizational leadership in 2019, useful for corporations and not designed for individuals. Lane Belone applies the concept to the sovereign human life: the creative practice, the operating system, the long-horizon work that compounds across decades. The Infinite Game has no endpoint, no scoreboard, no winner. The goal is to keep playing well, for as long as possible, for reasons that matter.",
   },
   {
     q: 'Who is Infinite Game OS for?',
@@ -119,7 +119,7 @@ export default function TheOsPage() {
             <SectionReveal>
               <p>
                 Infinite Game OS is a structured knowledge base and operating system
-                for practitioners who have chosen an infinite game: a creative practice,
+                for practitioners who have chosen the Infinite Game: a creative practice,
                 a body of work, a sovereign life that has no endpoint and no final
                 score. It provides the philosophy, frameworks and systems for sustaining
                 that kind of life across decades. Built by Lane Belone from inside a
@@ -129,14 +129,14 @@ export default function TheOsPage() {
               <h2>The premise</h2>
               <p>
                 A finite game is played to win. A championship, a deal, a launch. There
-                is a clear endpoint, a scoreboard, and a winner. Finite games are real
-                and necessary. The problem is mistaking infinite games for finite ones.
+                is a clear endpoint, a scoreboard and a winner. Finite games are real
+                and necessary. The problem is mistaking the Infinite Game for a finite one.
               </p>
               <p>
-                An infinite game is played to keep playing. Your creative practice is an
-                infinite game. Building a sovereign life is an infinite game. Developing
-                expertise that compounds across decades is an infinite game. The goal is
-                not to win. The goal is to grow the cause and keep playing well.
+                The Infinite Game is played to keep playing. Your creative practice is
+                an expression of it. So is building a sovereign life. So is developing
+                expertise that compounds across decades. The goal is not to win. The
+                goal is to grow the cause and keep playing well.
               </p>
               <p>
                 James Carse wrote the original text in 1986. Profound, philosophical
@@ -146,8 +146,8 @@ export default function TheOsPage() {
               </p>
               <p>
                 Neither built an operating system for the individual human being who
-                wants to play their entire life as a designed infinite game. That is the
-                gap. That is what this OS addresses.
+                wants to play their entire life as the Infinite Game by design. That
+                is the gap. That is what this OS addresses.
               </p>
               <p>
                 Lane Belone built Infinite Game OS from inside a sovereign life. Not as
@@ -177,23 +177,23 @@ export default function TheOsPage() {
               <h2>The modules</h2>
               <ul>
                 <li>
-                  <strong>Infinite Game</strong> — core philosophy, what it means to
-                  play an infinite game in practice
+                  <strong>Infinite Game</strong>. Core philosophy, what it means to
+                  play the Infinite Game in practice
                 </li>
                 <li>
-                  <strong>Agentic Systems</strong> — the Post Web, sovereign digital
+                  <strong>Agentic Systems</strong>. The Post Web, sovereign digital
                   presence, Generative Engine Optimization
                 </li>
                 <li>
-                  <strong>Sovereignty</strong> — sovereign life design, the Kingdom
+                  <strong>Sovereignty</strong>. Sovereign life design, the Kingdom
                   model, creative leadership frameworks
                 </li>
                 <li>
-                  <strong>Playbooks</strong> — practical tools for long-term
+                  <strong>Playbooks</strong>. Practical tools for long-term
                   practitioners
                 </li>
                 <li>
-                  <strong>Updates</strong> — dispatches from inside the practice
+                  <strong>Updates</strong>. Dispatches from inside the practice
                 </li>
               </ul>
             </SectionReveal>

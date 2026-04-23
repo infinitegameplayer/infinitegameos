@@ -46,7 +46,7 @@ const upcomingPlaybooks = [
   {
     title: 'The Two-Layer Game Structure',
     description:
-      'Designing finite games (side quests) that fund and support the infinite game. The architecture behind SideQuestHQ.',
+      'Designing finite games (side quests) that fund and support the Infinite Game. The architecture behind SideQuestHQ.',
     status: 'coming soon',
   },
   {

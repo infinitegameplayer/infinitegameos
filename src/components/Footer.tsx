@@ -220,7 +220,7 @@ export default function Footer() {
               fontStyle: 'italic',
             }}
           >
-            Playing an infinite game.
+            Playing the Infinite Game.
           </p>
         </div>
       </div>

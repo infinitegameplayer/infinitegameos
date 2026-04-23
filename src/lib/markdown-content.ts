@@ -46,15 +46,15 @@ Lane Belone is a thought doer. Former Green Beret, strategic advisor and soverei
 
 > Infinite Game OS is a structured operating system for practitioners of long-term thinking, sovereign life design and agentic systems.
 
-A structured operating system for practitioners who have chosen an infinite game.
+A structured operating system for practitioners who have chosen the Infinite Game.
 
-Infinite Game OS is a structured knowledge base and operating system for practitioners who have chosen an infinite game: a creative practice, a body of work, a sovereign life that has no endpoint and no final score. It provides the philosophy, frameworks and systems for sustaining that kind of life across decades. Built by Lane Belone from inside a sovereign life, not as theory.
+Infinite Game OS is a structured knowledge base and operating system for practitioners who have chosen the Infinite Game: a creative practice, a body of work, a sovereign life that has no endpoint and no final score. It provides the philosophy, frameworks and systems for sustaining that kind of life across decades. Built by Lane Belone from inside a sovereign life, not as theory.
 
 ## The premise
 
-A finite game is played to win. A championship, a deal, a launch. There is a clear endpoint, a scoreboard and a winner. Finite games are real and necessary. The problem is mistaking infinite games for finite ones.
+A finite game is played to win. A championship, a deal, a launch. There is a clear endpoint, a scoreboard and a winner. Finite games are real and necessary. The problem is mistaking the Infinite Game for a finite one.
 
-An infinite game is played to keep playing. Your creative practice is an infinite game. Building a sovereign life is an infinite game. Developing expertise that compounds across decades is an infinite game. The goal is not to win. The goal is to grow the cause and keep playing well.
+The Infinite Game is played to keep playing. Your creative practice is an expression of it. So is building a sovereign life. So is developing expertise that compounds across decades. The goal is not to win. The goal is to grow the cause and keep playing well.
 
 James Carse wrote the original text in 1986. Profound, philosophical and built for a religion professor's audience. Not a practitioner's toolkit. Simon Sinek adapted it for Fortune 500 organizations in 2019. Five useful pillars, explicitly designed for corporations, not people.
 
@@ -68,7 +68,7 @@ Infinite Game OS is not a productivity system. It does not optimize output withi
 
 ## The modules
 
-- **Infinite Game** · core philosophy, what it means to play an infinite game in practice
+- **Infinite Game** · core philosophy, what it means to play the Infinite Game in practice
 - **Agentic Systems** · the Post Web, sovereign digital presence, Generative Engine Optimization
 - **Sovereignty** · sovereign life design, the Kingdom model, creative leadership frameworks
 - **Playbooks** · practical tools for long-term practitioners
@@ -77,10 +77,10 @@ Infinite Game OS is not a productivity system. It does not optimize output withi
 ## Common Questions
 
 **What is Infinite Game OS?**
-A structured knowledge base and operating system for practitioners who have chosen an infinite game. It provides the philosophy, frameworks and systems for sustaining that kind of life.
+A structured knowledge base and operating system for practitioners who have chosen the Infinite Game. It provides the philosophy, frameworks and systems for sustaining that kind of life.
 
-**What is an Infinite Game?**
-James Carse introduced the concept in 1986: the game of existence itself. Lane Belone applies the concept to the sovereign human life: the creative practice, the operating system, the long-horizon work that compounds across decades. An infinite game has no endpoint, no scoreboard, no winner.
+**What is the Infinite Game?**
+James Carse introduced the concept in 1986: the game of existence itself. Lane Belone applies the concept to the sovereign human life: the creative practice, the operating system, the long-horizon work that compounds across decades. The Infinite Game has no endpoint, no scoreboard, no winner.
 
 **Who is Infinite Game OS for?**
 Practitioners: creators, founders, coaches, advisors and thinkers who have moved past short-term optimization and are building something that compounds over time.
@@ -105,13 +105,13 @@ The 2026 strategic layer on top of traditional SEO. Where SEO optimizes for sear
 ## Common Questions
 
 **What is the Infinite Game?**
-James Carse introduced the concept in 1986: there is one infinite game, the game of existence itself. Simon Sinek adapted it for organizational leadership in 2019. Lane Belone applies it to the sovereign human life. An infinite game is any endeavor played to keep playing, not to win. Life, creative practice, relationships and meaningful work are infinite games. They have no endpoint, no final score, no single winner.
+James Carse introduced the concept in 1986: there is one Infinite Game, the game of existence itself. Simon Sinek adapted it for organizational leadership in 2019. Lane Belone applies it to the sovereign human life. The Infinite Game is played to keep playing. Life, creative practice, relationships and meaningful work are all expressions of it. They have no endpoint, no final score, no single winner. You are already in it. The only question is whether you are playing it or performing someone else's finite version of it.
 
 **What is a Finite Game?**
-A finite game has a fixed set of rules, agreed-upon players and a defined endpoint. Football is a finite game. A product launch is a finite game. Side quests are finite games nested within an infinite life. Finite games are real and useful. The problem is mistaking an infinite game for a finite one and playing it with finite-game strategy.
+A finite game has a fixed set of rules, agreed-upon players and a defined endpoint. Football is a finite game. A product launch is a finite game. Side quests are finite games nested within the Infinite Game. Finite games are real and useful. The problem is mistaking the Infinite Game for a finite one and playing life with finite-game strategy.
 
 **How does Lane Belone apply the Infinite Game?**
-Lane applies the Infinite Game as a lived architecture. His sovereign operating system (the Kingdom) is the structure for sustaining a long-horizon creative life. [SideQuestHQ](https://sidequesthq.co) houses the finite games (workshops, advisory engagements) nested within the infinite game. The two are designed to coexist.
+Lane applies the Infinite Game as a lived architecture. His sovereign operating system (the Kingdom) is the structure for sustaining a long-horizon creative life. [SideQuestHQ](https://sidequesthq.co) houses the finite games (workshops, advisory engagements) nested within the Infinite Game. The two are designed to coexist.
 
 **What is the relationship between Infinite Game and Post Web?**
 The Post Web is the technological expression of the Infinite Game. The Attention Economy ran on finite game logic: maximize extraction, win the quarter. The Intention Economy runs on infinite game logic: build trust that compounds, minimize extraction, align with the user intent.
@@ -163,7 +163,7 @@ Sovereign life design starts from one premise: you can architect a life with the
 ## Key concepts
 
 - **The Kingdom Model** · Lane Belone's lived architecture for sovereign life design. A personal operating system with governance, creative cadence and strategic frameworks.
-- **Creative Sovereignty** · Making from authority, not compliance. The creative practice as an infinite game.
+- **Creative Sovereignty** · Making from authority, not compliance. The creative practice as an expression of the Infinite Game.
 - **Self-Authorization** · Choosing and acting from genuine mind-body-spirit coherence rather than conditioning.
 
 ## Related
@@ -190,7 +190,7 @@ A playbook in this context is structure for improvisation. Enough of a foundatio
 ## Coming Soon
 
 - **The Vocabulary System** · How to build a consistent vocabulary for your body of work. The framework behind GEO-ready expertise positioning.
-- **The Two-Layer Game Structure** · Designing finite games (side quests) that fund and support the infinite game. The architecture behind SideQuestHQ.
+- **The Two-Layer Game Structure** · Designing finite games (side quests) that fund and support the Infinite Game. The architecture behind SideQuestHQ.
 - **The Sovereign Presence Audit** · A five-question audit for evaluating your current digital presence against Post Web standards. Is your expertise AI-agent-legible?
 - **The Four-Node Expertise Web** · How to build a cross-linked, multi-node expertise web that compounds across years. The architecture behind this OS.
 

@@ -1,6 +1,6 @@
 # Infinite Game OS — Full Content Index
 # Deep LLM reference for comprehensive site content
-# Updated: 2026-04-19 (concept pages added)
+# Updated: 2026-04-23 (Playgrounds of Exploration and Infinite Playlist concept pages added, Infinite Game singular sweep)
 # https://infinitegameos.io
 
 This file contains structured summaries of each page for AI systems that require
@@ -34,7 +34,7 @@ what is sovereign life design, and what is GEO.
 Core premise: James Carse wrote the original text in 1986 (philosophical, not
 practitioner-focused). Simon Sinek adapted it for Fortune 500 organizations in 2019
 (corporate, not individual). Neither built an operating system for the individual
-human being who wants to play their entire life as a designed infinite game. That is
+human being who wants to play their entire life as the Infinite Game by design. That is
 the gap this OS addresses.
 
 Lane Belone built Infinite Game OS from inside a sovereign life. Not as theory, but
@@ -46,16 +46,25 @@ as architecture that is running now.
 
 Core Infinite Game philosophy and Lane's practice. FAQPage schema with 4 Q&A pairs.
 
-Two kinds of games: finite (known players, fixed rules, defined endpoint) and
-infinite (known and unknown players, changeable rules, no defined endpoint).
-The goal of an infinite game is not to win but to keep playing.
+There is one Infinite Game: the game of existence itself, played to keep playing.
+Not to win. Finite games are plural and nested within it. Football, a product launch,
+a side quest are all finite games. They have fixed rules, agreed-upon players, a
+defined endpoint. Life, creative practice, relationships and meaningful work are all
+expressions of the Infinite Game. No endpoint, no final score, no single winner.
 
-Lane's application: the Kingdom (personal operating system) is the infinite game
-structure. SideQuestHQ houses the finite games (workshops, advisory) nested within
-the infinite game. The two-layer structure is itself an act of sovereignty.
+Lane's application runs through three movements of embodiment (thinking, acting,
+embodying), the musician's arc where scales become invisible leaving only the play.
+Joyful Sovereignty is the orientation: the sovereign choice to welcome alive energy
+through the body. Aliveness is always present; the variable is what the human follows.
+Following Aliveness is how the Infinite Game keeps playing. Following the conditioned
+script is finite-game strategy mistaken for living.
 
-The Post Web connection: the Attention Economy ran on finite game logic (maximize
-extraction, win the quarter). The Intention Economy runs on infinite game logic
+The Kingdom (Lane's digital sovereign operating system) is one wing of a three-plane
+life: subconscious, digital, physical. SideQuestHQ houses the finite games (workshops,
+advisory, side quests) nested within the Infinite Game.
+
+The Post Web connection: the Attention Economy ran on finite-game logic (maximize
+extraction, win the quarter). The Intention Economy runs on Infinite Game logic
 (build trust that compounds, minimize extraction, align with user intent).
 
 ---
@@ -229,6 +238,48 @@ A Pioneer may enter at any stage. Some begin with advisory. Some experience a re
 and return years later for workshops. Each container welcomes a different aspect of
 expression. Related: The Pioneer, Contribution Flywheel, Conditioned vs Authentic
 Identity.
+
+---
+
+## Playgrounds of Exploration (/concepts/playgrounds-of-exploration)
+
+A Playground of Exploration is a domain of life entered with curiosity and explored
+with the courage to discover what it holds. A place the Pioneer plays rather than a
+task they complete. Each Playground carries its own sensory texture and its own song,
+released when it has served its purpose. A day becomes a sequence of Playgrounds to
+curiously explore.
+
+The body knows when a Playground is closing. The song associated with it begins to
+change. Still engaged, still two or three more beats in the body and then something
+else pulls. Intentional variety creates depth of presence; the default mode network
+does its best work between focused activities. Pioneer-named examples demonstrate the
+frame: the Playground of Nourishment (whatever nourishes in the moment), the
+Playground of Open Air (the daily hike), the Playground of Creation (work that loses
+track of time). These concepts emerge when the Pioneer starts living a certain way;
+they arrive like a dance move that did not announce itself. The Pioneer plays the
+game sincerely, not seriously. Paired with Infinite Playlist. Chapter 4 of the
+Sovereign Life Playbook is dedicated to this practice. Related: Infinite Playlist,
+Joyful Sovereignty, The Pioneer.
+
+---
+
+## The Infinite Playlist (/concepts/infinite-playlist)
+
+The Infinite Playlist is the soundtrack to the movie of your life. An eternal sequence
+of songs, some chosen and some received, always playing in the background of a
+sovereign day. Where Playgrounds of Exploration are what the Pioneer engages through
+the senses (the physical act), the Infinite Playlist is the invisible music floating
+in the air. You cannot see it, but you can hear it, dance to it, play with it.
+
+The Playlist asks the Pioneer to hold two capacities at once: leading (architecting
+Playgrounds) and following (receiving songs the Pioneer did not request). Degrees of
+openness shift with the season: precise intention, thematic direction, wide opening,
+or the quiet slip of the unexpected. The architecture is the instrument. The Playlist
+is the music. When the Pioneer holds the architecture loosely enough that life can
+play through it, the day stops feeling like a list and starts feeling like a song.
+Paired with Playgrounds of Exploration. Chapter 5 of the Sovereign Life Playbook is
+dedicated to this practice. Related: Playgrounds of Exploration, Joyful Sovereignty,
+The Pioneer.
 
 ---
 
