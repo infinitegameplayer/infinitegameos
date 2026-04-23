@@ -40,6 +40,14 @@ public/
 
 Content-driven pages at `/concepts/[slug]`. All concept data lives in `src/data/concepts.ts` (typed array). The dynamic route renders capsule, sections, related concepts, and CTAs from the data file. To add a new concept: add an entry to the concepts array, rebuild. Sitemap, llms.txt, and llms-full.txt must be updated manually.
 
+## Critical Rules
+
+**Do NOT add `'use client'` to page files unless they use client-side hooks directly.** `SectionReveal`, `Nav`, and other client components already carry their own `'use client'` — server component pages can import them without the directive. Adding `'use client'` to a page prevents JSON-LD `<script>` tags from rendering into static HTML (Google and AI agents can't read them). Pages that genuinely need `'use client'` (direct useState/useEffect): none currently. Client components cannot export `metadata` — all pages rely on root layout defaults.
+
+**No em dashes.** Kingdom-wide rule. Replace with a period and new sentence, or a comma. Applies to all site copy and markdown content served via content negotiation.
+
+---
+
 ## JSON-LD Locations
 
 - `layout.tsx`: `WebSite` schema with `url`, `name`, `description`, `author`, `sameAs`
