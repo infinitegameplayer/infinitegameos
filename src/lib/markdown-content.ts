@@ -185,7 +185,7 @@ A playbook in this context is structure for improvisation. Enough of a foundatio
 
 ## Available
 
-- **[The Sovereign Life Playbook](https://sidequesthq.co/products/sovereign-life-playbook)** · A framework for peeling away the inherited game and designing what's actually yours. Available now. $47.
+- **[The Sovereign Life Playbook](https://sidequesthq.co/products/sovereign-life-playbook)** · A framework for peeling away the inherited game and designing what's actually yours. Available now. $37.
 
 ## Coming Soon
 
