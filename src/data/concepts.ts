@@ -3,6 +3,12 @@ export interface ConceptSection {
   paragraphs: string[]
 }
 
+export interface ConceptProductCard {
+  body: string
+  ctaHref: string
+  ctaLabel: string
+}
+
 export interface Concept {
   slug: string
   title: string
@@ -12,6 +18,7 @@ export interface Concept {
   sections: ConceptSection[]
   relatedSlugs: string[]
   ctaLinks: { href: string; label: string; variant: 'accent' | 'outline' }[]
+  productCard?: ConceptProductCard
 }
 
 export const concepts: Concept[] = [
@@ -258,10 +265,65 @@ export const concepts: Concept[] = [
       { href: '/concepts/the-pioneer', label: 'The Pioneer', variant: 'outline' },
     ],
   },
+  {
+    slug: 'playgrounds-of-exploration',
+    title: 'Playgrounds of Exploration',
+    label: 'Framework',
+    capsule:
+      'A Playground of Exploration is a domain of life entered with curiosity and explored with the courage to discover what it holds. It is a place the Pioneer plays rather than a task they complete. Each Playground carries its own sensory texture and its own song, released when it has served its purpose. A day becomes a sequence of Playgrounds to curiously explore.',
+    subtitle:
+      'A day as a sequence of places to play, each with its own aliveness, its own song, its own invitation.',
+    sections: [
+      {
+        heading: 'A different way to look at a day',
+        paragraphs: [
+          'A day is not a list of things to do. Not projects to complete, not errands to run. It is a series of places to play. That single shift sounds small and rewrites something deep.',
+          '"Playground" carries play. Childlike curiosity. Levity. The felt memory of a place where the rules were loose and the point was to be there. "Exploration" carries a different weight. A beginning. A willingness to follow curiosity without knowing what is on the other side. A quiet courage. Put them together and something opens. Playgrounds of Exploration. A life built from domains the Pioneer chooses to enter with aliveness, engages fully through the senses and leaves when the next place calls.',
+        ],
+      },
+      {
+        heading: 'The shift between one Playground and the next',
+        paragraphs: [
+          'The body knows when a Playground is closing. The song associated with it begins to change. Still engaged, still two or three more beats in the body and then something else pulls. A next song. A next Playground. The transition feels like moving from one favorite song to the next favorite song. Same playlist, totally different feel.',
+          'That pull is not discipline. Not a timer going off. A welcomed shift, movement in a different direction. When the Pioneer trusts the shift rather than forcing completion, each Playground gets met at the level of aliveness it was designed for. When the Pioneer overrides the shift, the Playground starts to drain and the next one gets entered depleted.',
+        ],
+      },
+      {
+        heading: 'Why variety creates depth',
+        paragraphs: [
+          'The default mode network does its best work between focused activities. The part of the mind that organizes and integrates below the surface runs in the background when the foreground is engaged with something different. Not doing something actually does something. The subconscious processes millions of bits of information per second. The conscious mind handles around fifty to a hundred, depending on the study.',
+          'When the Pioneer leaves an idea unresolved at the end of a creative Playground and enters a Playground of movement or nourishment, the background processing continues. A distillation surfaces somewhere in the next Playground. The variety is not a distraction from deep work. It is what makes depth possible in each Playground. Intentional variety creates depth of presence. The principle holds at every scale.',
+        ],
+      },
+      {
+        heading: 'The kinds of Playgrounds',
+        paragraphs: [
+          'The invitation is not a fixed taxonomy. It is a prompt: look at the thematic chunks of the day. The felt chunks, not the scheduled ones. Where does one kind of energy end and another begin? Where is something alive and where is obligation wearing the disguise of a schedule?',
+          'Give each thematic chunk a name that carries the energy of the thing. A name the Pioneer would actually use. The Playground of Nourishment is doing whatever I want for the first couple of hours, whatever nourishes me in the moment. Someone else would call that something else entirely. The Playground of Open Air is the daily hike. Sun, body in motion, a semi-spontaneous conversation on a rotating trail decided that morning. The Playground of Creation is the work that loses track of time. These names are demonstrations, not a list to adopt. Themes like Rest, Connection, Solitude, Mastery, Serendipity surface when they help and disappear when they stop fitting. The Pioneer\'s own vocabulary is the right vocabulary.',
+        ],
+      },
+      {
+        heading: 'A dance move that didn\'t announce itself',
+        paragraphs: [
+          'These concepts emerge when the Pioneer starts living a certain way. They do not arrive with instruction manuals. A dancer does not pull out a piece of paper that says "new dance move coming on," shake it around, then do the move. The new move flows with the previous essence of the dance and gives it a little extra texture. A melody in a song that happens once or twice and the body responds before the mind names it.',
+          'Playgrounds of Exploration arrive like that. Not as a framework to adopt. As a posture that was always there, now given a name. The child archetype understood this intuitively. The jungle gym, the court, the field. Levity that did not need permission. Playgrounds of Exploration is the invitation to weave that energy back in as the operating posture for the whole day. The Pioneer plays the game sincerely, not seriously. That distinction changes the energy in which the entire day moves.',
+        ],
+      },
+    ],
+    relatedSlugs: ['infinite-playlist', 'joyful-sovereignty', 'the-pioneer'],
+    ctaLinks: [
+      { href: '/infinite-game', label: 'The Infinite Game', variant: 'outline' },
+    ],
+    productCard: {
+      body: 'The Sovereign Life Playbook is where the Playgrounds of Exploration become the architecture of your day. Chapter 4 is dedicated to this practice: mapping your current Playgrounds, designing intentional ones, building the day from aliveness rather than obligation.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'Explore the Playbook',
+    },
+  },
 ]
 
 // Future concept candidates (King decides which to build):
-// - Playgrounds of Exploration (daily rhythm as designed playgrounds)
+// - Infinite Playlist (the invisible music floating in the air)
 // - Perception Upgrade (reality is decoded, not given)
 // - The Kingdom Model (sovereign creative operating system architecture)
 // - Self-Authorization (choosing from coherence, not conditioning)

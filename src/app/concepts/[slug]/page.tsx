@@ -150,6 +150,39 @@ export default async function ConceptPage({ params }: PageProps) {
             ))}
           </div>
 
+          {concept.productCard && (
+            <SectionReveal delay={concept.sections.length * 80}>
+              <div
+                style={{
+                  marginTop: '3.5rem',
+                  padding: '2rem',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: '12px',
+                  background: 'var(--color-card, rgba(255, 255, 255, 0.02))',
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '1rem',
+                    color: 'var(--color-text)',
+                    lineHeight: 1.75,
+                    maxWidth: '62ch',
+                    marginBottom: '1.5rem',
+                  }}
+                >
+                  {concept.productCard.body}
+                </p>
+                <a
+                  href={concept.productCard.ctaHref}
+                  className="btn-accent"
+                >
+                  {concept.productCard.ctaLabel}
+                </a>
+              </div>
+            </SectionReveal>
+          )}
+
           {relatedConcepts.length > 0 && (
             <SectionReveal delay={concept.sections.length * 80}>
               <div
