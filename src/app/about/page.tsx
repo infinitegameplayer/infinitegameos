@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  '@id': 'https://infinitegameos.io/about#lane-belone',
+  '@id': 'https://www.infinitegameos.io/about#lane-belone',
   name: 'Lane Belone',
   url: 'https://lanebelone.com',
   jobTitle:
@@ -40,8 +40,8 @@ const personSchema = {
 const profilePageSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
-  mainEntity: { '@id': 'https://infinitegameos.io/about#lane-belone' },
-  url: 'https://infinitegameos.io/about',
+  mainEntity: { '@id': 'https://www.infinitegameos.io/about#lane-belone' },
+  url: 'https://www.infinitegameos.io/about',
   name: 'About Lane Belone',
   description:
     'Lane Belone works at the intersection of Infinite Game philosophy, sovereign creative operating systems, and agentic architecture. He builds from inside the practice.',
@@ -51,12 +51,12 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://infinitegameos.io' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.infinitegameos.io' },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'About',
-      item: 'https://infinitegameos.io/about',
+      item: 'https://www.infinitegameos.io/about',
     },
   ],
 }

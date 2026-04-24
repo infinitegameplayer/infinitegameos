@@ -14,10 +14,10 @@ const articleSchema = {
   headline: 'Sovereign Life Design',
   description:
     'Sovereign life design is building a life with the intentionality of an operating system. Explore the philosophy, the Kingdom model, and creative sovereignty.',
-  author: { '@id': 'https://infinitegameos.io/#person' },
-  publisher: { '@id': 'https://infinitegameos.io/#website' },
-  url: 'https://infinitegameos.io/sovereignty',
-  mainEntityOfPage: 'https://infinitegameos.io/sovereignty',
+  author: { '@id': 'https://www.infinitegameos.io/#person' },
+  publisher: { '@id': 'https://www.infinitegameos.io/#website' },
+  url: 'https://www.infinitegameos.io/sovereignty',
+  mainEntityOfPage: 'https://www.infinitegameos.io/sovereignty',
   datePublished: '2026-04-14',
   dateModified: '2026-04-19',
 }
@@ -26,12 +26,12 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://infinitegameos.io' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.infinitegameos.io' },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Sovereignty',
-      item: 'https://infinitegameos.io/sovereignty',
+      item: 'https://www.infinitegameos.io/sovereignty',
     },
   ],
 }

@@ -4,7 +4,7 @@
 
 import { concepts, getConceptBySlug } from '@/data/concepts'
 
-const SITE = 'https://infinitegameos.io'
+const SITE = 'https://www.infinitegameos.io'
 
 const pages: Record<string, string> = {
   '': `# Infinite Game OS

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'Core concepts from the Infinite Game OS: frameworks, archetypes, practices and distinctions for sovereign life design and playing the Infinite Game.',
   alternates: {
-    canonical: 'https://infinitegameos.io/concepts',
+    canonical: 'https://www.infinitegameos.io/concepts',
   },
 }
 
@@ -16,12 +16,12 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://infinitegameos.io' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.infinitegameos.io' },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Concepts',
-      item: 'https://infinitegameos.io/concepts',
+      item: 'https://www.infinitegameos.io/concepts',
     },
   ],
 }
@@ -29,16 +29,16 @@ const breadcrumbSchema = {
 const termSetSchema = {
   '@context': 'https://schema.org',
   '@type': 'DefinedTermSet',
-  '@id': 'https://infinitegameos.io/#concepts',
+  '@id': 'https://www.infinitegameos.io/#concepts',
   name: 'Infinite Game OS Concepts',
-  url: 'https://infinitegameos.io/concepts',
+  url: 'https://www.infinitegameos.io/concepts',
   description:
     'Core concepts from Lane Belone\'s Infinite Game OS: frameworks, archetypes, practices and distinctions for sovereign life design.',
   hasDefinedTerm: concepts.map(c => ({
     '@type': 'DefinedTerm',
     name: c.title,
     description: c.capsule,
-    url: `https://infinitegameos.io/concepts/${c.slug}`,
+    url: `https://www.infinitegameos.io/concepts/${c.slug}`,
   })),
 }
 

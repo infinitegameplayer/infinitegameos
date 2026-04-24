@@ -14,10 +14,10 @@ const articleSchema = {
   headline: 'Playbooks and Frameworks',
   description:
     'Infinite Game playbooks give you enough structure to improvise freely. Practical frameworks for sovereign life design, long-term thinking and agentic systems.',
-  author: { '@id': 'https://infinitegameos.io/#person' },
-  publisher: { '@id': 'https://infinitegameos.io/#website' },
-  url: 'https://infinitegameos.io/playbooks',
-  mainEntityOfPage: 'https://infinitegameos.io/playbooks',
+  author: { '@id': 'https://www.infinitegameos.io/#person' },
+  publisher: { '@id': 'https://www.infinitegameos.io/#website' },
+  url: 'https://www.infinitegameos.io/playbooks',
+  mainEntityOfPage: 'https://www.infinitegameos.io/playbooks',
   datePublished: '2026-04-14',
   dateModified: '2026-04-19',
 }
@@ -26,12 +26,12 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://infinitegameos.io' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.infinitegameos.io' },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Playbooks',
-      item: 'https://infinitegameos.io/playbooks',
+      item: 'https://www.infinitegameos.io/playbooks',
     },
   ],
 }

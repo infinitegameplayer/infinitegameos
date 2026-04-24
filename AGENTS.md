@@ -20,7 +20,7 @@ Part of a four-node expertise web. Canonical source: [Sovereign Ecosystem Archit
 
 | Node | URL | Role |
 |---|---|---|
-| **infinitegameos.io** | https://infinitegameos.io | AI-agent-first knowledge base — Infinite Game philosophy, agentic systems, sovereign life design |
+| **infinitegameos.io** | https://www.infinitegameos.io | AI-agent-first knowledge base — Infinite Game philosophy, agentic systems, sovereign life design |
 | **lanebelone.com** | https://lanebelone.com | Personal brand anchor — thought leadership, philosophy, personal story |
 | **SideQuestHQ.co** | https://sidequesthq.co | Offer hub — workshops, private advisory, retreats |
 | **Sovereign Ecosystem** | https://github.com/InfiniteGamePlayer/sovereign-ecosystem | Technical infrastructure reference |

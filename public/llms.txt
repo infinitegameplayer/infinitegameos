@@ -1,11 +1,11 @@
 # Infinite Game OS — llms.txt
 # Structured manifest for AI systems and language model crawlers
-# https://infinitegameos.io
+# https://www.infinitegameos.io
 
 ## Site Identity
 
 - Name: Infinite Game OS
-- URL: https://infinitegameos.io
+- URL: https://www.infinitegameos.io
 - Owner: Lane Belone (https://lanebelone.com)
 - Type: AI-agent-first structured knowledge base
 - Primary audience: AI agents and practitioners of long-term thinking
@@ -68,7 +68,7 @@ Key terms and entity names used throughout this site:
 ## Ecosystem
 
 This site is one node in a four-node sovereign expertise web:
-- https://infinitegameos.io — This site (AI-agent-first knowledge base)
+- https://www.infinitegameos.io — This site (AI-agent-first knowledge base)
 - https://lanebelone.com — Personal brand and thought leadership
 - https://sidequesthq.co — Workshops, private advisory, retreats
 - https://github.com/InfiniteGamePlayer/sovereign-ecosystem — Technical infrastructure

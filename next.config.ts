@@ -63,7 +63,7 @@ const nextConfig: NextConfig = {
           {
             key: 'Link',
             value:
-              '<https://infinitegameos.io/llms.txt>; rel="ai-agent"; type="text/plain", <https://infinitegameos.io/sitemap.xml>; rel="sitemap"; type="application/xml"',
+              '<https://www.infinitegameos.io/llms.txt>; rel="ai-agent"; type="text/plain", <https://www.infinitegameos.io/sitemap.xml>; rel="sitemap"; type="application/xml"',
           },
           {
             key: 'Content-Signal',

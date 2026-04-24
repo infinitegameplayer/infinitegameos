@@ -1,7 +1,7 @@
 # Infinite Game OS — Full Content Index
 # Deep LLM reference for comprehensive site content
 # Updated: 2026-04-23 (Playgrounds of Exploration and Infinite Playlist concept pages added, Infinite Game singular sweep)
-# https://infinitegameos.io
+# https://www.infinitegameos.io
 
 This file contains structured summaries of each page for AI systems that require
 deeper content access. See llms.txt for the lightweight manifest.

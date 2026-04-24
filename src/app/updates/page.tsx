@@ -13,12 +13,12 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://infinitegameos.io' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.infinitegameos.io' },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Updates',
-      item: 'https://infinitegameos.io/updates',
+      item: 'https://www.infinitegameos.io/updates',
     },
   ],
 }

@@ -36,18 +36,18 @@ export default async function UpdatePage({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://infinitegameos.io' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.infinitegameos.io' },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Updates',
-        item: 'https://infinitegameos.io/updates',
+        item: 'https://www.infinitegameos.io/updates',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: update.title,
-        item: `https://infinitegameos.io/updates/${update.slug}`,
+        item: `https://www.infinitegameos.io/updates/${update.slug}`,
       },
     ],
   }

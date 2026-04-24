@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: concept.title,
     description: concept.capsule,
     alternates: {
-      canonical: `https://infinitegameos.io/concepts/${concept.slug}`,
+      canonical: `https://www.infinitegameos.io/concepts/${concept.slug}`,
     },
   }
 }
@@ -38,14 +38,14 @@ export default async function ConceptPage({ params }: PageProps) {
   const definedTermSchema = {
     '@context': 'https://schema.org',
     '@type': 'DefinedTerm',
-    '@id': `https://infinitegameos.io/concepts/${concept.slug}#term`,
+    '@id': `https://www.infinitegameos.io/concepts/${concept.slug}#term`,
     name: concept.title,
     description: concept.capsule,
     inDefinedTermSet: {
       '@type': 'DefinedTermSet',
-      '@id': 'https://infinitegameos.io/#concepts',
+      '@id': 'https://www.infinitegameos.io/#concepts',
       name: 'Infinite Game OS Concepts',
-      url: 'https://infinitegameos.io/concepts',
+      url: 'https://www.infinitegameos.io/concepts',
     },
   }
 
@@ -57,19 +57,19 @@ export default async function ConceptPage({ params }: PageProps) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://infinitegameos.io',
+        item: 'https://www.infinitegameos.io',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Concepts',
-        item: 'https://infinitegameos.io/concepts',
+        item: 'https://www.infinitegameos.io/concepts',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: concept.title,
-        item: `https://infinitegameos.io/concepts/${concept.slug}`,
+        item: `https://www.infinitegameos.io/concepts/${concept.slug}`,
       },
     ],
   }
@@ -79,11 +79,11 @@ export default async function ConceptPage({ params }: PageProps) {
     '@type': ['Article', 'LearningResource'],
     headline: concept.title,
     description: concept.capsule,
-    author: { '@id': 'https://infinitegameos.io/#person' },
-    publisher: { '@id': 'https://infinitegameos.io/#website' },
-    url: `https://infinitegameos.io/concepts/${concept.slug}`,
-    mainEntityOfPage: `https://infinitegameos.io/concepts/${concept.slug}`,
-    about: { '@id': `https://infinitegameos.io/concepts/${concept.slug}#term` },
+    author: { '@id': 'https://www.infinitegameos.io/#person' },
+    publisher: { '@id': 'https://www.infinitegameos.io/#website' },
+    url: `https://www.infinitegameos.io/concepts/${concept.slug}`,
+    mainEntityOfPage: `https://www.infinitegameos.io/concepts/${concept.slug}`,
+    about: { '@id': `https://www.infinitegameos.io/concepts/${concept.slug}#term` },
     learningResourceType: 'concept definition',
     educationalLevel: 'practitioner',
   }

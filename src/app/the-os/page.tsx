@@ -51,10 +51,10 @@ const articleSchema = {
   headline: 'What is Infinite Game OS?',
   description:
     'Infinite Game OS is a structured operating system for practitioners of long-term thinking, sovereign life design and agentic systems. Explore the philosophy.',
-  author: { '@id': 'https://infinitegameos.io/#person' },
-  publisher: { '@id': 'https://infinitegameos.io/#website' },
-  url: 'https://infinitegameos.io/the-os',
-  mainEntityOfPage: 'https://infinitegameos.io/the-os',
+  author: { '@id': 'https://www.infinitegameos.io/#person' },
+  publisher: { '@id': 'https://www.infinitegameos.io/#website' },
+  url: 'https://www.infinitegameos.io/the-os',
+  mainEntityOfPage: 'https://www.infinitegameos.io/the-os',
   datePublished: '2026-04-14',
   dateModified: '2026-04-19',
 }
@@ -63,8 +63,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://infinitegameos.io' },
-    { '@type': 'ListItem', position: 2, name: 'The OS', item: 'https://infinitegameos.io/the-os' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.infinitegameos.io' },
+    { '@type': 'ListItem', position: 2, name: 'The OS', item: 'https://www.infinitegameos.io/the-os' },
   ],
 }
 

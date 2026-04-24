@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: 'Infinite Game OS',
     description:
       'A structured knowledge base for practitioners of Infinite Game philosophy, sovereign life design and agentic systems.',
-    url: 'https://infinitegameos.io',
+    url: 'https://www.infinitegameos.io',
   },
   twitter: {
     card: 'summary_large_image',
@@ -59,13 +59,13 @@ export const metadata: Metadata = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  '@id': 'https://infinitegameos.io/#website',
+  '@id': 'https://www.infinitegameos.io/#website',
   name: 'Infinite Game OS',
-  url: 'https://infinitegameos.io',
+  url: 'https://www.infinitegameos.io',
   description:
     'A structured knowledge base for Infinite Game philosophy, agentic systems, and sovereign life design. AI-agent-first architecture.',
   author: {
-    '@id': 'https://infinitegameos.io/#person',
+    '@id': 'https://www.infinitegameos.io/#person',
   },
   sameAs: [
     'https://lanebelone.com',
@@ -77,7 +77,7 @@ const websiteSchema = {
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  '@id': 'https://infinitegameos.io/#person',
+  '@id': 'https://www.infinitegameos.io/#person',
   name: 'Lane Belone',
   url: 'https://lanebelone.com',
   jobTitle: 'Infinite Game practitioner, agentic systems architect, sovereign life design coach',
