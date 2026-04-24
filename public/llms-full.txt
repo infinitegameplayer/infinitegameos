@@ -152,17 +152,19 @@ carries a DefinedTermSet schema listing all defined concepts.
 
 ---
 
-## Contribution Flywheel (/concepts/contribution-flywheel)
+## Creator Flywheel (/concepts/creator-flywheel)
 
-Live a beautiful life by being yourself. Let the aliveness moving through you animate
-your creativity and produce something meaningful that brings value to others. Follow
-your curiosities and excitements. Architect enough structure around that, and you get
-paid to be yourself. Not a business model. An operating system built on aliveness.
+Be yourself. Let what is alive in you animate your creativity. Build, write, speak,
+advise. Whatever form your creative expression takes, bring it fully. Share it. People
+who resonate find their way to you not because you marketed at them but because what
+you created was real. Getting paid to be yourself, not performing a version of it.
 
 Five stages: live the life, share the breadcrumbs, activate others, return home, go
-deeper. Each stage feeds the next. The life itself is the source material. A funnel
-converts attention into revenue. The flywheel converts aliveness into contribution and
-lets revenue follow. Related: Ideal Month (engine spec), Four-Container Journey
+deeper. Each stage feeds the next. The life itself is the source material. The flywheel
+is form-agnostic: some creators write, some build, some speak, advise, teach, perform,
+design. A funnel converts attention into revenue. The Creator Flywheel converts
+aliveness into contribution and lets revenue follow. The flywheel is a durability play
+as much as a growth play. Related: Ideal Month (engine spec), Four-Container Journey
 (activation model), The Pioneer (who enters the flywheel).
 
 ---
@@ -223,7 +225,7 @@ Founding question: "If there were no limitations or consequences, what would my 
 average day look like?" The Ideal Month is a congruence test. Every decision, project,
 collaboration and opportunity gets filtered through: does this move me toward or away
 from this life? If it does not belong in this month, it does not belong in this
-kingdom. Related: Contribution Flywheel, Joyful Sovereignty, The Pioneer.
+kingdom. Related: Creator Flywheel, Joyful Sovereignty, The Pioneer.
 
 ---
 
@@ -236,7 +238,7 @@ a complete experience. Enough structure to allow the structure to be transcended
 
 A Pioneer may enter at any stage. Some begin with advisory. Some experience a retreat
 and return years later for workshops. Each container welcomes a different aspect of
-expression. Related: The Pioneer, Contribution Flywheel, Conditioned vs Authentic
+expression. Related: The Pioneer, Creator Flywheel, Conditioned vs Authentic
 Identity.
 
 ---

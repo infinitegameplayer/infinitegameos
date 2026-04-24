@@ -23,34 +23,35 @@ export interface Concept {
 
 export const concepts: Concept[] = [
   {
-    slug: 'contribution-flywheel',
-    title: 'The Contribution Flywheel',
+    slug: 'creator-flywheel',
+    title: 'The Creator Flywheel',
     label: 'Framework',
     capsule:
-      'Live a beautiful life by being yourself. Let the aliveness moving through you animate your creativity and produce something meaningful that brings value to others. Follow your curiosities and excitements. Architect enough structure around that, and you get paid to be yourself. Not a business model. An operating system built on aliveness.',
+      'Be yourself. Let what is alive in you animate your creativity. Build, write, speak, advise. Whatever form your creative expression takes, bring it fully. Share it. People who resonate find their way to you not because you marketed at them but because what you created was real. This is the creator economy at its highest expression: getting paid to be yourself, not performing a version of it.',
     subtitle:
-      'The engine that powers a life where contribution and aliveness are the same thing.',
+      'The operating engine for any creator who builds from aliveness, contributes from genuine expression and lets the business follow.',
     sections: [
       {
         heading: 'How the flywheel works',
         paragraphs: [
-          'The Contribution Flywheel has five stages: live the life, share the breadcrumbs, activate others, return home, go deeper. Each stage feeds the next. The life itself is the source material.',
-          'Most business models start with the market and work backward to the life. The flywheel inverts that. It starts with aliveness and lets contribution emerge from what is already real.',
-          'The "breadcrumbs" are not content marketing. They are transmissions. Articles, voice notes, conversations, sessions, social signals. Signals from core identity to core identity. The people who resonate are the ones who were already looking for this frequency.',
+          'The Creator Flywheel has five stages: live the life, share the breadcrumbs, activate others, return home, go deeper. Each stage feeds the next. The life itself is the source material.',
+          'The creator economy made one thing possible that previous economies did not: anyone who builds from authentic expression has a path to getting paid for exactly that. Not a watered-down version. Not a market-optimized version. The original thing, in the creator\'s own voice, on their own terms.',
+          'The breadcrumbs are not content strategy. They are transmissions. Articles, builds, recordings, sessions, social signals. Whatever form the creator\'s expression takes. People who are already looking for this frequency recognize it.',
+        ],
+      },
+      {
+        heading: 'Universal, not fixed',
+        paragraphs: [
+          'The Creator Flywheel does not prescribe a single creative form. Some creators write. Some build. Some speak, advise, teach, perform, design. The flywheel is form-agnostic. What matters is that the output comes from genuine creative expression, not from copying what worked for someone else.',
+          'This is the distinction the creator economy keeps missing. Most advice tells you to optimize the form: post this format, follow this cadence, use this hook. The flywheel inverts that. Start with what is actually alive in you. Let the form emerge from that. The form that comes from aliveness has a quality that cannot be manufactured.',
         ],
       },
       {
         heading: 'Why it is not a funnel',
         paragraphs: [
-          'A funnel converts attention into revenue. The flywheel converts aliveness into contribution and lets revenue follow. The direction matters. When the life drives the business, the business never runs dry because the source is inexhaustible.',
-          'The "activate others" stage is where the Pioneer enters. They borrow the radiance, get activated, take action. The transformation is real because the source is real. Lane returns home, integrates, goes deeper. The flywheel completes one loop and starts the next at a higher level of coherence.',
-        ],
-      },
-      {
-        heading: 'The structural principle',
-        paragraphs: [
-          'The flywheel requires architecture. The Ideal Month is the engine spec. The Four-Container Journey is how activation deepens. Without structure, aliveness stays personal. With structure, it becomes contribution.',
-          'Follow the flywheel and architect enough structure around your aliveness, and you will never have to work a day in your life. That is not a slogan. It is the operating principle.',
+          'A funnel converts attention into revenue. The Creator Flywheel converts aliveness into contribution and lets revenue follow. The direction matters.',
+          'When the life drives the expression, the expression never runs dry because the source is inexhaustible. When market positioning drives the expression, you are always one algorithm change away from starting over. The flywheel is a durability play as much as a growth play.',
+          'Activate others, return home, go deeper. The return and the deepening are not breaks in the flywheel. They are what keeps it spinning. The creator who never returns runs out of things to transmit. The creator who keeps going deeper always has more.',
         ],
       },
     ],
@@ -208,9 +209,9 @@ export const concepts: Concept[] = [
         ],
       },
     ],
-    relatedSlugs: ['contribution-flywheel', 'joyful-sovereignty', 'the-pioneer'],
+    relatedSlugs: ['creator-flywheel', 'joyful-sovereignty', 'the-pioneer'],
     ctaLinks: [
-      { href: '/concepts/contribution-flywheel', label: 'Contribution Flywheel', variant: 'accent' },
+      { href: '/concepts/creator-flywheel', label: 'Creator Flywheel', variant: 'accent' },
       { href: '/sovereignty', label: 'Sovereignty', variant: 'outline' },
     ],
   },
@@ -259,7 +260,7 @@ export const concepts: Concept[] = [
         ],
       },
     ],
-    relatedSlugs: ['the-pioneer', 'contribution-flywheel', 'conditioned-vs-authentic-identity'],
+    relatedSlugs: ['the-pioneer', 'creator-flywheel', 'conditioned-vs-authentic-identity'],
     ctaLinks: [
       { href: 'https://sidequesthq.co/workshop', label: 'Workshop', variant: 'accent' },
       { href: '/concepts/the-pioneer', label: 'The Pioneer', variant: 'outline' },

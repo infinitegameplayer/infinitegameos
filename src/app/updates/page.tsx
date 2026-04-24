@@ -4,7 +4,7 @@ import SectionReveal from '@/components/SectionReveal'
 import { getAllUpdates } from '@/lib/updates'
 
 export const metadata: Metadata = {
-  title: 'Updates — From Inside the Practice',
+  title: 'Updates: From Inside the Practice',
   description:
     'Regular dispatches from Lane Belone as the Infinite Game OS evolves. What is being built, learned, and applied.',
 }

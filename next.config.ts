@@ -10,6 +10,15 @@ const nextConfig: NextConfig = {
   images: {
     formats: ['image/webp'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/concepts/contribution-flywheel',
+        destination: '/concepts/creator-flywheel',
+        permanent: true,
+      },
+    ]
+  },
   async rewrites() {
     return {
       beforeFiles: [
