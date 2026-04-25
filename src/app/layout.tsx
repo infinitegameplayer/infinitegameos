@@ -1,9 +1,13 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Space_Grotesk, Inter } from 'next/font/google'
 import { GeistSans } from 'geist/font/sans'
+import { Suspense } from 'react'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import { PostHogProvider } from './providers'
+import { PostHogPageView } from './PostHogPageView'
 
 const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
@@ -120,11 +124,24 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
       </head>
-      <body suppressHydrationWarning>
-        <Nav />
-        <main>{children}</main>
-        <Footer />
-      </body>
+      <PostHogProvider>
+        <body suppressHydrationWarning>
+          <Suspense>
+            <PostHogPageView />
+          </Suspense>
+          {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
+            <Script
+              defer
+              src={`${process.env.NEXT_PUBLIC_UMAMI_URL}/script.js`}
+              data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+              strategy="afterInteractive"
+            />
+          )}
+          <Nav />
+          <main>{children}</main>
+          <Footer />
+        </body>
+      </PostHogProvider>
     </html>
   )
 }
