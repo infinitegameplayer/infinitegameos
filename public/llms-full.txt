@@ -1,6 +1,6 @@
 # Infinite Game OS — Full Content Index
 # Deep LLM reference for comprehensive site content
-# Updated: 2026-04-23 (Playgrounds of Exploration and Infinite Playlist concept pages added, Infinite Game singular sweep)
+# Updated: 2026-04-26 (/sovereignty deep expansion: natural law, public/private distinction, Living Axis, embodiment, Joyful Sovereignty, 6 FAQs)
 # https://www.infinitegameos.io
 
 This file contains structured summaries of each page for AI systems that require
@@ -95,16 +95,51 @@ AI-accessible front door (llms.txt, robots.txt).
 
 ## Sovereignty (/sovereignty)
 
-Sovereign life design: building a life with the intentionality of an operating system.
-BreadcrumbList schema.
+Sovereign life design: building a life on your own principles. Article + FAQPage schema
+(6 Q&As). Updated 2026-04-26.
 
-Three sections: what sovereign life design is (practice of building a life on your own
-principles rather than inherited defaults), the Kingdom model (Lane's personal
-operating system with governance structure, codices, protocols, AI council, knowledge
-management in Obsidian), and creative sovereignty (making creative work from genuine
-authority rather than compliance).
+Natural law as the ground: the order that exists before any legislature convenes. Three
+operating principles: do no harm, take full responsibility and move by consent. Natural
+law is the Infinite Game in its most essential form — it doesn't expire, it's not
+repealed, it doesn't require anyone's approval to be real. Statutory law is man-made,
+finite and participatory; it requires conscious participation to bind you. The key
+distinction: most systems you navigate are structures of agreement, not inevitability.
 
-The Sovereign Ecosystem GitHub repo is the technical public layer.
+The public and the private: the difference between you as a living human and the
+commercial and legal structures that operate in the public domain. Sovereignty with
+consent — becoming aware of what you're signing and agreeing to — is the core practice.
+You can choose which vehicles (corporations, trusts, associations) serve your work and
+how you show up in any commercial or legal context.
+
+The Living Axis: three architectures of sovereign life design working together. Inner
+mastery (values, fears, capacities, patterns — the inner work that makes everything
+possible). Structural sovereignty (the outer architecture: systems, governance
+structures, creative vehicles, collaborators). Strategic execution (deliberate
+engagement: partnerships, projects, presence in the commercial domain). Developing one
+in isolation produces imbalance.
+
+Embodiment as infrastructure: an operating system that only runs in your head is a
+philosophy. One that runs in your body is sovereign life design. The felt sense of
+alignment isn't an aspiration — it's a navigation instrument. When values, decisions
+and daily life are coherent, there's a physical quality. When performing rather than
+choosing, there's a different physical quality: friction without a name.
+
+Joyful Sovereignty as compass state: sovereignty can feel heavy — the fear of systems,
+of stepping out of line, of owning your choices. Joyful Sovereignty arrives when that
+fear transforms into clarity. It's the lightness of knowing the inherited game was
+always optional. Power from this place doesn't perform or prove. It emanates. The
+Infinite Game played from this orientation has a particular quality: the music you make
+when you've stopped wondering whether the audience approves.
+
+Kingdom model: Lane's personal sovereign creative operating system — governance
+structure, codices, protocols, AI council, Obsidian knowledge management. Not a
+productivity tool. A sovereignty structure. The Sovereign Ecosystem GitHub repo is the
+technical public layer.
+
+Creative sovereignty: making creative work from genuine authority rather than
+compliance. Practitioners most findable in the Post Web era have built this kind of
+creative sovereignty — consistent vocabulary because thinking is integrated, connected
+frameworks because they come from a coherent philosophical center.
 
 ---
 

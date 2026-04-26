@@ -45,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.infinitegameos.io/sovereignty',
-      lastModified: new Date('2026-04-19T00:00:00Z'),
+      lastModified: new Date('2026-04-26T00:00:00Z'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },

@@ -38,6 +38,11 @@ Key terms and entity names used throughout this site:
 - Four-Container Journey
 - Playgrounds of Exploration
 - The Infinite Playlist
+- Natural law
+- Sovereignty with consent
+- The Living Axis
+- Embodiment as infrastructure
+- Living human vs commercial entity distinction
 - Creative leadership frameworks
 - Long-term thinking systems
 - Lane Belone
@@ -60,7 +65,7 @@ Key terms and entity names used throughout this site:
 - /the-os — What is Infinite Game OS? Philosophy anchor with FAQPage schema (6 Q&As)
 - /infinite-game — Core Infinite Game philosophy with FAQPage schema (4 Q&As), two-layer game structure, Lane's lived application
 - /agentic-systems — Full practitioner's guide: Post Web synthesis, four verbs of the web, GEO, Practitioner's Positioning Playbook
-- /sovereignty — Sovereign life design, Kingdom model (public layer), creative sovereignty
+- /sovereignty — Sovereign life design: natural law as ground (do no harm, full responsibility, consent), the public/private distinction, the Living Axis (inner mastery, structural sovereignty, strategic execution), embodiment as infrastructure, Joyful Sovereignty as compass state, Kingdom model, creative sovereignty, FAQPage schema (6 Q&As)
 - /playbooks — Frameworks and tools index, three-layer playbook architecture, four playbooks in development
 - /updates — Dispatches from inside the practice, Article + BreadcrumbList schema per post
 - /about — Lane Belone as practitioner, Person schema with knowsAbout and sameAs, ecosystem links
