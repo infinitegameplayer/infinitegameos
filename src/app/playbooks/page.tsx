@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
+import { igosUpcomingPlaybooks } from '@/lib/page-data'
 
 export const metadata: Metadata = {
   title: 'Playbooks and Frameworks',
@@ -36,32 +37,6 @@ const breadcrumbSchema = {
   ],
 }
 
-const upcomingPlaybooks = [
-  {
-    title: 'The Vocabulary System',
-    description:
-      'How to build a consistent vocabulary for your body of work. The framework behind GEO-ready expertise positioning.',
-    status: 'coming soon',
-  },
-  {
-    title: 'The Two-Layer Game Structure',
-    description:
-      'Designing finite games (side quests) that fund and support the Infinite Game. The architecture behind SideQuestHQ.',
-    status: 'coming soon',
-  },
-  {
-    title: 'The Sovereign Presence Audit',
-    description:
-      'A five-question audit for evaluating your current digital presence against Post Web standards. Is your expertise AI-agent-legible?',
-    status: 'coming soon',
-  },
-  {
-    title: 'The Four-Node Expertise Web',
-    description:
-      'How to build a cross-linked, multi-node expertise web that compounds across years. The architecture behind this OS.',
-    status: 'coming soon',
-  },
-]
 
 export default function PlaybooksPage() {
   return (
@@ -147,7 +122,7 @@ export default function PlaybooksPage() {
                 gap: '1.25rem',
               }}
             >
-              {upcomingPlaybooks.map((pb, i) => (
+              {igosUpcomingPlaybooks.map((pb, i) => (
                 <SectionReveal key={pb.title} delay={i * 50}>
                   <div className="card" style={{ opacity: 0.65 }}>
                     <div

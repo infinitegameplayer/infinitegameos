@@ -1,13 +1,34 @@
 // Content negotiation: markdown representations of site pages.
 // Used by the /markdown/[[...path]] route handler when AI agents
 // request Accept: text/markdown or text/plain.
+//
+// All generate functions derive from src/lib/page-data.ts.
+// page.tsx components import from the same source, eliminating drift.
 
 import { concepts, getConceptBySlug } from '@/data/concepts'
+import {
+  igosBio,
+  igosMods,
+  theOsFaqs,
+  infiniteGameFaqs,
+  igosExpertise,
+  igosEcosystemLinks,
+  igosUpcomingPlaybooks,
+} from './page-data'
 
 const SITE = 'https://www.infinitegameos.io'
+const SLP_HREF = 'https://sidequesthq.co/products/sovereign-life-playbook'
 
-const pages: Record<string, string> = {
-  '': `# Infinite Game OS
+function generateHomeMarkdown(): string {
+  const modList = igosMods
+    .map(m => `- **[${m.label}](${SITE}${m.href})** · ${m.description}`)
+    .join('\n')
+
+  const conceptList = concepts
+    .map(c => `- **[${c.title}](${SITE}/concepts/${c.slug})** (${c.label}) · ${c.capsule.split('.')[0]}.`)
+    .join('\n')
+
+  return `# Infinite Game OS
 
 > A structured knowledge base for practitioners of Infinite Game philosophy, agentic systems, and sovereign life design. Built AI-agent-first.
 
@@ -17,32 +38,33 @@ A structured knowledge base for practitioners of Infinite Game philosophy, agent
 
 ## The modules of the OS
 
-- **[The OS](${SITE}/the-os)** · The philosophy and architecture behind this operating system. Why it exists and what it runs on.
-- **[Infinite Game](${SITE}/infinite-game)** · The core philosophy. The game with no endpoint, no winner and no finish line. Applied to sovereign creative life.
-- **[Agentic Systems](${SITE}/agentic-systems)** · The Post Web and sovereign presence. How AI agents reshape who gets found, why structured expertise wins, and what practitioners build now.
-- **[Sovereignty](${SITE}/sovereignty)** · Sovereign life design. Building a life as an operating system. Kingdom model, creative sovereignty, long-horizon architecture.
-- **[Playbooks](${SITE}/playbooks)** · Practical frameworks for long-term thinking, sovereign systems and agentic life design.
-- **[Updates](${SITE}/updates)** · Regular dispatches as the OS evolves. What is being learned, built and applied.
+${modList}
 
 ## Concepts
 
 Core vocabulary for the Infinite Game practitioner:
 
-${concepts.map(c => `- **[${c.title}](${SITE}/concepts/${c.slug})** (${c.label}) · ${c.capsule.split('.')[0]}.`).join('\n')}
+${conceptList}
 
 [Browse all concepts](${SITE}/concepts)
 
 ## The practitioner
 
-Lane Belone is a thought doer. Former Green Beret, strategic advisor and sovereign systems builder operating from inside the practice. Infinite Game OS is not theory. It is architecture running live, documented in real time.
+${igosBio}
 
 [About Lane](${SITE}/about)
 
 ---
 *[Infinite Game OS](${SITE}) · Play a longer game.*
-`,
+`
+}
 
-  'the-os': `# What is Infinite Game OS?
+function generateTheOsMarkdown(): string {
+  const faqText = theOsFaqs
+    .map(f => `**${f.q}**\n${f.a}`)
+    .join('\n\n')
+
+  return `# What is Infinite Game OS?
 
 > Infinite Game OS is a structured operating system for practitioners of long-term thinking, sovereign life design and agentic systems.
 
@@ -76,45 +98,25 @@ Infinite Game OS is not a productivity system. It does not optimize output withi
 
 ## Common Questions
 
-**What is Infinite Game OS?**
-A structured knowledge base and operating system for practitioners who have chosen the Infinite Game. It provides the philosophy, frameworks and systems for sustaining that kind of life.
-
-**What is the Infinite Game?**
-James Carse introduced the concept in 1986: the game of existence itself. Lane Belone applies the concept to the sovereign human life: the creative practice, the operating system, the long-horizon work that compounds across decades. The Infinite Game has no endpoint, no scoreboard, no winner.
-
-**Who is Infinite Game OS for?**
-Practitioners: creators, founders, coaches, advisors and thinkers who have moved past short-term optimization and are building something that compounds over time.
-
-**How does this relate to agentic systems and the Post Web?**
-The Post Web is the technological expression of the Infinite Game. AI agents are dispatched by humans to find structured expertise and recommend it. Infinite Game OS is built AI-agent-first because practitioners who build structurally legible bodies of work will be found by those agents.
-
-**What is sovereign life design?**
-Building a life with the intentionality of an operating system. Rather than reacting to external structures, the sovereign practitioner defines their own governance, values, systems and creative cadence.
-
-**What is Generative Engine Optimization (GEO)?**
-The 2026 strategic layer on top of traditional SEO. Where SEO optimizes for search rankings, GEO optimizes for inclusion in AI-generated answers.
+${faqText}
 
 ---
 *[Infinite Game OS](${SITE}) · [The OS](${SITE}/the-os)*
-`,
+`
+}
 
-  'infinite-game': `# Infinite Game Philosophy
+function generateInfiniteGameMarkdown(): string {
+  const faqText = infiniteGameFaqs
+    .map(f => `**${f.q}**\n${f.a}`)
+    .join('\n\n')
+
+  return `# Infinite Game Philosophy
 
 > The Infinite Game is any endeavor played to keep playing, not to win. Explore the philosophy, why it matters, and how Lane Belone applies it to sovereign creative life.
 
 ## Common Questions
 
-**What is the Infinite Game?**
-James Carse introduced the concept in 1986: there is one Infinite Game, the game of existence itself. Simon Sinek adapted it for organizational leadership in 2019. Lane Belone applies it to the sovereign human life. The Infinite Game is played to keep playing. Life, creative practice, relationships and meaningful work are all expressions of it. They have no endpoint, no final score, no single winner. You are already in it. The only question is whether you are playing it or performing someone else's finite version of it.
-
-**What is a Finite Game?**
-A finite game has a fixed set of rules, agreed-upon players and a defined endpoint. Football is a finite game. A product launch is a finite game. Side quests are finite games nested within the Infinite Game. Finite games are real and useful. The problem is mistaking the Infinite Game for a finite one and playing life with finite-game strategy.
-
-**How does Lane Belone apply the Infinite Game?**
-Lane applies the Infinite Game as a lived architecture. His sovereign operating system (the Kingdom) is the structure for sustaining a long-horizon creative life. [SideQuestHQ](https://sidequesthq.co) houses the finite games (workshops, advisory engagements) nested within the Infinite Game. The two are designed to coexist.
-
-**What is the relationship between Infinite Game and Post Web?**
-The Post Web is the technological expression of the Infinite Game. The Attention Economy ran on finite game logic: maximize extraction, win the quarter. The Intention Economy runs on infinite game logic: build trust that compounds, minimize extraction, align with the user intent.
+${faqText}
 
 ## Related
 
@@ -124,9 +126,11 @@ The Post Web is the technological expression of the Infinite Game. The Attention
 
 ---
 *[Infinite Game OS](${SITE}) · [Infinite Game](${SITE}/infinite-game)*
-`,
+`
+}
 
-  'agentic-systems': `# The Post Web and the Infinite Game: A Practitioner's Guide
+function generateAgenticSystemsMarkdown(): string {
+  return `# The Post Web and the Infinite Game: A Practitioner's Guide
 
 > The internet is shifting from an Attention Economy to an Intention Economy. AI agents now generate 3.6x more web requests than Googlebot. This is what that means for practitioners.
 
@@ -134,7 +138,7 @@ By Lane Belone.
 
 The Post Web is the era where AI agents mediate between human intent and digital content. The Attention Economy rewarded whoever captured the most eyeballs. The Intention Economy rewards whoever provides the most useful, structured, trustworthy answer.
 
-For practitioners of the Infinite Game, this is structural advantage. Bodies of work built with consistent vocabulary, deep linking, and genuine expertise become the sources that AI agents surface.
+For practitioners of the Infinite Game, this is structural advantage. Bodies of work built with consistent vocabulary, deep linking and genuine expertise become the sources that AI agents surface.
 
 ## Key concepts
 
@@ -150,9 +154,11 @@ For practitioners of the Infinite Game, this is structural advantage. Bodies of 
 
 ---
 *[Infinite Game OS](${SITE}) · [Agentic Systems](${SITE}/agentic-systems)*
-`,
+`
+}
 
-  sovereignty: `# Sovereign Life Design
+function generateSovereigntyMarkdown(): string {
+  return `# Sovereign Life Design
 
 > Sovereign life design is building a life with the intentionality of an operating system. Explore the philosophy, the Kingdom model, and creative sovereignty.
 
@@ -175,9 +181,15 @@ Sovereign life design starts from one premise: you can architect a life with the
 
 ---
 *[Infinite Game OS](${SITE}) · [Sovereignty](${SITE}/sovereignty)*
-`,
+`
+}
 
-  playbooks: `# Playbooks and Frameworks
+function generatePlaybooksMarkdown(): string {
+  const upcomingList = igosUpcomingPlaybooks
+    .map(pb => `- **${pb.title}** · ${pb.description}`)
+    .join('\n')
+
+  return `# Playbooks and Frameworks
 
 > Infinite Game playbooks give you enough structure to improvise freely. Practical frameworks for sovereign life design, long-term thinking and agentic systems.
 
@@ -185,14 +197,11 @@ A playbook in this context is structure for improvisation. Enough of a foundatio
 
 ## Available
 
-- **[The Sovereign Life Playbook](https://sidequesthq.co/products/sovereign-life-playbook)** · A framework for peeling away the inherited game and designing what's actually yours. Available now. $37.
+- **[The Sovereign Life Playbook](${SLP_HREF})** · A framework for peeling away the inherited game and designing what's actually yours. Available now.
 
 ## Coming Soon
 
-- **The Vocabulary System** · How to build a consistent vocabulary for your body of work. The framework behind GEO-ready expertise positioning.
-- **The Two-Layer Game Structure** · Designing finite games (side quests) that fund and support the Infinite Game. The architecture behind SideQuestHQ.
-- **The Sovereign Presence Audit** · A five-question audit for evaluating your current digital presence against Post Web standards. Is your expertise AI-agent-legible?
-- **The Four-Node Expertise Web** · How to build a cross-linked, multi-node expertise web that compounds across years. The architecture behind this OS.
+${upcomingList}
 
 ## Related
 
@@ -201,31 +210,30 @@ A playbook in this context is structure for improvisation. Enough of a foundatio
 
 ---
 *[Infinite Game OS](${SITE}) · [Playbooks](${SITE}/playbooks)*
-`,
+`
+}
 
-  about: `# About Lane Belone
+function generateAboutMarkdown(): string {
+  const expertiseList = igosExpertise.map(e => `- ${e}`).join('\n')
+  const ecosystemList = igosEcosystemLinks
+    .map(l => `- **[${l.label}](${l.href})** · ${l.description}`)
+    .join('\n')
+
+  return `# About Lane Belone
 
 > Lane Belone works at the intersection of Infinite Game philosophy, sovereign creative operating systems, and agentic architecture. He builds from inside the practice.
 
-Lane Belone is a thought doer. Former Green Beret, strategic advisor and sovereign systems builder operating from inside the practice. Infinite Game OS is not theory. It is architecture running live, documented in real time.
+${igosBio}
 
 Lane Belone works at the intersection of Infinite Game philosophy, sovereign creative operating systems and agentic architecture. He writes from inside the practice, documenting what it looks like to build sovereign presence in a Post Web environment.
 
 ## Expertise
 
-- Infinite Game philosophy
-- Sovereign creative operating systems
-- Agentic systems and architecture
-- Post Web and Generative Engine Optimization
-- Sovereign life design
-- Long-term thinking frameworks
-- Creative leadership
+${expertiseList}
 
 ## Ecosystem
 
-- **[Lane Belone](https://lanebelone.com)** · The practitioner behind this OS. Philosophy, essays and the personal body of work.
-- **[SideQuestHQ](https://sidequesthq.co)** · Workshops, private advisory and retreats. The finite games nested in the infinite.
-- **[Sovereign Ecosystem](https://github.com/InfiniteGamePlayer/sovereign-ecosystem)** · The technical infrastructure. Agentic architecture, Kingdom scripts and sovereign OS architecture on GitHub.
+${ecosystemList}
 
 ## Links
 
@@ -236,23 +244,23 @@ Lane Belone works at the intersection of Infinite Game philosophy, sovereign cre
 
 ---
 *[Infinite Game OS](${SITE}) · [About](${SITE}/about)*
-`,
+`
+}
 
-  concepts: `# Concepts · Infinite Game OS
+function generateConceptsIndexMarkdown(): string {
+  const conceptList = concepts
+    .map(c => `## [${c.title}](${SITE}/concepts/${c.slug})\n\n**${c.label}**\n\n${c.capsule}\n`)
+    .join('\n')
+
+  return `# Concepts · Infinite Game OS
 
 > Core vocabulary for the Infinite Game practitioner. Frameworks, archetypes, philosophies and practices.
 
-${concepts.map(c => `## [${c.title}](${SITE}/concepts/${c.slug})
-
-**${c.label}**
-
-${c.capsule}
-
-`).join('')}
+${conceptList}
 
 ---
 *[Infinite Game OS](${SITE}) · [Concepts](${SITE}/concepts)*
-`,
+`
 }
 
 function generateConceptMarkdown(slug: string): string | null {
@@ -291,10 +299,17 @@ ${related}
 }
 
 export function getMarkdownForPath(path: string): string | null {
-  // Check static pages first
-  if (path in pages) return pages[path]
+  switch (path) {
+    case '': return generateHomeMarkdown()
+    case 'the-os': return generateTheOsMarkdown()
+    case 'infinite-game': return generateInfiniteGameMarkdown()
+    case 'agentic-systems': return generateAgenticSystemsMarkdown()
+    case 'sovereignty': return generateSovereigntyMarkdown()
+    case 'playbooks': return generatePlaybooksMarkdown()
+    case 'about': return generateAboutMarkdown()
+    case 'concepts': return generateConceptsIndexMarkdown()
+  }
 
-  // Check dynamic concept pages
   if (path.startsWith('concepts/')) {
     const slug = path.replace('concepts/', '')
     return generateConceptMarkdown(slug)
@@ -305,7 +320,14 @@ export function getMarkdownForPath(path: string): string | null {
 
 export function getAvailablePaths(): string[] {
   return [
-    ...Object.keys(pages),
+    '',
+    'the-os',
+    'infinite-game',
+    'agentic-systems',
+    'sovereignty',
+    'playbooks',
+    'about',
+    'concepts',
     ...concepts.map(c => `concepts/${c.slug}`),
   ]
 }

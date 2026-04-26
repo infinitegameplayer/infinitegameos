@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
+import { igosExpertise, igosEcosystemLinks } from '@/lib/page-data'
 
 export const metadata: Metadata = {
   title: 'About Lane Belone',
@@ -18,15 +19,7 @@ const personSchema = {
     'Infinite Game practitioner, agentic systems architect, sovereign life design coach',
   description:
     'Lane Belone works at the intersection of Infinite Game philosophy, sovereign creative operating systems, and agentic architecture. He writes from inside the practice, documenting what it looks like to build sovereign presence in a Post Web environment.',
-  knowsAbout: [
-    'Infinite Game philosophy',
-    'Sovereign creative operating systems',
-    'Agentic systems and architecture',
-    'Post Web and Generative Engine Optimization',
-    'Sovereign life design',
-    'Long-term thinking frameworks',
-    'Creative leadership',
-  ],
+  knowsAbout: igosExpertise,
   sameAs: [
     'https://lanebelone.com',
     'https://sidequesthq.co',
@@ -61,23 +54,6 @@ const breadcrumbSchema = {
   ],
 }
 
-const ecosystemLinks = [
-  {
-    label: 'Lane Belone',
-    description: 'The practitioner behind this OS. Philosophy, essays, and the personal body of work.',
-    href: 'https://lanebelone.com',
-  },
-  {
-    label: 'SideQuestHQ',
-    description: 'Workshops, private advisory, and retreats. The finite games nested in the infinite.',
-    href: 'https://sidequesthq.co',
-  },
-  {
-    label: 'Sovereign Ecosystem',
-    description: 'The technical infrastructure. Agentic architecture, Kingdom scripts, and sovereign OS architecture on GitHub.',
-    href: 'https://github.com/InfiniteGamePlayer/sovereign-ecosystem',
-  },
-]
 
 export default function AboutPage() {
   return (
@@ -174,7 +150,7 @@ export default function AboutPage() {
                     gap: '0.6rem',
                   }}
                 >
-                  {personSchema.knowsAbout.map((area) => (
+                  {igosExpertise.map((area) => (
                     <div
                       key={area}
                       style={{
@@ -220,7 +196,7 @@ export default function AboutPage() {
                   gap: '1.25rem',
                 }}
               >
-                {ecosystemLinks.map((link) => (
+                {igosEcosystemLinks.map((link) => (
                   <a
                     key={link.href}
                     href={link.href}

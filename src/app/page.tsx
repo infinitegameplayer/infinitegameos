@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
+import { igosBio, igosMods } from '@/lib/page-data'
 
 export const metadata: Metadata = {
   title: 'Infinite Game OS | Play a longer game.',
@@ -12,15 +13,6 @@ const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.infinitegameos.io' }],
 }
-
-const modules = [
-  { href: '/the-os', label: 'The OS', title: 'What is Infinite Game OS?', description: 'The philosophy and architecture behind this operating system. Why it exists and what it runs on.' },
-  { href: '/infinite-game', label: 'Infinite Game', title: 'The core philosophy', description: 'The game with no endpoint, no winner, and no finish line. Applied to sovereign creative life.' },
-  { href: '/agentic-systems', label: 'Agentic Systems', title: 'The Post Web and sovereign presence', description: 'How AI agents reshape who gets found, why structured expertise wins, and what practitioners build now.' },
-  { href: '/sovereignty', label: 'Sovereignty', title: 'Sovereign life design', description: 'Building a life as an operating system. Kingdom model, creative sovereignty, long-horizon architecture.' },
-  { href: '/playbooks', label: 'Playbooks', title: 'Frameworks and tools', description: 'Practical frameworks for long-term thinking, sovereign systems, and agentic life design.' },
-  { href: '/updates', label: 'Updates', title: 'From inside the practice', description: 'Regular dispatches as the OS evolves. What is being learned, built, and applied.' },
-]
 
 export default function HomePage() {
   return (
@@ -44,7 +36,7 @@ export default function HomePage() {
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', marginBottom: '3rem', maxWidth: '40ch' }}>The modules of the OS</h2>
         </SectionReveal>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.25rem' }}>
-          {modules.map((mod, i) => (
+          {igosMods.map((mod, i) => (
             <SectionReveal key={mod.href} delay={i * 60}>
               <Link href={mod.href} style={{ display: 'block' }}>
                 <article className="card">
@@ -62,7 +54,7 @@ export default function HomePage() {
           <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '2rem' }}>
             <div style={{ maxWidth: '52ch' }}>
               <p className="label" style={{ marginBottom: '0.75rem' }}>The practitioner</p>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'rgba(226, 232, 240, 0.75)', lineHeight: 1.7 }}>Lane Belone is a thought doer. Former Green Beret, strategic advisor and sovereign systems builder operating from inside the practice. Infinite Game OS is not theory. It is architecture running live, documented in real time.</p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'rgba(226, 232, 240, 0.75)', lineHeight: 1.7 }}>{igosBio}</p>
             </div>
             <Link href="/about" className="btn-outline">About Lane</Link>
           </div>

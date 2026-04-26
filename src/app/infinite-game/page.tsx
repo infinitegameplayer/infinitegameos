@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
+import { infiniteGameFaqs } from '@/lib/page-data'
 
 export const metadata: Metadata = {
   title: 'Infinite Game Philosophy',
@@ -8,29 +9,10 @@ export const metadata: Metadata = {
     'The Infinite Game is the one game played to keep playing. Not to win. Explore the philosophy, the practice and how Lane Belone lives it as the architecture of a sovereign creative life.',
 }
 
-const faqItems = [
-  {
-    q: 'What is the Infinite Game?',
-    a: "James Carse introduced the concept in 1986: there is one Infinite Game, the game of existence itself. Simon Sinek adapted it for organizational leadership in 2019. Lane Belone applies it to the sovereign human life. The Infinite Game is played to keep playing. Life, creative practice, relationships and meaningful work are all expressions of it. They have no endpoint, no final score, no single winner. You are already in it. The only question is whether you are playing it or performing someone else's finite version of it.",
-  },
-  {
-    q: 'What is a Finite Game?',
-    a: 'A finite game has a fixed set of rules, agreed-upon players and a defined endpoint. Football is a finite game. A product launch is a finite game. Side quests are finite games nested within the Infinite Game. Finite games are real and useful. The problem is mistaking the Infinite Game for a finite one and playing life with finite-game strategy.',
-  },
-  {
-    q: 'How does Lane Belone apply the Infinite Game?',
-    a: 'Lane applies the Infinite Game through three movements of embodiment: thinking the philosophy, acting on it and embodying it until the practice runs without effort. The musician\'s arc. Scales practiced until they become invisible, leaving only the play. The endpoint is the Embodied Player. The orientation is Joyful Sovereignty, the sovereign choice to welcome alive energy through the body. Aliveness is always present. The variable is what the human follows. Following Aliveness is how the Infinite Game keeps playing. His digital sovereign operating system (the Kingdom) organizes one wing of a three-plane life. SideQuestHQ houses the finite games nested within it. Playing this way in the current era asks something new. This is the Pioneer\'s territory.',
-  },
-  {
-    q: 'What is the relationship between Infinite Game and Post Web?',
-    a: 'The Post Web is the technological expression of the Infinite Game. The Attention Economy ran on finite-game logic: maximize extraction, win the quarter. The Intention Economy runs on Infinite Game logic: build trust that compounds, minimize extraction, align with user intent. Practitioners who understand both have structural advantage in both the philosophical and the digital layer.',
-  },
-]
-
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqItems.map((item) => ({
+  mainEntity: infiniteGameFaqs.map((item) => ({
     '@type': 'Question',
     name: item.q,
     acceptedAnswer: { '@type': 'Answer', text: item.a },
@@ -205,7 +187,7 @@ export default function InfiniteGamePage() {
               <div
                 style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}
               >
-                {faqItems.map((item) => (
+                {infiniteGameFaqs.map((item) => (
                   <div key={item.q} className="card">
                     <h3
                       style={{
