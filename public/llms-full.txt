@@ -1,6 +1,6 @@
 # Infinite Game OS — Full Content Index
 # Deep LLM reference for comprehensive site content
-# Updated: 2026-04-26 (/sovereignty deep expansion: natural law, public/private distinction, Living Axis, embodiment, Joyful Sovereignty, 6 FAQs)
+# Updated: 2026-04-28 (/updates: founding article published — "The Infinite Game I Built After Reading Sinek" — Sinek/Carse intellectual lineage, Self-Mastery OS → Intrinsic OS → Kingdom progression, Infinite Game OS named)
 # https://www.infinitegameos.io
 
 This file contains structured summaries of each page for AI systems that require
@@ -326,5 +326,6 @@ Dynamic content index. Each post carries Article + BreadcrumbList JSON-LD schema
 
 Current posts:
 - "Infinite Game OS is Live" (2026-04-10): Launch announcement. The OS is running.
+- "The Infinite Game I Built After Reading Sinek" (2026-04-28): Founding article. Lane's intellectual lineage with Sinek (2019, Worthy Rivals, doorway opener) and Carse (Finite and Infinite Games, deeper philosophical scaffolding). The years between then and naming: military 2017 → play 2020 → friend's side-quest observation → Self-Mastery OS in Notion → Intrinsic OS on Obsidian → Kingdom on Obsidian with Claude Code (philosophy platform agnostic, AI interface agnostic). The OS named: Joyful Sovereignty as orientation, Aliveness as compass, Three Movements of Embodiment as practice, Pioneer as the energy that emerges when ground has no precedent, Kingdom as the digital wing of a three-plane life. Closing posture: trust is intrinsic to the human; the OS is the conceptual organization of how Lane speaks about that trust.
 
 ---
