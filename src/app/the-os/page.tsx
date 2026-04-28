@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: 'What is Infinite Game OS?',
   description:
     'Infinite Game OS is a structured operating system for practitioners of long-term thinking, sovereign life design and agentic systems. Explore the philosophy.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Infinite Game OS',
+    locale: 'en_US',
+    title: 'What is Infinite Game OS?',
+    description:
+      'Infinite Game OS is a structured operating system for practitioners of long-term thinking, sovereign life design and agentic systems. Explore the philosophy.',
+    url: 'https://www.infinitegameos.io/the-os',
+  },
+  alternates: {
+    canonical: 'https://www.infinitegameos.io/the-os',
+  },
 }
 
 const faqSchema = {

@@ -6,6 +6,17 @@ import { igosBio, igosMods } from '@/lib/page-data'
 export const metadata: Metadata = {
   title: 'Infinite Game OS | Play a longer game.',
   description: 'A structured knowledge base for practitioners of Infinite Game philosophy, agentic systems, and sovereign life design. Built AI-agent-first.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Infinite Game OS',
+    locale: 'en_US',
+    title: 'Infinite Game OS | Play a longer game.',
+    description: 'A structured knowledge base for practitioners of Infinite Game philosophy, agentic systems, and sovereign life design. Built AI-agent-first.',
+    url: 'https://www.infinitegameos.io',
+  },
+  alternates: {
+    canonical: 'https://www.infinitegameos.io',
+  },
 }
 
 const breadcrumbSchema = {

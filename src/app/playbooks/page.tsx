@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: 'Playbooks and Frameworks',
   description:
     'Infinite Game playbooks give you enough structure to improvise freely. Practical frameworks for sovereign life design, long-term thinking and agentic systems.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Infinite Game OS',
+    locale: 'en_US',
+    title: 'Playbooks and Frameworks',
+    description:
+      'Infinite Game playbooks give you enough structure to improvise freely. Practical frameworks for sovereign life design, long-term thinking and agentic systems.',
+    url: 'https://www.infinitegameos.io/playbooks',
+  },
+  alternates: {
+    canonical: 'https://www.infinitegameos.io/playbooks',
+  },
 }
 
 const articleSchema = {

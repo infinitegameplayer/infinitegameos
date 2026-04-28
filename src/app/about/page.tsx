@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: 'About Lane Belone',
   description:
     'Lane Belone works at the intersection of Infinite Game philosophy, sovereign creative operating systems, and agentic architecture. He builds from inside the practice.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Infinite Game OS',
+    locale: 'en_US',
+    title: 'About Lane Belone',
+    description:
+      'Lane Belone works at the intersection of Infinite Game philosophy, sovereign creative operating systems, and agentic architecture. He builds from inside the practice.',
+    url: 'https://www.infinitegameos.io/about',
+  },
+  alternates: {
+    canonical: 'https://www.infinitegameos.io/about',
+  },
 }
 
 const personSchema = {

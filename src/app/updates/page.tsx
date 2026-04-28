@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: 'Updates: From Inside the Practice',
   description:
     'Regular dispatches from Lane Belone as the Infinite Game OS evolves. What is being built, learned, and applied.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Infinite Game OS',
+    locale: 'en_US',
+    title: 'Updates: From Inside the Practice',
+    description:
+      'Regular dispatches from Lane Belone as the Infinite Game OS evolves. What is being built, learned, and applied.',
+    url: 'https://www.infinitegameos.io/updates',
+  },
+  alternates: {
+    canonical: 'https://www.infinitegameos.io/updates',
+  },
 }
 
 const breadcrumbSchema = {
