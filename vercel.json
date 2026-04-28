@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "infinitegameos.io" }],
+      "destination": "https://www.infinitegameos.io/$1",
+      "permanent": true
+    }
+  ]
+}

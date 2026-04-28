@@ -78,6 +78,9 @@ const nextConfig: NextConfig = {
             key: 'Content-Signal',
             value: 'ai-train=yes, search=yes, ai-input=yes',
           },
+          // Vary: Accept — required because /markdown rewrite is content-negotiated.
+          // Prevents CDN cache poisoning between text/html and text/markdown responses.
+          { key: 'Vary', value: 'Accept' },
         ],
       },
     ]

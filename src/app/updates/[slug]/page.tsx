@@ -20,6 +20,9 @@ export async function generateMetadata({
   return {
     title: `${update.title} — Infinite Game OS`,
     description: update.summary,
+    alternates: {
+      canonical: `https://www.infinitegameos.io/updates/${slug}`,
+    },
   }
 }
 

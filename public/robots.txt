@@ -32,6 +32,9 @@ Allow: /
 User-agent: MistralAI-User
 Allow: /
 
+User-agent: MistralAI-Index
+Allow: /
+
 # AI search and citation bots — explicitly permitted
 User-agent: OAI-SearchBot
 Allow: /
@@ -65,6 +68,16 @@ Allow: /
 
 User-agent: GoogleAgent-Mariner
 Allow: /
+
+# Search engines — exclude /markdown/ (AI-agent surface) to prevent duplicate
+# indexing. Per Web Strategy Codex Conflict 8: per-bot Disallow only, never blanket.
+User-agent: Googlebot
+Allow: /
+Disallow: /markdown/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /markdown/
 
 # Blocked — low-value scraping
 User-agent: Bytespider
