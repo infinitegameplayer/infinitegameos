@@ -55,6 +55,20 @@ export default async function UpdatePage({
     ],
   }
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: update.title,
+    description: update.summary,
+    datePublished: `${update.date}T00:00:00Z`,
+    author: { '@id': 'https://www.infinitegameos.io/#person' },
+    publisher: { '@id': 'https://www.infinitegameos.io/#website' },
+    url: `https://www.infinitegameos.io/updates/${update.slug}`,
+    mainEntityOfPage: `https://www.infinitegameos.io/updates/${update.slug}`,
+    inLanguage: 'en-US',
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+  }
+
   const dateLabel = new Date(update.date + 'T00:00:00Z').toLocaleDateString('en-US', {
     month: 'long',
     year: 'numeric',
@@ -64,7 +78,7 @@ export default async function UpdatePage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, articleSchema]) }}
       />
 
       <article style={{ paddingTop: '7rem' }}>

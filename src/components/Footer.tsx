@@ -210,6 +210,15 @@ export default function Footer() {
             >
               Lane Belone
             </a>
+            . Concepts and articles licensed{' '}
+            <a
+              href="https://creativecommons.org/licenses/by/4.0/"
+              target="_blank"
+              rel="license noopener noreferrer"
+              style={{ color: 'rgba(226, 232, 240, 0.5)', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}
+            >
+              CC BY 4.0
+            </a>
             .
           </p>
           <p

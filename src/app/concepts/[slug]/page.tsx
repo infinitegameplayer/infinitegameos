@@ -86,6 +86,7 @@ export default async function ConceptPage({ params }: PageProps) {
     about: { '@id': `https://www.infinitegameos.io/concepts/${concept.slug}#term` },
     learningResourceType: 'concept definition',
     educationalLevel: 'practitioner',
+    license: 'https://creativecommons.org/licenses/by/4.0/',
   }
 
   return (
