@@ -1,0 +1,13 @@
+{
+  "name": "source-harvest",
+  "description": "Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate what serves your system.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lane Belone",
+    "email": "howdy@lanebelone.com"
+  },
+  "homepage": "https://www.infinitegameos.io/skills/source-harvest",
+  "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+  "license": "CC-BY-4.0",
+  "keywords": ["harvest", "extraction", "pattern", "governance", "research"]
+}

@@ -393,11 +393,31 @@ ${related}
 function generateAssetMarkdown(asset: IGOSAsset): string {
   const installBlocks: string[] = []
 
-  installBlocks.push(`### Claude Code marketplace
+  installBlocks.push(`### Claude Code (CLI / WSL / Git Bash)
 
 \`\`\`
 /plugin marketplace add ${SITE}/marketplace.json
 /plugin install ${asset.slug}@igos-library
+\`\`\``)
+
+  installBlocks.push(`### Claude Code (VS Code, JetBrains)
+
+Add to \`.claude/settings.json\`:
+
+\`\`\`json
+{
+  "extraKnownMarketplaces": {
+    "igos-library": {
+      "source": {
+        "source": "url",
+        "url": "${SITE}/marketplace.json"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "${asset.slug}@igos-library": true
+  }
+}
 \`\`\``)
 
   installBlocks.push(`### Direct markdown URL

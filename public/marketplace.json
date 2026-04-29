@@ -1,23 +1,28 @@
 {
   "name": "igos-library",
-  "displayName": "Infinite Game OS Public Library",
   "description": "Installable skills, protocols, codices and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
-  "url": "https://www.infinitegameos.io",
-  "license": "https://creativecommons.org/licenses/by/4.0/",
   "owner": {
     "name": "Lane Belone",
-    "url": "https://lanebelone.com",
     "email": "howdy@lanebelone.com"
   },
   "plugins": [
     {
       "name": "source-harvest",
-      "version": "1.0",
       "description": "Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate.",
-      "source": "https://www.infinitegameos.io/markdown/skills/source-harvest",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/source-harvest"
+      },
       "homepage": "https://www.infinitegameos.io/skills/source-harvest",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
       "tags": ["harvest", "extraction", "governance"],
-      "license": "https://creativecommons.org/licenses/by/4.0/"
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
     }
   ]
 }

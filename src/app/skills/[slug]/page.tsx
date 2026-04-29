@@ -164,7 +164,7 @@ export default async function SkillPage({ params }: PageProps) {
                     marginBottom: '0.4rem',
                   }}
                 >
-                  Claude Code
+                  Claude Code (CLI / WSL / Git Bash)
                 </p>
                 <pre
                   style={{
@@ -179,6 +179,45 @@ export default async function SkillPage({ params }: PageProps) {
                   <code>
 {`/plugin marketplace add ${SITE}/marketplace.json
 /plugin install ${asset.slug}@igos-library`}
+                  </code>
+                </pre>
+              </div>
+
+              <div style={{ marginBottom: '1.5rem' }}>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '0.9rem',
+                    color: 'var(--color-muted)',
+                    marginBottom: '0.4rem',
+                  }}
+                >
+                  Claude Code (VS Code, JetBrains) — add to <code style={{ fontSize: '0.8rem' }}>.claude/settings.json</code>
+                </p>
+                <pre
+                  style={{
+                    background: 'rgba(0, 0, 0, 0.4)',
+                    padding: '1rem',
+                    borderRadius: '6px',
+                    overflowX: 'auto',
+                    fontSize: '0.85rem',
+                    lineHeight: 1.6,
+                  }}
+                >
+                  <code>
+{`{
+  "extraKnownMarketplaces": {
+    "igos-library": {
+      "source": {
+        "source": "url",
+        "url": "${SITE}/marketplace.json"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "${asset.slug}@igos-library": true
+  }
+}`}
                   </code>
                 </pre>
               </div>
