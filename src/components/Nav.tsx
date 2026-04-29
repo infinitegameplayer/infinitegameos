@@ -8,6 +8,7 @@ const navLinks = [
   { href: '/infinite-game', label: 'Infinite Game' },
   { href: '/agentic-systems', label: 'Agentic Systems' },
   { href: '/sovereignty', label: 'Sovereignty' },
+  { href: '/accord', label: 'Accord' },
   { href: '/playbooks', label: 'Playbooks' },
   { href: '/concepts', label: 'Concepts' },
   { href: '/about', label: 'About' },

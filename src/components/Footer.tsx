@@ -28,6 +28,7 @@ const siteLinks = [
   { href: '/infinite-game', label: 'Infinite Game' },
   { href: '/agentic-systems', label: 'Agentic Systems' },
   { href: '/sovereignty', label: 'Sovereignty' },
+  { href: '/accord', label: 'Accord' },
   { href: '/playbooks', label: 'Playbooks' },
   { href: '/concepts', label: 'Concepts' },
   { href: '/updates', label: 'Updates' },
