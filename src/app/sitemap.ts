@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { getAllUpdates } from '@/lib/updates'
 import { getAllConceptSlugs } from '@/data/concepts'
+import { getAssetsByType } from '@/data/library'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const updates = getAllUpdates()
@@ -14,6 +15,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const conceptEntries: MetadataRoute.Sitemap = getAllConceptSlugs().map(slug => ({
     url: `https://www.infinitegameos.io/concepts/${slug}`,
     lastModified: new Date('2026-04-19T00:00:00Z'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }))
+
+  const skillEntries: MetadataRoute.Sitemap = getAssetsByType('skill').map(asset => ({
+    url: `https://www.infinitegameos.io/skills/${asset.slug}`,
+    lastModified: new Date(asset.updated + 'T00:00:00Z'),
     changeFrequency: 'monthly' as const,
     priority: 0.85,
   }))
@@ -80,6 +88,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     ...conceptEntries,
+    ...skillEntries,
     ...updateEntries,
   ]
 }
