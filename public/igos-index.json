@@ -1,0 +1,31 @@
+{
+  "$schema": "https://www.infinitegameos.io/igos-index.schema.json",
+  "version": "1.0",
+  "name": "Infinite Game OS Public Library",
+  "description": "Installable skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
+  "url": "https://www.infinitegameos.io",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "updated_at": "2026-04-29",
+  "assets": [
+    {
+      "id": "source-harvest",
+      "name": "Source Harvest",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate.",
+      "tags": ["harvest", "extraction", "governance", "kingdom-skill"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install source-harvest@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/source-harvest",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/source-harvest.mdc"
+      },
+      "related": [],
+      "article_url": "https://www.infinitegameos.io/skills/source-harvest",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-04-29",
+      "changelog_url": null
+    }
+  ]
+}

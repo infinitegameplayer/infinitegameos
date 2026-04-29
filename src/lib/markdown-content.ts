@@ -6,6 +6,7 @@
 // page.tsx components import from the same source, eliminating drift.
 
 import { concepts, getConceptBySlug } from '@/data/concepts'
+import { igosAssets, getAssetBySlug, type IGOSAsset } from '@/data/library'
 import {
   igosBio,
   igosMods,
@@ -389,6 +390,100 @@ ${related}
 `
 }
 
+function generateAssetMarkdown(asset: IGOSAsset): string {
+  const installBlocks: string[] = []
+
+  installBlocks.push(`### Claude Code marketplace
+
+\`\`\`
+/plugin marketplace add ${SITE}/marketplace.json
+/plugin install ${asset.slug}@igos-library
+\`\`\``)
+
+  installBlocks.push(`### Direct markdown URL
+
+\`\`\`
+curl ${SITE}/markdown/${asset.type}s/${asset.slug}
+\`\`\`
+
+Or send \`Accept: text/markdown\` to ${SITE}/${asset.type}s/${asset.slug}`)
+
+  if (asset.installable?.cursorMdc) {
+    installBlocks.push(`### Cursor
+
+\`\`\`
+curl -O ${SITE}/install/cursor/${asset.slug}.mdc
+\`\`\``)
+  }
+
+  installBlocks.push(`### Aider, Cline, any agent with --read
+
+\`\`\`
+curl -O ${SITE}/markdown/${asset.type}s/${asset.slug}
+aider --read ${asset.slug}.md
+\`\`\``)
+
+  const installSection = installBlocks.join('\n\n')
+
+  const storyBody: string[] = []
+  if (asset.definition) {
+    storyBody.push(`## Definition\n\n${asset.definition}`)
+  }
+  if (asset.howItWorks?.length) {
+    asset.howItWorks.forEach(s => {
+      storyBody.push(`## ${s.heading}\n\n${s.paragraphs.join('\n\n')}`)
+    })
+  }
+  if (asset.useCases?.length) {
+    const cases = asset.useCases.map(uc => `**${uc.title}**\n\n${uc.body}`).join('\n\n')
+    storyBody.push(`## Use Cases\n\n${cases}`)
+  }
+  if (asset.faq?.length) {
+    const faqs = asset.faq.map(f => `**${f.q}**\n\n${f.a}`).join('\n\n')
+    storyBody.push(`## FAQ\n\n${faqs}`)
+  }
+  if (asset.relatedSlugs?.length) {
+    const related = asset.relatedSlugs
+      .map(s => {
+        const r = igosAssets.find(a => a.slug === s)
+        return r ? `- [${r.title}](${SITE}/${r.type}s/${r.slug})` : null
+      })
+      .filter(Boolean)
+      .join('\n')
+    if (related) storyBody.push(`## Related\n\n${related}`)
+  }
+
+  const storyBlock = storyBody.length
+    ? storyBody.join('\n\n')
+    : '_Full asset documentation publishes shortly. The install paths above are live; use them now to fetch the working skill._'
+
+  const cta = asset.softHook.ctaHref && asset.softHook.ctaLabel
+    ? `\n\n[${asset.softHook.ctaLabel}](${asset.softHook.ctaHref})`
+    : ''
+
+  return `# ${asset.title}
+
+> ${asset.description}
+
+**${asset.label} · v${asset.version} · Updated ${asset.updated}**
+
+${asset.capsule}
+
+## Install
+
+${installSection}
+
+${storyBlock}
+
+---
+
+${asset.softHook.body}${cta}
+
+---
+*[Infinite Game OS](${SITE}) · [${asset.label}s](${SITE}/${asset.type}s) · [${asset.title}](${SITE}/${asset.type}s/${asset.slug})*
+`
+}
+
 export function getMarkdownForPath(path: string): string | null {
   switch (path) {
     case '': return generateHomeMarkdown()
@@ -407,6 +502,12 @@ export function getMarkdownForPath(path: string): string | null {
     return generateConceptMarkdown(slug)
   }
 
+  if (path.startsWith('skills/')) {
+    const slug = path.replace('skills/', '')
+    const asset = getAssetBySlug(slug, 'skill')
+    return asset ? generateAssetMarkdown(asset) : null
+  }
+
   return null
 }
 
@@ -422,5 +523,6 @@ export function getAvailablePaths(): string[] {
     'about',
     'concepts',
     ...concepts.map(c => `concepts/${c.slug}`),
+    ...igosAssets.map(a => `${a.type}s/${a.slug}`),
   ]
 }

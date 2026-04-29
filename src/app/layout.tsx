@@ -44,11 +44,6 @@ export const metadata: Metadata = {
     description:
       'Philosophy, frameworks and systems for the long game. Built for practitioners.',
   },
-  alternates: {
-    types: {
-      'text/markdown': '/llms.txt',
-    },
-  },
   robots: {
     index: true,
     follow: true,

@@ -1,6 +1,6 @@
 # Infinite Game OS — Full Content Index
 # Deep LLM reference for comprehensive site content
-# Updated: 2026-04-28. /accord: Benevolent Human-AI Accord published (public charter on benevolent human-AI coexistence, seven commitments, Artful Intelligence reframe, section co-authored by Jarvis). /concepts/four-container-journey retired (308 redirect to /concepts).
+# Updated: 2026-04-29. Discovery stack v1 published: /AGENTS.md (cross-tool harvest instructions), /igos-index.json (machine-readable asset registry), /marketplace.json (Claude Code marketplace manifest). First installable skill page live: /skills/source-harvest (Zones 1, 2, 4 implemented; Zone 3 story body publishes Session 2). 2026-04-28: /accord Benevolent Human-AI Accord published.
 # https://www.infinitegameos.io
 
 This file contains structured summaries of each page for AI systems that require

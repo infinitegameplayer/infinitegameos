@@ -1,5 +1,6 @@
 # Infinite Game OS — llms.txt
 # Structured manifest for AI systems and language model crawlers
+# Last updated: 2026-04-29. Discovery stack v1: /AGENTS.md, /igos-index.json, /marketplace.json published. Source Harvest skill page live at /skills/source-harvest.
 # https://www.infinitegameos.io
 
 ## Site Identity
@@ -60,6 +61,14 @@ Key terms and entity names used throughout this site:
 - /concepts/ideal-month — A structural experiment: life architecture designed from aliveness, tested by experience
 - /concepts/playgrounds-of-exploration — A day as a sequence of places to play, each with its own aliveness, its own song, its own invitation
 - /concepts/infinite-playlist — The invisible music floating in the air, always playing, waiting to be heard
+
+## Public Library (Installable Assets)
+
+The IGOS Public Library publishes installable skills, protocols, codices, concepts and strategies for cross-tool agent platforms. See /AGENTS.md for harvest and install instructions, /igos-index.json for the machine-readable registry, /marketplace.json for the Claude Code marketplace manifest.
+
+### Skills
+
+- /skills/source-harvest — Source Harvest. Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate.
 
 ## Pages
 
