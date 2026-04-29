@@ -25,8 +25,35 @@ const nextConfig: NextConfig = {
     ]
   },
   async rewrites() {
+    // Static discovery files and assets must serve their literal content
+    // regardless of Accept header. The catch-all content-negotiation rewrite
+    // below would otherwise route these through /markdown/, which 404s for
+    // any path not registered as a page (marketplace.json, llms.txt,
+    // robots.txt, sitemap.xml, AGENTS.md, asset SVGs, etc.).
+    // Each entry below is a self-rewrite that matches first and prevents
+    // the catch-all from firing on these paths.
+    const staticBypasses = [
+      { source: '/marketplace.json', destination: '/marketplace.json' },
+      { source: '/igos-index.json', destination: '/igos-index.json' },
+      { source: '/AGENTS.md', destination: '/AGENTS.md' },
+      { source: '/llms.txt', destination: '/llms.txt' },
+      { source: '/llms-full.txt', destination: '/llms-full.txt' },
+      { source: '/robots.txt', destination: '/robots.txt' },
+      { source: '/sitemap.xml', destination: '/sitemap.xml' },
+      { source: '/:path*.svg', destination: '/:path*.svg' },
+      { source: '/:path*.ico', destination: '/:path*.ico' },
+      { source: '/:path*.png', destination: '/:path*.png' },
+      { source: '/:path*.jpg', destination: '/:path*.jpg' },
+      { source: '/:path*.jpeg', destination: '/:path*.jpeg' },
+      { source: '/:path*.webp', destination: '/:path*.webp' },
+      { source: '/:path*.gif', destination: '/:path*.gif' },
+      { source: '/:path*.woff2', destination: '/:path*.woff2' },
+      { source: '/:path*.woff', destination: '/:path*.woff' },
+    ]
+
     return {
       beforeFiles: [
+        ...staticBypasses,
         {
           source: '/:path*',
           destination: '/markdown/:path*',
