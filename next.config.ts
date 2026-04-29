@@ -17,6 +17,11 @@ const nextConfig: NextConfig = {
         destination: '/concepts/creator-flywheel',
         permanent: true,
       },
+      {
+        source: '/concepts/four-container-journey',
+        destination: '/concepts',
+        permanent: true,
+      },
     ]
   },
   async rewrites() {

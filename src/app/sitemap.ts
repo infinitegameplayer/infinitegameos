@@ -32,6 +32,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: 'https://www.infinitegameos.io/accord',
+      lastModified: new Date('2026-04-28T00:00:00Z'),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: 'https://www.infinitegameos.io/infinite-game',
       lastModified: new Date('2026-04-19T00:00:00Z'),
       changeFrequency: 'monthly',

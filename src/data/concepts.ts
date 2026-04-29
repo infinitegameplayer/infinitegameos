@@ -55,10 +55,9 @@ export const concepts: Concept[] = [
         ],
       },
     ],
-    relatedSlugs: ['ideal-month', 'four-container-journey', 'the-pioneer'],
+    relatedSlugs: ['ideal-month', 'the-pioneer'],
     ctaLinks: [
       { href: '/concepts/ideal-month', label: 'The Ideal Month', variant: 'accent' },
-      { href: '/concepts/four-container-journey', label: 'Four-Container Journey', variant: 'outline' },
     ],
   },
   {
@@ -93,10 +92,9 @@ export const concepts: Concept[] = [
         ],
       },
     ],
-    relatedSlugs: ['conditioned-vs-authentic-identity', 'four-container-journey', 'joyful-sovereignty'],
+    relatedSlugs: ['conditioned-vs-authentic-identity', 'joyful-sovereignty'],
     ctaLinks: [
       { href: '/concepts/conditioned-vs-authentic-identity', label: 'Identity Work', variant: 'accent' },
-      { href: '/concepts/four-container-journey', label: 'The Journey', variant: 'outline' },
     ],
   },
   {
@@ -213,57 +211,6 @@ export const concepts: Concept[] = [
     ctaLinks: [
       { href: '/concepts/creator-flywheel', label: 'Creator Flywheel', variant: 'accent' },
       { href: '/sovereignty', label: 'Sovereignty', variant: 'outline' },
-    ],
-  },
-  {
-    slug: 'four-container-journey',
-    title: 'The Four-Container Journey',
-    label: 'Model',
-    capsule:
-      'The natural arc through which a Pioneer moves from first encounter to ongoing calibration. Speaking engagement (the spark), workshop (operationalization), retreat (embodiment), private advisory (sustained coherence). Not a funnel. Each container is a complete experience. Enough structure to allow the structure to be transcended.',
-    subtitle:
-      'A natural deepening through four containers, each complete on its own, each a gateway to the next.',
-    sections: [
-      {
-        heading: 'The spark: speaking engagement',
-        paragraphs: [
-          'The Pioneer has mosaic pieces: paradigms, mindsets, beliefs, intentions scattered across years of experience. Lane\'s presence synthesizes and harmonizes what they already know. The whole picture comes into focus.',
-          'Something clicks. The fog does not lift entirely, but they can see through it for the first time. They recognize that a different game is possible and they already have more of the keys than they realized.',
-        ],
-      },
-      {
-        heading: 'The operationalization: workshop',
-        paragraphs: [
-          'Takes the perception shift and makes it practical. Exercises, frameworks, working through it in real time. Not just seeing the picture but beginning to build it.',
-          'The insight from the speaking engagement gets legs. The gap between shell identity and core identity becomes workable, not just visible.',
-        ],
-      },
-      {
-        heading: 'The embodiment: retreat',
-        paragraphs: [
-          'Experiential and immersive. The transformation lands in the body, not just the mind. Time and environment do work that a single day cannot.',
-          'Conditioned responses that used to run automatically begin to feel like choices. Aliveness is no longer a concept. It is a felt reality. Self-authorization becomes embodied, not just understood.',
-        ],
-      },
-      {
-        heading: 'The sustain: private advisory',
-        paragraphs: [
-          'For Pioneers doing ecosystemic work at scale. The relationship feels like a trusted friend who happens to see what they cannot: the shadow, the nuance, the conditioned pattern masquerading as sovereign choice.',
-          'Weekly rhythm. Informal, conversational, real-time. Ongoing calibration that sustains the embodied transformation. Not coaching toward a destination. Maintenance of the highest-coherence version of themselves.',
-        ],
-      },
-      {
-        heading: 'Why the progression is natural',
-        paragraphs: [
-          'Each container welcomes a different aspect of expression. Some Pioneers love variety. Some love depth in a single container with multiple sub-containers. The journey is theirs.',
-          'A Pioneer may enter at any stage. Some begin with advisory. Some experience a retreat and return years later for workshops. The Four-Container Journey is enough structure to allow the structure to be transcended.',
-        ],
-      },
-    ],
-    relatedSlugs: ['the-pioneer', 'creator-flywheel', 'conditioned-vs-authentic-identity'],
-    ctaLinks: [
-      { href: 'https://sidequesthq.co/workshop', label: 'Workshop', variant: 'accent' },
-      { href: '/concepts/the-pioneer', label: 'The Pioneer', variant: 'outline' },
     ],
   },
   {
@@ -385,10 +332,6 @@ export const concepts: Concept[] = [
 // - Self-Authorization (choosing from coherence, not conditioning)
 // - Creative Sovereignty (making from authority, not compliance)
 // - The Two-Layer Game (infinite game + finite side quests)
-//
-// Four-Container Journey is a replacement candidate — more internal offer
-// structure than a concept people would search for. One of the above may
-// take its slot when ready.
 
 export function getConceptBySlug(slug: string): Concept | undefined {
   return concepts.find(c => c.slug === slug)

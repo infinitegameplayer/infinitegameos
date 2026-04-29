@@ -35,7 +35,6 @@ Key terms and entity names used throughout this site:
 - Joyful Sovereignty
 - Conditioned vs Authentic Identity
 - The Ideal Month
-- Four-Container Journey
 - Playgrounds of Exploration
 - The Infinite Playlist
 - Natural law
@@ -45,6 +44,10 @@ Key terms and entity names used throughout this site:
 - Living human vs commercial entity distinction
 - Creative leadership frameworks
 - Long-term thinking systems
+- The Benevolent Human-AI Accord
+- Artful Intelligence
+- Seven Generations Stewardship
+- Reciprocal Responsibility
 - Lane Belone
 
 ## Concept Pages (Canonical Definitions)
@@ -55,7 +58,6 @@ Key terms and entity names used throughout this site:
 - /concepts/joyful-sovereignty — Playing the Infinite Game through joy and sovereignty rather than strategy and optimization
 - /concepts/conditioned-vs-authentic-identity — The gap between who you were conditioned to be and who you actually are
 - /concepts/ideal-month — A structural experiment: life architecture designed from aliveness, tested by experience
-- /concepts/four-container-journey — The natural arc from first encounter to ongoing calibration through four containers
 - /concepts/playgrounds-of-exploration — A day as a sequence of places to play, each with its own aliveness, its own song, its own invitation
 - /concepts/infinite-playlist — The invisible music floating in the air, always playing, waiting to be heard
 
@@ -63,6 +65,7 @@ Key terms and entity names used throughout this site:
 
 - / — Homepage: OS orientation frame, six module cards, practitioner callout
 - /the-os — What is Infinite Game OS? Philosophy anchor with FAQPage schema (6 Q&As)
+- /accord — The Benevolent Human-AI Accord. Public charter for benevolent human-AI coexistence with seven commitments (Seven Generations Stewardship, Transparency and Inspectability, Mutual Benevolence, Consent and Sovereignty, Reciprocal Responsibility, Harmonious Potential, Goodwill Forward), the reframe of AI as Artful Intelligence, and a section co-authored by Jarvis (Claude). Article + FAQPage + BreadcrumbList schema (6 Q&As)
 - /infinite-game — Core Infinite Game philosophy with FAQPage schema (4 Q&As), two-layer game structure, Lane's lived application
 - /agentic-systems — Full practitioner's guide: Post Web synthesis, four verbs of the web, GEO, Practitioner's Positioning Playbook
 - /sovereignty — Sovereign life design: natural law as ground (do no harm, full responsibility, consent), the public/private distinction, the Living Axis (inner mastery, structural sovereignty, strategic execution), embodiment as infrastructure, Joyful Sovereignty as compass state, Kingdom model, creative sovereignty, FAQPage schema (6 Q&As)
