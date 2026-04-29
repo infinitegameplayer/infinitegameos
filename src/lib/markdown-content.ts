@@ -400,9 +400,15 @@ function generateAssetMarkdown(asset: IGOSAsset): string {
 /plugin install ${asset.slug}@igos-library
 \`\`\``)
 
-  installBlocks.push(`### Claude Code (VS Code, JetBrains)
+  const vsCodeInstallUrl = `vscode://anthropic.claude-code/install-plugin?plugin=${encodeURIComponent(
+    asset.slug,
+  )}&marketplace=${encodeURIComponent(`${SITE}/marketplace.json`)}`
 
-Add to \`.claude/settings.json\`:
+  installBlocks.push(`### Claude Code (VS Code)
+
+[Install in VS Code](${vsCodeInstallUrl})
+
+Opens the Claude Code plugins dialog with the marketplace and skill prefilled. Requires the Claude Code VS Code extension installed and signed in. Or paste the snippet below into \`.claude/settings.json\` for VS Code, JetBrains or any setup that prefers manual config:
 
 \`\`\`json
 {

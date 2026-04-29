@@ -97,6 +97,9 @@ export default async function SkillPage({ params }: PageProps) {
   const cursorMdcUrl = asset.installable?.cursorMdc
     ? `${SITE}/install/cursor/${asset.slug}.mdc`
     : null
+  const vsCodeInstallUrl = `vscode://anthropic.claude-code/install-plugin?plugin=${encodeURIComponent(
+    asset.slug,
+  )}&marketplace=${encodeURIComponent(`${SITE}/marketplace.json`)}`
 
   return (
     <>
@@ -189,10 +192,28 @@ export default async function SkillPage({ params }: PageProps) {
                     fontFamily: 'var(--font-body)',
                     fontSize: '0.9rem',
                     color: 'var(--color-muted)',
-                    marginBottom: '0.4rem',
+                    marginBottom: '0.6rem',
                   }}
                 >
-                  Claude Code (VS Code, JetBrains) — add to <code style={{ fontSize: '0.8rem' }}>.claude/settings.json</code>
+                  Claude Code (VS Code)
+                </p>
+                <a
+                  href={vsCodeInstallUrl}
+                  className="btn-accent"
+                  style={{ display: 'inline-block', marginBottom: '0.6rem' }}
+                >
+                  Install in VS Code
+                </a>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '0.8rem',
+                    color: 'var(--color-muted)',
+                    marginBottom: '0.6rem',
+                    lineHeight: 1.6,
+                  }}
+                >
+                  Opens the Claude Code plugins dialog with the marketplace and skill prefilled. Requires the Claude Code VS Code extension installed and signed in. Or paste the snippet below into <code style={{ fontSize: '0.8rem' }}>.claude/settings.json</code> for VS Code, JetBrains or any setup that prefers manual config.
                 </p>
                 <pre
                   style={{
