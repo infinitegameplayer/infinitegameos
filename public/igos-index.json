@@ -5,7 +5,7 @@
   "description": "Installable skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
   "url": "https://www.infinitegameos.io",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "updated_at": "2026-04-29",
+  "updated_at": "2026-04-30",
   "assets": [
     {
       "id": "source-harvest",
@@ -20,11 +20,111 @@
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/source-harvest",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/source-harvest.mdc"
       },
-      "related": [],
+      "related": ["plan-challenger", "systematic-debugging", "pending-plan-implementation", "skill-creator", "researcher"],
       "article_url": "https://www.infinitegameos.io/skills/source-harvest",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "updated_at": "2026-04-29",
+      "changelog_url": null
+    },
+    {
+      "id": "plan-challenger",
+      "name": "Plan Challenger",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Adversarial pre-build pass that challenges a plan before execution begins. Five angles, one verdict.",
+      "tags": ["planning", "review", "adversarial", "governance"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install plan-challenger@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/plan-challenger",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/plan-challenger.mdc"
+      },
+      "related": ["pending-plan-implementation", "source-harvest"],
+      "article_url": "https://www.infinitegameos.io/skills/plan-challenger",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-04-30",
+      "changelog_url": null
+    },
+    {
+      "id": "systematic-debugging",
+      "name": "Systematic Debugging",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Root-cause investigation discipline. Use before proposing fixes. The Iron Law: no fixes without Phase 1 complete.",
+      "tags": ["debugging", "diagnostics", "root-cause", "discipline"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install systematic-debugging@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/systematic-debugging",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/systematic-debugging.mdc"
+      },
+      "related": ["source-harvest"],
+      "article_url": "https://www.infinitegameos.io/skills/systematic-debugging",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-04-30",
+      "changelog_url": null
+    },
+    {
+      "id": "pending-plan-implementation",
+      "name": "Pending Plan Implementation",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Execute approved plans with checkpoint gates, breadcrumb logging and outcome summaries.",
+      "tags": ["planning", "execution", "governance", "audit"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install pending-plan-implementation@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/pending-plan-implementation",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/pending-plan-implementation.mdc"
+      },
+      "related": ["plan-challenger", "source-harvest"],
+      "article_url": "https://www.infinitegameos.io/skills/pending-plan-implementation",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-04-30",
+      "changelog_url": null
+    },
+    {
+      "id": "skill-creator",
+      "name": "Skill Creator",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Build new skills autonomously. Interview, research, write a complete SKILL.md, propose the install path.",
+      "tags": ["meta", "authoring", "skills", "structure"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install skill-creator@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/skill-creator",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/skill-creator.mdc"
+      },
+      "related": ["source-harvest", "researcher"],
+      "article_url": "https://www.infinitegameos.io/skills/skill-creator",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-04-30",
+      "changelog_url": null
+    },
+    {
+      "id": "researcher",
+      "name": "Researcher",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Parallel sub-agent research on a topic, aggregated into a structured report. Up to 4 independent workers, synthesized output.",
+      "tags": ["research", "investigation", "parallel", "synthesis"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install researcher@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/researcher",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/researcher.mdc"
+      },
+      "related": ["source-harvest", "skill-creator"],
+      "article_url": "https://www.infinitegameos.io/skills/researcher",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-04-30",
       "changelog_url": null
     }
   ]

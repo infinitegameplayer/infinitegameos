@@ -1,0 +1,13 @@
+{
+  "name": "plan-challenger",
+  "description": "Adversarial pre-build pass that challenges a plan before execution begins. Five angles, one verdict.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lane Belone",
+    "email": "howdy@lanebelone.com"
+  },
+  "homepage": "https://www.infinitegameos.io/skills/plan-challenger",
+  "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+  "license": "CC-BY-4.0",
+  "keywords": ["planning", "review", "adversarial", "governance"]
+}

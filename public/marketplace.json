@@ -23,6 +23,96 @@
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
       }
+    },
+    {
+      "name": "plan-challenger",
+      "description": "Adversarial pre-build pass that challenges a plan before execution begins. Five angles, one verdict.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/plan-challenger"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/plan-challenger",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": ["planning", "review", "adversarial", "governance"],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
+    },
+    {
+      "name": "systematic-debugging",
+      "description": "Root-cause investigation discipline. Use before proposing fixes. The Iron Law: no fixes without Phase 1 complete.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/systematic-debugging"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/systematic-debugging",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": ["debugging", "diagnostics", "root-cause", "discipline"],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
+    },
+    {
+      "name": "pending-plan-implementation",
+      "description": "Execute approved plans with checkpoint gates, breadcrumb logging and outcome summaries.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/pending-plan-implementation"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/pending-plan-implementation",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": ["planning", "execution", "governance", "audit"],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
+    },
+    {
+      "name": "skill-creator",
+      "description": "Build new skills autonomously. Interview, research, write a complete SKILL.md, propose the install path.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/skill-creator"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/skill-creator",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": ["meta", "authoring", "skills", "structure"],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
+    },
+    {
+      "name": "researcher",
+      "description": "Parallel sub-agent research on a topic, aggregated into a structured report. Up to 4 independent workers, synthesized output.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/researcher"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/researcher",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": ["research", "investigation", "parallel", "synthesis"],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
     }
   ]
 }

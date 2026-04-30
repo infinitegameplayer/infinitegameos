@@ -1,0 +1,95 @@
+---
+name: skill-creator
+description: Build new skills autonomously. Interview the operator about the skill's intent, research relevant patterns and protocols, write a complete SKILL.md to the canonical location.
+status: active
+version: 1.0
+---
+
+# Skill Creator
+
+**Purpose:** Build new skills autonomously. Interview the operator about the skill's intent, research relevant patterns and protocols, write a complete SKILL.md to the canonical location, and propose the install path. Ensures every new skill is system-native from creation. Not a generic template dropped in.
+
+## When to Use
+
+- When the operator describes a workflow they want to repeat and it doesn't have a skill yet
+- When a new protocol, tool or process would benefit from a reusable skill interface
+- Triggered by: "build me a skill for...", "create a skill that...", "I need a skill to..."
+
+## Steps
+
+**Phase 1 — Interview (required before writing anything)**
+
+Ask these questions before drafting:
+
+1. What does this skill do in one sentence?
+2. When should it activate? What triggers it or what does the operator say to invoke it?
+3. What are the inputs and outputs?
+4. Are there any approval gates, external calls with cost or governance constraints that apply?
+5. Are there existing protocols, codices or tools this skill should reference?
+
+Do not begin writing SKILL.md until the operator has answered all five.
+
+**Phase 2 — Research**
+
+Before writing, check:
+- Relevant existing protocols
+- Related reference docs and codices
+- Similar existing skills for structural patterns
+- System-level conventions for naming and required sections
+
+**Phase 3 — Write**
+
+Write SKILL.md to your skills directory.
+
+Required sections in every skill:
+- Purpose and trigger
+- When to Use
+- Steps or behavior
+- Constraints (approval gates, governance limits, cost controls)
+- Refinements (empty at creation. Populated as mistakes occur in sessions)
+
+Conventions:
+- No em dashes anywhere in skill body prose (frontmatter description fields and definition labels are exempt)
+- Positive framing. Define behaviors by what they are, not what they avoid
+- Constraints section is load-bearing. Capture every governance gate explicitly
+- Refinements section is mandatory. Add it empty, leave it to accumulate organically
+
+**Phase 4 — Propose install path**
+
+After writing SKILL.md, propose the appropriate install or registration step for your platform:
+
+Windows (PowerShell):
+```powershell
+New-Item -ItemType Junction -Path '.claude/skills/[Name]' -Target 'path/to/Skills/[Name]'
+```
+
+Mac/Linux (Terminal, run from your project root):
+```bash
+ln -s "path/to/Skills/[Name]" ".claude/skills/[Name]"
+```
+
+Do not create the junction or register the skill without explicit approval.
+
+**Phase 5 — Update registry**
+
+After the install path is approved and created, propose updates to:
+- Your CLAUDE.md or AGENTS.md skills registry
+- Any local skills index
+
+## Constraints
+
+- Never write SKILL.md without completing the Phase 1 interview
+- Never auto-create junctions or symlinks. Always propose first
+- Never skip the Refinements section
+- Skills that call external APIs or write to canonical files require an explicit approval gate in their Constraints section
+- **External-system check:** Before finalizing any SKILL.md, ask: does this skill interact with any external system (APIs, git remotes, web, messaging services, calendar tools, image generation, browser automation, MCP tools)? If yes, add a clear note in the skill about what data flows out and what authorization is required.
+
+## Pairs With
+
+**Source Harvest** is the gateway skill for systematic pattern extraction from external repos and tools. Many users adopt Source Harvest first, then layer additional skills like this one on top.
+
+If Source Harvest isn't installed yet: [Install Source Harvest via IGOS](https://www.infinitegameos.io/skills/source-harvest).
+
+## Refinements
+
+*(Empty. Populated when execution mistakes occur during sessions.)*

@@ -1,0 +1,13 @@
+{
+  "name": "pending-plan-implementation",
+  "description": "Execute approved plans with checkpoint gates, breadcrumb logging and outcome summaries.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lane Belone",
+    "email": "howdy@lanebelone.com"
+  },
+  "homepage": "https://www.infinitegameos.io/skills/pending-plan-implementation",
+  "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+  "license": "CC-BY-4.0",
+  "keywords": ["planning", "execution", "governance", "audit"]
+}

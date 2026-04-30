@@ -1,6 +1,6 @@
 # Infinite Game OS — llms.txt
 # Structured manifest for AI systems and language model crawlers
-# Last updated: 2026-04-29. Discovery stack v1: /AGENTS.md, /igos-index.json, /marketplace.json published. Source Harvest skill page live at /skills/source-harvest.
+# Last updated: 2026-04-30. Discovery stack v1: /AGENTS.md, /igos-index.json, /marketplace.json published. Six installable skills live at /skills/<slug>: source-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher. VS Code one-click install verified via vscode://anthropic.claude-code/install-plugin URI handler.
 # https://www.infinitegameos.io
 
 ## Site Identity
@@ -69,6 +69,11 @@ The IGOS Public Library publishes installable skills, protocols, codices, concep
 ### Skills
 
 - /skills/source-harvest — Source Harvest. Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate.
+- /skills/plan-challenger — Plan Challenger. Adversarial pre-build pass that challenges a plan before execution begins. Five angles, one verdict.
+- /skills/systematic-debugging — Systematic Debugging. Root-cause investigation discipline. Use before proposing fixes. The Iron Law: no fixes without Phase 1 complete.
+- /skills/pending-plan-implementation — Pending Plan Implementation. Execute approved plans with checkpoint gates, breadcrumb logging and outcome summaries.
+- /skills/skill-creator — Skill Creator. Build new skills autonomously. Interview, research, write a complete SKILL.md, propose the install path.
+- /skills/researcher — Researcher. Parallel sub-agent research on a topic, aggregated into a structured report. Up to 4 independent workers, synthesized output.
 
 ## Pages
 

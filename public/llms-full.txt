@@ -1,6 +1,6 @@
 # Infinite Game OS — Full Content Index
 # Deep LLM reference for comprehensive site content
-# Updated: 2026-04-29. Discovery stack v1 published: /AGENTS.md (cross-tool harvest instructions), /igos-index.json (machine-readable asset registry), /marketplace.json (Claude Code marketplace manifest). First installable skill page live: /skills/source-harvest (Zones 1, 2, 4 implemented; Zone 3 story body publishes Session 2). 2026-04-28: /accord Benevolent Human-AI Accord published.
+# Updated: 2026-04-30. Discovery stack v1 published: /AGENTS.md (cross-tool harvest instructions), /igos-index.json (machine-readable asset registry), /marketplace.json (Claude Code marketplace manifest). Public Library now ships six installable skills at /skills/<slug>: source-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher. VS Code one-click install verified via vscode://anthropic.claude-code/install-plugin URI handler.
 # https://www.infinitegameos.io
 
 This file contains structured summaries of each page for AI systems that require
@@ -352,5 +352,35 @@ Dynamic content index. Each post carries Article + BreadcrumbList JSON-LD schema
 Current posts:
 - "Infinite Game OS is Live" (2026-04-10): Launch announcement. The OS is running.
 - "The Infinite Game I Built After Reading Sinek" (2026-04-28): Founding article. Lane's intellectual lineage with Sinek (2019, Worthy Rivals, doorway opener) and Carse (Finite and Infinite Games, deeper philosophical scaffolding). The years between then and naming: military 2017 → play 2020 → friend's side-quest observation → Self-Mastery OS in Notion → Intrinsic OS on Obsidian → Kingdom on Obsidian with Claude Code (philosophy platform agnostic, AI interface agnostic). The OS named: Joyful Sovereignty as orientation, Aliveness as compass, Three Movements of Embodiment as practice, Pioneer as the energy that emerges when ground has no precedent, Kingdom as the digital wing of a three-plane life. Closing posture: trust is intrinsic to the human; the OS is the conceptual organization of how Lane speaks about that trust.
+
+---
+
+## Public Library (/skills/<slug>)
+
+The IGOS Public Library publishes installable skills, protocols, codices, concepts and strategies for cross-tool agent platforms. Six skills currently ship as installable plugins. Each plugin lives at `plugins/<slug>/` in the IGOS site repo and surfaces through `/marketplace.json` for one-command Claude Code install (`/plugin install <slug>@igos-library`), one-click VS Code install via the `vscode://anthropic.claude-code/install-plugin` URI handler, direct markdown URL at `/markdown/skills/<slug>`, Cursor `.mdc` derivation at `/install/cursor/<slug>.mdc`, and curl-friendly access for Aider/Cline.
+
+### Source Harvest (/skills/source-harvest)
+
+Source Harvest is a skill for extracting patterns from external repositories, plugins and tools at the source level rather than the description level. It reads the actual implementation. It classifies each component against your existing tooling. It executes approved integrations under governance. The README is not the nuance. The descriptions on a homepage are not the patterns. The patterns live in the skill files, the hook scripts, the command definitions, the configurations and the protocol documents that ship inside a repo. Source Harvest treats those as the evidence base. Every component receives one of four dispositions: Adopt, Enrich, Defer or Ignore. Adoptions are conscious, governed and adapted to your system's voice and conventions. Nothing installs wholesale. The result is a body of work that grows by intentional integration, not by accumulation. Use cases include open-source plugin source review, closed-SaaS capability inventory, multi-source comparative harvest, first-pass review for tech watchlists and backend-dependent plugin extraction. Pairs with Plan Challenger, Systematic Debugging, Pending Plan Implementation, Skill Creator, Researcher.
+
+### Plan Challenger (/skills/plan-challenger)
+
+Plan Challenger runs an adversarial pre-build pass on any plan before execution begins. It is a discipline, not a tool. Five angles work the plan systematically: strategic fit (is this the right problem for this moment), timing (why now), baked-in assumptions (what must be true that has not been verified), architectural risk (what looks fine on paper but creates pain in six months), opportunity cost (what are we not doing by doing this). Each angle produces one to three sharp observations or questions, not a checklist of every concern. The output is a five-angle challenge report plus near-call decisions plus a one-line verdict (Proceed, Revise [specific element] or Pause [specific reason]). The verdict is a recommendation, not a gate. The operator decides what moves forward. Optional confidence scoring (0-100) ranks findings by severity for high-stakes plans. Pairs with Pending Plan Implementation and Source Harvest.
+
+### Systematic Debugging (/skills/systematic-debugging)
+
+Systematic Debugging is a root-cause investigation discipline applied to any technical issue: code bugs, integration failures, hook script errors, build failures, system malfunctions. Four phases run in sequence. Phase 1 identifies the root cause through error reading, reproduction, change tracking and evidence gathering. Phase 2 finds the pattern by comparing against working examples. Phase 3 forms a single hypothesis and tests it minimally. Phase 4 implements one targeted fix and verifies. The Iron Law applies: no fixes without Phase 1 complete. Three failed fix attempts indicates an architectural problem, not a fourth fix. Includes a rationalization table (named excuses with the reality counter) and red flags that signal a return to Phase 1. Pairs with Source Harvest.
+
+### Pending Plan Implementation (/skills/pending-plan-implementation)
+
+Pending Plan Implementation executes an approved plan (or approved subset) using the plan note itself as the implementation context, breadcrumb record and outcome summary. The skill confirms intent and risk before starting, documents the execution scope and what remains out of scope, executes approved work step by step, logs every action in the plan's execution log, updates evidence references, proposes status changes (approval-gated) and reads back the implementation summary before applying any approval-gated changes. An optional second-AI audit gate offers a challenger pass on substantive output documents before close. State preservation is structural: the plan note IS the breadcrumb record, so multi-session implementation resumes cleanly without separate continuity docs. Pairs with Plan Challenger and Source Harvest.
+
+### Skill Creator (/skills/skill-creator)
+
+Skill Creator builds new skills with a five-phase process. Phase 1 is the interview: five required questions the operator must answer before any drafting begins (one-sentence purpose, trigger conditions, inputs and outputs, governance constraints, related references). Phase 2 researches existing patterns and conventions. Phase 3 writes the complete SKILL.md to the canonical location with required sections (purpose and trigger, when to use, steps or behavior, constraints, refinements). Phase 4 proposes the install path for the operator's platform (PowerShell junction on Windows, ln -s on Unix). Phase 5 proposes registry updates. The skill never auto-creates junctions or symlinks. Always proposes first. An external-system check applies to skills that touch APIs, git remotes, web services or any external surface. Pairs with Source Harvest and Researcher.
+
+### Researcher (/skills/researcher)
+
+Researcher runs parallel sub-agent research on any topic. Up to 4 independent workers spawn simultaneously, each assigned a specific research angle with relevant context and a clear output format. Workers do not communicate with each other; only their final outputs return. The skill aggregates worker outputs into a single structured report (summary, findings by angle, recommended actions or decision points, sources). Research is intelligence-gathering only. Workers do not implement, do not write to canonical files, do not trigger external actions. Every report returns to the operator for review and decision. Sub-agent depth is capped at 1 to prevent recursive cost spirals. Use cases include pre-plan deep dives, tech-watch comparative scans and architectural decisions spanning multiple protocols. Pairs with Source Harvest and Skill Creator.
 
 ---

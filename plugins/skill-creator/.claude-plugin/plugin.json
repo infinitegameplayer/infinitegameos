@@ -1,0 +1,13 @@
+{
+  "name": "skill-creator",
+  "description": "Build new skills autonomously. Interview, research, write a complete SKILL.md, propose the install path.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lane Belone",
+    "email": "howdy@lanebelone.com"
+  },
+  "homepage": "https://www.infinitegameos.io/skills/skill-creator",
+  "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+  "license": "CC-BY-4.0",
+  "keywords": ["meta", "authoring", "skills", "structure"]
+}
