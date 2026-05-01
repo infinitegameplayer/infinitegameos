@@ -806,6 +806,147 @@ export const igosAssets: IGOSAsset[] = [
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
+  {
+    slug: 'the-writer',
+    type: 'bundle',
+    title: 'The Writer Bundle',
+    label: 'Bundle',
+    version: '1.0',
+    updated: '2026-05-01',
+    description:
+      'Claude Code skills for newsletter operators, essayists, ghostwriters and indie authors in 2026. Two avatar-specific skills (Voice Ghostwriter, Humanizer) plus a workspace template (Multi-Format Content Writer) on top of the Foundational Creator Bundle substrate.',
+    tags: ['bundle', 'writer', 'newsletter', 'essayist', 'ghostwriter', 'claude-code', 'voice', 'creator-os', '2026'],
+    capsule:
+      'The Writer Bundle is the avatar-specific layer for text-first creators: newsletter operators, essayists, ghostwriters, indie authors and threadwriters. Voice is the entire value proposition. Skills protect, extend or free up time for voice. Voice Ghostwriter calibrates against the writer\'s own work before generating a word. Humanizer detects 37 AI-writing patterns and rebuilds sentence structure rather than swapping synonyms. Multi-Format Content Writer is a workspace template that turns one essay into a thread, a newsletter section and a LinkedIn post in one pass. Sits on top of the Foundational Creator Bundle.',
+    bundle: {
+      installUrl: 'https://www.infinitegameos.io/bundles/the-writer/install.sh',
+      command: 'curl -sSL https://www.infinitegameos.io/bundles/the-writer/install.sh | bash',
+      skills: [
+        {
+          title: 'Voice Ghostwriter',
+          description:
+            'Voice calibration before generation. Four stages: calibrate against existing work, extract specifics through interview, draft in the calibrated voice, refine with targeted edits. Built originally for founders writing thought leadership; the four-stage flow maps cleanly to newsletter, essay and ghostwriting pipelines. The interview-extraction step is the move ghostwriters use to capture client-specific stories rather than a generic persona.',
+          source: 'github.com/BayramAnnakov/founder-voice-ghostwriter',
+          license: 'MIT',
+          externalUrl: 'https://github.com/BayramAnnakov/founder-voice-ghostwriter',
+        },
+        {
+          title: 'Humanizer',
+          description:
+            'AI-writing pattern detection across 37 specific signals in five categories. Rebuilds sentence structure rather than swapping synonyms. Five voice profiles (casual, professional, technical, warm, blunt) for different sub-archetypes. The detect-mode flag lets ghostwriters audit a draft before deciding how aggressively to rewrite it. Pure markdown skill, zero dependencies, installs by copying one file.',
+          source: 'github.com/Aboudjem/humanizer-skill',
+          license: 'MIT',
+          externalUrl: 'https://github.com/Aboudjem/humanizer-skill',
+        },
+        {
+          title: 'Multi-Format Content Writer (workspace template)',
+          description:
+            'A Claude Code workspace template, not a skill. Clone as your writing project. Add 2-3 examples of your own writing to teach Claude your voice. Drop unstructured thoughts into /rawnotes. Run /extract-themes, /research and /write to take one source idea through long-form draft and platform adaptation: LinkedIn, newsletter, Twitter thread, podcast Q&A. Companion install: use as a workspace alongside the two installed skills above.',
+          source: 'github.com/WomenDefiningAI/claudecode-writer',
+          license: 'MIT',
+          externalUrl: 'https://github.com/WomenDefiningAI/claudecode-writer',
+        },
+      ],
+    },
+    definition:
+      'The Writer Bundle is the avatar-specific stack for text-first creators working with Claude Code in 2026. The Foundational Creator Bundle (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging plus Content Strategy and AI SEO) is the assumed pre-install. The Writer layer adds two installable skills and one companion workspace template. Voice Ghostwriter (Bayram Annakov, MIT) calibrates voice and runs interview-driven extraction before drafting. Humanizer (Aboudjem, MIT) detects 37 AI-writing patterns and rebuilds sentence structure across five voice profiles. Multi-Format Content Writer (WomenDefiningAI, MIT) is a workspace template repository for Claude Code; users clone it as their writing project, drop in voice examples and run platform-adaptation commands. Voice is the entire value proposition for the Writer archetype. Every resource in the bundle either protects voice, extends voice or frees up more time to use voice.',
+    howItWorks: [
+      {
+        heading: 'Pre-install: the Foundational Creator Bundle',
+        paragraphs: [
+          'The Writer Bundle assumes the Foundational Creator Bundle is already present. The Foundational Bundle is the universal substrate: Researcher for upstream research before drafting, Plan Challenger for adversarial outline review, Source Harvest for pattern extraction from other writers and reference essays, Skill Creator for codifying recurring writing workflows, Systematic Debugging for when the multi-skill pipeline breaks, plus Content Strategy and AI SEO for the publishing rhythm and discoverability layer. Writers need all seven. Installing them once at the substrate level is enough.',
+          'If the Foundational Bundle is not yet installed, install it first at /bundles/foundational-creator. The Writer Bundle install script in this page does not bring those skills again.',
+        ],
+      },
+      {
+        heading: 'What the install brings',
+        paragraphs: [
+          'The install script does two things. First, it clones the Voice Ghostwriter repository into the Claude Code skills directory. Second, it pulls the Humanizer SKILL.md file into the skills directory as a single-file skill. Both halves are idempotent. Re-running is safe. The script writes a timestamped backup before any change.',
+          'After install, restart Claude Code. Voice Ghostwriter and Humanizer are both available as named skills. Voice Ghostwriter activates when the work calls for voice calibration, interview extraction or drafting in a calibrated voice. Humanizer activates with the /humanizer command or naturally when Claude reaches for AI-pattern detection.',
+          'The Multi-Format Content Writer is a workspace template. Use the GitHub "Use this template" flow or git clone to set it up as a writing project, then add your voice examples and start the workflow. Treat it as the writing-room next to the two skills, not as a third install in the same directory.',
+        ],
+      },
+      {
+        heading: 'How the three resources compose',
+        paragraphs: [
+          'Voice Ghostwriter runs at the front of any drafting session. Calibrate against the writer\'s own published work or the client\'s past writing. Extract specifics through structured interview. Draft in the calibrated voice. The output reads like the writer instead of the model. Humanizer runs at the polish phase. Once a draft exists, the detect-mode flag audits it for the 37 AI-writing patterns. The rewrite mode rebuilds sentence structure rather than swapping synonyms. Five voice profiles let the same engine serve different sub-archetypes (casual newsletter operator, professional ghostwriter, technical essayist, warm storyteller, blunt thread writer).',
+          'The Multi-Format Content Writer template runs once a long-form draft exists. The /write command produces a full article in the workspace. Specialized agents adapt it for LinkedIn, newsletter, Twitter thread and podcast Q&A formats. The repurposing step is where most writers bleed time; this workflow compresses it to one pass.',
+          'The Foundational layer surrounds the three. Researcher gathers research before any draft begins. Plan Challenger stress-tests the outline before drafting. Source Harvest extracts patterns from other writers. Skill Creator codifies recurring drafting workflows. Systematic Debugging takes over when the multi-tool pipeline produces unexpected output. Together with the Writer layer, the practice covers research, challenge, voice-calibration, draft, polish, multi-format adaptation, debug and distribute under one roof.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Newsletter operator publishing weekly',
+        body:
+          'A newsletter writer publishing every Thursday opens the drafting session Tuesday morning. Voice Ghostwriter calibrates against the last six issues. The interview extraction surfaces the specific story that anchors this week\'s edition. The draft lands in the writer\'s voice rather than a smoothed-out version. Humanizer detect-mode catches three AI-pattern slips. The Multi-Format template adapts the issue into a LinkedIn post and a Twitter thread for distribution day. Same source. Three surfaces. One voice across all of them.',
+      },
+      {
+        title: 'Ghostwriter managing multiple clients',
+        body:
+          'A ghostwriter with four active clients keeps voice profiles separate by running Voice Ghostwriter per client at the start of each project. The calibration captures founder #1\'s technical density, founder #2\'s warmth, founder #3\'s blunt opinions and founder #4\'s storytelling rhythm. Humanizer detect-mode runs as the audit gate before delivery. The output sounds like each client, not like a smoothed ghostwriter persona. Voice contamination across projects drops to near zero.',
+      },
+      {
+        title: 'Essayist writing long-arc work',
+        body:
+          'An essayist writing a 4,000-word piece runs Plan Challenger on the outline before drafting begins. Voice Ghostwriter calibrates against the last twenty essays for tonal consistency across the long arc. Researcher dispatches parallel workers for the source-gathering pass. After draft, Humanizer rebuilds the sections that drifted into AI smoothness. The published piece carries the recognizable voice the audience subscribed to.',
+      },
+      {
+        title: 'Indie author maintaining voice across 50,000 words',
+        body:
+          'A nonfiction author writing book chapters runs Voice Ghostwriter at the start of each chapter session. Calibration locks the chapter\'s voice to the manuscript baseline. Humanizer audits the chapter at the section break before moving forward. Voice consistency over a manuscript-length project is the signature challenge for indie authors; the bundle makes the maintenance work systematic instead of intuition-only.',
+      },
+      {
+        title: 'Threadwriter feeding a newsletter from short-form work',
+        body:
+          'A threadwriter operating on X or LinkedIn often feeds a newsletter as the deeper distribution layer. The Multi-Format template runs in reverse: the thread becomes the seed, /write produces the long-form newsletter version, Voice Ghostwriter calibrates the long-form voice against the writer\'s archive. Humanizer cleans the polish layer. One short post becomes one full newsletter without the writer redoing the thinking.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Does the Writer Bundle include the Foundational Creator Bundle?',
+        a:
+          'No. The Writer Bundle assumes the Foundational Bundle is already installed. Install /bundles/foundational-creator first if you have not already. The two-layer architecture means the medium-specific resources (Voice Ghostwriter, Humanizer, Multi-Format Content Writer template) install once on top of the universal substrate.',
+      },
+      {
+        q: 'Why is Multi-Format Content Writer a "companion template" instead of an installed skill?',
+        a:
+          'The WomenDefiningAI claudecode-writer repository is a Claude Code workspace template, not a portable skill. It ships with project-specific folders (rawnotes, context, drafts, research) and slash commands designed to operate against those folders. Cloning it as your writing project is the upstream-recommended pattern. The Writer Bundle includes it as a companion link rather than forcing it into a skills directory where the commands would lose their workspace context.',
+      },
+      {
+        q: 'Why two separate humanizer-style tools when both protect voice?',
+        a:
+          'Voice Ghostwriter and Humanizer solve different problems. Voice Ghostwriter calibrates voice before generation, so the draft starts in the writer\'s voice rather than the model\'s default. Humanizer audits and rewrites after generation, catching the 37 AI-writing patterns that drift in even when calibration is solid. The pair works front-to-back across the writing session.',
+      },
+      {
+        q: 'Will Humanizer change my actual voice when I run it?',
+        a:
+          'Humanizer detect-mode reports patterns without rewriting. Run detect first to see what would change. Rewrite mode then targets specific sentences rather than smoothing the whole text. Five voice profiles (casual, professional, technical, warm, blunt) keep the rewrite consistent with the chosen archetype. The tool is structural, not stylistic; it removes AI tells, not authorial fingerprints.',
+      },
+      {
+        q: 'What does the install script actually change on my system?',
+        a:
+          'It clones github.com/BayramAnnakov/founder-voice-ghostwriter into ~/.claude/skills/voice-ghostwriter (single-skill repo, SKILL.md at root). It writes the Humanizer SKILL.md file to ~/.claude/skills/humanizer/SKILL.md (pure markdown skill, no clone needed). It writes a timestamped backup of any existing files in those locations before overwriting. It does not touch settings.json. The Multi-Format template is not installed by the script; the Install page links to the template repository for the Use-this-template flow.',
+      },
+      {
+        q: 'Is the install reversible?',
+        a:
+          'Yes. To remove Voice Ghostwriter, delete ~/.claude/skills/voice-ghostwriter. To remove Humanizer, delete ~/.claude/skills/humanizer. The Multi-Format template is your own cloned workspace; remove it like any other repo. No system-level changes happen.',
+      },
+      {
+        q: 'How does the Writer Bundle relate to the other avatar bundles?',
+        a:
+          'Same two-layer pattern across every avatar bundle. The Foundational Bundle is the substrate. The Builder, Writer, Performer, Teacher, Curator and Strategist bundles each ship a small medium-specific layer on top. A creator who works as both a Writer and a Builder installs the Foundational Bundle once plus both avatar bundles. No skill duplication.',
+      },
+    ],
+    relatedSlugs: ['foundational-creator', 'researcher', 'plan-challenger', 'source-harvest'],
+    softHook: {
+      body:
+        'The Writer Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for the longer arc, where voice protected today becomes a body of work that compounds across decades, is the Sovereign Life Playbook.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
 ]
 
 export function getAssetBySlug(slug: string, type?: AssetType): IGOSAsset | undefined {

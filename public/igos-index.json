@@ -178,6 +178,30 @@
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "updated_at": "2026-05-01",
       "changelog_url": null
+    },
+    {
+      "id": "the-writer",
+      "name": "The Writer Bundle",
+      "type": "bundle",
+      "version": "1.0",
+      "description": "Two avatar-specific Claude Code skills for newsletter operators, essayists, ghostwriters and indie authors in 2026. Voice Ghostwriter and Humanizer install on top of the Foundational Creator Bundle substrate. Multi-Format Content Writer ships as a companion workspace template.",
+      "tags": ["bundle", "writer", "newsletter", "essayist", "ghostwriter", "claude-code", "voice", "creator-os", "2026"],
+      "install": {
+        "one_line_command": "curl -sSL https://www.infinitegameos.io/bundles/the-writer/install.sh | bash",
+        "script_url": "https://www.infinitegameos.io/bundles/the-writer/install.sh",
+        "markdown_url": "https://www.infinitegameos.io/markdown/bundles/the-writer"
+      },
+      "skills": [
+        { "title": "Voice Ghostwriter (calibration plus interview-driven drafting)", "source": "BayramAnnakov/founder-voice-ghostwriter", "license": "MIT", "url": "https://github.com/BayramAnnakov/founder-voice-ghostwriter" },
+        { "title": "Humanizer (37-pattern AI-writing detector and rewriter)", "source": "Aboudjem/humanizer-skill", "license": "MIT", "url": "https://github.com/Aboudjem/humanizer-skill" },
+        { "title": "Multi-Format Content Writer (companion workspace template)", "source": "WomenDefiningAI/claudecode-writer", "license": "MIT", "url": "https://github.com/WomenDefiningAI/claudecode-writer" }
+      ],
+      "related": ["foundational-creator", "researcher", "plan-challenger", "source-harvest"],
+      "article_url": "https://www.infinitegameos.io/bundles/the-writer",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-01",
+      "changelog_url": null
     }
   ]
 }
