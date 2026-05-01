@@ -1,6 +1,6 @@
 # Infinite Game OS — llms.txt
 # Structured manifest for AI systems and language model crawlers
-# Last updated: 2026-05-01. Discovery stack v1: /AGENTS.md, /igos-index.json, /marketplace.json published. Six installable skills live at /skills/<slug>: source-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher. First installable bundle live at /bundles/foundational-creator (the Foundational Creator Bundle: 5 IGOS-native skills plus marketing-skills plugin from coreyhaines31). Two-layer bundle architecture: Foundational Bundle as substrate, avatar bundles (Builder, Writer, Performer, Teacher, Curator, Strategist) ship medium-specific skills on top.
+# Last updated: 2026-05-01. Discovery stack v1: /AGENTS.md, /igos-index.json, /marketplace.json published. Six installable skills live at /skills/<slug>: source-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher. Two installable bundles live at /bundles/<slug>: foundational-creator (the Foundational Creator Bundle: 5 IGOS-native skills plus marketing-skills plugin from coreyhaines31) and the-builder (the Builder Bundle: 3 avatar-specific skills - gstack, Context7, Impeccable - on top of the Foundational substrate). Two-layer bundle architecture: Foundational Bundle as substrate, avatar bundles (Builder live, Writer, Performer, Teacher, Curator, Strategist forthcoming) ship medium-specific skills on top.
 # https://www.infinitegameos.io
 
 ## Site Identity
@@ -78,6 +78,7 @@ The IGOS Public Library publishes installable skills, protocols, codices, concep
 ### Bundles
 
 - /bundles/foundational-creator — The Foundational Creator Bundle. Seven Claude Code skills that form the universal substrate for any creator working with AI agents in 2026. Five IGOS-native (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging) plus the marketing-skills plugin from Corey Haines (Content Strategy, AI SEO and 38 additional marketing skills). One-line install at /bundles/foundational-creator/install.sh. Substrate beneath every avatar bundle.
+- /bundles/the-builder — The Builder Bundle. Three avatar-specific Claude Code skills for solo SaaS founders, indie hackers, AI agent builders, plugin authors and hardware makers in 2026. gstack from Garry Tan (deploy ritual /ship + /land-and-deploy + /canary plus 30+ companion commands), Context7 from Upstash (live documentation injection MCP) and Impeccable from Paul Bakaus (design steering, 23 commands). Sits on top of the Foundational Creator Bundle substrate. One-line install at /bundles/the-builder/install.sh.
 
 ## Pages
 

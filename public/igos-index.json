@@ -154,6 +154,30 @@
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "updated_at": "2026-05-01",
       "changelog_url": null
+    },
+    {
+      "id": "the-builder",
+      "name": "The Builder Bundle",
+      "type": "bundle",
+      "version": "1.0",
+      "description": "Three avatar-specific Claude Code skills for solo SaaS founders, indie hackers, AI agent builders, plugin authors and hardware makers in 2026. gstack, Context7 and Impeccable on top of the Foundational Creator Bundle substrate.",
+      "tags": ["bundle", "builder", "solo-saas", "indie-hacker", "claude-code", "shipping", "creator-os", "2026"],
+      "install": {
+        "one_line_command": "curl -sSL https://www.infinitegameos.io/bundles/the-builder/install.sh | bash",
+        "script_url": "https://www.infinitegameos.io/bundles/the-builder/install.sh",
+        "markdown_url": "https://www.infinitegameos.io/markdown/bundles/the-builder"
+      },
+      "skills": [
+        { "title": "gstack (ship, land-and-deploy, canary, plus 30 companion commands)", "source": "garrytan/gstack", "license": "MIT", "url": "https://github.com/garrytan/gstack" },
+        { "title": "Context7 (live documentation injection MCP)", "source": "upstash/context7", "license": "MIT", "url": "https://github.com/upstash/context7" },
+        { "title": "Impeccable (design steering for code-first builders)", "source": "pbakaus/impeccable", "license": "Apache-2.0", "url": "https://github.com/pbakaus/impeccable" }
+      ],
+      "related": ["foundational-creator", "source-harvest", "systematic-debugging", "plan-challenger"],
+      "article_url": "https://www.infinitegameos.io/bundles/the-builder",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-01",
+      "changelog_url": null
     }
   ]
 }

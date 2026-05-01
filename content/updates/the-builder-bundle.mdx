@@ -1,0 +1,108 @@
+---
+title: "The Builder Bundle. Claude Code Skills for Solo SaaS Founders and Indie Hackers in 2026"
+date: 2026-05-01
+slug: the-builder-bundle
+summary: "Three avatar-specific Claude Code skills for the Builder archetype: gstack (deploy ritual plus 30 companion commands), Context7 (live documentation injection) and Impeccable (design steering). Sits on top of the Foundational Creator Bundle. Build is solved in 2026; distribution is the bottleneck. The bundle protects shipping cadence so attention can move to the harder problem."
+---
+
+It's Tuesday afternoon. The feature works. You shipped the v0.1 over the weekend. Three friends signed up. Your wife signed up. Your account on a different email signed up by accident. The prototype runs. The waitlist has eleven people on it. Nine of them are friends.
+
+The next ten paying users will take longer than the prototype did. You knew this going in and it still surprises you.
+
+This is the wall every Builder hits in 2026. Build speed has compressed dramatically. AI coding assistants write the code. Skills handle the boilerplate. The product that took six months in 2022 takes six weeks now. The thing that used to feel like the bottleneck (writing the code) has stopped feeling like the bottleneck. The thing underneath it (reaching the people who would pay for the thing) has become the work.
+
+The Builder Bundle is not a fix for the distribution wall. Nothing fixes that wall directly except patient distribution work over time. What the bundle does is protect the shipping cadence so attention can move to the harder problem. Three skills install on top of the [Foundational Creator Bundle](/bundles/foundational-creator) and cover the build, polish and ship phases of a solo product practice. The substrate underneath them carries research, adversarial review, intelligence extraction, custom-tool authoring, root-cause debugging plus content strategy and AI-era discoverability.
+
+Together they let one person ship like a small team and free up the bandwidth that distribution actually requires.
+
+## Who this is for
+
+Solo SaaS founders running a $3K to $50K MRR micro-SaaS. Indie hackers running multiple small products simultaneously. AI agent builders shipping Claude Code plugins, n8n workflows or LLM pipelines. Plugin authors extending Obsidian, VS Code, Figma or Shopify. Hardware makers combining firmware, embedded software and physical prototyping. Open-source maintainers stewarding public repos.
+
+What unifies the archetype is shipping. The Builder's reputation compounds through a portfolio of working artifacts other people run. Open repos, live products, transparent MRR milestones, changelog posts, plugin pages. A Builder who stops shipping for a quarter starts to drift out of the archetype. The bundle is built around protecting the cadence.
+
+## The three skills
+
+### gstack
+
+[gstack](https://github.com/garrytan/gstack) is Garry Tan's open-source software factory. It turns Claude Code into a virtual engineering team. Twenty-three specialists and eight power tools, all slash commands, MIT-licensed.
+
+The shipping ritual is three commands. `/ship` opens a clean PR with sync and tests. `/land-and-deploy` merges, deploys and verifies production. `/canary` watches the post-deploy window. This is the part most solo builders handle with ad-hoc scripts or manual steps and the part most regret skipping when something breaks at 11pm on a Saturday.
+
+The same install brings the rest of the gstack toolkit. `/office-hours` interrogates the next product idea with six forcing questions. `/plan-ceo-review` runs strategic challenge with four scope modes. `/review` does rigorous PR review on any branch. `/qa` opens a real browser and tests a staging URL. `/cso` runs an OWASP plus STRIDE security audit. `/retro` runs a weekly engineering retrospective. The full list reaches thirty-plus commands. None auto-execute. They become available as slash commands and you reach for the ones that match the work.
+
+Garry Tan reports an 810x increase on logical-code-change throughput between 2013 and 2026 using this stack on his own work. The number is calibrated, not raw. The methodology is documented openly. The reason it works is not the speed of any individual command. It is that the toolkit covers the team-of-twenty roles a solo founder otherwise carries alone.
+
+### Context7
+
+[Context7](https://github.com/upstash/context7) is live documentation injection from Upstash. MIT-licensed. It pulls version-specific, up-to-date documentation and code examples directly from source repositories into the AI coding session.
+
+This solves a silent tax on every coding pass. AI coding assistants are trained on a snapshot. Library APIs change after the snapshot. The model improvises plausible-looking signatures from training data and you spend the next hour debugging a function call that does not exist in the version you installed. Context7 resolves the library ID first, then queries live docs. The two-step pattern is the load-bearing behavior. For builders working with Supabase, Next.js, Tailwind, Stripe or any fast-moving library, Context7 removes the hallucination tax from the workflow.
+
+For AI agent builders working at the frontier of MCP servers and Claude Code plugins, Context7 is the load-bearing skill in the bundle. The tooling changes weekly. Documentation is incomplete. Live docs on every coding pass is not a nice-to-have. It is the difference between shipping the integration and spending three days debugging an API surface that already changed.
+
+### Impeccable
+
+[Impeccable](https://github.com/pbakaus/impeccable) is design fluency for code-first builders. Paul Bakaus, Apache 2.0. One skill, twenty-three commands, curated anti-pattern detection.
+
+The bottleneck for indie products in 2026 is not speed and increasingly not even the core feature. It is polish. The empty state. The first-run flow. The error message that explains what to do next. The button hierarchy that does not visually compete. Solo builders who can write Postgres queries in their sleep often ship UIs that announce "this is a side project" within five seconds. Impeccable provides a structured vocabulary for raising that baseline without hiring a designer.
+
+`/impeccable polish` and `/impeccable audit` are the everyday commands. `/impeccable harden` walks error handling, internationalization, text overflow and edge cases. `/impeccable onboard` builds first-run flows, empty states and activation paths. `/impeccable craft` and `/impeccable critique` provide deeper passes. The Apache 2.0 license permits commercial use without restriction.
+
+Together with gstack and Context7, Impeccable closes the build-polish-ship loop with one skill per phase.
+
+## The Foundational substrate underneath
+
+The Builder Bundle assumes the [Foundational Creator Bundle](/bundles/foundational-creator) is already installed. This is the universal substrate beneath every avatar bundle. Seven skills total, five IGOS-native (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging) plus Content Strategy and AI SEO from Corey Haines's marketing-skills plugin.
+
+For the Builder, the substrate carries the work that surrounds the build. Researcher runs upstream. Parallel sub-agents map user pain, competitive landscape and technical context faster than serial reading. Plan Challenger runs before significant code lands. Catches the wrong product before it is built around the wrong assumption. Source Harvest extracts integration patterns from upstream libraries and competitor codebases at source level rather than description level. Skill Creator codifies your recurring shipping workflows into permanent infrastructure. Systematic Debugging applies root-cause discipline when the multi-skill pipeline breaks. Content Strategy and AI SEO handle the discoverability layer that turns shipped products into found products.
+
+The two-layer architecture means no skill duplication. The Foundational Bundle installs once. The Builder Bundle installs once. Together they cover research, challenge, build, ship, polish, monitor, debug, distribute and optimize for discovery under one roof.
+
+## Build is solved. Distribution is the bottleneck.
+
+This is the structural fact about being a Builder in 2026. Build speed has compressed. The same person who took six months to ship a working SaaS in 2022 ships in six weeks now. The team-of-twenty effect from gstack plus Context7 plus the Foundational substrate compresses it further.
+
+What did not compress is the work of reaching the first ten paying users. That work is patient outbound, public building, content distribution, community participation, customer interviews and the relentless practice of being visible inside the niche the product serves. None of that is replaced by AI tooling. All of it is freed up by the bundle, because every hour the bundle saves on build, polish or shipping is an hour available for the harder work.
+
+This is the practical version of a deeper distinction. Each launch is a finite game. Ship the v1. Hit $1K MRR. Get the first ten reviews on Product Hunt. Finite games are real and necessary. They have scoreboards and timers. The Builder who only plays the launch game burns out on the variance because launches do not all win.
+
+Underneath them is the [Infinite Game](/infinite-game): the practice of becoming a builder whose portfolio compounds across years. The launch that fails feeds into the second product. The Discord that never grew teaches the third. The plugin no one used still adds shape to the next thing. The Pioneer who plays the long arc survives the variance and compounds through it. The bundle is the toolkit for that longer game.
+
+## Aliveness is the engine
+
+The skills are not the work. The reason most solo Builders fail at shipping consistently is not tooling. It is depletion. The morning you sit down to ship the next feature and the energy is not there.
+
+The tools the bundle provides are designed around protecting that energy. Researcher saves the three hours of manual research that would have eroded the writing energy for the changelog. Plan Challenger catches the wrong-product spiral that would have eaten a week of wasted code. Context7 removes the silent debugging tax that compounds across an unstable library surface. Impeccable raises the polish baseline so the public-facing surface does not feel like a constant apology. gstack covers the deploy ritual most solo founders dread.
+
+What is left over is the part that requires you to be present. The instinct for what to ship. The judgment about what to walk away from. The patient outbound that builds the first hundred users. The willingness to be wrong in public for years before something compounds. These are aliveness. The bundle protects them by removing the friction that would otherwise erode them under sustained output.
+
+The best builders describe their best products as the ones they could not not build. That instinct, followed rather than suppressed, is the practical heuristic. Build the thing that will not leave you alone. The bundle handles the rest.
+
+## The Creator Flywheel for Builders
+
+The [Creator Flywheel](/concepts/creator-flywheel) maps cleanly onto the Builder's build-in-public rhythm. Five stages: live the life, share the breadcrumbs, activate others, return home, go deeper.
+
+Live the life: ship something this week. Public, working, real. Source Harvest keeps you connected to what other Builders are doing without flooding you. Share the breadcrumbs: a changelog post, a build-in-public thread, a brief Loom showing the new feature. Content Strategy plans the rhythm; AI SEO ensures the breadcrumbs are findable. Activate others: a user who builds on your open-source plugin, a developer who installs your CLI, a creator who hires your micro-SaaS. Researcher gathers the depth that makes contributions land. Return home: triage feedback, decide the next move. Plan Challenger filters the next direction from the noise of inbound. Go deeper: codify a recurring workflow into a custom skill. Skill Creator handles that.
+
+A funnel converts attention into revenue. The Creator Flywheel converts aliveness into contribution and lets revenue follow. The Builder Bundle is the working infrastructure for the second model.
+
+## The Pioneer arc
+
+The AI Agent Builder works in territory where there is no established playbook. The tooling changes every ninety days. The protocols are still being defined. The reference architecture is two GitHub repos and a blog post. This is the [Pioneer](/concepts/the-pioneer) condition: sufficient context to move without needing permission or a map.
+
+The bundle does not replace the Pioneer. It supports the Pioneer. Context7 means the absence of stable docs does not stop the work. Source Harvest means new patterns can be extracted and integrated under governance. Skill Creator means recurring frontier workflows turn into permanent infrastructure. The Pioneer is the energy that emerges when the ground has no precedent. There is no precedent for the creator operating system of 2026. Builders working at the frontier are writing the playbook in real time.
+
+The bundle is not the finish line. Finite games close. The product launches. The version ships. The plugin reaches a thousand installs. Underneath, the Infinite Game continues. The portfolio compounds across years. The reputation deepens across products. The practice of being a Builder who keeps shipping outlasts any single artifact.
+
+## Install
+
+The bundle installs in one command. Idempotent. Safe to re-run. Pre-install the Foundational Creator Bundle first if you have not already.
+
+Install page and details: [/bundles/the-builder](/bundles/the-builder).
+
+Two marketplaces register. Two plugins enable. gstack clones into the Claude Code skills directory and runs its setup. Restart Claude Code. The Builder layer is live.
+
+The first ten paying users will still take longer than the prototype did. That is the work. The bundle protects the cadence so the work has room to happen.
+
+If you are reading this, the rest is what gets shipped.

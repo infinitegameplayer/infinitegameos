@@ -38,7 +38,7 @@ The library publishes installable assets in six types. Each asset has a canonica
 | **Strategy** | Higher-order pattern. Combines skills, protocols and codices into an approach. | `/strategies/[slug]` |
 | **Bundle** | Aggregation of multiple skills (IGOS-native and external) installed together via a hosted shell script. Two-layer architecture: Foundational Bundle as substrate, avatar bundles ship medium-specific skills on top. | `/bundles/[slug]` |
 
-Concepts predate the public library. Skills, protocols, codices and strategies launched 2026-04-29 with the IGOS Public Library Foundation. Bundles launched 2026-05-01 with the Foundational Creator Bundle.
+Concepts predate the public library. Skills, protocols, codices and strategies launched 2026-04-29 with the IGOS Public Library Foundation. Bundles launched 2026-05-01: the Foundational Creator Bundle (substrate) and the Builder Bundle (first avatar layer) are both live; additional avatar bundles forthcoming.
 
 ## Install Paths
 

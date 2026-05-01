@@ -672,6 +672,140 @@ export const igosAssets: IGOSAsset[] = [
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
+  {
+    slug: 'the-builder',
+    type: 'bundle',
+    title: 'The Builder Bundle',
+    label: 'Bundle',
+    version: '1.0',
+    updated: '2026-05-01',
+    description:
+      'Claude Code skills for solo SaaS founders, indie hackers, AI agent builders and hardware tinkerers in 2026. Three avatar-specific installs (gstack ship-trio, Context7, Impeccable) on top of the Foundational Creator Bundle substrate.',
+    tags: ['bundle', 'builder', 'solo-saas', 'indie-hacker', 'claude-code', 'shipping', 'creator-os', '2026'],
+    capsule:
+      'The Builder Bundle is the avatar-specific layer for functional-output creators: solo SaaS founders, indie hackers, AI agent builders, plugin authors and hardware makers. Three skills sit on top of the Foundational Creator Bundle substrate. gstack ships the deploy ritual (/ship, /land-and-deploy, /canary) plus 30 companion commands from Garry Tan. Context7 injects live, version-specific documentation directly into the AI coding session. Impeccable gives a structured design vocabulary for builders who ship the product and the UI. Build is solved in 2026; distribution is the bottleneck. The Builder Bundle protects shipping cadence so attention can move to the harder problem.',
+    bundle: {
+      installUrl: 'https://www.infinitegameos.io/bundles/the-builder/install.sh',
+      command: 'curl -sSL https://www.infinitegameos.io/bundles/the-builder/install.sh | bash',
+      skills: [
+        {
+          title: 'gstack (ship, land-and-deploy, canary, plus 30 companion commands)',
+          description:
+            'The shipping ritual for solo builders. /ship opens a clean PR with sync and tests. /land-and-deploy merges, deploys and verifies production. /canary watches the post-deploy window most solo builders skip and most regret skipping. The same install brings 30+ companion commands from Garry Tan: CEO review, eng manager, PR review, QA against a real browser, security audit, retro and more. Twenty-three specialists and eight power tools, all slash commands, all Markdown.',
+          source: 'github.com/garrytan/gstack',
+          license: 'MIT',
+          externalUrl: 'https://github.com/garrytan/gstack',
+        },
+        {
+          title: 'Context7 (live documentation injection MCP)',
+          description:
+            'Pulls version-specific, up-to-date documentation and code examples directly from source repositories into the AI coding session. Eliminates hallucinated API signatures and stale examples for fast-moving libraries (Supabase, Next.js, Tailwind, Stripe, the rest). Two-step pattern: resolve the library ID, then query live docs. Works across Claude Code, Cursor and other AI editors.',
+          source: 'github.com/upstash/context7',
+          license: 'MIT',
+          externalUrl: 'https://github.com/upstash/context7',
+        },
+        {
+          title: 'Impeccable (design steering for code-first builders)',
+          description:
+            'One skill, 23 commands, curated anti-pattern detection. /impeccable polish, /impeccable audit, /impeccable critique, /impeccable harden (error handling, i18n, edge cases), /impeccable onboard (first-run flows, empty states) and the rest. Gives the non-designer builder a structured vocabulary for visual quality without hiring a designer. The bottleneck for indie products in 2026 is polish, not speed; this skill addresses it directly.',
+          source: 'github.com/pbakaus/impeccable',
+          license: 'Apache-2.0',
+          externalUrl: 'https://github.com/pbakaus/impeccable',
+        },
+      ],
+    },
+    definition:
+      'The Builder Bundle is the avatar-specific stack for functional-output creators working with Claude Code in 2026. Three skills install on top of the Foundational Creator Bundle: gstack (Garry Tan, MIT) brings the deploy ritual plus a wider engineering-team toolkit. Context7 (Upstash, MIT) injects live documentation. Impeccable (Paul Bakaus, Apache 2.0) handles design steering. The Foundational Bundle (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging plus Content Strategy and AI SEO) is the assumed pre-install. The Builder Bundle does not duplicate those skills. It adds the medium-specific layer a solo SaaS founder, indie hacker, AI agent builder, plugin author or hardware maker needs.',
+    howItWorks: [
+      {
+        heading: 'Pre-install: the Foundational Creator Bundle',
+        paragraphs: [
+          'The Builder Bundle assumes the Foundational Creator Bundle is already present. The Foundational Bundle is the universal substrate: Researcher for upstream research, Plan Challenger for adversarial pre-build review, Source Harvest for pattern extraction from external repos, Skill Creator for codifying recurring workflows, Systematic Debugging for root-cause investigation, plus Content Strategy and AI SEO from the marketing-skills plugin. Builders need all seven. Installing them once at the substrate level is enough.',
+          'If the Foundational Bundle is not yet installed, install it first at /bundles/foundational-creator. The Builder Bundle install script in this page does not bring those skills again.',
+        ],
+      },
+      {
+        heading: 'What the install brings',
+        paragraphs: [
+          'The install script does two things. First, it registers two Claude Code marketplaces (context7-marketplace and impeccable) and enables their plugins by editing settings.json in place. Second, it clones the gstack repository into the Claude Code skills directory and runs the gstack setup, which auto-detects Claude Code and installs all gstack slash commands. Both halves are idempotent. Re-running is safe.',
+          'After install, restart Claude Code. /plugin shows context7-plugin and impeccable enabled. The gstack commands (/ship, /land-and-deploy, /canary, /office-hours, /plan-ceo-review, /review, /qa, /retro and the rest) are available as slash commands. The full gstack list ships under one install because the underlying repo is one tightly-integrated toolkit.',
+        ],
+      },
+      {
+        heading: 'How the three skills compose',
+        paragraphs: [
+          'Context7 runs during the build phase. Whenever Claude Code reaches for a library API, Context7 injects the current version-specific docs instead of letting the model improvise from training data. Impeccable runs at the polish phase. Once the feature works, /impeccable polish and /impeccable audit raise the visual baseline before the public sees it. gstack runs at the shipping phase. /ship opens the PR, /land-and-deploy merges and deploys, /canary monitors the post-deploy window. The wider gstack toolkit (CEO review, eng review, QA, retro) covers the team-of-twenty roles a solo founder otherwise carries alone.',
+          'The Foundational layer surrounds the three. Researcher runs upstream of the build (user-pain mapping, competitive teardowns). Plan Challenger runs before significant code lands (catches the wrong product before it is built). Source Harvest extracts patterns from upstream libraries. Skill Creator codifies your own recurring shipping workflows. Systematic Debugging runs when the multi-skill pipeline produces unexpected behavior. Together with the Builder layer, you get research, challenge, build, ship, polish, monitor, debug under one roof.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Solo SaaS founder shipping the next feature',
+        body:
+          'A founder running a $5K MRR micro-SaaS picks up the next ticket. Researcher dispatches parallel workers to map user pain. Plan Challenger stress-tests the proposed solution. Context7 injects the current Supabase and Next.js docs during the build. Impeccable polishes the new flow. /ship opens the PR. /land-and-deploy merges and verifies production. /canary watches the post-deploy window. One operator. Seven roles. No tooling friction between phases.',
+      },
+      {
+        title: 'Indie hacker running multiple products simultaneously',
+        body:
+          'An indie hacker with three products in different stages keeps shipping rhythm with the same skill set across all three. Each product is a separate repository. The bundle installs once at the user level and applies to every project. Context-switching between products no longer means relearning a tooling stack per repo. The Builder Bundle is the same in every working surface.',
+      },
+      {
+        title: 'AI agent builder working at the frontier',
+        body:
+          'A builder working on Claude Code plugins or n8n workflows operates where documentation is incomplete and APIs change weekly. Context7 is the load-bearing skill: live docs on every coding pass remove the hallucination tax that compounds across an unstable surface. Source Harvest (from the Foundational layer) extracts integration patterns from upstream MCP servers. Plan Challenger catches MCP integration assumptions before they break at runtime.',
+      },
+      {
+        title: 'Plugin author extending an existing platform',
+        body:
+          'A builder shipping Obsidian, VS Code or Figma plugins works inside platform constraints. Impeccable enforces visual fluency that matches the host platforms expectation. /ship and /land-and-deploy handle the marketplace publishing rhythm. /canary monitors the install metrics post-publish. The substrate plus the Builder Bundle covers the full plugin lifecycle from idea to deprecation.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Does the Builder Bundle include the Foundational Creator Bundle?',
+        a:
+          'No. The Builder Bundle assumes the Foundational Bundle is already installed. Install /bundles/foundational-creator first if you have not already. The two-layer architecture means the medium-specific skills (gstack, Context7, Impeccable) install once on top of the universal substrate (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging plus Content Strategy and AI SEO).',
+      },
+      {
+        q: 'Why does gstack install differently from Context7 and Impeccable?',
+        a:
+          'Context7 and Impeccable ship as Claude Code marketplace plugins, so they install via settings.json registration. gstack ships as a single repository with 30+ slash commands and its own setup script. The gstack maintainer chose this distribution model intentionally to keep the toolkit tightly integrated. The Builder Bundle install script handles both patterns in one run.',
+      },
+      {
+        q: 'I only want /ship, /land-and-deploy and /canary from gstack. Can I skip the rest?',
+        a:
+          'gstack distributes as one bundle. Installing brings the full slash-command set. The other commands (CEO review, eng manager, QA, retro and the rest) do not auto-execute. They become available when you invoke them. Most solo builders find at least three or four additional gstack commands useful within the first week. Skipping the install would mean cherry-picking individual command files manually, which the gstack repo does not support cleanly.',
+      },
+      {
+        q: 'Is Context7 a Claude Code plugin or an MCP server?',
+        a:
+          'It ships as a Claude Code marketplace plugin (context7-plugin under the context7-marketplace marketplace). The plugin internally manages the MCP-style live-docs lookup. You install it via the Builder Bundle script and it works across Claude Code sessions. For Cursor or other AI editors, follow the alternate install path documented in the upstash/context7 repository.',
+      },
+      {
+        q: 'What does the install script actually change on my system?',
+        a:
+          'It edits Claude Code settings.json (default ~/.claude/settings.json) to register two marketplaces (context7-marketplace, impeccable) and enable two plugins. It clones github.com/garrytan/gstack into ~/.claude/skills/gstack and runs the gstack setup script. It writes a timestamped backup of settings.json before any edit. The script prints every change before applying.',
+      },
+      {
+        q: 'Is the install reversible?',
+        a:
+          'Yes. To remove the marketplace plugins, restore settings.json from the backup the script writes, or run /plugin uninstall for each plugin from inside Claude Code. To remove gstack, delete ~/.claude/skills/gstack. No system-level changes happen.',
+      },
+      {
+        q: 'How does the Builder Bundle relate to the other avatar bundles?',
+        a:
+          'Same two-layer pattern across every avatar bundle. The Foundational Bundle is the substrate. The Writer, Performer, Teacher, Curator and Strategist bundles each ship a small medium-specific layer on top. A creator who works as both a Builder and a Writer installs the Foundational Bundle once plus both avatar bundles. No skill duplication.',
+      },
+    ],
+    relatedSlugs: ['foundational-creator', 'source-harvest', 'systematic-debugging', 'plan-challenger'],
+    softHook: {
+      body:
+        'The Builder Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for which workflows are worth shipping in the first place, and which finite games to play inside the Infinite one, is the Sovereign Life Playbook.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
 ]
 
 export function getAssetBySlug(slug: string, type?: AssetType): IGOSAsset | undefined {
