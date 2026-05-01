@@ -5,7 +5,7 @@
   "description": "Installable skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
   "url": "https://www.infinitegameos.io",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "updated_at": "2026-04-30",
+  "updated_at": "2026-05-01",
   "assets": [
     {
       "id": "source-harvest",
@@ -125,6 +125,34 @@
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "updated_at": "2026-04-30",
+      "changelog_url": null
+    },
+    {
+      "id": "foundational-creator",
+      "name": "The Foundational Creator Bundle",
+      "type": "bundle",
+      "version": "1.0",
+      "description": "Seven Claude Code skills that form the universal substrate for any creator working with AI agents in 2026. Five IGOS-native plus the marketing-skills plugin from Corey Haines.",
+      "tags": ["bundle", "creator", "foundational", "claude-code", "creator-os", "2026"],
+      "install": {
+        "one_line_command": "curl -sSL https://www.infinitegameos.io/bundles/foundational-creator/install.sh | bash",
+        "script_url": "https://www.infinitegameos.io/bundles/foundational-creator/install.sh",
+        "markdown_url": "https://www.infinitegameos.io/markdown/bundles/foundational-creator"
+      },
+      "skills": [
+        { "title": "Researcher", "source": "IGOS Library", "license": "CC-BY-4.0", "url": "https://www.infinitegameos.io/skills/researcher" },
+        { "title": "Plan Challenger", "source": "IGOS Library", "license": "CC-BY-4.0", "url": "https://www.infinitegameos.io/skills/plan-challenger" },
+        { "title": "Source Harvest", "source": "IGOS Library", "license": "CC-BY-4.0", "url": "https://www.infinitegameos.io/skills/source-harvest" },
+        { "title": "Skill Creator", "source": "IGOS Library", "license": "CC-BY-4.0", "url": "https://www.infinitegameos.io/skills/skill-creator" },
+        { "title": "Systematic Debugging", "source": "IGOS Library", "license": "CC-BY-4.0", "url": "https://www.infinitegameos.io/skills/systematic-debugging" },
+        { "title": "Content Strategy", "source": "marketing-skills (Corey Haines)", "license": "MIT", "url": "https://github.com/coreyhaines31/marketingskills/tree/main/skills/content-strategy" },
+        { "title": "AI SEO", "source": "marketing-skills (Corey Haines)", "license": "MIT", "url": "https://github.com/coreyhaines31/marketingskills/tree/main/skills/ai-seo" }
+      ],
+      "related": ["researcher", "plan-challenger", "source-harvest", "skill-creator", "systematic-debugging"],
+      "article_url": "https://www.infinitegameos.io/bundles/foundational-creator",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-01",
       "changelog_url": null
     }
   ]

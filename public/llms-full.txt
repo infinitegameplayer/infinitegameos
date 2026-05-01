@@ -1,6 +1,6 @@
 # Infinite Game OS — Full Content Index
 # Deep LLM reference for comprehensive site content
-# Updated: 2026-04-30. Discovery stack v1 published: /AGENTS.md (cross-tool harvest instructions), /igos-index.json (machine-readable asset registry), /marketplace.json (Claude Code marketplace manifest). Public Library now ships six installable skills at /skills/<slug>: source-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher. VS Code one-click install verified via vscode://anthropic.claude-code/install-plugin URI handler.
+# Updated: 2026-05-01. Discovery stack v1 published: /AGENTS.md (cross-tool harvest instructions), /igos-index.json (machine-readable asset registry), /marketplace.json (Claude Code marketplace manifest). Public Library now ships six installable skills at /skills/<slug>: source-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher. First installable bundle now live at /bundles/foundational-creator: the Foundational Creator Bundle (7 skills, 5 IGOS-native + marketing-skills plugin from coreyhaines31). Two-layer bundle architecture: Foundational Bundle as substrate, avatar bundles (Builder, Writer, Performer, Teacher, Curator, Strategist) ship medium-specific skills on top. VS Code one-click install verified via vscode://anthropic.claude-code/install-plugin URI handler.
 # https://www.infinitegameos.io
 
 This file contains structured summaries of each page for AI systems that require
@@ -382,5 +382,23 @@ Skill Creator builds new skills with a five-phase process. Phase 1 is the interv
 ### Researcher (/skills/researcher)
 
 Researcher runs parallel sub-agent research on any topic. Up to 4 independent workers spawn simultaneously, each assigned a specific research angle with relevant context and a clear output format. Workers do not communicate with each other; only their final outputs return. The skill aggregates worker outputs into a single structured report (summary, findings by angle, recommended actions or decision points, sources). Research is intelligence-gathering only. Workers do not implement, do not write to canonical files, do not trigger external actions. Every report returns to the operator for review and decision. Sub-agent depth is capped at 1 to prevent recursive cost spirals. Use cases include pre-plan deep dives, tech-watch comparative scans and architectural decisions spanning multiple protocols. Pairs with Source Harvest and Skill Creator.
+
+---
+
+## Public Library Bundles (/bundles/<slug>)
+
+Bundles aggregate multiple skills into a single substrate install. Each bundle ships an article, a dedicated bundle page at /bundles/<slug>, a shell install script at /bundles/<slug>/install.sh and a markdown variant at /markdown/bundles/<slug>. The two-layer architecture: the Foundational Creator Bundle is the universal substrate for any creator; avatar bundles (Builder, Writer, Performer, Teacher, Curator, Strategist) ship medium-specific skills on top of the Foundational layer.
+
+### The Foundational Creator Bundle (/bundles/foundational-creator)
+
+The Foundational Creator Bundle is a seven-skill substrate for any creator working with Claude Code in 2026. Five skills are IGOS-native and were not built for any specific archetype: Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging. They are the operating system beneath every creative practice. Two skills come from the marketing-skills plugin by Corey Haines (MIT-licensed): Content Strategy and AI SEO. They cover the distribution and discoverability layer the IGOS library does not yet ship natively. One install command brings the IGOS plugins via the IGOS marketplace and the marketing-skills plugin via its own marketplace. The marketing-skills plugin contains 40 skills total; Content Strategy and AI SEO are the two named for the Foundational layer; the other 38 are bonus marketing depth (copywriting, paid ads, customer research, churn prevention, schema markup, programmatic SEO and more).
+
+Two-layer architecture. The Foundational Bundle is the substrate. Avatar bundles ship the medium-specific skills on top of it. Researcher, Source Harvest, Plan Challenger, Skill Creator and Systematic Debugging do not appear in any avatar bundle because installing them once at the substrate level is enough. This deduplicates skills across six avatar bundles, clarifies the positioning (IGOS is the operating system, avatar bundles are the apps that run on it) and creates a clean upgrade path as new avatar bundles ship.
+
+Install method: one-line `curl -sSL https://www.infinitegameos.io/bundles/foundational-creator/install.sh | bash`. Idempotent. Edits Claude Code settings.json in place to register two marketplaces (igos-library and marketingskills) and enable six plugins. Restart Claude Code after install. Rollback path is restoring the timestamped backup the script writes before edit.
+
+Use cases: new creator setting up first AI-augmented workflow (one-command starting line replaces months of stack assembly); established creator integrating Claude Code on top of existing tools (substrate slots underneath without disruption); creator preparing to add an avatar bundle (Foundational Bundle removes dedup confusion since avatar bundles assume the substrate is present); team or studio standardizing on a creator OS (single baseline install per team member).
+
+Pairs with avatar bundles (forthcoming): the Builder (gstack ship-trio, Context7, Impeccable), the Writer (Voice Ghostwriter, Humanizer, Multi-Format Content Writer), the Performer (YouTube Channel Manager, Video Watcher, Content Repurposing), the Teacher (companion link to GarethManning claude-education-skills), the Curator (Tech Digest, Newsletter Creation), the Strategist (Management Consulting, Decision Toolkit, MBB Management Consultant).
 
 ---

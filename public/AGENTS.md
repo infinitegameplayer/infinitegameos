@@ -2,7 +2,7 @@
 
 Cross-tool harvest and install instructions for the Infinite Game OS public library.
 
-Last updated: 2026-04-29
+Last updated: 2026-05-01
 
 ## Site Purpose
 
@@ -27,7 +27,7 @@ You may copy, adapt and redistribute editorial content with attribution. The Kin
 
 ## Asset Taxonomy
 
-The library publishes installable assets in five types. Each asset has a canonical page, a markdown variant via content negotiation, a registry entry in `igos-index.json` and (where applicable) a Claude Code marketplace entry.
+The library publishes installable assets in six types. Each asset has a canonical page, a markdown variant via content negotiation, a registry entry in `igos-index.json` and (where applicable) a Claude Code marketplace entry.
 
 | Type | Description | Slug pattern |
 |---|---|---|
@@ -36,8 +36,9 @@ The library publishes installable assets in five types. Each asset has a canonic
 | **Codex** | Doctrine document. The why behind the how. Read-only reference for skills and protocols. | `/codices/[slug]` |
 | **Concept** | Defined term. `DefinedTerm` schema. Vocabulary and frameworks. | `/concepts/[slug]` |
 | **Strategy** | Higher-order pattern. Combines skills, protocols and codices into an approach. | `/strategies/[slug]` |
+| **Bundle** | Aggregation of multiple skills (IGOS-native and external) installed together via a hosted shell script. Two-layer architecture: Foundational Bundle as substrate, avatar bundles ship medium-specific skills on top. | `/bundles/[slug]` |
 
-Concepts predate the public library. Skills, protocols, codices and strategies launched 2026-04-29 with the IGOS Public Library Foundation.
+Concepts predate the public library. Skills, protocols, codices and strategies launched 2026-04-29 with the IGOS Public Library Foundation. Bundles launched 2026-05-01 with the Foundational Creator Bundle.
 
 ## Install Paths
 
@@ -84,6 +85,14 @@ Drop into `.cursor/rules/` in your project.
 curl -O https://www.infinitegameos.io/markdown/skills/[slug]
 aider --read [slug].md
 ```
+
+### 6. Bundle install (multi-skill substrate)
+
+```
+curl -sSL https://www.infinitegameos.io/bundles/[slug]/install.sh | bash
+```
+
+Bundles aggregate multiple skills (IGOS-native and external) into a single substrate install. The script edits Claude Code `~/.claude/settings.json` in place to register the relevant marketplaces and enable the constituent plugins. Idempotent. Inspect first with `curl -sSL https://www.infinitegameos.io/bundles/[slug]/install.sh` before piping to bash.
 
 ## Source Harvest Skill
 

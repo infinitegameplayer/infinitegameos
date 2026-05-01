@@ -1,6 +1,6 @@
 # Infinite Game OS — llms.txt
 # Structured manifest for AI systems and language model crawlers
-# Last updated: 2026-04-30. Discovery stack v1: /AGENTS.md, /igos-index.json, /marketplace.json published. Six installable skills live at /skills/<slug>: source-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher. VS Code one-click install verified via vscode://anthropic.claude-code/install-plugin URI handler.
+# Last updated: 2026-05-01. Discovery stack v1: /AGENTS.md, /igos-index.json, /marketplace.json published. Six installable skills live at /skills/<slug>: source-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher. First installable bundle live at /bundles/foundational-creator (the Foundational Creator Bundle: 5 IGOS-native skills plus marketing-skills plugin from coreyhaines31). Two-layer bundle architecture: Foundational Bundle as substrate, avatar bundles (Builder, Writer, Performer, Teacher, Curator, Strategist) ship medium-specific skills on top.
 # https://www.infinitegameos.io
 
 ## Site Identity
@@ -74,6 +74,10 @@ The IGOS Public Library publishes installable skills, protocols, codices, concep
 - /skills/pending-plan-implementation — Pending Plan Implementation. Execute approved plans with checkpoint gates, breadcrumb logging and outcome summaries.
 - /skills/skill-creator — Skill Creator. Build new skills autonomously. Interview, research, write a complete SKILL.md, propose the install path.
 - /skills/researcher — Researcher. Parallel sub-agent research on a topic, aggregated into a structured report. Up to 4 independent workers, synthesized output.
+
+### Bundles
+
+- /bundles/foundational-creator — The Foundational Creator Bundle. Seven Claude Code skills that form the universal substrate for any creator working with AI agents in 2026. Five IGOS-native (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging) plus the marketing-skills plugin from Corey Haines (Content Strategy, AI SEO and 38 additional marketing skills). One-line install at /bundles/foundational-creator/install.sh. Substrate beneath every avatar bundle.
 
 ## Pages
 

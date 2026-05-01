@@ -5,7 +5,7 @@
 // Adding a new asset: append a new IGOSAsset entry below. The page route, the
 // markdown route, the registry JSON and the marketplace JSON pick it up.
 
-export type AssetType = 'skill' | 'protocol' | 'codex' | 'concept' | 'strategy'
+export type AssetType = 'skill' | 'protocol' | 'codex' | 'concept' | 'strategy' | 'bundle'
 
 export interface UseCase {
   title: string
@@ -29,6 +29,21 @@ export interface InstallSurface {
   sourceMarkdownUrl?: string
 }
 
+export interface BundleSkillRef {
+  title: string
+  description: string
+  source: string
+  license: string
+  igosSlug?: string
+  externalUrl?: string
+}
+
+export interface BundleSurface {
+  installUrl: string
+  command: string
+  skills: BundleSkillRef[]
+}
+
 export interface SoftHook {
   body: string
   ctaHref?: string
@@ -46,6 +61,7 @@ export interface IGOSAsset {
   tags: string[]
   capsule: string
   installable?: InstallSurface
+  bundle?: BundleSurface
   definition?: string
   howItWorks?: AssetSection[]
   useCases?: UseCase[]
@@ -491,6 +507,167 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Researcher pairs naturally with Source Harvest. Researcher gathers signals across many sources; Source Harvest extracts patterns from the sources worth digging into. The Sovereign Life Playbook is the upstream design frame for which questions are worth researching in the first place.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
+  {
+    slug: 'foundational-creator',
+    type: 'bundle',
+    title: 'The Foundational Creator Bundle',
+    label: 'Bundle',
+    version: '1.0',
+    updated: '2026-05-01',
+    description:
+      'Seven Claude Code skills that form the universal substrate for any creator working with AI agents in 2026. Five IGOS-native plus the marketing-skills plugin from Corey Haines.',
+    tags: ['bundle', 'creator', 'foundational', 'claude-code', 'creator-os', '2026'],
+    capsule:
+      'The Foundational Creator Bundle is seven skills that compose the operating layer beneath every creator archetype. Five are IGOS-native (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging). Two come from the marketing-skills plugin by Corey Haines (Content Strategy, AI SEO). Together they cover research, adversarial review, intelligence gathering, custom-tool authoring, root-cause debugging, content planning and AI-era discoverability. One install. Avatar bundles ride on top of this substrate.',
+    bundle: {
+      installUrl: 'https://www.infinitegameos.io/bundles/foundational-creator/install.sh',
+      command: 'curl -sSL https://www.infinitegameos.io/bundles/foundational-creator/install.sh | bash',
+      skills: [
+        {
+          title: 'Researcher',
+          description:
+            'Parallel sub-agent research on any topic. Up to 4 independent workers spawn simultaneously, each with a specific angle, then a single synthesized report returns. The intake engine for every creative practice.',
+          source: 'IGOS Library',
+          license: 'CC BY 4.0',
+          igosSlug: 'researcher',
+        },
+        {
+          title: 'Plan Challenger',
+          description:
+            'Adversarial pre-build pass on any plan before execution begins. Five angles (strategic fit, timing, baked-in assumptions, architectural risk, opportunity cost) and a one-line verdict. The editorial director the solo creator never had.',
+          source: 'IGOS Library',
+          license: 'CC BY 4.0',
+          igosSlug: 'plan-challenger',
+        },
+        {
+          title: 'Source Harvest',
+          description:
+            'Pattern extraction at the source level rather than the description level. Reads actual implementations, classifies each component as Adopt, Enrich, Defer or Ignore and integrates under governance. Compounding intelligence across every external surface a creator touches.',
+          source: 'IGOS Library',
+          license: 'CC BY 4.0',
+          igosSlug: 'source-harvest',
+        },
+        {
+          title: 'Skill Creator',
+          description:
+            'Build new skills autonomously. Five-phase process: interview, research, write SKILL.md, propose install path, propose registry update. The growth-horizon skill: every creator who reaches workflow sophistication eventually builds custom tools.',
+          source: 'IGOS Library',
+          license: 'CC BY 4.0',
+          igosSlug: 'skill-creator',
+        },
+        {
+          title: 'Systematic Debugging',
+          description:
+            'Root-cause investigation discipline applied to any technical issue. Four phases. The Iron Law: no fixes without Phase 1 complete. Three failed attempts means architectural problem, not a fourth fix. Universal as creators assemble multi-skill pipelines.',
+          source: 'IGOS Library',
+          license: 'CC BY 4.0',
+          igosSlug: 'systematic-debugging',
+        },
+        {
+          title: 'Content Strategy',
+          description:
+            'Plans topics, content roadmaps and distribution logic across platform surfaces. Closes the gap between making the work and the work getting found. Distribution is the universal second act of creator work.',
+          source: 'marketing-skills (Corey Haines)',
+          license: 'MIT',
+          externalUrl: 'https://github.com/coreyhaines31/marketingskills/tree/main/skills/content-strategy',
+        },
+        {
+          title: 'AI SEO',
+          description:
+            'Optimization for AI-generated answers as well as traditional search. Google AI Overviews trigger on roughly half of queries in 2026. Content not structured for AI citation gets filtered out at the discovery layer. The discoverability skill of the moment.',
+          source: 'marketing-skills (Corey Haines)',
+          license: 'MIT',
+          externalUrl: 'https://github.com/coreyhaines31/marketingskills/tree/main/skills/ai-seo',
+        },
+      ],
+    },
+    definition:
+      'The Foundational Creator Bundle is a seven-skill substrate for any creator working with Claude Code in 2026. Five skills are IGOS-native and were not built for any specific archetype: Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging. They are the operating system beneath every creative practice. Two skills come from the marketing-skills plugin by Corey Haines (MIT-licensed): Content Strategy and AI SEO. They cover the distribution and discoverability layer the IGOS library does not yet ship natively. One install command brings the IGOS plugins via the IGOS marketplace and the marketing-skills plugin via its own marketplace. Avatar bundles (the Builder, the Writer, the Performer and so on) ship the medium-specific skills on top of this substrate.',
+    howItWorks: [
+      {
+        heading: 'Two-layer architecture',
+        paragraphs: [
+          'The Foundational Bundle is the substrate. Every creator who works with Claude Code in 2026 needs the same five capabilities underneath whatever specific output they produce. Pre-creation research. Adversarial review before significant investment. Intelligence extraction from external sources. Custom-tool authoring as the practice deepens. Root-cause debugging when the multi-skill pipeline breaks. Plus the distribution and discoverability layer for any work that meets the public web.',
+          'Avatar bundles (the Builder for solo SaaS founders, the Writer for newsletter creators, the Performer for YouTubers and podcasters, the Teacher for course makers, the Curator for digest publishers, the Strategist for fractional executives) ship the medium-specific skills on top of this substrate. The Foundational Bundle installs once. Avatar bundles install per archetype the creator inhabits.',
+        ],
+      },
+      {
+        heading: 'What the install brings',
+        paragraphs: [
+          'The install script adds two Claude Code marketplaces and installs two plugins. The IGOS marketplace ships the five IGOS-native skills as individual plugins. The marketingskills marketplace ships the marketing-skills plugin which contains 40 marketing skills, including Content Strategy and AI SEO. The other 38 marketing skills are bonus depth from the Corey Haines library. They do not auto-execute. They become available to Claude Code based on the work the creator brings.',
+          'The install is idempotent. Running the script a second time updates marketplace registrations and re-affirms plugin enablement without duplicating entries. The script edits Claude Code settings.json in place. Claude Code restart picks up the new plugins.',
+        ],
+      },
+      {
+        heading: 'How the seven skills compose',
+        paragraphs: [
+          'Researcher gathers the upstream signal. Multiple parallel workers triangulate a topic faster than serial reading. Plan Challenger stress-tests the design before the creator commits significant effort. Source Harvest extracts patterns from external repos and tools at source level rather than description level. Skill Creator codifies recurring workflows into permanent infrastructure. Systematic Debugging applies root-cause discipline when the multi-skill pipeline produces unexpected behavior.',
+          'Content Strategy plans the publishing rhythm and platform surface. AI SEO ensures the work is structured for both traditional search and AI-generated answers. Together the seven cover the upstream (research), midstream (challenge, harvest, build, debug) and downstream (plan distribution, optimize for discovery) of any creative practice that ships work into the world.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'New creator setting up their first AI-augmented workflow',
+        body:
+          'A creator new to Claude Code installs the Foundational Bundle as their starting substrate. Within the first week Researcher dispatches parallel workers for a content idea, Plan Challenger stress-tests the editorial calendar, Content Strategy maps the rollout sequence and AI SEO checks the publishing surface. The bundle replaces a typical six-month tool-stack assembly with a one-command starting line.',
+      },
+      {
+        title: 'Established creator integrating Claude Code into existing practice',
+        body:
+          'A creator with a working stack adds Claude Code on top. The Foundational Bundle slots underneath their existing tools: Source Harvest extracts patterns from the repos they already follow, Systematic Debugging takes over from ad-hoc fix attempts when the integration layer breaks, Skill Creator codifies their existing workflows into reusable skills. Their stack does not change. The discipline underneath it does.',
+      },
+      {
+        title: 'Creator preparing to add an avatar bundle',
+        body:
+          'A solo SaaS founder plans to install the Builder bundle. Installing the Foundational Bundle first removes the dedup confusion: the Builder bundle ships only the medium-specific skills (gstack, Context7, Impeccable) because Researcher, Source Harvest, Plan Challenger and Systematic Debugging are already present. Two installs, no overlap. The Foundational layer is the pre-install for every avatar.',
+      },
+      {
+        title: 'Team or studio standardizing on a creator OS',
+        body:
+          'A small studio decides every collaborator should run the same baseline. The Foundational Bundle is the standard install. New team members get the substrate in one command. The studio adds avatar bundles per role (Writer for content team, Builder for engineering, Strategist for operations) without re-installing the underlying five skills for each person.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Why a bundle instead of installing each skill individually?',
+        a:
+          'The five IGOS skills and two marketing skills work together as a substrate. Installing them as a bundle preserves that intent and removes the friction of seven separate install steps. The bundle install is also idempotent, so re-running it updates the registration without duplicating anything.',
+      },
+      {
+        q: 'Does the install bring extra skills I did not ask for?',
+        a:
+          'Yes, intentionally. The marketing-skills plugin ships 40 skills as one unit, including Content Strategy and AI SEO. The other 38 are bonus marketing depth from the Corey Haines library: copywriting, paid ads, customer research, churn prevention, schema markup, programmatic SEO and more. They do not auto-execute. Claude Code surfaces them only when your work matches their description.',
+      },
+      {
+        q: 'How does this relate to the avatar bundles (Builder, Writer, Performer)?',
+        a:
+          'Two-layer architecture. The Foundational Bundle is the universal substrate. Avatar bundles ship the medium-specific skills on top of it. A creator picks the avatar that matches their working surface and installs the avatar bundle, which assumes the Foundational Bundle is already present. No skill duplication across avatar bundles.',
+      },
+      {
+        q: 'Can I install the Foundational Bundle without an avatar bundle?',
+        a:
+          'Yes. Many creators inhabit multiple archetypes or do not fit a single avatar cleanly. The Foundational Bundle alone is a complete starting stack. Avatar bundles are optional medium-specific extensions for creators whose practice is concentrated in one surface (writing, building, performing and so on).',
+      },
+      {
+        q: 'What does the install script actually change on my system?',
+        a:
+          'It edits Claude Code settings.json (default location: ~/.claude/settings.json) to register two marketplaces (igos-library and marketingskills) and enable six plugins (the five IGOS skills plus marketing-skills). It does not download skill files directly; Claude Code does that on next launch via the marketplace registrations. The script prints every change before applying.',
+      },
+      {
+        q: 'Is the install reversible?',
+        a:
+          'Yes. The bundle is just settings.json entries. To remove the bundle, remove the marketplace and plugin entries from settings.json (or run /plugin uninstall for each plugin from inside Claude Code). No system-level changes happen.',
+      },
+    ],
+    relatedSlugs: ['researcher', 'plan-challenger', 'source-harvest', 'skill-creator', 'systematic-debugging'],
+    softHook: {
+      body:
+        'The Foundational Creator Bundle is one entry point. The full system the IGOS skills live inside is Infinite Game OS itself. The design frame for which workflows are worth codifying in the first place is the Sovereign Life Playbook.',
       ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },

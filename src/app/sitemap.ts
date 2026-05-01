@@ -26,6 +26,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }))
 
+  const bundleEntries: MetadataRoute.Sitemap = getAssetsByType('bundle').map(asset => ({
+    url: `https://www.infinitegameos.io/bundles/${asset.slug}`,
+    lastModified: new Date(asset.updated + 'T00:00:00Z'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  }))
+
   return [
     {
       url: 'https://www.infinitegameos.io/',
@@ -89,6 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...conceptEntries,
     ...skillEntries,
+    ...bundleEntries,
     ...updateEntries,
   ]
 }

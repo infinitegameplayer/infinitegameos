@@ -572,6 +572,94 @@ export function generateCursorMdc(asset: IGOSAsset): string {
   return lines.join('\n')
 }
 
+function generateBundleMarkdown(asset: IGOSAsset): string {
+  if (!asset.bundle) return generateAssetMarkdown(asset)
+
+  const skillsList = asset.bundle.skills
+    .map(s => {
+      const linkTarget = s.igosSlug
+        ? `${SITE}/skills/${s.igosSlug}`
+        : s.externalUrl
+      const linked = linkTarget
+        ? `[${s.title}](${linkTarget})`
+        : s.title
+      return `- **${linked}** · ${s.source} · ${s.license}\n  ${s.description}`
+    })
+    .join('\n\n')
+
+  const storyBody: string[] = []
+  if (asset.definition) {
+    storyBody.push(`## Definition\n\n${asset.definition}`)
+  }
+  if (asset.howItWorks?.length) {
+    asset.howItWorks.forEach(s => {
+      storyBody.push(`## ${s.heading}\n\n${s.paragraphs.join('\n\n')}`)
+    })
+  }
+  if (asset.useCases?.length) {
+    const cases = asset.useCases.map(uc => `**${uc.title}**\n\n${uc.body}`).join('\n\n')
+    storyBody.push(`## Use Cases\n\n${cases}`)
+  }
+  if (asset.faq?.length) {
+    const faqs = asset.faq.map(f => `**${f.q}**\n\n${f.a}`).join('\n\n')
+    storyBody.push(`## FAQ\n\n${faqs}`)
+  }
+  if (asset.relatedSlugs?.length) {
+    const related = asset.relatedSlugs
+      .map(s => {
+        const r = igosAssets.find(a => a.slug === s)
+        return r ? `- [${r.title}](${SITE}/${r.type}s/${r.slug})` : null
+      })
+      .filter(Boolean)
+      .join('\n')
+    if (related) storyBody.push(`## Related\n\n${related}`)
+  }
+
+  const storyBlock = storyBody.length ? storyBody.join('\n\n') : ''
+
+  const cta = asset.softHook.ctaHref && asset.softHook.ctaLabel
+    ? `\n\n[${asset.softHook.ctaLabel}](${asset.softHook.ctaHref})`
+    : ''
+
+  return `# ${asset.title}
+
+> ${asset.description}
+
+**${asset.label} · v${asset.version} · Updated ${asset.updated}**
+
+${asset.capsule}
+
+## Install
+
+### One-line install (macOS, Linux, WSL, Git Bash)
+
+\`\`\`
+${asset.bundle.command}
+\`\`\`
+
+Idempotent. Safe to re-run. Edits Claude Code \`~/.claude/settings.json\` in place to register two marketplaces (igos-library and marketingskills) and enable six plugins. Restart Claude Code after install.
+
+### Inspect the install script first
+
+\`\`\`
+curl -sSL ${asset.bundle.installUrl}
+\`\`\`
+
+## What's inside
+
+${skillsList}
+
+${storyBlock}
+
+---
+
+${asset.softHook.body}${cta}
+
+---
+*[Infinite Game OS](${SITE}) · [Bundles](${SITE}/bundles) · [${asset.title}](${SITE}/bundles/${asset.slug})*
+`
+}
+
 export function getMarkdownForPath(path: string): string | null {
   switch (path) {
     case '': return generateHomeMarkdown()
@@ -594,6 +682,12 @@ export function getMarkdownForPath(path: string): string | null {
     const slug = path.replace('skills/', '')
     const asset = getAssetBySlug(slug, 'skill')
     return asset ? generateAssetMarkdown(asset) : null
+  }
+
+  if (path.startsWith('bundles/')) {
+    const slug = path.replace('bundles/', '')
+    const asset = getAssetBySlug(slug, 'bundle')
+    return asset ? generateBundleMarkdown(asset) : null
   }
 
   return null
