@@ -5,7 +5,7 @@
   "description": "Installable skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
   "url": "https://www.infinitegameos.io",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "updated_at": "2026-05-01",
+  "updated_at": "2026-05-02",
   "assets": [
     {
       "id": "source-harvest",
@@ -201,6 +201,52 @@
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "updated_at": "2026-05-01",
+      "changelog_url": null
+    },
+    {
+      "id": "the-performer",
+      "name": "The Performer Bundle",
+      "type": "bundle",
+      "version": "1.0",
+      "description": "Two avatar-specific Claude Code skills for YouTubers, podcasters, livestreamers and short-form video creators in 2026. YouTube Channel Manager and Video Watcher install on top of the Foundational Creator Bundle substrate. Content Repurposing rides the marketing-skills plugin already installed via the Foundational Bundle.",
+      "tags": ["bundle", "performer", "youtube", "podcast", "shorts", "claude-code", "video", "creator-os", "2026"],
+      "install": {
+        "one_line_command": "curl -sSL https://www.infinitegameos.io/bundles/the-performer/install.sh | bash",
+        "script_url": "https://www.infinitegameos.io/bundles/the-performer/install.sh",
+        "markdown_url": "https://www.infinitegameos.io/markdown/bundles/the-performer"
+      },
+      "skills": [
+        { "title": "YouTube Channel Manager (audits, video SEO, retention scripts, hooks, thumbnails, Shorts and analytics)", "source": "AgriciDaniel/claude-youtube", "license": "MIT", "url": "https://github.com/AgriciDaniel/claude-youtube" },
+        { "title": "Video Watcher (give Claude the ability to watch a video, extract frames and transcribe audio)", "source": "bradautomates/claude-video", "license": "MIT", "url": "https://github.com/bradautomates/claude-video" },
+        { "title": "Content Repurposing (already in your Foundational substrate via marketing-skills plugin)", "source": "coreyhaines31/marketingskills (video skill)", "license": "MIT", "url": "https://github.com/coreyhaines31/marketingskills/tree/main/skills/video" }
+      ],
+      "related": ["foundational-creator", "researcher", "source-harvest", "plan-challenger"],
+      "article_url": "https://www.infinitegameos.io/bundles/the-performer",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-02",
+      "changelog_url": null
+    },
+    {
+      "id": "the-teacher",
+      "name": "The Teacher Bundle",
+      "type": "bundle",
+      "version": "1.0",
+      "description": "The smallest avatar bundle by design. The Foundational Creator Bundle already covers most of the Teacher's working surface. The Teacher layer adds one optional companion-install link to GarethManning's 111-skill evidence-based pedagogy library plus the framing that turns the universal stack into curriculum design.",
+      "tags": ["bundle", "teacher", "course-creator", "cohort", "tutorial", "knowledge-product", "claude-code", "pedagogy", "creator-os", "2026"],
+      "install": {
+        "one_line_command": "curl -sSL https://www.infinitegameos.io/bundles/the-teacher/install.sh | bash",
+        "script_url": "https://www.infinitegameos.io/bundles/the-teacher/install.sh",
+        "markdown_url": "https://www.infinitegameos.io/markdown/bundles/the-teacher"
+      },
+      "skills": [
+        { "title": "Claude Education Skills (companion install, not bundled natively)", "source": "GarethManning/claude-education-skills", "license": "CC-BY-SA-4.0", "url": "https://github.com/GarethManning/claude-education-skills" }
+      ],
+      "related": ["foundational-creator", "researcher", "plan-challenger", "source-harvest", "skill-creator"],
+      "article_url": "https://www.infinitegameos.io/bundles/the-teacher",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-02",
       "changelog_url": null
     }
   ]

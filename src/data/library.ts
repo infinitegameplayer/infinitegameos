@@ -947,6 +947,276 @@ export const igosAssets: IGOSAsset[] = [
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
+  {
+    slug: 'the-performer',
+    type: 'bundle',
+    title: 'The Performer Bundle',
+    label: 'Bundle',
+    version: '1.0',
+    updated: '2026-05-02',
+    description:
+      'Claude Code skills for YouTubers, podcasters, livestreamers and short-form video creators in 2026. Two avatar-specific skills (YouTube Channel Manager, Video Watcher) plus a video production chapter already inside the Foundational substrate.',
+    tags: ['bundle', 'performer', 'youtube', 'podcast', 'shorts', 'claude-code', 'video', 'creator-os', '2026'],
+    capsule:
+      'The Performer Bundle is the avatar-specific layer for recorded-media creators: YouTubers, podcasters, livestreamers and short-form video creators. Presence is the product. Skills protect the recording cadence, sharpen the discoverability layer and compress the multi-platform repurposing loop. YouTube Channel Manager handles audits, SEO, retention scripts, thumbnails, Shorts optimization and competitor research. Video Watcher gives Claude the ability to actually watch a video, extract frames, transcribe audio and reason about what was on screen. Content Repurposing rides the Foundational substrate already, ready to take one recording into a thread, a clip pack and a newsletter section. Sits on top of the Foundational Creator Bundle.',
+    bundle: {
+      installUrl: 'https://www.infinitegameos.io/bundles/the-performer/install.sh',
+      command: 'curl -sSL https://www.infinitegameos.io/bundles/the-performer/install.sh | bash',
+      skills: [
+        {
+          title: 'YouTube Channel Manager',
+          description:
+            'A YouTube creator skill covering channel audits, video SEO, retention-aware scripting, hook architecture, thumbnail design briefs, content calendars, Shorts optimization, analytics review, monetization checks, competitor research and cross-platform repurposing. Designed for solo YouTubers and small channel teams. Installs as a single skill at ~/.claude/skills/youtube/. Activate with /youtube audit or by naming the channel work in plain language.',
+          source: 'github.com/AgriciDaniel/claude-youtube',
+          license: 'MIT',
+          externalUrl: 'https://github.com/AgriciDaniel/claude-youtube',
+        },
+        {
+          title: 'Video Watcher',
+          description:
+            'Gives Claude the ability to actually watch a video. The /watch command takes a URL or local path, downloads with yt-dlp, extracts frames with ffmpeg, transcribes via captions or Whisper and hands the full multimodal package back to Claude. Use it to review your own recordings before publish, study a competitor video without sitting through the whole thing or pull verbatim quotes from a podcast for repurposing. Installs as a Claude Code marketplace plugin (watch@claude-video).',
+          source: 'github.com/bradautomates/claude-video',
+          license: 'MIT',
+          externalUrl: 'https://github.com/bradautomates/claude-video',
+        },
+        {
+          title: 'Content Repurposing (already in your Foundational substrate)',
+          description:
+            'The video production and repurposing chapter inside the marketing-skills plugin you installed with the Foundational Creator Bundle. Covers AI video generation, talking-head video, programmatic video frameworks (Remotion, Hyperframes), platform-specific cuts and template-driven repeated production. Does not require a separate install. Activate by asking Claude to plan a video, build a repurposing pipeline or design a multi-platform cut from one recording.',
+          source: 'github.com/coreyhaines31/marketingskills (video skill, already installed via Foundational Bundle)',
+          license: 'MIT',
+          externalUrl: 'https://github.com/coreyhaines31/marketingskills/tree/main/skills/video',
+        },
+      ],
+    },
+    definition:
+      'The Performer Bundle is the avatar-specific stack for recorded-media creators working with Claude Code in 2026. The Foundational Creator Bundle (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging plus Content Strategy and AI SEO) is the assumed pre-install. The Performer layer adds two installable skills and surfaces a third skill that already rides the Foundational substrate. YouTube Channel Manager (AgriciDaniel, MIT) covers the YouTube creator surface end to end: channel audits, SEO, retention, hooks, thumbnails, Shorts and analytics. Video Watcher (Bradley Bonanno, MIT) gives Claude the ability to actually watch a video, extract frames, transcribe and reason about the content. Content Repurposing rides the marketing-skills plugin from the Foundational Bundle and covers AI video generation, programmatic video frameworks and multi-platform repurposing. Presence is the product for the Performer archetype. Every resource in the bundle either sharpens the discoverability layer, frees up time inside the production loop or extends what one recording can become across platforms.',
+    howItWorks: [
+      {
+        heading: 'Pre-install: the Foundational Creator Bundle',
+        paragraphs: [
+          'The Performer Bundle assumes the Foundational Creator Bundle is already present. The Foundational Bundle is the universal substrate: Researcher for topic and audience research before scripting, Plan Challenger for adversarial review of the series concept or the episode outline, Source Harvest for pattern extraction from reference channels and reference shows, Skill Creator for codifying the recurring production rhythm, Systematic Debugging for when the multi-tool pipeline breaks, plus Content Strategy and AI SEO for the calendar and discoverability layer. Performers need all seven. Installing them once at the substrate level is enough.',
+          'If the Foundational Bundle is not yet installed, install it first at /bundles/foundational-creator. The Performer Bundle install script in this page does not bring those skills again, and the Content Repurposing layer specifically rides the marketing-skills plugin that ships with the Foundational install.',
+        ],
+      },
+      {
+        heading: 'What the install brings',
+        paragraphs: [
+          'The install script does two things. First, it registers the claude-video marketplace and enables watch@claude-video for the Video Watcher skill. Second, it clones the AgriciDaniel/claude-youtube repository and copies the YouTube Channel Manager skill files into ~/.claude/skills/youtube/. Both halves are idempotent. Re-running is safe. The script writes a timestamped backup of any existing settings.json or skills directory before any change.',
+          'After install, restart Claude Code. /watch becomes available for any video URL or local file. /youtube audit and the wider YouTube Channel Manager surface activate when channel work, video SEO, hook design or thumbnail briefs come up.',
+          'Content Repurposing is reachable without a separate install. The marketing-skills plugin from the Foundational Bundle includes the video production chapter. Ask Claude to plan a video, design a repurposing pipeline or cut one recording into multiple platform-specific pieces. The skill activates from inside the Foundational substrate without any additional setup.',
+        ],
+      },
+      {
+        heading: 'How the three resources compose',
+        paragraphs: [
+          'YouTube Channel Manager runs at the planning and audit phases. Audit the channel before a series planning session. Generate retention-aware scripts before recording. Brief a thumbnail before publish. The skill carries the per-platform craft that channel work requires and that solo creators rarely have time to learn from first principles.',
+          'Video Watcher runs after recording or while studying a reference. Hand it a draft cut and ask for the rough patches. Hand it a competitor video and ask what the hook structure was. Hand it a long podcast and pull the most quotable moments verbatim. The skill is the missing input modality for video work; without it, Claude can only reason about the title, description and metadata.',
+          'Content Repurposing runs at distribution. One long recording becomes a thread, a short-form cut, a newsletter section, a LinkedIn carousel or a podcast clip. The video chapter inside marketing-skills handles the platform-aware cut design and the production pipeline (programmatic templates, AI avatars where appropriate, B-roll generation). The Foundational Bundle\'s Content Strategy skill sets the cadence; the video chapter executes the production.',
+          'The Foundational layer surrounds the three. Researcher gathers topic and audience research before any series gets greenlit. Plan Challenger stress-tests the series concept or the episode outline before recording. Source Harvest extracts patterns from reference channels and reference shows. Skill Creator codifies the recurring production rhythm into a reusable workflow. Systematic Debugging takes over when yt-dlp, ffmpeg, Whisper or one of the plugin chains produces unexpected output. Together with the Performer layer, the practice covers research, challenge, scripting, recording, watching, audit, repurpose, debug and distribute under one roof.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Solo YouTuber publishing a weekly long-form video',
+        body:
+          'A solo YouTuber recording a weekly long-form essay video opens the planning session Monday morning. Researcher dispatches parallel workers across the topic and the audience-search layer. Plan Challenger reviews the series concept and the episode outline before scripting begins. YouTube Channel Manager generates the retention-aware script, the hook structure and the thumbnail brief. Recording happens Tuesday. Wednesday, Video Watcher reviews the rough cut and flags the slow patches. Thursday, Content Repurposing cuts a Shorts version, a thread version and a newsletter section from the same recording. Same week. One recording. Five surfaces.',
+      },
+      {
+        title: 'Podcaster running a weekly interview show',
+        body:
+          'A podcaster with a weekly interview format runs Researcher before the booking call to surface the guest\'s recent work and unanswered questions in the field. Plan Challenger stress-tests the question outline before the recording. After the recording, Video Watcher transcribes and pulls the three most quotable moments. YouTube Channel Manager turns those moments into Shorts-ready hooks for the YouTube channel. Content Repurposing handles the cross-platform pipeline: full episode on YouTube and audio platforms, three Shorts, a thread and a newsletter quote-card pack. The cadence becomes systematic instead of intuition-only.',
+      },
+      {
+        title: 'Tutorial channel operator covering software walkthroughs',
+        body:
+          'A tutorial creator covering a piece of fast-changing software runs Source Harvest against the latest documentation before recording each tutorial. YouTube Channel Manager handles the SEO layer and the retention-aware script structure. Recording follows. Video Watcher reviews the screen-record cut and flags the moments where the on-screen action does not match the narration. Content Repurposing turns each tutorial into a written walkthrough for the blog and a short-form preview for distribution. The freshness gap between software updates and tutorial republish gets shorter.',
+      },
+      {
+        title: 'Short-form video creator running a daily TikTok and Reels practice',
+        body:
+          'A short-form creator publishing a daily Reel runs Researcher weekly to refresh the topic queue. YouTube Channel Manager covers the cross-posting layer for the YouTube Shorts surface. Video Watcher reviews the day\'s draft cut against the platform-specific best practices for hook timing, mid-clip retention and end-card design. Content Repurposing handles the format-aware cuts: 9:16 for Reels and Shorts, 1:1 for the newsletter, 16:9 for the website embed. Daily output without daily reinvention of the wheel.',
+      },
+      {
+        title: 'Livestreamer building an evergreen back catalog from broadcasts',
+        body:
+          'A livestreamer broadcasting weekly often loses the long-tail value of the broadcast once the stream ends. Video Watcher transcribes the full broadcast and segments it by topic. YouTube Channel Manager turns each segment into a back-catalog video with its own SEO and retention structure. Content Repurposing pulls clips for short-form distribution and quotes for the newsletter. The broadcast stops being a one-time event and starts becoming a content engine that feeds the rest of the practice.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Does the Performer Bundle include the Foundational Creator Bundle?',
+        a:
+          'No. The Performer Bundle assumes the Foundational Bundle is already installed. Install /bundles/foundational-creator first if you have not already. The two-layer architecture means the medium-specific resources (YouTube Channel Manager, Video Watcher) install once on top of the universal substrate, and the Content Repurposing layer rides the marketing-skills plugin that ships with the Foundational install.',
+      },
+      {
+        q: 'Why is Content Repurposing not in the install script?',
+        a:
+          'It is already installed. The Foundational Creator Bundle ships the marketing-skills marketplace from Corey Haines, which includes a video production chapter covering AI video generation, programmatic video frameworks, AI avatars and platform-specific cut design. Performers who installed the Foundational Bundle already have it. The Performer Bundle install script only adds the two skills that are not already present (YouTube Channel Manager and Video Watcher).',
+      },
+      {
+        q: 'What does Video Watcher actually do that I can\'t do without it?',
+        a:
+          'Without Video Watcher, Claude can only reason about a video\'s title, description, transcript-if-provided and metadata. With Video Watcher installed, /watch turns any video URL or local file into a multimodal package: yt-dlp downloads the file, ffmpeg extracts representative frames, Whisper transcribes the audio if no captions exist and the full set hands back to Claude. The result is that Claude can review your rough cut, study a competitor video, pull verbatim moments from a podcast or audit on-screen action against the narration. Video becomes an actual input modality.',
+      },
+      {
+        q: 'I do not have a YouTube channel. Is this bundle still useful for podcasters or short-form creators?',
+        a:
+          'Yes. YouTube Channel Manager carries patterns that translate beyond YouTube: hook design, retention architecture, thumbnail composition and analytics review apply to TikTok, Reels, podcast cover art and short-form video on any platform. Video Watcher works on any video file or URL, not just YouTube content. The bundle is YouTube-aware but not YouTube-locked.',
+      },
+      {
+        q: 'What does the install script actually change on my system?',
+        a:
+          'It registers the claude-video marketplace in ~/.claude/settings.json under extraKnownMarketplaces and enables watch@claude-video under enabledPlugins via a jq merge. It clones github.com/AgriciDaniel/claude-youtube into a temp directory and copies the contents of skills/claude-youtube/ to ~/.claude/skills/youtube/. It writes a timestamped backup of settings.json and any existing skills/youtube directory before any change. No system-level changes happen outside ~/.claude.',
+      },
+      {
+        q: 'Is the install reversible?',
+        a:
+          'Yes. To remove watch@claude-video, restore the settings.json backup the script wrote, or delete the marketplace entry by hand. To remove YouTube Channel Manager, delete ~/.claude/skills/youtube. The Foundational Bundle is unaffected by either rollback.',
+      },
+      {
+        q: 'How does the Performer Bundle relate to the other avatar bundles?',
+        a:
+          'Same two-layer pattern across every avatar bundle. The Foundational Bundle is the substrate. The Builder, Writer, Performer, Teacher, Curator and Strategist bundles each ship a small medium-specific layer on top. A creator who works as both a Performer and a Builder installs the Foundational Bundle once plus both avatar bundles. No skill duplication.',
+      },
+    ],
+    relatedSlugs: ['foundational-creator', 'researcher', 'source-harvest', 'plan-challenger'],
+    softHook: {
+      body:
+        'The Performer Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for the longer arc, where the recording rhythm becomes a body of work that compounds across years, is the Sovereign Life Playbook.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
+  {
+    slug: 'the-teacher',
+    type: 'bundle',
+    title: 'The Teacher Bundle',
+    label: 'Bundle',
+    version: '1.0',
+    updated: '2026-05-02',
+    description:
+      'Claude Code resources for course creators, cohort leaders, tutorial channel operators and knowledge product builders in 2026. The smallest avatar bundle by design. The Foundational Creator Bundle covers most of the Teacher\'s working surface; the Teacher layer adds one companion-install link to a deep pedagogy library and the framing that turns the universal stack into curriculum-shaped work.',
+    tags: ['bundle', 'teacher', 'course-creator', 'cohort', 'tutorial', 'knowledge-product', 'claude-code', 'pedagogy', 'creator-os', '2026'],
+    capsule:
+      'The Teacher Bundle is the avatar-specific layer for structured-learning creators: course creators, cohort leaders, YouTube educators, tutorial channel operators, workshop facilitators and knowledge product builders. Unlike the other avatar bundles, this one adds almost no new installs. The Foundational Creator Bundle already carries the Teacher\'s research, plan-challenge, source-harvest, skill-creation, content-strategy and discoverability work. The Teacher layer adds one companion-install link to GarethManning\'s 111-skill evidence-based pedagogy library plus the framing that turns the universal stack into curriculum design, lesson architecture, cohort orchestration and knowledge product engineering.',
+    bundle: {
+      installUrl: 'https://www.infinitegameos.io/bundles/the-teacher/install.sh',
+      command: 'curl -sSL https://www.infinitegameos.io/bundles/the-teacher/install.sh | bash',
+      skills: [
+        {
+          title: 'Claude Education Skills (companion install, not bundled natively)',
+          description:
+            '111 evidence-based pedagogical skills built by Gareth Manning, an educator with twenty years of international school experience. Covers curriculum design, lesson planning, assessment design, backwards design, rubric creation, formative assessment, learning analytics, adaptive tutoring and AI Learning Science across 15 domains. The library is CC BY-SA 4.0 (share-alike), so the Teacher Bundle does not redistribute it. The install script prints the manual git clone command and the license context so Teachers can install directly from the source repository at the location of their choice.',
+          source: 'github.com/GarethManning/claude-education-skills',
+          license: 'CC BY-SA 4.0',
+          externalUrl: 'https://github.com/GarethManning/claude-education-skills',
+        },
+      ],
+    },
+    definition:
+      'The Teacher Bundle is the avatar-specific layer for structured-learning creators working with Claude Code in 2026. The Foundational Creator Bundle (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging plus Content Strategy and AI SEO) is the assumed pre-install. For the Teacher archetype, the Foundational Bundle already covers the majority of the working surface. Researcher is the curriculum source-sweep engine. Plan Challenger is the pre-build curriculum review the solo Teacher could never afford to hire. Source Harvest extracts patterns from reference syllabi, open curricula and competitor learning products. Skill Creator builds custom course-design assistants and cohort-Q&A responders. Content Strategy and AI SEO handle the discoverability layer that turns published courses into found courses. The Teacher layer adds one companion-install link to Gareth Manning\'s 111-skill evidence-based pedagogy library, which is CC BY-SA licensed and therefore installed directly from the source rather than redistributed by the bundle. The framing of the bundle is the load-bearing piece. The Foundational stack is already the Teacher\'s stack; the Teacher Bundle teaches the Teacher how to use it as curriculum design rather than as general creator tooling.',
+    howItWorks: [
+      {
+        heading: 'Pre-install: the Foundational Creator Bundle',
+        paragraphs: [
+          'The Teacher Bundle assumes the Foundational Creator Bundle is already present. The Foundational Bundle is the universal substrate: Researcher for curriculum source research, Plan Challenger for adversarial review of the curriculum or module outline, Source Harvest for pattern extraction from reference syllabi and learning products, Skill Creator for codifying recurring teaching workflows, Systematic Debugging for when the multi-tool pipeline breaks, plus Content Strategy and AI SEO for the publishing rhythm and discoverability layer. Teachers need all seven. Installing them once at the substrate level is enough.',
+          'If the Foundational Bundle is not yet installed, install it first at /bundles/foundational-creator. The Teacher Bundle install script in this page does not bring those skills again, and it does not install any new skills natively.',
+        ],
+      },
+      {
+        heading: 'What the install brings (and what it does not)',
+        paragraphs: [
+          'The Teacher Bundle install script does two things. First, it verifies the Foundational substrate is present by checking for marketing-skills@marketingskills in your settings.json. Second, it prints the manual git clone command for the GarethManning/claude-education-skills companion library plus the CC BY-SA 4.0 license context. The script does not install GarethManning\'s skills automatically because the library is share-alike licensed and the Kingdom bundle does not redistribute share-alike code.',
+          'Teachers who want the deep pedagogy layer copy the printed git clone command and run it themselves at the location of their choice. The full 111-skill library installs in seconds. After cloning, restart Claude Code and the GarethManning skills are available alongside the Foundational stack.',
+          'For Teachers who only need a subset of the GarethManning library, the curriculum design and assessment domain (15 skills) is the highest-leverage starting point. The repo lets you cherry-pick specific skills by copying individual SKILL.md files into ~/.claude/skills/ rather than cloning the full library.',
+        ],
+      },
+      {
+        heading: 'How the Foundational substrate becomes the Teacher\'s stack',
+        paragraphs: [
+          'Researcher runs at the upstream of every curriculum design session. Multi-angle parallel sub-agent research builds the source corpus that the Teacher\'s own pedagogical judgment then sequences into a learning arc. The Researcher finds what has been proven; the Teacher decides what is worth teaching. For cohort leaders, Researcher powers the weekly insight drops that keep cohort content fresh. For YouTube educators, it powers the depth that separates a reference-worthy video from a shallow overview.',
+          'Plan Challenger runs before any module gets recorded or any cohort gets opened. The five-angle adversarial pass against a curriculum outline catches the structural weakness, the sequencing gap and the false assumption while the cost is still zero. This is the instructional design review most solo Teachers skip because they have no curriculum specialist on staff. The skill is the editorial mirror that asks where the learning arc has a gap.',
+          'Source Harvest runs when the Teacher needs to extract patterns from external educational repos, course libraries, reference frameworks or competitor curricula. The skill extracts patterns from any external repo at source level rather than at description level. For the Knowledge Product Builder this is the curriculum landscape audit that comes before building a new learning product. For the Tutorial Channel Operator this is the way to stay current with rapidly changing tool documentation.',
+          'Skill Creator runs when the Teacher\'s system becomes sophisticated enough to teach others how to teach. Build a custom course-design assistant that encodes the Teacher\'s pedagogical voice. Build a cohort-Q&A responder that handles common student questions in the Teacher\'s register. Build a feedback engine that scores student work against the Teacher\'s rubric. The skill is the bridge from Teacher-as-user to Teacher-as-builder.',
+          'Content Strategy and AI SEO run at the publishing layer. The Teacher\'s content is only as discoverable as the strategy behind it. Course landing pages, tutorial SEO, YouTube channel architecture and email sequences for pre-launch all require a content strategy layer that most curriculum-focused Teachers skip. AI SEO handles the discoverability layer that turns published courses into found courses in 2026, where Google AI Overviews and AI-generated answer surfaces are deciding what gets surfaced.',
+          'Systematic Debugging runs when the multi-skill pipeline produces unexpected output. Every Teacher running a multi-tool workflow eventually hits the moment where the skills stop composing cleanly. Root-cause investigation discipline applies; symptoms are not understanding.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Course creator launching a flagship cohort',
+        body:
+          'A course creator launching the first cohort of a new flagship program runs Researcher to gather the source corpus across the topic and the audience. Plan Challenger reviews the curriculum outline and surfaces the two modules where the sequencing logic breaks. The Teacher reorders. Source Harvest extracts pricing, format and structure patterns from three reference cohort programs. Content Strategy plans the eight-week pre-launch sequence. AI SEO structures the landing page for discoverability inside AI-generated answers. The cohort opens with a curriculum that survived adversarial review before recording started and a launch sequence designed for 2026 search behavior.',
+      },
+      {
+        title: 'YouTube educator building a long-running educational series',
+        body:
+          'A YouTube educator launching a twelve-part series runs Plan Challenger against the series concept before the first script gets written. Researcher dispatches parallel workers on the topic across academic, practitioner and popular surfaces. Source Harvest extracts pattern libraries from three reference channels in adjacent territory. The series scripts ride the Foundational substrate; the platform-specific surface is handled by the YouTube Channel Manager from the [Performer Bundle](/bundles/the-performer) when the educator wants the YouTube-native craft layer. Twelve coherent episodes instead of twelve standalone videos that share a series number.',
+      },
+      {
+        title: 'Tutorial channel operator covering fast-changing software',
+        body:
+          'A tutorial creator covering a piece of software that updates every quarter runs Source Harvest against the latest release notes before recording each tutorial. The skill extracts the structural changes that make the previous tutorial stale. Researcher gathers the community-reported pain points. Plan Challenger reviews the tutorial outline against the new release surface. The published tutorial covers what changed rather than re-recording what already worked. Tutorial freshness becomes a workflow rather than a heroic effort.',
+      },
+      {
+        title: 'Cohort leader running a recurring program with a community',
+        body:
+          'A cohort leader running quarterly cohorts of a multi-week program runs Skill Creator to build a custom cohort-Q&A responder that knows the curriculum, the common student stuck-points and the Teacher\'s pedagogical voice. The skill answers 70% of student questions in the Teacher\'s register without the Teacher being in the room. Researcher continues to refresh the source corpus between cohorts. Plan Challenger reviews any curriculum revisions before they go live. The cohort experience deepens across iterations rather than degrading under leader bandwidth limits.',
+      },
+      {
+        title: 'Knowledge product builder shipping a learning library',
+        body:
+          'A Teacher shipping a structured knowledge product (a learning library, a reference guide with embedded instruction, a certification program) runs Source Harvest against the existing landscape to identify what is already covered and what is missing. Researcher gathers the source material that anchors the unique angle. Plan Challenger stress-tests the product architecture before building. Skill Creator builds the learning companion that ships with the product. Content Strategy plans the discoverability layer. The product launches with structural integrity that knowledge products built without these gates often lack.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Why is the Teacher Bundle smaller than the other avatar bundles?',
+        a:
+          'Because the Foundational Creator Bundle already covers most of the Teacher\'s working surface. Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging, Content Strategy and AI SEO are universally relevant to creators of any avatar; for the Teacher specifically, those seven skills cover curriculum source research, curriculum review, pattern extraction, custom-tool authoring, root-cause debugging, publishing strategy and discoverability. The Teacher Bundle adds one optional companion-install link (GarethManning\'s 111-skill pedagogy library) plus the framing that turns the Foundational stack into a curriculum design environment. The bundle is small by design, not by oversight.',
+      },
+      {
+        q: 'Why is GarethManning\'s library not bundled natively?',
+        a:
+          'The claude-education-skills repository carries a CC BY-SA 4.0 license, which is share-alike. Bundling those skills natively into our install pipeline could trigger derivative-work classification, which would propagate the share-alike license to the Kingdom bundle infrastructure. The conservative path is to link Teachers directly to the source repository and have them install from there. This sidesteps the share-alike question entirely while still giving Teachers full access to the 111-skill library.',
+      },
+      {
+        q: 'Do I need GarethManning\'s library to use the Teacher Bundle?',
+        a:
+          'No. The Foundational Creator Bundle alone covers the majority of the Teacher\'s working surface. GarethManning\'s library adds depth in pedagogy specifically: evidence-based curriculum design, assessment design, backwards design, rubric creation, formative assessment, learning analytics and AI Learning Science. Teachers who want that depth follow the install instructions in the script. Teachers who do not still have a working stack from the Foundational substrate.',
+      },
+      {
+        q: 'How does the Teacher Bundle relate to the other avatar bundles?',
+        a:
+          'Same two-layer pattern across every avatar bundle. The Foundational Bundle is the substrate. The Builder, Writer, Performer, Teacher, Curator and Strategist bundles each ship a small medium-specific layer on top. The Teacher\'s medium-specific layer happens to be the smallest of the six; that is a feature of the universal-stack alignment, not a gap in the Teacher\'s tooling.',
+      },
+      {
+        q: 'A YouTube educator is also a Performer. Should I install both bundles?',
+        a:
+          'Yes. Cross-archetype creators install the Foundational Bundle once plus every avatar bundle that fits their work. A YouTube educator running a long-form educational channel installs Foundational plus the Teacher Bundle (for the curriculum and pedagogy framing) plus the Performer Bundle (for YouTube Channel Manager and Video Watcher). The two-layer architecture means no skill duplication; the avatar bundles only add medium-specific resources on top of the shared substrate.',
+      },
+      {
+        q: 'What does the install script actually change on my system?',
+        a:
+          'Almost nothing. The script verifies the Foundational substrate is present by reading your settings.json and looking for marketing-skills@marketingskills. It prints the manual git clone command for GarethManning\'s library plus the license context. It does not modify settings.json, does not clone any repos and does not install any skills natively. The install is informational by design.',
+      },
+      {
+        q: 'Is the install reversible?',
+        a:
+          'There is nothing to reverse. The script does not modify your system. If you choose to follow the printed git clone command for GarethManning\'s library, removing it later is a single rm -rf against the directory you cloned into. The Foundational Bundle is unaffected.',
+      },
+    ],
+    relatedSlugs: ['foundational-creator', 'researcher', 'plan-challenger', 'source-harvest', 'skill-creator'],
+    softHook: {
+      body:
+        'The Teacher Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for the longer arc, where the curriculum becomes a body of work that compounds across cohorts, students and decades, is the Sovereign Life Playbook.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
 ]
 
 export function getAssetBySlug(slug: string, type?: AssetType): IGOSAsset | undefined {
