@@ -74,6 +74,22 @@ export const IGOS_MOD_PLAYBOOKS: IgosMod = {
     'Practical frameworks for long-term thinking, sovereign systems and agentic life design.',
 }
 
+export const IGOS_MOD_SKILLS: IgosMod = {
+  href: '/skills',
+  label: 'Skills',
+  title: 'Skills you can install',
+  description:
+    'Installable Claude Code skills authored inside the practice. Source-level patterns published as single-command installs.',
+}
+
+export const IGOS_MOD_BUNDLES: IgosMod = {
+  href: '/bundles',
+  label: 'Bundles',
+  title: 'Avatar-shaped skill stacks',
+  description:
+    'Pre-composed skill stacks for specific creator avatars. One install command, the full configuration on top of the foundational substrate.',
+}
+
 export const IGOS_MOD_UPDATES: IgosMod = {
   href: '/updates',
   label: 'Updates',
@@ -88,6 +104,8 @@ export const igosMods: IgosMod[] = [
   IGOS_MOD_AGENTIC_SYSTEMS,
   IGOS_MOD_SOVEREIGNTY,
   IGOS_MOD_PLAYBOOKS,
+  IGOS_MOD_SKILLS,
+  IGOS_MOD_BUNDLES,
   IGOS_MOD_UPDATES,
 ]
 

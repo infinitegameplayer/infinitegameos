@@ -11,6 +11,8 @@ const navLinks = [
   { href: '/accord', label: 'Accord' },
   { href: '/playbooks', label: 'Playbooks' },
   { href: '/concepts', label: 'Concepts' },
+  { href: '/skills', label: 'Skills' },
+  { href: '/bundles', label: 'Bundles' },
   { href: '/about', label: 'About' },
 ]
 
