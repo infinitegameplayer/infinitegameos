@@ -248,6 +248,53 @@
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "updated_at": "2026-05-02",
       "changelog_url": null
+    },
+    {
+      "id": "the-curator",
+      "name": "The Curator Bundle",
+      "type": "bundle",
+      "version": "1.0",
+      "description": "Two avatar-specific Claude Code skills for newsletter curators, industry digest writers, taste-forward newsletter authors and link aggregators in 2026. Tech Digest and Newsletter Creation and Curation install on top of the Foundational Creator Bundle substrate.",
+      "tags": ["bundle", "curator", "newsletter", "digest", "rss", "taste", "claude-code", "creator-os", "2026"],
+      "install": {
+        "one_line_command": "curl -sSL https://www.infinitegameos.io/bundles/the-curator/install.sh | bash",
+        "script_url": "https://www.infinitegameos.io/bundles/the-curator/install.sh",
+        "markdown_url": "https://www.infinitegameos.io/markdown/bundles/the-curator"
+      },
+      "skills": [
+        { "title": "Tech Digest (RSS aggregation, scoring, dedup, structured shortlist)", "source": "camilleroux/tech-digest", "license": "MIT", "url": "https://github.com/camilleroux/tech-digest" },
+        { "title": "Newsletter Creation and Curation (editorial framing, synthesis, subject lines)", "source": "BrianRWagner/ai-marketing-claude-code-skills", "license": "MIT", "url": "https://github.com/BrianRWagner/ai-marketing-claude-code-skills/tree/main/newsletter-creation-curation" }
+      ],
+      "related": ["foundational-creator", "source-harvest", "researcher", "skill-creator"],
+      "article_url": "https://www.infinitegameos.io/bundles/the-curator",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-02",
+      "changelog_url": null
+    },
+    {
+      "id": "the-strategist",
+      "name": "The Strategist Bundle",
+      "type": "bundle",
+      "version": "1.0",
+      "description": "Three avatar-specific Claude Code skills for independent management consultants, fractional executives, frameworks writers, growth strategists, decision-systems authors and applied operators in 2026. Management Consulting (42 frameworks, three output modes), Decision Toolkit and MBB Management Consultant install on top of the Foundational Creator Bundle substrate.",
+      "tags": ["bundle", "strategist", "consultant", "fractional", "frameworks", "advisory", "claude-code", "creator-os", "2026"],
+      "install": {
+        "one_line_command": "curl -sSL https://www.infinitegameos.io/bundles/the-strategist/install.sh | bash",
+        "script_url": "https://www.infinitegameos.io/bundles/the-strategist/install.sh",
+        "markdown_url": "https://www.infinitegameos.io/markdown/bundles/the-strategist"
+      },
+      "skills": [
+        { "title": "Management Consulting (42 frameworks across strategy, problem-solving, decision-making, financial, operations and innovation; three output modes)", "source": "gcamilo/management-consulting", "license": "MIT", "url": "https://github.com/gcamilo/management-consulting" },
+        { "title": "Decision Toolkit (structured decision frameworks plus cognitive bias checkers)", "source": "glebis/claude-skills", "license": "MIT", "url": "https://github.com/glebis/claude-skills" },
+        { "title": "MBB Management Consultant (Pyramid Principle executive communication, market sizing, profitability trees, sector-specific strategy across nine industries)", "source": "charlie989898/-mbb-management-consultant-claude-skill", "license": "MIT", "url": "https://github.com/charlie989898/-mbb-management-consultant-claude-skill" }
+      ],
+      "related": ["foundational-creator", "researcher", "source-harvest", "plan-challenger", "systematic-debugging"],
+      "article_url": "https://www.infinitegameos.io/bundles/the-strategist",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-02",
+      "changelog_url": null
     }
   ]
 }

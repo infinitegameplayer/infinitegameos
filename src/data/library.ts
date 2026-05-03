@@ -1217,6 +1217,280 @@ export const igosAssets: IGOSAsset[] = [
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
+  {
+    slug: 'the-curator',
+    type: 'bundle',
+    title: 'The Curator Bundle',
+    label: 'Bundle',
+    version: '1.0',
+    updated: '2026-05-02',
+    description:
+      'Claude Code skills for newsletter curators, industry digest writers, taste-forward recommendation creators and link aggregators in 2026. Two avatar-specific skills (Tech Digest, Newsletter Creation and Curation) on top of the Foundational Creator Bundle substrate.',
+    tags: ['bundle', 'curator', 'newsletter', 'digest', 'rss', 'taste', 'claude-code', 'creator-os', '2026'],
+    capsule:
+      'The Curator Bundle is the avatar-specific layer for selection-first creators: industry digest writers, taste-forward newsletter authors, "5 things" personal curators, link aggregators and AI-assisted research digest curators. Taste is the entire value proposition. Skills handle the mechanical layer so the Curator can spend more hours doing the thing only they can do: deciding what earns a slot. Tech Digest aggregates RSS feeds, scores, deduplicates and surfaces a structured shortlist for editorial selection. Newsletter Creation and Curation produces the editorial framing, subject lines and synthesis paragraphs that make a curated list land with credibility. Sits on top of the Foundational Creator Bundle.',
+    bundle: {
+      installUrl: 'https://www.infinitegameos.io/bundles/the-curator/install.sh',
+      command: 'curl -sSL https://www.infinitegameos.io/bundles/the-curator/install.sh | bash',
+      skills: [
+        {
+          title: 'Tech Digest',
+          description:
+            'RSS aggregation engine designed for digest curators. Pulls from configurable feed lists, filters by score, deduplicates overlapping stories, groups by day and surfaces a structured shortlist ready for editorial selection. Pure Python stdlib, zero dependencies. Ships with developer-niche defaults (Hacker News, Lobste.rs); the YAML feed list is fully swappable for any niche. Invoke with /digest 7 for a weekly recap or /digest 3 for a tighter window. The intake engine of the bundle.',
+          source: 'github.com/camilleroux/tech-digest',
+          license: 'MIT',
+          externalUrl: 'https://github.com/camilleroux/tech-digest',
+        },
+        {
+          title: 'Newsletter Creation and Curation',
+          description:
+            'Editorial production layer. Industry-adaptive newsletter creation with stage, role and geography-aware workflows. Handles the one or two sentences per item that explain why each piece matters, the synthesis paragraph that ties an issue together and the subject lines that make the email worth opening. Pairs cleanly with Tech Digest above: aggregation upstream, editorial production downstream. Together they cover the Curator\'s full weekly loop from raw feed to send-ready copy.',
+          source: 'github.com/BrianRWagner/ai-marketing-claude-code-skills',
+          license: 'MIT',
+          externalUrl: 'https://github.com/BrianRWagner/ai-marketing-claude-code-skills/tree/main/newsletter-creation-curation',
+        },
+      ],
+    },
+    definition:
+      'The Curator Bundle is the avatar-specific stack for selection-first creators working with Claude Code in 2026. The Foundational Creator Bundle (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging plus Content Strategy and AI SEO) is the assumed pre-install. The Curator layer adds two installable skills. Tech Digest (Camille Roux, MIT) handles RSS intake, scoring, dedup and structured shortlist surfacing. Newsletter Creation and Curation (Brian R Wagner, MIT) handles editorial production, synthesis framing and subject-line authoring. For the Curator, Source Harvest from the Foundational substrate plays a more central role than in any other avatar bundle: the Curator\'s long-term asset is the source map, not the issues. Researcher handles the deeper context-gathering when an issue calls for analytical synthesis rather than just link-plus-sentence framing. Skill Creator lets the Curator encode their selection criteria into custom skills for repeatable quality. Taste is the entire value proposition. Every resource in the bundle either protects taste, extends taste or frees up time to use taste.',
+    howItWorks: [
+      {
+        heading: 'Pre-install: the Foundational Creator Bundle',
+        paragraphs: [
+          'The Curator Bundle assumes the Foundational Creator Bundle is already present. The Foundational Bundle is the universal substrate: Researcher for deeper context behind a curated item, Plan Challenger for adversarial review of the issue plan or the editorial direction, Source Harvest for building and maintaining the curated source map, Skill Creator for codifying selection criteria into reusable infrastructure, Systematic Debugging for when the multi-tool pipeline breaks, plus Content Strategy and AI SEO for cadence and discoverability. Curators need all seven. Installing them once at the substrate level is enough.',
+          'If the Foundational Bundle is not yet installed, install it first at /bundles/foundational-creator. The Curator Bundle install script in this page does not bring those skills again.',
+        ],
+      },
+      {
+        heading: 'What the install brings',
+        paragraphs: [
+          'The install script does two things. First, it clones the Tech Digest repository and copies the digest skill files into the Claude Code skills directory at ~/.claude/skills/tech-digest/. Second, it clones the ai-marketing-claude-code-skills repository and copies the newsletter-creation-curation directory into ~/.claude/skills/newsletter-creation-curation/. Both halves are idempotent. Re-running is safe. The script writes a timestamped backup of any existing skills directory before overwriting.',
+          'After install, restart Claude Code. /digest becomes available for any feed list configured in the YAML. The newsletter creation skill activates when the work calls for editorial framing, subject-line authoring or stage-aware sequence design.',
+          'A note on the Content Research Writer skill: an additional skill named in the Curator avatar research (ComposioHQ\'s content-research-writer) is omitted from this v1 install pending license confirmation on the upstream repo. The eight-step research-to-draft model it covers (topic understanding, collaborative outlining, source research, hook improvement, section feedback, voice preservation, citation management, final polish) is queued for a Kingdom-native rebuild in v1.1. Curators who write deeper analytical synthesis can reach for the Foundational substrate\'s Researcher in the meantime.',
+        ],
+      },
+      {
+        heading: 'How the two skills compose',
+        paragraphs: [
+          'Tech Digest runs at intake. Configure the feed list once. Run /digest 7 every Monday or /digest 3 for a tighter window. The skill returns a scored, deduplicated shortlist of items grouped by day. The Curator still makes every final call, but they arrive at that decision with a pre-sorted set of candidates instead of 200 raw items. The score-based filtering and the deduplication are the differentiators over a generic RSS reader.',
+          'Newsletter Creation and Curation runs at production. Once the items are selected, the skill handles the editorial layer: the one or two sentences per item that explain why each one matters, the synthesis paragraph that ties the issue together, the subject line that earns the open. Stage-aware workflows let the same engine produce a B2B industry digest, a consumer taste-forward newsletter or a "5 things" personal recommendation list with the appropriate voice register for each.',
+          'The Foundational layer surrounds the two. Source Harvest is the proprietary source-map builder. Most curators discover good feeds accidentally and lose track of them just as fast; Source Harvest makes source-building deliberate. Researcher is the depth-pass for items that warrant analytical framing rather than a quick blurb. Plan Challenger reviews the issue plan when something feels off and the Curator wants a structural read before sending. Skill Creator lets the Curator encode their selection criteria as a custom skill, turning a felt sense into a repeatable quality bar. Systematic Debugging applies when the multi-tool pipeline produces unexpected output. Together with the Curator layer, the practice covers intake, triage, framing, production, source-mapping, depth-research, plan-review and debug under one roof.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Industry digest curator publishing weekly',
+        body:
+          'A weekly industry digest writer opens the curation session Tuesday morning. Tech Digest has already aggregated the week\'s feeds and surfaced a scored shortlist. Source Harvest flags two new high-quality feeds added to the source map. The Curator triages the shortlist down to six items. Newsletter Creation and Curation generates the editorial framing per item plus a synthesis paragraph for the issue. Researcher handles a deeper contextual note on the headline item that warrants more than a sentence. The issue ships Wednesday morning with the structural production work compressed and the editorial judgment intact.',
+      },
+      {
+        title: 'Taste-forward lifestyle curator across design and culture',
+        body:
+          'A lifestyle curator covering design, food, travel and culture runs Source Harvest monthly to vet the existing source map and surface new feeds. Tech Digest aggregates the cross-domain feed list and surfaces what earned a slot this week. The aesthetic eye stays human. Newsletter Creation and Curation handles the editorial framing in the curator\'s established register. The publication that takes a single curator three days to produce by hand becomes a one-day process without smoothing the voice.',
+      },
+      {
+        title: '"5 Things" personal curator running a low-overhead daily list',
+        body:
+          'A personal recommendation curator publishing six items a week runs Tech Digest with a tightly scoped feed list (15-20 trusted sources). Daily intake takes minutes. Newsletter Creation and Curation handles the brief personal voice for each recommendation. The format that started as a low-overhead labor of love stays low-overhead even as the audience grows.',
+      },
+      {
+        title: 'AI-assisted research digest curator',
+        body:
+          'An AI-assisted research digest curator uses Tech Digest for deterministic intake and classification across an academic, practitioner and popular feed mix. Researcher dispatches parallel sub-agents to gather context on the highest-priority items. The Curator stays in control of final selection and voice. Newsletter Creation and Curation handles synthesis. The machine handles the mechanical layer; the taste stays human.',
+      },
+      {
+        title: 'Niche recommendation engine for a tight audience',
+        body:
+          'A niche recommendation curator running a Wirecutter-style format for a specific audience (knife collectors, indie game developers, herbalists) maintains the source map via Source Harvest and runs the weekly aggregation pass via Tech Digest. The recommendations themselves stay personal and voice-forward. Newsletter Creation and Curation handles the framing layer that makes each recommendation feel considered rather than generated.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Does the Curator Bundle include the Foundational Creator Bundle?',
+        a:
+          'No. The Curator Bundle assumes the Foundational Bundle is already installed. Install /bundles/foundational-creator first if you have not already. The two-layer architecture means the medium-specific skills (Tech Digest, Newsletter Creation and Curation) install once on top of the universal substrate.',
+      },
+      {
+        q: 'I am not a developer. Will Tech Digest still work for my niche?',
+        a:
+          'Yes. Tech Digest ships with developer-niche feeds (Hacker News, Lobste.rs) as defaults but the YAML feed list is fully swappable. Replace the default sources with your niche feeds (design publications, climate tech outlets, food media, finance newsletters and so on) and the skill works identically. The first configuration step is editing the feed list to match your beat. The skill is feed-list-driven, not topic-locked.',
+      },
+      {
+        q: 'Why is Content Research Writer not in the install script?',
+        a:
+          'The ComposioHQ content-research-writer skill named in the Curator avatar research is omitted from v1 pending license confirmation on the upstream repository. The eight-capability research-to-draft model it covers is queued for a Kingdom-native rebuild in v1.1. In the meantime, the Foundational substrate\'s Researcher handles the deeper analytical context that this skill would otherwise cover.',
+      },
+      {
+        q: 'How is Tech Digest different from a regular RSS reader?',
+        a:
+          'Tech Digest scores items and deduplicates overlapping stories before surfacing them. A regular RSS reader hands you 200 items in chronological order. Tech Digest hands you a scored shortlist already grouped and deduplicated, ready for editorial selection. The selection layer stays human; the triage layer becomes machine-assisted.',
+      },
+      {
+        q: 'What does the install script actually change on my system?',
+        a:
+          'It clones github.com/camilleroux/tech-digest into a temp directory and copies the contents of skills/digest/ to ~/.claude/skills/tech-digest/. It clones github.com/BrianRWagner/ai-marketing-claude-code-skills into a temp directory and copies the newsletter-creation-curation directory to ~/.claude/skills/newsletter-creation-curation/. It writes a timestamped backup of any existing files in those skills directories before overwriting. It does not touch settings.json. No system-level changes happen outside ~/.claude.',
+      },
+      {
+        q: 'Is the install reversible?',
+        a:
+          'Yes. To remove Tech Digest, delete ~/.claude/skills/tech-digest. To remove Newsletter Creation and Curation, delete ~/.claude/skills/newsletter-creation-curation. The Foundational Bundle is unaffected by either rollback.',
+      },
+      {
+        q: 'How does the Curator Bundle relate to the other avatar bundles?',
+        a:
+          'Same two-layer pattern across every avatar bundle. The Foundational Bundle is the substrate. The Builder, Writer, Performer, Teacher, Curator and Strategist bundles each ship a small medium-specific layer on top. A creator who works as both a Curator and a Writer installs the Foundational Bundle once plus both avatar bundles. No skill duplication.',
+      },
+    ],
+    relatedSlugs: ['foundational-creator', 'source-harvest', 'researcher', 'skill-creator'],
+    softHook: {
+      body:
+        'The Curator Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for the longer arc, where taste compounds into a relationship at scale across years of issues, is the Sovereign Life Playbook.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
+  {
+    slug: 'the-strategist',
+    type: 'bundle',
+    title: 'The Strategist Bundle',
+    label: 'Bundle',
+    version: '1.0',
+    updated: '2026-05-02',
+    description:
+      'Claude Code skills for independent management consultants, fractional executives, frameworks writers, growth strategists, decision-systems authors and applied operators in 2026. Three avatar-specific skills (Management Consulting, Decision Toolkit, MBB Management Consultant) on top of the Foundational Creator Bundle substrate.',
+    tags: ['bundle', 'strategist', 'consultant', 'fractional', 'frameworks', 'advisory', 'claude-code', 'creator-os', '2026'],
+    capsule:
+      'The Strategist Bundle is the avatar-specific layer for structured-thinking creators: independent management consultants, fractional executives (CMO, COO, CFO, CTO), frameworks writers, growth strategists, decision-systems authors and applied operators. The intellectual product is the leverage. Skills compress the synthesis-to-delivery gap and turn accumulated patterns into a portable, reusable body of advisory knowledge. Management Consulting carries 42 frameworks across strategy, problem-solving, decision-making, financial and operations work in three output modes. Decision Toolkit runs structured decision frameworks and bias checkers. MBB Management Consultant adds executive communication discipline (Pyramid Principle) and sector-specific framing across nine industries. Sits on top of the Foundational Creator Bundle.',
+    bundle: {
+      installUrl: 'https://www.infinitegameos.io/bundles/the-strategist/install.sh',
+      command: 'curl -sSL https://www.infinitegameos.io/bundles/the-strategist/install.sh | bash',
+      skills: [
+        {
+          title: 'Management Consulting',
+          description:
+            '42 consulting frameworks at practitioner depth across strategy (Five Forces, Blue Ocean, Wardley Mapping), problem-solving (MECE, Issue Trees, Pyramid Principle), decision-making (RAPID, Pre-Mortem, Second-Order Thinking), financial (TAM/SAM/SOM, Unit Economics), operations and innovation (Jobs to Be Done, Business Model Canvas). Three output modes (Quick Structure, Full Case, Client Deliverable) match response depth to engagement stakes. The category-anchor skill for the bundle. Install first.',
+          source: 'github.com/gcamilo/management-consulting',
+          license: 'MIT',
+          externalUrl: 'https://github.com/gcamilo/management-consulting',
+        },
+        {
+          title: 'Decision Toolkit',
+          description:
+            'Structured decision-making frameworks and cognitive bias checkers as a dedicated skill layer, separate from the broader consulting framework suite. Opportunity cost analysis, scenario matrices and bias detection are all in scope. The Strategist uses it personally for their own practice decisions and deploys it with clients who need a structured decision session. Pairs with Management Consulting without duplicating it: client-facing deliverables versus structured reasoning under uncertainty.',
+          source: 'github.com/glebis/claude-skills',
+          license: 'MIT',
+          externalUrl: 'https://github.com/glebis/claude-skills',
+        },
+        {
+          title: 'MBB Management Consultant',
+          description:
+            'Calibrated to the McKinsey/Bain/BCG frame-structure-analyze-synthesize-deliver methodology. Covers executive communication (Pyramid Principle), case interview rigor (market sizing, profitability trees) and sector-specific strategy across nine industries (healthcare, fintech, energy, retail and more). All frameworks derive from public sources, no proprietary firm material. Pairs with Management Consulting above for expanded framework coverage; the sector-depth angles are the primary differentiator.',
+          source: 'github.com/charlie989898/-mbb-management-consultant-claude-skill',
+          license: 'MIT',
+          externalUrl: 'https://github.com/charlie989898/-mbb-management-consultant-claude-skill',
+        },
+      ],
+    },
+    definition:
+      'The Strategist Bundle is the avatar-specific stack for structured-thinking creators working with Claude Code in 2026. The Foundational Creator Bundle (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging plus Content Strategy and AI SEO) is the assumed pre-install. The Strategist layer adds three installable skills. Management Consulting (gcamilo, MIT) is the category-anchor skill: 42 frameworks at practitioner depth across strategy, problem-solving, decision-making, financial, operations and innovation domains, with three output modes that match response depth to engagement stakes. Decision Toolkit (Gleb Kalinin, MIT) installs as a Claude Code marketplace plugin and provides structured decision frameworks plus cognitive bias checkers as a dedicated layer. MBB Management Consultant (charlie989898, MIT) adds executive communication discipline (Pyramid Principle), case interview rigor and sector-specific strategy across nine industries. For the Strategist, Researcher from the Foundational substrate is the engagement intake engine and Source Harvest is the proprietary pattern-library builder. Systematic Debugging transfers directly into operational and strategic root-cause analysis. The intellectual product is the leverage. Frameworks outlive any individual engagement.',
+    howItWorks: [
+      {
+        heading: 'Pre-install: the Foundational Creator Bundle',
+        paragraphs: [
+          'The Strategist Bundle assumes the Foundational Creator Bundle is already present. The Foundational Bundle is the universal substrate: Researcher for engagement intake research, Plan Challenger for adversarial review of recommendations before delivery, Source Harvest for building the proprietary pattern library across engagements, Skill Creator for encoding recurring advisory patterns, Systematic Debugging for root-cause investigation when strategies hit unexpected resistance in implementation, plus Content Strategy and AI SEO for the publishing layer when frameworks become content. Strategists need all seven. Installing them once at the substrate level is enough.',
+          'If the Foundational Bundle is not yet installed, install it first at /bundles/foundational-creator. The Strategist Bundle install script in this page does not bring those skills again.',
+        ],
+      },
+      {
+        heading: 'What the install brings',
+        paragraphs: [
+          'The install script does three things. First, it clones the gcamilo/management-consulting repository into the Claude Code skills directory at ~/.claude/skills/management-consulting/. Second, it registers the glebis-skills marketplace and enables the Decision Toolkit plugin via a jq merge into settings.json. Third, it clones the charlie989898 MBB Management Consultant repository and copies the skill contents into ~/.claude/skills/mbb-consultant/. All three halves are idempotent. Re-running is safe. The script writes a timestamped backup of any existing settings.json and skills directories before any change.',
+          'After install, restart Claude Code. Management Consulting activates on any strategy question, market analysis or structured recommendation request. Decision Toolkit activates with /decision commands or naturally when Claude reaches for structured decision frameworks. MBB Management Consultant activates when executive communication structure or sector-specific strategy framing is in scope.',
+        ],
+      },
+      {
+        heading: 'How the three skills compose',
+        paragraphs: [
+          'Management Consulting runs as the working horse. Three modes match the stakes. Quick Structure for an inline framework hit during a working session. Full Case for a complete diagnostic across an engagement. Client Deliverable for a polished output ready to present. The 42 frameworks span strategy (Porter\'s Five Forces, Blue Ocean, Wardley Mapping), problem-solving (MECE, Issue Trees, Pyramid Principle), decision-making (RAPID, Pre-Mortem, Second-Order Thinking), financial work (TAM/SAM/SOM, Unit Economics), operations and innovation (Jobs to Be Done, Business Model Canvas). Most strategy work in any week reaches for one of these.',
+          'Decision Toolkit runs at the decision-point itself. Strategy work is decision work. The skill carries cognitive bias checkers, opportunity cost analysis and scenario matrices as a dedicated layer separate from the broader consulting framework suite. The Strategist uses it personally for their own practice decisions (which client to take, which framework to publish, which engagement to defer) and deploys it with clients running structured decision sessions. The pairing with Management Consulting matters: gcamilo for client-facing deliverables, Decision Toolkit for structured reasoning under uncertainty.',
+          'MBB Management Consultant runs when executive communication discipline matters or sector depth is required. Pyramid Principle structuring for board-ready memos. Market sizing and profitability tree rigor for sector-specific engagements. Nine industries with their own framing layers (healthcare, fintech, energy, retail and others). For the Strategist working in a specific vertical, the sector depth here fills the gap that a generalist framework library leaves open.',
+          'The Foundational layer surrounds the three. Researcher dispatches parallel sub-agents on the engagement intake research that used to take a half-day. Source Harvest extracts patterns from across engagements into the Strategist\'s pattern library, the long-term sovereign asset that compounds across years of advisory work. Plan Challenger runs the adversarial pre-delivery review before any client-facing recommendation goes out. Skill Creator codifies the Strategist\'s own recurring patterns into custom skills (the discovery-call template, the diagnostic structure for a specific engagement type, the recommendation format for a specific client profile). Systematic Debugging applies when a strategy hits unexpected resistance in implementation, which is the moment the Strategist\'s value proposition is tested. Content Strategy and AI SEO handle the publishing layer when frameworks become content. Together with the Strategist layer, the practice covers research, structuring, decision-rigor, sector-depth, framework application, pattern-harvest, plan-review, custom-tool authoring, root-cause and publishing under one roof.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Independent management consultant running 3-5 concurrent engagements',
+        body:
+          'An independent consultant with four active engagements opens the working session. Researcher dispatches parallel workers on this morning\'s engagement intake. Management Consulting structures the diagnostic in Full Case mode. Plan Challenger reviews the recommendation outline before drafting. MBB Management Consultant applies Pyramid Principle to the executive summary. The deliverable that used to consume a full day of synthesis-to-delivery work ships in two hours with the structural rigor intact and the Strategist\'s judgment as the load-bearing layer.',
+      },
+      {
+        title: 'Fractional executive embedded across multiple clients',
+        body:
+          'A fractional CMO embedded part-time in three companies runs Researcher each Monday on the week\'s priority decisions across all three. Management Consulting structures the recommendation framework. Decision Toolkit handles the bias-check pass before each client presentation. Source Harvest captures the operational pattern that worked at company two for application at company three (without violating confidentiality, since patterns are extracted at structural level). The fractional model that depends on multiplied hours becomes structurally sustainable.',
+      },
+      {
+        title: 'Frameworks writer publishing strategic intellectual property',
+        body:
+          'A frameworks writer publishing on Substack, LinkedIn and through books runs Researcher to gather the source corpus for the next major framework. Source Harvest extracts pattern libraries from reference work in adjacent territory. Management Consulting provides the framework architecture. Plan Challenger stress-tests the framework before publication. AI SEO handles the discoverability layer for the published piece. The intellectual property pipeline that takes most frameworks writers months to maintain becomes a weekly rhythm.',
+      },
+      {
+        title: 'Growth strategist designing GTM systems for early-stage companies',
+        body:
+          'A growth strategist running advisory engagements for early-stage companies runs Management Consulting in Full Case mode for the GTM diagnostic. Decision Toolkit handles the channel-prioritization decision. MBB Management Consultant provides the sector framing for the specific industry vertical. Source Harvest builds a portable playbook library across the engagements that compounds the advisory value over time. The early-stage advisory engagement that depends on senior judgment under time pressure becomes structurally repeatable.',
+      },
+      {
+        title: 'Decision-systems author writing for knowledge workers and leaders',
+        body:
+          'A decision-systems author writing books and courses on probabilistic thinking, cognitive bias and decision frameworks runs Researcher for source triangulation and Decision Toolkit as both a working tool and a body of patterns to write about. Source Harvest extracts existing decision frameworks at source level. Management Consulting provides adjacent strategic framework material. The intellectual property that anchors the author\'s public surface stays grounded in working tools rather than abstractions.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Does the Strategist Bundle include the Foundational Creator Bundle?',
+        a:
+          'No. The Strategist Bundle assumes the Foundational Bundle is already installed. Install /bundles/foundational-creator first if you have not already. The two-layer architecture means the medium-specific skills (Management Consulting, Decision Toolkit, MBB Management Consultant) install once on top of the universal substrate.',
+      },
+      {
+        q: 'Why two consulting framework skills (gcamilo and MBB) instead of one?',
+        a:
+          'Both cover different territory. Management Consulting (gcamilo) is the category-anchor with 42 frameworks at practitioner depth and three output modes matched to engagement stakes. MBB Management Consultant focuses on executive communication discipline (Pyramid Principle) and sector-specific framing across nine industries. They overlap meaningfully on common frameworks (Porter\'s Five Forces, Jobs to Be Done) but diverge on output style and sector depth. For Strategists working in a specific vertical, the MBB sector-depth fills the gap. For Strategists working broad-spectrum advisory, the gcamilo three-mode model is the daily driver.',
+      },
+      {
+        q: 'How does Decision Toolkit differ from the decision-making frameworks already in Management Consulting?',
+        a:
+          'Management Consulting includes RAPID, Pre-Mortem and Second-Order Thinking as part of its broader framework suite for client-facing deliverables. Decision Toolkit is the dedicated decision-rigor layer: cognitive bias checkers, opportunity cost analysis, scenario matrices and structured decision sessions. The Strategist uses Decision Toolkit personally for their own practice decisions and deploys it for clients running structured decision sessions. Management Consulting is for client-facing diagnostic and recommendation work. Decision Toolkit is for structured reasoning under uncertainty, including the Strategist\'s own.',
+      },
+      {
+        q: 'I work in a specific industry vertical (healthcare, fintech, energy). Is this bundle still useful?',
+        a:
+          'Yes. MBB Management Consultant carries sector-specific framing across nine industries explicitly. Management Consulting is sector-agnostic but its 42 frameworks apply across verticals. The combination gives you generalist depth plus sector-specific framing in the same install. For verticals not covered by the MBB sector list, the Plan Challenger and Source Harvest skills from the Foundational substrate let you build sector-specific advisory patterns over time.',
+      },
+      {
+        q: 'What does the install script actually change on my system?',
+        a:
+          'It clones github.com/gcamilo/management-consulting into a temp directory and copies the contents to ~/.claude/skills/management-consulting/. It registers the glebis-skills marketplace in ~/.claude/settings.json under extraKnownMarketplaces and enables the decision-toolkit plugin under enabledPlugins via a jq merge. It clones github.com/charlie989898/-mbb-management-consultant-claude-skill into a temp directory and copies the skill contents to ~/.claude/skills/mbb-consultant/. It writes a timestamped backup of settings.json and any existing skills directories before any change. No system-level changes happen outside ~/.claude.',
+      },
+      {
+        q: 'Is the install reversible?',
+        a:
+          'Yes. To remove Management Consulting, delete ~/.claude/skills/management-consulting. To remove Decision Toolkit, restore the settings.json backup the script wrote or delete the marketplace entry by hand. To remove MBB Management Consultant, delete ~/.claude/skills/mbb-consultant. The Foundational Bundle is unaffected by any rollback.',
+      },
+      {
+        q: 'How does the Strategist Bundle relate to the other avatar bundles?',
+        a:
+          'Same two-layer pattern across every avatar bundle. The Foundational Bundle is the substrate. The Builder, Writer, Performer, Teacher, Curator and Strategist bundles each ship a small medium-specific layer on top. A creator who works as both a Strategist and a Writer (frameworks writer with a publication arm) installs the Foundational Bundle once plus both avatar bundles. No skill duplication.',
+      },
+    ],
+    relatedSlugs: ['foundational-creator', 'researcher', 'source-harvest', 'plan-challenger', 'systematic-debugging'],
+    softHook: {
+      body:
+        'The Strategist Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for the longer arc, where pattern libraries become a sovereign intellectual asset that compounds across decades, is the Sovereign Life Playbook.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
 ]
 
 export function getAssetBySlug(slug: string, type?: AssetType): IGOSAsset | undefined {

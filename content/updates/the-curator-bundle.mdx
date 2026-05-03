@@ -1,0 +1,112 @@
+---
+title: "The Curator Bundle. Claude Code Skills for Newsletter Curators, Industry Digest Writers and Taste-Forward Creators in 2026"
+date: 2026-05-02
+slug: the-curator-bundle
+summary: "Two avatar-specific Claude Code skills for the Curator archetype: Tech Digest (RSS aggregation, scoring, dedup, structured shortlist) and Newsletter Creation and Curation (editorial framing, synthesis paragraphs, subject lines). Sits on top of the Foundational Creator Bundle. Taste is the product for the Curator. The bundle handles the mechanical layer so the Curator can spend more hours doing the thing only they can do: deciding what earns a slot."
+---
+
+Tuesday morning. Two hundred unread items in the reader. The newsletter ships Wednesday. The quiet question is which six things deserve someone else's attention this week.
+
+Most curation advice treats this as a productivity problem. Read faster. Use better filters. Outsource the intake to AI summarizers. The advice misses what is actually load-bearing about the work. Curation is not a processing task. It is a judgment task. The reader subscribes because of the judgment, not because of the volume processed. The Curator who reads a hundred pieces and publishes only the six that pass their own filter is doing the load-bearing work. Everything else is logistics.
+
+The Curator Bundle is the avatar-specific stack for selection-first creators inside Infinite Game OS. Two installable skills sit on top of the [Foundational Creator Bundle](/bundles/foundational-creator). The substrate underneath carries research, adversarial review, intelligence extraction, custom-tool authoring, root-cause debugging plus content strategy and AI-era discoverability. The avatar layer adds the resources that protect what the Curator is actually doing: building a relationship at scale through impeccable taste, one issue at a time.
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2.5rem 0' }}>
+  <a href="/bundles/the-curator" className="btn-accent" style={{ fontSize: '1rem', padding: '1rem 2rem' }}>Install the Curator Bundle →</a>
+</div>
+
+## Who this is for
+
+Newsletter writers running an industry digest in AI, creator economy, climate tech, product design, law, finance or any specialist beat. Taste-forward lifestyle curators in design, food, fashion, interiors, travel and culture. "5 things I'm reading this week" personal curators publishing a brief weekly list. Link aggregators running a "Hacker News for X" community feed in a niche. AI-assisted research digest curators using machine triage with human judgment in the final selection layer. Niche recommendation engine creators running a Wirecutter-style format for a tightly defined audience. Any creator whose primary output is curated collection rather than original production.
+
+What unifies the archetype is taste as the product and selection as the value. Readers follow a curator because the way that specific person filters what they read is irreplaceable. The judgment. The eye for what will still matter in a year. The willingness to cut what is merely good in favor of what is excellent. That irreplaceability of taste is what the bundle is built around protecting.
+
+## The two skills
+
+### Tech Digest
+
+[Tech Digest](https://github.com/camilleroux/tech-digest) by Camille Roux, MIT-licensed. The intake engine of the bundle. RSS aggregation across configurable feed lists, score-based filtering, deduplication of overlapping stories and structured day-grouped output ready for editorial selection. Pure Python stdlib, zero dependencies.
+
+The aggregation move is the entry point. Run `/digest 7` Monday morning and the skill returns a scored shortlist of the past week's items across the configured feeds. Run `/digest 3` Wednesday afternoon for a tighter window before the issue ships. The Curator still makes every final call, but they arrive at that decision with a pre-sorted set of candidates instead of two hundred raw items. The score-based filtering is the differentiator over a generic RSS reader. The deduplication is the relief from the same story showing up four times across overlapping feeds.
+
+The skill ships with developer-niche feed defaults (Hacker News, Lobste.rs). The first configuration step for any non-developer Curator is editing the YAML feed list to point at the niche sources that actually feed their beat. Design publications. Climate tech outlets. Food media. Finance newsletters. Niche academic feeds. The skill is feed-list-driven, not topic-locked. Once configured, the intake pipeline runs the same regardless of beat.
+
+For Curators using both Claude Code and Claude Desktop, an alternative intake tool is the [mcp-rss-aggregator](https://github.com/imprvhub/mcp-rss-aggregator) MCP server (MPL-2.0). Tech Digest is the Claude Code-native option and pairs cleanly with the rest of this bundle. The MCP server is the cross-platform alternative for Curators who work primarily in Claude Desktop.
+
+### Newsletter Creation and Curation
+
+[Newsletter Creation and Curation](https://github.com/BrianRWagner/ai-marketing-claude-code-skills/tree/main/newsletter-creation-curation) by Brian R Wagner, MIT-licensed. The editorial production layer. Industry-adaptive newsletter creation with stage, role and geography-aware workflows. Handles the one or two sentences per item that explain why each piece matters, the synthesis paragraph that ties the issue together and the subject line that earns the open.
+
+The editorial framing move is where the skill earns its place inside the production loop. The Curator selects the six items via Tech Digest's shortlist and their own judgment. The skill then takes the selection and produces the editorial layer: the per-item framing that makes each link feel considered, the synthesis paragraph that gives the issue a center, the subject line tuned to the audience and the format. Stage-aware workflows let the same engine produce a B2B industry digest, a consumer taste-forward newsletter, a "5 things" personal recommendation list or a research digest with the appropriate voice register for each.
+
+The pairing with Tech Digest is the architectural move. Aggregation upstream. Editorial production downstream. Together they cover the Curator's full weekly loop from raw feed to send-ready copy. The selection layer (the part only the Curator can do) stays the human surface in the middle.
+
+### A note on the deferred third skill
+
+The Curator avatar research names a third skill, Content Research Writer from ComposioHQ, for the Curators who write deeper analytical synthesis or thematic introductions rather than just link-plus-sentence formats. The upstream repository does not specify a license, so v1 of this bundle omits it pending license confirmation. The eight-capability research-to-draft model it covers (topic understanding, collaborative outlining, source research, hook improvement, section feedback, voice preservation, citation management and final polish) is queued for a Kingdom-native rebuild in v1.1. In the meantime, the Foundational substrate's [Researcher](/skills/researcher) handles the deeper analytical context for any Curator who needs to write synthesis beyond the link-plus-blurb format.
+
+## The Foundational substrate underneath
+
+The Curator Bundle assumes the [Foundational Creator Bundle](/bundles/foundational-creator) is already installed. Seven skills total, five IGOS-native ([Researcher](/skills/researcher), [Plan Challenger](/skills/plan-challenger), [Source Harvest](/skills/source-harvest), [Skill Creator](/skills/skill-creator), [Systematic Debugging](/skills/systematic-debugging)) plus Content Strategy and AI SEO from Corey Haines's marketing-skills plugin.
+
+For the Curator, the substrate carries the work that surrounds the selection work. Source Harvest plays a more central role here than in any other avatar bundle. The Curator's long-term sovereign asset is not any single issue. It is their source map: the feeds, authors, publications and communities they have cultivated as reliable input over years. Most curators discover good sources accidentally and lose track of them just as fast. Source Harvest makes source-building deliberate. The feeds vetted this year are the feeds that surface the best content five years from now. For a niche digest curator, a fifty-source vetted feed library is more valuable than a five-hundred-source noisy one. The skill supports the tightening, not just the expanding.
+
+Researcher handles the depth-pass when a curated item warrants more than a sentence of editorial framing. The Curator writing "here is why this paper published in March matters to what you are building right now" is orders of magnitude more valuable to their reader than one who can only surface the link. Researcher is what makes that kind of editorial framing possible without the Curator burning a half-day of solo browsing per issue.
+
+Plan Challenger is the editorial mirror that asks where the issue plan has a structural gap. Run the issue outline through a five-angle adversarial pass before sending and the structural weakness surfaces while the cost is still zero. Most solo Curators have no editor. Plan Challenger is the closest standing substitute.
+
+Skill Creator lets the Curator encode their selection criteria as a custom skill. The Browser has specific criteria: is this genuinely interesting, is the writing extraordinary, will readers value it a decade from now? A Curator who encodes their own selection criteria into a custom Claude skill has a repeatable quality bar, not just a felt sense. The bundle becomes a practice, not just a toolset.
+
+Systematic Debugging applies when the multi-tool pipeline produces unexpected output. Content Strategy plans the issue cadence and the cross-platform calendar. AI SEO handles the discoverability layer that turns published issues into found issues in 2026, where Google AI Overviews and AI-generated answer surfaces are deciding what gets surfaced.
+
+The two-layer architecture means no skill duplication. The Foundational Bundle installs once. The Curator Bundle installs once. Together they cover intake, triage, framing, production, source-mapping, depth-research, plan-review, custom-tool authoring, root-cause and discoverability under one roof.
+
+## Taste is the product
+
+Most creator-economy advice treats curation as content distribution. Send links. Write blurbs. Grow the list. The advice is correct in the same way "be funny" is correct advice for stand-up comics. The action is right; the framing implies that taste is performed by a person with good taste who is fundamentally separate from the work. The framing misses what is actually load-bearing about Curator work.
+
+For the Curator, taste is not a layer added on top. It is the offer. The same articles get shared by hundreds of accounts in any given week. The reader subscribes to one of them. The variable is taste. The way one curator's filter compresses the universe of possible items into the six worth reading. The willingness to cut a popular piece that does not pass the personal bar. The discipline to keep the standard high even on a week when there is nothing obvious to send. Taste is what the reader is actually following.
+
+This makes taste depletion the most expensive failure mode for the archetype. The week the curator publishes something they would not have approved a year ago. The month the analytics anxiety crowds out the willingness to send a brief issue when nothing else earns a slot. The quarter the production work eats the reading work and the curator stops being a reader who curates and starts being a curator who skims.
+
+The bundle is built around protecting taste from depletion under sustained output. Tech Digest handles the structural intake work that would otherwise eat the reading bandwidth. Newsletter Creation and Curation handles the editorial production work that would otherwise eat the deciding bandwidth. The Foundational substrate carries the surrounding research, source-mapping and discoverability work. Together they make sustainable cadence a structural feature of the workflow rather than a discipline the Curator has to summon every Tuesday morning when the inbox opens.
+
+Finite games ask how to grow the list this quarter. The Infinite Game asks how to keep showing up with impeccable taste across thousands of issues. The bundle is a finite-game tool aimed at the Infinite question.
+
+## Selection as a Pioneer practice
+
+Curators are not processing information. They are exercising judgment, and judgment is a muscle that develops through practice rather than through volume. The Curator who reads everything and publishes only what survives their own filter is on the [Pioneer](/concepts/the-pioneer) arc. They are learning to trust their own filter in real time, every week, in public.
+
+The bundle does not replace that practice. It supports it. Tech Digest means the intake pipeline does not have to be reconstructed from scratch every Monday. Newsletter Creation and Curation means the editorial framing can be drafted and refined rather than produced from a cold start under deadline. Source Harvest means the source map is a deliberate asset rather than a vague memory of "feeds I think I subscribed to in 2022." Together they hold the Curator to a quality bar that solo creators in a previous decade had a research assistant or a co-editor for and that 2026 solo Curators have to construct for themselves out of skills, calendars and willpower.
+
+The finite game is the issue that ships Wednesday. The Infinite Game is becoming someone whose taste other readers trust enough to follow for a decade. Two different races, run on the same surface, decided by different rules.
+
+## The source map as long-horizon asset
+
+The Curator's competitive advantage compounds. Frameworks writers compound by publishing more frameworks. Performers compound by recording more videos. Curators compound differently: their long-term asset is the accumulated source map plus the trust the audience places in their judgment. Both compound silently across years.
+
+The source map is the harder one to make legible. Most Curators run on instinct. They subscribe to a feed because someone they trust mentioned it on a podcast. They drop a feed because three weeks of content disappointed them. The decisions are unsystematic. The asset that results is unaudited. Source Harvest changes this. Run a quarterly source-map audit. Surface the feeds that scored highest over the last twelve weeks. Flag the feeds that have drifted from their old quality bar. Add the feeds that have surfaced as candidates from reader recommendations or accidental discoveries. The source map becomes a portfolio under management rather than a list that grew by accretion.
+
+The Creator Flywheel applies cleanly here. Live the life: read deeply, every week, with attention to what is genuinely good. Share the breadcrumbs: publish the issue with the six items that earned their slot. Activate others: the readers who notice, the other curators who quote, the sources who link back. Return home: triage the inbound, refine the source map, decide which feeds to add and which to drop. Go deeper: codify the selection criteria into a custom skill, write a public note on the curation philosophy, mentor a newer curator into their own practice. The flywheel turns. The taste deepens. The audience compounds.
+
+## The reader relationship frame
+
+The Browser has 75,000 daily readers who trust Robert Cottrell and his team's judgment more than an algorithm. Dense Discovery has built a similar trust over years across design, technology and sustainability. Recomendo runs a tighter format with the same compounding effect. The trust was built one excellent recommendation at a time, sustained across years, through the patient discipline of cutting what is merely good in favor of only what is excellent.
+
+The bundle is the structural layer that makes that discipline sustainable for a solo Curator in 2026. The intake pipeline runs without a research assistant. The editorial framing produces without an editor. The source map becomes legible without a knowledge management consultant. What is left over is the part that requires the Curator's actual judgment. The reading. The cutting. The deciding. These are the irreplaceable surface. The bundle protects them by removing the friction that would otherwise erode them under sustained output.
+
+A reader who has subscribed for three years already knows what this means. They are following the Curator, not the topic. The Infinite Game does not have a finish line. It just has more readers who are glad you showed up again this week.
+
+## Install
+
+The bundle installs in one command. Idempotent. Safe to re-run. Pre-install the Foundational Creator Bundle first if you have not already.
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '2.5rem 0' }}>
+  <a href="/bundles/the-curator" className="btn-accent" style={{ fontSize: '1rem', padding: '1rem 2rem' }}>Install the Curator Bundle →</a>
+</div>
+
+Two skills install. Tech Digest clones into the Claude Code skills directory at `~/.claude/skills/tech-digest/`. Newsletter Creation and Curation clones into `~/.claude/skills/newsletter-creation-curation/`. Restart Claude Code. The Curator layer is live. First-run configuration: edit the Tech Digest YAML feed list to match your beat.
+
+The reader is here for the taste. The bundle protects the taste so the Curator has room to keep showing up.
+
+If you are reading this, the next issue is what gets sent.
