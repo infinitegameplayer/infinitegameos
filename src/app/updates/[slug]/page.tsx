@@ -18,7 +18,7 @@ export async function generateMetadata({
   const update = getUpdate(slug)
   if (!update) return {}
   return {
-    title: `${update.title} — Infinite Game OS`,
+    title: update.seoTitle ?? `${update.title} | Infinite Game OS`,
     description: update.summary,
     alternates: {
       canonical: `https://www.infinitegameos.io/updates/${slug}`,
