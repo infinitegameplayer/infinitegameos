@@ -324,6 +324,156 @@ export const concepts: Concept[] = [
       ctaLabel: 'Explore the Playbook',
     },
   },
+  {
+    slug: 'data-sovereignty',
+    title: 'Data Sovereignty',
+    label: 'Foundation',
+    capsule:
+      'Your files on your computer. Your data, your context, your history. Not in someone else\'s cloud. Not locked behind a platform that may change its terms next quarter. Different AI tools can read and rewrite the same files because the files belong to you, not to the tool. Build the foundation today and every future decision about which AI, which platform, which workflow gets easier. The corporations are building the convenient lock-in. Data sovereignty is the other path.',
+    subtitle:
+      'The foundation underneath everything else. Your files, your machine, your terms. The AI as a tool that serves you, not a platform that owns you.',
+    sections: [
+      {
+        heading: 'Why this is the foundation',
+        paragraphs: [
+          'Files local. Files yours. AI as a plug-and-play interface that reads and writes those files.',
+          'Without this, every other piece of architecture sits on infrastructure you do not control. Your second brain rents space on someone else\'s server. Your North Star lives behind a login that may not exist next year. Your creative work belongs to whichever platform you uploaded it to.',
+          'The Facebook analogy makes the lock-in concrete. Try leaving the platform with your photos, friends and connections intact. The export tools are clunky on purpose. The platforms are built to keep you. Sovereign-first refuses that default at the foundation.',
+        ],
+      },
+      {
+        heading: 'The three-tier stack',
+        paragraphs: [
+          'Named live in the May 2 AI for Livin\' Workshop by an attendee mid-demo. The stack has three layers and each one is swappable.',
+          'Sovereign Ecosystem is the file structure and the templates. The opinionated foundation that gives the system shape. Obsidian is the reader and editor that turns those files into something you can navigate, search and annotate by hand. Claude Code (or Codex, or any future agentic interface) is the AI that can read, edit and restructure any of it on your instruction.',
+          'One layer holds the structure. One translates the files for human navigation. One brings the AI intelligence. Swap any layer and the others survive. That is the durability of building on an open foundation instead of a closed platform.',
+        ],
+      },
+      {
+        heading: 'Your data trains you, not them',
+        paragraphs: [
+          'Every interaction your AI has with your files makes the system know you better. Your writing voice sharpens. Your taste becomes more articulable. Your codices and skills get refined the more you use them.',
+          'That intelligence belongs in your hands. The longer you build inside a sovereign-first foundation, the more the system becomes a precise instrument for the way you actually think and work. The corporations are pulling the same intelligence into their model weights. The sovereign-first practice is to keep the intelligence pulling toward you instead.',
+        ],
+      },
+      {
+        heading: 'The long arc',
+        paragraphs: [
+          'Today: a $20 to $200 monthly subscription on a sovereign-first foundation gets you 95% of the way there. The AI runs in the cloud and reads files from your machine. The data going to the model is anonymized into the weights. There are still operational logs to be aware of. Worth doing your own research on the specific tools you use.',
+          'Next step: local LLMs running on your own hardware. Currently a $10k to $15k setup. The price will keep dropping. The foundation you build today is what makes that next step a smooth migration instead of a full rebuild.',
+          'The point of building sovereign-first today is not paranoia. It is that every future step toward greater sovereignty becomes easier when the foundation is already laid.',
+        ],
+      },
+      {
+        heading: 'What this is not',
+        paragraphs: [
+          'Not anti-AI. Not anti-corporation. Not survivalist or paranoid. Just a practical refusal of the default: that your second brain, your creative voice and your operational substrate should live on a server you do not control.',
+          'A practice with spiritual implications. Your data is an extension of your interior life. Owning it is the work.',
+        ],
+      },
+    ],
+    relatedSlugs: ['ai-second-brain', 'the-north-star', 'joyful-sovereignty'],
+    ctaLinks: [
+      { href: '/concepts/ai-second-brain', label: 'The AI Second Brain', variant: 'accent' },
+      { href: '/sovereignty', label: 'Sovereign Life Design', variant: 'outline' },
+    ],
+  },
+  {
+    slug: 'the-north-star',
+    title: 'The North Star',
+    label: 'Practice',
+    capsule:
+      'The point on the horizon you are walking toward. Zero to three months out, with longer horizons sketched beyond. Active quests instead of tasks, because a quest is something you embark on with curiosity. Filled in once, revisited often. Once the North Star lives in your system, the AI organizes your day-to-day work around it. You stop carrying the trajectory in your head. The North Star holds it for you, and you get to be present with whatever is most alive today.',
+    subtitle:
+      'The compass that lets the AI organize your work around your direction. A living document, not a fixed plan.',
+    sections: [
+      {
+        heading: 'What goes in',
+        paragraphs: [
+          'Zero to three month horizon as the primary frame. The handful of things you intend to actually move on in that window. A few longer-horizon notes about what is on the other side.',
+          'Active quests as the primary unit. The work you are embarking on this season, named in language that reflects how you actually relate to it.',
+          'Specific revenue targets if those help. Specific project outcomes by specific dates. Or looser textures if you are earlier in the process. Both work. Minimal structure to get started. Add specificity as your understanding sharpens.',
+        ],
+      },
+      {
+        heading: 'Quest, not task',
+        paragraphs: [
+          'A task feels like a chore. Something to grind through. Energy gets pulled out of you to complete it.',
+          'A quest feels playful. Embark-able. Worth learning along the way. Energy gets put into you by engaging with it.',
+          'Same work. Different inner posture. The reframing is not cosmetic. The energy that shows up to a quest is qualitatively different from the energy that shows up to a task. The North Star lets you name the work in the language that actually moves you.',
+        ],
+      },
+      {
+        heading: 'The check-in rhythm',
+        paragraphs: [
+          'Once the North Star lives in your system, you can build a weekly or monthly check-in into your skills. The check-in is not a status report.',
+          'It is a conversation with the AI about whether the trajectory still feels alive. Whether the active quests still match what is most authentic. What wants to shift.',
+          'This is where the North Star earns its name. Not by being right at the moment you wrote it. By being a living point you keep returning to as your understanding deepens. The trajectory is not betrayed by changing. The trajectory is honored by being kept current.',
+        ],
+      },
+      {
+        heading: 'Follow Aliveness, not script',
+        paragraphs: [
+          'The Pioneer\'s central practice is following authentic aliveness instead of the conditioned script that built the outer life. The North Star is where that practice lives in writing.',
+          'You wrote the trajectory down because it was alive when you wrote it. You keep returning to it because it stays alive as you change. When a quest stops feeling alive, the system rewires around the update. No replanning two months of work by hand. No carrying a stale plan as if it were still true.',
+          'The Ideal Month sits inside the North Star horizon. The Pending Plans you carry sit alongside it. The skills you build serve it. Without a North Star, the AI organizes your day-to-day work around whatever is in front of you. With one, it can hold a longer arc.',
+        ],
+      },
+    ],
+    relatedSlugs: ['ideal-month', 'the-pioneer', 'joyful-sovereignty'],
+    ctaLinks: [
+      { href: '/concepts/ideal-month', label: 'The Ideal Month', variant: 'accent' },
+      { href: '/concepts/the-pioneer', label: 'The Pioneer', variant: 'outline' },
+    ],
+  },
+  {
+    slug: 'ai-second-brain',
+    title: 'The AI Second Brain',
+    label: 'Framework',
+    capsule:
+      'The system you trust to hold what is in your head so you do not have to. An idea hits at a meetup. You open Obsidian on your phone. You write it down. The note syncs to your home setup. You walk back into the conversation as a present human being. The fog clears because your second brain holds the load. Tiago Forte built the original Building a Second Brain framework. The AI Second Brain is the next move: an active intelligence layer over the same files. Capture, organize, distill, express. The loop runs.',
+    subtitle:
+      'The system that holds your thoughts so you do not have to. Capture from anywhere. Organize, distill and express through the AI you already use.',
+    sections: [
+      {
+        heading: 'The capture flow',
+        paragraphs: [
+          'An idea hits. You are at a meetup or in a conversation or out for a walk. The phone is in your pocket. Open Obsidian. Write the idea down.',
+          'The note is in your second brain immediately. The file lives on your machine. The capture happened in seconds. Now you can walk back into the conversation as a present human being. The system holds the idea.',
+          'This is the spiritual half of the second brain. Trusting the system to remember so your nervous system can let go. You get to be with your body, with the people in front of you, with whatever inspiration arrives next. The thing you were afraid of forgetting is breadcrumbed.',
+        ],
+      },
+      {
+        heading: 'Capture, organize, distill, express',
+        paragraphs: [
+          'Tiago Forte\'s Building a Second Brain framework named the loop. Capture the input. Organize it where you can find it later. Distill the essence. Express it back into the world. A 20-minute video search on his work gives you the foundation.',
+          'The AI Second Brain runs the same loop with one upgrade. The AI handles a lot of the organize, distill and express work. You stay focused on capture and on creative judgment.',
+          'A To-Do Dock is the daily capture surface for the small stuff. Pending Plans are the longer-horizon capture surface for ideas you want to act on later. Claude Code is the engine that organizes and distills. Skills like article drafting, social batch drafting and the express layer of any creative bundle handle the output side. The same files flow through every layer.',
+        ],
+      },
+      {
+        heading: 'A recognition moment from the room',
+        paragraphs: [
+          'During the May 2 AI for Livin\' Workshop, mid-demo, an attendee said it out loud: "You\'re searching through your second brain right now. It\'s like, that\'s happening."',
+          'Yes. That was the demo. The system in motion. Everyone in the room watched what they had been hearing about become a thing you do.',
+          'The AI Second Brain is not aspirational architecture. It runs the moment you pick up the tool, point it at the right files and start trusting it. The setup takes about an hour. The trust takes about a week.',
+        ],
+      },
+      {
+        heading: 'Why this is sovereignty work',
+        paragraphs: [
+          'A second brain that lives on someone else\'s server is a brain you rent. The terms of service are the terms of your interior life.',
+          'The AI Second Brain stays on your machine. Different AI tools can read and write the same files because the files belong to you. The intelligence builds toward you the longer you use it.',
+          'This is where Data Sovereignty stops being abstract. The second brain is the most personal substrate you have. Owning it is the work that makes everything else easier to own.',
+        ],
+      },
+    ],
+    relatedSlugs: ['data-sovereignty', 'the-north-star', 'ideal-month'],
+    ctaLinks: [
+      { href: '/concepts/data-sovereignty', label: 'Data Sovereignty', variant: 'accent' },
+      { href: '/skills/source-harvest', label: 'Install Source Harvest', variant: 'outline' },
+    ],
+  },
 ]
 
 // Future concept candidates (King decides which to build):

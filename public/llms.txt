@@ -1,6 +1,6 @@
 # Infinite Game OS — llms.txt
 # Structured manifest for AI systems and language model crawlers
-# Last updated: 2026-05-01. Discovery stack v1: /AGENTS.md, /igos-index.json, /marketplace.json published. Six installable skills live at /skills/<slug>: source-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher. Three installable bundles live at /bundles/<slug>: foundational-creator (the Foundational Creator Bundle: 5 IGOS-native skills plus marketing-skills plugin from coreyhaines31), the-builder (the Builder Bundle: 3 avatar-specific skills - gstack, Context7, Impeccable - on top of the Foundational substrate) and the-writer (the Writer Bundle: 2 installable skills - Voice Ghostwriter from BayramAnnakov, Humanizer from Aboudjem - plus a companion workspace template from WomenDefiningAI on top of the Foundational substrate). Two-layer bundle architecture: Foundational Bundle as substrate, avatar bundles (Builder and Writer live, Performer, Teacher, Curator, Strategist forthcoming) ship medium-specific skills on top.
+# Last updated: 2026-05-02. Discovery stack v1: /AGENTS.md, /igos-index.json, /marketplace.json published. Six installable skills live at /skills/<slug>: source-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher. Three installable bundles live at /bundles/<slug>: foundational-creator (the Foundational Creator Bundle: 5 IGOS-native skills plus marketing-skills plugin from coreyhaines31), the-builder (the Builder Bundle: 3 avatar-specific skills - gstack, Context7, Impeccable - on top of the Foundational substrate) and the-writer (the Writer Bundle: 2 installable skills - Voice Ghostwriter from BayramAnnakov, Humanizer from Aboudjem - plus a companion workspace template from WomenDefiningAI on top of the Foundational substrate). Two-layer bundle architecture: Foundational Bundle as substrate, avatar bundles (Builder and Writer live, Performer, Teacher, Curator, Strategist forthcoming) ship medium-specific skills on top.
 # https://www.infinitegameos.io
 
 ## Site Identity
@@ -38,6 +38,9 @@ Key terms and entity names used throughout this site:
 - The Ideal Month
 - Playgrounds of Exploration
 - The Infinite Playlist
+- Data Sovereignty
+- The North Star
+- The AI Second Brain
 - Natural law
 - Sovereignty with consent
 - The Living Axis
@@ -61,6 +64,9 @@ Key terms and entity names used throughout this site:
 - /concepts/ideal-month — A structural experiment: life architecture designed from aliveness, tested by experience
 - /concepts/playgrounds-of-exploration — A day as a sequence of places to play, each with its own aliveness, its own song, its own invitation
 - /concepts/infinite-playlist — The invisible music floating in the air, always playing, waiting to be heard
+- /concepts/data-sovereignty — The foundation underneath everything else: your files, your machine, your terms; the AI as a tool that serves you, not a platform that owns you
+- /concepts/the-north-star — The compass that lets the AI organize your work around your direction; a living document, not a fixed plan
+- /concepts/ai-second-brain — The system that holds your thoughts so you do not have to; capture from anywhere, organize, distill and express through the AI you already use
 
 ## Public Library (Installable Assets)
 

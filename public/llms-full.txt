@@ -1,6 +1,6 @@
 # Infinite Game OS — Full Content Index
 # Deep LLM reference for comprehensive site content
-# Updated: 2026-05-01. Discovery stack v1 published: /AGENTS.md (cross-tool harvest instructions), /igos-index.json (machine-readable asset registry), /marketplace.json (Claude Code marketplace manifest). Public Library now ships six installable skills at /skills/<slug>: source-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher. Three installable bundles now live at /bundles/<slug>: foundational-creator (the Foundational Creator Bundle: 7 skills, 5 IGOS-native + marketing-skills plugin from coreyhaines31), the-builder (the Builder Bundle: 3 avatar-specific skills - gstack from garrytan, Context7 from upstash, Impeccable from pbakaus - on top of the Foundational substrate) and the-writer (the Writer Bundle: 2 installable skills - Voice Ghostwriter from BayramAnnakov, Humanizer from Aboudjem - plus a companion workspace template from WomenDefiningAI on top of the Foundational substrate). Two-layer bundle architecture: Foundational Bundle as substrate, avatar bundles (Builder and Writer live, Performer, Teacher, Curator, Strategist forthcoming) ship medium-specific skills on top. VS Code one-click install verified via vscode://anthropic.claude-code/install-plugin URI handler.
+# Updated: 2026-05-02. Discovery stack v1 published: /AGENTS.md (cross-tool harvest instructions), /igos-index.json (machine-readable asset registry), /marketplace.json (Claude Code marketplace manifest). Public Library now ships six installable skills at /skills/<slug>: source-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher. Three installable bundles now live at /bundles/<slug>: foundational-creator (the Foundational Creator Bundle: 7 skills, 5 IGOS-native + marketing-skills plugin from coreyhaines31), the-builder (the Builder Bundle: 3 avatar-specific skills - gstack from garrytan, Context7 from upstash, Impeccable from pbakaus - on top of the Foundational substrate) and the-writer (the Writer Bundle: 2 installable skills - Voice Ghostwriter from BayramAnnakov, Humanizer from Aboudjem - plus a companion workspace template from WomenDefiningAI on top of the Foundational substrate). Two-layer bundle architecture: Foundational Bundle as substrate, avatar bundles (Builder and Writer live, Performer, Teacher, Curator, Strategist forthcoming) ship medium-specific skills on top. VS Code one-click install verified via vscode://anthropic.claude-code/install-plugin URI handler.
 # https://www.infinitegameos.io
 
 This file contains structured summaries of each page for AI systems that require
@@ -342,6 +342,87 @@ play through it, the day stops feeling like a list and starts feeling like a son
 Paired with Playgrounds of Exploration. Chapter 5 of the Sovereign Life Playbook is
 dedicated to this practice. Related: Playgrounds of Exploration, Joyful Sovereignty,
 The Pioneer.
+
+---
+
+## Data Sovereignty (/concepts/data-sovereignty)
+
+Data sovereignty is the foundation underneath everything else in the Infinite Game OS
+stack. Files local on your computer. Your data, your context, your history. Not in
+someone else's cloud. Not locked behind a platform that may change its terms next
+quarter. Different AI tools (Claude Code, Codex, future agentic interfaces) can read
+and rewrite the same files because the files belong to you, not to the tool. Building
+on a sovereign-first foundation today makes every future decision about which AI,
+which platform, which workflow easier. The corporations are building convenient
+platform lock-in (the Facebook analogy: try leaving with your photos, friends and
+connections intact). Data sovereignty is the other path.
+
+The three-tier stack named live in the May 2 AI for Livin' Workshop by an attendee
+mid-demo: Sovereign Ecosystem (file structure and templates), Obsidian (the reader and
+editor that turns files into something humans can navigate by hand) and Claude Code or
+Codex (the AI that can read, edit and restructure any of it on instruction). One layer
+holds structure. One translates files for human navigation. One brings AI intelligence.
+Swap any layer and the others survive. Today: a $20-200 monthly subscription on a
+sovereign-first foundation gets you 95% of the way there. Next step: local LLMs on
+your own hardware ($10-15k setup, price will drop). The point is not paranoia; the
+point is that every future step toward greater sovereignty becomes easier when the
+foundation is already laid. Your data trains you, not them. Related: AI Second Brain,
+The North Star, Joyful Sovereignty, Sovereign Life Design (/sovereignty).
+
+---
+
+## The North Star (/concepts/the-north-star)
+
+The North Star is the point on the horizon you are walking toward. Zero to three months
+out, with longer horizons sketched beyond. Active quests instead of tasks, because a
+quest is something you embark on with curiosity while a task is something you grind
+through. Filled in once, revisited often. Once the North Star lives in the system, the
+AI organizes day-to-day work around it and you stop carrying the trajectory in your
+head. What goes in: the handful of things you intend to actually move on this season,
+named in language that reflects how you actually relate to the work. Specific revenue
+targets if those help, specific project outcomes by specific dates, or looser textures
+if you are earlier in the process. Both work. Minimal structure to get started; add
+specificity as your understanding sharpens.
+
+The reframing from task to quest is not cosmetic. The energy that shows up to a quest
+is qualitatively different from the energy that shows up to a task. Same work, different
+inner posture. The check-in rhythm: weekly or monthly conversation with the AI about
+whether the trajectory still feels alive, whether the active quests still match what is
+most authentic, what wants to shift. The North Star earns its name not by being right
+at the moment you wrote it, but by being a living point you keep returning to as your
+understanding deepens. Connects to the Pioneer's central practice: follow Aliveness,
+not the conditioned script. The Ideal Month sits inside the North Star horizon. The
+Pending Plans you carry sit alongside it. The skills you build serve it. Related: The
+Ideal Month, The Pioneer, Joyful Sovereignty.
+
+---
+
+## The AI Second Brain (/concepts/ai-second-brain)
+
+The AI Second Brain is the system you trust to hold what is in your head so you do not
+have to. The capture flow demoed in the May 2 AI for Livin' Workshop: an idea hits at
+a meetup or in a conversation, you open Obsidian on your phone, you write the idea
+down, the note syncs to your home setup, you walk back into the conversation as a
+present human being. The fog clears because your second brain holds the load. This is
+the spiritual half of the practice: trusting the system to remember so your nervous
+system can let go. Tiago Forte built the original Building a Second Brain framework
+(20-minute video search on his work gives you the foundation). The AI Second Brain is
+the next move: an active intelligence layer over the same files. The CODE loop runs
+(capture, organize, distill, express) with one upgrade. The AI handles a lot of the
+organize, distill and express work; you stay focused on capture and creative judgment.
+
+The To-Do Dock is the daily capture surface for the small stuff. Pending Plans are the
+longer-horizon capture surface for ideas you want to act on later. Claude Code is the
+engine that organizes and distills. Skills like article drafting, social batch drafting
+and the express layer of any creative bundle handle the output side. The same files
+flow through every layer. Recognition moment from the workshop, mid-demo, attendee said
+out loud: "You're searching through your second brain right now. It's like, that's
+happening." Yes. That was the demo. The AI Second Brain is not aspirational
+architecture; it runs the moment you pick up the tool, point it at the right files and
+start trusting it. Setup takes about an hour. Trust takes about a week. Why this is
+sovereignty work: a second brain that lives on someone else's server is a brain you
+rent. The terms of service become the terms of your interior life. Related: Data
+Sovereignty, The North Star, The Ideal Month.
 
 ---
 
