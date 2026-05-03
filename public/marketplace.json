@@ -149,6 +149,42 @@
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
       }
+    },
+    {
+      "name": "grant-researcher",
+      "description": "Discover grants whose mission alignment, eligibility and deadline runway fit an operator profile. Two modes: Discovery sweeps wide and ranks by fit; Fit Deep-Dive runs a yes/no memo on one opportunity. Pairs with Grant Manager.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/grant-researcher"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/grant-researcher",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": ["grants", "research", "funding", "nonprofit", "discovery"],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
+    },
+    {
+      "name": "grant-manager",
+      "description": "Manage the full grant lifecycle on a chosen opportunity. LOI drafting, full proposal authoring, budget assistance, submission portal handling, post-award reporting and funder stewardship. Pairs with Grant Researcher.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/grant-manager"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/grant-manager",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": ["grants", "management", "proposals", "stewardship", "nonprofit"],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
     }
   ]
 }

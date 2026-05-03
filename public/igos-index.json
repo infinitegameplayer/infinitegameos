@@ -168,6 +168,46 @@
       "changelog_url": null
     },
     {
+      "id": "grant-researcher",
+      "name": "Grant Researcher",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Discover grants whose mission alignment, eligibility and deadline runway fit an operator profile. Two modes: Discovery sweeps wide and ranks by fit; Fit Deep-Dive runs a yes/no memo on one opportunity. Pairs with Grant Manager.",
+      "tags": ["grants", "research", "funding", "nonprofit", "discovery"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install grant-researcher@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/grant-researcher",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/grant-researcher.mdc"
+      },
+      "related": ["grant-manager", "plan-challenger", "pending-plan-implementation"],
+      "article_url": "https://www.infinitegameos.io/skills/grant-researcher",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-03",
+      "changelog_url": null
+    },
+    {
+      "id": "grant-manager",
+      "name": "Grant Manager",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Manage the full grant lifecycle on a chosen opportunity. LOI drafting, full proposal authoring, budget assistance, submission portal handling, post-award reporting and funder stewardship. Pairs with Grant Researcher.",
+      "tags": ["grants", "management", "proposals", "stewardship", "nonprofit"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install grant-manager@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/grant-manager",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/grant-manager.mdc"
+      },
+      "related": ["grant-researcher", "plan-challenger", "pending-plan-implementation"],
+      "article_url": "https://www.infinitegameos.io/skills/grant-manager",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-03",
+      "changelog_url": null
+    },
+    {
       "id": "foundational-creator",
       "name": "The Foundational Creator Bundle",
       "type": "bundle",

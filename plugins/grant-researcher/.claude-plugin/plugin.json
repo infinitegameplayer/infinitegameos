@@ -1,0 +1,13 @@
+{
+  "name": "grant-researcher",
+  "description": "Discover grants whose mission alignment, eligibility and deadline runway fit an operator profile. Two modes: Discovery for cold-start sweeps, Fit Deep-Dive for one-opportunity yes/no memos. Pairs with Grant Manager.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lane Belone",
+    "email": "howdy@lanebelone.com"
+  },
+  "homepage": "https://www.infinitegameos.io/skills/grant-researcher",
+  "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+  "license": "CC-BY-4.0",
+  "keywords": ["grants", "research", "funding", "nonprofit", "discovery", "fit-scoring"]
+}

@@ -704,6 +704,198 @@ export const igosAssets: IGOSAsset[] = [
     },
   },
   {
+    slug: 'grant-researcher',
+    type: 'skill',
+    title: 'Grant Researcher',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-05-03',
+    description:
+      'Discover grants whose mission alignment, eligibility and deadline runway fit an operator profile. Two modes: Discovery sweeps wide and ranks by fit; Fit Deep-Dive runs a yes/no memo on one opportunity. Pairs with Grant Manager.',
+    tags: ['grants', 'research', 'funding', 'nonprofit', 'discovery'],
+    capsule:
+      'Grant Researcher is a skill for finding grants whose priorities already match an operator\'s actual work. The profile is the spine: mission, org type, geography, focus areas, prior grant history, ask-size range, capacity, eligibility constraints. Two modes. Discovery sweeps wide across federal, foundation, state and local sources, then ranks the top 10 by fit score. Fit Deep-Dive analyzes a single opportunity for a fast yes/no memo. Pairs with Grant Manager for the lifecycle from intake forward.',
+    installable: {
+      marketplaceId: 'grant-researcher',
+      cursorMdc: true,
+    },
+    definition:
+      'Grant Researcher takes an operator profile and a cycle window and produces a ranked list of grants whose mission, eligibility, deadline runway, ask-size, funder track record and capacity match the operator\'s actual work. The default source mix queries Grants.gov via the public search2 endpoint (federal opportunities, no auth), a configured web search engine (foundation, state, local, corporate, RFP feeds) and ProPublica Nonprofit Explorer (peer organizations\' 990 filings as funder discovery). Optional paid databases (Foundation Directory Online, Instrumentl, GrantStation) layer in when the operator subscribes. Fit scoring runs a six-component rubric (mission alignment, eligibility as gating, deadline runway, ask-size, funder track record, capacity). Disqualifiers are gates not warnings: missing eligibility, mismatched ask-size, scope distortion that would bend the work to fit the funder, missing SAM.gov registration for federal applications. The skill\'s highest-leverage function is fast disqualification, helping the operator say no quickly to poor-fit opportunities so writing capacity goes to high-fit ones.',
+    howItWorks: [
+      {
+        heading: 'Profile as the spine, fit score as the ranking',
+        paragraphs: [
+          'The operator profile is the spine of every fit decision downstream. Required fields: mission, org type (501c3, LLC, individual, fiscally sponsored, public agency), primary geography, focus areas, prior grant history, ask-size range, current capacity, eligibility constraints (citizenship, certifications, fiscal sponsorship status, indirect cost rate). The reference format is markdown with frontmatter for structured fields and a prose body for nuance. Without the profile, fit scoring has no inputs; the skill halts at Step 1.',
+          'Fit scoring runs a six-component rubric: mission alignment (0-30), eligibility as gating (0-25), deadline runway (0-15), ask-size fit (0-10), funder track record (0-10), capacity match (0-10). Disqualifiers act as filters not penalties: a missing eligibility requirement, an ask-size well outside funder norms, a deadline runway too short for a competitive proposal, a federal opportunity without active SAM.gov registration. The skill\'s job is fast disqualification first, ranked recommendation second. The operator\'s writing capacity gets protected before the funnel expands.',
+        ],
+      },
+      {
+        heading: 'Discovery versus Fit Deep-Dive',
+        paragraphs: [
+          'Discovery mode is the cold-start sweep. It queries the configured sources within a cycle window, scores each opportunity, surfaces a top-10 ranked list and below it a disqualified-with-reasons block so the operator can see what was filtered out. Best for new operators entering a funding landscape, established practitioners running quarterly landscape refreshes or a domain shift requiring a fresh source mix.',
+          'Fit Deep-Dive mode runs against one named opportunity. The output is a single memo covering eligibility analysis, mission alignment, ask-size and capacity, deadline and effort estimate, funder track record from public records, three risk factors and a recommended next move with reasoning. Best for an experienced practitioner who already has a known universe and wants a fast yes/no on a specific RFP, or a board ask for a fit memo before committing capacity.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Quarterly grant landscape refresh for an established nonprofit',
+        body:
+          'A 501c3 with five years of grant history wants to surface adjacent funders before allocating Q3 writing capacity. Discovery mode sweeps Grants.gov, web search and the operator\'s configured paid databases against the 12-month cycle window. The top 10 ranked opportunities arrive with fit scores, why-it-fits bullets and suggested next moves. The disqualified-with-reasons block surfaces where filters might be over-aggressive.',
+      },
+      {
+        title: 'Fast yes/no on a specific federal RFP',
+        body:
+          'A program officer recommends a federal opportunity. The operator wants a fit decision before committing writing capacity. Fit Deep-Dive mode runs against the named opportunity, produces a single memo with eligibility analysis (including SAM.gov registration check), mission alignment, ask-size analysis, deadline runway and three risk factors. The memo lands in under an hour; the operator decides in minutes.',
+      },
+      {
+        title: 'New nonprofit entering the funding landscape',
+        body:
+          'A newly-incorporated 501c3 wants to see what is out there for their domain. Discovery mode sweeps wide. The disqualifier block teaches the operator which kinds of opportunities to filter against (eligibility mismatches, federal opportunities requiring SAM.gov registration the operator hasn\'t completed, ask-sizes well outside the operator\'s capacity). The first run is partly a calibration exercise; the second run, weeks later, is materially more efficient.',
+      },
+      {
+        title: 'Funder relationship discovery via peer 990s',
+        body:
+          'An experienced practitioner wants to find foundations that fund peer organizations. The skill queries ProPublica Nonprofit Explorer for the operator\'s named peers, extracts their funder lists from 990 filings and surfaces funders that appear across multiple peers. The output ranks by frequency-of-funding and ask-size match. Warm-relationship pipelines convert at materially higher rates than cold discovery; this is how the warm pipeline gets seeded.',
+      },
+      {
+        title: 'Quarterly board memo on the funding landscape',
+        body:
+          'A board asks "what is out there for our work?" before the next planning meeting. Discovery mode produces the ranked list. The operator pairs it with a brief board memo summarizing the top 3-5 opportunities, the disqualified opportunities worth surfacing as not-yet-fit-but-watching and any structural shifts in the funder landscape (new program launches, board changes at named funders, geography expansions).',
+      },
+    ],
+    faq: [
+      {
+        q: 'Why a skill instead of just searching Grants.gov directly?',
+        a:
+          'Grants.gov gives raw opportunities; the skill gives ranked fit. The profile-load gate, the six-component scoring rubric and the disqualifier filter are what convert "100 opportunities returned" into "5 to 8 worth writing." Searching directly is the cheap part; the skill\'s contribution is the structural discipline that protects writing capacity.',
+      },
+      {
+        q: 'Do I need a paid database subscription?',
+        a:
+          'No. The default source mix runs on free public data: Grants.gov for federal, web search for foundation discovery, ProPublica Nonprofit Explorer for 990 lookups. Foundation Directory Online and Instrumentl layer in if the operator subscribes; many public libraries offer free FDO access. The skill works either way; depth scales with the source mix.',
+      },
+      {
+        q: 'How does the sovereignty gate work?',
+        a:
+          'The disqualifier list includes a gate question: would the operator do this work without this grant? If the answer is no, the skill surfaces the tension explicitly rather than scoring the opportunity. Grants compound when they fund work that was going to happen anyway. They become extractive when the program exists only because the grant exists.',
+      },
+      {
+        q: 'What if I already know my universe of funders?',
+        a:
+          'Run Fit Deep-Dive mode against specific opportunities rather than Discovery sweeps. The skill\'s structural value applies equally to known opportunities: eligibility analysis, ask-size fit, deadline runway, funder track record from 990 records. Experienced practitioners often run Fit Deep-Dive most of the time and Discovery quarterly to surface adjacent funders.',
+      },
+      {
+        q: 'Can this skill submit applications?',
+        a:
+          'No. Researcher discovers and analyzes; it never auto-submits. Submission lives in the paired Grant Manager skill, where the operator confirms the package before any submission action. The boundary protects the operator from auto-submitting a proposal whose final pass they didn\'t personally review.',
+      },
+    ],
+    relatedSlugs: ['grant-manager', 'plan-challenger', 'pending-plan-implementation'],
+    softHook: {
+      body:
+        'Grant Researcher pairs with Grant Manager. Researcher discovers and shortlists; Manager runs the lifecycle from intake forward. The two work as a flywheel. The Sovereign Life Playbook is the upstream design frame for whether a given funded work direction belongs in the operator\'s longer arc in the first place.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
+  {
+    slug: 'grant-manager',
+    type: 'skill',
+    title: 'Grant Manager',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-05-03',
+    description:
+      'Manage the full grant lifecycle on a chosen opportunity. LOI drafting, full proposal authoring, budget assistance, submission portal handling, post-award reporting and funder stewardship. Phase-routed. Pairs with Grant Researcher.',
+    tags: ['grants', 'management', 'proposals', 'loi', 'stewardship', 'nonprofit'],
+    capsule:
+      'Grant Manager is a skill for shepherding a chosen opportunity through the full grant lifecycle. Five phases: LOI, proposal, submission, post-award reporting, stewardship. The skill holds per-opportunity state across phases, pulls from a reusable boilerplate library and surfaces every deadline as a hard halt in the operator\'s capture system. The output is phase-specific deliverables and a per-opportunity tracking file. Pairs with Grant Researcher; the boundary is firm at intake.',
+    installable: {
+      marketplaceId: 'grant-manager',
+      cursorMdc: true,
+    },
+    definition:
+      'Grant Manager routes by phase. LOI phase produces a 1 to 2 page letter using standard sections (organization, need, project summary, ask, alignment) with boilerplate pulled where applicable. Proposal phase builds the section outline against the funder\'s required structure (cover sheet, executive summary, statement of need, project description, methods, logic model or theory of change, evaluation plan, organizational capacity, key personnel, budget and budget narrative, sustainability plan, letters of support, appendices), drafts section by section with surface-decision-points to the operator and runs a coherence pass across sections so logic models match evaluation plans and budgets match project descriptions. Submission phase builds a checklist as the gate, pre-flights every required upload and form field, then surfaces operator-only steps the skill can\'t perform (portal login, final submission button, e-signatures). Post-award phase pushes every reporting deadline into the capture system and runs report-drafting flows when deadlines approach. Stewardship phase tracks funder relationships across cycles. Federal compliance flows from 2 CFR 200; the skill surfaces the relevant subparts at proposal and post-award phases.',
+    howItWorks: [
+      {
+        heading: 'Phase routing as the discipline',
+        paragraphs: [
+          'The skill routes by phase. LOI, proposal, submission, post-award, stewardship. Each phase has its own flow with its own gates. The phase parameter is required at intake; the skill halts if it\'s missing. This structural separation is what allows the operator to resume work cleanly across sessions: the per-opportunity tracking file captures phase status, the boilerplate library persists across opportunities and the funder-relationship file persists across cycles.',
+          'Lead-time math is calibrated into each phase. Working backward from a proposal deadline: 1 to 2 weeks for final assembly, 4 to 6 weeks for writing, 2 to 4 weeks for internal review, plus 2 to 4 weeks for SAM.gov registration if federal and not active. A federal proposal needs 9 to 16 weeks of runway; a foundation proposal runs 6 to 12 weeks. The skill surfaces the math at LOI and proposal phases so the operator knows whether the deadline runway is structurally writable.',
+        ],
+      },
+      {
+        heading: 'Boilerplate as leverage',
+        paragraphs: [
+          'The reusable boilerplate library is the operator\'s leverage point. Org background, mission statement, theory of change, evaluation framework, budget template, key personnel bios, IRS determination letter, audited financials summary, board list. Updated annually or on material change. The skill pulls boilerplate where applicable rather than re-inventing project-specific sections from scratch each cycle.',
+          'The most useful boilerplate is the operator\'s own past wins. Prior funded proposals carry the language patterns that already worked with funders in the operator\'s ecosystem; pulling from them at proposal phase compresses drafting time and preserves voice consistency across applications. The skill reads the prior-wins archive when configured and surfaces the most-applicable prior proposals as drafting reference.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'LOI for an invited foundation opportunity',
+        body:
+          'A program officer invites an LOI. The skill reads the funder\'s LOI guidelines (or applies a standard 1 to 2 page structure if guidelines are absent), pulls organizational background and mission language verbatim from boilerplate and drafts the five standard sections. The operator reviews, edits and submits. The per-opportunity tracking file captures the LOI submission timestamp.',
+      },
+      {
+        title: 'Federal full proposal with SAM.gov check',
+        body:
+          'A federal opportunity advances to full-proposal phase. The skill confirms SAM.gov registration is active and the UEI matches the operator profile before any drafting begins. If registration is inactive or the runway is tight, the skill flags the prerequisite as a hard halt. Proposal drafting then runs section by section with logic-model and evaluation plan coherence pass, surfaces decision points to the operator and saves drafts to the per-opportunity folder.',
+      },
+      {
+        title: 'Submission package pre-flight',
+        body:
+          'A proposal advances to submission. The skill builds the checklist from the funder\'s portal documentation (Grants.gov, Submittable, Foundant or bespoke), pre-flights every required upload, character-count limit and form field. Halts on any missing item. After operator confirms submission, captures the confirmation number and submission timestamp.',
+      },
+      {
+        title: 'Post-award reporting deadline cascade',
+        body:
+          'An award lands. The skill reads the grant agreement, surfaces every reporting deadline (interim, annual, financial) and pushes them into the operator\'s capture system. When a deadline approaches, the skill runs the report-drafting flow against the project\'s progress data structured to the funder\'s report format. For multi-year awards, year-over-year metrics get tracked so each annual report shows progression.',
+      },
+      {
+        title: 'Stewardship between cycles',
+        body:
+          'A grant cycle closes. The skill surfaces stewardship moves: thank-you note within 48 hours, mid-year impact updates unprompted, invitations to events the funder might value, congratulations on funder milestones. The funder-relationship file updates after every touchpoint. Stewardship is what makes warm-relationship pipelines convert at materially higher rates than cold discovery; the skill protects the cadence the operator might otherwise drop.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Why route by phase instead of one continuous flow?',
+        a:
+          'Phase routing matches how grant work actually happens. LOI happens months before proposal. Submission happens weeks after proposal. Post-award reporting happens months after submission. Stewardship runs continuously. Treating them as one continuous flow forces the operator to re-load context on every resumed session; phase routing lets the skill pick up exactly where the previous session left off.',
+      },
+      {
+        q: 'How does the boilerplate library work?',
+        a:
+          'The operator maintains a directory of reusable artifacts: organizational background, mission statement, theory of change, evaluation framework, budget template, key personnel bios, financial summaries, board list. The skill reads from it during LOI and proposal phases, pulls applicable sections verbatim and stops the operator from re-inventing the same sections cycle after cycle. Updated annually or on material change.',
+      },
+      {
+        q: 'Does this skill auto-submit?',
+        a:
+          'No. The submission phase prepares the package and pre-flights every required item; the operator confirms and submits. The skill captures the confirmation number after the operator confirms submission, never before. The boundary protects the operator from auto-submitting a proposal whose final review they didn\'t personally complete.',
+      },
+      {
+        q: 'How does this handle federal compliance?',
+        a:
+          '2 CFR 200 (Uniform Guidance) governs federal grant compliance. The skill surfaces the relevant subparts at proposal phase (indirect cost rates, allowable costs, evaluation requirements) and post-award phase (draws against approved budgets, time-and-effort reporting, closeout requirements). Compliance interpretation is the operator\'s call; the skill\'s job is to surface what to read and when.',
+      },
+      {
+        q: 'What if the funder uses a portal the skill doesn\'t recognize?',
+        a:
+          'The skill works from the funder\'s portal documentation rather than a hard-coded portal list. Grants.gov, Submittable, SurveyMonkey Apply (Fluid Review), Foundant and bespoke portals are all common; each has quirks. The pre-flight checklist is built from whatever the portal documentation surfaces. Email submission gets handled the same way: build the package, pre-flight, halt for operator review.',
+      },
+    ],
+    relatedSlugs: ['grant-researcher', 'plan-challenger', 'pending-plan-implementation'],
+    softHook: {
+      body:
+        'Grant Manager pairs with Grant Researcher. Researcher discovers and shortlists; Manager runs the lifecycle from intake forward. The two work as a flywheel. The Sovereign Life Playbook is the upstream design frame for whether a given funded work direction belongs in the operator\'s longer arc in the first place.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
+  {
     slug: 'foundational-creator',
     type: 'bundle',
     title: 'The Foundational Creator Bundle',

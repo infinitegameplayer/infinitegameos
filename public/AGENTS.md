@@ -2,7 +2,7 @@
 
 Cross-tool harvest and install instructions for the Infinite Game OS public library.
 
-Last updated: 2026-05-03
+Last updated: 2026-05-03 (Grant Researcher and Grant Manager paired-skill flywheel added)
 
 ## Site Purpose
 
