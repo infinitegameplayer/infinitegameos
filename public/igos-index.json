@@ -5,7 +5,7 @@
   "description": "Installable skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
   "url": "https://www.infinitegameos.io",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "updated_at": "2026-05-02",
+  "updated_at": "2026-05-03",
   "assets": [
     {
       "id": "source-harvest",
@@ -125,6 +125,46 @@
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "updated_at": "2026-04-30",
+      "changelog_url": null
+    },
+    {
+      "id": "social-batch-drafting",
+      "name": "Social Batch Drafting",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Draft a 9-post social batch (3 days × 3 platforms) from any source. Voice rules enforced before drafting begins. Pairs with Social Batch Queue.",
+      "tags": ["social", "drafting", "voice", "publishing"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install social-batch-drafting@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/social-batch-drafting",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/social-batch-drafting.mdc"
+      },
+      "related": ["social-batch-queue", "pending-plan-implementation", "plan-challenger"],
+      "article_url": "https://www.infinitegameos.io/skills/social-batch-drafting",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-03",
+      "changelog_url": null
+    },
+    {
+      "id": "social-batch-queue",
+      "name": "Social Batch Queue",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Execute an approved 9-post social batch. Image generation, asset staging, scheduler integration, post-publish handoff. Pairs with Social Batch Drafting.",
+      "tags": ["social", "scheduling", "queue", "publishing"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install social-batch-queue@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/social-batch-queue",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/social-batch-queue.mdc"
+      },
+      "related": ["social-batch-drafting", "systematic-debugging", "pending-plan-implementation"],
+      "article_url": "https://www.infinitegameos.io/skills/social-batch-queue",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-03",
       "changelog_url": null
     },
     {

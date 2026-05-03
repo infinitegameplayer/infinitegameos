@@ -1,6 +1,6 @@
 # Infinite Game OS — llms.txt
 # Structured manifest for AI systems and language model crawlers
-# Last updated: 2026-05-02. Discovery stack v1: /AGENTS.md, /igos-index.json, /marketplace.json published. Six installable skills live at /skills/<slug>: source-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher. Three installable bundles live at /bundles/<slug>: foundational-creator (the Foundational Creator Bundle: 5 IGOS-native skills plus marketing-skills plugin from coreyhaines31), the-builder (the Builder Bundle: 3 avatar-specific skills - gstack, Context7, Impeccable - on top of the Foundational substrate) and the-writer (the Writer Bundle: 2 installable skills - Voice Ghostwriter from BayramAnnakov, Humanizer from Aboudjem - plus a companion workspace template from WomenDefiningAI on top of the Foundational substrate). Two-layer bundle architecture: Foundational Bundle as substrate, avatar bundles (Builder and Writer live, Performer, Teacher, Curator, Strategist forthcoming) ship medium-specific skills on top.
+# Last updated: 2026-05-03. Discovery stack v1: /AGENTS.md, /igos-index.json, /marketplace.json published. Eight installable skills live at /skills/<slug>: source-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher, social-batch-drafting, social-batch-queue. Six installable bundles live at /bundles/<slug>: foundational-creator (substrate), the-builder, the-writer, the-performer, the-teacher, the-curator, the-strategist. Two-layer bundle architecture: Foundational Bundle as substrate, avatar bundles ship medium-specific skills on top. Social Batch Drafting and Social Batch Queue paired-skill flywheel for 9-post social distribution: Drafting produces approved batches with voice rules enforced; Queue ships them through any social scheduling tool with image-generation pipeline of operator's choice.
 # https://www.infinitegameos.io
 
 ## Site Identity
@@ -80,6 +80,8 @@ The IGOS Public Library publishes installable skills, protocols, codices, concep
 - /skills/pending-plan-implementation — Pending Plan Implementation. Execute approved plans with checkpoint gates, breadcrumb logging and outcome summaries.
 - /skills/skill-creator — Skill Creator. Build new skills autonomously. Interview, research, write a complete SKILL.md, propose the install path.
 - /skills/researcher — Researcher. Parallel sub-agent research on a topic, aggregated into a structured report. Up to 4 independent workers, synthesized output.
+- /skills/social-batch-drafting — Social Batch Drafting. Draft a 9-post social batch (3 days × 3 platforms) from any source. Voice rules enforced before drafting begins. Pairs with Social Batch Queue.
+- /skills/social-batch-queue — Social Batch Queue. Execute an approved 9-post social batch. Image generation, asset staging, scheduler integration with channel discovery, post-publish handoff. Pairs with Social Batch Drafting.
 
 ### Bundles
 

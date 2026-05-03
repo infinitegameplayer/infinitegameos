@@ -1,0 +1,13 @@
+{
+  "name": "social-batch-queue",
+  "description": "Execute an approved 9-post social batch. Image generation, asset staging, scheduler integration with channel discovery, and post-publish handoff. Pairs with Social Batch Drafting.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lane Belone",
+    "email": "howdy@lanebelone.com"
+  },
+  "homepage": "https://www.infinitegameos.io/skills/social-batch-queue",
+  "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+  "license": "CC-BY-4.0",
+  "keywords": ["social", "scheduling", "queue", "buffer", "image-generation", "creator"]
+}

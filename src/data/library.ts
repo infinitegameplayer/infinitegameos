@@ -512,6 +512,198 @@ export const igosAssets: IGOSAsset[] = [
     },
   },
   {
+    slug: 'social-batch-drafting',
+    type: 'skill',
+    title: 'Social Batch Drafting',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-05-03',
+    description:
+      'Draft a 9-post social batch (3 days × 3 platforms) from any source. Voice rules enforced before drafting begins. Approved batch becomes the durable handoff to the queue skill.',
+    tags: ['social', 'drafting', 'voice', 'creator', 'publishing'],
+    capsule:
+      'Social Batch Drafting is a skill for producing a complete 9-post social batch (3 days × 3 platforms) from any source artifact, with voice rules enforced as pre-flight gates and prior-batch threading running by default. The output is an approved batch markdown file ready for the downstream queue skill to ship.',
+    installable: {
+      marketplaceId: 'social-batch-drafting',
+      cursorMdc: true,
+    },
+    definition:
+      'Social Batch Drafting takes a single source (an article, a session reference, a workshop campaign, a product page) and produces nine posts: three days, three platforms per day. The skill enforces voice rules before drafting begins and re-runs the sweep against the produced copy before presenting it to the operator. Forward-reference threading runs automatically when a series predecessor is named; light breadcrumb weaving runs by default for one-off batches. Anchor arcs (multi-batch escalations like reveal arcs, seat-count countdowns or product hints) carry state across batches so the next installment honors what came before. The output is an approved batch markdown file that becomes the durable handoff artifact for the Social Batch Queue skill. Voice and threading discipline live here; execution and scheduling belong downstream.',
+    howItWorks: [
+      {
+        heading: 'The 9-post structure',
+        paragraphs: [
+          'Three days. Three posts per day. Three platforms per post (Instagram, Facebook, LinkedIn by default; Threads, Substack notes and other text-first surfaces substitute as the operator chooses). Day 1 is a hook that opens a tension or scene. Day 2 is an 8-slide carousel that walks the full arc: cover, foundation, distinction, core practice, second layer, fear or turn, connection to the parent concept, close. Day 3 is a direct invitation with an anchor seed and references to prior installments. The carousel exports as 8 PNG pages for Instagram and Facebook plus a single PDF document for LinkedIn.',
+          'The three days move from tension to architecture to invitation. Each day is standalone-capable; together they tell a complete arc. Headlines on Day 1 and Day 3 end with a period (or a question mark for questions) and stay between three and six words. Carousel slide headings stay punchy and pull from source content rather than getting invented at draft time.',
+        ],
+      },
+      {
+        heading: 'Voice rules and threading as pre-flight discipline',
+        paragraphs: [
+          'Voice rules run as gates, not suggestions. Em dashes, missing contractions, Oxford commas, internal names in public copy, fabricated anecdotes, pure-negation framing without an affirmative reframe: each gets caught before the draft reaches the operator. The skill ships with the author\'s defaults; operators layer their own rules via voice addenda. The structural enforcement (sweep before drafting, sweep after drafting, halt on violation) is the contribution.',
+          'Forward-reference threading is the second layer of discipline. When a series predecessor is named, all platforms get the thread, not just LinkedIn. The Day 1 opener names what came before and where the batch is now. The carousel close threads the accumulation. The Day 3 action references prior installments before the anchor seed. When no series exists, the skill still surfaces light breadcrumbs from recent batches: a quotable phrase, a sensory image, a recurring opening register. The principle: every social post knows what came before it.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Article-driven batch from a polished long-form piece',
+        body:
+          'A long-form article ships and the operator wants a 9-post sequence carrying the same thesis to social. Social Batch Drafting reads the article, extracts the load-bearing sensory moments and the lines that would land verbatim, threads any prior-batch references and produces the full 9-post draft. The operator reviews, approves, hands off to the queue skill for scheduling.',
+      },
+      {
+        title: 'Workshop or product-launch campaign with seat-count escalation',
+        body:
+          'A workshop runs in three weeks. The operator wants an arc of three batches across the campaign window, each one escalating the seat-count language. Social Batch Drafting reads the prior batch\'s anchor arc state verbatim and proposes the escalated phrasing for this batch before any copy is written. Continuity becomes structural rather than rememberable.',
+      },
+      {
+        title: 'Multi-batch series with forward-reference threading',
+        body:
+          'A content arc spans many weeks. Each batch references prior installments to make the arc visible to the audience. Social Batch Drafting names which batches to thread before drafting, then drafts the Day 1 opener explicitly first. The accumulation becomes part of the story across LinkedIn body copy, carousel close slide and Day 3 action.',
+      },
+      {
+        title: 'Freeform sequence batch with light breadcrumb weaving',
+        body:
+          'A one-off batch with no formal series. The skill still scans recent batches and surfaces 1 to 2 candidate breadcrumb lines: a quotable phrase, a recurring image, a voice anchor. The operator chooses whether to weave them. The principle holds even outside formal series: every batch knows what came before it.',
+      },
+      {
+        title: 'Workshop attendee-driven sequence with date specificity',
+        body:
+          'A live workshop produced themes worth carrying forward into public batches. Social Batch Drafting takes a workshop-summary or topic-harvest doc as the source, applies a voice addendum requiring date specificity (specific weekday and date rather than "this weekend") and produces the batch with workshop continuity preserved.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Why a skill instead of a memory or a checklist?',
+        a:
+          'Memories drift. Checklists get skipped under deadline pressure. A skill makes the pre-flight structurally impossible to skip: the voice sweep gates are explicit steps, the threading scan runs by default, the approval gate is a hard pause. The discipline becomes the file rather than the operator\'s willpower.',
+      },
+      {
+        q: 'What if my voice rules are different from the defaults?',
+        a:
+          'Layer your own via voice addenda. The skill\'s structural enforcement (sweep before drafting, sweep after drafting, halt on violation) holds. The specific rules are operator choice. Some rules ship as defaults because they catch common failure modes (em dashes reading AI, Oxford commas drifting in via dictation tools); replacing them is a deliberate operator decision.',
+      },
+      {
+        q: 'How does forward-reference threading work in practice?',
+        a:
+          'When a series predecessor is named, the skill reads its anchor arc state verbatim, names which prior batches to thread before drafting and writes the Day 1 opener explicitly first. All platforms get the thread, not just LinkedIn. Temporal language carries the references ("a few weeks ago I wrote", "last week", "this week") rather than internal names.',
+      },
+      {
+        q: 'What happens if the post-draft sweep catches a voice violation?',
+        a:
+          'The skill halts at Step 8 and routes back to Step 7 for the affected post. The draft does not reach the operator until all gates pass. This is non-negotiable; presenting a draft with violations forces the operator to do the sweep manually, which defeats the skill\'s purpose.',
+      },
+      {
+        q: 'Does this skill schedule the posts?',
+        a:
+          'No. Drafting produces the approved batch file; the Social Batch Queue skill consumes it and ships through the operator\'s scheduling tool. The boundary is firm. Voice and copy are Drafting\'s responsibility; image generation, asset staging and scheduler integration belong downstream.',
+      },
+    ],
+    relatedSlugs: ['social-batch-queue', 'pending-plan-implementation', 'plan-challenger'],
+    softHook: {
+      body:
+        'Social Batch Drafting pairs with Social Batch Queue. Drafting produces the approved batch; Queue ships it as scheduled posts. The two work as a flywheel. The Sovereign Life Playbook is the upstream design frame for which work is worth distributing in the first place.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
+  {
+    slug: 'social-batch-queue',
+    type: 'skill',
+    title: 'Social Batch Queue',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-05-03',
+    description:
+      'Execute an approved 9-post social batch. Image generation, asset staging, scheduler integration with channel discovery, post-publish handoff. Pairs with Social Batch Drafting.',
+    tags: ['social', 'scheduling', 'queue', 'image-generation', 'creator', 'publishing'],
+    capsule:
+      'Social Batch Queue is a skill for shipping an approved 9-post batch as scheduled posts. Image generation, asset staging, scheduler integration with channel discovery and slot resolution, post-publish handoff. The full pipeline lives here. Pairs with Social Batch Drafting.',
+    installable: {
+      marketplaceId: 'social-batch-queue',
+      cursorMdc: true,
+    },
+    definition:
+      'Social Batch Queue takes an approved batch markdown file (status `approved-pending-scheduling`) and ships it as scheduled posts across the operator\'s social platforms. Image generation runs first: a cinematic Day 3 background per the brief in the batch file, plus headline replacements on the Day 1 hook template and the Day 3 action template, plus bulk text replacement across the 8 carousel slides for Day 2. A Desktop review pause surfaces all rendered exports for operator review before any asset staging or scheduler queue runs. After approval, assets stage to a public URL host, channel IDs discover at run-time (never hardcoded), schedules resolve against each channel\'s existing slots and posts queue with alt text on every attachment. The output is a batch file with execution log entries, scheduled posts in the operator\'s scheduler with permalinks captured and a structured manual-handoff list for any platform-native operations the scheduler can\'t do.',
+    howItWorks: [
+      {
+        heading: 'Reference implementations and substitutability',
+        paragraphs: [
+          'The skill names a specific stack as the reference implementation, then frames each component generically. The reference image-generation pipeline uses fal.ai for backgrounds, Canva for template editing, Vercel Blob for public asset staging and a cloud-synced drive for local archive. The reference scheduler is Buffer with channel discovery and custom-scheduled posting. Operators with different stacks substitute component by component: any image-generation pipeline that produces PNG and PDF outputs and stages them at a public URL works for the asset side; any scheduling tool with channel discovery, slot configuration and a `customScheduled` API works for the scheduler side.',
+          'The structural discipline is what holds across stacks. Desktop review pause as the operator gate. Font sizes locked at template-load time. Vertical centering check after every text replacement on single-headline templates. Heading character budgets enforced at draft time so font sizes never have to drift. Channel IDs discovered at run-time. Native-isolation test as the cheapest first diagnostic on scheduler failure.',
+        ],
+      },
+      {
+        heading: 'The Desktop review pause',
+        paragraphs: [
+          'Image generation is where review prevents downstream rework. A centering issue caught in the Desktop folder is cheap to fix; the same issue caught after the queue runs is expensive (re-export, re-upload, re-queue, possibly delete and re-create posts). The pause stays default-on for the first several live runs of this skill on any given operator stack. After multiple consecutive perfect first-time renders, the pause may relax to default-off as trust builds.',
+          'When the pause is active, the skill surfaces the Desktop folder path and the file inventory, then waits for explicit "approved" or specific adjustment requests. On adjustment, the skill loops back to the rendering step for the affected images. This is the firm gate. Bypassing the pause when it is set to true defeats the trust-building rhythm and reintroduces the rework cost the pause exists to prevent.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'First live run on a new operator stack',
+        body:
+          'An operator runs the skill for the first time. Desktop review pause is default-on. The skill renders all 10 image exports (Day 1 hook, 8 carousel slides plus Day 3 action), surfaces the Desktop folder for review and waits. The operator catches a font-size drift on slide 6 and a centering shift on Day 3. The skill loops back to the affected renders, fixes both and re-surfaces. Approved. Assets stage, schedule and queue.',
+      },
+      {
+        title: 'Multi-batch arc execution with scheduler tier awareness',
+        body:
+          'An operator runs three batches across a campaign window. The scheduler is on a free tier with a 9-slot queue cap. The skill spaces the batches so each batch\'s queue is cleared (or nearly cleared) before the next queues. Channel ID discovery runs every batch since the scheduler rotates IDs on disconnect.',
+      },
+      {
+        title: 'Image-pipeline-only run for asset reuse',
+        body:
+          'An operator wants the rendered assets but plans to schedule manually inside the platform-native UI. The skill runs Steps 1 through 5 (read draft, generate background, render templates, Desktop review, stage to public URLs) and then halts. The operator pulls the URLs and posts manually. The voice-and-copy boundary holds; the operator never edits the approved batch file.',
+      },
+      {
+        title: 'Scheduler-failure recovery with native-isolation test',
+        body:
+          'A scheduled post fails to publish on Instagram. The skill halts before iterating scheduler-layer variations. It surfaces the native-isolation test directive: post directly on the platform first as the cheapest diagnostic. If the native post succeeds, the issue is scheduler-layer; if it fails, the issue is platform-side. The test costs minutes and prevents hours of fruitless scheduler retries.',
+      },
+      {
+        title: 'Substituting the reference image stack with the operator\'s preferred tools',
+        body:
+          'An operator already has a Figma-based template editing flow and a Stability AI image generation pipeline. The skill\'s structural discipline (Desktop review, font-size lock, vertical centering check, character budgets, parallel-download race-condition discipline) applies to the operator\'s tools without modification. The reference stack is a starting point, not a requirement.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Does this skill require Buffer specifically?',
+        a:
+          'No. Buffer is the reference implementation; the skill names it explicitly so operators can see the working pattern. Any scheduling tool with channel discovery, slot configuration and a `customScheduled` API works. The structural discipline (channel IDs discovered at run-time, native-isolation test on failure, alt text on every attachment) holds across schedulers.',
+      },
+      {
+        q: 'What happens if the batch draft contains voice violations?',
+        a:
+          'The skill halts and routes back to the Drafting skill. Voice changes are out of scope here; this skill executes copy that Drafting has already approved. Publishing a draft with voice violations would defeat the Drafting skill\'s gate. The boundary is firm.',
+      },
+      {
+        q: 'Why is the Desktop review pause non-negotiable for first runs?',
+        a:
+          'Image-generation issues caught in the Desktop folder are cheap (re-export and continue). The same issues caught after the queue runs are expensive (re-export, re-upload, re-queue, possibly delete and re-create). The pause is the operator\'s leverage point. After multiple consecutive perfect renders, the pause may relax; until then it stays default-on.',
+      },
+      {
+        q: 'Can I use a different image-generation stack?',
+        a:
+          'Yes. The skill names fal.ai, Canva and Vercel Blob as the reference implementation. The image-generation pipeline is component-by-component substitutable. The structural discipline is what travels across stacks: Desktop review, font-size lock, vertical centering check, heading character budgets, parallel-download race-condition discipline.',
+      },
+      {
+        q: 'How does the skill handle scheduler-to-platform failures?',
+        a:
+          'On any scheduler error, the skill halts iteration and surfaces the native-isolation test as the cheapest first diagnostic: post directly on the platform first to determine whether the issue is scheduler-layer or platform-side. The skill does not iterate scheduler-layer variations beyond two or three attempts without operator authorization.',
+      },
+    ],
+    relatedSlugs: ['social-batch-drafting', 'systematic-debugging', 'pending-plan-implementation'],
+    softHook: {
+      body:
+        'Social Batch Queue pairs with Social Batch Drafting. Drafting produces the approved batch; Queue ships it as scheduled posts. The two work as a flywheel. The Sovereign Life Playbook is the upstream design frame for which work is worth distributing in the first place.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
+  {
     slug: 'foundational-creator',
     type: 'bundle',
     title: 'The Foundational Creator Bundle',
