@@ -7,6 +7,7 @@ const updatesDir = path.join(process.cwd(), 'content', 'updates')
 export type UpdateMeta = {
   slug: string
   title: string
+  seoTitle?: string
   date: string
   summary: string
 }
@@ -28,6 +29,7 @@ export function getAllUpdates(): UpdateMeta[] {
     return {
       slug: data.slug as string,
       title: data.title as string,
+      seoTitle: data.seoTitle as string | undefined,
       date: normalizeDate(data.date),
       summary: data.summary as string,
     }
@@ -44,6 +46,7 @@ export function getUpdate(slug: string): Update | null {
       return {
         slug: data.slug as string,
         title: data.title as string,
+        seoTitle: data.seoTitle as string | undefined,
         date: normalizeDate(data.date),
         summary: data.summary as string,
         content,
