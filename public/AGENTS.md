@@ -2,7 +2,7 @@
 
 Cross-tool harvest and install instructions for the Infinite Game OS public library.
 
-Last updated: 2026-05-03 (Grant Researcher and Grant Manager paired-skill flywheel added)
+Last updated: 2026-05-03 (Solopreneur Admin Toolkit added: Email Triage, Quote Builder, Invoice and Payment Tracker, Customer Follow-Up and Daily Admin Orchestrator. Five-skill set for service-business solopreneurs)
 
 ## Site Purpose
 

@@ -208,6 +208,106 @@
       "changelog_url": null
     },
     {
+      "id": "email-triage",
+      "name": "Email Triage",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Sort a service-business inbox into seven named buckets, draft replies for repeating scenarios and surface every action item so nothing gets missed.",
+      "tags": ["email", "triage", "inbox", "solopreneur", "service-business", "admin"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install email-triage@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/email-triage",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/email-triage.mdc"
+      },
+      "related": ["daily-admin-orchestrator", "customer-follow-up", "quote-builder"],
+      "article_url": "https://www.infinitegameos.io/skills/email-triage",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-03",
+      "changelog_url": null
+    },
+    {
+      "id": "quote-builder",
+      "name": "Quote Builder",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Turn a service-business inquiry into a complete quote in email, SMS or markdown-PDF format, with a 48-72h follow-up trigger built in on every run.",
+      "tags": ["quotes", "pricing", "follow-up", "solopreneur", "service-business", "admin"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install quote-builder@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/quote-builder",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/quote-builder.mdc"
+      },
+      "related": ["daily-admin-orchestrator", "invoice-payment-tracker", "customer-follow-up"],
+      "article_url": "https://www.infinitegameos.io/skills/quote-builder",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-03",
+      "changelog_url": null
+    },
+    {
+      "id": "invoice-payment-tracker",
+      "name": "Invoice & Payment Tracker",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the load-bearing discipline. Pairs with Quote Builder and Daily Admin Orchestrator.",
+      "tags": ["invoicing", "payments", "billing", "cash-flow", "solopreneur", "service-business", "admin"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install invoice-payment-tracker@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/invoice-payment-tracker",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/invoice-payment-tracker.mdc"
+      },
+      "related": ["daily-admin-orchestrator", "quote-builder", "customer-follow-up"],
+      "article_url": "https://www.infinitegameos.io/skills/invoice-payment-tracker",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-03",
+      "changelog_url": null
+    },
+    {
+      "id": "customer-follow-up",
+      "name": "Customer Follow-Up",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Run a four-touchpoint post-job relationship cadence: thank-you at 24-48h, referral ask at 14d, maintenance check-in at 90d, re-engagement at 180d. CRM-lite for solo service businesses up to 50 customers.",
+      "tags": ["follow-up", "crm", "referrals", "relationships", "solopreneur", "service-business", "admin"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install customer-follow-up@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/customer-follow-up",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/customer-follow-up.mdc"
+      },
+      "related": ["daily-admin-orchestrator", "email-triage", "invoice-payment-tracker"],
+      "article_url": "https://www.infinitegameos.io/skills/customer-follow-up",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-03",
+      "changelog_url": null
+    },
+    {
+      "id": "daily-admin-orchestrator",
+      "name": "Daily Admin Orchestrator",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Run the complete solopreneur admin ritual in one session. Sequences Email Triage, Customer Follow-Up, Invoice and Payment Tracker and Quote Builder in order. Three variants: morning briefing, end-of-day rolldown, Friday weekly review.",
+      "tags": ["orchestrator", "admin", "morning-briefing", "ritual", "solopreneur", "service-business"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install daily-admin-orchestrator@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/daily-admin-orchestrator",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/daily-admin-orchestrator.mdc"
+      },
+      "related": ["email-triage", "quote-builder", "invoice-payment-tracker", "customer-follow-up"],
+      "article_url": "https://www.infinitegameos.io/skills/daily-admin-orchestrator",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-03",
+      "changelog_url": null
+    },
+    {
       "id": "foundational-creator",
       "name": "The Foundational Creator Bundle",
       "type": "bundle",

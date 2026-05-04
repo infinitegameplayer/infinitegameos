@@ -185,6 +185,96 @@
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
       }
+    },
+    {
+      "name": "email-triage",
+      "description": "Sort a service-business inbox into seven named buckets, draft replies for repeating scenarios and surface every action item so nothing gets missed.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/email-triage"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/email-triage",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": ["email", "triage", "inbox", "solopreneur", "service-business", "admin"],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
+    },
+    {
+      "name": "quote-builder",
+      "description": "Turn a service-business inquiry into a complete quote in email, SMS or markdown-PDF format, with a 48-72h follow-up trigger built in on every run.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/quote-builder"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/quote-builder",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": ["quotes", "pricing", "follow-up", "solopreneur", "service-business", "admin"],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
+    },
+    {
+      "name": "invoice-payment-tracker",
+      "description": "Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the load-bearing discipline. Pairs with Quote Builder and Daily Admin Orchestrator.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/invoice-payment-tracker"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/invoice-payment-tracker",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": ["invoicing", "payments", "billing", "solopreneur", "service-business", "admin"],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
+    },
+    {
+      "name": "customer-follow-up",
+      "description": "Run a four-touchpoint post-job relationship cadence: thank-you at 24-48h, referral ask at 14d, maintenance check-in at 90d, re-engagement at 180d. CRM-lite for solo service businesses up to 50 customers.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/customer-follow-up"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/customer-follow-up",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": ["follow-up", "crm", "referrals", "relationships", "solopreneur", "service-business", "admin"],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
+    },
+    {
+      "name": "daily-admin-orchestrator",
+      "description": "Run the complete solopreneur admin ritual in one session. Sequences Email Triage, Customer Follow-Up, Invoice and Payment Tracker and Quote Builder in order. Three variants: morning briefing, end-of-day rolldown, Friday weekly review.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/daily-admin-orchestrator"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/daily-admin-orchestrator",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": ["orchestrator", "admin", "morning-briefing", "ritual", "solopreneur", "service-business"],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
     }
   ]
 }

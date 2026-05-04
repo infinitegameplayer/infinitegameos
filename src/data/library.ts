@@ -896,6 +896,461 @@ export const igosAssets: IGOSAsset[] = [
     },
   },
   {
+    slug: 'email-triage',
+    type: 'skill',
+    title: 'Email Triage',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-05-03',
+    description:
+      'Sort a service-business inbox into seven named buckets, draft replies for repeating scenarios and surface every action item so nothing gets missed.',
+    tags: ['email', 'triage', 'inbox', 'solopreneur', 'service-business', 'admin'],
+    capsule:
+      'Email Triage is a skill for moving through a service-business inbox without losing an hour to it. Seven named buckets, draft replies for the patterns you send every week and a structured action-item list pulled from every non-noise thread. Twelve minutes, not forty-five.',
+    installable: {
+      marketplaceId: 'email-triage',
+      cursorMdc: true,
+    },
+    definition:
+      'Email Triage helps a service-business solopreneur process an inbox in a fixed, predictable window. Every message routes to one of seven named buckets (New Job Inquiry, Active Job: Client, Scheduling, Invoices and Payments, Vendor and Supplier, Admin and Compliance, Noise). Draft replies generate automatically for repeating scenarios. Action items surface from every non-Noise thread so buried asks do not fall through. The skill is a starting point: the operator\'s bucket names, reply tone and follow-up timing make it theirs.',
+    howItWorks: [
+      {
+        heading: 'Seven buckets and the 4 D\'s',
+        paragraphs: [
+          'Every message lands in exactly one bucket based on sender, subject line, keywords and thread context. The seven default buckets fit a general service-business operator and are fully renameable. A tree trimmer might rename Vendor and Supplier to Equipment and Crews; a property manager might split New Job Inquiry into New Residential and Property Manager. The routing rules per bucket (sender domains, subject keywords, from-address patterns) are the operator\'s first customization. Budget 15 to 30 minutes with a real inbox batch before first use.',
+          'The 4 D\'s apply at the bucket level: Do (needs action today), Defer (needs action, not today), Delete (no action needed). The Noise bucket auto-archives on first occurrence with an unsubscribe on repeat senders. Action items extract from every non-Noise thread as a numbered checklist with deadlines or trigger conditions named. Draft replies generate for New Job Inquiry, Invoices and Payments and Active Job: Client threads that match a repeating scenario. The operator reviews and sends; the skill never auto-sends.',
+        ],
+      },
+      {
+        heading: 'Handoff payload and pairing',
+        paragraphs: [
+          'Each triage session closes with a structured handoff payload: categorized message list, action-item checklist, draft replies awaiting send, follow-up triggers queued with timing. The payload feeds directly into Daily Admin Orchestrator or into the operator\'s direct workflow. New inquiries flag for Quote Builder. Payment events flag for Invoice and Payment Tracker.',
+          'Three follow-up trigger windows anchor the defaults: new inquiry unanswered at 24 hours, estimate sent with no response at 48 hours (hands off to Quote Builder), invoice unpaid at 7 days. These are calibration anchors, not rules. A competitive-market plumber might set inquiry follow-up to 2 hours; a coaching practice might set it to 72 hours. Adjust after one week of live reps when the actual business rhythm has surfaced.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Monday morning catch-up for a tree trimmer',
+        body:
+          'Joel finishes his coffee before the first job site. Eighteen weekend emails run through triage in eleven minutes. Four new inquiries get draft replies ready for his review. Eight noise emails auto-archive. Two past-due invoice follow-ups draft with the client\'s first name already pulled. He leaves the driveway knowing exactly what needs action today.',
+      },
+      {
+        title: 'End-of-day pass for a handyman with active jobs',
+        body:
+          'A handyman with three jobs running simultaneously gets a dozen client messages through the week. End-of-day triage prioritizes Active Job: Client threads first, flags any unanswered client message past 4 hours as urgent and surfaces tomorrow\'s schedule confirms as a batch. The inbox stops being a second task manager.',
+      },
+      {
+        title: 'Property manager email volume for a landscaping solopreneur',
+        body:
+          'A landscaping solopreneur manages twelve commercial accounts through a single property management company. Those emails often contain three asks buried in one thread. Email Triage extracts each ask as a separate numbered action item. Nothing gets missed even in the longest threads.',
+      },
+      {
+        title: 'Freelance designer recovering from a project-crunch backlog',
+        body:
+          'A freelance brand designer surfaces from a two-week intensive with 40 emails in the inbox. A single triage pass buckets every message, drafts replies for the six estimate requests and the three payment follow-ups and identifies the two threads that need her judgment before a reply goes out.',
+      },
+      {
+        title: 'First-time automation setup for a plumbing solopreneur',
+        body:
+          'A plumber using n8n or Make.com feeds incoming Gmail messages through a classification prompt that pre-sorts the inbox before he opens it. Triage time drops from 45 minutes to under 10. The automation layer runs the categorization; the skill\'s bucket structure and action-item extraction define what the automation produces.',
+      },
+    ],
+    faq: [
+      {
+        q: 'How do I customize the seven buckets for my business?',
+        a: 'Rename the bucket labels directly in your copy of the skill. Set routing rules for each bucket: the sender domains, subject-line keywords or from-address patterns that trigger that bucket. A 15-to-30-minute pass with a real week of email as input is the fastest calibration. Change what does not fit. Add a bucket if a category is missing. The defaults are a starting point, not a prescription.',
+      },
+      {
+        q: 'Does this skill auto-send draft replies?',
+        a: 'No. The skill generates draft replies for repeating scenarios and surfaces them for the operator\'s review. The operator sends. Auto-send creates liability and breaks client trust when a draft goes out without a human read. The discipline is that the draft exists at all, not that it sends itself.',
+      },
+      {
+        q: 'How does it work without an automation layer?',
+        a: 'Fully. The automation layer (n8n, Make.com, Gmail filters) multiplies the time savings by pre-sorting messages before the operator opens the inbox. Without it, triage runs Steps 2 through 4 message by message in a manual session. The skill works either way. Automation is a multiplier, not a requirement.',
+      },
+      {
+        q: 'What is the right triage rhythm?',
+        a: 'Two fixed windows per day: morning and end of workday. On-demand triage throughout the day turns the inbox into a real-time interrupt loop and creates context-switching drag. Real-time interrupts are appropriate only for Active Job: Client threads during an active job. Fixed windows are the discipline.',
+      },
+      {
+        q: 'How does Email Triage connect to the other toolkit skills?',
+        a: 'Email Triage is the first step in every Daily Admin Orchestrator run. Its handoff payload routes new inquiries to Quote Builder, payment events to Invoice and Payment Tracker and relationship touchpoints to Customer Follow-Up. Running triage standalone is valid; running it as the first step of the Orchestrator is how the whole toolkit connects.',
+      },
+    ],
+    relatedSlugs: ['daily-admin-orchestrator', 'customer-follow-up', 'quote-builder'],
+    softHook: {
+      body:
+        'Email Triage is one skill in the Solopreneur Admin Toolkit. The full toolkit runs as a daily ritual through the Daily Admin Orchestrator. The design frame for building a service business that runs on systems rather than willpower is the Sovereign Life Playbook.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
+  {
+    slug: 'quote-builder',
+    type: 'skill',
+    title: 'Quote Builder',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-05-03',
+    description:
+      'Turn a service-business inquiry into a complete quote in email, SMS or markdown-PDF format, with a 48-72h follow-up trigger built in on every run.',
+    tags: ['quotes', 'pricing', 'follow-up', 'solopreneur', 'service-business', 'admin'],
+    capsule:
+      'Quote Builder is a skill for turning a service-business inquiry into a clean, complete quote in the format you need. Email body, SMS summary or markdown-PDF. Four input categories, three output formats, and a 48-72h follow-up trigger on every run. Research shows that single follow-up converts 30-40% of unsigned quotes.',
+    installable: {
+      marketplaceId: 'quote-builder',
+      cursorMdc: true,
+    },
+    definition:
+      'Quote Builder takes an inbound inquiry and produces a complete quote in the operator\'s chosen format. Scope, cost, terms and customer details are the four input categories. Email body, SMS summary and markdown-PDF are the three output formats. After every quote, the skill fires a follow-up trigger payload the operator hands to Customer Follow-Up or Daily Admin Orchestrator: 48 hours default, adjustable to 24 or 72 hours. The follow-up trigger is not optional. Research on service businesses is consistent: 30-40% of unsigned quotes convert with a single follow-up in the 48-72h window. Most solopreneurs do not send it. This is where that changes.',
+    howItWorks: [
+      {
+        heading: 'Four input categories, three output formats',
+        paragraphs: [
+          'Scope inputs define the work: service type, job address, description specific enough to price, estimated duration, exclusions. Cost inputs build the price: labor rate, hours, materials, markup, subcontractor costs, travel. Terms inputs govern the transaction: quote expiry date (required, 30-day default), deposit requirement (explicit or explicitly waived), payment terms, accepted methods. Customer inputs complete the package: name, email, phone, job-site contact if different.',
+          'Three output formats serve different send contexts. Email body is the default for most sends. SMS summary compresses the core figure to under 160 characters for repeat customers who text. Markdown-PDF is the right call for new high-value bids where a polished document signals professionalism. The format is the operator\'s choice per run. After one week of live reps, the operator sets a default for 90% of their sends and overrides per run as needed.',
+        ],
+      },
+      {
+        heading: 'The follow-up trigger as load-bearing discipline',
+        paragraphs: [
+          'After every quote, the skill outputs a follow-up trigger payload containing customer name, contact, quote date, job brief, quote total and timing. The operator hands this to Customer Follow-Up or to Daily Admin Orchestrator. The timing is 48h by default. Adjust to 24h for a hot lead who asked for a quick turnaround, 72h for a higher-value bid where the customer needs room to think.',
+          'Quote expiry date is required on every quote. A quote with no expiry is an open-ended liability. The default is 30 days; shorter windows apply for time-sensitive materials, peak-season pricing or coaching programs that fill on a rolling basis. Deposit terms are explicit or explicitly waived: "no deposit required" is a valid terms line; silence is not.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Tree removal quote for a new residential customer',
+        body:
+          'Joel receives an inquiry about removing a dead pine and trimming three oaks. Quote Builder gathers scope, cost and terms in under five minutes, produces an email body with the itemized breakdown, fires the 48h follow-up trigger payload for Customer Follow-Up and logs the open quote for Daily Admin Orchestrator to surface on Wednesday morning if it goes unsigned.',
+      },
+      {
+        title: 'Coaching program quote with a shorter expiry window',
+        body:
+          'A coach quoting a six-session leadership program sets a 14-day expiry because her calendar fills on a rolling basis and a 30-day window would create scheduling conflicts. Quote Builder produces the email body with the deposit, session count and payment terms stated explicitly. The follow-up fires at 48h.',
+      },
+      {
+        title: 'Repeat customer SMS quote for a routine job',
+        body:
+          'A handyman quotes a repeat customer who always texts. Quote Builder produces the SMS summary (service plus total plus expiry plus one action line) under 160 characters, with a second message pointing to the full terms by email. The customer confirms in two minutes.',
+      },
+      {
+        title: 'High-value bid for a property management company',
+        body:
+          'A landscaping solopreneur quotes a commercial contract that will go to a property manager\'s board for approval. Quote Builder produces the markdown-PDF format, which the solopreneur exports via Obsidian and emails as a professional PDF attachment. The follow-up timing extends to 72h given the board review cycle.',
+      },
+      {
+        title: 'Brand identity quote for a freelance designer',
+        body:
+          'A freelance designer quotes a full brand identity project: logo, brand guide and web assets as phase-scoped deliverables with revision rounds named and personality assessments explicitly excluded. Quote Builder produces the email body, shows the math for each phase and fires the follow-up trigger. The designer stops sending "just following up" emails from scratch every time.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Why is the follow-up trigger not optional?',
+        a: 'Service-business research is consistent: 30-40% of unsigned quotes convert with a single follow-up sent 48-72 hours after the quote. Most solopreneurs do not send it because there is no system doing the remembering. The trigger fires on every quote, every time. The only tuning is timing. Whether it fires is not a decision.',
+      },
+      {
+        q: 'Can I lock one format as the default?',
+        a: 'Yes. After a week of live reps you will know which format covers 90% of your sends. Set it as the default in the prompt you use to invoke this skill. Override per run as needed. Email body is the most common default; SMS suits repeat customers you already text; markdown-PDF is for new high-value bids.',
+      },
+      {
+        q: 'What if my service type does not fit the default input fields?',
+        a: 'Edit the scope-inputs block directly. Tree trimmers add tree count and access notes. Designers swap labor hours for scope phases and revision rounds. Coaches replace hours with session count. The four input categories (scope, cost, terms, customer) hold for every service type; the specific fields within scope are yours to shape. Budget 20-30 minutes with one recent quote in hand.',
+      },
+      {
+        q: 'Does Quote Builder submit or send the quote?',
+        a: 'No. The skill produces the quote in the chosen format and fires the follow-up trigger payload. The operator reviews and sends. The output is designed to make that step take under two minutes, not to skip it.',
+      },
+      {
+        q: 'How does Quote Builder connect to the rest of the toolkit?',
+        a: 'Email Triage is often where a quote request surfaces first. When an accepted quote moves to billing, Invoice and Payment Tracker picks up the line items. Customer Follow-Up receives the 48-72h follow-up trigger and runs the relationship cadence from there. Daily Admin Orchestrator closes the sequence with a follow-up check on unsigned quotes each morning.',
+      },
+    ],
+    relatedSlugs: ['daily-admin-orchestrator', 'invoice-payment-tracker', 'customer-follow-up'],
+    softHook: {
+      body:
+        'Quote Builder is one skill in the Solopreneur Admin Toolkit. The full toolkit runs as a daily ritual through the Daily Admin Orchestrator. The design frame for a service business that compounds on systems rather than memory is the Sovereign Life Playbook.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
+  {
+    slug: 'invoice-payment-tracker',
+    type: 'skill',
+    title: 'Invoice & Payment Tracker',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-05-03',
+    description:
+      'Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the load-bearing discipline. Pairs with Quote Builder and Daily Admin Orchestrator.',
+    tags: ['invoicing', 'payments', 'billing', 'cash-flow', 'solopreneur', 'service-business', 'admin'],
+    capsule:
+      'Invoice and Payment Tracker is a skill for generating a complete invoice the moment a job closes and maintaining a running paid/unpaid ledger. Four platform paths: Wave, FreshBooks, generic markdown-PDF or paste-into-other-tool. Same-day invoicing on job close is the load-bearing discipline. A delayed invoice is a cash-flow leak with no upside.',
+    installable: {
+      marketplaceId: 'invoice-payment-tracker',
+      cursorMdc: true,
+    },
+    definition:
+      'Invoice and Payment Tracker generates a complete, accurate invoice the moment a job closes and maintains a running paid/unpaid ledger. First-run setup routes the operator to one of four platform paths: Wave (free tier), FreshBooks (paid), generic markdown-PDF or paste-into-other-tool. Same-day invoicing on job close is the load-bearing behavior the skill enforces on every run. A one-week delay on three $500 jobs is $1,500 of float absorbed by the business for no reason. Overdue invoices hand off to Customer Follow-Up for the reminder sequence; the boundary is firm. The tracker, not the inbox, is where overdue accounts live.',
+    howItWorks: [
+      {
+        heading: 'Platform routing and same-day discipline',
+        paragraphs: [
+          'First-run setup surfaces one routing question: Wave, FreshBooks, generic markdown-PDF or paste-into-other-tool. The answer determines which template loads, which field labels apply and how the tracking row gets written. Subsequent runs skip the question and load the matching branch. When a Quote Builder output is available, line items, labor rate, materials and terms flow in without re-entry. The invoice is the confirmed quote with a due date attached.',
+          'Same-day invoicing on job close is enforced at Step 4 of every run. If the job closed today, the invoice goes out today. Not at end of week. Not when the next batch is ready. Today. If the operator indicates a preference to batch or delay, the skill surfaces the cost directly. The discipline is the skill\'s highest-leverage contribution to solopreneur cash flow.',
+        ],
+      },
+      {
+        heading: 'Overdue check and handoff',
+        paragraphs: [
+          'Every run scans the payment tracker for rows where status is unpaid and the due date has passed. Overdue invoices surface with client, amount, days outstanding and the recommended action per the overdue ladder: reminder message at due date, phone-call prompt at plus 3 days, final notice at plus 7 days. The actual message drafting and touchpoint scheduling belong to Customer Follow-Up. The boundary is firm: this skill generates and tracks; Customer Follow-Up communicates.',
+          'Generic-path operators track paid/unpaid in a local markdown table at invoices/payment-tracker.md. Platform-coupled operators (Wave, FreshBooks) rely on the platform\'s native status and log a backup entry in a lightweight sent log. The tracking surface is the operator\'s choice; the structural discipline (invoice number, client, amount, due date, status, paid date) holds across all surfaces.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Same-day invoice on job close for a tree trimmer',
+        body:
+          'Joel finishes a dead-limb removal at 4:30 PM. He opens Invoice and Payment Tracker on his phone, pulls the inputs from his Quote Builder output, confirms the markdown-PDF path and has an invoice in Sandra Park\'s inbox before he is off the property. Net 7. $372.50. The tracker row appends. He does not carry it to Friday.',
+      },
+      {
+        title: 'Weekly overdue sweep during a Friday morning review',
+        body:
+          'Daily Admin Orchestrator surfaces three overdue invoices during the Friday weekly review. Two are past 7 days. Invoice and Payment Tracker flags both for a phone call, not another email, and generates the handoff notes for Customer Follow-Up. The 30-day receivables total surfaces as a single number. No spreadsheet needed.',
+      },
+      {
+        title: 'FreshBooks path for a freelance designer with complex tax handling',
+        body:
+          'A Texas-based freelance designer uses FreshBooks and charges 8.25% sales tax on consulting services. Invoice and Payment Tracker routes to the FreshBooks branch, applies the correct tax rate per her configured terms, reminds her to enable the online payment link before sending and logs the sent entry. Each invoice takes under three minutes.',
+      },
+      {
+        title: 'Markdown-PDF path for a coaching practice',
+        body:
+          'A coach without a dedicated billing platform uses the generic markdown-PDF path. Invoice and Payment Tracker produces a complete markdown invoice at invoices/YYYY-MM-DD-client-slug-number.md, which she exports to PDF via Obsidian and emails directly. Net 14 terms. Deposit already collected at booking deducted from the total due.',
+      },
+      {
+        title: 'Morning briefing invoice trigger from Email Triage',
+        body:
+          'Daily Admin Orchestrator surfaces a completed-job email from triage that has not yet been invoiced. Invoice and Payment Tracker picks up the trigger and prompts for the inputs before the morning briefing closes. The job does not leave the briefing without an invoice issued or an explicit practitioner decision to defer.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Why is same-day invoicing the load-bearing behavior?',
+        a: 'Delayed invoicing is the single highest-leverage failure point in solopreneur cash flow. A one-week delay on a week of completed jobs is a week of float absorbed for no reason. The invoice is the final act of the job. A job is not done until the invoice is sent. The skill treats this as a hard constraint, not a soft recommendation.',
+      },
+      {
+        q: 'Does this skill handle overdue follow-up messages?',
+        a: 'No. Invoice and Payment Tracker identifies overdue invoices and generates the handoff trigger. Customer Follow-Up drafts and schedules the actual messages. The boundary is firm. Having one skill track status and another manage client communication keeps each skill clean and prevents duplicate outreach.',
+      },
+      {
+        q: 'What if I switch billing platforms?',
+        a: 'Re-run the first-run setup in Step 1. Pick the new platform. The invoice template content (labor rate descriptions, payment terms, late-fee language, tax handling) carries over; only the field labels and output format shift to match the new platform. No other steps change.',
+      },
+      {
+        q: 'Do I need to subscribe to Wave or FreshBooks?',
+        a: 'No. The generic markdown-PDF path requires no subscription. You produce a markdown invoice file and export to PDF via any tool you already have (Obsidian, Pandoc, VS Code, Typora). The paste-into-other-tool path requires no platform at all. Platform paths (Wave, FreshBooks) are options for operators who already use those tools.',
+      },
+      {
+        q: 'How does this skill connect to Quote Builder?',
+        a: 'When a Quote Builder output is available, line items, labor rate, materials and terms flow into the invoice without re-entry. The invoice is the confirmed quote with a due date attached. No double-entry. If the quote was built in Quote Builder, the invoice takes under two minutes to generate.',
+      },
+    ],
+    relatedSlugs: ['daily-admin-orchestrator', 'quote-builder', 'customer-follow-up'],
+    softHook: {
+      body:
+        'Invoice and Payment Tracker is one skill in the Solopreneur Admin Toolkit. The full toolkit runs as a daily ritual through the Daily Admin Orchestrator. The design frame for a service business that runs on systems rather than end-of-week catch-up is the Sovereign Life Playbook.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
+  {
+    slug: 'customer-follow-up',
+    type: 'skill',
+    title: 'Customer Follow-Up',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-05-03',
+    description:
+      'Run a four-touchpoint post-job relationship cadence: thank-you at 24-48h, referral ask at 14d, maintenance check-in at 90d, re-engagement at 180d. CRM-lite for solo service businesses up to 50 customers.',
+    tags: ['follow-up', 'crm', 'referrals', 'relationships', 'solopreneur', 'service-business', 'admin'],
+    capsule:
+      'Customer Follow-Up is a skill for building a relationship cadence that keeps customers warm between jobs, turns satisfied customers into referral sources and brings dormant customers back before they forget you exist. Four touchpoints, one customer note per person, a single Dataview query that surfaces who is due today. No separate reminder system needed.',
+    installable: {
+      marketplaceId: 'customer-follow-up',
+      cursorMdc: true,
+    },
+    definition:
+      'Customer Follow-Up runs a four-touchpoint post-job cadence anchored by a single customer note per person in the operator\'s vault. Four touchpoints advance in sequence: thank-you at 24-48 hours from job close, referral ask at 14 days, maintenance check-in at 90 days, re-engagement at 180 days. The next_followup_date field in each note\'s YAML frontmatter is the engine: Daily Admin Orchestrator queries it each morning to surface who is due today. The referral ask at 14 days is the load-bearing touchpoint. Service-business research is clear: it outperforms ad spend at this budget tier, most solopreneurs skip it and the window is exactly 14 days. The skill is designed so none of that gets skipped by accident.',
+    howItWorks: [
+      {
+        heading: 'The customer note as second-brain CRM',
+        paragraphs: [
+          'One markdown file per customer at Customers/<Customer-Name>.md. The YAML frontmatter holds structured data: name, contact, job type, last service date, next followup date, referral status and notes. The prose body captures the customer as a person: what they mentioned in passing, what kind of decision-maker they are, details that make the next interaction feel like a relationship rather than a transaction. The YAML is the query surface. The prose body is the second brain.',
+          'After every job close, three things happen: last_service_date updates, next_followup_date sets to the 24-48h window and the new job logs in the note body. After each touchpoint, next_followup_date advances to the next interval and the touchpoint logs with a one-line summary. The touchpoint log is the conversation history that makes every future call or visit feel like a continuation.',
+        ],
+      },
+      {
+        heading: 'The referral ask at 14 days',
+        paragraphs: [
+          'Fourteen days is the window when customer satisfaction is at its peak. Same-day referral asks feel rushed. Ninety-day asks are too late. One sentence, specific, frictionless. Name the service. Give a clear action. Keep it shorter than a paragraph. The default template below is a starting point; the operator edits Seam 3 after one cycle of live reps to match their actual voice.',
+          'Referral status tracks through four values in the frontmatter: not-asked, asked, referred, converted. The Daily Admin Orchestrator queries next_followup_date to surface the ask at the right day. The Dataview query in the operator\'s vault shows every customer with a next_followup_date on or before today, sorted by date. No separate tool. No calendar entry. The system surfaces it.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Full four-touchpoint cycle for a tree trimmer',
+        body:
+          'Joel closes a job on April 28. Thank-you goes out April 30. Referral ask fires May 12 at exactly day 14, naming the neighbor mentioned in the original note. The maintenance check-in arrives July 28 three months later with a seasonal hook. The re-engagement arrives October 28 and books a fall inspection. Cadence resets from the new job date. The entire cycle ran on one customer note and zero calendar reminders.',
+      },
+      {
+        title: 'Referral conversion from a word-of-mouth source',
+        body:
+          'Sarah Chen mentioned the operator\'s name before being asked. The referral ask at day 14 acknowledges that fact in one sentence. She replies within an hour with two more names. Both convert within the month. The note updates to referral_status: converted. One sentence, one personal detail, no pressure.',
+      },
+      {
+        title: 'Maintenance check-in timing for a seasonal HVAC business',
+        body:
+          'An HVAC solopreneur adjusts the 90-day interval to fire the week before the first hot week of summer rather than on a calendar anchor. Every customer gets a check-in timed to seasonal relevance. The operator edits Seam 1 once; every subsequent cycle runs on the adjusted timing.',
+      },
+      {
+        title: 'Re-engagement message for a coaching practice',
+        body:
+          'A coach\'s re-engagement runs at 180 days and names the specific program the client completed. Not a vague "checking in" message. A reference to the work done and an invitation to book the next phase. Vague re-engagement gets ignored. Specific re-engagement gets replies.',
+      },
+      {
+        title: 'CRM migration at the 50-customer threshold',
+        body:
+          'A growing cleaning service hits 50 active customers and decides to migrate to HubSpot Starter. The customer note schema (one file per customer, structured frontmatter) maps cleanly to HubSpot contact records. The migration is a data export. The relationship history in each note\'s prose body carries over into the contact notes field. Nothing is lost.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Why does the referral ask have to be at exactly 14 days?',
+        a: 'Fourteen days is the window when satisfaction is at its peak and the memory of the work is still fresh. A same-day ask feels rushed and transactional. A 90-day ask arrives when the customer has moved on. The 14-day window is consistent across service-business research. Tune it one direction for specific business types, but hold the principle: it is a specific day, not someday.',
+      },
+      {
+        q: 'What if a customer books again before a touchpoint fires?',
+        a: 'Reset the cadence from the new last_service_date. Update last_service_date, recalculate next_followup_date to the 24-48h window from the new close date and log the new job in the note body. The customer relationship clock starts fresh from the most recent job.',
+      },
+      {
+        q: 'Does this require Obsidian?',
+        a: 'No. Any markdown-based note system with frontmatter support works (Logseq, Roam, plain folders). Any task or calendar tool substitutes for Dataview if you prefer to check dates manually. The structural discipline (one note per customer, next_followup_date as the timer, four touchpoints, referral status tracked) holds across stacks.',
+      },
+      {
+        q: 'When should I migrate to a real CRM?',
+        a: 'At 50 active customers or when a second person needs to access and update customer records. HubSpot Starter, Notion and Pipedrive are the natural candidates at that tier. The customer note schema maps cleanly to any of them. Treat the threshold as a migration trigger on your operations calendar, not a future problem.',
+      },
+      {
+        q: 'How does this skill know who is due for outreach today?',
+        a: 'The next_followup_date field in each customer note\'s YAML frontmatter is the engine. The Daily Admin Orchestrator queries that field each morning via a Dataview query across the Customers folder. No separate reminder system, no calendar entries, no manual tracking. The field updates after every touchpoint; the Orchestrator reads it every morning.',
+      },
+    ],
+    relatedSlugs: ['daily-admin-orchestrator', 'email-triage', 'invoice-payment-tracker'],
+    softHook: {
+      body:
+        'Customer Follow-Up is one skill in the Solopreneur Admin Toolkit. The full toolkit runs as a daily ritual through the Daily Admin Orchestrator. The design frame for building a service business that compounds on relationships rather than advertising is the Sovereign Life Playbook.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
+  {
+    slug: 'daily-admin-orchestrator',
+    type: 'skill',
+    title: 'Daily Admin Orchestrator',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-05-03',
+    description:
+      'Run the complete solopreneur admin ritual in one session. Sequences Email Triage, Customer Follow-Up, Invoice and Payment Tracker and Quote Builder in order. Three variants: morning briefing, end-of-day rolldown, Friday weekly review.',
+    tags: ['orchestrator', 'admin', 'morning-briefing', 'ritual', 'solopreneur', 'service-business'],
+    capsule:
+      'Daily Admin Orchestrator is the delegation surface for the Solopreneur Admin Toolkit. It replaces the question "which skill do I start?" with a single ritual that runs all four admin primitives in sequence. Three variants: morning briefing (5-10 min), end-of-day rolldown (5 min), Friday weekly review (45-60 min). Nothing lives only in the practitioner\'s head after this runs.',
+    installable: {
+      marketplaceId: 'daily-admin-orchestrator',
+      cursorMdc: true,
+    },
+    definition:
+      'Daily Admin Orchestrator runs Email Triage, Customer Follow-Up, Invoice and Payment Tracker and Quote Builder in sequence, reads each skill\'s handoff payload and routes action items between skills. Three variants calibrate depth per session: morning briefing skims each primitive for today\'s priorities in 5-10 minutes; end-of-day rolldown issues invoices for completed jobs and queues tomorrow\'s touchpoints in under 5 minutes; Friday weekly review runs every primitive to the bottom of its queue in 45-60 minutes. The Orchestrator holds no data of its own. It reads what the four primitives produce and sequences the reads. The load-bearing benefit is one thing: the practitioner does not decide where to start.',
+    howItWorks: [
+      {
+        heading: 'The four-step sequence',
+        paragraphs: [
+          'Step 2 runs Email Triage at the depth appropriate for the variant. Morning briefing: sort and surface today\'s action items, flag anything time-sensitive, skip drafts unless requested. End-of-day: triage new messages since morning and close the inbox for the day. Friday weekly: full bucket review including WAITING and READ LATER sweeps. The triage handoff payload routes to the three downstream steps.',
+          'Step 3 checks the Customer Follow-Up cadence queue against today\'s date. Any customer with a next_followup_date on or before today surfaces with their touchpoint type. Action items from the triage step merge here to prevent duplicate outreach on the same customer in the same session. Step 4 runs the Invoice and Payment Tracker sweep: overdue invoices, same-session invoicing for jobs that closed since the last run. Step 5 checks the open quote log for unsigned quotes past the 48-72h follow-up window.',
+        ],
+      },
+      {
+        heading: 'Daily briefing summary and the three-action list',
+        paragraphs: [
+          'Step 6 consolidates outputs from Steps 2-5 into a single briefing document: email action items, customer touchpoints due today, invoice status and outstanding quotes. At the bottom: today\'s three actions, ranked by revenue or relationship urgency. The practitioner looks at the list for 45 seconds and knows exactly what to do before leaving the driveway.',
+          'The Orchestrator is a sequencer, not a cage. Practitioners who know their email is clear and their invoices are current can invoke any primitive directly without running the full briefing. The Orchestrator\'s value is the sequence. The briefing is orientation, not resolution. If the practitioner finishes the briefing and feels productive without having acted on any of the three priority items, the ritual has inverted. The three actions at the bottom are the work.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Monday morning briefing for a tree trimmer with four jobs scheduled',
+        body:
+          'Joel runs the morning briefing at 7:15 AM before the first site. Three emails overnight. Two customer touchpoints due. One overdue invoice needs a phone call. One unsigned quote hit its 72h window. The briefing summary lands in under ten minutes. Three actions at the bottom. He looks at the list for 45 seconds, makes two calls on the way to the first job and sends one message at lunch.',
+      },
+      {
+        title: 'End-of-day rolldown as the primary invoice ritual',
+        body:
+          'A handyman sets end-of-day rolldown as his primary variant because invoicing avoidance is his real bottleneck, not email overload. The end-of-day variant puts Invoice and Payment Tracker as the primary ritual step. Every job that closed today gets an invoice before he puts the truck in the garage. No batch, no delay.',
+      },
+      {
+        title: 'Friday weekly review as the business health snapshot',
+        body:
+          'A freelance designer runs the Friday weekly review at 6:30 AM before her first meeting. Full triage sweep, full cadence audit, aged receivables analysis, open quote status decisions. The output saves to admin/weekly-reviews/YYYY-MM-DD-friday.md. She pulls it up Sunday night to orient Monday morning. She skips the step where she stares at the whiteboard trying to remember what was open.',
+      },
+      {
+        title: 'Consolidated outreach for a customer who appears in both cadence queue and email triage',
+        body:
+          'Sandra is due for a 90-day maintenance check-in and also sent an email this morning. The Orchestrator merges both in Step 3: one outreach message covers the maintenance check-in and replies to the email. Not two separate messages. The Orchestrator prevents duplicate outreach on the same customer in the same session.',
+      },
+      {
+        title: 'Sequence override for a solopreneur whose bottleneck is cash flow',
+        body:
+          'A plumber whose real problem is delayed invoicing moves Invoice and Payment Tracker to position 2 in the sequence, directly after Email Triage. The Orchestrator\'s default order (Triage, Follow-Up, Invoice, Quote) is a dial, not a rule. Tune the sequence to your actual bottleneck after the first week of reps.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Do I need all four primitive skills installed to use this?',
+        a: 'Yes. The Orchestrator is a sequencer; it delegates to the four primitives rather than re-implementing their logic. All four (Email Triage, Customer Follow-Up, Invoice and Payment Tracker, Quote Builder) need to be loaded in your session. The Orchestrator reads their handoff payloads and routes between them.',
+      },
+      {
+        q: 'What if I only have one thing to deal with today?',
+        a: 'Run the relevant primitive directly. The Orchestrator\'s value is the sequence for days when everything is in motion. A practitioner who knows their email is clear and their invoices are current can invoke Quote Builder or Customer Follow-Up directly without running the full briefing. The Orchestrator is not required for every session.',
+      },
+      {
+        q: 'How long does each variant actually take?',
+        a: 'Morning briefing: 5-10 minutes. Each primitive runs at shallow depth; the output is a prioritized list, not a full deep dive. End-of-day rolldown: under 5 minutes; the focus is invoice issuance for today\'s jobs and tomorrow\'s queue. Friday weekly: 45-60 minutes when the business has meaningful volume across all four primitives.',
+      },
+      {
+        q: 'Can I change the order of the four steps?',
+        a: 'Yes. The default order (Triage, Follow-Up, Invoice, Quote) reflects a specific bottleneck theory: clear inbound before running proactive outreach. If invoicing avoidance is your real problem, move Invoice to position 2. The primitives are independent. The sequence is a dial you tune after your first week of reps.',
+      },
+      {
+        q: 'What does the Friday weekly review produce?',
+        a: 'A complete business health snapshot saved to your admin folder: email backlog cleared, full cadence audit across all active customers, aged receivables analysis (0-30d, 31-60d, 60d+), open quote status decisions. Pull it up Sunday night to orient Monday morning. The document is the weekly snapshot of everything open in the business.',
+      },
+    ],
+    relatedSlugs: ['email-triage', 'quote-builder', 'invoice-payment-tracker', 'customer-follow-up'],
+    softHook: {
+      body:
+        'Daily Admin Orchestrator is the entry point for the Solopreneur Admin Toolkit. The four primitives it sequences are Email Triage, Quote Builder, Invoice and Payment Tracker and Customer Follow-Up. The design frame for a service business that runs on systems rather than the practitioner\'s working memory is the Sovereign Life Playbook.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
+  {
     slug: 'foundational-creator',
     type: 'bundle',
     title: 'The Foundational Creator Bundle',
