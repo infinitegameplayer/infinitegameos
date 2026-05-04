@@ -229,17 +229,27 @@ carries a DefinedTermSet schema listing all defined concepts.
 ## Creator Flywheel (/concepts/creator-flywheel)
 
 Be yourself. Let what is alive in you animate your creativity. Build, write, speak,
-advise. Whatever form your creative expression takes, bring it fully. Share it. People
-who resonate find their way to you not because you marketed at them but because what
-you created was real. Getting paid to be yourself, not performing a version of it.
+advise. Whatever form your creative expression takes, bring it fully. Share it as
+structured artifacts that persist. People who resonate find their way to you not
+because you marketed at them but because what you created was real and locatable.
+Getting paid to be yourself, not performing a version of it.
 
 Five stages: live the life, share the breadcrumbs, activate others, return home, go
 deeper. Each stage feeds the next. The life itself is the source material. The flywheel
 is form-agnostic: some creators write, some build, some speak, advise, teach, perform,
 design. A funnel converts attention into revenue. The Creator Flywheel converts
 aliveness into contribution and lets revenue follow. The flywheel is a durability play
-as much as a growth play. Related: Ideal Month (engine spec), Four-Container Journey
-(activation model), The Pioneer (who enters the flywheel).
+as much as a growth play.
+
+The Way, the Wayfarers, the Wayfinders. The flywheel does not accumulate followers. It
+conducts what is alive in you through a rotating field of Wayfarers, people who travel
+a section of your Way at varying proximity for a season. When their season ends, they
+branch off to their own Way and become Wayfinders, leaving their own breadcrumbs for
+the next ready person. The architecture is conductive, not accumulative. The age of the
+guru is closing. The identity contract: I am locatable because I am structured. Not: I
+am locatable when I am performing. Related: Ideal Month (engine spec), The Pioneer (who
+enters the flywheel), Data Sovereignty (structured-discoverability foundation), The
+North Star (the direction the Way runs along).
 
 ---
 

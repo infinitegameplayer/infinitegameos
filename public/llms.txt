@@ -32,6 +32,9 @@ Key terms and entity names used throughout this site:
 - Sovereign life design
 - Generative Engine Optimization (GEO)
 - Creator Flywheel
+- The Way
+- Wayfarers
+- Wayfinders
 - The Pioneer (archetype)
 - Joyful Sovereignty
 - Conditioned vs Authentic Identity
@@ -57,7 +60,7 @@ Key terms and entity names used throughout this site:
 ## Concept Pages (Canonical Definitions)
 
 - /concepts — Index of all defined concepts with DefinedTermSet schema
-- /concepts/creator-flywheel — The operating engine for any creator who builds from aliveness, contributes from genuine expression and lets the business follow
+- /concepts/creator-flywheel — The operating engine for any creator who builds from aliveness; conducts essence through a rotating field of Wayfarers (Way + Wayfinders) rather than accumulating fans; structured discoverability over performed visibility
 - /concepts/the-pioneer — The person who has everything except alignment between outer life and inner knowing
 - /concepts/joyful-sovereignty — Playing the Infinite Game through joy and sovereignty rather than strategy and optimization
 - /concepts/conditioned-vs-authentic-identity — The gap between who you were conditioned to be and who you actually are

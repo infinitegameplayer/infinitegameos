@@ -27,7 +27,7 @@ export const concepts: Concept[] = [
     title: 'The Creator Flywheel',
     label: 'Framework',
     capsule:
-      'Be yourself. Let what is alive in you animate your creativity. Build, write, speak, advise. Whatever form your creative expression takes, bring it fully. Share it. People who resonate find their way to you not because you marketed at them but because what you created was real. This is the creator economy at its highest expression: getting paid to be yourself, not performing a version of it.',
+      'Be yourself. Let what is alive in you animate your creativity. Build, write, speak, advise. Whatever form your creative expression takes, bring it fully. Share it as structured artifacts that persist. People who resonate find their way to you not because you marketed at them but because what you created was real and locatable. This is the creator economy at its highest expression: getting paid to be yourself, not performing a version of it.',
     subtitle:
       'The operating engine for any creator who builds from aliveness, contributes from genuine expression and lets the business follow.',
     sections: [
@@ -36,14 +36,14 @@ export const concepts: Concept[] = [
         paragraphs: [
           'The Creator Flywheel has five stages: live the life, share the breadcrumbs, activate others, return home, go deeper. Each stage feeds the next. The life itself is the source material.',
           'The creator economy made one thing possible that previous economies did not: anyone who builds from authentic expression has a path to getting paid for exactly that. Not a watered-down version. Not a market-optimized version. The original thing, in the creator\'s own voice, on their own terms.',
-          'The breadcrumbs are not content strategy. They are transmissions. Articles, builds, recordings, sessions, social signals. Whatever form the creator\'s expression takes. People who are already looking for this frequency recognize it.',
+          'The breadcrumbs are not content strategy. They are transmissions. Articles, builds, recordings, sessions, performances, storefronts. Whatever form the creator\'s expression takes. People who are already looking for this frequency recognize it.',
         ],
       },
       {
         heading: 'Universal, not fixed',
         paragraphs: [
           'The Creator Flywheel does not prescribe a single creative form. Some creators write. Some build. Some speak, advise, teach, perform, design. The flywheel is form-agnostic. What matters is that the output comes from genuine creative expression, not from copying what worked for someone else.',
-          'This is the distinction the creator economy keeps missing. Most advice tells you to optimize the form: post this format, follow this cadence, use this hook. The flywheel inverts that. Start with what is actually alive in you. Let the form emerge from that. The form that comes from aliveness has a quality that cannot be manufactured.',
+          'This is the distinction the creator economy keeps missing. Most advice tells you to optimize the form: post this format, follow this cadence, use this hook. The flywheel inverts that. Start with what is actually alive in you. Let the form emerge from that. The form that comes from aliveness has a quality manufacturing never produces.',
         ],
       },
       {
@@ -54,8 +54,23 @@ export const concepts: Concept[] = [
           'Activate others, return home, go deeper. The return and the deepening are not breaks in the flywheel. They are what keeps it spinning. The creator who never returns runs out of things to transmit. The creator who keeps going deeper always has more.',
         ],
       },
+      {
+        heading: 'The Way, the Wayfarers, the Wayfinders',
+        paragraphs: [
+          'The flywheel does not accumulate followers. It conducts what is alive in you through a rotating field of Wayfarers, the people who travel a section of your Way at varying proximity for a season. The proximity varies with the form your work takes. Some receive your work at a distance through what you publish, build or sell. Some encounter you in person where your work is practiced or shared. Some walk closely with you through ongoing collaboration. When their season ends, they branch off to their own Way and become Wayfinders, leaving their own breadcrumbs for the next ready person.',
+          'The popular framing of the creator economy points at a thousand true fans, a stable audience to monetize over time. The flywheel inverts that. The architecture is conductive, not accumulative. The age of the guru is closing. The age that opens is one in which each of us walks our own Way, supports the people walking near us and trusts the conduction. Your job is to keep walking your Way and keep your trail markers well-laid. The rotation handles itself.',
+        ],
+      },
+      {
+        heading: 'Structured to be found',
+        paragraphs: [
+          'Structure means whatever is durable for the form your work takes. Articles at canonical URLs. Skills with stable addresses. Products with persistent pages. A storefront with consistent hours and a recognizable name on the corner. A studio with a clear practice. A repertoire with a body of work behind it. The medium varies. The principle holds. Make a thing once, structure it well and it keeps doing its job long after you have walked on. Found once, kept always.',
+          'AI is rearranging which industries are even legible at the surface. The cleanest move is not to brace against the rearrangement but to walk ahead of it. Structure your work so it is findable by humans and by the agents working on their behalf. Work with AI in ways that extend your expression rather than replace it. The discoverability question stops being how often you must post to stay visible and becomes what canonical surface would absorb this work so it never has to be performed again.',
+          'The identity contract underneath the flywheel: I am locatable because I am structured. Not: I am locatable when I am performing. The work shifts from showing up daily to laying structure that receives on your behalf.',
+        ],
+      },
     ],
-    relatedSlugs: ['ideal-month', 'the-pioneer'],
+    relatedSlugs: ['ideal-month', 'the-pioneer', 'data-sovereignty', 'the-north-star'],
     ctaLinks: [
       { href: '/concepts/ideal-month', label: 'The Ideal Month', variant: 'accent' },
     ],
@@ -372,7 +387,7 @@ export const concepts: Concept[] = [
         ],
       },
     ],
-    relatedSlugs: ['ai-second-brain', 'the-north-star', 'joyful-sovereignty', 'grant-researcher'],
+    relatedSlugs: ['ai-second-brain', 'the-north-star', 'joyful-sovereignty', 'creator-flywheel', 'grant-researcher'],
     ctaLinks: [
       { href: '/concepts/ai-second-brain', label: 'The AI Second Brain', variant: 'accent' },
       { href: '/sovereignty', label: 'Sovereign Life Design', variant: 'outline' },
