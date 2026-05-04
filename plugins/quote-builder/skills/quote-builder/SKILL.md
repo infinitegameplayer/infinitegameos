@@ -209,7 +209,7 @@ Substitutability: export to PDF via Pandoc (`pandoc quote.md -o quote.pdf`), bro
 
 ---
 
-### Worked Example A: Tree Trimming (Joel)
+### Worked Example A: Tree Trimming (Tomas)
 
 **Inputs:**
 
@@ -256,7 +256,7 @@ Please confirm gate will be accessible on the scheduled date.
 
 To move forward, reply here or text me at [phone].
 
-Joel
+Tomas
 [Business name]
 [Phone]
 [Email]

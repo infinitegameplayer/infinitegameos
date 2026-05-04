@@ -15,6 +15,20 @@ version: 1.0
 - When a new protocol, tool or process would benefit from a reusable skill interface
 - Triggered by: "build me a skill for...", "create a skill that...", "I need a skill to..."
 
+## Make It Yours
+
+This skill is a starting point, not a finished tool. It ships with a five-phase build sequence, a specific SKILL.md required-sections list and a junction-based install pattern for Windows and Mac. Your skill folder may have different conventions.
+
+The interview-before-writing discipline (Phase 1) is the portable core. Every other operator who has skipped the interview and gone straight to drafting has produced a skill that doesn't know when to stop, doesn't name its own failure modes and has no governance constraints section. Keep Phase 1. The rest adapts.
+
+**Seam 1: Required sections.** The default required-sections list (Purpose, When to Use, Steps, Constraints, Refinements) fits a general-purpose skill operating in a single-operator system. If your system adds frontmatter fields (status, version, owner, approval-tier), a Pairs With block, an External Orientation callout for outward-facing skills or a Model Routing matrix, add those to the required-sections list in Phase 3. The Refinements section is load-bearing: keep it even if your other conventions differ.
+
+**Seam 2: Filename and folder conventions.** The reference install path uses `SKILL.md` as the canonical filename inside a named folder. If your system uses a flat directory with descriptive filenames, or if your skills live inside a monorepo with a different structure, edit the Phase 3 write-path and Phase 4 install-path commands to match. The junction pattern (Phase 4) is Windows-specific; the `ln -s` variant is for Mac and Linux.
+
+**Seam 3: Registry update targets.** Phase 5 names `CLAUDE.md` and a local skills index as the update targets. Your system may use `AGENTS.md`, a separate skills registry file, a database, a project-level config or a skills manifest. Edit Phase 5 to name your actual registry.
+
+Run a brainstorm pass before first use. The skill is a substrate. You are the operator. Make it yours.
+
 ## Steps
 
 **Phase 1 — Interview (required before writing anything)**

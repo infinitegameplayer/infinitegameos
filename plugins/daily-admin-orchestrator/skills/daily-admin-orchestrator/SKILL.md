@@ -4,7 +4,7 @@ description: Use to run the complete solopreneur admin ritual in one session. Se
 
 # Daily Admin Orchestrator
 
-This skill is the delegation surface. It replaces the question "which skill do I start?" with a single ritual that runs all four admin primitives in sequence. Joel said it plainly: "I have no one to delegate to." This skill is that one delegate.
+This skill is the delegation surface. It replaces the question "which skill do I start?" with a single ritual that runs all four admin primitives in sequence. Tomas said it plainly: "I have no one to delegate to." This skill is that one delegate.
 
 ---
 
@@ -153,9 +153,9 @@ This skill is the orchestration layer. It holds no data of its own. It reads wha
 
 ## Worked Examples
 
-### Monday Morning — Joel the tree trimmer
+### Monday Morning — Tomas the tree trimmer
 
-Joel finishes his coffee. It is 7:15 AM. He has four jobs scheduled today and is running the morning briefing before driving to the first site.
+Tomas finishes his coffee. It is 7:15 AM. He has four jobs scheduled today and is running the morning briefing before driving to the first site.
 
 **Step 2 (Email Triage, briefing depth):** Three emails overnight. One is a client asking whether the quote from Thursday is still valid. One is a new inquiry from a property manager asking for a large-lot estimate. One is a past client saying the oak removal last week looks great. Triage routes: quote-validity question flags to Step 5; new inquiry is a new quote opportunity, flagged as today's first action; past client note is a relationship touchpoint, filed as a warm follow-up.
 
@@ -181,23 +181,23 @@ Today's three actions:
 3. Call both overdue invoice accounts during lunch
 ```
 
-Joel looks at this list for 45 seconds. He knows exactly what to do before he leaves the driveway.
+Tomas looks at this list for 45 seconds. He knows exactly what to do before he leaves the driveway.
 
 ---
 
-### Friday Weekly Review — Joel, end of week
+### Friday Weekly Review — Tomas, end of week
 
-It is Friday at 6:30 AM. No jobs are scheduled until noon. Joel runs the full weekly review.
+It is Friday at 6:30 AM. No jobs are scheduled until noon. Tomas runs the full weekly review.
 
-**Step 2 (Email Triage, Friday depth):** Full bucket review. WAITING folder has six threads from the week. Two are resolved (clients replied). Two are overdue for follow-up from Joel. Two are informational threads he can archive. READ LATER has four items: one relevant industry note he scans in two minutes, three he marks done without reading. Action items from the full review: four threads need Joel's response before the weekend.
+**Step 2 (Email Triage, Friday depth):** Full bucket review. WAITING folder has six threads from the week. Two are resolved (clients replied). Two are overdue for follow-up from Tomas. Two are informational threads he can archive. READ LATER has four items: one relevant industry note he scans in two minutes, three he marks done without reading. Action items from the full review: four threads need Tomas's response before the weekend.
 
-**Step 3 (Customer Follow-Up, Friday depth):** Full cadence audit. Fourteen active customers on file. Three have touchpoints due this week that were not acted on (two +14d referral asks, one +90d maintenance). One customer has gone past 180 days with no record of re-engagement outreach. Flag as lapsed. Joel decides to send a quick personal message to the lapsed customer before the weekend rather than waiting for Monday.
+**Step 3 (Customer Follow-Up, Friday depth):** Full cadence audit. Fourteen active customers on file. Three have touchpoints due this week that were not acted on (two +14d referral asks, one +90d maintenance). One customer has gone past 180 days with no record of re-engagement outreach. Flag as lapsed. Tomas decides to send a quick personal message to the lapsed customer before the weekend rather than waiting for Monday.
 
 **Step 4 (Invoice sweep, Friday depth):** Aged receivables: 0-30d total $1,840 (four invoices, all on normal terms). 31-60d total $480 (one invoice, flagged). 60d+ total $0. Full ledger is clean except the one 31-60d account. No jobs completed today yet. Invoice for Thursday's job already issued.
 
-**Step 5 (Quote follow-up, Friday depth):** Four open quotes. Two are within 48h (no action). One is at 72h (the same Thursday client from the Monday briefing, now five days unsigned; escalate from email to phone call). One is 12 days unsigned from a client who has not responded to the 72h follow-up. Status decision: Joel calls today or closes the opportunity. He decides to close it, notes it in the log and moves on.
+**Step 5 (Quote follow-up, Friday depth):** Four open quotes. Two are within 48h (no action). One is at 72h (the same Thursday client from the Monday briefing, now five days unsigned; escalate from email to phone call). One is 12 days unsigned from a client who has not responded to the 72h follow-up. Status decision: Tomas calls today or closes the opportunity. He decides to close it, notes it in the log and moves on.
 
-**Weekly review document saved** to `admin/weekly-reviews/YYYY-MM-DD-friday.md`. Joel checks the document at Sunday night to orient Monday morning's briefing. He skips the step where he stares at the whiteboard trying to remember what was open.
+**Weekly review document saved** to `admin/weekly-reviews/YYYY-MM-DD-friday.md`. Tomas checks the document at Sunday night to orient Monday morning's briefing. He skips the step where he stares at the whiteboard trying to remember what was open.
 
 ---
 

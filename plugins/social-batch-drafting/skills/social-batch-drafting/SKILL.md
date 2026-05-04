@@ -18,6 +18,20 @@ This skill exists because batches drafted without structural enforcement drift o
 
 This skill pairs with **Social Batch Queue**. Drafting produces the approved batch file; Queue consumes it and ships through your social scheduling tool. The two work as a flywheel. Run Drafting alone for copy-only batches. Run both for copy-to-scheduled-posts in one session.
 
+## Make It Yours
+
+This skill is a starting point, not a finished tool. It ships with a 9-post structure (3 days × 3 platforms), Instagram, Facebook and LinkedIn as the default surface mix and a voice-rules set built from the author's real failure modes. Your setup is different.
+
+Three seams worth editing before first use.
+
+**Seam 1: Platform mix.** The 3-day arc holds for any combination of platforms. If you publish on Twitter/X, Threads, Substack Notes or a text-first surface instead of one of the three defaults, swap the platform name in the Batch Format table and update the corresponding mechanics block. The Day 1 / Day 2 / Day 3 structure doesn't change. The platform mechanics do.
+
+**Seam 2: Post count.** The 9-post default fits a 3-platform, every-other-day publishing cadence. A 5-post batch (1 platform × 5 days, or 1 day × multiple platforms) fits a different rhythm. Edit the Steps to reflect your cadence. The engagement gate, prior-batch look-back and voice sweep logic are cadence-agnostic. Keep them.
+
+**Seam 3: Voice rules.** The Voice Rules section is the author's enforcement layer, extracted from live production runs. Some rules are structural ("no em dashes," "no Oxford commas") and worth keeping regardless of whose voice is running. Others are contextual ("LinkedIn Subtle Professional Register," contraction list). If your brand voice runs more formal, expand the LinkedIn register to all platforms. If your brand voice is looser, adjust the contraction enforcement list. The `voice_addenda` input is the clean entry point for layering your rules without touching the defaults. If your rules diverge enough, replace the section directly.
+
+Run a brainstorm pass before first use. Edit the SKILL.md directly. The skill is a substrate. You are the operator. Make it yours.
+
 ## Steps
 
 **Step 1. Engagement gate.** One engagement, two questions on direction. Confirm (a) which concept has the most energy in the source for the operator right now and (b) who the batch is primarily speaking to. This confirms direction. It does not substitute for structural anchoring.

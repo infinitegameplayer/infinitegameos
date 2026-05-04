@@ -13,6 +13,22 @@ Inputs: Target plan link, approved execution scope, approval boundaries, depende
 Outputs: Implemented changes (if approved), updated plan note (snapshot + execution log + outcome) and a proposal for status/archival updates if applicable.
 Status: active
 
+## Make It Yours
+
+This skill is a starting point, not a finished tool. It assumes a specific plan artifact: a markdown note with frontmatter fields for status, scope and an activity log. Your planning system may live somewhere entirely different.
+
+The core discipline transfers to any format. Read the plan before executing. Confirm scope before touching anything. Log what you did as you do it. Surface proposed status changes for approval rather than writing them unilaterally. That sequence is the bone. The artifact format is the muscle, and muscle is yours to shape.
+
+**If your plans live in Linear, Jira or GitHub Issues.** Replace "read the plan note" in Step 1 with a fetch of the issue or epic. Replace "update the plan note" in Steps 2 and 5 with comments on the issue and field updates on the record. The scope-confirm gate (Step 3) and the execution log (Step 4) translate directly.
+
+**If your plans live in Notion.** The frontmatter fields become database properties. Status advances via property update rather than frontmatter edit. The activity log becomes a Notion comment thread or a child page. The skill's step sequence holds.
+
+**If your plans live in plain markdown without frontmatter.** Drop the frontmatter requirement. Use a `## Status` heading section instead. The read-confirm-execute-log-propose sequence doesn't depend on frontmatter. It depends on reading intent before acting and writing outcomes after.
+
+**Status vocabulary.** The reference status ladder (`proposed`, `approved`, `ready-for-execution`, `implemented`) is one convention. Your system may use different terms. Status advances in one direction. "Not yet approved" blocks execution. The final state captures a breadcrumb with a timestamp and what shipped.
+
+Edit the Steps to name your planning artifact format before first use. The skill is a substrate. You are the operator. Make it yours.
+
 ## Steps
 
 1. Confirm the target plan and read back plan intent, risk, affected areas and current breadcrumb context.

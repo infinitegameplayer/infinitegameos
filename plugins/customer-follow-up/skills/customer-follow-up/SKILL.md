@@ -45,7 +45,7 @@ Update the YAML frontmatter after every job or touchpoint:
 
 ```yaml
 ---
-name: Joel Martinez
+name: Daniel Reyes
 contact_email: joel@example.com
 contact_phone: 555-867-5309
 job_type: tree trimming
@@ -133,13 +133,13 @@ After sending: update `next_followup_date` to +365d from `last_service_date` if 
 
 ## Worked Examples
 
-### Tree trimming: Joel Martinez through the full cycle
+### Tree trimming: Daniel Reyes through the full cycle
 
-Joel closed a job on April 28, 2026. Customer note:
+Daniel closed a job on April 28, 2026. Customer note:
 
 ```yaml
 ---
-name: Joel Martinez
+name: Daniel Reyes
 contact_email: joel@example.com
 job_type: tree trimming — two oak removals
 last_service_date: 2026-04-28
@@ -149,31 +149,31 @@ notes: Removed two large oaks. Mentioned neighbor Dave (two doors south) has sam
 ---
 ```
 
-**April 30 (Day 2):** Daily Admin Orchestrator surfaces Joel's note. Send thank-you. Update `next_followup_date: 2026-05-12`.
+**April 30 (Day 2):** Daily Admin Orchestrator surfaces Daniel's note. Send thank-you. Update `next_followup_date: 2026-05-12`.
 
-**May 12 (Day 14):** Orchestrator surfaces Joel again. Send referral ask:
+**May 12 (Day 14):** Orchestrator surfaces Daniel again. Send referral ask:
 
-> Hi Joel, hope those oaks are settling into the yard. Quick ask: if anyone in your circle needs tree work, I'd love the introduction. A text to 555-0142 is plenty. Thanks for thinking of me.
+> Hi Daniel, hope those oaks are settling into the yard. Quick ask: if anyone in your circle needs tree work, I'd love the introduction. A text to 555-0142 is plenty. Thanks for thinking of me.
 
 Update `referral_status: asked`. Update `next_followup_date: 2026-07-28`.
 
-**July 28 (Day 90):** Maintenance check-in. Joel's neighbor Dave was mentioned in the original note.
+**July 28 (Day 90):** Maintenance check-in. Daniel's neighbor Dave was mentioned in the original note.
 
-> Hi Joel, just checking in at the three-month mark. How's the yard looking since the removal? If that neighbor of yours ever decides to deal with his oak overhang, feel free to pass along my number.
+> Hi Daniel, just checking in at the three-month mark. How's the yard looking since the removal? If that neighbor of yours ever decides to deal with his oak overhang, feel free to pass along my number.
 
 Update `next_followup_date: 2026-10-28`.
 
 **October 28 (Day 180):** Re-engagement.
 
-> Hi Joel, it's been about six months. Customers are booking fall tree inspections before the wind season. Happy to put you on the schedule if you want a look before the leaves come down. Just reply or call 555-0142.
+> Hi Daniel, it's been about six months. Customers are booking fall tree inspections before the wind season. Happy to put you on the schedule if you want a look before the leaves come down. Just reply or call 555-0142.
 
-Joel books a fall inspection. Cadence resets from new `last_service_date`.
+Daniel books a fall inspection. Cadence resets from new `last_service_date`.
 
 ---
 
 ### Referral ask working: Sarah Chen
 
-Sarah was the word-of-mouth source for Joel Martinez. Her note:
+Sarah was the word-of-mouth source for Daniel Reyes. Her note:
 
 ```yaml
 ---
@@ -183,13 +183,13 @@ job_type: tree trimming — crown reduction
 last_service_date: 2026-04-01
 next_followup_date: 2026-04-15
 referral_status: not-asked
-notes: Told me she had mentioned my name to her neighbor Joel before I even asked. Responsive, paid immediately. Excellent relationship candidate.
+notes: Told me she had mentioned my name to her neighbor Daniel before I even asked. Responsive, paid immediately. Excellent relationship candidate.
 ---
 ```
 
 **April 15 (Day 14):** Referral ask to Sarah.
 
-> Hi Sarah, glad those trees are looking good. Quick ask: if anyone else in the neighborhood needs tree work, I'd love the introduction. You already made one happen with Joel, which I really appreciated. A text anytime is plenty.
+> Hi Sarah, glad those trees are looking good. Quick ask: if anyone else in the neighborhood needs tree work, I'd love the introduction. You already made one happen with Daniel, which I really appreciated. A text anytime is plenty.
 
 Update `referral_status: asked`. Sarah replies within an hour with two more names. Update `referral_status: referred`. Both names convert within the month. Update `referral_status: converted`.
 

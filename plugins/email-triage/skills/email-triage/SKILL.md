@@ -65,11 +65,11 @@ Apply the 4 D's at the bucket level: Do (needs a reply or action today), Defer (
 
 **Worked Example — Monday Morning, 18 emails:**
 
-Joel's inbox arrives pre-sorted by automation. The classification has already run.
+Tomas's inbox arrives pre-sorted by automation. The classification has already run.
 
-- 4 × New Job Inquiry. Two have draft replies ready (estimate request pattern, recognized from subject line and sender domain). Joel reviews each in ninety seconds, edits one sentence, sends. Two are complex enough to need a site visit before quoting. He marks them Defer and logs them as action items for the afternoon callback list.
-- 3 × Scheduling. All three are confirmation requests for this week. Joel confirms each in one click.
-- 2 × Invoices and Payments. One invoice is acknowledged as paid. One is seven days past due. The past-due draft reply is already written. Joel reviews it, adds the client's first name, sends.
+- 4 × New Job Inquiry. Two have draft replies ready (estimate request pattern, recognized from subject line and sender domain). Tomas reviews each in ninety seconds, edits one sentence, sends. Two are complex enough to need a site visit before quoting. He marks them Defer and logs them as action items for the afternoon callback list.
+- 3 × Scheduling. All three are confirmation requests for this week. Tomas confirms each in one click.
+- 2 × Invoices and Payments. One invoice is acknowledged as paid. One is seven days past due. The past-due draft reply is already written. Tomas reviews it, adds the client's first name, sends.
 - 1 × Admin and Compliance. Insurance renewal notice. Not due for 30 days. Deferred with a date tag.
 - 8 × Noise. Automated archive. Zero manual time.
 
@@ -144,7 +144,7 @@ Draft reply pulled from Scenario A, first name extracted as "there" (no name giv
 
 > Hey there, thanks for reaching out. Happy to take a look at those trees. To give you an accurate number I'll need to see the site. Can you do Tuesday or Thursday this week?
 
-Joel edits "there" to the name from the email signature, picks days that match his schedule, sends.
+Tomas edits "there" to the name from the email signature, picks days that match his schedule, sends.
 
 **Step 5. Apply follow-up triggers.** Check each action item against the default follow-up windows. Surface any item that needs a scheduled follow-up:
 

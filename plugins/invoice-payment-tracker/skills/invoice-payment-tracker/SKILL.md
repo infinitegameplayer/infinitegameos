@@ -185,7 +185,7 @@ The skill names specific platforms as reference implementations. Each is substit
 
 ### Example 1: Tree trimming, generic markdown-PDF path
 
-**Setup:** Joel, tree trimmer. First run, selected generic markdown-PDF. Invoice template updated with his Net 7 terms and 1.5% monthly late fee. No sales tax in his state for labor-only jobs.
+**Setup:** Tomas, tree trimmer. First run, selected generic markdown-PDF. Invoice template updated with his Net 7 terms and 1.5% monthly late fee. No sales tax in his state for labor-only jobs.
 
 **Inputs:** Client: Sandra Park, 4402 Elm St. Job: Remove two dead limbs, haul debris. Labor: 3.5 hours at $95/hour. Debris disposal: $40 flat. Job closed today.
 

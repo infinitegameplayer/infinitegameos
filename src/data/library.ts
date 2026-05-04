@@ -938,7 +938,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         title: 'Monday morning catch-up for a tree trimmer',
         body:
-          'Joel finishes his coffee before the first job site. Eighteen weekend emails run through triage in eleven minutes. Four new inquiries get draft replies ready for his review. Eight noise emails auto-archive. Two past-due invoice follow-ups draft with the client\'s first name already pulled. He leaves the driveway knowing exactly what needs action today.',
+          'Tomas finishes his coffee before the first job site. Eighteen weekend emails run through triage in eleven minutes. Four new inquiries get draft replies ready for his review. Eight noise emails auto-archive. Two past-due invoice follow-ups draft with the client\'s first name already pulled. He leaves the driveway knowing exactly what needs action today.',
       },
       {
         title: 'End-of-day pass for a handyman with active jobs',
@@ -1029,7 +1029,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         title: 'Tree removal quote for a new residential customer',
         body:
-          'Joel receives an inquiry about removing a dead pine and trimming three oaks. Quote Builder gathers scope, cost and terms in under five minutes, produces an email body with the itemized breakdown, fires the 48h follow-up trigger payload for Customer Follow-Up and logs the open quote for Daily Admin Orchestrator to surface on Wednesday morning if it goes unsigned.',
+          'Tomas receives an inquiry about removing a dead pine and trimming three oaks. Quote Builder gathers scope, cost and terms in under five minutes, produces an email body with the itemized breakdown, fires the 48h follow-up trigger payload for Customer Follow-Up and logs the open quote for Daily Admin Orchestrator to surface on Wednesday morning if it goes unsigned.',
       },
       {
         title: 'Coaching program quote with a shorter expiry window',
@@ -1120,7 +1120,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         title: 'Same-day invoice on job close for a tree trimmer',
         body:
-          'Joel finishes a dead-limb removal at 4:30 PM. He opens Invoice and Payment Tracker on his phone, pulls the inputs from his Quote Builder output, confirms the markdown-PDF path and has an invoice in Sandra Park\'s inbox before he is off the property. Net 7. $372.50. The tracker row appends. He does not carry it to Friday.',
+          'Tomas finishes a dead-limb removal at 4:30 PM. He opens Invoice and Payment Tracker on his phone, pulls the inputs from his Quote Builder output, confirms the markdown-PDF path and has an invoice in Sandra Park\'s inbox before he is off the property. Net 7. $372.50. The tracker row appends. He does not carry it to Friday.',
       },
       {
         title: 'Weekly overdue sweep during a Friday morning review',
@@ -1211,7 +1211,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         title: 'Full four-touchpoint cycle for a tree trimmer',
         body:
-          'Joel closes a job on April 28. Thank-you goes out April 30. Referral ask fires May 12 at exactly day 14, naming the neighbor mentioned in the original note. The maintenance check-in arrives July 28 three months later with a seasonal hook. The re-engagement arrives October 28 and books a fall inspection. Cadence resets from the new job date. The entire cycle ran on one customer note and zero calendar reminders.',
+          'Tomas closes a job on April 28. Thank-you goes out April 30. Referral ask fires May 12 at exactly day 14, naming the neighbor mentioned in the original note. The maintenance check-in arrives July 28 three months later with a seasonal hook. The re-engagement arrives October 28 and books a fall inspection. Cadence resets from the new job date. The entire cycle ran on one customer note and zero calendar reminders.',
       },
       {
         title: 'Referral conversion from a word-of-mouth source',
@@ -1302,7 +1302,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         title: 'Monday morning briefing for a tree trimmer with four jobs scheduled',
         body:
-          'Joel runs the morning briefing at 7:15 AM before the first site. Three emails overnight. Two customer touchpoints due. One overdue invoice needs a phone call. One unsigned quote hit its 72h window. The briefing summary lands in under ten minutes. Three actions at the bottom. He looks at the list for 45 seconds, makes two calls on the way to the first job and sends one message at lunch.',
+          'Tomas runs the morning briefing at 7:15 AM before the first site. Three emails overnight. Two customer touchpoints due. One overdue invoice needs a phone call. One unsigned quote hit its 72h window. The briefing summary lands in under ten minutes. Three actions at the bottom. He looks at the list for 45 seconds, makes two calls on the way to the first job and sends one message at lunch.',
       },
       {
         title: 'End-of-day rolldown as the primary invoice ritual',

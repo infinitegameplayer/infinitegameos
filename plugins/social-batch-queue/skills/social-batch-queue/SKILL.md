@@ -16,6 +16,20 @@ Outputs: A Desktop review folder with all rendered images, asset URLs from your 
 
 This skill pairs with **Social Batch Drafting**. Drafting produces the approved batch file; this skill consumes it. The two work as a flywheel. The boundary is firm: voice and copy are Drafting's responsibility; execution and scheduling are Queue's. If a voice violation surfaces during execution, Queue halts and routes back to Drafting.
 
+## Make It Yours
+
+This skill is a starting point, not a finished tool. The reference stack (fal.ai for background generation, Canva via MCP for template editing, Vercel Blob for staging, Buffer via MCP for scheduling) is what the author runs. It works. It is not the only thing that works.
+
+The structural discipline is the portable part: Desktop review pause before queuing, font-size lock after every text replacement, vertical centering check on single-headline templates, channel IDs discovered at run-time rather than hardcoded, native-isolation test as the first failure-protocol move. That discipline holds across every stack combination below.
+
+**Image pipeline substitutions.** Background generation works with any tool that produces a 16:9 PNG at your size target. Midjourney, DALL-E, Adobe Firefly, a Stable Diffusion endpoint or a manual Canva export all land in the same slot. Template editing works with any tool that supports programmatic text and fill replacement. If you don't have the Canva MCP, a manual Canva editing pass with the batch's slide copy pasted in is a valid starting point. The Refinements section is where you'll log your template's specific character budgets and centering offsets as you discover them.
+
+**Scheduler substitutions.** Buffer is the reference. Hypefury, Typefully, Later, Publer, native platform scheduling or any scheduler with an API and channel discovery all work in the same slot. The key rule stays regardless of tool: discover channel IDs at run-time. Don't hardcode. A disconnect rotates the ID on most platforms.
+
+**Staging substitutions.** Vercel Blob, S3, R2, Cloudinary, Imgix, a public GitHub release asset, a shared Dropbox folder with a public link: anything that produces a stable HTTPS URL works. The scheduler just needs the URL.
+
+Edit the Steps to name your stack explicitly before first use. The author's tool names are breadcrumbs, not requirements. The skill is a substrate. You are the operator. Make it yours.
+
 ## Reference Implementations
 
 This skill names a specific stack as the reference implementation, then frames each component generically. Operators with different stacks can substitute component-by-component.
