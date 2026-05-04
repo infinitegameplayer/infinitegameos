@@ -6,6 +6,11 @@ import type { NextConfig } from 'next'
 const markdownAcceptRegex =
   '(?=.*(?:text/plain|text/markdown))(?!.*text/html.*(?:text/plain|text/markdown)).*'
 
+// Analytics hosts allowed by CSP. Read at build time so changing the env var
+// updates CSP automatically. Empty values are filtered out of the CSP source list.
+const UMAMI_URL = process.env.NEXT_PUBLIC_UMAMI_URL || ''
+const POSTHOG_HOST = process.env.NEXT_PUBLIC_POSTHOG_HOST || ''
+
 const nextConfig: NextConfig = {
   images: {
     formats: ['image/webp'],
@@ -64,17 +69,18 @@ const nextConfig: NextConfig = {
             value: 'max-age=63072000; includeSubDomains; preload',
           },
           {
-            // No third-party scripts at launch — CSP is strict from day one.
-            // If HubSpot or other embeds are added in future, update script-src before deploying.
+            // CSP is strict by default. Analytics hosts are sourced from env vars
+            // (NEXT_PUBLIC_UMAMI_URL, NEXT_PUBLIC_POSTHOG_HOST) so changing the
+            // env var updates the policy without a code edit.
             // unsafe-inline for script-src is required for Next.js hydration and JSON-LD data blocks.
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline'",
+              `script-src ${["'self'", "'unsafe-inline'", UMAMI_URL].filter(Boolean).join(' ')}`,
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: https:",
               "font-src 'self' data: https://fonts.gstatic.com",
-              "connect-src 'self'",
+              `connect-src ${["'self'", UMAMI_URL, POSTHOG_HOST].filter(Boolean).join(' ')}`,
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",
