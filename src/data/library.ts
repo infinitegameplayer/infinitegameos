@@ -571,6 +571,11 @@ export const igosAssets: IGOSAsset[] = [
         body:
           'A live workshop produced themes worth carrying forward into public batches. Social Batch Drafting takes a workshop-summary or topic-harvest doc as the source, applies a voice addendum requiring date specificity (specific weekday and date rather than "this weekend") and produces the batch with workshop continuity preserved.',
       },
+      {
+        title: 'Solo nonprofit comms from a program update report',
+        body:
+          'A solo nonprofit communications coordinator wants a 9-post arc carrying the latest program update to the community. Social Batch Drafting reads the program update report, extracts the load-bearing community moments and the impact lines that would land in mission-aligned voice, threads any prior-batch references and produces the full 9-post draft. Mission framing stays intact across the arc; the operator reviews and approves before handoff to the queue skill.',
+      },
     ],
     faq: [
       {
@@ -599,7 +604,7 @@ export const igosAssets: IGOSAsset[] = [
           'No. Drafting produces the approved batch file; the Social Batch Queue skill consumes it and ships through the operator\'s scheduling tool. The boundary is firm. Voice and copy are Drafting\'s responsibility; image generation, asset staging and scheduler integration belong downstream.',
       },
     ],
-    relatedSlugs: ['social-batch-queue', 'pending-plan-implementation', 'plan-challenger'],
+    relatedSlugs: ['social-batch-queue', 'grant-researcher', 'pending-plan-implementation', 'plan-challenger'],
     softHook: {
       body:
         'Social Batch Drafting pairs with Social Batch Queue. Drafting produces the approved batch; Queue ships it as scheduled posts. The two work as a flywheel. The Sovereign Life Playbook is the upstream design frame for which work is worth distributing in the first place.',
@@ -791,7 +796,7 @@ export const igosAssets: IGOSAsset[] = [
           'No. Researcher discovers and analyzes; it never auto-submits. Submission lives in the paired Grant Manager skill, where the operator confirms the package before any submission action. The boundary protects the operator from auto-submitting a proposal whose final pass they didn\'t personally review.',
       },
     ],
-    relatedSlugs: ['grant-manager', 'plan-challenger', 'pending-plan-implementation'],
+    relatedSlugs: ['grant-manager', 'social-batch-drafting', 'plan-challenger', 'pending-plan-implementation'],
     softHook: {
       body:
         'Grant Researcher pairs with Grant Manager. Researcher discovers and shortlists; Manager runs the lifecycle from intake forward. The two work as a flywheel. The Sovereign Life Playbook is the upstream design frame for whether a given funded work direction belongs in the operator\'s longer arc in the first place.',

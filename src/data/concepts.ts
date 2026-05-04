@@ -372,7 +372,7 @@ export const concepts: Concept[] = [
         ],
       },
     ],
-    relatedSlugs: ['ai-second-brain', 'the-north-star', 'joyful-sovereignty'],
+    relatedSlugs: ['ai-second-brain', 'the-north-star', 'joyful-sovereignty', 'grant-researcher'],
     ctaLinks: [
       { href: '/concepts/ai-second-brain', label: 'The AI Second Brain', variant: 'accent' },
       { href: '/sovereignty', label: 'Sovereign Life Design', variant: 'outline' },
@@ -393,6 +393,15 @@ export const concepts: Concept[] = [
           'Zero to three month horizon as the primary frame. The handful of things you intend to actually move on in that window. A few longer-horizon notes about what is on the other side.',
           'Active quests as the primary unit. The work you are embarking on this season, named in language that reflects how you actually relate to it.',
           'Specific revenue targets if those help. Specific project outcomes by specific dates. Or looser textures if you are earlier in the process. Both work. Minimal structure to get started. Add specificity as your understanding sharpens.',
+        ],
+      },
+      {
+        heading: 'The Anti-Vision',
+        paragraphs: [
+          'The North Star tells you where you are walking toward. The Anti-Vision tells you the line you refuse to cross. Both are orientation, just from opposite directions.',
+          'Name one or two lines you will not cross today. The shape of life you will not accept any more. Write them down where you can see them.',
+          'When the day starts to drift toward an Anti-Vision line, that is the early cue to pause and re-orient. Not because the day is failing, but because the body felt the line approaching before the mind did. The Anti-Vision turns your nervous system into a compass.',
+          'For anyone who arrives wanting more specificity in their North Star, the Anti-Vision is often where the specificity finally lands. It is easier to name what you refuse than what you want. Once you have named the refusal, the wanting comes into focus.',
         ],
       },
       {
@@ -471,7 +480,7 @@ export const concepts: Concept[] = [
     relatedSlugs: ['data-sovereignty', 'the-north-star', 'ideal-month'],
     ctaLinks: [
       { href: '/concepts/data-sovereignty', label: 'Data Sovereignty', variant: 'accent' },
-      { href: '/skills/source-harvest', label: 'Install Source Harvest', variant: 'outline' },
+      { href: 'https://github.com/InfiniteGamePlayer/sovereign-ecosystem', label: 'Get the Sovereign Ecosystem', variant: 'outline' },
     ],
   },
 ]
