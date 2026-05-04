@@ -275,6 +275,24 @@
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
       }
+    },
+    {
+      "name": "website-builder",
+      "description": "Build, refresh or extend a website with Claude Code as the primary build engine. Frame-agnostic by design. Reference stack named, every component substitutable. AI discoverability and three-state deploy verification built in.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/website-builder"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/website-builder",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": ["website", "web", "build", "deploy", "discoverability", "creator"],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
     }
   ]
 }

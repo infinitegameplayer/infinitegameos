@@ -1,0 +1,13 @@
+{
+  "name": "website-builder",
+  "description": "Build, refresh or extend a website with Claude Code as the primary build engine. Frame-agnostic by design. Reference stack named, every component substitutable. AI discoverability and three-state deploy verification built in.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lane Belone",
+    "email": "howdy@lanebelone.com"
+  },
+  "homepage": "https://www.infinitegameos.io/skills/website-builder",
+  "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+  "license": "CC-BY-4.0",
+  "keywords": ["website", "web", "build", "deploy", "discoverability", "creator"]
+}

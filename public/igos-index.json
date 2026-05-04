@@ -5,7 +5,7 @@
   "description": "Installable skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
   "url": "https://www.infinitegameos.io",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "updated_at": "2026-05-03",
+  "updated_at": "2026-05-04",
   "assets": [
     {
       "id": "source-harvest",
@@ -20,7 +20,7 @@
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/source-harvest",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/source-harvest.mdc"
       },
-      "related": ["plan-challenger", "systematic-debugging", "pending-plan-implementation", "skill-creator", "researcher"],
+      "related": ["plan-challenger", "systematic-debugging", "pending-plan-implementation", "skill-creator", "researcher", "website-builder"],
       "article_url": "https://www.infinitegameos.io/skills/source-harvest",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -305,6 +305,26 @@
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "updated_at": "2026-05-03",
+      "changelog_url": null
+    },
+    {
+      "id": "website-builder",
+      "name": "Website Builder",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Build, refresh or extend a website with Claude Code as the primary build engine. Frame-agnostic by design. AI discoverability and three-state deploy verification built in from the first scaffold.",
+      "tags": ["website", "web", "build", "deploy", "discoverability", "creator"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install website-builder@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/website-builder",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/website-builder.mdc"
+      },
+      "related": ["source-harvest"],
+      "article_url": "https://www.infinitegameos.io/skills/website-builder",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-04",
       "changelog_url": null
     },
     {

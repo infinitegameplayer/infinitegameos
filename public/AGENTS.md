@@ -2,7 +2,7 @@
 
 Cross-tool harvest and install instructions for the Infinite Game OS public library.
 
-Last updated: 2026-05-03 (Solopreneur Admin Toolkit added: Email Triage, Quote Builder, Invoice and Payment Tracker, Customer Follow-Up and Daily Admin Orchestrator. Five-skill set for service-business solopreneurs)
+Last updated: 2026-05-04 (Website Builder added: universalized from Kingdom canonical, frame-agnostic by design, AI discoverability and three-state deploy verification built in. Sixteenth installable skill in the Public Library.)
 
 ## Site Purpose
 
