@@ -32,7 +32,7 @@ export interface UpcomingPlaybook {
 // --- Home ---
 
 export const igosBio =
-  'Lane Belone is a thought doer. Former Green Beret, strategic advisor and sovereign systems builder operating from inside the practice. Infinite Game OS is not theory. It is architecture running live, documented in real time.'
+  'Lane Belone is a former Green Beret, strategic advisor and sovereign systems builder operating from inside the practice. Infinite Game OS is not theory. It is architecture running live, documented in real time.'
 
 export const IGOS_MOD_THE_OS: IgosMod = {
   href: '/the-os',
@@ -109,6 +109,97 @@ export const igosMods: IgosMod[] = [
   IGOS_MOD_UPDATES,
 ]
 
+// --- Home featured assets ---
+// Curated subsets surfaced on the homepage. Each section pairs with a "Browse all"
+// link to the full index. Intentionally short, declarative cards. Update when the
+// featured rotation changes.
+
+export const homeFeaturedConcepts: IgosMod[] = [
+  {
+    href: '/concepts/the-pioneer',
+    label: 'Concept',
+    title: 'The Pioneer',
+    description:
+      'Someone who has already won the game most people are still playing. Free by every external measure. Looking for coherence between the inner knowing and the outer life.',
+  },
+  {
+    href: '/concepts/joyful-sovereignty',
+    label: 'Concept',
+    title: 'Joyful Sovereignty',
+    description:
+      'Playing the Infinite Game through joy and embodied play rather than strategy and optimization. The compass state.',
+  },
+  {
+    href: '/concepts/creator-flywheel',
+    label: 'Concept',
+    title: 'The Creator Flywheel',
+    description:
+      'Be yourself. Share the breadcrumbs. Let revenue follow contribution. The operating engine for any creator who builds from aliveness.',
+  },
+  {
+    href: '/concepts/ai-second-brain',
+    label: 'Concept',
+    title: 'The AI Second Brain',
+    description:
+      'The system you trust to hold what is in your head so you do not have to. Capture, organize, distill, express. Sovereign by design.',
+  },
+]
+
+export const homeFeaturedSkills: IgosMod[] = [
+  {
+    href: '/skills/source-harvest',
+    label: 'Skill',
+    title: 'Source Harvest',
+    description:
+      'Source-level pattern extraction from any external repo or tool. Adopt, enrich, defer or ignore. Nothing installs wholesale.',
+  },
+  {
+    href: '/skills/plan-challenger',
+    label: 'Skill',
+    title: 'Plan Challenger',
+    description:
+      'Adversarial pre-build pass on any plan. Five angles, one verdict. Surface what the plan assumes, what it costs, what it skips.',
+  },
+  {
+    href: '/skills/systematic-debugging',
+    label: 'Skill',
+    title: 'Systematic Debugging',
+    description:
+      'Root-cause investigation as discipline. Four phases. The Iron Law: no fixes without Phase 1 complete.',
+  },
+  {
+    href: '/skills/website-builder',
+    label: 'Skill',
+    title: 'Website Builder',
+    description:
+      'Build, refresh and extend websites with Claude Code as the primary engine. Frame-agnostic. Anti-slop gate. AI discoverability shipped as a ship gate.',
+  },
+]
+
+export const homeFeaturedBundles: IgosMod[] = [
+  {
+    href: '/bundles/foundational-creator',
+    label: 'Bundle',
+    title: 'The Foundational Creator',
+    description:
+      'Seven-skill substrate for any creator working with Claude Code in 2026. The operating system beneath every creative practice. Start here.',
+  },
+  {
+    href: '/bundles/the-builder',
+    label: 'Bundle',
+    title: 'The Builder',
+    description:
+      'Avatar layer for solo SaaS founders, indie hackers and agent builders. Ship trio plus live docs plus design fluency. Installs on the Foundational substrate.',
+  },
+  {
+    href: '/bundles/the-writer',
+    label: 'Bundle',
+    title: 'The Writer',
+    description:
+      'Avatar layer for newsletter operators, essayists and ghostwriters. Voice calibration, AI-pattern detection and multi-format adaptation. Installs on the Foundational substrate.',
+  },
+]
+
 // --- The OS ---
 
 export const theOsFaqs: FaqItem[] = [
@@ -180,7 +271,7 @@ export const infiniteGameFaqs: FaqItem[] = [
   },
   {
     q: 'How does Lane Belone apply the Infinite Game?',
-    a: "Lane applies the Infinite Game through three movements of embodiment: thinking the philosophy, acting on it and embodying it until the practice runs without effort. The musician's arc. Scales practiced until they become invisible, leaving only the play. The endpoint is the Embodied Player. The orientation is Joyful Sovereignty, the sovereign choice to welcome alive energy through the body. Aliveness is always present. The variable is what the human follows. Following Aliveness is how the Infinite Game keeps playing. His digital sovereign operating system (the Kingdom) organizes one wing of a three-plane life. SideQuestHQ houses the finite games nested within it. Playing this way in the current era asks something new. This is the Pioneer's territory.",
+    a: "Lane applies the Infinite Game through three movements of embodiment: thinking the philosophy, acting on it and embodying it until the practice runs without effort. The musician's arc. Scales practiced until they become invisible, leaving only the play. The orientation is Joyful Sovereignty, the sovereign choice to welcome alive energy through the body. Aliveness is always present. The variable is what the human follows. Following Aliveness is how the Infinite Game keeps playing. His digital sovereign operating system (the Kingdom) organizes one wing of a three-plane life. SideQuestHQ houses the finite games nested within it. Playing this way in the current era asks something new. This is the Pioneer's territory.",
   },
   {
     q: 'What is the relationship between Infinite Game and Post Web?',
@@ -210,7 +301,7 @@ export const IGOS_ECOSYSTEM_LANE: IgosEcosystemLink = {
 export const IGOS_ECOSYSTEM_SQHQ: IgosEcosystemLink = {
   label: 'SideQuestHQ',
   description:
-    'Workshops, private advisory and retreats. The finite games nested in the infinite.',
+    'Workshops, private advisory, digital products and retreats. The finite games nested in the infinite.',
   href: 'https://sidequesthq.co',
 }
 

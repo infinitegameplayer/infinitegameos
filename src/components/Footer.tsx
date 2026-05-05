@@ -11,7 +11,7 @@ const ecosystemLinks = [
   },
   {
     label: 'SideQuestHQ',
-    sublabel: 'Workshops and advisory',
+    sublabel: 'Workshops, advisory and digital products',
     href: 'https://sidequesthq.co',
     external: true,
   },

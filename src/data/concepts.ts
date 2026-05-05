@@ -94,7 +94,7 @@ export const concepts: Concept[] = [
       {
         heading: 'What the Pioneer actually wants',
         paragraphs: [
-          'They want authentic aliveness. Not whimsical, not performative, but unmistakable. A glimmer in the eye. A newfound energy that cannot be faked.',
+          'They want authentic aliveness. Not whimsical, not performative, but unmistakable. A glimmer in the eye. A newfound energy that can\'t be faked.',
           'They want to stop doing things because they were conditioned to or feel obligated to, and start doing only what feels coherent, alive, curiosity-driven and genuinely theirs. The distinction between a choice that comes from authentic core alignment versus one that comes from old programming masquerading as a sovereign decision. That nuance is the work.',
           'They do not want to be told what to do. They want to be self-authorized, from a place of genuine mind-body-spirit coherence rather than another layer of conditioning dressed up as sovereignty.',
         ],
@@ -164,7 +164,7 @@ export const concepts: Concept[] = [
         paragraphs: [
           'The conditioned identity is not a villain. It is a survival structure. It was built from the programming received through education, family, media, culture and institutional life. It works. It gets results. It earns respect.',
           'The problem is not that it exists. The problem is that most people think it is who they actually are. They make "free choices" that are entirely conditioned. They pursue goals that were never truly chosen. They optimize a life they did not design.',
-          'If we skip straight to the positive and say there is a version of yourself underneath that has been waiting, that sounds inspirational. But the real problem is the lack of awareness. You cannot release what you cannot see.',
+          'If we skip straight to the positive and say there is a version of yourself underneath that has been waiting, that sounds inspirational. But the real problem is the lack of awareness. You can\'t release what you can\'t see.',
         ],
       },
       {
@@ -288,7 +288,7 @@ export const concepts: Concept[] = [
     title: 'The Infinite Playlist',
     label: 'Framework',
     capsule:
-      'The Infinite Playlist is the soundtrack to the movie of your life. An eternal sequence of songs, some chosen and some received, always playing in the background of a sovereign day. Where Playgrounds of Exploration are what the Pioneer engages through the senses, the Infinite Playlist is the invisible music floating in the air. You cannot see it, but you can hear it, dance to it, play with it.',
+      'The Infinite Playlist is the soundtrack to the movie of your life. An eternal sequence of songs, some chosen and some received, always playing in the background of a sovereign day. Where Playgrounds of Exploration are what the Pioneer engages through the senses, the Infinite Playlist is the invisible music floating in the air. You can\'t see it, but you can hear it, dance to it, play with it.',
     subtitle:
       'The invisible music floating in the air, always playing, waiting to be heard.',
     sections: [

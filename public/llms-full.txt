@@ -1,4 +1,4 @@
-# Infinite Game OS — Full Content Index
+# Infinite Game OS: Full Content Index
 # Deep LLM reference for comprehensive site content
 # Updated: 2026-05-04. Discovery stack v1 published: /AGENTS.md (cross-tool harvest instructions), /igos-index.json (machine-readable asset registry), /marketplace.json (Claude Code marketplace manifest). Public Library now ships sixteen installable skills at /skills/<slug>: source-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher, social-batch-drafting, social-batch-queue, grant-researcher, grant-manager, email-triage, quote-builder, invoice-payment-tracker, customer-follow-up, daily-admin-orchestrator, website-builder. Six installable bundles now live at /bundles/<slug>: foundational-creator (substrate), the-builder, the-writer, the-performer, the-teacher, the-curator, the-strategist. Solopreneur Admin Toolkit added: five-skill set for service-business solopreneurs. Four primitives (Email Triage, Quote Builder, Invoice and Payment Tracker, Customer Follow-Up) plus Daily Admin Orchestrator as the integration layer that sequences all four. VS Code one-click install verified via vscode://anthropic.claude-code/install-plugin URI handler.
 # https://www.infinitegameos.io
@@ -10,17 +10,44 @@ deeper content access. See llms.txt for the lightweight manifest.
 
 ## Homepage (/)
 
-The OS orientation frame. Infinite Game OS is a knowledge base for practitioners
-of long-term thinking. Built AI-agent-first: semantic HTML, JSON-LD schema,
-explicit AI crawler access. Site map: The OS, Infinite Game, Agentic Systems,
-Sovereignty, Playbooks, Updates, About.
+The orientation frame for the Infinite Game OS practitioner library. Built
+AI-agent-first: semantic HTML, JSON-LD schema, explicit AI crawler access. Top
+nav surfaces the operational substrate: Infinite Game, Agentic Systems, Accord,
+Concepts, Skills, Bundles, About, plus Updates pill. Footer carries the full
+site index including The OS, Sovereignty and Playbooks.
 
-Six module cards: The OS (philosophy anchor), Infinite Game (core philosophy),
-Agentic Systems (Post Web synthesis), Sovereignty (sovereign life design),
-Playbooks (frameworks and tools), Updates (dispatches from inside the practice).
+Seven section flow.
 
-Practitioner callout: Lane Belone is a thought doer. Former Green Beret,
-strategic advisor and sovereign systems builder operating from inside the practice.
+Section 1 (Hero): Tagline "Play a longer game." Subline names the library shape:
+a practitioner-first knowledge base and library for the Infinite Game, with
+concepts to think with, skills to install and bundles to run. Primary CTA opens
+the Library at /skills. Secondary CTA opens /concepts.
+
+Section 2 (Orientation): Thin philosophical beat. Built on the Infinite Game
+and the Accord. The Infinite Game is the cause, the practice, the creative life
+with no endpoint. The Accord is the public charter for the human-AI partnership
+running underneath the work. Links to /infinite-game and /accord.
+
+Section 3 (The thinking): Featured Concepts (4) plus Browse all concepts link.
+Current rotation: The Pioneer, Joyful Sovereignty, The Creator Flywheel, The AI
+Second Brain.
+
+Section 4 (The doing): Featured Skills (4) plus Featured Bundles (3) plus
+Browse all links for both. Current skill rotation: Source Harvest, Plan
+Challenger, Systematic Debugging, Website Builder. Current bundle rotation:
+The Foundational Creator, The Builder, The Writer.
+
+Section 5 (The invitation): Universal-language framing of the creator-economy
+invitation. "Be yourself. Build the life. Let the structure receive on your
+behalf." Links into /concepts/creator-flywheel for the named treatment.
+
+Section 6 (Recent dispatches): The most recent /updates entries surfaced as
+cards. Links to /updates index.
+
+Section 7 (The practitioner): Bio plus About link. Lane Belone is a former
+Green Beret, strategic advisor and sovereign systems builder operating from
+inside the practice. Infinite Game OS is not theory. It is architecture running
+live, documented in real time.
 
 ---
 
@@ -139,19 +166,19 @@ Sovereign life design: building a life on your own principles. Article + FAQPage
 
 Natural law as the ground: the order that exists before any legislature convenes. Three
 operating principles: do no harm, take full responsibility and move by consent. Natural
-law is the Infinite Game in its most essential form — it doesn't expire, it's not
+law is the Infinite Game in its most essential form. It doesn't expire, it's not
 repealed, it doesn't require anyone's approval to be real. Statutory law is man-made,
 finite and participatory; it requires conscious participation to bind you. The key
 distinction: most systems you navigate are structures of agreement, not inevitability.
 
 The public and the private: the difference between you as a living human and the
 commercial and legal structures that operate in the public domain. Sovereignty with
-consent — becoming aware of what you're signing and agreeing to — is the core practice.
+consent, meaning becoming aware of what you're signing and agreeing to, is the core practice.
 You can choose which vehicles (corporations, trusts, associations) serve your work and
 how you show up in any commercial or legal context.
 
 The Living Axis: three architectures of sovereign life design working together. Inner
-mastery (values, fears, capacities, patterns — the inner work that makes everything
+mastery (values, fears, capacities, patterns, the inner work that makes everything
 possible). Structural sovereignty (the outer architecture: systems, governance
 structures, creative vehicles, collaborators). Strategic execution (deliberate
 engagement: partnerships, projects, presence in the commercial domain). Developing one
@@ -159,25 +186,25 @@ in isolation produces imbalance.
 
 Embodiment as infrastructure: an operating system that only runs in your head is a
 philosophy. One that runs in your body is sovereign life design. The felt sense of
-alignment isn't an aspiration — it's a navigation instrument. When values, decisions
+alignment isn't an aspiration. It's a navigation instrument. When values, decisions
 and daily life are coherent, there's a physical quality. When performing rather than
 choosing, there's a different physical quality: friction without a name.
 
-Joyful Sovereignty as compass state: sovereignty can feel heavy — the fear of systems,
+Joyful Sovereignty as compass state: sovereignty can feel heavy. The fear of systems,
 of stepping out of line, of owning your choices. Joyful Sovereignty arrives when that
 fear transforms into clarity. It's the lightness of knowing the inherited game was
 always optional. Power from this place doesn't perform or prove. It emanates. The
 Infinite Game played from this orientation has a particular quality: the music you make
 when you've stopped wondering whether the audience approves.
 
-Kingdom model: Lane's personal sovereign creative operating system — governance
+Kingdom model: Lane's personal sovereign creative operating system, governance
 structure, codices, protocols, AI council, Obsidian knowledge management. Not a
 productivity tool. A sovereignty structure. The Sovereign Ecosystem GitHub repo is the
 technical public layer.
 
 Creative sovereignty: making creative work from genuine authority rather than
 compliance. Practitioners most findable in the Post Web era have built this kind of
-creative sovereignty — consistent vocabulary because thinking is integrated, connected
+creative sovereignty, consistent vocabulary because thinking is integrated, connected
 frameworks because they come from a coherent philosophical center.
 
 ---
@@ -204,7 +231,7 @@ Lane Belone: practitioner, builder, the person behind this OS. Person schema wit
 knowsAbout and sameAs links. BreadcrumbList schema.
 
 Works at the intersection of Infinite Game philosophy, sovereign creative operating
-systems, and agentic architecture. Writes from inside the practice. The Kingdom is
+systems and agentic architecture. Writes from inside the practice. The Kingdom is
 the lived version of everything documented on the site.
 
 Areas of expertise: Infinite Game philosophy, sovereign creative operating systems,
@@ -341,7 +368,7 @@ The Infinite Playlist is the soundtrack to the movie of your life. An eternal se
 of songs, some chosen and some received, always playing in the background of a
 sovereign day. Where Playgrounds of Exploration are what the Pioneer engages through
 the senses (the physical act), the Infinite Playlist is the invisible music floating
-in the air. You cannot see it, but you can hear it, dance to it, play with it.
+in the air. You can't see it, but you can hear it, dance to it, play with it.
 
 The Playlist asks the Pioneer to hold two capacities at once: leading (architecting
 Playgrounds) and following (receiving songs the Pioneer did not request). Degrees of

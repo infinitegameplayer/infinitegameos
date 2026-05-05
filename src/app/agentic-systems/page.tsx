@@ -93,7 +93,7 @@ export default function AgenticSystemsPage() {
             <SectionReveal>
               <p>
                 Agentic systems are AI-powered tools that act on your behalf: retrieving
-                information, orchestrating across platforms, and navigating digital
+                information, orchestrating across platforms and navigating digital
                 infrastructure with your intent rather than your attention. The internet
                 is shifting from an Attention Economy to an Intention Economy, and
                 practitioners who build structurally legible bodies of work are the ones
@@ -111,7 +111,7 @@ export default function AgenticSystemsPage() {
               <p>
                 The internet is not becoming more noisy. It is becoming more intentional.
                 And that shift changes everything about how expertise gets discovered, how
-                trust is built, and who wins in the next decade.
+                trust is built and who wins in the next decade.
               </p>
             </SectionReveal>
 
@@ -148,7 +148,7 @@ export default function AgenticSystemsPage() {
             <SectionReveal delay={80}>
               <h2>The Four Verbs of the Web</h2>
               <p>
-                The web has always been readable, writable, and ownable. The Post Web
+                The web has always been readable, writable and ownable. The Post Web
                 adds a fourth verb.
               </p>
               <p>
@@ -198,7 +198,7 @@ export default function AgenticSystemsPage() {
                 framing. Cross-linked bodies of work. Regular freshness signals.
               </p>
               <p>
-                This is <strong>Generative Engine Optimization (GEO)</strong> — the 2026
+                This is <strong>Generative Engine Optimization (GEO)</strong>, the 2026
                 strategic layer on top of traditional SEO. GEO optimizes for inclusion in
                 AI-generated answers rather than search result rankings. The practitioners
                 who understand it now are building compounding authority while the norms
@@ -462,7 +462,7 @@ export default function AgenticSystemsPage() {
                 }}
               >
                 The agentic systems described here are not theoretical for Lane. The
-                Kingdom operating system, MCP servers, and sovereign ecosystem are all
+                Kingdom operating system, MCP servers and sovereign ecosystem are all
                 public and documented.
               </p>
               <a

@@ -352,14 +352,14 @@ export default function SovereigntyPage() {
                 Lane&apos;s personal operating system is called the Kingdom.
                 It&apos;s a sovereign creative operating system: a governance
                 structure, a set of codices and protocols, a council of
-                advisors (some human, some AI), and a knowledge management
+                advisors (some human, some AI) and a knowledge management
                 architecture built in Obsidian and managed through a network of
                 AI agents.
               </p>
               <p>
                 The Kingdom isn&apos;t a productivity tool. It&apos;s a
                 sovereignty structure. It manages relationships, projects,
-                values, creative output, financial strategy, and the ongoing
+                values, creative output, financial strategy and the ongoing
                 practice of living intentionally at a high level of coherence.
               </p>
               <p>

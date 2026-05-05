@@ -154,7 +154,7 @@ export default function TheOsPage() {
               <p>
                 Infinite Game OS is not a productivity system. It does not optimize
                 output within an existing structure. It is the structure itself: the
-                philosophy, the frameworks, the practices, and the principles that govern
+                philosophy, the frameworks, the practices and the principles that govern
                 a long-horizon creative life.
               </p>
             </SectionReveal>

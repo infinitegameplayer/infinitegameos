@@ -160,8 +160,7 @@ export default function InfiniteGamePage() {
                 thinking the philosophy, acting on it and embodying it until the practice
                 runs without effort because it has become identity. The musician&apos;s
                 arc. Scales practiced until they become invisible, leaving only the play.
-                Simultaneously, the old conditioned self unravels. The endpoint is the
-                Embodied Player.
+                Simultaneously, the old conditioned self unravels.
               </p>
               <p>
                 The orientation is Joyful Sovereignty: the sovereign choice to welcome

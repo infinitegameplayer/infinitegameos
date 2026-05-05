@@ -4,12 +4,9 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
 const navLinks = [
-  { href: '/the-os', label: 'The OS' },
   { href: '/infinite-game', label: 'Infinite Game' },
   { href: '/agentic-systems', label: 'Agentic Systems' },
-  { href: '/sovereignty', label: 'Sovereignty' },
   { href: '/accord', label: 'Accord' },
-  { href: '/playbooks', label: 'Playbooks' },
   { href: '/concepts', label: 'Concepts' },
   { href: '/skills', label: 'Skills' },
   { href: '/bundles', label: 'Bundles' },

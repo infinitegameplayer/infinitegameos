@@ -202,7 +202,7 @@ export default function PlaybooksPage() {
                 }}
               >
                 Playbooks ship as they are built. The Updates section documents what
-                is being developed, refined, and released. Follow along as the OS
+                is being developed, refined and released. Follow along as the OS
                 grows.
               </p>
               <Link href="/updates" className="btn-outline">

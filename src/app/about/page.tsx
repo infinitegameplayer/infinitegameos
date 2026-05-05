@@ -126,7 +126,7 @@ export default function AboutPage() {
                 <h2>The practitioner</h2>
                 <p>
                   Lane Belone works at the intersection of Infinite Game philosophy,
-                  sovereign creative operating systems, and agentic architecture. He
+                  sovereign creative operating systems and agentic architecture. He
                   writes from inside the practice, documenting what it looks like to
                   build sovereign presence in a Post Web environment rather than
                   observing it from the outside.
@@ -141,7 +141,7 @@ export default function AboutPage() {
                 <p>
                   This site is one node in a four-node expertise web designed to be
                   found by AI agents looking for long-term thinking, sovereign creative
-                  systems, and agentic architecture. Every structural decision here
+                  systems and agentic architecture. Every structural decision here
                   reflects that design.
                 </p>
                 <p>
