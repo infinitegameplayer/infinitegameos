@@ -471,8 +471,17 @@ export const concepts: Concept[] = [
         heading: 'Capture, organize, distill, express',
         paragraphs: [
           'Tiago Forte\'s Building a Second Brain framework named the loop. Capture the input. Organize it where you can find it later. Distill the essence. Express it back into the world. A 20-minute video search on his work gives you the foundation.',
+          'Two more shoulders are worth standing on. Andrej Karpathy\'s LLM-wiki idea: keep the raw source material, process what matters, slowly turn it into structured, connected knowledge. The vault compounds over time. Steph Ango\'s Obsidian Skills: practical workflows for working inside the vault, named and shared so anyone can adopt them. Three different lineages, one shared posture. Trust the files. Trust the loop.',
           'The AI Second Brain runs the same loop with one upgrade. The AI handles a lot of the organize, distill and express work. You stay focused on capture and on creative judgment.',
           'A To-Do Dock is the daily capture surface for the small stuff. Pending Plans are the longer-horizon capture surface for ideas you want to act on later. Claude Code is the engine that organizes and distills. Skills like article drafting, social batch drafting and the express layer of any creative bundle handle the output side. The same files flow through every layer.',
+        ],
+      },
+      {
+        heading: 'The maintenance layer keeps it alive',
+        paragraphs: [
+          'A second brain that gets dumped into and never revisited is a closet. The cadence layer is what turns the closet back into a room you actually live in. Daily: the small stuff cleared, captures triaged. Weekly: the longer arc reviewed, focus areas set for what comes next.',
+          'In the Kingdom this looks like the To-Do Dock cleared each day, a Session Closeout written when a working session ends, and the Steward Review run weekly to set the next week\'s focus. The shape varies by practitioner. The layer is not optional. Without it the second brain calcifies.',
+          'You do not need every cadence on day one. Pick one. The daily clear is the cheapest place to start. Add the weekly review when the daily clear is reflexive. The system improves in the background once the rhythm is real.',
         ],
       },
       {
