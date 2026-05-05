@@ -33,6 +33,7 @@ const siteLinks = [
   { href: '/concepts', label: 'Concepts' },
   { href: '/skills', label: 'Skills' },
   { href: '/bundles', label: 'Bundles' },
+  { href: '/sovereign-ecosystem', label: 'Sovereign Ecosystem' },
   { href: '/updates', label: 'Updates' },
   { href: '/about', label: 'About' },
 ]

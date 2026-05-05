@@ -23,7 +23,7 @@ Part of a four-node expertise web. Canonical source: [Sovereign Ecosystem Archit
 | **infinitegameos.io** | https://www.infinitegameos.io | AI-agent-first knowledge base — Infinite Game philosophy, agentic systems, sovereign life design |
 | **lanebelone.com** | https://lanebelone.com | Personal brand anchor — thought leadership, philosophy, personal story |
 | **SideQuestHQ.co** | https://sidequesthq.co | Offer hub — workshops, private advisory, retreats |
-| **Sovereign Ecosystem** | https://github.com/InfiniteGamePlayer/sovereign-ecosystem | Technical infrastructure reference |
+| **Sovereign Ecosystem** | https://github.com/InfiniteGamePlayer/sovereign-ecosystem (repo) — https://www.infinitegameos.io/sovereign-ecosystem (IGOS landing page) | Technical infrastructure reference; foundational Obsidian + Claude Code workspace template; three-tier stack origin |
 
 Cross-link obligations: Footer and About page must link to all four nodes with descriptive label text (not generic "visit"). These links are load-bearing for AI agent graph traversal.
 

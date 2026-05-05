@@ -444,10 +444,11 @@ export const concepts: Concept[] = [
         ],
       },
     ],
-    relatedSlugs: ['ideal-month', 'the-pioneer', 'joyful-sovereignty'],
+    relatedSlugs: ['ideal-month', 'the-pioneer', 'joyful-sovereignty', 'data-sovereignty'],
     ctaLinks: [
       { href: '/concepts/ideal-month', label: 'The Ideal Month', variant: 'accent' },
       { href: '/concepts/the-pioneer', label: 'The Pioneer', variant: 'outline' },
+      { href: '/sovereign-ecosystem', label: 'The Sovereign Ecosystem', variant: 'outline' },
     ],
   },
   {
@@ -504,7 +505,7 @@ export const concepts: Concept[] = [
     relatedSlugs: ['data-sovereignty', 'the-north-star', 'ideal-month'],
     ctaLinks: [
       { href: '/concepts/data-sovereignty', label: 'Data Sovereignty', variant: 'accent' },
-      { href: 'https://github.com/InfiniteGamePlayer/sovereign-ecosystem', label: 'Get the Sovereign Ecosystem', variant: 'outline' },
+      { href: '/sovereign-ecosystem', label: 'The Sovereign Ecosystem', variant: 'outline' },
     ],
   },
 ]

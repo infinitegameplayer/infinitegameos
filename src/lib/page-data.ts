@@ -90,6 +90,14 @@ export const IGOS_MOD_BUNDLES: IgosMod = {
     'Pre-composed skill stacks for specific creator avatars. One install command, the full configuration on top of the foundational substrate.',
 }
 
+export const IGOS_MOD_SOVEREIGN_ECOSYSTEM: IgosMod = {
+  href: '/sovereign-ecosystem',
+  label: 'Sovereign Ecosystem',
+  title: 'The foundational workspace template',
+  description:
+    'A foundational Obsidian and Claude Code workspace template. Directory structure, governance scaffolding and an initial skill set. The three-tier stack origin.',
+}
+
 export const IGOS_MOD_UPDATES: IgosMod = {
   href: '/updates',
   label: 'Updates',
@@ -106,6 +114,7 @@ export const igosMods: IgosMod[] = [
   IGOS_MOD_PLAYBOOKS,
   IGOS_MOD_SKILLS,
   IGOS_MOD_BUNDLES,
+  IGOS_MOD_SOVEREIGN_ECOSYSTEM,
   IGOS_MOD_UPDATES,
 ]
 
@@ -353,4 +362,33 @@ export const igosUpcomingPlaybooks: UpcomingPlaybook[] = [
   IGOS_PLAYBOOK_TWO_LAYER,
   IGOS_PLAYBOOK_PRESENCE_AUDIT,
   IGOS_PLAYBOOK_FOUR_NODE,
+]
+
+// --- Sovereign Ecosystem ---
+
+export const sovereignEcosystemFaqs: FaqItem[] = [
+  {
+    q: 'What is the Sovereign Ecosystem?',
+    a: 'The Sovereign Ecosystem is a foundational Obsidian and Claude Code workspace template. It ships the directory structure, governance scaffolding, a North Star template and an initial skill set needed to get a sovereign vault running. It is the starting conditions, not the finished system. Every practitioner who uses it ends up somewhere different.',
+  },
+  {
+    q: 'Who is it for?',
+    a: "Practitioners who want a structured first build of an Obsidian and Claude Code workspace. If you already have a vault set up, a Source Harvest of the repo gives you the same patterns without the full install. The Sovereign Ecosystem is one path of entry among many.",
+  },
+  {
+    q: 'Do I have to use it?',
+    a: "No. The Sovereign Ecosystem is one path among many. Veterans with an existing setup can grab individual skills and bundles from this site directly. The IGOS Public Library is designed so any practitioner can adopt what is useful regardless of whether they use the foundational template.",
+  },
+  {
+    q: 'What is the three-tier stack?',
+    a: 'Three layers, each swappable. The Sovereign Ecosystem is the file structure and templates. Obsidian is the reader and editor that turns those files into something you can navigate by hand. Claude Code (or Codex, or any future agentic interface) is the AI that can read, edit and restructure any of it on your instruction. Swap any layer and the others survive. The full case is at /concepts/data-sovereignty.',
+  },
+  {
+    q: 'What does it cost?',
+    a: 'Nothing. The repo is free and open on GitHub. Download the ZIP or clone it. Obsidian is free for personal use. Claude Code requires an Anthropic subscription. The total stack runs on a $20 to $200 monthly subscription depending on your usage level.',
+  },
+  {
+    q: 'How does Source Harvest fit in?',
+    a: 'Source Harvest is built to harvest any external repo at source level. The Sovereign Ecosystem repo is a natural first target. After installing the repo, run a Source Harvest over it. The skill classifies each governance file, protocol, codex and skill against your existing setup. Adopt what fills a gap, enrich what improves on what you have, defer what does not yet apply, ignore what is already covered. The harvest turns the template into your template.',
+  },
 ]

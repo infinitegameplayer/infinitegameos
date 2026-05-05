@@ -1,6 +1,6 @@
 # Infinite Game OS: Full Content Index
 # Deep LLM reference for comprehensive site content
-# Updated: 2026-05-04. Discovery stack v1 published: /AGENTS.md (cross-tool harvest instructions), /igos-index.json (machine-readable asset registry), /marketplace.json (Claude Code marketplace manifest). Public Library now ships sixteen installable skills at /skills/<slug>: source-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher, social-batch-drafting, social-batch-queue, grant-researcher, grant-manager, email-triage, quote-builder, invoice-payment-tracker, customer-follow-up, daily-admin-orchestrator, website-builder. Six installable bundles now live at /bundles/<slug>: foundational-creator (substrate), the-builder, the-writer, the-performer, the-teacher, the-curator, the-strategist. Solopreneur Admin Toolkit added: five-skill set for service-business solopreneurs. Four primitives (Email Triage, Quote Builder, Invoice and Payment Tracker, Customer Follow-Up) plus Daily Admin Orchestrator as the integration layer that sequences all four. VS Code one-click install verified via vscode://anthropic.claude-code/install-plugin URI handler.
+# Updated: 2026-05-05. New page: /sovereign-ecosystem (foundational Obsidian + Claude Code workspace template, three-tier stack origin, Article + FAQPage + BreadcrumbList schema, 6 Q&As). Discovery stack v1 published: /AGENTS.md (cross-tool harvest instructions), /igos-index.json (machine-readable asset registry), /marketplace.json (Claude Code marketplace manifest). Public Library now ships sixteen installable skills at /skills/<slug>: source-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher, social-batch-drafting, social-batch-queue, grant-researcher, grant-manager, email-triage, quote-builder, invoice-payment-tracker, customer-follow-up, daily-admin-orchestrator, website-builder. Six installable bundles now live at /bundles/<slug>: foundational-creator (substrate), the-builder, the-writer, the-performer, the-teacher, the-curator, the-strategist. Solopreneur Admin Toolkit added: five-skill set for service-business solopreneurs. Four primitives (Email Triage, Quote Builder, Invoice and Payment Tracker, Customer Follow-Up) plus Daily Admin Orchestrator as the integration layer that sequences all four. VS Code one-click install verified via vscode://anthropic.claude-code/install-plugin URI handler.
 # https://www.infinitegameos.io
 
 This file contains structured summaries of each page for AI systems that require
@@ -467,6 +467,30 @@ start trusting it. Setup takes about an hour. Trust takes about a week. Why this
 sovereignty work: a second brain that lives on someone else's server is a brain you
 rent. The terms of service become the terms of your interior life. Related: Data
 Sovereignty, The North Star, The Ideal Month.
+
+---
+
+## Sovereign Ecosystem (/sovereign-ecosystem)
+
+Dedicated landing page for the Sovereign Ecosystem GitHub repo (github.com/InfiniteGamePlayer/sovereign-ecosystem). Article + FAQPage + BreadcrumbList JSON-LD schema. Published 2026-05-05.
+
+The Sovereign Ecosystem is a foundational Obsidian and Claude Code workspace template. It ships the directory structure, governance scaffolding, a North Star template at Library/North Star.md and the initial skill set needed to get a sovereign vault running. At v2.4.0 the repo trimmed to foundational only; skills and capabilities that grew beyond template scope graduated to the IGOS Public Library as installable assets.
+
+Download options: ZIP download at github.com/InfiniteGamePlayer/sovereign-ecosystem/archive/refs/heads/master.zip; git clone via HTTPS; GitHub web interface. Free and open.
+
+What the repo ships: Council Chamber (governance, codices, skills, protocols), Library (North Star template, transcripts, references), Inbox (capture surface), Sovereign Command and To-Do Dock (live signal surface and daily capture surface). Source Harvest stays as a dual-distribution surface alongside the IGOS library page.
+
+The three-tier stack: named live at the May 2 AI for Livin' Workshop by an attendee mid-demo. Three layers, each swappable. Sovereign Ecosystem is layer one (file structure and templates). Obsidian is layer two (reader and editor). Claude Code or Codex or any future agentic interface is layer three (AI that reads, edits and restructures files on instruction). Swap any layer and the others survive. Full architectural case at /concepts/data-sovereignty.
+
+The build sequence: two guides ship as markdown inside the repo. The Quick Start Guide (install foundation) walks from first software install through vault setup, AI adapter connection and first activation. The Build Sequence (session-by-session guide) runs Sessions 0 through 9. Session 0 locates starting point. Session 1 builds the first bridge between practitioner, files and AI. Sessions 2 and 3 bring governance and context layer online. Sessions 4 through 6 activate operating loops and expansion layer. Sessions 7 through 9 bring command surface live, align North Star and close when the daily loop proves itself with one real alive idea.
+
+Source Harvest as primary entry point: veterans without the foundational setup install the repo then run a Source Harvest to classify each governance file, protocol, codex and skill against their existing setup. Adopt what fills a gap, enrich what improves current shape, defer what does not yet apply, ignore what already lives in the system. The harvest turns the template into the practitioner's template. Source Harvest page: /skills/source-harvest.
+
+North Star: the repo ships Library/North Star.md as the practical scaffold. Full philosophy and guidance at /concepts/the-north-star.
+
+FAQPage schema: 6 Q&As covering what the Sovereign Ecosystem is, who it is for, whether it is required, what the three-tier stack is, what it costs and how Source Harvest fits in.
+
+Related: /concepts/data-sovereignty, /concepts/the-north-star, /concepts/ai-second-brain, /skills/source-harvest.
 
 ---
 

@@ -132,6 +132,11 @@ export const igosAssets: IGOSAsset[] = [
         body:
           'A plugin that requires a worker service or local backend gets classified at the source level even though most of its skills are not adoption candidates. The patterns inside, like phase-zero documentation discovery or smart token-economics tables, often integrate cleanly into existing protocols even when the full plugin does not. The infrastructure is deferred. The patterns travel.',
       },
+      {
+        title: 'Sovereign Ecosystem repo first-pass review',
+        body:
+          'Sovereign Ecosystem ships as a foundational Obsidian and Claude Code template. A Source Harvest of the repo classifies each governance file, protocol, codex and skill against your existing setup. Adopt what fills a gap, enrich what improves on your current shape, defer what does not yet apply, ignore what already lives in your system. The harvest turns the template into your template.',
+      },
     ],
     faq: [
       {

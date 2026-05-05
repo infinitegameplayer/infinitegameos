@@ -5,7 +5,19 @@
   "description": "Installable skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
   "url": "https://www.infinitegameos.io",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "updated_at": "2026-05-04",
+  "updated_at": "2026-05-05",
+  "pages": [
+    {
+      "id": "sovereign-ecosystem",
+      "url": "https://www.infinitegameos.io/sovereign-ecosystem",
+      "title": "Sovereign Ecosystem",
+      "description": "Foundational Obsidian + Claude Code workspace template. Three-tier stack origin (foundation, reader/editor, AI interface). Directory structure, governance scaffolding, North Star template and initial skill set. Encouraged-not-required on-ramp. Article + FAQPage + BreadcrumbList schema.",
+      "repo": "https://github.com/InfiniteGamePlayer/sovereign-ecosystem",
+      "download_zip": "https://github.com/InfiniteGamePlayer/sovereign-ecosystem/archive/refs/heads/master.zip",
+      "tags": ["template", "obsidian", "claude-code", "foundational", "three-tier-stack", "sovereign-ecosystem"],
+      "updated_at": "2026-05-05"
+    }
+  ],
   "assets": [
     {
       "id": "source-harvest",
