@@ -205,7 +205,37 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. The Creator beat */}
+      {/* 5. The foundation */}
+      <SectionReveal>
+        <section
+          style={{
+            borderTop: '1px solid var(--color-border)',
+            padding: '3rem 1.5rem',
+          }}
+        >
+          <div
+            style={{
+              maxWidth: '1100px',
+              margin: '0 auto',
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '2rem',
+            }}
+          >
+            <div style={{ maxWidth: '52ch' }}>
+              <p className="label" style={{ marginBottom: '0.75rem' }}>The foundation</p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'rgba(226, 232, 240, 0.75)', lineHeight: 1.7 }}>
+                Before concepts and skills, there is a workspace. The Sovereign Ecosystem is the foundational template — directory structure, governance scaffolding, first skill set. Free and open. The starting conditions for a sovereign AI practice.
+              </p>
+            </div>
+            <Link href="/sovereign-ecosystem" className="btn-outline">Get the template</Link>
+          </div>
+        </section>
+      </SectionReveal>
+
+      {/* 6. The Creator beat */}
       <SectionReveal>
         <section
           style={{

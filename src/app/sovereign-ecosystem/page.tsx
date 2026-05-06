@@ -372,6 +372,43 @@ export default function SovereignEcosystemPage() {
             </section>
           </SectionReveal>
 
+          <SectionReveal delay={340}>
+            <section style={{ marginTop: '4rem', marginBottom: '4rem', maxWidth: '64ch' }}>
+              <p className="label" style={{ marginBottom: '1.5rem' }}>From the field</p>
+              <blockquote
+                style={{
+                  borderLeft: '2px solid var(--color-accent)',
+                  paddingLeft: '1.5rem',
+                  margin: 0,
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '1rem',
+                    color: 'rgba(226, 232, 240, 0.85)',
+                    lineHeight: 1.8,
+                    fontStyle: 'italic',
+                    marginBottom: '1rem',
+                  }}
+                >
+                  &ldquo;Lane Belone built something I didn&apos;t know was possible. An AI interface that lives on my own computer, in my own files, in my own vault. Not in the cloud. Not on someone else&apos;s server. Mine. It knows me because I have taught it, and what I have taught it stays with me. What he has built is not an AI assistant. It is an AI companion &mdash; one that earns trust over time, that holds your story with discretion and intelligence. I am 62 years old. I have met a lot of people and used a lot of tools. I do not impress easily. Lane Belone impressed me.&rdquo;
+                </p>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '0.8rem',
+                    color: 'var(--color-muted)',
+                    letterSpacing: '0.05em',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  Frank A. &mdash; Sovereign Ecosystem Install
+                </p>
+              </blockquote>
+            </section>
+          </SectionReveal>
+
           <SectionReveal delay={360}>
             <div
               style={{
