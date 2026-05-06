@@ -5,7 +5,7 @@
   "description": "Installable skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
   "url": "https://www.infinitegameos.io",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "updated_at": "2026-05-05",
+  "updated_at": "2026-05-06",
   "pages": [
     {
       "id": "sovereign-ecosystem",
@@ -32,11 +32,31 @@
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/source-harvest",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/source-harvest.mdc"
       },
-      "related": ["plan-challenger", "systematic-debugging", "pending-plan-implementation", "skill-creator", "researcher", "website-builder"],
+      "related": ["pattern-harvest", "plan-challenger", "systematic-debugging", "pending-plan-implementation", "skill-creator", "researcher", "website-builder"],
       "article_url": "https://www.infinitegameos.io/skills/source-harvest",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "updated_at": "2026-04-29",
+      "changelog_url": null
+    },
+    {
+      "id": "pattern-harvest",
+      "name": "Pattern Harvest",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Reflective session-level pattern extraction. Three parallel lenses produce a numbered recommendation list the operator selects from. Run before session closeout on substantial sessions.",
+      "tags": ["harvest", "reflection", "meta", "session", "governance", "recommendations"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install pattern-harvest@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/pattern-harvest",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/pattern-harvest.mdc"
+      },
+      "related": ["source-harvest", "plan-challenger", "skill-creator", "systematic-debugging"],
+      "article_url": "https://www.infinitegameos.io/skills/pattern-harvest",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-06",
       "changelog_url": null
     },
     {
@@ -506,6 +526,24 @@
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "updated_at": "2026-05-02",
+      "changelog_url": null
+    },
+    {
+      "id": "ambassador-doctrine",
+      "name": "Ambassador Doctrine",
+      "type": "protocol",
+      "version": "1.0",
+      "description": "Governing posture for any agent that operates outside its home system. Three duties (represent, protect, advance) and six modes that read each external situation.",
+      "tags": ["protocol", "governance", "ambassador", "agentic", "external-engagement"],
+      "install": {
+        "markdown_url": "https://www.infinitegameos.io/markdown/protocols/ambassador-doctrine",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/ambassador-doctrine.mdc"
+      },
+      "related": ["source-harvest", "skill-creator", "researcher", "plan-challenger"],
+      "article_url": "https://www.infinitegameos.io/protocols/ambassador-doctrine",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-05-06",
       "changelog_url": null
     }
   ]

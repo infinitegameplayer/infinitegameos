@@ -1,0 +1,13 @@
+{
+  "name": "pattern-harvest",
+  "description": "Reflective session-level pattern extraction. Three parallel lenses produce a numbered recommendation list the operator selects from. Run before session closeout on substantial sessions.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lane Belone",
+    "email": "howdy@lanebelone.com"
+  },
+  "homepage": "https://www.infinitegameos.io/skills/pattern-harvest",
+  "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+  "license": "CC-BY-4.0",
+  "keywords": ["harvest", "reflection", "meta", "session", "governance", "recommendations"]
+}

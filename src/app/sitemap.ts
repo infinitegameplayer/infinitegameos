@@ -26,6 +26,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }))
 
+  const protocolEntries: MetadataRoute.Sitemap = getAssetsByType('protocol').map(asset => ({
+    url: `https://www.infinitegameos.io/protocols/${asset.slug}`,
+    lastModified: new Date(asset.updated + 'T00:00:00Z'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }))
+
   const bundleEntries: MetadataRoute.Sitemap = getAssetsByType('bundle').map(asset => ({
     url: `https://www.infinitegameos.io/bundles/${asset.slug}`,
     lastModified: new Date(asset.updated + 'T00:00:00Z'),
@@ -94,8 +101,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    {
+      url: 'https://www.infinitegameos.io/protocols',
+      lastModified: new Date('2026-05-06T00:00:00Z'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
     ...conceptEntries,
     ...skillEntries,
+    ...protocolEntries,
     ...bundleEntries,
     ...updateEntries,
   ]

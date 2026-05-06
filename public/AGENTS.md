@@ -2,7 +2,7 @@
 
 Cross-tool harvest and install instructions for the Infinite Game OS public library.
 
-Last updated: 2026-05-04 (Website Builder added: universalized from Kingdom canonical, frame-agnostic by design, AI discoverability and three-state deploy verification built in. Sixteenth installable skill in the Public Library.)
+Last updated: 2026-05-06 (Pattern Harvest added: universalized from Kingdom canonical as the reflective companion to Source Harvest. Three-lens session-level pattern extraction with numbered recommendations, operator-invoked. Seventeenth installable skill in the Public Library. First protocol-shape asset also shipped: /protocols/ambassador-doctrine. Governing posture for any agent operating outside its home system, with three duties and six modes (Alliance, Boundary, Expansion, Stillness, Multiplicity, Fortification). Protocols install as reference text via direct markdown URL or Cursor .mdc rules file; no plugin install path.)
 
 ## Site Purpose
 

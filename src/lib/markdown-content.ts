@@ -392,19 +392,21 @@ ${related}
 
 function generateAssetMarkdown(asset: IGOSAsset): string {
   const installBlocks: string[] = []
+  const isPluginInstallable = Boolean(asset.installable?.marketplaceId)
 
-  installBlocks.push(`### Claude Code (CLI / WSL / Git Bash)
+  if (isPluginInstallable) {
+    installBlocks.push(`### Claude Code (CLI / WSL / Git Bash)
 
 \`\`\`
 /plugin marketplace add ${SITE}/marketplace.json
 /plugin install ${asset.slug}@igos-library
 \`\`\``)
 
-  const vsCodeInstallUrl = `vscode://anthropic.claude-code/install-plugin?plugin=${encodeURIComponent(
-    asset.slug,
-  )}&marketplace=${encodeURIComponent(`${SITE}/marketplace.json`)}`
+    const vsCodeInstallUrl = `vscode://anthropic.claude-code/install-plugin?plugin=${encodeURIComponent(
+      asset.slug,
+    )}&marketplace=${encodeURIComponent(`${SITE}/marketplace.json`)}`
 
-  installBlocks.push(`### Claude Code (VS Code)
+    installBlocks.push(`### Claude Code (VS Code)
 
 [Install in VS Code](${vsCodeInstallUrl})
 
@@ -425,6 +427,7 @@ Opens the Claude Code plugins dialog with the marketplace and skill prefilled. R
   }
 }
 \`\`\``)
+  }
 
   installBlocks.push(`### Direct markdown URL
 
@@ -681,6 +684,12 @@ export function getMarkdownForPath(path: string): string | null {
   if (path.startsWith('skills/')) {
     const slug = path.replace('skills/', '')
     const asset = getAssetBySlug(slug, 'skill')
+    return asset ? generateAssetMarkdown(asset) : null
+  }
+
+  if (path.startsWith('protocols/')) {
+    const slug = path.replace('protocols/', '')
+    const asset = getAssetBySlug(slug, 'protocol')
     return asset ? generateAssetMarkdown(asset) : null
   }
 

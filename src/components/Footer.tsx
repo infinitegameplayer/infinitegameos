@@ -32,6 +32,7 @@ const siteLinks = [
   { href: '/playbooks', label: 'Playbooks' },
   { href: '/concepts', label: 'Concepts' },
   { href: '/skills', label: 'Skills' },
+  { href: '/protocols', label: 'Protocols' },
   { href: '/bundles', label: 'Bundles' },
   { href: '/sovereign-ecosystem', label: 'Sovereign Ecosystem' },
   { href: '/updates', label: 'Updates' },

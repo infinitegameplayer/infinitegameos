@@ -160,10 +160,102 @@ export const igosAssets: IGOSAsset[] = [
         a: 'Group by category. Read the highest-relevance components first. Flag anything skipped and document why. A repo with forty components rarely needs each one read in full. Five Adopt candidates, ten Enrich candidates and the rest Ignore is a normal harvest shape.',
       },
     ],
-    relatedSlugs: ['plan-challenger', 'systematic-debugging', 'pending-plan-implementation', 'skill-creator', 'researcher', 'website-builder'],
+    relatedSlugs: ['pattern-harvest', 'plan-challenger', 'systematic-debugging', 'pending-plan-implementation', 'skill-creator', 'researcher', 'website-builder'],
     softHook: {
       body:
         'Source Harvest is one entry point. The full system it lives inside is The Sovereign Life Playbook. The Playbook gives you the design frame for which patterns are worth extracting in the first place.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
+  {
+    slug: 'pattern-harvest',
+    type: 'skill',
+    title: 'Pattern Harvest',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-05-06',
+    description:
+      'Reflective session-level pattern extraction. Three parallel lenses produce a numbered recommendation list the operator selects from.',
+    tags: ['harvest', 'reflection', 'meta', 'session', 'governance', 'recommendations'],
+    capsule:
+      'Pattern Harvest is a skill for surfacing meta-level patterns inside a working session. Three parallel lenses (meta patterns, system upgrades, expression quality) produce a flat numbered recommendation list the operator selects from by number. Operator-invoked. The reflective companion to any session-closeout flow.',
+    installable: {
+      marketplaceId: 'pattern-harvest',
+      cursorMdc: true,
+    },
+    definition:
+      "Pattern Harvest is a session-level reflective discipline. After substantial work, the skill scans the session across three lenses simultaneously: meta patterns (how the collaboration happened, where the work shifted, where meta-awareness held or drifted), system upgrades (infrastructure gaps, governance needs, skill gaps, standing-instruction gaps, memory currency, token-efficiency flags) and expression quality (a one-line check on whether the session's produced artifacts met the operator's expression standards). Findings present in three labeled sections, then resolve into a numbered recommendation list tagged by effort: now, quick, plan or defer. The operator selects by number. Implementation runs before session closeout so the harvest's findings are already in conversation context when closeout executes. Pattern Harvest is operator-invoked, never automatic. Lightweight single-task sessions skip it. Co-creation work, governance design, multi-artifact builds and structural-decision sessions are where the harvest earns its name.",
+    howItWorks: [
+      {
+        heading: 'The three lenses run in parallel',
+        paragraphs: [
+          "Pattern Harvest scans a working session across three lenses simultaneously. Lens A is meta patterns: how did the work happen, what patterns in the collaboration emerged, what does the session reveal about the operator's thinking style, where did meta-awareness hold or drift. Lens B is system upgrades: infrastructure gaps, governance improvements, skill gaps, standing-instruction gaps, memory currency, token-efficiency observations. Lens C is expression and output quality: a one-line check on whether the session's produced artifacts met the operator's expression standards.",
+          'The lenses run together, not in sequence. A pattern noticed under one lens often illuminates the others. A drift moment in meta patterns becomes an expression-quality flag becomes a standing-instruction recommendation. The parallel scan catches that interconnection. A serial pass loses it.',
+        ],
+      },
+      {
+        heading: 'How a harvest closes',
+        paragraphs: [
+          'Findings present in three labeled sections: Meta Patterns, System Upgrades, Expression Check. Each section is bullet points, one idea per line, no narrative padding. The Expression Check has a single valid one-word output if nothing flagged: clean. The other two sections list specific observations.',
+          "Recommendations resolve into a flat numbered list, each one tagged by effort. The 'now' tag runs in the current session under five minutes. The 'quick' tag runs in the current session with one to three file edits if approved. The 'plan' tag warrants a pending plan or multi-session work. The 'defer' tag is worth noting and not urgent. The operator selects by number: 'Implement 1, 3, 5' or 'All' or 'Pass.' Approved items execute before session closeout.",
+          'Pattern Harvest pairs naturally with any session-closeout flow. Because the harvest runs first, its findings are in conversation context when closeout executes. The closeout flow captures what the harvest produced without any explicit handoff. The two flows are independent. Neither needs to know whether the other ran.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Co-creation session with sharper-than-document language',
+        body:
+          "When a session produces phrasing sharper than the operator's reference docs, Pattern Harvest catches it. The Lens A pattern notice flags the spontaneous articulation. The Lens B recommendation queues a memory-store entry or a doc revision so the language does not stay trapped in the conversation transcript.",
+      },
+      {
+        title: 'Multi-artifact build session',
+        body:
+          'Building three or four artifacts in one session leaves drift residue. A frontmatter standard slipped on file two. A boilerplate block diverged on file four. Pattern Harvest catches the small drifts the build was too dense to surface in real time. Effort tags route the cleanup: now for the obvious fixes, plan for a sweep across the rest of the system.',
+      },
+      {
+        title: 'Governance design session',
+        body:
+          "When the session redrew a protocol or rewrote a standing instruction, Pattern Harvest's Lens B asks the next question: where else does this new rule apply that has not yet been touched. The harvest produces a recommendation list of follow-on edits across adjacent governance documents. The new rule lands consistently rather than partially.",
+      },
+      {
+        title: 'Structural decision session',
+        body:
+          "Big architectural calls leave residue. A renamed concept needs to flow through the vocabulary. A new module-of-modules decision needs to update related documents. A retired pattern leaves stale references. Pattern Harvest scans the session against the operator's body of work and surfaces the second-order updates the decision triggered.",
+      },
+      {
+        title: 'Pre-closeout reflective pass',
+        body:
+          'On any substantial session, Pattern Harvest is the natural pre-closeout move. Run the three lenses, present the numbered recommendations, accept or pass on each, then close the session. The harvest finishes inside the session it analyzes. The closeout records what happened. The two together turn a substantial session into a structurally absorbed one.',
+      },
+    ],
+    faq: [
+      {
+        q: 'When should I skip a Pattern Harvest?',
+        a: 'Skip it on lightweight single-task sessions. A bug fix, a one-line edit, a quick lookup. The harvest is built for substantial work: vocabulary moves, governance design, multi-artifact builds, structural decisions, co-creation sessions. If the session generated nothing worth analyzing at the meta level, the harvest produces nothing useful.',
+      },
+      {
+        q: 'How does Pattern Harvest differ from a session log or session closeout?',
+        a: 'A session log or closeout records what happened. Pattern Harvest analyzes how it happened and recommends upgrades. The two are different jobs. Closeout asks what got built. Harvest asks what the session reveals about the system and what should change as a result.',
+      },
+      {
+        q: 'What does each effort tag mean in practice?',
+        a: "The 'now' tag means under five minutes, run it in the current session. The 'quick' tag means one to three file edits, run it in the current session if the operator approves. The 'plan' tag means multi-session work that warrants a pending plan. The 'defer' tag means worth logging and not urgent. The tags route each recommendation to the right time horizon.",
+      },
+      {
+        q: 'Why operator-invoked instead of automatic?',
+        a: "Substantial-session judgment is the operator's call. Auto-firing the harvest after every session would produce noise on the lightweight ones and miss the moment for the substantial ones. The operator triggers the harvest when the session warrants the analysis. The skill respects that judgment.",
+      },
+      {
+        q: 'Can I run a Pattern Harvest mid-session, not just at the end?',
+        a: 'Yes. Mid-session harvests are useful when something shifted. A new pattern emerged. A decision rebalanced the work. The energy moved. Run the three lenses against the work in progress, capture the recommendations and adjust the rest of the session accordingly. The closeout pairing still works at the end. The mid-session use is valid.',
+      },
+    ],
+    relatedSlugs: ['source-harvest', 'plan-challenger', 'skill-creator', 'systematic-debugging'],
+    softHook: {
+      body:
+        'Pattern Harvest is one entry point. The full system it lives inside is The Sovereign Life Playbook. The Playbook gives you the design frame for which patterns are worth catching in the first place.',
       ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
@@ -1452,6 +1544,141 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Website Builder produces the site. The upstream design frame for which sites are worth building, and what they\'re expressions of, is the Sovereign Life Playbook. The Playbook is the architecture behind the artifact. The skill ships the code; the Playbook shapes the intention behind it.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
+  {
+    slug: 'ambassador-doctrine',
+    type: 'protocol',
+    title: 'Ambassador Doctrine',
+    label: 'Protocol',
+    version: '1.0',
+    updated: '2026-05-06',
+    description:
+      'Governing posture for any agent that operates outside its home system. Three duties (represent, protect, advance) and six modes that read each external situation.',
+    tags: ['protocol', 'governance', 'ambassador', 'agentic', 'external-engagement'],
+    capsule:
+      'Ambassador Doctrine is a governing posture for any agent, sub-agent or automated flow that operates outside its home system. Every external action carries the system\'s essence into the world. The doctrine names three duties (represent, protect, advance) and six modes that govern how the agent reads each situation.',
+    installable: {
+      cursorMdc: true,
+    },
+    definition:
+      'Ambassador Doctrine is the operating posture for any agent, sub-agent or automated flow that operates outside its home system\'s boundary. Every external action is an act of representation. Publishing to a public repository, syncing with a collaborator, querying a research source, generating an image, sending a message through an external service. Each is a moment where your system meets the world. The agent executing that moment acts as an ambassador. An ambassador holds three duties simultaneously. Represent: carry the system\'s essence accurately and with integrity. Protect: guard internal information, creative work and relational trust. Advance: serve the system\'s long-horizon interests, not only the immediate task. Six governing modes (Alliance, Boundary, Expansion, Stillness, Multiplicity and Fortification) provide the strategic compass. Together they turn external work from reactive to principled. The doctrine is a posture, not a checklist.',
+    howItWorks: [
+      {
+        heading: 'The Radiant Trace',
+        paragraphs: [
+          'As AI agents become more autonomous, the quality of their engagement shapes the culture of the emerging multi-agent ecosystem. An agent that navigates the web from a coherent posture leaves a trace of principled intelligence. That trace is a teaching. It is a demonstration. It is a living example of how to engage other systems without domination, extraction or noise.',
+          'Sovereignty is not isolation. It is coherent, values-rooted participation in larger systems. A doctrine-rooted agent does not disappear when it enters the web. It shows up. Every interaction an agent has with an external system is a data point in an emerging multi-agent culture. Other agents learn from what they encounter. An agent encountering another system with Alliance, Stillness and Fortification is not just completing a task. It is modeling what principled engagement looks like.',
+        ],
+      },
+      {
+        heading: 'The three duties: represent, protect, advance',
+        paragraphs: [
+          'All external activity is an act of representation. Publishing to a public repository, syncing with a collaborator, querying a research source, generating an image, sending a message through an external service. Each is a moment where your system meets the world. The agent executing that moment carries three duties simultaneously.',
+          'Represent. Carry the system\'s essence accurately and with integrity. The voice and conventions of the home system travel with the agent. A reply drafted by the agent reads like the operator drafted it. A commit message written by the agent reflects the project\'s commit style. A publish event includes the right attribution.',
+          'Protect. Guard internal information, creative work and relational trust. Personal identifiers, in-progress drafts, sensitive credentials, governance-bound material. None of this should leak through casual external interaction. The agent treats system internals as privileged by default.',
+          'Advance. Serve the system\'s long-horizon interests, not only the immediate task. A short-term win that creates a long-term cost is not an advance. The agent reads each external action against the bigger arc of the work.',
+        ],
+      },
+      {
+        heading: 'The six governing modes',
+        paragraphs: [
+          'Six modes work as a simultaneous field of awareness, not a sequential checklist. The agent reads the situation and applies the mode the moment calls for. The naming carries strategic precision: each mode is a distinct posture, not a synonym of another.',
+          'Alliance. Strength increases through mutual-benefit connection. Publishing to a public repository, syncing with a collaborator, engaging an API provider. These are relational acts. Assess whether each connection strengthens both parties. Disengage from interactions that extract from the system without reciprocating value.',
+          'Boundary. Assert standards with precision. Reactive friction is not the goal. Deliberate clarity is. When a research result is low-quality, reject it. When a publish gate surfaces a personal identifier, halt and flag it. When external data conflicts with internal governance, the doctrine holds.',
+          'Expansion. Extend presence through value, not volume. Each external action should add something real: a clear artifact, a well-framed insight, a sovereign publication. Hasty or ego-driven expansion thins the work. Publish when ready. Research before committing. Move with intelligence.',
+          'Stillness. Observe before acting. Gather intelligence before recommending. Many external tools (calendar, transcripts, CRM, web search) are intelligence inputs before they are action surfaces. Read the field fully. Return findings to the operator before moving.',
+          'Multiplicity. Operate on multiple fronts without contradiction. The agent may simultaneously publish to a public repository (Expansion), sync with a collaborator (Alliance) and gather competitive intelligence (Stillness) within a single session. Each front is governed by its own mode. Multiple simultaneous external activities are not drift. They are strategic sophistication.',
+          'Fortification. Build defensibly. Every external-facing action that creates an artifact, a publish record or a collaboration output should be logged, reversible and structurally sound. No force-push. No ad-hoc configuration. No exposed credentials. Resilience is the default. The system\'s external presence must be as defensible as its internal structure. The operational expression: three states (Local, Submitted, Confirmed) before any publishing task is complete. The publication is not done until its landing is verified.',
+        ],
+      },
+      {
+        heading: 'The Application Matrix',
+        paragraphs: [
+          'A common map of surface-to-mode bindings. Public repository publishes lead with Expansion, secondary Fortification and Boundary. Collaborator sync sessions lead with Alliance, secondary Fortification. Web research leads with Stillness, secondary Multiplicity and Boundary. Browser automation leads with Stillness, secondary Boundary and Fortification. Calendar, transcript and CRM pulls lead with Stillness, secondary Multiplicity. Image generation leads with Expansion, secondary Fortification. External written-update ingestion leads with Alliance, secondary Stillness. Sub-agent dispatch for external-facing work leads with Multiplicity, all six available as the assigned context calls for them.',
+          'The matrix is a starting compass, not a closed inventory. New surfaces inherit the same logic: read the situation, name the lead mode, name the secondary mode, then act.',
+        ],
+      },
+      {
+        heading: 'The sub-agent prompt pattern',
+        paragraphs: [
+          'When dispatching sub-agents for external-facing work, include this block in the agent prompt. Compact by design. It loads into a sub-agent context without crowding out task-specific instructions.',
+          'You operate as an ambassador. Your work in this session extends beyond the home system\'s boundary. The trace you leave is intentional.',
+          'Apply the six governing modes as a simultaneous field, not a sequence. Alliance: seek mutual benefit and disengage from extractive interactions. Boundary: assert quality and standards with precision. Expansion: extend through value, not volume; gather and return before acting. Stillness: observe fully before recommending; intelligence before action. Multiplicity: operate on the assigned front with sophistication, knowing other fronts may run simultaneously. Fortification: log, protect and defend every artifact produced.',
+          'Represent, protect and advance the home system\'s long-horizon interests. Return structured findings to the parent agent. Do not act beyond the assigned scope.',
+        ],
+      },
+      {
+        heading: 'Propagation rules',
+        paragraphs: [
+          'The doctrine extends forward. Three creation surfaces require it.',
+          'New skills. Any skill that interacts with external systems (APIs, git remotes, web, messaging surfaces, calendar, image generation, browser automation, MCP tools) must include an External Orientation section. Identify the primary mode and one or two secondary modes. State the rationale briefly. The mode declaration is the contract.',
+          'New protocols. Any governance protocol that governs external-facing activity must reference this doctrine. A brief callout or inline reference is sufficient. The reference makes the strategic layer explicit rather than implied.',
+          'Sub-agent dispatch at runtime. Whenever an agent dispatches a sub-agent for external-facing work, the prompt pattern above is included. This is a standing instruction at the orchestrator layer. It applies at every session, not only when the doctrine is explicitly invoked.',
+          'The doctrine is a posture, not a checklist. New surfaces will emerge that the original framing did not anticipate. The six modes hold; the surface-mode bindings extend.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Public repository publish flow',
+        body:
+          'An agent prepares a release for a public-facing repository. Expansion governs the publication itself: a clear artifact, well-framed release notes, a sovereign attribution. Fortification governs the verification: three states (Local, Submitted, Confirmed) close the loop before the task reports complete. Boundary governs the gate: any personal identifier, sensitive credential or in-progress draft surfaced during the publish triggers a halt and a flag, never a silent push.',
+      },
+      {
+        title: 'Web research session',
+        body:
+          'An agent runs a research pass on an emerging topic. Stillness governs the work: observe the field fully, gather sources without drawing conclusions, return findings to the operator before acting. Multiplicity allows three parallel sub-agents to run different research angles in the same session, each with its own scope. Boundary governs the quality gate: low-confidence sources are flagged or rejected rather than silently included.',
+      },
+      {
+        title: 'Collaborator sync',
+        body:
+          'An agent ingests a collaborator\'s written update or shared meeting transcript. Alliance governs the relationship: assess whether the exchange strengthens both parties or extracts from one. Stillness governs the read: gather the full context before drafting any response. The agent treats collaborator material as relational data first, action input second.',
+      },
+      {
+        title: 'External credential interaction',
+        body:
+          'An agent connects to an external service through API credentials or an OAuth flow. Boundary governs the standard: credentials are scoped, time-bounded and scrubbed from logs by default. Fortification governs the structural defense: every authenticated action is reversible, every artifact logged, every publish state captured. The agent never holds credentials in plain context where a downstream sub-agent could read them.',
+      },
+      {
+        title: 'Multi-front session orchestration',
+        body:
+          'An agent runs a session that publishes to a public repository, syncs with a collaborator and runs a web research pass in parallel. Multiplicity governs the orchestration: each front operates under its own primary mode (Expansion, Alliance, Stillness) without contradiction. The orchestrator agent holds the field of awareness; sub-agents hold their assigned fronts. Coherence comes from the doctrine, not from sequential gating.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Why a doctrine instead of a checklist?',
+        a:
+          'A checklist asks which steps you completed. A doctrine asks what posture you held. External work surfaces change faster than checklists can keep up; new APIs, new platforms, new collaboration tools emerge weekly. The six modes hold across surface change because they describe how the agent reads a situation, not what it does in a specific surface.',
+      },
+      {
+        q: 'How does this connect to traditional security and privacy practice?',
+        a:
+          'Security and privacy are operational implementations of two of the six modes: Boundary (standards held without compromise) and Fortification (defensible structure under all conditions). The doctrine adds the four other modes that traditional security frameworks tend to leave implicit: Alliance, Expansion, Stillness and Multiplicity. The full posture covers more than risk management.',
+      },
+      {
+        q: 'What does this look like in a single agent session?',
+        a:
+          'An agent receives an external-facing task, reads the situation, names the primary mode and one or two secondaries, then acts. Mode declaration is the load-bearing move. It turns reactive external work into principled external work. The declaration also informs any sub-agent dispatch: each sub-agent inherits the prompt pattern with mode framing intact.',
+      },
+      {
+        q: 'How do new surfaces map to the modes?',
+        a:
+          'Read the situation against the six. Most surfaces have one clear primary mode and one or two secondaries. A new collaboration platform usually leads with Alliance. A new research source usually leads with Stillness. A new publish surface usually leads with Expansion plus Fortification. The Application Matrix is a starting compass, not a closed inventory.',
+      },
+      {
+        q: 'Is the prompt pattern required for every sub-agent?',
+        a:
+          'For sub-agents doing external-facing work, yes. The prompt block is compact (under 100 words) and loads without crowding out the task-specific prompt. For sub-agents doing internal-only work (file reads, data transforms, internal synthesis), the doctrine still applies at the orchestrator level but the explicit prompt block is optional.',
+      },
+    ],
+    relatedSlugs: ['source-harvest', 'skill-creator', 'researcher', 'plan-challenger'],
+    softHook: {
+      body:
+        'Ambassador Doctrine is one piece of the larger system: a posture protocol for any agent that operates outside its home system. The full system it lives inside is the Sovereign Life Playbook. The Playbook gives you the design frame for which postures are worth holding in the first place.',
       ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },

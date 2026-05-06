@@ -1,10 +1,10 @@
-import { getAssetBySlug, getAssetsByType } from '@/data/library'
+import { igosAssets } from '@/data/library'
 import { generateCursorMdc } from '@/lib/markdown-content'
 
 export const dynamic = 'force-static'
 
 export async function generateStaticParams() {
-  return getAssetsByType('skill')
+  return igosAssets
     .filter(a => a.installable?.cursorMdc)
     .map(a => ({ file: `${a.slug}.mdc` }))
 }
@@ -20,7 +20,7 @@ export async function GET(
   }
 
   const slug = file.slice(0, -'.mdc'.length)
-  const asset = getAssetBySlug(slug, 'skill')
+  const asset = igosAssets.find(a => a.slug === slug)
 
   if (!asset || !asset.installable?.cursorMdc) {
     return new Response('Not found', { status: 404 })

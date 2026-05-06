@@ -25,6 +25,24 @@
       }
     },
     {
+      "name": "pattern-harvest",
+      "description": "Reflective session-level pattern extraction. Three parallel lenses produce a numbered recommendation list the operator selects from. Run before session closeout on substantial sessions.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/pattern-harvest"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/pattern-harvest",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": ["harvest", "reflection", "meta", "session", "governance"],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
+    },
+    {
       "name": "plan-challenger",
       "description": "Adversarial pre-build pass that challenges a plan before execution begins. Five angles, one verdict.",
       "version": "1.0.0",
