@@ -403,7 +403,7 @@ export default function SovereignEcosystemPage() {
                     textTransform: 'uppercase',
                   }}
                 >
-                  Frank A. &mdash; Sovereign Ecosystem Install
+                  Frank A. / Sovereign Ecosystem Install
                 </p>
               </blockquote>
             </section>

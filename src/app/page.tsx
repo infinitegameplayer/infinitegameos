@@ -227,7 +227,7 @@ export default function HomePage() {
             <div style={{ maxWidth: '52ch' }}>
               <p className="label" style={{ marginBottom: '0.75rem' }}>The foundation</p>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'rgba(226, 232, 240, 0.75)', lineHeight: 1.7 }}>
-                Before concepts and skills, there is a workspace. The Sovereign Ecosystem is the foundational template — directory structure, governance scaffolding, first skill set. Free and open. The starting conditions for a sovereign AI practice.
+                Before concepts and skills, there is a workspace. The Sovereign Ecosystem is the foundational template. Directory structure, governance scaffolding, first skill set. Free and open. The starting conditions for a sovereign AI practice.
               </p>
             </div>
             <Link href="/sovereign-ecosystem" className="btn-outline">Get the template</Link>
