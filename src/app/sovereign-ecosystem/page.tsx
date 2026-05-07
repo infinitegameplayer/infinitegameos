@@ -59,6 +59,22 @@ const breadcrumbSchema = {
   ],
 }
 
+const offerSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Offer',
+  name: 'Sovereign Ecosystem Install Session',
+  description: 'Two 1-hour sessions with Lane to set up your Sovereign Ecosystem.',
+  url: 'https://sidequesthq.co/sovereign-ecosystem-install',
+  price: '247',
+  priceCurrency: 'USD',
+  availability: 'https://schema.org/InStock',
+  seller: {
+    '@type': 'Organization',
+    name: 'Side Quest HQ',
+    url: 'https://sidequesthq.co',
+  },
+}
+
 export default function SovereignEcosystemPage() {
   return (
     <>
@@ -73,6 +89,10 @@ export default function SovereignEcosystemPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(offerSchema) }}
       />
 
       <article style={{ paddingTop: '7rem' }}>
@@ -437,7 +457,7 @@ export default function SovereignEcosystemPage() {
                     marginBottom: '1rem',
                   }}
                 >
-                  &ldquo;Lane Belone built something I didn&apos;t know was possible. An AI interface that lives on my own computer, in my own files, in my own vault. Not in the cloud. Not on someone else&apos;s server. Mine. It knows me because I have taught it, and what I have taught it stays with me. What he has built is not an AI assistant. It is an AI companion &mdash; one that earns trust over time, that holds your story with discretion and intelligence. I am 62 years old. I have met a lot of people and used a lot of tools. I do not impress easily. Lane Belone impressed me.&rdquo;
+                  &ldquo;Lane Belone built something I didn&apos;t know was possible. An AI interface that lives on my own computer, in my own files, in my own vault. Not in the cloud. Not on someone else&apos;s server. Mine. It knows me because I have taught it, and what I have taught it stays with me. [&hellip;] What he has built is not an AI assistant. It is an AI companion &mdash; one that earns trust over time, that holds your story with discretion and intelligence. I am 62 years old. I have met a lot of people and used a lot of tools. I do not impress easily. Lane Belone impressed me.&rdquo;
                 </p>
                 <p
                   style={{
@@ -498,6 +518,54 @@ export default function SovereignEcosystemPage() {
                   Browse the source on GitHub
                 </a>
               </div>
+            </div>
+          </SectionReveal>
+
+          <SectionReveal delay={380}>
+            <div
+              style={{
+                marginTop: '2rem',
+                marginBottom: '2rem',
+                padding: '2rem',
+                border: '1px solid var(--color-border)',
+                borderRadius: '0.5rem',
+                maxWidth: '56ch',
+              }}
+            >
+              <p className="label" style={{ marginBottom: '1rem' }}>
+                Install Session
+              </p>
+              <h3
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '1.25rem',
+                  fontWeight: 600,
+                  marginBottom: '1rem',
+                }}
+              >
+                Want help installing this?
+              </h3>
+              <p
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '0.95rem',
+                  color: 'var(--color-muted)',
+                  lineHeight: 1.65,
+                  marginBottom: '1.5rem',
+                }}
+              >
+                Two sixty-minute sessions with Lane to get the Ecosystem
+                standing on its own in your workspace. Some Pioneers solo
+                the install. Some prefer a hand.
+              </p>
+              <a
+                href="https://sidequesthq.co/sovereign-ecosystem-install"
+                className="btn-outline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book the Install →
+              </a>
             </div>
           </SectionReveal>
 
