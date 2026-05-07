@@ -176,6 +176,51 @@ export default function SovereignEcosystemPage() {
             </div>
           </SectionReveal>
 
+          <SectionReveal delay={30}>
+            <div
+              style={{
+                marginBottom: '3rem',
+                padding: '2rem',
+                border: '1px solid var(--color-border)',
+                borderRadius: '0.5rem',
+                maxWidth: '56ch',
+              }}
+            >
+              <p className="label" style={{ marginBottom: '1rem' }}>
+                Read the guides
+              </p>
+              <p
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '0.95rem',
+                  color: 'var(--color-muted)',
+                  lineHeight: 1.65,
+                  marginBottom: '1.5rem',
+                }}
+              >
+                Two PDFs cover the full build. Quick Start walks the install. Build Sequence walks the ten sessions that follow. Direct downloads here. Both also ship inside the repo at <code style={{ fontSize: '0.875em' }}>Getting Started/</code>. Read first, install when you are ready.
+              </p>
+              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                <a
+                  href="https://sidequesthq.co/downloads/sovereign-ecosystem-quick-start-guide.pdf"
+                  className="btn-accent"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Quick Start Guide (PDF)
+                </a>
+                <a
+                  href="https://sidequesthq.co/downloads/sovereign-ecosystem-session-guide.pdf"
+                  className="btn-outline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Build Sequence (PDF)
+                </a>
+              </div>
+            </div>
+          </SectionReveal>
+
           <div className="prose">
             <SectionReveal delay={60}>
               <h2>What it is</h2>
