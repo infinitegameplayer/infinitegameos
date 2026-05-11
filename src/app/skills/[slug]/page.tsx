@@ -26,6 +26,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${asset.title} — Skill`,
     description: asset.description,
+    openGraph: {
+      title: `${asset.title} — Skill`,
+      url: `${SITE}/skills/${asset.slug}`,
+    },
     alternates: {
       canonical: `${SITE}/skills/${asset.slug}`,
       types: {

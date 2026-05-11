@@ -26,6 +26,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${asset.title} — Protocol`,
     description: asset.description,
+    openGraph: {
+      title: `${asset.title} — Protocol`,
+      url: `${SITE}/protocols/${asset.slug}`,
+    },
     alternates: {
       canonical: `${SITE}/protocols/${asset.slug}`,
       types: {

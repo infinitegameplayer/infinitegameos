@@ -9,6 +9,11 @@ export interface ConceptProductCard {
   ctaLabel: string
 }
 
+export interface ConceptFaqItem {
+  q: string
+  a: string
+}
+
 export interface Concept {
   slug: string
   title: string
@@ -16,11 +21,18 @@ export interface Concept {
   capsule: string
   subtitle: string
   sections: ConceptSection[]
+  // faq: when present, feeds both the rendered FAQ section and FAQPage JSON-LD.
+  // Add a ConceptFaqItem[] array here and to concepts/[slug]/page.tsx schema
+  // when FAQ content is authored for a concept page.
+  faq?: ConceptFaqItem[]
   relatedSlugs: string[]
   ctaLinks: { href: string; label: string; variant: 'accent' | 'outline' }[]
   productCard?: ConceptProductCard
 }
 
+// FAQPage schema gap: no concept below has an faq[] array yet.
+// When FAQ content is authored for a concept, add faq: ConceptFaqItem[] to that entry.
+// The concepts/[slug]/page.tsx will emit FAQPage JSON-LD automatically once faq is present.
 export const concepts: Concept[] = [
   {
     slug: 'creator-flywheel',

@@ -20,6 +20,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: concept.title,
     description: concept.capsule,
+    openGraph: {
+      title: concept.title,
+      url: `https://www.infinitegameos.io/concepts/${concept.slug}`,
+    },
     alternates: {
       canonical: `https://www.infinitegameos.io/concepts/${concept.slug}`,
     },
@@ -89,12 +93,29 @@ export default async function ConceptPage({ params }: PageProps) {
     license: 'https://creativecommons.org/licenses/by/4.0/',
   }
 
+  const faqSchema =
+    concept.faq && concept.faq.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: concept.faq.map(item => ({
+            '@type': 'Question',
+            name: item.q,
+            acceptedAnswer: { '@type': 'Answer', text: item.a },
+          })),
+        }
+      : null
+
+  const schemas = faqSchema
+    ? [definedTermSchema, breadcrumbSchema, articleSchema, faqSchema]
+    : [definedTermSchema, breadcrumbSchema, articleSchema]
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([definedTermSchema, breadcrumbSchema, articleSchema]),
+          __html: JSON.stringify(schemas),
         }}
       />
 

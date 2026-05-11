@@ -4,14 +4,16 @@ import SectionReveal from '@/components/SectionReveal'
 import { sovereignEcosystemFaqs } from '@/lib/page-data'
 
 export const metadata: Metadata = {
-  title: 'Sovereign Ecosystem. Foundational Obsidian + Claude Code Template',
+  title: {
+    absolute: 'Sovereign Ecosystem. Obsidian + Claude Code Workspace Template',
+  },
   description:
     'The Sovereign Ecosystem is a foundational Obsidian + Claude Code workspace template. Directory structure, governance scaffolding, North Star template and an initial skill set. The three-tier stack origin for sovereign-first AI practitioners.',
   openGraph: {
     type: 'website',
     siteName: 'Infinite Game OS',
     locale: 'en_US',
-    title: 'Sovereign Ecosystem. Foundational Obsidian + Claude Code Template',
+    title: 'Sovereign Ecosystem. Obsidian + Claude Code Workspace Template',
     description:
       'The Sovereign Ecosystem is a foundational Obsidian + Claude Code workspace template. Directory structure, governance scaffolding, North Star template and an initial skill set. The three-tier stack origin for sovereign-first AI practitioners.',
     url: 'https://www.infinitegameos.io/sovereign-ecosystem',

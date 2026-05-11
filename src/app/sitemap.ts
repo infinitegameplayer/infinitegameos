@@ -1,41 +1,66 @@
 import type { MetadataRoute } from 'next'
 import { getAllUpdates } from '@/lib/updates'
-import { getAllConceptSlugs } from '@/data/concepts'
+import { concepts } from '@/data/concepts'
 import { getAssetsByType } from '@/data/library'
+
+// Dates for pages whose content is static and tracked manually.
+// Update these when the page content changes rather than leaving them
+// as hardcoded launch-day timestamps. Per codex V.8: lastModified must
+// reflect actual page-data timestamps, not deployment boilerplate.
+const PAGE_DATES: Record<string, string> = {
+  '/':                   '2026-04-19',
+  '/the-os':             '2026-04-19',
+  '/accord':             '2026-04-28',
+  '/infinite-game':      '2026-04-19',
+  '/agentic-systems':    '2026-04-19',
+  '/sovereignty':        '2026-04-26',
+  '/playbooks':          '2026-04-19',
+  '/about':              '2026-04-19',
+  '/concepts':           '2026-04-19',
+  '/protocols':          '2026-05-06',
+  '/sovereign-ecosystem': '2026-05-05',
+}
+
+function pageDate(path: string): Date {
+  const d = PAGE_DATES[path]
+  return d ? new Date(d + 'T00:00:00.000Z') : new Date()
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const updates = getAllUpdates()
   const updateEntries: MetadataRoute.Sitemap = updates.map(u => ({
     url: `https://www.infinitegameos.io/updates/${u.slug}`,
-    lastModified: new Date(u.date + 'T00:00:00Z'),
+    lastModified: new Date(u.date + 'T00:00:00.000Z'),
     changeFrequency: 'monthly',
     priority: 0.7,
   }))
 
-  const conceptEntries: MetadataRoute.Sitemap = getAllConceptSlugs().map(slug => ({
-    url: `https://www.infinitegameos.io/concepts/${slug}`,
-    lastModified: new Date('2026-04-19T00:00:00Z'),
+  // Concepts have no per-entry updated field; use the concepts index date
+  // until per-concept updated timestamps are added to concepts.ts.
+  const conceptEntries: MetadataRoute.Sitemap = concepts.map(c => ({
+    url: `https://www.infinitegameos.io/concepts/${c.slug}`,
+    lastModified: pageDate('/concepts'),
     changeFrequency: 'monthly' as const,
     priority: 0.85,
   }))
 
   const skillEntries: MetadataRoute.Sitemap = getAssetsByType('skill').map(asset => ({
     url: `https://www.infinitegameos.io/skills/${asset.slug}`,
-    lastModified: new Date(asset.updated + 'T00:00:00Z'),
+    lastModified: new Date(asset.updated + 'T00:00:00.000Z'),
     changeFrequency: 'monthly' as const,
     priority: 0.85,
   }))
 
   const protocolEntries: MetadataRoute.Sitemap = getAssetsByType('protocol').map(asset => ({
     url: `https://www.infinitegameos.io/protocols/${asset.slug}`,
-    lastModified: new Date(asset.updated + 'T00:00:00Z'),
+    lastModified: new Date(asset.updated + 'T00:00:00.000Z'),
     changeFrequency: 'monthly' as const,
     priority: 0.85,
   }))
 
   const bundleEntries: MetadataRoute.Sitemap = getAssetsByType('bundle').map(asset => ({
     url: `https://www.infinitegameos.io/bundles/${asset.slug}`,
-    lastModified: new Date(asset.updated + 'T00:00:00Z'),
+    lastModified: new Date(asset.updated + 'T00:00:00.000Z'),
     changeFrequency: 'monthly' as const,
     priority: 0.9,
   }))
@@ -43,43 +68,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: 'https://www.infinitegameos.io/',
-      lastModified: new Date('2026-04-19T00:00:00Z'),
+      lastModified: pageDate('/'),
       changeFrequency: 'monthly',
       priority: 1.0,
     },
     {
       url: 'https://www.infinitegameos.io/the-os',
-      lastModified: new Date('2026-04-19T00:00:00Z'),
+      lastModified: pageDate('/the-os'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: 'https://www.infinitegameos.io/accord',
-      lastModified: new Date('2026-04-28T00:00:00Z'),
+      lastModified: pageDate('/accord'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: 'https://www.infinitegameos.io/infinite-game',
-      lastModified: new Date('2026-04-19T00:00:00Z'),
+      lastModified: pageDate('/infinite-game'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: 'https://www.infinitegameos.io/agentic-systems',
-      lastModified: new Date('2026-04-19T00:00:00Z'),
+      lastModified: pageDate('/agentic-systems'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: 'https://www.infinitegameos.io/sovereignty',
-      lastModified: new Date('2026-04-26T00:00:00Z'),
+      lastModified: pageDate('/sovereignty'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: 'https://www.infinitegameos.io/playbooks',
-      lastModified: new Date('2026-04-19T00:00:00Z'),
+      lastModified: pageDate('/playbooks'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
@@ -91,21 +116,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.infinitegameos.io/about',
-      lastModified: new Date('2026-04-19T00:00:00Z'),
+      lastModified: pageDate('/about'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: 'https://www.infinitegameos.io/concepts',
-      lastModified: new Date('2026-04-19T00:00:00Z'),
+      lastModified: pageDate('/concepts'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: 'https://www.infinitegameos.io/protocols',
-      lastModified: new Date('2026-05-06T00:00:00Z'),
+      lastModified: pageDate('/protocols'),
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: 'https://www.infinitegameos.io/sovereign-ecosystem',
+      lastModified: pageDate('/sovereign-ecosystem'),
+      changeFrequency: 'monthly',
+      priority: 0.9,
     },
     ...conceptEntries,
     ...skillEntries,

@@ -20,6 +20,10 @@ export async function generateMetadata({
   return {
     title: update.seoTitle ? { absolute: update.seoTitle } : update.title,
     description: update.summary,
+    openGraph: {
+      title: update.seoTitle ?? update.title,
+      url: `https://www.infinitegameos.io/updates/${slug}`,
+    },
     alternates: {
       canonical: `https://www.infinitegameos.io/updates/${slug}`,
     },

@@ -39,6 +39,9 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
+User-agent: OAI-AdsBot
+Allow: /
+
 User-agent: ChatGPT-User
 Allow: /
 
@@ -69,6 +72,9 @@ Allow: /
 User-agent: GoogleAgent-Mariner
 Allow: /
 
+User-agent: Meta-ExternalAgent
+Allow: /
+
 # Search engines — exclude /markdown/ (AI-agent surface) to prevent duplicate
 # indexing. Per Web Strategy Codex Conflict 8: per-bot Disallow only, never blanket.
 User-agent: Googlebot
@@ -78,6 +84,12 @@ Disallow: /markdown/
 User-agent: Bingbot
 Allow: /
 Disallow: /markdown/
+
+User-agent: MSNBot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
 
 # Blocked — low-value scraping
 User-agent: Bytespider
