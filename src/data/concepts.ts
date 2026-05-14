@@ -371,7 +371,7 @@ export const concepts: Concept[] = [
       {
         heading: 'The three-tier stack',
         paragraphs: [
-          'Named live in the May 2 AI for Livin\' Workshop by an attendee mid-demo. The stack has three layers and each one is swappable.',
+          'Named live in an AI for Livin\' Workshop by an attendee mid-demo. The stack has three layers and each one is swappable.',
           'Sovereign Ecosystem is the file structure and the templates. The opinionated foundation that gives the system shape. Obsidian is the reader and editor that turns those files into something you can navigate, search and annotate by hand. Claude Code (or Codex, or any future agentic interface) is the AI that can read, edit and restructure any of it on your instruction.',
           'One layer holds the structure. One translates the files for human navigation. One brings the AI intelligence. Swap any layer and the others survive. That is the durability of building on an open foundation instead of a closed platform.',
         ],
@@ -500,7 +500,7 @@ export const concepts: Concept[] = [
       {
         heading: 'A recognition moment from the room',
         paragraphs: [
-          'During the May 2 AI for Livin\' Workshop, mid-demo, an attendee said it out loud: "You\'re searching through your second brain right now. It\'s like, that\'s happening."',
+          'During an AI for Livin\' Workshop, mid-demo, an attendee said it out loud: "You\'re searching through your second brain right now. It\'s like, that\'s happening."',
           'Yes. That was the demo. The system in motion. Everyone in the room watched what they had been hearing about become a thing you do.',
           'The AI Second Brain is not aspirational architecture. It runs the moment you pick up the tool, point it at the right files and start trusting it. The setup takes about an hour. The trust takes about a week.',
         ],

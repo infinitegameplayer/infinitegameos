@@ -259,7 +259,7 @@ export default function SovereignEcosystemPage() {
                 template is the bone structure. You bring the muscle.
               </p>
               <p>
-                This is the three-tier stack origin. Named live in the May 2
+                This is the three-tier stack origin. Named live in an
                 AI for Livin&apos; Workshop by an attendee mid-demo. Foundation,
                 reader/editor, AI interface. Each layer swappable. The
                 Sovereign Ecosystem is layer one.
