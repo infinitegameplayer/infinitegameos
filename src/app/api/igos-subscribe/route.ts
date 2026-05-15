@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { getSupabaseAdmin } from '@/lib/supabase'
+import { signEmailToken } from '@/lib/unsubscribe-token'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 const AUDIENCE_ID = process.env.RESEND_AUDIENCE_INFINITE_GAME_ID
@@ -8,6 +9,7 @@ const FROM = 'Lane Belone <play@infinitegameos.io>'
 const REPLY_TO = 'play@infinitegameos.io'
 const TAG = 'infinite_game_subscriber'
 const SOURCE_SITE = 'infinitegameos'
+const SITE_URL = 'https://www.infinitegameos.io'
 
 const WELCOME_SUBJECT = 'Welcome to Infinite Game OS updates'
 const WELCOME_PREVIEW =
@@ -15,13 +17,13 @@ const WELCOME_PREVIEW =
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-function buildWelcomeHtml() {
+function buildWelcomeHtml(opts: { unsubscribeUrl: string }) {
   const body = `
     <p>Hi.</p>
     <p>You signed up for Infinite Game OS updates. The real ones, from inside the practice. New skills as they ship. Concepts as they cohere. Playbooks as they prove out.</p>
     <p>Bi-monthly steady state. Sometimes faster when a release lands. No hype, no upsell.</p>
     <p>If a piece is useful, forward it. The unsubscribe link sits on every send.</p>
-    <p>The Updates page lives here:<br><a href="https://www.infinitegameos.io/updates" style="color:#22d3ee;text-decoration:none">https://www.infinitegameos.io/updates</a></p>
+    <p>The Updates page lives here:<br><a href="${SITE_URL}/updates" style="color:#22d3ee;text-decoration:none">${SITE_URL}/updates</a></p>
     <p style="margin-top:2rem">With Joyful Sovereignty,</p>
     <p style="margin-top:0">Lane</p>
   `
@@ -46,7 +48,7 @@ function buildWelcomeHtml() {
           <tr>
             <td style="padding-top:36px;border-top:1px solid rgba(226,232,240,0.07)">
               <p style="margin:0;font-size:13px;color:rgba(226,232,240,0.45);font-family:Arial,sans-serif">
-                Infinite Game OS &middot; <a href="https://www.infinitegameos.io" style="color:rgba(34,211,238,0.7);text-decoration:none">infinitegameos.io</a>
+                Infinite Game OS &middot; <a href="${SITE_URL}" style="color:rgba(34,211,238,0.7);text-decoration:none">infinitegameos.io</a> &middot; <a href="${opts.unsubscribeUrl}" style="color:rgba(34,211,238,0.6);text-decoration:none">one-click unsubscribe</a>
               </p>
             </td>
           </tr>
@@ -156,12 +158,14 @@ export async function POST(req: NextRequest) {
     }
 
     try {
+      const token = signEmailToken(normalizedEmail)
+      const unsubscribeUrl = `${SITE_URL}/unsubscribe?email=${encodeURIComponent(normalizedEmail)}&token=${token}`
       await resend.emails.send({
         from: FROM,
         replyTo: REPLY_TO,
         to: normalizedEmail,
         subject: WELCOME_SUBJECT,
-        html: buildWelcomeHtml(),
+        html: buildWelcomeHtml({ unsubscribeUrl }),
       })
     } catch (err) {
       const m = err instanceof Error ? err.message : 'Unknown error'
