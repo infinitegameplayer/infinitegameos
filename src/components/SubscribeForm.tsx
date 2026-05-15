@@ -80,6 +80,10 @@ export default function SubscribeForm() {
           email: email.trim(),
           honeypot: website,
           openedAt,
+          source:
+            typeof window !== 'undefined'
+              ? window.location.pathname
+              : 'unknown',
         }),
       })
       if (!res.ok) {

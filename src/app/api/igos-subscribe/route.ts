@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { getSupabaseAdmin } from '@/lib/supabase'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 const AUDIENCE_ID = process.env.RESEND_AUDIENCE_INFINITE_GAME_ID
 const FROM = 'Lane Belone <play@infinitegameos.io>'
 const REPLY_TO = 'play@infinitegameos.io'
+const TAG = 'infinite_game_subscriber'
+const SOURCE_SITE = 'infinitegameos'
 
 const WELCOME_SUBJECT = 'Welcome to Infinite Game OS updates'
 const WELCOME_PREVIEW =
@@ -55,9 +58,52 @@ function buildWelcomeHtml() {
 </html>`
 }
 
+function pathToSource(source: unknown): string {
+  if (typeof source !== 'string' || !source) return 'form:updates'
+  if (source === '/updates') return 'form:updates-index'
+  if (source.startsWith('/updates/')) return `form:updates-post:${source.slice('/updates/'.length)}`
+  return `form:${source}`
+}
+
+async function applySupabaseMirror(opts: {
+  email: string
+  source: string
+}): Promise<void> {
+  const supabase = getSupabaseAdmin()
+  const { data: existing, error: selectErr } = await supabase
+    .from('contacts')
+    .select('id, tags, unsubscribed')
+    .eq('email', opts.email)
+    .maybeSingle()
+  if (selectErr) throw selectErr
+
+  if (existing) {
+    const currentTags: string[] = Array.isArray(existing.tags) ? existing.tags : []
+    const mergedTags = currentTags.includes(TAG) ? currentTags : [...currentTags, TAG]
+    const { error: updateErr } = await supabase
+      .from('contacts')
+      .update({
+        tags: mergedTags,
+        unsubscribed: false,
+        unsubscribed_at: null,
+      })
+      .eq('id', existing.id)
+    if (updateErr) throw updateErr
+    return
+  }
+
+  const { error: insertErr } = await supabase.from('contacts').insert({
+    email: opts.email,
+    source_site: SOURCE_SITE,
+    source_form: opts.source,
+    tags: [TAG],
+  })
+  if (insertErr) throw insertErr
+}
+
 export async function POST(req: NextRequest) {
   try {
-    const { email, honeypot, openedAt } = await req.json()
+    const { email, honeypot, openedAt, source } = await req.json()
 
     if (typeof honeypot === 'string' && honeypot.trim().length > 0) {
       return NextResponse.json({ ok: true }, { status: 200 })
@@ -85,6 +131,15 @@ export async function POST(req: NextRequest) {
     }
 
     const normalizedEmail = email.trim().toLowerCase()
+    const sourceForm = pathToSource(source)
+
+    try {
+      await applySupabaseMirror({ email: normalizedEmail, source: sourceForm })
+    } catch (err) {
+      const m = err instanceof Error ? err.message : 'Unknown error'
+      console.error('igos-subscribe supabase mirror error:', m)
+    }
+
     const resend = new Resend(RESEND_API_KEY)
 
     try {
