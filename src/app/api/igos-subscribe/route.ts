@@ -1,0 +1,125 @@
+import { NextRequest, NextResponse } from 'next/server'
+import { Resend } from 'resend'
+
+const RESEND_API_KEY = process.env.RESEND_API_KEY
+const AUDIENCE_ID = process.env.RESEND_AUDIENCE_INFINITE_GAME_ID
+const FROM = 'Lane Belone <play@infinitegameos.io>'
+const REPLY_TO = 'play@infinitegameos.io'
+
+const WELCOME_SUBJECT = 'Welcome to Infinite Game OS updates'
+const WELCOME_PREVIEW =
+  'Dispatches from the practice will arrive as the OS evolves.'
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+function buildWelcomeHtml() {
+  const body = `
+    <p>Hi.</p>
+    <p>You signed up for Infinite Game OS updates. The real ones, from inside the practice. New skills as they ship. Concepts as they cohere. Playbooks as they prove out.</p>
+    <p>Bi-monthly steady state. Sometimes faster when a release lands. No hype, no upsell.</p>
+    <p>If a piece is useful, forward it. The unsubscribe link sits on every send.</p>
+    <p>The Updates page lives here:<br><a href="https://www.infinitegameos.io/updates" style="color:#22d3ee;text-decoration:none">https://www.infinitegameos.io/updates</a></p>
+    <p style="margin-top:2rem">With Joyful Sovereignty,</p>
+    <p style="margin-top:0">Lane</p>
+  `
+  const preview = `<div style="display:none;max-height:0;overflow:hidden;mso-hide:all">${WELCOME_PREVIEW}</div>`
+  return `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="margin:0;padding:0;background-color:#06090e;color:#e2e8f0;font-family:'Inter',Arial,sans-serif;font-size:16px;line-height:1.75">
+  ${preview}
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#06090e">
+    <tr>
+      <td align="center" style="padding:40px 20px">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px">
+          <tr>
+            <td style="color:#e2e8f0;font-family:'Inter',Arial,sans-serif;font-size:16px;line-height:1.75">
+              ${body}
+            </td>
+          </tr>
+          <tr>
+            <td style="padding-top:36px;border-top:1px solid rgba(226,232,240,0.07)">
+              <p style="margin:0;font-size:13px;color:rgba(226,232,240,0.45);font-family:Arial,sans-serif">
+                Infinite Game OS &middot; <a href="https://www.infinitegameos.io" style="color:rgba(34,211,238,0.7);text-decoration:none">infinitegameos.io</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`
+}
+
+export async function POST(req: NextRequest) {
+  try {
+    const { email, honeypot, openedAt } = await req.json()
+
+    if (typeof honeypot === 'string' && honeypot.trim().length > 0) {
+      return NextResponse.json({ ok: true }, { status: 200 })
+    }
+
+    if (typeof openedAt === 'number' && Date.now() - openedAt < 1500) {
+      return NextResponse.json({ ok: true }, { status: 200 })
+    }
+
+    if (typeof email !== 'string' || !EMAIL_REGEX.test(email.trim())) {
+      return NextResponse.json(
+        { error: 'Please enter a valid email.' },
+        { status: 400 }
+      )
+    }
+
+    if (!RESEND_API_KEY || !AUDIENCE_ID) {
+      console.error(
+        'igos-subscribe: missing RESEND_API_KEY or RESEND_AUDIENCE_INFINITE_GAME_ID'
+      )
+      return NextResponse.json(
+        { error: 'Subscribe is offline. Try again later.' },
+        { status: 500 }
+      )
+    }
+
+    const normalizedEmail = email.trim().toLowerCase()
+    const resend = new Resend(RESEND_API_KEY)
+
+    try {
+      await resend.contacts.create({
+        audienceId: AUDIENCE_ID,
+        email: normalizedEmail,
+        unsubscribed: false,
+      })
+    } catch (err) {
+      const m = err instanceof Error ? err.message : 'Unknown error'
+      if (!/already exists|409/i.test(m)) {
+        console.error('igos-subscribe contacts.create error:', m)
+      }
+    }
+
+    try {
+      await resend.emails.send({
+        from: FROM,
+        replyTo: REPLY_TO,
+        to: normalizedEmail,
+        subject: WELCOME_SUBJECT,
+        html: buildWelcomeHtml(),
+      })
+    } catch (err) {
+      const m = err instanceof Error ? err.message : 'Unknown error'
+      console.error('igos-subscribe welcome send error:', m)
+    }
+
+    return NextResponse.json({ ok: true }, { status: 200 })
+  } catch (err) {
+    const m = err instanceof Error ? err.message : 'Unknown error'
+    console.error('igos-subscribe error:', m)
+    return NextResponse.json(
+      { error: 'Something went wrong.' },
+      { status: 500 }
+    )
+  }
+}

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import SectionReveal from '@/components/SectionReveal'
+import SubscribeForm from '@/components/SubscribeForm'
 import { getAllUpdates, getUpdate } from '@/lib/updates'
 
 export function generateStaticParams() {
@@ -110,7 +111,11 @@ export default async function UpdatePage({
             </SectionReveal>
           </div>
 
-          <SectionReveal delay={100}>
+          <SectionReveal delay={80}>
+            <SubscribeForm />
+          </SectionReveal>
+
+          <SectionReveal delay={140}>
             <div
               style={{ marginTop: '3rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
             >

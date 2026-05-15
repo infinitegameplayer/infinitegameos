@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
+import SubscribeForm from '@/components/SubscribeForm'
 import { getAllUpdates } from '@/lib/updates'
 
 export const metadata: Metadata = {
@@ -166,7 +167,11 @@ export default function UpdatesPage() {
             </div>
           </SectionReveal>
 
-          <SectionReveal delay={140}>
+          <SectionReveal delay={120}>
+            <SubscribeForm />
+          </SectionReveal>
+
+          <SectionReveal delay={160}>
             <div
               style={{ marginTop: '3rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
             >
