@@ -117,6 +117,7 @@ export const concepts: Concept[] = [
     ],
     ctaLinks: [
       { href: '/concepts/ideal-month', label: 'The Ideal Month', variant: 'accent' },
+      { href: '/creator-business-without-performing', label: 'Build Without Performing', variant: 'outline' },
     ],
   },
   {
@@ -181,6 +182,7 @@ export const concepts: Concept[] = [
     ],
     ctaLinks: [
       { href: '/concepts/conditioned-vs-authentic-identity', label: 'Identity Work', variant: 'accent' },
+      { href: '/play-your-own-game', label: 'Play Your Own Game', variant: 'outline' },
     ],
   },
   {
@@ -241,6 +243,7 @@ export const concepts: Concept[] = [
     ctaLinks: [
       { href: '/the-os', label: 'The OS', variant: 'accent' },
       { href: '/infinite-game', label: 'Infinite Game', variant: 'outline' },
+      { href: '/play-your-own-game', label: 'Play Your Own Game', variant: 'outline' },
     ],
   },
   {
@@ -371,6 +374,7 @@ export const concepts: Concept[] = [
     ctaLinks: [
       { href: '/concepts/creator-flywheel', label: 'Creator Flywheel', variant: 'accent' },
       { href: '/sovereignty', label: 'Sovereignty', variant: 'outline' },
+      { href: '/design-your-day', label: 'Design Your Day', variant: 'outline' },
     ],
   },
   {
@@ -443,6 +447,7 @@ export const concepts: Concept[] = [
     ],
     ctaLinks: [
       { href: '/infinite-game', label: 'The Infinite Game', variant: 'outline' },
+      { href: '/design-your-day', label: 'Design Your Day', variant: 'outline' },
     ],
     productCard: {
       body: 'The Sovereign Life Playbook is where the Playgrounds of Exploration become the architecture of your day. Chapter 4 is dedicated to this practice: mapping your current Playgrounds, designing intentional ones, building the day from aliveness rather than obligation.',
