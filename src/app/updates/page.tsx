@@ -7,14 +7,14 @@ import { getAllUpdates } from '@/lib/updates'
 export const metadata: Metadata = {
   title: 'Updates: From Inside the Practice',
   description:
-    'Regular dispatches from Lane Belone as the Infinite Game OS evolves. What is being built, learned, and applied.',
+    'Regular dispatches from Lane Belone as the Infinite Game OS evolves. What is being built, learned and applied.',
   openGraph: {
     type: 'website',
     siteName: 'Infinite Game OS',
     locale: 'en_US',
     title: 'Updates: From Inside the Practice',
     description:
-      'Regular dispatches from Lane Belone as the Infinite Game OS evolves. What is being built, learned, and applied.',
+      'Regular dispatches from Lane Belone as the Infinite Game OS evolves. What is being built, learned and applied.',
     url: 'https://www.infinitegameos.io/updates',
   },
   alternates: {
@@ -70,7 +70,7 @@ export default function UpdatesPage() {
                 lineHeight: 1.7,
               }}
             >
-              Dispatches from the build. What is being learned, refined, and
+              Dispatches from the build. What is being learned, refined and
               released as the OS evolves.
             </p>
           </SectionReveal>

@@ -4,6 +4,11 @@ import matter from 'gray-matter'
 
 const updatesDir = path.join(process.cwd(), 'content', 'updates')
 
+export type FaqItem = {
+  q: string
+  a: string
+}
+
 export type UpdateMeta = {
   slug: string
   title: string
@@ -14,6 +19,7 @@ export type UpdateMeta = {
 
 export type Update = UpdateMeta & {
   content: string
+  faq?: FaqItem[]
 }
 
 function normalizeDate(raw: unknown): string {
@@ -50,6 +56,7 @@ export function getUpdate(slug: string): Update | null {
         date: normalizeDate(data.date),
         summary: data.summary as string,
         content,
+        faq: data.faq as FaqItem[] | undefined,
       }
     }
   }

@@ -74,6 +74,23 @@ export default async function UpdatePage({
     license: 'https://creativecommons.org/licenses/by/4.0/',
   }
 
+  const faqSchema =
+    update.faq && update.faq.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: update.faq.map(item => ({
+            '@type': 'Question',
+            name: item.q,
+            acceptedAnswer: { '@type': 'Answer', text: item.a },
+          })),
+        }
+      : null
+
+  const schemas = faqSchema
+    ? [breadcrumbSchema, articleSchema, faqSchema]
+    : [breadcrumbSchema, articleSchema]
+
   const dateLabel = new Date(update.date + 'T00:00:00Z').toLocaleDateString('en-US', {
     month: 'long',
     year: 'numeric',
@@ -83,7 +100,7 @@ export default async function UpdatePage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, articleSchema]) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
 
       <article style={{ paddingTop: '7rem' }}>
@@ -110,6 +127,20 @@ export default async function UpdatePage({
               <MDXRemote source={update.content} />
             </SectionReveal>
           </div>
+
+          {update.faq && update.faq.length > 0 && (
+            <SectionReveal delay={60}>
+              <div className="prose" style={{ marginTop: '2rem' }}>
+                <h2>Frequently Asked Questions</h2>
+                {update.faq.map((item, i) => (
+                  <div key={i}>
+                    <h3>{item.q}</h3>
+                    <p>{item.a}</p>
+                  </div>
+                ))}
+              </div>
+            </SectionReveal>
+          )}
 
           <SectionReveal delay={80}>
             <SubscribeForm />
