@@ -30,9 +30,10 @@ export interface Concept {
   productCard?: ConceptProductCard
 }
 
-// FAQPage schema gap: no concept below has an faq[] array yet.
-// When FAQ content is authored for a concept, add faq: ConceptFaqItem[] to that entry.
-// The concepts/[slug]/page.tsx will emit FAQPage JSON-LD automatically once faq is present.
+// FAQ content authored 2026-05-19 for all live concepts (Phase 1 of
+// PendingPlan - IGOS Concept-Page Depth and Audience-Search Front Doors).
+// concepts/[slug]/page.tsx emits FAQPage JSON-LD and renders a visible FAQ
+// section whenever faq[] is present.
 export const concepts: Concept[] = [
   {
     slug: 'creator-flywheel',
@@ -82,6 +83,28 @@ export const concepts: Concept[] = [
         ],
       },
     ],
+    faq: [
+      {
+        q: 'How do I build a creator business without performing constantly?',
+        a: 'The Creator Flywheel inverts the standard model. Instead of performing to be found, you structure your work so it is findable without repeated performance. Articles at canonical URLs, products with persistent pages, skills with stable addresses. The identity contract shifts: I am locatable because I am structured, not because I am showing up daily.',
+      },
+      {
+        q: 'How do I stop chasing the algorithm and still grow?',
+        a: 'The Creator Flywheel is a durability play. When the life you are actually living drives the creative expression, the source is inexhaustible and one algorithm change can\'t start you over. Genuine expression structured as persistent artifacts keeps doing its job long after you have moved on to the next thing.',
+      },
+      {
+        q: 'What does it look like to grow a creator business from authentic expression instead of market positioning?',
+        a: 'The Creator Flywheel has five stages: live the life, share the breadcrumbs, activate others, return home, go deeper. The life itself is the source material. People who are already looking for your frequency find the breadcrumbs, which are articles, builds, recordings and sessions structured so they persist. The growth follows the expression, not the other way around.',
+      },
+      {
+        q: 'Is the Creator Flywheel only for writers or content creators?',
+        a: 'The Creator Flywheel is form-agnostic. Some Creators write. Some build, speak, advise, teach, perform or design. The point is that the output comes from genuine creative expression rather than from copying what worked for someone else. The form that emerges from aliveness carries a quality manufactured content never produces.',
+      },
+      {
+        q: 'How do I build an audience without just accumulating followers I have to keep performing for?',
+        a: 'The Creator Flywheel is conductive, not accumulative. Rather than building a stable audience to monetize over time, the flywheel conducts what is alive in you through a rotating field of Wayfarers who travel a section of your Way for a season. When their season ends, they branch off and become Wayfinders. Your job is to keep walking your Way and keep your trail markers well-laid. The rotation handles itself.',
+      },
+    ],
     relatedSlugs: ['ideal-month', 'the-pioneer', 'data-sovereignty', 'the-north-star'],
     ctaLinks: [
       { href: '/concepts/ideal-month', label: 'The Ideal Month', variant: 'accent' },
@@ -119,6 +142,28 @@ export const concepts: Concept[] = [
         ],
       },
     ],
+    faq: [
+      {
+        q: 'What does it mean to stop following the script everyone else set for you?',
+        a: 'The Pioneer is someone who has already built something real by external measures and has arrived at a gap: the outer life was built from conditioning that was never truly chosen. The work is not blowing up what was built. It is developing enough awareness to see which decisions come from authentic alignment and which come from old programming still running in the background.',
+      },
+      {
+        q: 'I have accomplished everything I set out to accomplish but something still feels off. What is that?',
+        a: 'That is the Pioneer condition. The shell identity worked. It got you here. The problem is that "here" does not match the inner knowing. The Pioneer has already won the game most people are still trying to win, and the dissonance is not a sign of ingratitude. It is a sign that the game was never truly chosen.',
+      },
+      {
+        q: 'How do I start making decisions from a genuinely sovereign place rather than from what I was conditioned to want?',
+        a: 'The practice is learning to tell the difference between a choice that comes from authentic core alignment and a choice that comes from old programming dressed up as a sovereign decision. The conditioned self is sophisticated and can mimic sovereignty. Developing the sensitivity to feel the difference is the work of Conditioned vs Authentic Identity, the framework that sits alongside the Pioneer archetype.',
+      },
+      {
+        q: 'Do I need a crisis or a big life disruption to do this kind of identity work?',
+        a: 'No. There are two entry points. Challenge-triggered: something disrupted the world and the motivation is to navigate the transition. Opportunity-triggered: nothing is wrong. The Pioneer simply sees the next layer of coherence available and wants to step into it. Both paths lead to the same place, coherence between the inner knowing and the outer life.',
+      },
+      {
+        q: 'What does the Pioneer actually want that they have not found in another productivity system or coaching program?',
+        a: 'The Pioneer does not want to be told what to do or handed another optimization framework. They want to be self-authorized, from a place of genuine mind-body-spirit coherence rather than another layer of conditioning dressed up as sovereignty. The Infinite Game OS is built for exactly that: not prescribing a path, but giving the Pioneer the operating system to design their own.',
+      },
+    ],
     relatedSlugs: ['conditioned-vs-authentic-identity', 'joyful-sovereignty'],
     ctaLinks: [
       { href: '/concepts/conditioned-vs-authentic-identity', label: 'Identity Work', variant: 'accent' },
@@ -154,6 +199,24 @@ export const concepts: Concept[] = [
           'The Infinite Game OS is what you build when you decide to live Joyful Sovereignty. It is the structural layer: the systems, frameworks, tools and governance architecture that make the philosophy operational.',
           'The philosophy without the system is inspiring but fragile. The system without the philosophy is productive but hollow. Together they produce something that compounds over a lifetime.',
         ],
+      },
+    ],
+    faq: [
+      {
+        q: 'What does it mean to stop optimizing your life and start actually living it?',
+        a: 'Joyful Sovereignty is the practice of making choices from genuine alignment rather than conditioned obligation. When decisions come from that place, a felt quality emerges: power without performance, aliveness without effort. That felt quality is the compass state, not a destination to arrive at once.',
+      },
+      {
+        q: 'What is the difference between playing the Infinite Game and just having a philosophy about it?',
+        a: 'Joyful Sovereignty is Lane Belone\'s named approach to playing the Infinite Game with your own life, not as corporate strategy but as a daily operating posture. The philosophy asks what it looks like to play for the purpose of continuing to play, from joy and sovereignty rather than from obligation and optimization. The Infinite Game OS is the structural layer that makes the philosophy operational.',
+      },
+      {
+        q: 'How do you know when you are living from real alignment versus performing it?',
+        a: 'The felt state of Joyful Sovereignty is not hustle dressed in spiritual language. It is recognizable because it produces power without performance and aliveness without effort. Pioneers who have tasted this quality in flashes describe it as unmistakable. The work is making that state the baseline rather than the exception.',
+      },
+      {
+        q: 'What is the relationship between having a life philosophy and building systems to support it?',
+        a: 'The philosophy without the system is inspiring but fragile. The system without the philosophy is productive but hollow. Together they compound over a lifetime. Joyful Sovereignty names the philosophy. The Infinite Game OS is the structural layer of systems, frameworks and tools that makes it durable.',
       },
     ],
     relatedSlugs: ['the-pioneer', 'conditioned-vs-authentic-identity', 'ideal-month'],
@@ -195,6 +258,28 @@ export const concepts: Concept[] = [
         ],
       },
     ],
+    faq: [
+      {
+        q: 'How do I know if I\'m living my own life or someone else\'s?',
+        a: 'Most people can\'t answer this question clearly because the identity built from outside programming (education, family expectations, cultural "shoulds") feels like their own. Conditioned vs Authentic Identity names this dynamic: the conditioned self is not a villain, it is a survival structure, and it works well enough that most people never question whether they actually chose it.',
+      },
+      {
+        q: 'Why do I keep making choices that don\'t feel like mine?',
+        a: 'Choices that do not feel fully yours are often conditioned choices dressed up as sovereign ones. The conditioned identity is sophisticated enough to mimic genuine self-authorship, which is exactly what makes it hard to see. The practice is developing sensitivity to the felt difference between a choice from authentic core alignment and one from old programming.',
+      },
+      {
+        q: 'What does it mean to live authentically?',
+        a: 'Authentic identity is not a fixed destination or a personality type to perform. It is the quality of choice-making that emerges when conditioned programming is seen clearly enough that it stops running the show. When choices start coming from a quieter, more coherent place, that is the movement toward Joyful Sovereignty.',
+      },
+      {
+        q: 'How do I stop living on autopilot?',
+        a: 'The first move is seeing the autopilot clearly, because you can\'t release what you can\'t see. Conditioned vs Authentic Identity is the framework that names the dynamic: the goal is not to destroy the conditioned self but to make it visible enough that the Pioneer can wear it and release it like a jacket rather than be run by it.',
+      },
+      {
+        q: 'What is self-authorization?',
+        a: 'Self-authorization is choosing and acting from genuine mind-body-spirit coherence rather than from conditioning. It is a specific distinction: not just doing what you want, but being able to tell whether a choice is coming from authentic alignment or from another layer of conditioning dressed up as freedom. That nuance is the entire practice.',
+      },
+    ],
     relatedSlugs: ['the-pioneer', 'joyful-sovereignty', 'ideal-month'],
     ctaLinks: [
       { href: '/concepts/the-pioneer', label: 'The Pioneer', variant: 'accent' },
@@ -232,6 +317,28 @@ export const concepts: Concept[] = [
           'If it does not belong in this month, it does not belong in this kingdom. That is the structural function. The Ideal Month is the North Star made tangible.',
           'Lane\'s version includes a home rhythm of morning play, creative work, trail crew, afternoon curiosity and evening rest, with contribution trips woven in. The specific shape is his. The practice of designing and testing your own is universal.',
         ],
+      },
+    ],
+    faq: [
+      {
+        q: 'How do I start designing a day around what I actually want instead of what I think I should do?',
+        a: 'The Ideal Month begins with one founding question: if there were no limitations or consequences, what would my perfect average day look like? Most people never ask this question with enough seriousness to act on it. The practice is to answer it, architect a structure from that answer and go live it.',
+      },
+      {
+        q: 'How do I build an intentional routine that is actually mine and not just someone else\'s productivity system?',
+        a: 'The Ideal Month is an experiment, not a prescription. You design the structure you believe is right for you: the fun, the nourishment, the creative work, the practical. Then you take action, learn by experience and return to adjust. The structure that emerges is yours because experience, not theory, shaped it.',
+      },
+      {
+        q: 'How do I stop letting my calendar be ruled by other people\'s priorities?',
+        a: 'The Ideal Month works as a congruence filter. Every decision, project, collaboration and opportunity gets measured against one question: does this move me toward or away from this life? If something does not belong in the Ideal Month, it does not belong in the calendar. The month becomes the deciding frame, not the demands coming in from outside.',
+      },
+      {
+        q: 'What is the Ideal Month and why is it different from a vision board or goal-setting exercise?',
+        a: 'The Ideal Month is a structural experiment, not an aspiration. It architects what the Pioneer believes is the best structure for their life: fun, play, nourishment, creativity and the practical, all woven together. Then it gets lived. Experience teaches what works and what needs adjusting. The congruence test is what separates it from a vision board.',
+      },
+      {
+        q: 'How do I design my day so it reflects the kind of person I want to become, not just the tasks I need to finish?',
+        a: 'The month and the day are fractal. The principles that govern a good Tuesday morning also govern a good April. Design at one scale and the pattern propagates to the other. Start with the Ideal Month as the container and the day takes its shape from that larger design rather than from a to-do list.',
       },
     ],
     relatedSlugs: ['creator-flywheel', 'joyful-sovereignty', 'the-pioneer'],
@@ -283,6 +390,24 @@ export const concepts: Concept[] = [
           'These concepts emerge when the Pioneer starts living a certain way. They do not arrive with instruction manuals. A dancer does not pull out a piece of paper that says "new dance move coming on," shake it around, then do the move. The new move flows with the previous essence of the dance and gives it a little extra texture. A melody in a song that happens once or twice and the body responds before the mind names it.',
           'Playgrounds of Exploration arrive like that. Not as a framework to adopt. As a posture that was always there, now given a name. The child archetype understood this intuitively. The jungle gym, the court, the field. Levity that did not need permission. Playgrounds of Exploration is the invitation to weave that energy back in as the operating posture for the whole day. The Pioneer plays the game sincerely, not seriously. That distinction changes the energy in which the entire day moves.',
         ],
+      },
+    ],
+    faq: [
+      {
+        q: 'How do I design a day with more play in it?',
+        a: 'The Playgrounds of Exploration framework starts with a single reframe: a day is not a list of things to do but a series of places to play. Each thematic chunk of the day gets a name that carries the energy of what it actually is, a name the Pioneer would use, not a category from a productivity app. That shift from task list to Playground sequence changes what energy shows up to each part of the day.',
+      },
+      {
+        q: 'How do I know when it\'s time to stop what I\'m doing and move to something else?',
+        a: 'The body knows before the mind does. Within the Playgrounds of Exploration, the cue is felt as a song beginning to change: still engaged, two or three more beats, and then something else pulls. That pull is not a timer going off. It is a welcomed shift, and trusting it rather than forcing completion is what keeps each Playground meeting the Pioneer at the level of aliveness it was designed for.',
+      },
+      {
+        q: 'Why does switching between different activities make me more productive?',
+        a: 'The default mode network does its best integration work between focused activities. When the Pioneer leaves a creative Playground unresolved and enters a Playground of movement or nourishment, background processing continues and a distillation surfaces in the next Playground. Intentional variety is not a distraction from depth. It is what makes depth possible in each Playground.',
+      },
+      {
+        q: 'What would it look like to treat different parts of my day as separate spaces to play in?',
+        a: 'The invitation in Playgrounds of Exploration is to look at the felt thematic chunks of the day, where one kind of energy ends and another begins, and give each chunk a name that carries its actual energy. The Playground of Open Air, the Playground of Creation, the Playground of Nourishment: these are demonstrations, not a list to adopt. The Pioneer\'s own vocabulary is the right vocabulary.',
       },
     ],
     relatedSlugs: ['infinite-playlist', 'joyful-sovereignty', 'the-pioneer'],
@@ -339,6 +464,24 @@ export const concepts: Concept[] = [
           'The Playgrounds give the day its shape. The Playlist gives it its feel. Both are required. One without the other is half of a dance.',
           'When the Pioneer holds the architecture loosely enough that life can play through it, the day stops feeling like a list of things to get through. It starts feeling like a song. Sometimes the body is leading. Sometimes the music is leading. The distinction matters less the longer the Pioneer dances. This is what the Infinite Game feels like from the inside. Not conquest, not performance. A day built with care and held with openness, the invisible music floating through every Playground, the Pioneer dancing with existence itself.',
         ],
+      },
+    ],
+    faq: [
+      {
+        q: 'What is the Infinite Playlist?',
+        a: 'The Infinite Playlist is the invisible soundtrack running through a sovereign day. It is not music you play on a speaker. It is the felt energy that moves through everything you do, some of it chosen by you, some of it delivered by life. The Pioneer dances with it rather than pushing past it.',
+      },
+      {
+        q: 'How do I stop grinding through my day and start actually enjoying it?',
+        a: 'The shift is from moving through a task list to moving through a living soundtrack. The Infinite Playlist names the felt quality already present in every activity and asks you to move with it rather than over it. When you follow the energy of the moment instead of forcing completion, the day stops feeling like work and starts feeling like a dance.',
+      },
+      {
+        q: 'What does it mean to lead your life and also let life happen to you at the same time?',
+        a: 'The Infinite Playlist holds two capacities at once: leading and following. Leading is designing your Playgrounds and choosing where you place your attention. Following is staying open to what arrives without invitation. A synchronicity, an unexpected conversation, a door that opens at the right moment. The practice for most Pioneers is the following step.',
+      },
+      {
+        q: 'How do I build a day with structure but still stay open to the unexpected?',
+        a: 'The Infinite Playlist distinguishes the architecture from the music. The Playgrounds of Exploration give the day its shape. The Playlist gives the day its feel. When you hold the architecture loosely enough that life can play through it, the structure becomes an instrument rather than a cage. The unexpected has room to arrive because the day was designed with openness built in.',
       },
     ],
     relatedSlugs: ['playgrounds-of-exploration', 'joyful-sovereignty', 'the-pioneer'],
@@ -399,6 +542,28 @@ export const concepts: Concept[] = [
         ],
       },
     ],
+    faq: [
+      {
+        q: 'How do I keep AI from owning my notes and data?',
+        a: 'The answer is file-first architecture. When your notes, documents and creative work live as plain files on your own machine, no AI platform owns them. Different tools can read and write the same files because the files belong to you, not to the tool. Data Sovereignty starts at the foundation: your files, your machine, your terms.',
+      },
+      {
+        q: 'What does it mean to own your own data when you use AI?',
+        a: 'Data Sovereignty means the files your AI works with live on your hardware and remain yours regardless of which AI tool or platform you use. Your second brain, your creative voice and your operational history are not rented from a server you do not control. When a platform changes its terms or shuts down, your data moves with you.',
+      },
+      {
+        q: 'Can I use AI without giving up my privacy or getting locked into one company?',
+        a: 'Yes. The three-tier stack makes this practical today. A sovereign file structure holds your data in open formats. A reader like Obsidian turns those files into something navigable by hand. An AI interface like Claude Code reads and edits the same files on your instruction. Swap any layer and the others survive. The lock-in never forms because no single company holds the files.',
+      },
+      {
+        q: 'What happens to my data when an AI company changes its terms or goes away?',
+        a: 'If your data lives inside a platform, you leave with whatever their export tools allow, which are often clunky by design. The Facebook analogy makes this concrete: try leaving with your photos, friends and connections intact. Sovereign-first architecture refuses that default. Your files predate the tool, outlive the tool and belong to no tool.',
+      },
+      {
+        q: 'Is building a local AI setup expensive or complicated right now?',
+        a: 'A $20 to $200 monthly subscription on a sovereign-first foundation gets you 95% of the way there today. The AI runs in the cloud and reads files from your machine. Local hardware setups that eliminate cloud dependency entirely currently run $10,000 to $15,000 and the price will keep dropping. The foundation you build now makes that future step a smooth migration rather than a full rebuild.',
+      },
+    ],
     relatedSlugs: ['ai-second-brain', 'the-north-star', 'joyful-sovereignty', 'creator-flywheel', 'grant-researcher'],
     ctaLinks: [
       { href: '/concepts/ai-second-brain', label: 'The AI Second Brain', variant: 'accent' },
@@ -454,6 +619,24 @@ export const concepts: Concept[] = [
           'You wrote the trajectory down because it was alive when you wrote it. You keep returning to it because it stays alive as you change. When a quest stops feeling alive, the system rewires around the update. No replanning two months of work by hand. No carrying a stale plan as if it were still true.',
           'The Ideal Month sits inside the North Star horizon. The Pending Plans you carry sit alongside it. The skills you build serve it. Without a North Star, the AI organizes your day-to-day work around whatever is in front of you. With one, it can hold a longer arc.',
         ],
+      },
+    ],
+    faq: [
+      {
+        q: 'How do I set personal goals that actually stick?',
+        a: 'The North Star uses a zero-to-three month horizon as the primary frame, a handful of things you actually intend to move on in that window. Goals written at that range stay close enough to feel real and far enough to orient the day. Once the North Star lives in your system, the AI can organize your day-to-day work around it so you stop carrying the trajectory in your head.',
+      },
+      {
+        q: 'What is the Anti-Vision in personal planning?',
+        a: 'The Anti-Vision is the line you refuse to cross. Where the North Star names where you are walking toward, the Anti-Vision names the shape of life you will not accept. Write both down and the AI has two edges of your direction. The Anti-Vision turns your nervous system into a compass and often makes your positive North Star sharper by contrast.',
+      },
+      {
+        q: 'How do I keep a long-term vision from feeling stale after a few weeks?',
+        a: 'The North Star is a living document, not a fixed plan. Build a weekly or monthly check-in into your system. The check-in is a conversation with the AI about whether the active quests still feel alive and what wants to shift. The trajectory is not betrayed by changing. It is honored by being kept current.',
+      },
+      {
+        q: 'Why do my to-do lists drain me even when I am making progress?',
+        a: 'A task feels like a chore. A quest feels embark-able. The North Star uses quests as the primary unit, naming the work in language that reflects how you actually relate to it. Same work, different inner posture. The energy that shows up to a quest is qualitatively different from the energy that shows up to a task, and that difference compounds across a full week.',
       },
     ],
     relatedSlugs: ['ideal-month', 'the-pioneer', 'joyful-sovereignty', 'data-sovereignty'],
@@ -512,6 +695,28 @@ export const concepts: Concept[] = [
           'The AI Second Brain stays on your machine. Different AI tools can read and write the same files because the files belong to you. The intelligence builds toward you the longer you use it.',
           'This is where Data Sovereignty stops being abstract. The second brain is the most personal substrate you have. Owning it is the work that makes everything else easier to own.',
         ],
+      },
+    ],
+    faq: [
+      {
+        q: 'How do I build a second brain with AI?',
+        a: 'Start by choosing a local file system you own, like Obsidian, and pointing your AI at those files. The AI handles the organize, distill and express work. You stay focused on capture and creative judgment. Setup takes about an hour. Trust takes about a week.',
+      },
+      {
+        q: 'What is the best app for capturing ideas on the go?',
+        a: 'Obsidian on your phone writes the idea directly to your local files the moment it lands. No separate inbox to process later. The note is already inside your AI Second Brain by the time you walk back into the conversation.',
+      },
+      {
+        q: 'How do I actually use the notes I capture instead of just hoarding them?',
+        a: 'The loop is capture, organize, distill, express. The AI Second Brain runs that same loop with one upgrade: the AI handles most of the organizing and distilling. You supply the capture and the creative judgment on the output side. The maintenance layer, a daily clear and a weekly review, is what keeps the loop moving rather than stacking.',
+      },
+      {
+        q: 'Is it safe to let AI read my personal notes and files?',
+        a: 'When the files live on your machine rather than a cloud platform, different AI tools can read and write those same files because the files belong to you. Your second brain is the most personal substrate you have. The AI Second Brain keeps that intelligence pulling toward you instead of into someone else\'s model weights.',
+      },
+      {
+        q: 'How is an AI second brain different from just using a notes app?',
+        a: 'A notes app stores what you capture. The AI Second Brain holds what you capture and then actively organizes, distills and surfaces it when you need it. The difference is an active intelligence layer over your files versus a passive archive behind a search bar. The system knows you better the longer you use it.',
       },
     ],
     relatedSlugs: ['data-sovereignty', 'the-north-star', 'ideal-month'],

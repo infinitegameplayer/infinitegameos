@@ -172,6 +172,27 @@ export default async function ConceptPage({ params }: PageProps) {
             ))}
           </div>
 
+          {concept.faq && concept.faq.length > 0 && (
+            <SectionReveal delay={concept.sections.length * 80}>
+              <div
+                className="prose"
+                style={{
+                  marginTop: '3rem',
+                  paddingTop: '2rem',
+                  borderTop: '1px solid var(--color-border)',
+                }}
+              >
+                <h2>Frequently Asked Questions</h2>
+                {concept.faq.map((item, i) => (
+                  <div key={i}>
+                    <h3>{item.q}</h3>
+                    <p>{item.a}</p>
+                  </div>
+                ))}
+              </div>
+            </SectionReveal>
+          )}
+
           {concept.productCard && (
             <SectionReveal delay={concept.sections.length * 80}>
               <div
