@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import SectionReveal from '@/components/SectionReveal'
 import { concepts, getConceptBySlug, getAllConceptSlugs } from '@/data/concepts'
+import { getAllUpdates } from '@/lib/updates'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -38,6 +39,11 @@ export default async function ConceptPage({ params }: PageProps) {
   const relatedConcepts = concept.relatedSlugs
     .map(s => concepts.find(c => c.slug === s))
     .filter(Boolean)
+
+  const allUpdates = getAllUpdates()
+  const relatedUpdates = (concept.relatedUpdateSlugs ?? [])
+    .map(s => allUpdates.find(u => u.slug === s))
+    .filter((u): u is NonNullable<typeof u> => Boolean(u))
 
   const definedTermSchema = {
     '@context': 'https://schema.org',
@@ -288,6 +294,76 @@ export default async function ConceptPage({ params }: PageProps) {
                         }}
                       >
                         {rc.capsule}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {relatedUpdates.length > 0 && (
+            <SectionReveal delay={concept.sections.length * 80}>
+              <div
+                style={{
+                  marginTop: '3rem',
+                  paddingTop: '2rem',
+                  borderTop: '1px solid var(--color-border)',
+                }}
+              >
+                <p
+                  className="label"
+                  style={{ marginBottom: '1.25rem' }}
+                >
+                  Related articles
+                </p>
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                    gap: '1rem',
+                  }}
+                >
+                  {relatedUpdates.map(ru => (
+                    <Link
+                      key={ru.slug}
+                      href={`/updates/${ru.slug}`}
+                      className="card"
+                      style={{ textDecoration: 'none' }}
+                    >
+                      <p
+                        style={{
+                          fontSize: '0.7rem',
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.12em',
+                          color: 'var(--color-accent)',
+                          marginBottom: '0.5rem',
+                        }}
+                      >
+                        Article
+                      </p>
+                      <p
+                        style={{
+                          fontSize: '1.05rem',
+                          fontFamily: 'var(--font-display)',
+                          fontWeight: 500,
+                          marginBottom: '0.5rem',
+                        }}
+                      >
+                        {ru.title}
+                      </p>
+                      <p
+                        style={{
+                          fontSize: '0.85rem',
+                          color: 'var(--color-muted)',
+                          lineHeight: 1.6,
+                          display: '-webkit-box',
+                          WebkitLineClamp: 3,
+                          WebkitBoxOrient: 'vertical',
+                          overflow: 'hidden',
+                        }}
+                      >
+                        {ru.summary}
                       </p>
                     </Link>
                   ))}

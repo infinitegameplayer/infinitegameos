@@ -26,6 +26,10 @@ export interface Concept {
   // when FAQ content is authored for a concept page.
   faq?: ConceptFaqItem[]
   relatedSlugs: string[]
+  // relatedUpdateSlugs: when present, renders a "Related articles" block on the
+  // concept page pointing to /updates/[slug] wave articles. Bidirectional pair
+  // for the article-wave concept-connector pattern.
+  relatedUpdateSlugs?: string[]
   ctaLinks: { href: string; label: string; variant: 'accent' | 'outline' }[]
   productCard?: ConceptProductCard
 }
@@ -106,6 +110,11 @@ export const concepts: Concept[] = [
       },
     ],
     relatedSlugs: ['ideal-month', 'the-pioneer', 'data-sovereignty', 'the-north-star'],
+    relatedUpdateSlugs: [
+      'what-is-the-creator-flywheel',
+      'how-to-build-a-creator-business-off-social-media',
+      'how-to-build-a-creator-business-without-performing-constantly',
+    ],
     ctaLinks: [
       { href: '/concepts/ideal-month', label: 'The Ideal Month', variant: 'accent' },
     ],
@@ -165,6 +174,11 @@ export const concepts: Concept[] = [
       },
     ],
     relatedSlugs: ['conditioned-vs-authentic-identity', 'joyful-sovereignty'],
+    relatedUpdateSlugs: [
+      'what-is-the-pioneer',
+      'how-to-play-your-own-game',
+      'self-authorization-in-the-age-of-ai',
+    ],
     ctaLinks: [
       { href: '/concepts/conditioned-vs-authentic-identity', label: 'Identity Work', variant: 'accent' },
     ],
@@ -220,6 +234,10 @@ export const concepts: Concept[] = [
       },
     ],
     relatedSlugs: ['the-pioneer', 'conditioned-vs-authentic-identity', 'ideal-month'],
+    relatedUpdateSlugs: [
+      'what-is-joyful-sovereignty',
+      'how-to-design-a-day-around-what-you-actually-want',
+    ],
     ctaLinks: [
       { href: '/the-os', label: 'The OS', variant: 'accent' },
       { href: '/infinite-game', label: 'Infinite Game', variant: 'outline' },
@@ -281,6 +299,10 @@ export const concepts: Concept[] = [
       },
     ],
     relatedSlugs: ['the-pioneer', 'joyful-sovereignty', 'ideal-month'],
+    relatedUpdateSlugs: [
+      'conditioned-vs-authentic-identity',
+      'self-authorization-in-the-age-of-ai',
+    ],
     ctaLinks: [
       { href: '/concepts/the-pioneer', label: 'The Pioneer', variant: 'accent' },
       { href: '/concepts/joyful-sovereignty', label: 'Joyful Sovereignty', variant: 'outline' },
@@ -342,6 +364,10 @@ export const concepts: Concept[] = [
       },
     ],
     relatedSlugs: ['creator-flywheel', 'joyful-sovereignty', 'the-pioneer'],
+    relatedUpdateSlugs: [
+      'how-to-plan-your-ideal-month',
+      'how-to-design-a-day-around-what-you-actually-want',
+    ],
     ctaLinks: [
       { href: '/concepts/creator-flywheel', label: 'Creator Flywheel', variant: 'accent' },
       { href: '/sovereignty', label: 'Sovereignty', variant: 'outline' },
@@ -411,6 +437,10 @@ export const concepts: Concept[] = [
       },
     ],
     relatedSlugs: ['infinite-playlist', 'joyful-sovereignty', 'the-pioneer'],
+    relatedUpdateSlugs: [
+      'what-are-playgrounds-of-exploration',
+      'how-to-design-a-day-around-what-you-actually-want',
+    ],
     ctaLinks: [
       { href: '/infinite-game', label: 'The Infinite Game', variant: 'outline' },
     ],
@@ -485,6 +515,9 @@ export const concepts: Concept[] = [
       },
     ],
     relatedSlugs: ['playgrounds-of-exploration', 'joyful-sovereignty', 'the-pioneer'],
+    relatedUpdateSlugs: [
+      'what-is-the-infinite-playlist',
+    ],
     ctaLinks: [
       { href: '/infinite-game', label: 'The Infinite Game', variant: 'outline' },
     ],
@@ -565,6 +598,11 @@ export const concepts: Concept[] = [
       },
     ],
     relatedSlugs: ['ai-second-brain', 'the-north-star', 'joyful-sovereignty', 'creator-flywheel', 'grant-researcher'],
+    relatedUpdateSlugs: [
+      'what-is-data-sovereignty-for-creators',
+      'how-to-build-an-ai-second-brain',
+      'structured-to-be-found',
+    ],
     ctaLinks: [
       { href: '/concepts/ai-second-brain', label: 'The AI Second Brain', variant: 'accent' },
       { href: '/sovereignty', label: 'Sovereign Life Design', variant: 'outline' },
@@ -640,6 +678,9 @@ export const concepts: Concept[] = [
       },
     ],
     relatedSlugs: ['ideal-month', 'the-pioneer', 'joyful-sovereignty', 'data-sovereignty'],
+    relatedUpdateSlugs: [
+      'what-is-the-north-star-for-goal-setting',
+    ],
     ctaLinks: [
       { href: '/concepts/ideal-month', label: 'The Ideal Month', variant: 'accent' },
       { href: '/concepts/the-pioneer', label: 'The Pioneer', variant: 'outline' },
@@ -720,6 +761,10 @@ export const concepts: Concept[] = [
       },
     ],
     relatedSlugs: ['data-sovereignty', 'the-north-star', 'ideal-month'],
+    relatedUpdateSlugs: [
+      'how-to-build-an-ai-second-brain',
+      'what-is-data-sovereignty-for-creators',
+    ],
     ctaLinks: [
       { href: '/concepts/data-sovereignty', label: 'Data Sovereignty', variant: 'accent' },
       { href: '/sovereign-ecosystem', label: 'The Sovereign Ecosystem', variant: 'outline' },
