@@ -19,6 +19,10 @@ const PAGE_DATES: Record<string, string> = {
   '/concepts':           '2026-04-19',
   '/protocols':          '2026-05-06',
   '/sovereign-ecosystem': '2026-05-05',
+  '/play-your-own-game': '2026-05-19',
+  '/design-your-day':    '2026-05-19',
+  '/creator-business-without-performing': '2026-05-19',
+  '/infinite-game-os':   '2026-05-19',
 }
 
 function pageDate(path: string): Date {
@@ -137,6 +141,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: pageDate('/sovereign-ecosystem'),
       changeFrequency: 'monthly',
       priority: 0.9,
+    },
+    {
+      url: 'https://www.infinitegameos.io/infinite-game-os',
+      lastModified: pageDate('/infinite-game-os'),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: 'https://www.infinitegameos.io/play-your-own-game',
+      lastModified: pageDate('/play-your-own-game'),
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: 'https://www.infinitegameos.io/design-your-day',
+      lastModified: pageDate('/design-your-day'),
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: 'https://www.infinitegameos.io/creator-business-without-performing',
+      lastModified: pageDate('/creator-business-without-performing'),
+      changeFrequency: 'monthly',
+      priority: 0.85,
     },
     ...conceptEntries,
     ...skillEntries,

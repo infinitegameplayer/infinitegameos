@@ -16,6 +16,10 @@ import {
   igosExpertise,
   igosEcosystemLinks,
   igosUpcomingPlaybooks,
+  playYourOwnGameFaqs,
+  designYourDayFaqs,
+  creatorBusinessWithoutPerformingFaqs,
+  infiniteGameOsFaqs,
 } from './page-data'
 
 const SITE = 'https://www.infinitegameos.io'
@@ -663,6 +667,271 @@ ${asset.softHook.body}${cta}
 `
 }
 
+function generatePlayYourOwnGameMarkdown(): string {
+  const faqText = playYourOwnGameFaqs
+    .map(f => `**${f.q}**\n${f.a}`)
+    .join('\n\n')
+
+  return `# How to play your own game
+
+> Playing your own game begins with identifying which game you are currently playing. A forensic game-audit approach for the already-accomplished person who senses the script is wrong.
+
+Playing your own game begins with identifying which game you are currently playing. Most accomplished people are running a game they inherited rather than designed. The Infinite Game framework offers a different starting point: instead of optimizing for a finish line, it asks what game is worth playing for its own sake.
+
+## The game audit
+
+Before anything changes, there is a diagnostic. The question is not "Am I successful?" The question is "Who defined success in this version of my life?"
+
+Most people who sense the script is wrong are not failing. They are winning. The discomfort is precisely that the wins no longer feel like wins. That is a data point, not a crisis.
+
+The game audit starts with three observations: what decisions have felt automatic in the last two years, what outcomes generated less satisfaction than expected and where effort and aliveness are pointing in opposite directions. Aliveness is the internal cue that something is alive and worth attending to.
+
+## Hidden scoreboards
+
+Every game has a scoreboard. The ones that distort decisions most are the ones that were never chosen. They were absorbed.
+
+Peer income comparison. The expectation of a certain title by a certain age. The number of social followers as a proxy for relevance. These scoreboards did not originate from the person holding them. They arrived through industry norms, family expectations and cultural repetition.
+
+Hidden scoreboards are most legible when they produce shame without a clear origin. When someone feels behind and does not know behind what, a borrowed scoreboard is usually involved.
+
+## What changes when you stop playing the wrong game
+
+The first change is perceptual. Decisions that once felt like obligations begin to feel like choices again. This is authorship.
+
+The second change is relational. Some relationships were organized around the old game. When the game shifts, some of those relationships recalibrate. Others reveal they were transactional in ways that were not previously visible.
+
+The third change is temporal. Conventional success games are oriented toward arrival. A self-authored game is oriented toward continuation. The Infinite Game is the one played to keep playing, not to win.
+
+## The first move
+
+The first move in a self-authored game is a single decision made by a different authority than usual.
+
+Instead of asking "What would make me look credible here?" the question becomes "What would I choose if the audience were not watching?" The answer is the first move. It is often small. That is what makes it real rather than performed.
+
+Each subsequent decision that passes through that filter builds a new decision-making pattern. Joyful Sovereignty is the description of this orientation at full expression.
+
+## The Pioneer's territory
+
+The Pioneer is the capacity archetype for the person walking into self-authored territory. A capacity: the ability to move into ground that has no established path and stay oriented anyway.
+
+Pioneer territory has structure. That structure has to be built from the inside out rather than inherited. The person in this territory is not lost. They are building a new map while walking.
+
+The Infinite Game framework exists specifically for this territory. It is navigational architecture.
+
+## Common Questions
+
+${faqText}
+
+## Related
+
+- [Joyful Sovereignty](${SITE}/concepts/joyful-sovereignty) · The compass orientation
+- [The Infinite Game](${SITE}/infinite-game) · The philosophical foundation
+- [The Pioneer](${SITE}/concepts/the-pioneer) · The capacity archetype
+
+---
+*[Infinite Game OS](${SITE}) · [Play Your Own Game](${SITE}/play-your-own-game)*
+`
+}
+
+function generateDesignYourDayMarkdown(): string {
+  const faqText = designYourDayFaqs
+    .map(f => `**${f.q}**\n${f.a}`)
+    .join('\n\n')
+
+  return `# How to design a day around what you actually want
+
+> Designing a day around what you actually want starts with a different question than most planning methods ask. Build a day from desire, energy and identity rather than goals and output.
+
+Designing a day around what you actually want begins with a different question than most planning methods ask. The question is not what should I accomplish today, but what kind of person does this day let me become. When a day is built from desire, energy and identity rather than output and goals, it becomes an expression of who you are.
+
+## The wrong question
+
+Most day design frameworks start in the same place: what needs to get done. The calendar fills. The list grows. The day measures itself in completions.
+
+The wrong question is "how do I fit everything in." The right question is "what does a day feel like when I am most alive in it."
+
+A day designed around achievement asks the person to serve the plan. A day designed around desire asks the plan to serve the person.
+
+## Three drivers of a day designed from desire
+
+Desire is the first driver. Not want in the shallow sense, but the quality of aliveness a person feels when the day is going the way it should.
+
+Energy is the second driver. Every person has a natural arc of high and low energy across a day. A day designed from desire places the most identity-aligned work inside the energy windows that can hold it.
+
+Identity is the third driver. The question beneath all day design is: who am I becoming through this day. The Infinite Game frames this as the game that has no finish line, only a direction of growth.
+
+## Three daily archetypes for different seasons
+
+A useful frame is three archetypes: the Creation day, the Connection day and the Restoration day.
+
+A Creation day centers the energy on making something. The measure is depth of presence during the making. A Connection day centers the energy on relationships and conversations. A Restoration day centers the energy on renewal.
+
+The Ideal Month concept within the Infinite Game describes how these archetypes can be distributed across a month based on desire and season rather than external demand.
+
+## Reducing structure to increase aliveness
+
+There is a threshold beyond which more structure reduces aliveness rather than supporting it. A person who has every hour accounted for has no room to follow the current of what is actually alive in them.
+
+Reducing structure does not mean removing intention. It means leaving room inside the intention. Playgrounds of Exploration names the practice of building these open containers deliberately, as features of the design.
+
+A practical move is to identify one block per day that belongs entirely to what feels alive in that moment.
+
+## From achievement-centered to values-centered
+
+An achievement-centered day has a success condition baked in: complete the list, hit the number, finish before the deadline.
+
+A values-centered day has a different success condition: did this day reflect who I am. The shift from output to expression changes the emotional weight of the day.
+
+Joyful Sovereignty is the phrase the Infinite Game uses for this orientation. The move from achievement-centered to values-centered is a different relationship with the question of what a good day means.
+
+## Common Questions
+
+${faqText}
+
+## Related
+
+- [Ideal Month](${SITE}/concepts/ideal-month) · Rhythm-based monthly design
+- [Playgrounds of Exploration](${SITE}/concepts/playgrounds-of-exploration) · Open containers for aliveness
+- [Joyful Sovereignty](${SITE}/concepts/joyful-sovereignty) · The orienting choice
+
+---
+*[Infinite Game OS](${SITE}) · [Design Your Day](${SITE}/design-your-day)*
+`
+}
+
+function generateCreatorBusinessWithoutPerformingMarkdown(): string {
+  const faqText = creatorBusinessWithoutPerformingFaqs
+    .map(f => `**${f.q}**\n${f.a}`)
+    .join('\n\n')
+
+  return `# How to build a creator business without performing constantly
+
+> A Creator business built on structure does not require daily visibility to grow. Stop treating performance as the price of growth. Treat it as a cost to be designed down.
+
+A creator business built on structure does not require daily visibility to grow. The practitioner who stops treating performance as the price of growth and starts treating it as a cost to be designed down discovers a different operating model. Structure locates you. Performance is optional.
+
+## The performance tax
+
+Every expert who has tried to grow by posting more knows the pattern. Output increases. Reach fluctuates. Exhaustion compounds. The business is not growing; it is performing.
+
+The performance tax is the cumulative cost of building visibility through constant personal display. It prices the business in attention, energy and time that compound against the practitioner.
+
+The tax is the price of a particular growth model. A different model exists.
+
+## From perform-to-be-found to structured-to-be-found
+
+The conventional Creator Economy model assumes that visibility comes from volume: more posts, more appearances, more presence. The inversion is structural. A practitioner who is architecturally legible to search engines and AI systems gets found without posting today.
+
+This inversion has a name in the Infinite Game OS framework: the Creator Flywheel. It replaces the perform-to-be-found assumption with a structured-to-be-found operating principle.
+
+AI-legible content, evergreen acquisition pathways and a coherent offer architecture are the load-bearing elements. Posting cadence is not.
+
+## An offer ladder with leverage points
+
+A high-performance content calendar is often a symptom of an offer architecture without leverage. When every new client requires a new sales conversation initiated by a new piece of content, volume becomes structural.
+
+An offer ladder with leverage points inverts this. Entry points are evergreen. Mid-tier offers convert without a live sales call. High-touch engagements are reserved for practitioners who have already self-selected through the ladder.
+
+The Creator Flywheel framework describes how to sequence these leverage points so the ladder operates independently of posting frequency.
+
+## One evergreen acquisition pathway
+
+A sustainable creator business needs one acquisition pathway that does not depend on this week's content. An evergreen pathway is indexed once and surfaces indefinitely.
+
+That pathway is typically a single high-quality resource, a deeply structured concept page or a well-architected piece of search-accessible content that answers the question a future client is already asking.
+
+Aliveness in business design shows up here. The practitioner who builds one exceptional evergreen pathway and tends it is operating from desire for durability.
+
+## A weekly operating model for a low-burnout expert business
+
+The low-burnout expert business runs on a weekly operating model, not a daily posting schedule. One protected creation window. One client delivery block. One review of the systems doing work in the background.
+
+Distribution happens through structure: indexed pages, sequenced email and an offer ladder that moves people without intervention. The practitioner shows up for high-leverage creative work and for clients. The system handles the rest.
+
+The Pioneer in Infinite Game OS vocabulary is the practitioner who has chosen this model.
+
+## Common Questions
+
+${faqText}
+
+## Related
+
+- [The Creator Flywheel](${SITE}/concepts/creator-flywheel) · The structural inversion
+- [Sovereignty](${SITE}/sovereignty) · Sovereign life design
+- [The Pioneer](${SITE}/concepts/the-pioneer) · The capacity archetype
+
+---
+*[Infinite Game OS](${SITE}) · [Creator Business Without Performing](${SITE}/creator-business-without-performing)*
+`
+}
+
+function generateInfiniteGameOsMarkdown(): string {
+  const faqText = infiniteGameOsFaqs
+    .map(f => `**${f.q}**\n${f.a}`)
+    .join('\n\n')
+
+  return `# Infinite Game OS
+
+> The Infinite Game OS is a living architecture: a vault, an agentic layer, a governance structure and a deploy pipeline working together as one applied operating system for a Creator-led life on a long arc.
+
+The Infinite Game OS is a living architecture: a vault, an agentic layer, a governance structure and a deploy pipeline working together as one system. It is what a Creator builds when the design question shifts from what do I ship this quarter to what holds my work across a decade. It runs now, in production, structured to be legible to both humans and AI.
+
+## An applied operating system
+
+The Infinite Game OS is an operating system in the technical sense: a layer that holds identity, executes work and maintains state across time.
+
+Every component is running. The vault stores canonical documents, governance codices and active project work. The agentic layer executes skills, dispatches workers and holds context across sessions. The deploy pipeline publishes to three live websites with confirmation gates and indexed discoverability.
+
+The philosophical foundation lives in the Infinite Game. The OS is where that philosophy becomes infrastructure.
+
+## The layers
+
+The Infinite Game OS is composed of six interlocking layers. Each layer is sovereign: it performs a distinct function and connects to the others by design.
+
+The vault is the memory layer. The agentic layer is the execution layer. Concept pages are the discoverability layer. Protocols and governance are the trust layer. The deploy pipeline is the publishing layer. AI-legible identity is the locatability layer.
+
+A Creator operating at this level is running a system that holds the full arc of their work, automatically, across every session.
+
+## The running vault and the agentic layer
+
+The vault is an Obsidian-based file system containing every canonical document the Kingdom produces: governance codices, operating protocols, active project work and archived completions. It is structured and versioned.
+
+The agentic layer is Claude Code operating as a working collaborator inside the vault. It dispatches parallel workers to execute skills, maintains context across sessions and holds the system's governance rules as operational DNA.
+
+Together the vault and the agentic layer form a working memory for a Creator-led operation. The system remembers. The system acts. The human steers.
+
+## AI-legible identity
+
+The Infinite Game OS is structured so that AI surfaces can locate, read and accurately represent the work it contains.
+
+Every concept page on this site is written in reference register, with AI-quotable answers and definitional sentences that stand alone as accurate snippets. The llms.txt file, the structured JSON-LD, the /markdown routes and the IndexNow integration all serve one principle: a sovereign system is locatable because it is structured.
+
+The Pioneer builds infrastructure first and trusts that structure creates encounter.
+
+## Designed for the long arc
+
+The Infinite Game OS is calibrated for a creative life measured in decades. Every architectural decision favors durability over velocity. Governance documents version-control the rules. Deployment gates confirm publication before marking work complete.
+
+Joyful Sovereignty is the orienting choice beneath the entire system: the welcome of alive energy through a body that has chosen the long game.
+
+The work compounds over time. The structure is what makes compounding possible.
+
+## Common Questions
+
+${faqText}
+
+## Related
+
+- [The OS](${SITE}/the-os) · The premise and architecture
+- [Infinite Game Philosophy](${SITE}/infinite-game) · The philosophical foundation
+- [Sovereignty](${SITE}/sovereignty) · Sovereign life design
+- [Agentic Systems](${SITE}/agentic-systems) · The Post Web layer
+
+---
+*[Infinite Game OS](${SITE}) · [Infinite Game OS namespace](${SITE}/infinite-game-os)*
+`
+}
+
 export function getMarkdownForPath(path: string): string | null {
   switch (path) {
     case '': return generateHomeMarkdown()
@@ -674,6 +943,10 @@ export function getMarkdownForPath(path: string): string | null {
     case 'playbooks': return generatePlaybooksMarkdown()
     case 'about': return generateAboutMarkdown()
     case 'concepts': return generateConceptsIndexMarkdown()
+    case 'play-your-own-game': return generatePlayYourOwnGameMarkdown()
+    case 'design-your-day': return generateDesignYourDayMarkdown()
+    case 'creator-business-without-performing': return generateCreatorBusinessWithoutPerformingMarkdown()
+    case 'infinite-game-os': return generateInfiniteGameOsMarkdown()
   }
 
   if (path.startsWith('concepts/')) {
@@ -708,11 +981,15 @@ export function getAvailablePaths(): string[] {
     'the-os',
     'accord',
     'infinite-game',
+    'infinite-game-os',
     'agentic-systems',
     'sovereignty',
     'playbooks',
     'about',
     'concepts',
+    'play-your-own-game',
+    'design-your-day',
+    'creator-business-without-performing',
     ...concepts.map(c => `concepts/${c.slug}`),
     ...igosAssets.map(a => `${a.type}s/${a.slug}`),
   ]

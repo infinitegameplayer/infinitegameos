@@ -364,6 +364,122 @@ export const igosUpcomingPlaybooks: UpcomingPlaybook[] = [
   IGOS_PLAYBOOK_FOUR_NODE,
 ]
 
+// --- Play Your Own Game (audience-search front door, A2) ---
+
+export const playYourOwnGameFaqs: FaqItem[] = [
+  {
+    q: "How do I know if I'm playing the wrong game?",
+    a: 'The clearest indicator is a specific kind of success that feels hollow rather than incomplete. If wins are producing less than expected and the deficit is not explained by burnout or circumstance, the game itself is worth examining. The Infinite Game framework calls this the gap between Aliveness and conditioned performance.',
+  },
+  {
+    q: 'What does it mean to make your own rules?',
+    a: 'Making your own rules is not the same as rejecting all structure. It is the act of examining which rules were chosen and which were inherited, then consciously deciding which ones to keep. Joyful Sovereignty describes this as a chosen posture rather than a reaction against constraint.',
+  },
+  {
+    q: 'How do I stop comparing myself to others?',
+    a: 'Comparison is a symptom, not the root problem. The root problem is a borrowed scoreboard. When the governing measure of success is still defined by peer consensus, comparison follows automatically. Replacing borrowed scoreboards with self-authored ones removes the reference class that makes comparison meaningful.',
+  },
+  {
+    q: "How do I find my own path when everything I've built is part of the old game?",
+    a: 'The transition rarely requires destroying what was built. It requires re-evaluating what it was built for and whether that purpose still governs. The Pioneer archetype describes someone who moves into new territory while retaining the competencies developed in the previous one. What carries forward is skill. What gets released is the scoreboard.',
+  },
+  {
+    q: 'What is success on your own terms, actually?',
+    a: 'Success on your own terms is success measured against a standard you set, rather than one you inherited or absorbed. The operational version of this is knowing which scoreboards are governing your decisions and having actively chosen them. The Infinite Game offers a structural definition: a game worth playing to keep playing, where the metric is continuation rather than conclusion.',
+  },
+  {
+    q: 'How do I stop following the script when the script is working?',
+    a: "This is the specific difficulty of the already-accomplished person. The script working is exactly what makes it hard to question. The useful question is not whether the script is working but whether it is yours. Aliveness tends to answer that question clearly when given room. The Pioneer's territory begins the moment the working script is held as a choice rather than a given.",
+  },
+]
+
+// --- Design Your Day (audience-search front door, B3) ---
+
+export const designYourDayFaqs: FaqItem[] = [
+  {
+    q: 'How do I stop letting my to-do list run my day?',
+    a: 'The to-do list runs the day when it holds the authority that belongs to desire and identity. A practical shift is to set an intention before opening the list: what kind of person do I want to be in this day, and what does that person do first. The Ideal Month concept in the Infinite Game offers a rhythm-based alternative to task-first planning that restores desire to the center of daily design.',
+  },
+  {
+    q: 'What does an intentional routine actually look like for someone who hates rigid schedules?',
+    a: 'An intentional routine for a schedule-averse person is built from anchors, not appointments. Two or three non-negotiable moments that hold the energy of the day without filling all the space between them. Aliveness moves in the open space. The Infinite Game describes Playgrounds of Exploration as one way to hold that open space with intention rather than leaving it to chance or guilt.',
+  },
+  {
+    q: 'How do I align my day with my values when I have real obligations?',
+    a: 'Obligations do not have to be treated as the whole day. Even a day full of commitments has decisions inside it: how to start, how to transition, where to place the energy that belongs to you. Aligning with values does not require a clean slate. It requires finding the degrees of freedom already present and using them with intention.',
+  },
+  {
+    q: 'What is the difference between an ideal day and just a productive day?',
+    a: 'A productive day measures output. An ideal day measures aliveness. The Ideal Month concept in the Infinite Game defines the ideal day not by what was accomplished but by what kind of person the day let you become. A person can be highly productive and feel nothing. An ideal day leaves a different residue.',
+  },
+  {
+    q: 'How do I design my day around how I want to feel, not just what I need to do?',
+    a: 'Start with the feeling target before the task list. Name the quality of experience you want the day to carry, whether that is ease, depth, play or presence, and then arrange the tasks around what creates that quality rather than against it. The Pioneer archetype in the Infinite Game names the person who has learned to use feeling as a navigation instrument rather than a distraction from the plan.',
+  },
+  {
+    q: 'Is it realistic to design a day from desire when so much of life is already structured for you?',
+    a: 'The question is not whether to have structure but where the structure comes from and what it serves. Even inside a heavily structured day, the Pioneer can identify which choices belong to external demand and which belong to them. Joyful Sovereignty in the Infinite Game names the practice of finding and using those choices rather than ceding the whole day to the structure around it.',
+  },
+]
+
+// --- Creator Business Without Performing (audience-search front door, D2) ---
+
+export const creatorBusinessWithoutPerformingFaqs: FaqItem[] = [
+  {
+    q: 'Can you build a sustainable creator business without posting every day?',
+    a: 'Yes. A creator business built on structural discoverability does not require daily posting to grow. Evergreen content, AI-legible architecture and a sequenced offer ladder locate the practitioner without a continuous performance cadence. The Creator Flywheel is the Infinite Game OS framework for this operating model.',
+  },
+  {
+    q: 'What is creator burnout and how do you avoid it?',
+    a: 'Creator burnout is the compounding exhaustion that follows a growth model priced in constant personal performance. It is avoided by redesigning the model, not by managing the symptoms. When structure does the visibility work, the practitioner energy is reserved for creation and client delivery.',
+  },
+  {
+    q: 'How do you build systems instead of content for a creator business?',
+    a: 'Systems in a creator business are the durable elements that generate discovery and conversion without active input: indexed evergreen pages, sequenced email journeys and an offer ladder with leverage points. Content is an input to those systems, not the output the business depends on each week.',
+  },
+  {
+    q: 'What does it mean to own your audience as a creator?',
+    a: "Owning your audience means the relationship does not depend on a platform's algorithm or distribution mechanics. Email lists, owned content architecture and direct enrollment pathways are the sovereign alternatives. In Infinite Game OS terms, this is the structural expression of Joyful Sovereignty: the business runs on your infrastructure, not a platform's.",
+  },
+  {
+    q: 'How do you create recurring revenue as a coach or consultant?',
+    a: 'Recurring revenue for coaches and consultants comes from offer architecture, not from volume. A well-designed offer ladder moves clients from a low-friction entry point through progressively deeper engagements. Recurring formats, retained advisory and cohort structures convert without a new sales cycle each month.',
+  },
+  {
+    q: 'What is an evergreen funnel for an expert business?',
+    a: 'An evergreen funnel is an acquisition pathway that operates independently of posting frequency. It typically begins with a piece of deeply structured content that surfaces in search and AI responses, moves through a sequenced email journey and arrives at a relevant offer without live intervention. The Creator Flywheel describes how to build and tend this pathway.',
+  },
+]
+
+// --- Infinite Game OS (namespace landing page) ---
+
+export const infiniteGameOsFaqs: FaqItem[] = [
+  {
+    q: 'What is the Infinite Game OS?',
+    a: 'The Infinite Game OS is an applied operating system for a Creator-led operation. It combines a structured vault, an agentic execution layer, governance protocols, concept pages and a deploy pipeline into one running system. It is designed to hold the full arc of a creative life across years and decades.',
+  },
+  {
+    q: 'How does the Infinite Game OS work in practice?',
+    a: 'The OS runs across three surfaces: the vault, where all canonical documents and active work live; the agentic layer, where Claude Code executes skills and dispatches workers; and the deploy pipeline, where finished work publishes to live websites with confirmation gates. Each layer performs a distinct function. Each layer connects to the others by design.',
+  },
+  {
+    q: 'What is the vault in the Infinite Game OS?',
+    a: 'The vault is an Obsidian-based file system containing governance codices, operating protocols, active project work and archived completions. It is the memory layer of the OS. Every canonical document the Kingdom produces lives here, structured and version-controlled.',
+  },
+  {
+    q: 'What role does AI play in the Infinite Game OS?',
+    a: 'AI operates as a working collaborator inside the OS. Claude Code holds context across sessions, executes governance-bound skills and dispatches parallel workers on complex tasks. The OS also structures its own content to be legible to AI surfaces, so the work is locatable by structure.',
+  },
+  {
+    q: 'What is AI-legible identity in the context of the Infinite Game OS?',
+    a: 'AI-legible identity means the system is structured so that AI surfaces can locate, read and accurately quote the work it contains. Every concept page is written in reference register with definitional sentences that stand alone as accurate snippets. The infrastructure layer includes llms.txt, JSON-LD markup, /markdown routes and IndexNow integration.',
+  },
+  {
+    q: 'What kind of Creator is the Infinite Game OS built for?',
+    a: 'The Infinite Game OS is built for the Pioneer: a Creator who designs their working life around a long arc rather than an immediate payoff. The system supports a Creator-led operation where the human steers and the system holds the discipline, the memory and the execution capacity across every session.',
+  },
+]
+
 // --- Sovereign Ecosystem ---
 
 export const sovereignEcosystemFaqs: FaqItem[] = [
