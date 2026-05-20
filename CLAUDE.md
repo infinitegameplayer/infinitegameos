@@ -76,6 +76,34 @@ All tokens defined in `@theme {}` in `globals.css`. Reference via CSS vars or Ta
 
 **When a new AI crawler is publicly announced:** Add it to `public/robots.txt` in the same format as existing entries.
 
+## Broadcast Sends
+
+Newsletter sends to the Infinite Game audience flow through the `/api/internal/broadcast-trigger` endpoint. The send is content-driven and operator-gated.
+
+**Frontmatter convention.** When an `/updates/[slug]` article warrants a Broadcast send, add `broadcast: true` to its mdx frontmatter. This is the intent marker. The flag does not auto-fire a send in v1; it signals which articles are newsletter-eligible.
+
+**Send action.** After Deploy Seal confirms a production deploy, the King runs the trigger script from the Kingdom vault:
+
+```bash
+node "Council Chamber/scripts/igos-broadcast-trigger.mjs" --slug <article-slug> --audience test --dry-run
+node "Council Chamber/scripts/igos-broadcast-trigger.mjs" --slug <article-slug> --audience test
+node "Council Chamber/scripts/igos-broadcast-trigger.mjs" --slug <article-slug> --audience production
+```
+
+The script verifies the article, calls the API route, and returns the broadcast id and send status. Test audience first, then production.
+
+**Required env vars.**
+- `RESEND_AUDIENCE_INFINITE_GAME_ID` (production audience, already set)
+- `RESEND_AUDIENCE_TEST_ID` (test audience with belone@tutamail.com only)
+- `BROADCAST_TRIGGER_SECRET` (shared secret on the IGOS site and in Kingdom `scripts/.env`)
+- `RESEND_API_KEY` (already set)
+
+**Shared email shell.** `src/lib/email-shell.ts` renders both the welcome (transactional) email and Broadcast email from one layout. Same typography, footer treatment and unsubscribe styling.
+
+**Broadcast Sent state.** The Local to Submitted to Confirmed trio extends to Broadcast Sent for newsletter-eligible content. The script output (HTTP 200 plus broadcast id) is the Broadcast Sent confirmation. Failed sends leave the Broadcast in the Resend dashboard as a draft for manual retry.
+
+**Auto-scan deferral.** A build-time scanner that auto-fires on `broadcast: true` deploys was scoped and deferred. Manual trigger gives the operator visibility per send and prevents accidental fires from unintended deploys.
+
 ## Security
 
 - HTTP security headers configured in `next.config.ts` (X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, HSTS, CSP)
