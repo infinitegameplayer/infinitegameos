@@ -79,6 +79,7 @@ const personSchema = {
   '@id': 'https://www.infinitegameos.io/#person',
   name: 'Lane Belone',
   url: 'https://lanebelone.com',
+  image: 'https://www.lanebelone.com/images/lane-machu-picchu-square.webp',
   jobTitle: 'Infinite Game practitioner, agentic systems architect, sovereign life design coach',
   knowsAbout: [
     'Infinite Game philosophy',
@@ -89,6 +90,16 @@ const personSchema = {
     'Long-term thinking frameworks',
     'Creative leadership',
   ],
+  alumniOf: {
+    '@type': 'Organization',
+    name: 'U.S. Army Special Forces',
+    sameAs: 'https://en.wikipedia.org/wiki/United_States_Army_Special_Forces',
+  },
+  hasCredential: {
+    '@type': 'EducationalOccupationalCredential',
+    name: 'Special Forces Qualification (Green Beret)',
+    credentialCategory: 'military qualification',
+  },
   sameAs: [
     'https://lanebelone.com',
     'https://sidequesthq.co',
@@ -96,6 +107,19 @@ const personSchema = {
     'https://www.instagram.com/increasefreedom/',
     'https://lanebelone.substack.com/',
     'https://github.com/InfiniteGamePlayer',
+  ],
+}
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://www.infinitegameos.io/#organization',
+  name: 'Infinite Game OS',
+  url: 'https://www.infinitegameos.io',
+  founder: { '@id': 'https://infinitegameos.io/#person' },
+  sameAs: [
+    'https://www.lanebelone.com',
+    'https://sidequesthq.co',
   ],
 }
 
@@ -117,6 +141,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
       <PostHogProvider>

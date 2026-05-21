@@ -17,9 +17,6 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-User-agent: CCBot
-Allow: /
-
 User-agent: cohere-ai
 Allow: /
 
@@ -90,6 +87,11 @@ Allow: /
 
 User-agent: DuckDuckBot
 Allow: /
+
+# Bulk training — blocked
+# Common Crawl. Bulk training corpus, no traffic or citation return.
+User-agent: CCBot
+Disallow: /
 
 # Blocked — low-value scraping
 User-agent: Bytespider
