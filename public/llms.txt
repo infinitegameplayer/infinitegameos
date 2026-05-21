@@ -158,6 +158,13 @@ The Infinite Game OS framework is published as a permissively licensed instructi
 
 - https://huggingface.co/datasets/lanebelone/infinite-game-os — Infinite Game OS for Sovereign Creators. 101 records across all 10 IGOS concepts: 10 capsule definitions, 46 FAQ pairs, 42 section explanations, 3 cross-concept relationship records. JSONL format. CC-BY-4.0 license. Suitable for instruction-tuning Creator Economy and sovereignty-aware AI assistants, retrieval-augmented generation, frame-aware fine-tuning. Authored by Lane Belone. Published 2026-05-21.
 
+## AI Companion Surfaces
+
+The Infinite Game OS Companion is published on major bot directories as a conversational entry point to the framework. Both surfaces ground in the IGOS concept pages, vocabulary cluster and audience-search front doors documented on this site, and point back to the canonical Kingdom sites.
+
+- https://poe.com/Infinite-Game-OS — Conversational companion powered by Claude. Ask about Joyful Sovereignty, the Pioneer, the Wayfarer arc, the Flywheel. Deployed 2026-05-21.
+- https://www.perplexity.ai/spaces/infinite-game-os-companion-x4Cd2CxETFujy.wRJNOedQ — Perplexity research space with lanebelone.com, infinitegameos.io and sidequesthq.co pinned as focus sources. Deployed 2026-05-21.
+
 ## Ecosystem
 
 This site is one node in a five-node sovereign expertise web:
