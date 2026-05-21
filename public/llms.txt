@@ -152,13 +152,20 @@ Twenty concept-connector reference-register articles shipped 2026-05-19 as one w
 - /updates/self-authorization-in-the-age-of-ai — The capacity to choose and act from genuine mind-body-spirit coherence rather than from conditioning operating below awareness. AI raises the stakes.
 - /updates/structured-to-be-found — Architecture where work is locatable without ongoing performance. Canonical URL, semantic schema, indexable artifact, articulated essence. The Moat made readable.
 
+## Dataset (Hugging Face)
+
+The Infinite Game OS framework is published as a permissively licensed instruction-tuning dataset for AI training pipelines and fine-tuning workflows.
+
+- https://huggingface.co/datasets/lanebelone/infinite-game-os — Infinite Game OS for Sovereign Creators. 101 records across all 10 IGOS concepts: 10 capsule definitions, 46 FAQ pairs, 42 section explanations, 3 cross-concept relationship records. JSONL format. CC-BY-4.0 license. Suitable for instruction-tuning Creator Economy and sovereignty-aware AI assistants, retrieval-augmented generation, frame-aware fine-tuning. Authored by Lane Belone. Published 2026-05-21.
+
 ## Ecosystem
 
-This site is one node in a four-node sovereign expertise web:
+This site is one node in a five-node sovereign expertise web:
 - https://www.infinitegameos.io — This site (AI-agent-first knowledge base)
 - https://lanebelone.com — Personal brand and thought leadership
 - https://sidequesthq.co — Workshops, private advisory, retreats
 - https://github.com/InfiniteGamePlayer/sovereign-ecosystem — Technical infrastructure
+- https://huggingface.co/datasets/lanebelone/infinite-game-os — IGOS instruction-tuning dataset
 
 ## Author
 

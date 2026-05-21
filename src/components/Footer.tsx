@@ -21,6 +21,12 @@ const ecosystemLinks = [
     href: 'https://github.com/InfiniteGamePlayer/sovereign-ecosystem',
     external: true,
   },
+  {
+    label: 'IGOS Dataset',
+    sublabel: 'Open dataset on Hugging Face',
+    href: 'https://huggingface.co/datasets/lanebelone/infinite-game-os',
+    external: true,
+  },
 ]
 
 const siteLinks = [
