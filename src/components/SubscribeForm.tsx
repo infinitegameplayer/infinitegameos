@@ -3,6 +3,15 @@
 import { useEffect, useState } from 'react'
 import { usePostHog } from 'posthog-js/react'
 
+declare global {
+  interface Window {
+    umami?: {
+      track: (event: string, data?: Record<string, unknown>) => void
+      identify: (data: Record<string, unknown>) => void
+    }
+  }
+}
+
 const inputStyle: React.CSSProperties = {
   width: '100%',
   background: 'rgba(255,255,255,0.04)',
@@ -93,12 +102,15 @@ export default function SubscribeForm() {
       setStatus('submitted')
       try {
         const normalizedEmail = email.trim().toLowerCase()
-        posthog?.identify(normalizedEmail, { email: normalizedEmail })
-        posthog?.capture('igos_subscribe', {
+        const subscribePayload = {
           source: typeof window !== 'undefined' ? window.location.pathname : 'unknown',
-        })
+        }
+        posthog?.identify(normalizedEmail, { email: normalizedEmail })
+        posthog?.capture('igos_subscribe', subscribePayload)
+        window.umami?.identify({ email: normalizedEmail })
+        window.umami?.track('igos_subscribe', subscribePayload)
       } catch {
-        /* posthog unavailable */
+        /* analytics unavailable */
       }
     } catch (err) {
       const m = err instanceof Error ? err.message : 'Unknown error'

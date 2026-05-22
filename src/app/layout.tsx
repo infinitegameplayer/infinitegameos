@@ -8,6 +8,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { PostHogProvider } from './providers'
 import { PostHogPageView } from './PostHogPageView'
+import { CrossSiteLinkTracker } from '@/components/CrossSiteLinkTracker'
 
 const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
@@ -152,6 +153,7 @@ export default function RootLayout({
           <Suspense>
             <PostHogPageView />
           </Suspense>
+          <CrossSiteLinkTracker />
           {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
             <Script
               defer
