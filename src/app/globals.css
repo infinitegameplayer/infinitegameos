@@ -137,6 +137,24 @@ a { color: inherit; text-decoration: none; }
 .prose ul, .prose ol { padding-left: 1.5rem; margin-bottom: 1.25rem; color: rgba(226, 232, 240, 0.85); }
 .prose li { margin-bottom: 0.4rem; }
 
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: rgba(34, 211, 238, 0.08);
+  color: var(--color-accent);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  white-space: pre;
+  font-size: inherit;
+}
+
 .grid-bg {
   background-image:
     linear-gradient(rgba(34, 211, 238, 0.025) 1px, transparent 1px),

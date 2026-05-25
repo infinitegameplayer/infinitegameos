@@ -7,6 +7,7 @@ import {
   getAssetBySlug,
   getAssetsByType,
 } from '@/data/library'
+import { formatProse, stripBackticks } from '@/lib/format-prose'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -88,8 +89,8 @@ export default async function BundlePage({ params }: PageProps) {
           '@type': 'FAQPage',
           mainEntity: asset.faq.map(item => ({
             '@type': 'Question',
-            name: item.q,
-            acceptedAnswer: { '@type': 'Answer', text: item.a },
+            name: stripBackticks(item.q),
+            acceptedAnswer: { '@type': 'Answer', text: stripBackticks(item.a) },
           })),
         }
       : null
@@ -133,7 +134,7 @@ export default async function BundlePage({ params }: PageProps) {
                 marginBottom: '0',
               }}
             >
-              {asset.capsule}
+              {formatProse(asset.capsule)}
             </p>
           </SectionReveal>
         </header>
@@ -291,7 +292,7 @@ export default async function BundlePage({ params }: PageProps) {
                           lineHeight: 1.6,
                         }}
                       >
-                        {skill.description}
+                        {formatProse(skill.description)}
                       </p>
                     </>
                   )
@@ -333,14 +334,14 @@ export default async function BundlePage({ params }: PageProps) {
             <div className="prose">
               <SectionReveal>
                 <h2>Definition</h2>
-                <p>{asset.definition}</p>
+                <p>{formatProse(asset.definition)}</p>
               </SectionReveal>
 
               {asset.howItWorks?.map((section, i) => (
                 <SectionReveal key={section.heading} delay={(i + 1) * 80}>
                   <h2>{section.heading}</h2>
                   {section.paragraphs.map((p, j) => (
-                    <p key={j}>{p}</p>
+                    <p key={j}>{formatProse(p)}</p>
                   ))}
                 </SectionReveal>
               ))}
@@ -353,7 +354,7 @@ export default async function BundlePage({ params }: PageProps) {
                       <p style={{ fontWeight: 500, marginBottom: '0.4rem' }}>
                         {uc.title}
                       </p>
-                      <p>{uc.body}</p>
+                      <p>{formatProse(uc.body)}</p>
                     </div>
                   ))}
                 </SectionReveal>
@@ -365,9 +366,9 @@ export default async function BundlePage({ params }: PageProps) {
                   {asset.faq.map((item, i) => (
                     <div key={i} style={{ marginBottom: '1.5rem' }}>
                       <p style={{ fontWeight: 500, marginBottom: '0.4rem' }}>
-                        {item.q}
+                        {formatProse(item.q)}
                       </p>
-                      <p>{item.a}</p>
+                      <p>{formatProse(item.a)}</p>
                     </div>
                   ))}
                 </SectionReveal>
@@ -459,7 +460,7 @@ export default async function BundlePage({ params }: PageProps) {
                   marginBottom: asset.softHook.ctaHref ? '1.5rem' : '0',
                 }}
               >
-                {asset.softHook.body}
+                {formatProse(asset.softHook.body)}
               </p>
               {asset.softHook.ctaHref && asset.softHook.ctaLabel && (
                 <a

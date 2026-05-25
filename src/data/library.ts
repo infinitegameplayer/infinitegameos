@@ -1833,7 +1833,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         q: 'Is the install reversible?',
         a:
-          'Yes. The bundle is just settings.json entries. To remove the bundle, remove the marketplace and plugin entries from settings.json (or run /plugin uninstall for each plugin from inside Claude Code). No system-level changes happen.',
+          'Yes. The bundle is just settings.json entries. To remove the bundle, remove the marketplace and plugin entries from settings.json (or run `/plugin uninstall` for each plugin from inside Claude Code). No system-level changes happen.',
       },
     ],
     relatedSlugs: ['researcher', 'plan-challenger', 'source-harvest', 'skill-creator', 'systematic-debugging'],
@@ -1855,7 +1855,7 @@ export const igosAssets: IGOSAsset[] = [
       'Claude Code skills for solo SaaS founders, indie hackers, AI agent builders and hardware tinkerers in 2026. Three avatar-specific installs (gstack ship-trio, Context7, Impeccable) on top of the Foundational Creator Bundle substrate.',
     tags: ['bundle', 'builder', 'solo-saas', 'indie-hacker', 'claude-code', 'shipping', 'creator-os', '2026'],
     capsule:
-      'The Builder Bundle is the avatar-specific layer for functional-output creators: solo SaaS founders, indie hackers, AI agent builders, plugin authors and hardware makers. Three skills sit on top of the Foundational Creator Bundle substrate. gstack ships the deploy ritual (/ship, /land-and-deploy, /canary) plus 30 companion commands from Garry Tan. Context7 injects live, version-specific documentation directly into the AI coding session. Impeccable gives a structured design vocabulary for builders who ship the product and the UI. Build is solved in 2026; distribution is the bottleneck. The Builder Bundle protects shipping cadence so attention can move to the harder problem.',
+      'The Builder Bundle is the avatar-specific layer for functional-output creators: solo SaaS founders, indie hackers, AI agent builders, plugin authors and hardware makers. Three skills sit on top of the Foundational Creator Bundle substrate. gstack ships the deploy ritual (`/ship`, `/land-and-deploy`, `/canary`) plus 30 companion commands from Garry Tan. Context7 injects live, version-specific documentation directly into the AI coding session. Impeccable gives a structured design vocabulary for builders who ship the product and the UI. Build is solved in 2026; distribution is the bottleneck. The Builder Bundle protects shipping cadence so attention can move to the harder problem.',
     bundle: {
       installUrl: 'https://www.infinitegameos.io/bundles/the-builder/install.sh',
       command: 'curl -sSL https://www.infinitegameos.io/bundles/the-builder/install.sh | bash',
@@ -1863,7 +1863,7 @@ export const igosAssets: IGOSAsset[] = [
         {
           title: 'gstack (ship, land-and-deploy, canary, plus 30 companion commands)',
           description:
-            'The shipping ritual for solo builders. /ship opens a clean PR with sync and tests. /land-and-deploy merges, deploys and verifies production. /canary watches the post-deploy window most solo builders skip and most regret skipping. The same install brings 30+ companion commands from Garry Tan: CEO review, eng manager, PR review, QA against a real browser, security audit, retro and more. Twenty-three specialists and eight power tools, all slash commands, all Markdown.',
+            'The shipping ritual for solo builders. `/ship` opens a clean PR with sync and tests. `/land-and-deploy` merges, deploys and verifies production. `/canary` watches the post-deploy window most solo builders skip and most regret skipping. The same install brings 30+ companion commands from Garry Tan: CEO review, eng manager, PR review, QA against a real browser, security audit, retro and more. Twenty-three specialists and eight power tools, all slash commands, all Markdown.',
           source: 'github.com/garrytan/gstack',
           license: 'MIT',
           externalUrl: 'https://github.com/garrytan/gstack',
@@ -1879,7 +1879,7 @@ export const igosAssets: IGOSAsset[] = [
         {
           title: 'Impeccable (design steering for code-first builders)',
           description:
-            'One skill, 23 commands, curated anti-pattern detection. /impeccable polish, /impeccable audit, /impeccable critique, /impeccable harden (error handling, i18n, edge cases), /impeccable onboard (first-run flows, empty states) and the rest. Gives the non-designer builder a structured vocabulary for visual quality without hiring a designer. The bottleneck for indie products in 2026 is polish, not speed; this skill addresses it directly.',
+            'One skill, 23 commands, curated anti-pattern detection. `/impeccable polish`, `/impeccable audit`, `/impeccable critique`, `/impeccable harden` (error handling, i18n, edge cases), `/impeccable onboard` (first-run flows, empty states) and the rest. Gives the non-designer builder a structured vocabulary for visual quality without hiring a designer. The bottleneck for indie products in 2026 is polish, not speed; this skill addresses it directly.',
           source: 'github.com/pbakaus/impeccable',
           license: 'Apache-2.0',
           externalUrl: 'https://github.com/pbakaus/impeccable',
@@ -1900,13 +1900,13 @@ export const igosAssets: IGOSAsset[] = [
         heading: 'What the install brings',
         paragraphs: [
           'The install script does two things. First, it registers two Claude Code marketplaces (context7-marketplace and impeccable) and enables their plugins by editing settings.json in place. Second, it clones the gstack repository into the Claude Code skills directory and runs the gstack setup, which auto-detects Claude Code and installs all gstack slash commands. Both halves are idempotent. Re-running is safe.',
-          'After install, restart Claude Code. /plugin shows context7-plugin and impeccable enabled. The gstack commands (/ship, /land-and-deploy, /canary, /office-hours, /plan-ceo-review, /review, /qa, /retro and the rest) are available as slash commands. The full gstack list ships under one install because the underlying repo is one tightly-integrated toolkit.',
+          'After install, restart Claude Code. `/plugin` shows context7-plugin and impeccable enabled. The gstack commands (`/ship`, `/land-and-deploy`, `/canary`, `/office-hours`, `/plan-ceo-review`, `/review`, `/qa`, `/retro` and the rest) are available as slash commands. The full gstack list ships under one install because the underlying repo is one tightly-integrated toolkit.',
         ],
       },
       {
         heading: 'How the three skills compose',
         paragraphs: [
-          'Context7 runs during the build phase. Whenever Claude Code reaches for a library API, Context7 injects the current version-specific docs instead of letting the model improvise from training data. Impeccable runs at the polish phase. Once the feature works, /impeccable polish and /impeccable audit raise the visual baseline before the public sees it. gstack runs at the shipping phase. /ship opens the PR, /land-and-deploy merges and deploys, /canary monitors the post-deploy window. The wider gstack toolkit (CEO review, eng review, QA, retro) covers the team-of-twenty roles a solo founder otherwise carries alone.',
+          'Context7 runs during the build phase. Whenever Claude Code reaches for a library API, Context7 injects the current version-specific docs instead of letting the model improvise from training data. Impeccable runs at the polish phase. Once the feature works, `/impeccable polish` and `/impeccable audit` raise the visual baseline before the public sees it. gstack runs at the shipping phase. `/ship` opens the PR, `/land-and-deploy` merges and deploys, `/canary` monitors the post-deploy window. The wider gstack toolkit (CEO review, eng review, QA, retro) covers the team-of-twenty roles a solo founder otherwise carries alone.',
           'The Foundational layer surrounds the three. Researcher runs upstream of the build (user-pain mapping, competitive teardowns). Plan Challenger runs before significant code lands (catches the wrong product before it is built). Source Harvest extracts patterns from upstream libraries. Skill Creator codifies your own recurring shipping workflows. Systematic Debugging runs when the multi-skill pipeline produces unexpected behavior. Together with the Builder layer, you get research, challenge, build, ship, polish, monitor, debug under one roof.',
         ],
       },
@@ -1915,7 +1915,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         title: 'Solo SaaS founder shipping the next feature',
         body:
-          'A founder running a $5K MRR micro-SaaS picks up the next ticket. Researcher dispatches parallel workers to map user pain. Plan Challenger stress-tests the proposed solution. Context7 injects the current Supabase and Next.js docs during the build. Impeccable polishes the new flow. /ship opens the PR. /land-and-deploy merges and verifies production. /canary watches the post-deploy window. One operator. Seven roles. No tooling friction between phases.',
+          'A founder running a $5K MRR micro-SaaS picks up the next ticket. Researcher dispatches parallel workers to map user pain. Plan Challenger stress-tests the proposed solution. Context7 injects the current Supabase and Next.js docs during the build. Impeccable polishes the new flow. `/ship` opens the PR. `/land-and-deploy` merges and verifies production. `/canary` watches the post-deploy window. One operator. Seven roles. No tooling friction between phases.',
       },
       {
         title: 'Indie hacker running multiple products simultaneously',
@@ -1930,7 +1930,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         title: 'Plugin author extending an existing platform',
         body:
-          'A builder shipping Obsidian, VS Code or Figma plugins works inside platform constraints. Impeccable enforces visual fluency that matches the host platforms expectation. /ship and /land-and-deploy handle the marketplace publishing rhythm. /canary monitors the install metrics post-publish. The substrate plus the Builder Bundle covers the full plugin lifecycle from idea to deprecation.',
+          'A builder shipping Obsidian, VS Code or Figma plugins works inside platform constraints. Impeccable enforces visual fluency that matches the host platforms expectation. `/ship` and `/land-and-deploy` handle the marketplace publishing rhythm. `/canary` monitors the install metrics post-publish. The substrate plus the Builder Bundle covers the full plugin lifecycle from idea to deprecation.',
       },
     ],
     faq: [
@@ -1945,7 +1945,7 @@ export const igosAssets: IGOSAsset[] = [
           'Context7 and Impeccable ship as Claude Code marketplace plugins, so they install via settings.json registration. gstack ships as a single repository with 30+ slash commands and its own setup script. The gstack maintainer chose this distribution model intentionally to keep the toolkit tightly integrated. The Builder Bundle install script handles both patterns in one run.',
       },
       {
-        q: 'I only want /ship, /land-and-deploy and /canary from gstack. Can I skip the rest?',
+        q: 'I only want `/ship`, `/land-and-deploy` and `/canary` from gstack. Can I skip the rest?',
         a:
           'gstack distributes as one bundle. Installing brings the full slash-command set. The other commands (CEO review, eng manager, QA, retro and the rest) do not auto-execute. They become available when you invoke them. Most solo builders find at least three or four additional gstack commands useful within the first week. Skipping the install would mean cherry-picking individual command files manually, which the gstack repo does not support cleanly.',
       },
@@ -1962,7 +1962,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         q: 'Is the install reversible?',
         a:
-          'Yes. To remove the marketplace plugins, restore settings.json from the backup the script writes, or run /plugin uninstall for each plugin from inside Claude Code. To remove gstack, delete ~/.claude/skills/gstack. No system-level changes happen.',
+          'Yes. To remove the marketplace plugins, restore settings.json from the backup the script writes, or run `/plugin uninstall` for each plugin from inside Claude Code. To remove gstack, delete ~/.claude/skills/gstack. No system-level changes happen.',
       },
       {
         q: 'How does the Builder Bundle relate to the other avatar bundles?',
@@ -2013,7 +2013,7 @@ export const igosAssets: IGOSAsset[] = [
         {
           title: 'Multi-Format Content Writer (workspace template)',
           description:
-            'A Claude Code workspace template, not a skill. Clone as your writing project. Add 2-3 examples of your own writing to teach Claude your voice. Drop unstructured thoughts into /rawnotes. Run /extract-themes, /research and /write to take one source idea through long-form draft and platform adaptation: LinkedIn, newsletter, Twitter thread, podcast Q&A. Companion install: use as a workspace alongside the two installed skills above.',
+            'A Claude Code workspace template, not a skill. Clone as your writing project. Add 2-3 examples of your own writing to teach Claude your voice. Drop unstructured thoughts into `/rawnotes`. Run `/extract-themes`, `/research` and `/write` to take one source idea through long-form draft and platform adaptation: LinkedIn, newsletter, Twitter thread, podcast Q&A. Companion install: use as a workspace alongside the two installed skills above.',
           source: 'github.com/WomenDefiningAI/claudecode-writer',
           license: 'MIT',
           externalUrl: 'https://github.com/WomenDefiningAI/claudecode-writer',
@@ -2034,7 +2034,7 @@ export const igosAssets: IGOSAsset[] = [
         heading: 'What the install brings',
         paragraphs: [
           'The install script does two things. First, it clones the Voice Ghostwriter repository into the Claude Code skills directory. Second, it pulls the Humanizer SKILL.md file into the skills directory as a single-file skill. Both halves are idempotent. Re-running is safe. The script writes a timestamped backup before any change.',
-          'After install, restart Claude Code. Voice Ghostwriter and Humanizer are both available as named skills. Voice Ghostwriter activates when the work calls for voice calibration, interview extraction or drafting in a calibrated voice. Humanizer activates with the /humanizer command or naturally when Claude reaches for AI-pattern detection.',
+          'After install, restart Claude Code. Voice Ghostwriter and Humanizer are both available as named skills. Voice Ghostwriter activates when the work calls for voice calibration, interview extraction or drafting in a calibrated voice. Humanizer activates with the `/humanizer` command or naturally when Claude reaches for AI-pattern detection.',
           'The Multi-Format Content Writer is a workspace template. Use the GitHub "Use this template" flow or git clone to set it up as a writing project, then add your voice examples and start the workflow. Treat it as the writing-room next to the two skills, not as a third install in the same directory.',
         ],
       },
@@ -2042,7 +2042,7 @@ export const igosAssets: IGOSAsset[] = [
         heading: 'How the three resources compose',
         paragraphs: [
           'Voice Ghostwriter runs at the front of any drafting session. Calibrate against the writer\'s own published work or the client\'s past writing. Extract specifics through structured interview. Draft in the calibrated voice. The output reads like the writer instead of the model. Humanizer runs at the polish phase. Once a draft exists, the detect-mode flag audits it for the 37 AI-writing patterns. The rewrite mode rebuilds sentence structure rather than swapping synonyms. Five voice profiles let the same engine serve different sub-archetypes (casual newsletter operator, professional ghostwriter, technical essayist, warm storyteller, blunt thread writer).',
-          'The Multi-Format Content Writer template runs once a long-form draft exists. The /write command produces a full article in the workspace. Specialized agents adapt it for LinkedIn, newsletter, Twitter thread and podcast Q&A formats. The repurposing step is where most writers bleed time; this workflow compresses it to one pass.',
+          'The Multi-Format Content Writer template runs once a long-form draft exists. The `/write` command produces a full article in the workspace. Specialized agents adapt it for LinkedIn, newsletter, Twitter thread and podcast Q&A formats. The repurposing step is where most writers bleed time; this workflow compresses it to one pass.',
           'The Foundational layer surrounds the three. Researcher gathers research before any draft begins. Plan Challenger stress-tests the outline before drafting. Source Harvest extracts patterns from other writers. Skill Creator codifies recurring drafting workflows. Systematic Debugging takes over when the multi-tool pipeline produces unexpected output. Together with the Writer layer, the practice covers research, challenge, voice-calibration, draft, polish, multi-format adaptation, debug and distribute under one roof.',
         ],
       },
@@ -2071,7 +2071,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         title: 'Threadwriter feeding a newsletter from short-form work',
         body:
-          'A threadwriter operating on X or LinkedIn often feeds a newsletter as the deeper distribution layer. The Multi-Format template runs in reverse: the thread becomes the seed, /write produces the long-form newsletter version, Voice Ghostwriter calibrates the long-form voice against the writer\'s archive. Humanizer cleans the polish layer. One short post becomes one full newsletter without the writer redoing the thinking.',
+          'A threadwriter operating on X or LinkedIn often feeds a newsletter as the deeper distribution layer. The Multi-Format template runs in reverse: the thread becomes the seed, `/write` produces the long-form newsletter version, Voice Ghostwriter calibrates the long-form voice against the writer\'s archive. Humanizer cleans the polish layer. One short post becomes one full newsletter without the writer redoing the thinking.',
       },
     ],
     faq: [
@@ -2138,7 +2138,7 @@ export const igosAssets: IGOSAsset[] = [
         {
           title: 'YouTube Channel Manager',
           description:
-            'A YouTube creator skill covering channel audits, video SEO, retention-aware scripting, hook architecture, thumbnail design briefs, content calendars, Shorts optimization, analytics review, monetization checks, competitor research and cross-platform repurposing. Designed for solo YouTubers and small channel teams. Installs as a single skill at ~/.claude/skills/youtube/. Activate with /youtube audit or by naming the channel work in plain language.',
+            'A YouTube creator skill covering channel audits, video SEO, retention-aware scripting, hook architecture, thumbnail design briefs, content calendars, Shorts optimization, analytics review, monetization checks, competitor research and cross-platform repurposing. Designed for solo YouTubers and small channel teams. Installs as a single skill at ~/.claude/skills/youtube/. Activate with `/youtube audit` or by naming the channel work in plain language.',
           source: 'github.com/AgriciDaniel/claude-youtube',
           license: 'MIT',
           externalUrl: 'https://github.com/AgriciDaniel/claude-youtube',
@@ -2146,7 +2146,7 @@ export const igosAssets: IGOSAsset[] = [
         {
           title: 'Video Watcher',
           description:
-            'Gives Claude the ability to actually watch a video. The /watch command takes a URL or local path, downloads with yt-dlp, extracts frames with ffmpeg, transcribes via captions or Whisper and hands the full multimodal package back to Claude. Use it to review your own recordings before publish, study a competitor video without sitting through the whole thing or pull verbatim quotes from a podcast for repurposing. Installs as a Claude Code marketplace plugin (watch@claude-video).',
+            'Gives Claude the ability to actually watch a video. The `/watch` command takes a URL or local path, downloads with yt-dlp, extracts frames with ffmpeg, transcribes via captions or Whisper and hands the full multimodal package back to Claude. Use it to review your own recordings before publish, study a competitor video without sitting through the whole thing or pull verbatim quotes from a podcast for repurposing. Installs as a Claude Code marketplace plugin (watch@claude-video).',
           source: 'github.com/bradautomates/claude-video',
           license: 'MIT',
           externalUrl: 'https://github.com/bradautomates/claude-video',
@@ -2175,7 +2175,7 @@ export const igosAssets: IGOSAsset[] = [
         heading: 'What the install brings',
         paragraphs: [
           'The install script does two things. First, it registers the claude-video marketplace and enables watch@claude-video for the Video Watcher skill. Second, it clones the AgriciDaniel/claude-youtube repository and copies the YouTube Channel Manager skill files into ~/.claude/skills/youtube/. Both halves are idempotent. Re-running is safe. The script writes a timestamped backup of any existing settings.json or skills directory before any change.',
-          'After install, restart Claude Code. /watch becomes available for any video URL or local file. /youtube audit and the wider YouTube Channel Manager surface activate when channel work, video SEO, hook design or thumbnail briefs come up.',
+          'After install, restart Claude Code. `/watch` becomes available for any video URL or local file. `/youtube audit` and the wider YouTube Channel Manager surface activate when channel work, video SEO, hook design or thumbnail briefs come up.',
           'Content Repurposing is reachable without a separate install. The marketing-skills plugin from the Foundational Bundle includes the video production chapter. Ask Claude to plan a video, design a repurposing pipeline or cut one recording into multiple platform-specific pieces. The skill activates from inside the Foundational substrate without any additional setup.',
         ],
       },
@@ -2230,7 +2230,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         q: 'What does Video Watcher actually do that I can\'t do without it?',
         a:
-          'Without Video Watcher, Claude can only reason about a video\'s title, description, transcript-if-provided and metadata. With Video Watcher installed, /watch turns any video URL or local file into a multimodal package: yt-dlp downloads the file, ffmpeg extracts representative frames, Whisper transcribes the audio if no captions exist and the full set hands back to Claude. The result is that Claude can review your rough cut, study a competitor video, pull verbatim moments from a podcast or audit on-screen action against the narration. Video becomes an actual input modality.',
+          'Without Video Watcher, Claude can only reason about a video\'s title, description, transcript-if-provided and metadata. With Video Watcher installed, `/watch` turns any video URL or local file into a multimodal package: yt-dlp downloads the file, ffmpeg extracts representative frames, Whisper transcribes the audio if no captions exist and the full set hands back to Claude. The result is that Claude can review your rough cut, study a competitor video, pull verbatim moments from a podcast or audit on-screen action against the narration. Video becomes an actual input modality.',
       },
       {
         q: 'I do not have a YouTube channel. Is this bundle still useful for podcasters or short-form creators?',
@@ -2408,7 +2408,7 @@ export const igosAssets: IGOSAsset[] = [
         {
           title: 'Tech Digest',
           description:
-            'RSS aggregation engine designed for digest curators. Pulls from configurable feed lists, filters by score, deduplicates overlapping stories, groups by day and surfaces a structured shortlist ready for editorial selection. Pure Python stdlib, zero dependencies. Ships with developer-niche defaults (Hacker News, Lobste.rs); the YAML feed list is fully swappable for any niche. Invoke with /digest 7 for a weekly recap or /digest 3 for a tighter window. The intake engine of the bundle.',
+            'RSS aggregation engine designed for digest curators. Pulls from configurable feed lists, filters by score, deduplicates overlapping stories, groups by day and surfaces a structured shortlist ready for editorial selection. Pure Python stdlib, zero dependencies. Ships with developer-niche defaults (Hacker News, Lobste.rs); the YAML feed list is fully swappable for any niche. Invoke with `/digest 7` for a weekly recap or `/digest 3` for a tighter window. The intake engine of the bundle.',
           source: 'github.com/camilleroux/tech-digest',
           license: 'MIT',
           externalUrl: 'https://github.com/camilleroux/tech-digest',
@@ -2437,14 +2437,14 @@ export const igosAssets: IGOSAsset[] = [
         heading: 'What the install brings',
         paragraphs: [
           'The install script does two things. First, it clones the Tech Digest repository and copies the digest skill files into the Claude Code skills directory at ~/.claude/skills/tech-digest/. Second, it clones the ai-marketing-claude-code-skills repository and copies the newsletter-creation-curation directory into ~/.claude/skills/newsletter-creation-curation/. Both halves are idempotent. Re-running is safe. The script writes a timestamped backup of any existing skills directory before overwriting.',
-          'After install, restart Claude Code. /digest becomes available for any feed list configured in the YAML. The newsletter creation skill activates when the work calls for editorial framing, subject-line authoring or stage-aware sequence design.',
+          'After install, restart Claude Code. `/digest` becomes available for any feed list configured in the YAML. The newsletter creation skill activates when the work calls for editorial framing, subject-line authoring or stage-aware sequence design.',
           'A note on the Content Research Writer skill: an additional skill named in the Curator avatar research (ComposioHQ\'s content-research-writer) is omitted from this v1 install pending license confirmation on the upstream repo. The eight-step research-to-draft model it covers (topic understanding, collaborative outlining, source research, hook improvement, section feedback, voice preservation, citation management, final polish) is queued for a Kingdom-native rebuild in v1.1. Curators who write deeper analytical synthesis can reach for the Foundational substrate\'s Researcher in the meantime.',
         ],
       },
       {
         heading: 'How the two skills compose',
         paragraphs: [
-          'Tech Digest runs at intake. Configure the feed list once. Run /digest 7 every Monday or /digest 3 for a tighter window. The skill returns a scored, deduplicated shortlist of items grouped by day. The Curator still makes every final call, but they arrive at that decision with a pre-sorted set of candidates instead of 200 raw items. The score-based filtering and the deduplication are the differentiators over a generic RSS reader.',
+          'Tech Digest runs at intake. Configure the feed list once. Run `/digest 7` every Monday or `/digest 3` for a tighter window. The skill returns a scored, deduplicated shortlist of items grouped by day. The Curator still makes every final call, but they arrive at that decision with a pre-sorted set of candidates instead of 200 raw items. The score-based filtering and the deduplication are the differentiators over a generic RSS reader.',
           'Newsletter Creation and Curation runs at production. Once the items are selected, the skill handles the editorial layer: the one or two sentences per item that explain why each one matters, the synthesis paragraph that ties the issue together, the subject line that earns the open. Stage-aware workflows let the same engine produce a B2B industry digest, a consumer taste-forward newsletter or a "5 things" personal recommendation list with the appropriate voice register for each.',
           'The Foundational layer surrounds the two. Source Harvest is the proprietary source-map builder. Most curators discover good feeds accidentally and lose track of them just as fast; Source Harvest makes source-building deliberate. Researcher is the depth-pass for items that warrant analytical framing rather than a quick blurb. Plan Challenger reviews the issue plan when something feels off and the Curator wants a structural read before sending. Skill Creator lets the Curator encode their selection criteria as a custom skill, turning a felt sense into a repeatable quality bar. Systematic Debugging applies when the multi-tool pipeline produces unexpected output. Together with the Curator layer, the practice covers intake, triage, framing, production, source-mapping, depth-research, plan-review and debug under one roof.',
         ],
@@ -2578,7 +2578,7 @@ export const igosAssets: IGOSAsset[] = [
         heading: 'What the install brings',
         paragraphs: [
           'The install script does three things. First, it clones the gcamilo/management-consulting repository into the Claude Code skills directory at ~/.claude/skills/management-consulting/. Second, it registers the glebis-skills marketplace and enables the Decision Toolkit plugin via a jq merge into settings.json. Third, it clones the charlie989898 MBB Management Consultant repository and copies the skill contents into ~/.claude/skills/mbb-consultant/. All three halves are idempotent. Re-running is safe. The script writes a timestamped backup of any existing settings.json and skills directories before any change.',
-          'After install, restart Claude Code. Management Consulting activates on any strategy question, market analysis or structured recommendation request. Decision Toolkit activates with /decision commands or naturally when Claude reaches for structured decision frameworks. MBB Management Consultant activates when executive communication structure or sector-specific strategy framing is in scope.',
+          'After install, restart Claude Code. Management Consulting activates on any strategy question, market analysis or structured recommendation request. Decision Toolkit activates with `/decision` commands or naturally when Claude reaches for structured decision frameworks. MBB Management Consultant activates when executive communication structure or sector-specific strategy framing is in scope.',
         ],
       },
       {
