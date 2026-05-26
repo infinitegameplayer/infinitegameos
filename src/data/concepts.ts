@@ -119,6 +119,11 @@ export const concepts: Concept[] = [
       { href: '/concepts/ideal-month', label: 'The Ideal Month', variant: 'accent' },
       { href: '/creator-business-without-performing', label: 'Build Without Performing', variant: 'outline' },
     ],
+    productCard: {
+      body: 'Earn the Right to Automate is the timing companion to the Creator Flywheel. The flywheel describes the engine. The Field Guide installs the discipline that decides what belongs inside it. Twenty manual reps before automation is on the table. A five-question decision tree. The work that has become a flywheel earns the automation. The work that is still a job does not.',
+      ctaHref: 'https://sidequesthq.co/products/earn-the-right-to-automate',
+      ctaLabel: 'Earn the Right to Automate · $9',
+    },
   },
   {
     slug: 'the-pioneer',
@@ -376,6 +381,11 @@ export const concepts: Concept[] = [
       { href: '/sovereignty', label: 'Sovereignty', variant: 'outline' },
       { href: '/design-your-day', label: 'Design Your Day', variant: 'outline' },
     ],
+    productCard: {
+      body: 'Stack Calm is the tool-layer companion to the Ideal Month. The month sets the structure. The Field Guide installs the aliveness filter that decides which tools belong inside it. Personal stack ledger. Quarterly review. New-tool test before any subscription joins. The Ideal Month becomes the architecture. Stack Calm keeps the architecture clear.',
+      ctaHref: 'https://sidequesthq.co/products/stack-calm',
+      ctaLabel: 'Stack Calm · $9',
+    },
   },
   {
     slug: 'playgrounds-of-exploration',

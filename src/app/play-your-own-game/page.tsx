@@ -269,6 +269,42 @@ export default function PlayYourOwnGamePage() {
             </SectionReveal>
           </div>
 
+          <SectionReveal delay={310}>
+            <div
+              style={{
+                marginTop: '3.5rem',
+                padding: '2rem',
+                border: '1px solid var(--color-border)',
+                borderRadius: '12px',
+                background: 'var(--color-card, rgba(255, 255, 255, 0.02))',
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '1rem',
+                  color: 'var(--color-text)',
+                  lineHeight: 1.75,
+                  maxWidth: '62ch',
+                  marginBottom: '1.5rem',
+                }}
+              >
+                AI for the Business You Actually Want is the operator-side companion
+                to Playing Your Own Game. The Pioneer audits the game. The Field Guide
+                installs the protection that keeps the work from drifting back into
+                someone else&apos;s voice. Seven Moves. Voice protection, pace-layer
+                awareness and decision discipline for the owner using AI without
+                losing themselves to it.
+              </p>
+              <a
+                href="https://sidequesthq.co/products/ai-for-the-business-you-actually-want"
+                className="btn-accent"
+              >
+                AI for the Business You Actually Want · $9
+              </a>
+            </div>
+          </SectionReveal>
+
           <SectionReveal delay={320}>
             <div
               style={{

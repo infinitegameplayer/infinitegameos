@@ -94,9 +94,11 @@ The script verifies the article, calls the API route, and returns the broadcast 
 
 **Required env vars.**
 - `RESEND_AUDIENCE_INFINITE_GAME_ID` (production audience, already set)
-- `RESEND_AUDIENCE_TEST_ID` (test audience with belone@tutamail.com only)
 - `BROADCAST_TRIGGER_SECRET` (shared secret on the IGOS site and in Kingdom `scripts/.env`)
 - `RESEND_API_KEY` (already set)
+
+**Optional env var.**
+- `RESEND_AUDIENCE_TEST_ID` (only needed if running `--audience test` against a separate small audience). Skipped by current setup. Verification before each send relies on `--dry-run` plus the small list itself acting as a low-risk verification surface.
 
 **Shared email shell.** `src/lib/email-shell.ts` renders both the welcome (transactional) email and Broadcast email from one layout. Same typography, footer treatment and unsubscribe styling.
 
