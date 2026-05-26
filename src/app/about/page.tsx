@@ -33,6 +33,7 @@ const personSchema = {
     'Lane Belone works at the intersection of Infinite Game philosophy, sovereign creative operating systems, and agentic architecture. He writes from inside the practice, documenting what it looks like to build sovereign presence in a Post Web environment.',
   knowsAbout: igosExpertise,
   sameAs: [
+    'https://www.wikidata.org/wiki/Q139889543',
     'https://lanebelone.com',
     'https://sidequesthq.co',
     'https://www.linkedin.com/in/lanebelone/',

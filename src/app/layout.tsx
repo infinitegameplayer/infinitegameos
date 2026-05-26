@@ -120,6 +120,7 @@ const organizationSchema = {
   url: 'https://www.infinitegameos.io',
   founder: { '@id': 'https://infinitegameos.io/#person' },
   sameAs: [
+    'https://www.wikidata.org/wiki/Q139936059',
     'https://www.lanebelone.com',
     'https://sidequesthq.co',
   ],
