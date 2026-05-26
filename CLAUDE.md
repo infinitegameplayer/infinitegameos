@@ -82,23 +82,19 @@ Newsletter sends to the Infinite Game audience flow through the `/api/internal/b
 
 **Frontmatter convention.** When an `/updates/[slug]` article warrants a Broadcast send, add `broadcast: true` to its mdx frontmatter. This is the intent marker. The flag does not auto-fire a send in v1; it signals which articles are newsletter-eligible.
 
-**Send action.** After Deploy Seal confirms a production deploy, the King runs the trigger script from the Kingdom vault:
+**Send action.** After Deploy Seal confirms a production deploy, the King runs the trigger script from the Kingdom vault. One audience: the Infinite Game audience on Resend. Always dry-run first to verify the payload:
 
 ```bash
-node "Council Chamber/scripts/igos-broadcast-trigger.mjs" --slug <article-slug> --audience test --dry-run
-node "Council Chamber/scripts/igos-broadcast-trigger.mjs" --slug <article-slug> --audience test
-node "Council Chamber/scripts/igos-broadcast-trigger.mjs" --slug <article-slug> --audience production
+node "Council Chamber/scripts/igos-broadcast-trigger.mjs" --slug <article-slug> --dry-run
+node "Council Chamber/scripts/igos-broadcast-trigger.mjs" --slug <article-slug>
 ```
 
-The script verifies the article, calls the API route, and returns the broadcast id and send status. Test audience first, then production.
+The script verifies the article, calls the API route, and returns the broadcast id and send status. The script pauses 5 seconds before any live send to allow abort.
 
 **Required env vars.**
-- `RESEND_AUDIENCE_INFINITE_GAME_ID` (production audience, already set)
+- `RESEND_AUDIENCE_INFINITE_GAME_ID` (the Infinite Game audience, already set)
 - `BROADCAST_TRIGGER_SECRET` (shared secret on the IGOS site and in Kingdom `scripts/.env`)
 - `RESEND_API_KEY` (already set)
-
-**Optional env var.**
-- `RESEND_AUDIENCE_TEST_ID` (only needed if running `--audience test` against a separate small audience). Skipped by current setup. Verification before each send relies on `--dry-run` plus the small list itself acting as a low-risk verification surface.
 
 **Shared email shell.** `src/lib/email-shell.ts` renders both the welcome (transactional) email and Broadcast email from one layout. Same typography, footer treatment and unsubscribe styling.
 

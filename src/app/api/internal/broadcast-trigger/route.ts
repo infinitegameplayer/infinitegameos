@@ -29,7 +29,6 @@ type Article = {
 type RequestBody = {
   slug?: string
   slugs?: string[]
-  audience?: 'production' | 'test'
   dryRun?: boolean
 }
 
@@ -148,16 +147,10 @@ export async function POST(req: NextRequest) {
     )
   }
 
-  const audienceTarget = body.audience === 'production' ? 'production' : 'test'
-  const audienceId =
-    audienceTarget === 'production'
-      ? process.env.RESEND_AUDIENCE_INFINITE_GAME_ID
-      : process.env.RESEND_AUDIENCE_TEST_ID
+  const audienceId = process.env.RESEND_AUDIENCE_INFINITE_GAME_ID
   if (!audienceId) {
     return NextResponse.json(
-      {
-        error: `Missing audience env var for target "${audienceTarget}". Set RESEND_AUDIENCE_${audienceTarget === 'production' ? 'INFINITE_GAME_ID' : 'TEST_ID'}.`,
-      },
+      { error: 'Missing audience env var. Set RESEND_AUDIENCE_INFINITE_GAME_ID.' },
       { status: 500 }
     )
   }
@@ -187,7 +180,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       ok: true,
       dryRun: true,
-      audienceTarget,
       audienceId,
       subject,
       preview,
@@ -203,7 +195,7 @@ export async function POST(req: NextRequest) {
     from: FROM,
     replyTo: REPLY_TO,
     previewText: preview,
-    name: `${audienceTarget}: ${subject}`,
+    name: subject,
   })
   if (!created.ok) {
     return NextResponse.json(
@@ -226,7 +218,6 @@ export async function POST(req: NextRequest) {
 
   return NextResponse.json({
     ok: true,
-    audienceTarget,
     broadcastId: created.id,
     slugs,
     subject,
