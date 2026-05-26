@@ -65,7 +65,7 @@ const websiteSchema = {
   description:
     'A structured knowledge base for Infinite Game philosophy, agentic systems, and sovereign life design. AI-agent-first architecture.',
   author: {
-    '@id': 'https://www.infinitegameos.io/#person',
+    '@id': 'https://infinitegameos.io/#person',
   },
   sameAs: [
     'https://lanebelone.com',
@@ -77,7 +77,7 @@ const websiteSchema = {
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  '@id': 'https://www.infinitegameos.io/#person',
+  '@id': 'https://infinitegameos.io/#person',
   name: 'Lane Belone',
   url: 'https://lanebelone.com',
   image: 'https://www.lanebelone.com/images/lane-machu-picchu-square.webp',
@@ -102,6 +102,7 @@ const personSchema = {
     credentialCategory: 'military qualification',
   },
   sameAs: [
+    'https://www.wikidata.org/wiki/Q139889543',
     'https://lanebelone.com',
     'https://sidequesthq.co',
     'https://www.linkedin.com/in/lanebelone/',
