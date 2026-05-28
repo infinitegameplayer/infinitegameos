@@ -315,6 +315,11 @@ export const concepts: Concept[] = [
       { href: '/concepts/the-pioneer', label: 'The Pioneer', variant: 'accent' },
       { href: '/concepts/joyful-sovereignty', label: 'Joyful Sovereignty', variant: 'outline' },
     ],
+    productCard: {
+      body: 'Whose Game Are You Playing with AI is the practice companion to this distinction. The conditioned identity runs the prompts on autopilot and takes the averaged answer. The authentic one asks whose game the output serves. The Field Guide installs AI as a mirror with limits. The mirror prompt. The reframe that returns you to your own knowing instead of the conditioned default.',
+      ctaHref: 'https://sidequesthq.co/products/whose-game-are-you-playing-with-ai',
+      ctaLabel: 'Whose Game Are You Playing with AI · $9',
+    },
   },
   {
     slug: 'ideal-month',
@@ -784,6 +789,11 @@ export const concepts: Concept[] = [
       { href: '/concepts/data-sovereignty', label: 'Data Sovereignty', variant: 'accent' },
       { href: '/sovereign-ecosystem', label: 'The Sovereign Ecosystem', variant: 'outline' },
     ],
+    productCard: {
+      body: 'Sovereign Capture is the practice companion to the AI Second Brain. The framework names the loop. The Field Guide installs the part most operators skip: presence as the practice. The five-step capture flow. Capture, tag, surface, release, trust. The release is where most stall. The trust is the move that compounds. Your week stops happening to you because the architecture is holding it.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-capture',
+      ctaLabel: 'Sovereign Capture · $7',
+    },
   },
 ]
 
