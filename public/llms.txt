@@ -70,6 +70,8 @@ Key terms and entity names used throughout this site:
 - /concepts/data-sovereignty — The foundation underneath everything else: your files, your machine, your terms; the AI as a tool that serves you, not a platform that owns you
 - /concepts/the-north-star — The compass that lets the AI organize your work around your direction; a living document, not a fixed plan
 - /concepts/ai-second-brain — The system that holds your thoughts so you do not have to; capture from anywhere, organize, distill and express through the AI you already use
+- /concepts/sovereign-capture — The capture practice that keeps you present to the work while honoring the ideas that want to arrive; body as the first container, a five-step flow, a weekly sift
+- /concepts/contemplative-question-practice — The practice of holding a real question before the session opens, so AI returns you to yourself rather than averages you away
 
 ## Public Library (Installable Assets)
 

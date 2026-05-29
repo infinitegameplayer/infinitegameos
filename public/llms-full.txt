@@ -470,6 +470,18 @@ Sovereignty, The North Star, The Ideal Month.
 
 ---
 
+## Sovereign Capture (/concepts/sovereign-capture)
+
+Sovereign Capture is the practice of holding what wants to arrive without losing your presence to the work. Ideas land all day. Most capture systems optimize for retrieval and quietly make you the manager of your own inbox. The sovereign version asks a different question: how do you honor the ideas and stay present to the life they arrive inside. Body is the first container. Three breaths and a felt note tell the nervous system the idea was received, which removes the low fear of forgetting. Then the five-step flow runs: capture into a file you own, tag lightly by theme, surface in a weekly sift, release the grip that says you must act now, trust that the structure brings it back when it matters. The release and the trust are the sovereign half, and the step most operators skip. This is where the AI Second Brain stops being a framework and becomes a daily practice you can feel. The files live on your machine. The structure does the remembering so your nervous system can let go. The practitioner artifact is the Sovereign Capture Field Guide on Side Quest HQ, which installs the practice as seven Moves. Related: AI Second Brain, Data Sovereignty, The North Star, The Ideal Month.
+
+---
+
+## The Contemplative Question Practice (/concepts/contemplative-question-practice)
+
+The Contemplative Question Practice is the move productivity AI cannot make. You hold one precise question before you open the prompt window and let it work on you across a week of sessions rather than rushing to resolve it. The Tuesday-morning interior names the condition: three hours of competent AI output and a quiet pocket of off-ness behind the sternum, the sense of being competent at something you did not decide to want. Productivity AI cannot hold the question of whose game you are playing because its value proposition assumes you already know. The practice points AI at reflection rather than output. A mirror prompt asks the AI to show you your own thinking instead of replacing it, with the limits honored. Paired with a personal manifesto the AI can reference, decisions that used to bounce around resolve in seconds because the question and the manifesto already answered. Aliveness is the compass the practice keeps returning to. When a session produces simplicity, spaciousness and calm authority, it is on the path. The practitioner artifact is the Whose Game Are You Playing with AI Field Guide on Side Quest HQ, which installs the practice as seven Moves. Related: Conditioned vs Authentic Identity, The North Star, Joyful Sovereignty, The Infinite Playlist.
+
+---
+
 ## Sovereign Ecosystem (/sovereign-ecosystem)
 
 Dedicated landing page for the Sovereign Ecosystem GitHub repo (github.com/InfiniteGamePlayer/sovereign-ecosystem). Article + FAQPage + BreadcrumbList JSON-LD schema. Published 2026-05-05.

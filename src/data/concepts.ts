@@ -189,6 +189,11 @@ export const concepts: Concept[] = [
       { href: '/concepts/conditioned-vs-authentic-identity', label: 'Identity Work', variant: 'accent' },
       { href: '/play-your-own-game', label: 'Play Your Own Game', variant: 'outline' },
     ],
+    productCard: {
+      body: 'Yours to Make is the Field Guide for the Pioneer building their own path with AI in the room. The voice-drift texture named. Curiosity as the invisible thread. The collaborator brief that re-roles AI from generator to co-player. The work stays undeniably yours because a clearer self walks into the room where AI operates.',
+      ctaHref: 'https://sidequesthq.co/products/yours-to-make',
+      ctaLabel: 'Yours to Make · $9',
+    },
   },
   {
     slug: 'joyful-sovereignty',
@@ -627,6 +632,11 @@ export const concepts: Concept[] = [
       { href: '/concepts/ai-second-brain', label: 'The AI Second Brain', variant: 'accent' },
       { href: '/sovereignty', label: 'Sovereign Life Design', variant: 'outline' },
     ],
+    productCard: {
+      body: 'Sovereign Capture is the practice that operationalizes data sovereignty day to day. Files local and yours. A five-step capture flow that keeps the loop on your machine. The Field Guide installs the practice so the foundation you own gets used, not just admired.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-capture',
+      ctaLabel: 'Sovereign Capture · $7',
+    },
   },
   {
     slug: 'the-north-star',
@@ -793,6 +803,140 @@ export const concepts: Concept[] = [
       body: 'Sovereign Capture is the practice companion to the AI Second Brain. The framework names the loop. The Field Guide installs the part most operators skip: presence as the practice. The five-step capture flow. Capture, tag, surface, release, trust. The release is where most stall. The trust is the move that compounds. Your week stops happening to you because the architecture is holding it.',
       ctaHref: 'https://sidequesthq.co/products/sovereign-capture',
       ctaLabel: 'Sovereign Capture · $7',
+    },
+  },
+  {
+    slug: 'sovereign-capture',
+    title: 'Sovereign Capture',
+    label: 'Practice',
+    capsule:
+      'The practice of holding what wants to arrive without losing your presence to the work. Ideas land all day. Most capture systems optimize for retrieval and quietly make you the manager of your own inbox. Sovereign Capture asks a different question. How do you honor the ideas and stay present to the life they arrive inside. Body as the first container. A five-step flow that runs capture, tag, surface, release, trust. The release is where most people stall. The trust is the move that compounds. Your week stops happening to you because the structure does the remembering.',
+    subtitle:
+      'The capture practice that keeps you present to the work while honoring the ideas that want to arrive.',
+    sections: [
+      {
+        heading: 'Why most capture systems quietly fail you',
+        paragraphs: [
+          'The ideas arrive. You lose half of them before you reach your phone. The ones you capture scatter across five apps. Tuesday\'s insight is unfindable by Friday. You spend the week managing the system instead of working from it.',
+          'Most capture systems optimize for retrieval. They assume the problem is getting the ideas back out. The sovereign version starts somewhere else. The problem is staying present to the work while honoring the ideas that want to arrive. Retrieval matters less than presence. A quieter mind is the point, not a fuller archive.',
+        ],
+      },
+      {
+        heading: 'Body as the first container',
+        paragraphs: [
+          'Before any app, the body holds the idea. Three breaths. A felt note of what just landed. The nervous system registers that the thing was received. That single beat is what lets you set the idea down without the low fear of losing it.',
+          'Presence is the practice. The structure exists so you can be with your body, with the people in front of you, with whatever inspiration arrives next. The capture happens in seconds and then you return to the room.',
+        ],
+      },
+      {
+        heading: 'The five-step flow',
+        paragraphs: [
+          'Capture, tag, surface, release, trust. Capture the idea into a file you own. Tag it lightly so it can be found by theme. Surface it in a weekly sift that turns accumulation into patterns. Release the grip that says you must act on it now. Trust that the structure will bring it back when it matters.',
+          'The release and the trust are the sovereign half. Most operators run the first three steps and then carry the open loop in their body all week. The release sets the loop down. The trust is what makes the release real. That is the move that compounds across a season.',
+        ],
+      },
+      {
+        heading: 'Why this is sovereignty work',
+        paragraphs: [
+          'The files live on your machine. The capture happens in seconds. The intelligence pulls toward you the longer you use it. This is where the AI Second Brain stops being a framework and becomes a daily practice you can feel.',
+          'A capture system on someone else\'s server is a relationship to your own thinking that you rent. Sovereign Capture keeps the loop yours. The structure remembers so your nervous system can let go.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'How do I stop losing my best ideas before I can capture them?',
+        a: 'The first container is the body, not the app. Three breaths and a felt note tell your nervous system the idea was received, which removes the low fear of forgetting. Then the idea goes into a file you own. The five-step flow, capture, tag, surface, release, trust, keeps the loop moving instead of stacking.',
+      },
+      {
+        q: 'Why do my notes pile up and never get used?',
+        a: 'Most capture systems optimize for retrieval and stop there, so the pile grows and the using never starts. Sovereign Capture adds the weekly sift, a short rhythm that surfaces patterns across what you captured and turns the accumulation into something you can act from.',
+      },
+      {
+        q: 'How is Sovereign Capture different from a normal note-taking method?',
+        a: 'A note-taking method optimizes for storing and finding. Sovereign Capture optimizes for presence. The practice asks how you stay present to the work while honoring the ideas that arrive, with body as the first container and trust as the step that lets you set each idea down. The structure does the remembering so your mind stays quiet.',
+      },
+      {
+        q: 'What is the relationship between Sovereign Capture and the AI Second Brain?',
+        a: 'The AI Second Brain is the system that holds your thoughts so you do not have to. Sovereign Capture is the daily practice that keeps that system alive and keeps you present while you use it. The framework names the loop. The practice installs the part most operators skip, which is presence and release.',
+      },
+    ],
+    relatedSlugs: ['ai-second-brain', 'data-sovereignty', 'the-north-star', 'ideal-month'],
+    ctaLinks: [
+      { href: '/concepts/ai-second-brain', label: 'The AI Second Brain', variant: 'accent' },
+      { href: '/concepts/data-sovereignty', label: 'Data Sovereignty', variant: 'outline' },
+    ],
+    productCard: {
+      body: 'Sovereign Capture the Field Guide installs this practice as seven Moves you drop into your week. Body as the first container. The five-step flow in your tool of choice. The weekly sift your AI walks you through. The capture stays in your hands so presence stays the practice.',
+      ctaHref: 'https://sidequesthq.co/products/sovereign-capture',
+      ctaLabel: 'Start With Sovereign Capture · $7',
+    },
+  },
+  {
+    slug: 'contemplative-question-practice',
+    title: 'The Contemplative Question Practice',
+    label: 'Practice',
+    capsule:
+      'A real question you hold before you open the prompt window. Productivity AI assumes you already know whose game you are playing. The contemplative question practice installs the move productivity AI cannot make. You hold one precise question. You let it work on you across a week of sessions rather than rushing to resolve it. The AI becomes a mirror rather than an engine. Aliveness becomes the compass. The work starts coming from you instead of averaging you away from yourself.',
+    subtitle:
+      'The practice of holding a real question before the session opens, so AI returns you to yourself rather than averages you away.',
+    sections: [
+      {
+        heading: 'The interior the dashboard cannot audit',
+        paragraphs: [
+          'It is Tuesday morning. You are three hours in. Your AI has drafted emails, a research memo, a stream that ran out of steam halfway through. The output looks fine. A quiet pocket of off-ness sits behind your sternum.',
+          'The interior question keeps surfacing and getting shelved. Whose game am I even playing here. Productivity AI cannot hold the question because its value proposition assumes you already know. The dashboard stays green. The interior is the audit your dashboard cannot deliver.',
+        ],
+      },
+      {
+        heading: 'Holding the question instead of answering it',
+        paragraphs: [
+          'The practice is not to solve the question in one sitting. It is to hold a single real question and let it work on you across the week. The question shapes the sessions rather than the sessions burying the question.',
+          'A precise question is a quiet instrument. It changes what you notice. It changes which drafts feel alive and which feel like motion for its own sake. Held long enough, the question answers itself in a way no quick prompt could force.',
+        ],
+      },
+      {
+        heading: 'AI as mirror, not engine',
+        paragraphs: [
+          'Most people point AI at output. The contemplative move points it at reflection. A mirror prompt asks the AI to show you your own thinking rather than replace it. The limits stay honored. The AI reflects, it does not decide.',
+          'Used this way, the tool returns you to yourself. The manifesto you write becomes the reference the AI works from. Decisions that used to bounce around resolve in seconds because the question and the manifesto already answered.',
+        ],
+      },
+      {
+        heading: 'Aliveness as compass',
+        paragraphs: [
+          'The felt difference after the practice is installed is simplicity, spaciousness and calm authority. The work feels yours. You are not performing the productive version of yourself. You are being the version that is alive.',
+          'Aliveness is the compass the practice keeps pointing back to. When a session produces that felt quality, it is on the path. When it does not, the question surfaces again and does its work.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'How do I use AI without slowly losing my own voice?',
+        a: 'Hold a real question before you open the prompt window and let it shape the session. The contemplative question practice points AI at reflection rather than output, so the tool returns you to yourself instead of averaging you toward a generic default. Aliveness stays the compass for what is worth making.',
+      },
+      {
+        q: 'What is a contemplative question and how is it different from a prompt?',
+        a: 'A prompt asks the AI to produce something. A contemplative question is one you hold for yourself across a week of sessions, a precise question like whose game am I playing here. You do not rush to resolve it. You let it work on you, and it quietly changes what you notice and which work feels alive.',
+      },
+      {
+        q: 'How do I use AI as a mirror instead of an engine?',
+        a: 'A mirror prompt asks the AI to reflect your own thinking back to you rather than make the decision for you. The limits stay honored. The AI reflects, you decide. Paired with a personal manifesto the AI can reference, this turns the tool into something that sharpens your judgment instead of replacing it.',
+      },
+      {
+        q: 'I am productive with AI but something still feels off. What is that?',
+        a: 'That off-ness is the interior signal that you have been competent at something you did not decide to want. Productivity AI cannot hold the question of whose game you are playing because it assumes you already know. The contemplative question practice is the move that makes the interior auditable again.',
+      },
+    ],
+    relatedSlugs: ['conditioned-vs-authentic-identity', 'the-north-star', 'joyful-sovereignty', 'infinite-playlist'],
+    ctaLinks: [
+      { href: '/concepts/conditioned-vs-authentic-identity', label: 'Conditioned vs Authentic Identity', variant: 'accent' },
+      { href: '/concepts/the-north-star', label: 'The North Star', variant: 'outline' },
+    ],
+    productCard: {
+      body: 'Whose Game Are You Playing with AI is the Field Guide that installs this practice as seven Moves. The paradigm question productivity AI cannot ask. The three-paragraph manifesto template. AI as mirror with the mirror prompt. The contemplative question practice as a returning rhythm. The reading is the on-ramp. The Move is the point.',
+      ctaHref: 'https://sidequesthq.co/products/whose-game-are-you-playing-with-ai',
+      ctaLabel: 'The P1 Field Guide · $9',
     },
   },
 ]
