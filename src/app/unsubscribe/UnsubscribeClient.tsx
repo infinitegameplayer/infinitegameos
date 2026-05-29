@@ -18,18 +18,18 @@ export default function UnsubscribeClient({
   email: string
   token: string
 }) {
-  const [status, setStatus] = useState<Status>('idle')
-  const [message, setMessage] = useState('')
+  const linkIsValid = Boolean(email && token)
+  const [status, setStatus] = useState<Status>(linkIsValid ? 'pending' : 'invalid')
+  const [message, setMessage] = useState(
+    linkIsValid
+      ? ''
+      : 'This link is missing the information needed to unsubscribe. If you got here from an email, check that the full link copied through.'
+  )
 
   useEffect(() => {
     if (!email || !token) {
-      setStatus('invalid')
-      setMessage(
-        'This link is missing the information needed to unsubscribe. If you got here from an email, check that the full link copied through.'
-      )
       return
     }
-    setStatus('pending')
     fetch('/api/unsubscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

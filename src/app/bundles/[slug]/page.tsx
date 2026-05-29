@@ -247,7 +247,7 @@ export default async function BundlePage({ params }: PageProps) {
           <SectionReveal>
             <div style={{ marginBottom: '3rem' }}>
               <p className="label" style={{ marginBottom: '1.25rem' }}>
-                What's inside
+                What&apos;s inside
               </p>
               <div
                 style={{

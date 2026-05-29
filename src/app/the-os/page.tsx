@@ -126,7 +126,7 @@ export default function TheOsPage() {
               </p>
               <p>
                 James Carse wrote the original text in 1986. Profound, philosophical
-                and built for a religion professor's audience. Not a practitioner's
+                and built for a religion professor&apos;s audience. Not a practitioner&apos;s
                 toolkit. Simon Sinek adapted it for Fortune 500 organizations in 2019.
                 Five useful pillars, explicitly designed for corporations, not people.
               </p>

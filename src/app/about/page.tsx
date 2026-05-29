@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import { igosExpertise, igosEcosystemLinks } from '@/lib/page-data'
 
