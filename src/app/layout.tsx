@@ -30,6 +30,11 @@ export const metadata: Metadata = {
   description:
     'Infinite Game OS is a structured knowledge base for practitioners of long-term thinking. Explore Infinite Game philosophy, agentic systems architecture, and sovereign life design.',
   metadataBase: new URL('https://www.infinitegameos.io'),
+  alternates: {
+    types: {
+      'application/rss+xml': 'https://www.infinitegameos.io/rss.xml',
+    },
+  },
   openGraph: {
     type: 'website',
     siteName: 'Infinite Game OS',
