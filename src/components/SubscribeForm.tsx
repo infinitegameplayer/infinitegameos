@@ -50,6 +50,7 @@ const styleId = 'igos-subscribe-style'
 
 export default function SubscribeForm() {
   const posthog = usePostHog()
+  const [firstName, setFirstName] = useState('')
   const [email, setEmail] = useState('')
   const [website, setWebsite] = useState('')
   const [openedAt] = useState(() => Date.now())
@@ -87,6 +88,7 @@ export default function SubscribeForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email: email.trim(),
+          firstName: firstName.trim() || undefined,
           honeypot: website,
           openedAt,
           source:
@@ -173,6 +175,15 @@ export default function SubscribeForm() {
         Receive new updates as they ship. Bi-monthly steady state. No hype, no upsell.
       </p>
       <form onSubmit={handleSubmit} noValidate>
+        <input
+          className="igos-subscribe-input"
+          type="text"
+          autoComplete="given-name"
+          placeholder="First name (optional)"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+          style={{ ...inputStyle, marginBottom: '0.75rem' }}
+        />
         <input
           className="igos-subscribe-input"
           type="email"

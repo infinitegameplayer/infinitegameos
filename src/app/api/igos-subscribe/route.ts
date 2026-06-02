@@ -21,9 +21,10 @@ const WELCOME_PREVIEW =
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-function buildWelcomeHtml(opts: { unsubscribeUrl: string; preferencesUrl: string }) {
+function buildWelcomeHtml(opts: { unsubscribeUrl: string; preferencesUrl: string; firstName?: string }) {
+  const greeting = opts.firstName ? `Hi ${opts.firstName}.` : 'Hi.'
   const body = `
-    <p>Hi.</p>
+    <p>${greeting}</p>
     <p>You signed up for Infinite Game OS updates. The real ones, from inside the practice. New skills as they ship. Concepts as they cohere. Playbooks as they prove out.</p>
     <p>Bi-monthly steady state. Sometimes faster when a release lands. No hype, no upsell.</p>
     <p>If a piece is useful, forward it. The unsubscribe link sits on every send.</p>
@@ -48,12 +49,13 @@ function pathToSource(source: unknown): string {
 
 async function applySupabaseMirror(opts: {
   email: string
+  firstName?: string
   source: string
 }): Promise<void> {
   const supabase = getSupabaseAdmin()
   const { data: existing, error: selectErr } = await supabase
     .from('contacts')
-    .select('id, tags, unsubscribed')
+    .select('id, tags, first_name, unsubscribed')
     .eq('email', opts.email)
     .maybeSingle()
   if (selectErr) throw selectErr
@@ -61,13 +63,17 @@ async function applySupabaseMirror(opts: {
   if (existing) {
     const currentTags: string[] = Array.isArray(existing.tags) ? existing.tags : []
     const mergedTags = currentTags.includes(TAG) ? currentTags : [...currentTags, TAG]
+    const updates: Record<string, unknown> = {
+      tags: mergedTags,
+      unsubscribed: false,
+      unsubscribed_at: null,
+    }
+    // Only fill first_name when the row lacks one, matching the lanebelone
+    // opt-in guard so a later capture never overwrites an earlier name.
+    if (opts.firstName && !existing.first_name) updates.first_name = opts.firstName
     const { error: updateErr } = await supabase
       .from('contacts')
-      .update({
-        tags: mergedTags,
-        unsubscribed: false,
-        unsubscribed_at: null,
-      })
+      .update(updates)
       .eq('id', existing.id)
     if (updateErr) throw updateErr
     return
@@ -75,6 +81,7 @@ async function applySupabaseMirror(opts: {
 
   const { error: insertErr } = await supabase.from('contacts').insert({
     email: opts.email,
+    first_name: opts.firstName ?? null,
     source_site: SOURCE_SITE,
     source_form: opts.source,
     tags: [TAG],
@@ -84,7 +91,7 @@ async function applySupabaseMirror(opts: {
 
 export async function POST(req: NextRequest) {
   try {
-    const { email, honeypot, openedAt, source } = await req.json()
+    const { email, firstName, honeypot, openedAt, source } = await req.json()
 
     if (typeof honeypot === 'string' && honeypot.trim().length > 0) {
       return NextResponse.json({ ok: true }, { status: 200 })
@@ -112,10 +119,12 @@ export async function POST(req: NextRequest) {
     }
 
     const normalizedEmail = email.trim().toLowerCase()
+    const normalizedFirstName =
+      typeof firstName === 'string' && firstName.trim() ? firstName.trim() : undefined
     const sourceForm = pathToSource(source)
 
     try {
-      await applySupabaseMirror({ email: normalizedEmail, source: sourceForm })
+      await applySupabaseMirror({ email: normalizedEmail, firstName: normalizedFirstName, source: sourceForm })
     } catch (err) {
       const m = err instanceof Error ? err.message : 'Unknown error'
       console.error('igos-subscribe supabase mirror error:', m)
@@ -127,6 +136,7 @@ export async function POST(req: NextRequest) {
       await resend.contacts.create({
         audienceId: AUDIENCE_ID,
         email: normalizedEmail,
+        firstName: normalizedFirstName,
         unsubscribed: false,
       })
     } catch (err) {
@@ -145,7 +155,7 @@ export async function POST(req: NextRequest) {
         replyTo: REPLY_TO,
         to: normalizedEmail,
         subject: WELCOME_SUBJECT,
-        html: buildWelcomeHtml({ unsubscribeUrl, preferencesUrl }),
+        html: buildWelcomeHtml({ unsubscribeUrl, preferencesUrl, firstName: normalizedFirstName }),
       })
     } catch (err) {
       const m = err instanceof Error ? err.message : 'Unknown error'
