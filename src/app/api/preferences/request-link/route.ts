@@ -34,6 +34,34 @@ export async function POST(req: NextRequest) {
   if (!email || !EMAIL_REGEX.test(email)) return NextResponse.json({ ok: true })
 
   const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? null
+  const supabase = getSupabaseAdmin()
+
+  // Rate limit the fresh-link send. The mail-bomb surface is repeated sends to a
+  // known existing address, each of which writes a preference_link_sent row, so
+  // counting those bounds it. Identical response holds: an over-cap request still
+  // returns ok and simply does not send. A failed count read fails open, bounded
+  // by the fact that a send only ever fires to an existing contact.
+  try {
+    const since = new Date(Date.now() - 60 * 60 * 1000).toISOString()
+    const { count: emailCount } = await supabase
+      .from('preference_audit')
+      .select('id', { count: 'exact', head: true })
+      .eq('email', email)
+      .eq('action', 'preference_link_sent')
+      .gte('created_at', since)
+    if ((emailCount ?? 0) >= 3) return NextResponse.json({ ok: true })
+    if (ip) {
+      const { count: ipCount } = await supabase
+        .from('preference_audit')
+        .select('id', { count: 'exact', head: true })
+        .eq('ip', ip)
+        .eq('action', 'preference_link_sent')
+        .gte('created_at', since)
+      if ((ipCount ?? 0) >= 10) return NextResponse.json({ ok: true })
+    }
+  } catch (err) {
+    console.error('request-link rate check failed:', err instanceof Error ? err.message : err)
+  }
 
   try {
     const membership = await getContactMembership(email)
@@ -59,7 +87,6 @@ export async function POST(req: NextRequest) {
         subject: 'Your preferences link',
         html,
       })
-      const supabase = getSupabaseAdmin()
       await supabase
         .from('preference_audit')
         .insert({ email, action: 'preference_link_sent', detail: {}, ip })

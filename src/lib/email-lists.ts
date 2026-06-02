@@ -736,11 +736,16 @@ export async function requestEmailMerge(opts: {
   if (!hash) return { ok: false, status: 'invalid' }
 
   const supabase = getSupabaseAdmin()
-  let request: { old_email: string; new_email: string } | null = null
+  let request: {
+    old_email: string
+    new_email: string
+    confirmed_at: string | null
+    cancelled_at: string | null
+  } | null = null
   try {
     const { data, error } = await supabase
       .from('email_change_requests')
-      .select('old_email, new_email')
+      .select('old_email, new_email, confirmed_at, cancelled_at')
       .eq('confirm_token_hash', hash)
       .maybeSingle()
     if (error) throw error
@@ -749,6 +754,46 @@ export async function requestEmailMerge(opts: {
     return { ok: false, status: 'error', error: err instanceof Error ? err.message : 'Unknown error' }
   }
   if (!request) return { ok: false, status: 'invalid' }
+
+  // The ticket is valid only for a request a confirm attempt closed via an
+  // already-on-file collision. A confirmed request already changed the address,
+  // and a request with no terminal has not hit a collision yet, so neither
+  // warrants a ticket. This closes a direct POST that bypasses the collision
+  // landing page.
+  if (request.confirmed_at || !request.cancelled_at) {
+    return { ok: false, status: 'not-collision', oldEmail: request.old_email, newEmail: request.new_email }
+  }
+  let collisionConfirmed = false
+  try {
+    const { count } = await supabase
+      .from('preference_audit')
+      .select('id', { count: 'exact', head: true })
+      .eq('email', request.old_email)
+      .eq('action', 'email_change_collision')
+      .filter('detail->>newEmail', 'eq', request.new_email)
+    collisionConfirmed = (count ?? 0) > 0
+  } catch (err) {
+    console.error('merge collision check failed:', err instanceof Error ? err.message : err)
+  }
+  if (!collisionConfirmed) {
+    return { ok: false, status: 'not-collision', oldEmail: request.old_email, newEmail: request.new_email }
+  }
+
+  // Idempotency: one open ticket per old-to-new pair. A repeat is a no-op, so a
+  // re-POST cannot spam the support inbox with duplicate notifications.
+  try {
+    const { count } = await supabase
+      .from('preference_audit')
+      .select('id', { count: 'exact', head: true })
+      .eq('email', request.old_email)
+      .eq('action', 'email_change_merge_requested')
+      .filter('detail->>newEmail', 'eq', request.new_email)
+    if ((count ?? 0) > 0) {
+      return { ok: true, status: 'merge-already-requested', oldEmail: request.old_email, newEmail: request.new_email }
+    }
+  } catch (err) {
+    console.error('merge dedupe check failed:', err instanceof Error ? err.message : err)
+  }
 
   await writeAudit(supabase, {
     email: request.old_email,

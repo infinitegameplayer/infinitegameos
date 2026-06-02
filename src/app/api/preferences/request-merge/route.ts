@@ -36,6 +36,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, status: result.status }, { status: 400 })
   }
 
+  // A deduped repeat (merge-already-requested) is a success, but it must not
+  // re-notify support or re-acknowledge. Only a genuine first ticket sends.
+  if (result.status !== 'merge-requested') {
+    return NextResponse.json({ ok: true, status: result.status })
+  }
+
   try {
     const resend = new Resend(process.env.RESEND_API_KEY)
     const when = new Date().toISOString()

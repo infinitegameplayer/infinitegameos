@@ -62,7 +62,6 @@ const nextConfig: NextConfig = {
         headers: [
           { key: 'X-Frame-Options', value: 'DENY' },
           { key: 'X-Content-Type-Options', value: 'nosniff' },
-          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
           {
             key: 'Strict-Transport-Security',
@@ -100,6 +99,23 @@ const nextConfig: NextConfig = {
           // Prevents CDN cache poisoning between text/html and text/markdown responses.
           { key: 'Vary', value: 'Accept' },
         ],
+      },
+      // Referrer-Policy is split out of the global block. The /preferences URL
+      // carries the subscriber email and a live token, so that route family must
+      // leak no referrer even on a same-origin click. Every other path keeps the
+      // site default. The two sources are mutually exclusive, so exactly one
+      // Referrer-Policy header lands per path (Next emits every matching source).
+      {
+        source: '/((?!preferences).*)',
+        headers: [{ key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' }],
+      },
+      {
+        source: '/preferences',
+        headers: [{ key: 'Referrer-Policy', value: 'no-referrer' }],
+      },
+      {
+        source: '/preferences/:path*',
+        headers: [{ key: 'Referrer-Policy', value: 'no-referrer' }],
       },
     ]
   },
