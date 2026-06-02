@@ -4,7 +4,7 @@
 // any. Kingdom Data OS contact ring consequence: one secret, one trust
 // graph across surfaces.
 
-import { createHmac, timingSafeEqual } from 'crypto'
+import { createHmac, createHash, randomBytes, timingSafeEqual } from 'crypto'
 
 function getSecret(): string {
   const secret = process.env.UNSUBSCRIBE_SECRET
@@ -98,4 +98,29 @@ export function verifyExpiringToken(
 export function verifyAnyToken(email: string, token: string): boolean {
   if (verifyEmailToken(email, token)) return true
   return verifyExpiringToken(email, token) === 'valid'
+}
+
+// ─── Email change token (Phase 3) ─────────────────────────────────────────
+// Email change is the one preference action that can hijack an account, so it
+// uses neither the deterministic key nor the expiring entry token. Each request
+// mints two high-entropy random secrets: one authorizes confirm (sent to the
+// new address), one authorizes cancel (sent to the old address). Only the
+// SHA-256 hash of each is stored in email_change_requests. The raw secret
+// travels in the confirmation link once and is never persisted, so a database
+// read can never reconstruct a working link. Confirm and cancel look the request
+// up by hashing the secret from the URL and matching the stored hash, the
+// standard single-use confirmation-link pattern.
+
+export const EMAIL_CHANGE_TTL_SECONDS = 60 * 60 * 72 // 72 hours
+
+// 256-bit single-use secret. Unguessable, so a confirm or cancel link cannot be
+// enumerated. One per direction (confirm, cancel) per request.
+export function generateChangeSecret(): string {
+  return randomBytes(32).toString('hex')
+}
+
+// The only form of the secret that touches storage. Looked up on confirm/cancel.
+export function hashChangeSecret(secret: string): string {
+  if (typeof secret !== 'string' || secret.length === 0) return ''
+  return createHash('sha256').update(secret).digest('hex')
 }

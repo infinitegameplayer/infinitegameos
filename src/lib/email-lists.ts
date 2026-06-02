@@ -19,6 +19,11 @@
 
 import { Resend } from 'resend'
 import { getSupabaseAdmin } from '@/lib/supabase'
+import {
+  generateChangeSecret,
+  hashChangeSecret,
+  EMAIL_CHANGE_TTL_SECONDS,
+} from '@/lib/unsubscribe-token'
 
 export type ListKey = 'personal' | 'articles' | 'infinite_game'
 export type ListSite = 'lanebelone' | 'infinitegameos'
@@ -417,4 +422,339 @@ export async function applyResume(opts: {
   }
   await writeAudit(supabase, { email, action: 'resume', detail: {}, ip: opts.ip })
   return { ok: true, status: 'resumed' }
+}
+
+// ─── Email change (Phase 3, the security-owned surface) ───────────────────
+// Dual-address confirmation backed by email_change_requests. requestEmailChange
+// mints the pending row and returns the two raw secrets to the route so it can
+// build and send the links. The raw secrets never touch storage, only their
+// SHA-256 hashes do. confirmEmailChange applies the change with Supabase
+// canonical first and a best-effort Resend mirror. cancelEmailChange and
+// requestEmailMerge close the other branches. Every step writes an audit row.
+
+const EMAIL_CHANGE_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+// Durable, DB-counted rate limit. Serverless in-memory counters die with the
+// instance, so the floor lives in the table. A lighter per-IP in-memory throttle
+// sits in the routes as a second layer.
+const CHANGE_RATE_WINDOW_MS = 60 * 60 * 1000 // 1 hour
+const CHANGE_MAX_PER_EMAIL = 3
+const CHANGE_MAX_PER_IP = 10
+
+export type EmailChangeResult = {
+  ok: boolean
+  status: string
+  error?: string
+  oldEmail?: string
+  newEmail?: string
+  confirmSecret?: string
+  cancelSecret?: string
+  expiresAt?: string
+}
+
+// Remove a contact from one list's Resend audience. Suppress first so a failed
+// delete still stops mail, then delete. Best-effort, never throws. The reconcile
+// sweep suppresses any survivor, since Supabase no longer holds the old address.
+async function removeFromAudience(list: ListDef, email: string): Promise<void> {
+  try {
+    const resend = new Resend(process.env.RESEND_API_KEY)
+    const audienceId = await resolveAudienceId(resend, list)
+    if (!audienceId) return
+    try {
+      await resend.contacts.update({ audienceId, email, unsubscribed: true })
+    } catch {
+      // Not present in this audience is fine.
+    }
+    try {
+      await resend.contacts.remove({ audienceId, email })
+    } catch (err) {
+      const m = err instanceof Error ? err.message : ''
+      if (!/not found|404/i.test(m)) console.error('removeFromAudience remove:', m)
+    }
+  } catch (err) {
+    console.error('removeFromAudience failed:', err instanceof Error ? err.message : err)
+  }
+}
+
+// Start a change. Validates the new address, enforces the rate limits, cancels
+// any outstanding pending request for this old address (one pending at a time)
+// then inserts the new request. Returns the two raw secrets to the caller. Does
+// not check whether new_email is already on file: that is handled at confirm so
+// the request step cannot be used to probe who is on the list.
+export async function requestEmailChange(opts: {
+  oldEmail: string
+  newEmail: string
+  ip?: string | null
+}): Promise<EmailChangeResult> {
+  const oldEmail = opts.oldEmail.trim().toLowerCase()
+  const newEmail = opts.newEmail.trim().toLowerCase()
+  const ip = opts.ip ?? null
+
+  if (!EMAIL_CHANGE_REGEX.test(newEmail)) return { ok: false, status: 'invalid-email' }
+  if (newEmail === oldEmail) return { ok: false, status: 'same-email' }
+
+  const supabase = getSupabaseAdmin()
+
+  try {
+    const since = new Date(Date.now() - CHANGE_RATE_WINDOW_MS).toISOString()
+    const { count: emailCount } = await supabase
+      .from('email_change_requests')
+      .select('id', { count: 'exact', head: true })
+      .eq('old_email', oldEmail)
+      .gte('created_at', since)
+    if ((emailCount ?? 0) >= CHANGE_MAX_PER_EMAIL) {
+      await writeAudit(supabase, { email: oldEmail, action: 'email_change_rate_limited', detail: { by: 'email' }, ip })
+      return { ok: false, status: 'rate-limited' }
+    }
+    if (ip) {
+      const { count: ipCount } = await supabase
+        .from('email_change_requests')
+        .select('id', { count: 'exact', head: true })
+        .eq('requester_ip', ip)
+        .gte('created_at', since)
+      if ((ipCount ?? 0) >= CHANGE_MAX_PER_IP) {
+        await writeAudit(supabase, { email: oldEmail, action: 'email_change_rate_limited', detail: { by: 'ip' }, ip })
+        return { ok: false, status: 'rate-limited' }
+      }
+    }
+  } catch (err) {
+    // A failed rate read should not hard-block a legitimate change. The one
+    // pending per old_email index still bounds abuse.
+    console.error('email change rate check failed:', err instanceof Error ? err.message : err)
+  }
+
+  const confirmSecret = generateChangeSecret()
+  const cancelSecret = generateChangeSecret()
+  const expiresAt = new Date(Date.now() + EMAIL_CHANGE_TTL_SECONDS * 1000).toISOString()
+
+  try {
+    // Invalidate any outstanding pending request for this old address before
+    // inserting, so the partial unique index never collides.
+    await supabase
+      .from('email_change_requests')
+      .update({ cancelled_at: new Date().toISOString() })
+      .eq('old_email', oldEmail)
+      .is('confirmed_at', null)
+      .is('cancelled_at', null)
+
+    const { error: insErr } = await supabase.from('email_change_requests').insert({
+      old_email: oldEmail,
+      new_email: newEmail,
+      confirm_token_hash: hashChangeSecret(confirmSecret),
+      cancel_token_hash: hashChangeSecret(cancelSecret),
+      expires_at: expiresAt,
+      requester_ip: ip,
+    })
+    if (insErr) throw insErr
+  } catch (err) {
+    const m = err instanceof Error ? err.message : 'Unknown error'
+    await writeAudit(supabase, { email: oldEmail, action: 'email_change_request_error', detail: { error: m }, ip })
+    return { ok: false, status: 'error', error: m }
+  }
+
+  await writeAudit(supabase, { email: oldEmail, action: 'email_change_requested', detail: { newEmail }, ip })
+  return { ok: true, status: 'pending', oldEmail, newEmail, confirmSecret, cancelSecret, expiresAt }
+}
+
+// Apply the change. Looks the request up by the confirm secret's hash, validates
+// it is still pending and unexpired, then updates Supabase first (canonical).
+// The UNIQUE(email) constraint surfaces the already-on-file collision, which is
+// rejected cleanly and never merged here. On success the Resend mirror adds the
+// new address to the audiences its tags claim and removes the old address.
+export async function confirmEmailChange(opts: {
+  secret: string
+  ip?: string | null
+}): Promise<EmailChangeResult> {
+  const ip = opts.ip ?? null
+  const hash = hashChangeSecret(opts.secret)
+  if (!hash) return { ok: false, status: 'invalid' }
+
+  const supabase = getSupabaseAdmin()
+  const nowIso = new Date().toISOString()
+
+  let request: {
+    id: string
+    old_email: string
+    new_email: string
+    expires_at: string
+    confirmed_at: string | null
+    cancelled_at: string | null
+  } | null = null
+  try {
+    const { data, error } = await supabase
+      .from('email_change_requests')
+      .select('id, old_email, new_email, expires_at, confirmed_at, cancelled_at')
+      .eq('confirm_token_hash', hash)
+      .maybeSingle()
+    if (error) throw error
+    request = data
+  } catch (err) {
+    return { ok: false, status: 'error', error: err instanceof Error ? err.message : 'Unknown error' }
+  }
+
+  if (!request) return { ok: false, status: 'invalid' }
+  // Terminal already. A late second click against a resolved request is a no-op.
+  if (request.confirmed_at || request.cancelled_at) {
+    return { ok: false, status: 'resolved', oldEmail: request.old_email, newEmail: request.new_email }
+  }
+  if (Date.parse(request.expires_at) < Date.now()) return { ok: false, status: 'expired' }
+
+  const oldEmail = request.old_email
+  const newEmail = request.new_email
+
+  // Capture list state before the swap. tags and flags do not change in an
+  // email update, so this view drives the Resend mirror for the new address.
+  let tags: string[] = []
+  let unsubscribed = false
+  let pausedUntil: string | null = null
+  try {
+    const { data: contact } = await supabase
+      .from('contacts')
+      .select('tags, unsubscribed, paused_until')
+      .eq('email', oldEmail)
+      .maybeSingle()
+    if (contact) {
+      tags = Array.isArray(contact.tags) ? contact.tags : []
+      unsubscribed = contact.unsubscribed === true
+      pausedUntil = contact.paused_until ?? null
+    }
+  } catch {
+    // Mirror falls back to the reconcile sweep.
+  }
+
+  // Supabase first. The contacts row carries a UNIQUE(email) constraint and a
+  // row lock, so exactly one concurrent confirm updates the row and any other
+  // sees zero rows. A 23505 means new_email is already a contact (collision).
+  let updatedCount = 0
+  try {
+    const { data, error } = await supabase
+      .from('contacts')
+      .update({ email: newEmail })
+      .eq('email', oldEmail)
+      .select('id')
+    if (error) {
+      if ((error as { code?: string }).code === '23505' || /duplicate key|already exists/i.test(error.message)) {
+        await supabase.from('email_change_requests').update({ cancelled_at: nowIso }).eq('id', request.id)
+        await writeAudit(supabase, { email: oldEmail, action: 'email_change_collision', detail: { newEmail }, ip })
+        return { ok: false, status: 'collision', oldEmail, newEmail }
+      }
+      throw error
+    }
+    updatedCount = data?.length ?? 0
+  } catch (err) {
+    const m = err instanceof Error ? err.message : 'Unknown error'
+    await writeAudit(supabase, { email: oldEmail, action: 'email_change_confirm_error', detail: { error: m, newEmail }, ip })
+    return { ok: false, status: 'error', error: m }
+  }
+
+  if (updatedCount === 0) {
+    // No contact at old_email. Either already moved or removed. Close the request.
+    await supabase.from('email_change_requests').update({ cancelled_at: nowIso }).eq('id', request.id)
+    await writeAudit(supabase, { email: oldEmail, action: 'email_change_no_contact', detail: { newEmail }, ip })
+    return { ok: false, status: 'invalid' }
+  }
+
+  // Stamp confirmed terminal before the best-effort mirror, so a mirror hiccup
+  // never leaves the request re-confirmable.
+  await supabase.from('email_change_requests').update({ confirmed_at: nowIso }).eq('id', request.id)
+
+  const contactView = { unsubscribed, paused_until: pausedUntil, tags }
+  for (const list of LISTS) {
+    if (!isSuppressedForList(contactView, list.tag)) {
+      await flipAudience(list, newEmail, false)
+    }
+    await removeFromAudience(list, oldEmail)
+  }
+
+  await writeAudit(supabase, { email: newEmail, action: 'email_change_confirmed', detail: { oldEmail }, ip })
+  await writeAudit(supabase, { email: oldEmail, action: 'email_change_applied', detail: { newEmail }, ip })
+  return { ok: true, status: 'confirmed', oldEmail, newEmail }
+}
+
+// Cancel a change from the old address. Looks the request up by the cancel
+// secret's hash. A request already confirmed or cancelled is a no-op, which
+// closes the confirm-versus-cancel race from the cancel side.
+export async function cancelEmailChange(opts: {
+  secret: string
+  ip?: string | null
+}): Promise<EmailChangeResult> {
+  const ip = opts.ip ?? null
+  const hash = hashChangeSecret(opts.secret)
+  if (!hash) return { ok: false, status: 'invalid' }
+
+  const supabase = getSupabaseAdmin()
+  let request: {
+    id: string
+    old_email: string
+    new_email: string
+    confirmed_at: string | null
+    cancelled_at: string | null
+  } | null = null
+  try {
+    const { data, error } = await supabase
+      .from('email_change_requests')
+      .select('id, old_email, new_email, confirmed_at, cancelled_at')
+      .eq('cancel_token_hash', hash)
+      .maybeSingle()
+    if (error) throw error
+    request = data
+  } catch (err) {
+    return { ok: false, status: 'error', error: err instanceof Error ? err.message : 'Unknown error' }
+  }
+
+  if (!request) return { ok: false, status: 'invalid' }
+  if (request.confirmed_at) {
+    return { ok: false, status: 'already-confirmed', oldEmail: request.old_email, newEmail: request.new_email }
+  }
+  if (request.cancelled_at) {
+    return { ok: true, status: 'already-cancelled', oldEmail: request.old_email, newEmail: request.new_email }
+  }
+
+  try {
+    await supabase
+      .from('email_change_requests')
+      .update({ cancelled_at: new Date().toISOString() })
+      .eq('id', request.id)
+  } catch (err) {
+    return { ok: false, status: 'error', error: err instanceof Error ? err.message : 'Unknown error' }
+  }
+  await writeAudit(supabase, { email: request.old_email, action: 'email_change_cancelled', detail: { newEmail: request.new_email }, ip })
+  return { ok: true, status: 'cancelled', oldEmail: request.old_email, newEmail: request.new_email }
+}
+
+// File a merge ticket when a change hit an already-on-file collision. The person
+// holds the confirm secret (they proved control of the new address), so this is
+// gated by that same hash. Writes a durable audit row. The route sends the
+// internal notification and the acknowledgement. No contact data is mutated. The
+// actual merge stays a manual step until a real case earns the automation.
+export async function requestEmailMerge(opts: {
+  secret: string
+  ip?: string | null
+}): Promise<EmailChangeResult> {
+  const ip = opts.ip ?? null
+  const hash = hashChangeSecret(opts.secret)
+  if (!hash) return { ok: false, status: 'invalid' }
+
+  const supabase = getSupabaseAdmin()
+  let request: { old_email: string; new_email: string } | null = null
+  try {
+    const { data, error } = await supabase
+      .from('email_change_requests')
+      .select('old_email, new_email')
+      .eq('confirm_token_hash', hash)
+      .maybeSingle()
+    if (error) throw error
+    request = data
+  } catch (err) {
+    return { ok: false, status: 'error', error: err instanceof Error ? err.message : 'Unknown error' }
+  }
+  if (!request) return { ok: false, status: 'invalid' }
+
+  await writeAudit(supabase, {
+    email: request.old_email,
+    action: 'email_change_merge_requested',
+    detail: { newEmail: request.new_email },
+    ip,
+  })
+  return { ok: true, status: 'merge-requested', oldEmail: request.old_email, newEmail: request.new_email }
 }

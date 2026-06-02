@@ -65,6 +65,10 @@ function PreferenceManager({ email, token, maskedEmail, lists, currentSite, paus
   const [leftAll, setLeftAll] = useState(false)
   const [pausedUntil, setPausedUntil] = useState<string | null>(initialPaused ?? null)
   const isPausedNow = !!pausedUntil && Date.parse(pausedUntil) > Date.now()
+  const [newEmailInput, setNewEmailInput] = useState('')
+  const [changeState, setChangeState] = useState<
+    'idle' | 'sending' | 'sent' | 'error' | 'same' | 'invalid' | 'rate'
+  >('idle')
 
   async function post(route: string, payload: Record<string, string>) {
     const res = await fetch(route, {
@@ -146,6 +150,28 @@ function PreferenceManager({ email, token, maskedEmail, lists, currentSite, paus
     }
   }
 
+  async function submitEmailChange(e: React.FormEvent) {
+    e.preventDefault()
+    const value = newEmailInput.trim().toLowerCase()
+    if (!value || changeState === 'sending') return
+    setChangeState('sending')
+    try {
+      const res = await fetch('/api/preferences/request-email-change', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, token, newEmail: value }),
+      })
+      const data = (await res.json()) as { ok?: boolean; status?: string }
+      if (res.ok && data.ok) setChangeState('sent')
+      else if (data.status === 'same-email') setChangeState('same')
+      else if (data.status === 'rate-limited') setChangeState('rate')
+      else if (data.status === 'invalid-email') setChangeState('invalid')
+      else setChangeState('error')
+    } catch {
+      setChangeState('error')
+    }
+  }
+
   return (
     <div style={{ fontFamily: body, color: muted }}>
       <p style={{ fontSize: '1.05rem', lineHeight: 1.7, color: muted, marginTop: 0, marginBottom: '0.35rem' }}>
@@ -216,6 +242,58 @@ function PreferenceManager({ email, token, maskedEmail, lists, currentSite, paus
 
       {error && (
         <p style={{ fontSize: '0.9rem', color: '#f0b35b', marginTop: '1.25rem' }}>{error}</p>
+      )}
+
+      {!leftAll && (
+        <div style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: `1px solid ${hairline}` }}>
+          {changeState === 'sent' ? (
+            <p style={{ fontSize: '1rem', lineHeight: 1.7, color: text, marginTop: 0, marginBottom: 0 }}>
+              Check your new address for a confirmation link. Your current address stays active until you confirm, and a notice went to {maskedEmail} so you can stop the change if it was not you.
+            </p>
+          ) : (
+            <>
+              <p style={{ fontSize: '1rem', lineHeight: 1.7, color: muted, marginTop: 0, marginBottom: '0.75rem' }}>
+                Changing your email? Enter the new address and I will send a confirmation link to it. The change takes effect only after you open that link.
+              </p>
+              <form onSubmit={submitEmailChange} style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                <input
+                  type="email"
+                  required
+                  value={newEmailInput}
+                  onChange={(e) => setNewEmailInput(e.target.value)}
+                  placeholder="new@example.com"
+                  data-private
+                  style={{
+                    flex: 1,
+                    minWidth: '220px',
+                    background: 'rgba(226,232,240,0.04)',
+                    border: `1px solid ${hairline}`,
+                    borderRadius: '8px',
+                    padding: '0.7rem 0.9rem',
+                    color: text,
+                    fontFamily: body,
+                    fontSize: '1rem',
+                  }}
+                />
+                <button type="submit" disabled={changeState === 'sending'} style={primaryButtonStyle}>
+                  {changeState === 'sending' ? 'Sending...' : 'Send confirmation'}
+                </button>
+              </form>
+              {changeState === 'same' && (
+                <p style={{ fontSize: '0.9rem', color: faint, marginTop: '0.75rem' }}>That is already your address.</p>
+              )}
+              {changeState === 'invalid' && (
+                <p style={{ fontSize: '0.9rem', color: '#f0b35b', marginTop: '0.75rem' }}>That does not look like a valid email. Check it and try again.</p>
+              )}
+              {changeState === 'rate' && (
+                <p style={{ fontSize: '0.9rem', color: '#f0b35b', marginTop: '0.75rem' }}>That is a few change requests in a short window. Give it an hour and try again.</p>
+              )}
+              {changeState === 'error' && (
+                <p style={{ fontSize: '0.9rem', color: '#f0b35b', marginTop: '0.75rem' }}>That did not go through. Please try again in a moment.</p>
+              )}
+            </>
+          )}
+        </div>
       )}
 
       {!leftAll && (
