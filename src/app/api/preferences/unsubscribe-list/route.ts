@@ -4,7 +4,7 @@
 // page entry lands in Phase 2). Mirror across lanebelone and IGOS.
 
 import { NextRequest, NextResponse } from 'next/server'
-import { verifyEmailToken } from '@/lib/unsubscribe-token'
+import { verifyAnyToken } from '@/lib/unsubscribe-token'
 import { applyListUnsubscribe } from '@/lib/email-lists'
 
 export async function POST(req: NextRequest) {
@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Missing email, token or list' }, { status: 400 })
   }
 
-  if (!verifyEmailToken(email, token)) {
+  if (!verifyAnyToken(email, token)) {
     return NextResponse.json({ error: 'Invalid token' }, { status: 403 })
   }
 

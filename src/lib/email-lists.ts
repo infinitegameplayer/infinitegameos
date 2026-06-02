@@ -34,14 +34,15 @@ export interface ListDef {
   site: ListSite
 }
 
-// Subscriber-facing label and description copy is functional here and gets the
-// final voice pass plus style sweep when the preference page renders it (Phase 2).
+// Subscriber-facing label and description copy. Voice pass and style sweep
+// applied at the Phase 2 build session. Each description says what the list is
+// in one breath, in Lane's voice.
 export const LISTS: ListDef[] = [
   {
     key: 'personal',
     tag: 'personal_subscriber',
-    label: 'Letters from Lane',
-    description: 'Personal notes and what I am learning, sent now and then.',
+    label: 'Personal notes from Lane',
+    description: 'Fresh updates and what I’m learning. Sent when there’s something worth sending.',
     audienceName: 'Personal',
     audienceEnv: 'RESEND_AUDIENCE_PERSONAL_ID',
     fromAddress: 'Lane Belone <howdy@lanebelone.com>',
@@ -61,7 +62,7 @@ export const LISTS: ListDef[] = [
     key: 'infinite_game',
     tag: 'infinite_game_subscriber',
     label: 'Infinite Game OS',
-    description: 'Dispatches from the practice as the OS evolves.',
+    description: 'Dispatches from inside the practice as the OS takes shape.',
     audienceName: 'Infinite Game',
     audienceEnv: 'RESEND_AUDIENCE_INFINITE_GAME_ID',
     fromAddress: 'Lane Belone <play@infinitegameos.io>',
@@ -75,6 +76,23 @@ export function getListByKey(key: string): ListDef | undefined {
 
 export function getListByTag(tag: string): ListDef | undefined {
   return LISTS.find((l) => l.tag === tag)
+}
+
+// Partial mask for confirmation display. The preference page shows this, never
+// the full address in visible text. Keeps the first and last character of the
+// local part and the domain shape so the human recognizes their own address
+// while a shoulder-surfer learns little. `lane@gmail.com` reads `l•••e@g•••.com`.
+export function maskEmail(email: string): string {
+  const e = (email || '').trim()
+  const at = e.lastIndexOf('@')
+  if (at < 1) return '•••'
+  const local = e.slice(0, at)
+  const domain = e.slice(at + 1)
+  const maskedLocal =
+    local.length <= 2 ? `${local[0]}•` : `${local[0]}•••${local[local.length - 1]}`
+  const dot = domain.lastIndexOf('.')
+  const maskedDomain = dot > 1 ? `${domain[0]}•••${domain.slice(dot)}` : domain
+  return `${maskedLocal}@${maskedDomain}`
 }
 
 export type MembershipResult = {
@@ -92,6 +110,37 @@ export function isSuppressedForList(
   if (contact.unsubscribed === true) return true
   const tags = Array.isArray(contact.tags) ? contact.tags : []
   return !tags.includes(tag)
+}
+
+// ─── Membership read (preference page load) ──────────────────────────────
+
+// Read one contact row for the preference page. Returns a list-agnostic view:
+// which tags are present and whether the global flag is set. The page maps this
+// over the LISTS registry to render every list as joined or not. A missing
+// contact returns the same empty shape a never-subscribed email would, so the
+// page reveals nothing to a probe that somehow reaches it with a valid token.
+export async function getContactMembership(email: string): Promise<{
+  exists: boolean
+  tags: string[]
+  unsubscribed: boolean
+}> {
+  const normalized = email.trim().toLowerCase()
+  const supabase = getSupabaseAdmin()
+  try {
+    const { data, error } = await supabase
+      .from('contacts')
+      .select('tags, unsubscribed')
+      .eq('email', normalized)
+      .maybeSingle()
+    if (error || !data) return { exists: false, tags: [], unsubscribed: false }
+    return {
+      exists: true,
+      tags: Array.isArray(data.tags) ? data.tags : [],
+      unsubscribed: data.unsubscribed === true,
+    }
+  } catch {
+    return { exists: false, tags: [], unsubscribed: false }
+  }
 }
 
 // ─── Resend audience resolution (env-first, name-fallback, cached) ──────

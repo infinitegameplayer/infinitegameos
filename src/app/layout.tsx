@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import { Space_Grotesk, Inter } from 'next/font/google'
 import { GeistSans } from 'geist/font/sans'
 import { Suspense } from 'react'
@@ -9,6 +8,7 @@ import Footer from '@/components/Footer'
 import { PostHogProvider } from './providers'
 import { PostHogPageView } from './PostHogPageView'
 import { CrossSiteLinkTracker } from '@/components/CrossSiteLinkTracker'
+import { UmamiAnalytics } from '@/components/UmamiAnalytics'
 
 const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
@@ -161,14 +161,7 @@ export default function RootLayout({
             <PostHogPageView />
           </Suspense>
           <CrossSiteLinkTracker />
-          {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
-            <Script
-              defer
-              src={`${process.env.NEXT_PUBLIC_UMAMI_URL}/script.js`}
-              data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
-              strategy="afterInteractive"
-            />
-          )}
+          <UmamiAnalytics />
           <Nav />
           <main>{children}</main>
           <Footer />

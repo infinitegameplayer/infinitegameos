@@ -1,7 +1,9 @@
 'use client'
 
 import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { usePostHog } from 'posthog-js/react'
+import { isNoTrackPath } from '@/lib/no-track'
 
 declare global {
   interface Window {
@@ -29,8 +31,10 @@ const KINGDOM_HOSTS = new Set([
 
 export function CrossSiteLinkTracker() {
   const posthog = usePostHog()
+  const pathname = usePathname()
 
   useEffect(() => {
+    if (isNoTrackPath(pathname)) return
     function handler(e: MouseEvent) {
       const targetEl = e.target as HTMLElement | null
       const anchor = targetEl?.closest('a') as HTMLAnchorElement | null
@@ -65,7 +69,7 @@ export function CrossSiteLinkTracker() {
 
     document.addEventListener('click', handler, { capture: true })
     return () => document.removeEventListener('click', handler, { capture: true })
-  }, [posthog])
+  }, [posthog, pathname])
 
   return null
 }

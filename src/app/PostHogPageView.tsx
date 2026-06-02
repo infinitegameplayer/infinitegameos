@@ -3,6 +3,7 @@
 import { usePathname, useSearchParams } from 'next/navigation'
 import { useEffect, useRef } from 'react'
 import { usePostHog } from 'posthog-js/react'
+import { isNoTrackPath } from '@/lib/no-track'
 
 const AI_DOMAINS = [
   'chatgpt.com', 'chat.openai.com', 'openai.com',
@@ -19,6 +20,7 @@ export function PostHogPageView() {
   const aiChecked = useRef(false)
 
   useEffect(() => {
+    if (isNoTrackPath(pathname)) return
     if (pathname && posthog) {
       let url = window.origin + pathname
       if (searchParams.toString()) {
@@ -29,6 +31,7 @@ export function PostHogPageView() {
   }, [pathname, searchParams, posthog])
 
   useEffect(() => {
+    if (isNoTrackPath(pathname)) return
     if (!posthog || aiChecked.current) return
     aiChecked.current = true
     if (sessionStorage.getItem('ph_ai_referral_fired')) return
@@ -44,7 +47,7 @@ export function PostHogPageView() {
         posthog.capture('ai_referral_detected', { ai_source: match, referrer })
       }
     } catch { /* invalid referrer URL */ }
-  }, [posthog])
+  }, [posthog, pathname])
 
   return null
 }
