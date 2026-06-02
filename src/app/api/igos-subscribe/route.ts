@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { getSupabaseAdmin } from '@/lib/supabase'
-import { signEmailToken } from '@/lib/unsubscribe-token'
+import { signEmailToken, signExpiringToken } from '@/lib/unsubscribe-token'
 import { renderEmailShell } from '@/lib/email-shell'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
@@ -18,7 +18,7 @@ const WELCOME_PREVIEW =
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-function buildWelcomeHtml(opts: { unsubscribeUrl: string }) {
+function buildWelcomeHtml(opts: { unsubscribeUrl: string; preferencesUrl: string }) {
   const body = `
     <p>Hi.</p>
     <p>You signed up for Infinite Game OS updates. The real ones, from inside the practice. New skills as they ship. Concepts as they cohere. Playbooks as they prove out.</p>
@@ -31,6 +31,7 @@ function buildWelcomeHtml(opts: { unsubscribeUrl: string }) {
   return renderEmailShell({
     body,
     unsubscribeUrl: opts.unsubscribeUrl,
+    preferencesUrl: opts.preferencesUrl,
     preview: WELCOME_PREVIEW,
   })
 }
@@ -135,12 +136,13 @@ export async function POST(req: NextRequest) {
     try {
       const token = signEmailToken(normalizedEmail)
       const unsubscribeUrl = `${SITE_URL}/unsubscribe?email=${encodeURIComponent(normalizedEmail)}&token=${token}`
+      const preferencesUrl = `${SITE_URL}/preferences?email=${encodeURIComponent(normalizedEmail)}&token=${signExpiringToken(normalizedEmail)}`
       await resend.emails.send({
         from: FROM,
         replyTo: REPLY_TO,
         to: normalizedEmail,
         subject: WELCOME_SUBJECT,
-        html: buildWelcomeHtml({ unsubscribeUrl }),
+        html: buildWelcomeHtml({ unsubscribeUrl, preferencesUrl }),
       })
     } catch (err) {
       const m = err instanceof Error ? err.message : 'Unknown error'

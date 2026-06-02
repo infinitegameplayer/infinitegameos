@@ -77,6 +77,7 @@ export default async function PreferencesPage({
           maskedEmail={maskedEmail}
           lists={lists}
           currentSite="infinitegameos"
+          prefillEmail={email}
         />
       </div>
     </main>

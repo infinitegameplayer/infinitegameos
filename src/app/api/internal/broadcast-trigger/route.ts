@@ -18,6 +18,10 @@ const FROM = 'Lane Belone <play@infinitegameos.io>'
 const REPLY_TO = 'play@infinitegameos.io'
 const UPDATES_DIR = path.join(process.cwd(), 'content', 'updates')
 const RESEND_UNSUBSCRIBE_PLACEHOLDER = '{{{RESEND_UNSUBSCRIBE_URL}}}'
+// Tokenless preference link for the Broadcast. Resend fills {{{contact.email}}}
+// per recipient at send time, so an expiring HMAC token cannot be minted here.
+// The link lands on the secure fresh-link fallback.
+const PREFERENCES_MERGE_URL = `${SITE_URL}/preferences?email={{{contact.email}}}`
 
 type Article = {
   slug: string
@@ -173,6 +177,7 @@ export async function POST(req: NextRequest) {
   const html = renderEmailShell({
     body: bodyHtml,
     unsubscribeUrl: RESEND_UNSUBSCRIBE_PLACEHOLDER,
+    preferencesUrl: PREFERENCES_MERGE_URL,
     preview,
   })
 

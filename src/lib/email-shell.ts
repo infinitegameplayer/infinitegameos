@@ -5,16 +5,26 @@
 // welcome (transactional) and marketing Broadcast mail stay visually consistent.
 
 const SITE_URL = 'https://www.infinitegameos.io'
+// CAN-SPAM physical address. Mail reaches the box under Lane Belone and Side
+// Quest Trust, so the display name stays brand-aligned and the address stays legal.
+const POSTAL_ADDRESS = 'Infinite Game OS, PO Box 6128, Colorado Springs, CO 80934'
 
 export type EmailShellOptions = {
   body: string
   unsubscribeUrl: string
   preview?: string
+  // Per-recipient "manage preferences" link. Transactional callers pass an
+  // expiring-token link, the broadcast caller passes a tokenless
+  // {{{contact.email}}} merge link that lands on the secure fresh-link fallback.
+  preferencesUrl?: string
 }
 
-export function renderEmailShell({ body, unsubscribeUrl, preview }: EmailShellOptions): string {
+export function renderEmailShell({ body, unsubscribeUrl, preview, preferencesUrl }: EmailShellOptions): string {
   const previewBlock = preview
     ? `<div style="display:none;max-height:0;overflow:hidden;mso-hide:all">${preview}</div>`
+    : ''
+  const preferencesFragment = preferencesUrl
+    ? ` &middot; <a href="${preferencesUrl}" style="color:rgba(34,211,238,0.6);text-decoration:none">manage preferences</a>`
     : ''
   return `<!DOCTYPE html>
 <html>
@@ -36,7 +46,10 @@ export function renderEmailShell({ body, unsubscribeUrl, preview }: EmailShellOp
           <tr>
             <td style="padding-top:36px;border-top:1px solid rgba(226,232,240,0.07)">
               <p style="margin:0;font-size:13px;color:rgba(226,232,240,0.45);font-family:Arial,sans-serif">
-                Infinite Game OS &middot; <a href="${SITE_URL}" style="color:rgba(34,211,238,0.7);text-decoration:none">infinitegameos.io</a> &middot; <a href="${unsubscribeUrl}" style="color:rgba(34,211,238,0.6);text-decoration:none">one-click unsubscribe</a>
+                Infinite Game OS &middot; <a href="${SITE_URL}" style="color:rgba(34,211,238,0.7);text-decoration:none">infinitegameos.io</a>${preferencesFragment} &middot; <a href="${unsubscribeUrl}" style="color:rgba(34,211,238,0.6);text-decoration:none">one-click unsubscribe</a>
+              </p>
+              <p style="margin:10px 0 0;font-size:12px;color:rgba(226,232,240,0.3);font-family:Arial,sans-serif">
+                ${POSTAL_ADDRESS}
               </p>
             </td>
           </tr>

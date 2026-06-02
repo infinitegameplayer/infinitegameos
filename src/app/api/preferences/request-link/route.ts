@@ -44,6 +44,7 @@ export async function POST(req: NextRequest) {
       const html = renderEmailShell({
         preview: 'A fresh link to manage your email preferences. Good for one hour.',
         unsubscribeUrl,
+        preferencesUrl: url,
         body: `
           <p>Here is your link to manage your email preferences. It works for the next hour.</p>
           <p><a href="${url}" style="color:#22d3ee;text-decoration:none">Open my preferences</a></p>
