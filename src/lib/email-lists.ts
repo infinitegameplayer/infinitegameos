@@ -101,13 +101,24 @@ export type MembershipResult = {
   error?: string
 }
 
-// Pure send-time gate. A list send reaches a contact only when the global flag
-// is clear and the list tag is present. The paused_until gate folds in at Phase 4.
+// True when paused_until is set and still in the future. NULL or a past
+// timestamp reads active. Shared by the send-time gate and the page load.
+export function isPaused(pausedUntil?: string | null, nowMs: number = Date.now()): boolean {
+  if (!pausedUntil) return false
+  const t = Date.parse(pausedUntil)
+  return Number.isFinite(t) && t > nowMs
+}
+
+// Pure send-time gate. A list send reaches a contact only when all three gates
+// pass: the global unsubscribed flag is clear, the global pause is null or past,
+// and the list tag is present.
 export function isSuppressedForList(
-  contact: { unsubscribed?: boolean | null; tags?: string[] | null },
+  contact: { unsubscribed?: boolean | null; paused_until?: string | null; tags?: string[] | null },
   tag: string,
+  nowMs: number = Date.now(),
 ): boolean {
   if (contact.unsubscribed === true) return true
+  if (isPaused(contact.paused_until, nowMs)) return true
   const tags = Array.isArray(contact.tags) ? contact.tags : []
   return !tags.includes(tag)
 }
@@ -123,23 +134,25 @@ export async function getContactMembership(email: string): Promise<{
   exists: boolean
   tags: string[]
   unsubscribed: boolean
+  pausedUntil: string | null
 }> {
   const normalized = email.trim().toLowerCase()
   const supabase = getSupabaseAdmin()
   try {
     const { data, error } = await supabase
       .from('contacts')
-      .select('tags, unsubscribed')
+      .select('tags, unsubscribed, paused_until')
       .eq('email', normalized)
       .maybeSingle()
-    if (error || !data) return { exists: false, tags: [], unsubscribed: false }
+    if (error || !data) return { exists: false, tags: [], unsubscribed: false, pausedUntil: null }
     return {
       exists: true,
       tags: Array.isArray(data.tags) ? data.tags : [],
       unsubscribed: data.unsubscribed === true,
+      pausedUntil: data.paused_until ?? null,
     }
   } catch {
-    return { exists: false, tags: [], unsubscribed: false }
+    return { exists: false, tags: [], unsubscribed: false, pausedUntil: null }
   }
 }
 
@@ -330,4 +343,78 @@ export async function applyGlobalUnsubscribe(opts: {
   }
   await writeAudit(supabase, { email, action: 'global_unsubscribe', detail: {}, ip: opts.ip })
   return { ok: true, status: 'unsubscribed-all' }
+}
+
+// ─── Global pause and resume ──────────────────────────────────────────────
+
+export const PAUSE_DAYS = 30
+
+// Pause everything for 30 days. Writes paused_until = now + 30 days, which
+// quiets every list without leaving any. Distinct from applyGlobalUnsubscribe,
+// the explicit leave-all. Best-effort suppresses every Resend audience so the
+// broadcast path goes quiet promptly, with the reconcile sweep as self-heal.
+// The transactional path honors the pause immediately through Supabase reads.
+// A missing contact is a no-op, only reached outside the token-gated entry path.
+export async function applyPause(opts: {
+  email: string
+  ip?: string | null
+}): Promise<MembershipResult & { pausedUntil?: string }> {
+  const email = opts.email.trim().toLowerCase()
+  const supabase = getSupabaseAdmin()
+  const pausedUntil = new Date(Date.now() + PAUSE_DAYS * 24 * 60 * 60 * 1000).toISOString()
+  try {
+    const { error } = await supabase
+      .from('contacts')
+      .update({ paused_until: pausedUntil })
+      .eq('email', email)
+    if (error) throw error
+  } catch (err) {
+    const m = err instanceof Error ? err.message : 'Unknown error'
+    await writeAudit(supabase, { email, action: 'pause_error', detail: { error: m }, ip: opts.ip })
+    return { ok: false, status: 'error', error: m }
+  }
+
+  for (const list of LISTS) {
+    await flipAudience(list, email, true)
+  }
+  await writeAudit(supabase, { email, action: 'pause', detail: { pausedUntil, days: PAUSE_DAYS }, ip: opts.ip })
+  return { ok: true, status: 'paused', pausedUntil }
+}
+
+// Resume sending. Clears paused_until and best-effort restores only the Resend
+// audiences the contact's current tags still claim, so resume never re-adds
+// someone to a list they left. Pause is distinct from unsubscribe, so the
+// global flag is untouched here. A missing contact is a no-op.
+export async function applyResume(opts: {
+  email: string
+  ip?: string | null
+}): Promise<MembershipResult> {
+  const email = opts.email.trim().toLowerCase()
+  const supabase = getSupabaseAdmin()
+  let tags: string[] = []
+  try {
+    const { data: existing, error: selErr } = await supabase
+      .from('contacts')
+      .select('id, tags')
+      .eq('email', email)
+      .maybeSingle()
+    if (selErr) throw selErr
+    if (existing) tags = Array.isArray(existing.tags) ? existing.tags : []
+
+    const { error: updErr } = await supabase
+      .from('contacts')
+      .update({ paused_until: null })
+      .eq('email', email)
+    if (updErr) throw updErr
+  } catch (err) {
+    const m = err instanceof Error ? err.message : 'Unknown error'
+    await writeAudit(supabase, { email, action: 'resume_error', detail: { error: m }, ip: opts.ip })
+    return { ok: false, status: 'error', error: m }
+  }
+
+  for (const list of LISTS) {
+    if (tags.includes(list.tag)) await flipAudience(list, email, false)
+  }
+  await writeAudit(supabase, { email, action: 'resume', detail: {}, ip: opts.ip })
+  return { ok: true, status: 'resumed' }
 }

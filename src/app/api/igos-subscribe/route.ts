@@ -9,7 +9,10 @@ const AUDIENCE_ID = process.env.RESEND_AUDIENCE_INFINITE_GAME_ID
 const FROM = 'Lane Belone <play@infinitegameos.io>'
 const REPLY_TO = 'play@infinitegameos.io'
 const TAG = 'infinite_game_subscriber'
-const SOURCE_SITE = 'infinitegameos'
+// The contacts.source_site check constraint allows 'igos', not 'infinitegameos'.
+// Inserting the long form failed the constraint and silently dropped new
+// IGOS-only contacts at the mirror step. Phase 6 fold-in, fixed 2026-06-02.
+const SOURCE_SITE = 'igos'
 const SITE_URL = 'https://www.infinitegameos.io'
 
 const WELCOME_SUBJECT = 'Welcome to Infinite Game OS updates'

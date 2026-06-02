@@ -16,6 +16,7 @@ type Props = {
   token: string
   maskedEmail: string
   lists: ListView[]
+  pausedUntil?: string | null
   currentSite: string
   // Raw email from the entry URL. Used only to prefill the fallback input when a
   // tokenless or expired link lands here (broadcast links carry email, no token).
@@ -32,6 +33,16 @@ const SITE_LABELS: Record<string, string> = {
   infinitegameos: 'infinitegameos.io',
 }
 
+// The paused-until date, shown when a pause is active. Long form, no ambiguity.
+function formatPauseDate(iso: string | null): string {
+  if (!iso) return 'the pause date'
+  try {
+    return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  } catch {
+    return 'the pause date'
+  }
+}
+
 const body = 'var(--font-body), Inter, system-ui, sans-serif'
 const text = 'var(--color-text)'
 const muted = 'rgba(226,232,240,0.75)'
@@ -46,12 +57,14 @@ export default function PreferencesClient(props: Props) {
 
 // ─── Valid entry: the preference manager ─────────────────────────────────
 
-function PreferenceManager({ email, token, maskedEmail, lists, currentSite }: Props) {
+function PreferenceManager({ email, token, maskedEmail, lists, currentSite, pausedUntil: initialPaused }: Props) {
   const [items, setItems] = useState<ListView[]>(lists)
   const [busy, setBusy] = useState<string | null>(null)
   const [error, setError] = useState('')
   const [confirmLeave, setConfirmLeave] = useState(false)
   const [leftAll, setLeftAll] = useState(false)
+  const [pausedUntil, setPausedUntil] = useState<string | null>(initialPaused ?? null)
+  const isPausedNow = !!pausedUntil && Date.parse(pausedUntil) > Date.now()
 
   async function post(route: string, payload: Record<string, string>) {
     const res = await fetch(route, {
@@ -92,6 +105,40 @@ function PreferenceManager({ email, token, maskedEmail, lists, currentSite }: Pr
       setItems((prev) => prev.map((it) => ({ ...it, joined: false })))
       setLeftAll(true)
       setConfirmLeave(false)
+    } catch {
+      setError('That did not save. Please try again.')
+    } finally {
+      setBusy(null)
+    }
+  }
+
+  async function pause() {
+    if (busy) return
+    setError('')
+    setBusy('__pause__')
+    try {
+      const res = await fetch('/api/preferences/pause', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, token }),
+      })
+      if (!res.ok) throw new Error('request failed')
+      const data = (await res.json()) as { pausedUntil?: string }
+      setPausedUntil(data.pausedUntil ?? new Date(Date.now() + 30 * 86400000).toISOString())
+    } catch {
+      setError('That did not save. Please try again.')
+    } finally {
+      setBusy(null)
+    }
+  }
+
+  async function resume() {
+    if (busy) return
+    setError('')
+    setBusy('__pause__')
+    try {
+      await post('/api/preferences/resume', { email, token })
+      setPausedUntil(null)
     } catch {
       setError('That did not save. Please try again.')
     } finally {
@@ -169,6 +216,30 @@ function PreferenceManager({ email, token, maskedEmail, lists, currentSite }: Pr
 
       {error && (
         <p style={{ fontSize: '0.9rem', color: '#f0b35b', marginTop: '1.25rem' }}>{error}</p>
+      )}
+
+      {!leftAll && (
+        <div style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: `1px solid ${hairline}` }}>
+          {isPausedNow ? (
+            <>
+              <p style={{ fontSize: '1rem', lineHeight: 1.7, color: text, marginTop: 0, marginBottom: '0.6rem' }}>
+                Everything is paused until {formatPauseDate(pausedUntil)}. Your inbox stays quiet until then and your lists stay exactly as they are.
+              </p>
+              <button type="button" onClick={resume} disabled={busy === '__pause__'} style={linkButtonStyle}>
+                {busy === '__pause__' ? 'Resuming...' : 'Resume now'}
+              </button>
+            </>
+          ) : (
+            <>
+              <p style={{ fontSize: '1rem', lineHeight: 1.7, color: muted, marginTop: 0, marginBottom: '0.6rem' }}>
+                Need a breather? Pause every email for 30 days. Your lists stay exactly as they are and pick back up when the pause ends.
+              </p>
+              <button type="button" onClick={pause} disabled={busy === '__pause__'} style={linkButtonStyle}>
+                {busy === '__pause__' ? 'Pausing...' : 'Pause for 30 days'}
+              </button>
+            </>
+          )}
+        </div>
       )}
 
       <div style={{ marginTop: '2.75rem', paddingTop: '1.5rem', borderTop: `1px solid ${hairline}` }}>

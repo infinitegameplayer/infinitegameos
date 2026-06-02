@@ -35,9 +35,11 @@ export default async function PreferencesPage({
   // about the row reaches the rendered HTML.
   let lists: ListView[] = []
   let maskedEmail = ''
+  let pausedUntil: string | null = null
   if (valid) {
     const membership = await getContactMembership(email)
     maskedEmail = maskEmail(email)
+    pausedUntil = membership.pausedUntil
     lists = LISTS.map((l) => ({
       key: l.key,
       label: l.label,
@@ -76,6 +78,7 @@ export default async function PreferencesPage({
           token={valid ? token : ''}
           maskedEmail={maskedEmail}
           lists={lists}
+          pausedUntil={pausedUntil}
           currentSite="infinitegameos"
           prefillEmail={email}
         />
