@@ -157,7 +157,7 @@ export default function Footer() {
                   key={link.href}
                   href={link.href}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel={/(?:lanebelone\.com|sidequesthq\.co|infinitegameos\.io)/.test(link.href) ? 'noopener' : 'noopener noreferrer'}
                   style={{
                     display: 'block',
                     transition: 'opacity 0.2s ease',
