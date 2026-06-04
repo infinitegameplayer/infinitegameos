@@ -4,7 +4,7 @@ import SectionReveal from '@/components/SectionReveal'
 import { creatorBusinessWithoutPerformingFaqs } from '@/lib/page-data'
 
 export const metadata: Metadata = {
-  title: 'How to build a creator business without performing constantly',
+  title: { absolute: 'Build a Creator business without constant performance' },
   description:
     'A Creator business built on structure does not require daily visibility to grow. Stop treating performance as the price of growth. Treat it as a cost to be designed down.',
   openGraph: {

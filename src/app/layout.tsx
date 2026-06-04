@@ -24,7 +24,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Infinite Game OS | Infinite Game Philosophy, Agentic Systems, Sovereign Life Design',
+    default: 'Infinite Game OS | Philosophy, Agentic Systems, Sovereign Life',
     template: '%s | Infinite Game OS',
   },
   description:

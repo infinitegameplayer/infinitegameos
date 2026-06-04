@@ -4,7 +4,7 @@ import SectionReveal from '@/components/SectionReveal'
 import { designYourDayFaqs } from '@/lib/page-data'
 
 export const metadata: Metadata = {
-  title: 'How to design a day around what you actually want',
+  title: { absolute: 'Design a day around what you actually want' },
   description:
     'Designing a day around what you actually want starts with a different question than most planning methods ask. Build a day from desire, energy and identity rather than goals and output.',
   openGraph: {
