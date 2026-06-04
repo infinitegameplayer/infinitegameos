@@ -297,7 +297,7 @@ export default function PlayYourOwnGamePage() {
                 losing themselves to it.
               </p>
               <a
-                href="https://sidequesthq.co/products/ai-for-the-business-you-actually-want"
+                href="https://www.sidequesthq.co/products/ai-for-the-business-you-actually-want"
                 className="btn-accent"
               >
                 AI for the Business You Actually Want · $9

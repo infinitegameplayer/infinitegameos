@@ -164,7 +164,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Source Harvest is one entry point. The full system it lives inside is The Sovereign Life Playbook. The Playbook gives you the design frame for which patterns are worth extracting in the first place.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -256,7 +256,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Pattern Harvest is one entry point. The full system it lives inside is The Sovereign Life Playbook. The Playbook gives you the design frame for which patterns are worth catching in the first place.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -328,7 +328,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Plan Challenger pairs naturally with Pending Plan Implementation. Challenge the plan, then execute. If you want the design frame for which plans are worth running in the first place, the Sovereign Life Playbook is the upstream architecture.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -397,7 +397,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Systematic Debugging is one entry point. The wider operating system that uses it is Infinite Game OS. The full life-design frame that motivates clean architecture in the first place is the Sovereign Life Playbook.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -466,7 +466,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Pending Plan Implementation pairs naturally with Plan Challenger. Challenge first, then implement. Both are tools for an operator playing a longer game. The full architectural frame that motivates per-plan governance is the Sovereign Life Playbook.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -535,7 +535,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Skill Creator pairs naturally with Source Harvest. Harvest patterns from elsewhere, then convert them into your own skills. The Sovereign Life Playbook is the design frame for which workflows are worth codifying in the first place.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -604,7 +604,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Researcher pairs naturally with Source Harvest. Researcher gathers signals across many sources; Source Harvest extracts patterns from the sources worth digging into. The Sovereign Life Playbook is the upstream design frame for which questions are worth researching in the first place.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -705,7 +705,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Social Batch Drafting pairs with Social Batch Queue. Drafting produces the approved batch; Queue ships it as scheduled posts. The two work as a flywheel. The Sovereign Life Playbook is the upstream design frame for which work is worth distributing in the first place.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -801,7 +801,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Social Batch Queue pairs with Social Batch Drafting. Drafting produces the approved batch; Queue ships it as scheduled posts. The two work as a flywheel. The Sovereign Life Playbook is the upstream design frame for which work is worth distributing in the first place.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -897,7 +897,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Grant Researcher pairs with Grant Manager. Researcher discovers and shortlists; Manager runs the lifecycle from intake forward. The two work as a flywheel. The Sovereign Life Playbook is the upstream design frame for whether a given funded work direction belongs in the operator\'s longer arc in the first place.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -993,7 +993,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Grant Manager pairs with Grant Researcher. Researcher discovers and shortlists; Manager runs the lifecycle from intake forward. The two work as a flywheel. The Sovereign Life Playbook is the upstream design frame for whether a given funded work direction belongs in the operator\'s longer arc in the first place.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -1084,7 +1084,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Email Triage is one skill in the Solopreneur Admin Toolkit. The full toolkit runs as a daily ritual through the Daily Admin Orchestrator. The design frame for building a service business that runs on systems rather than willpower is the Sovereign Life Playbook.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -1175,7 +1175,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Quote Builder is one skill in the Solopreneur Admin Toolkit. The full toolkit runs as a daily ritual through the Daily Admin Orchestrator. The design frame for a service business that compounds on systems rather than memory is the Sovereign Life Playbook.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -1266,7 +1266,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Invoice and Payment Tracker is one skill in the Solopreneur Admin Toolkit. The full toolkit runs as a daily ritual through the Daily Admin Orchestrator. The design frame for a service business that runs on systems rather than end-of-week catch-up is the Sovereign Life Playbook.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -1357,7 +1357,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Customer Follow-Up is one skill in the Solopreneur Admin Toolkit. The full toolkit runs as a daily ritual through the Daily Admin Orchestrator. The design frame for building a service business that compounds on relationships rather than advertising is the Sovereign Life Playbook.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -1448,7 +1448,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Daily Admin Orchestrator is the entry point for the Solopreneur Admin Toolkit. The four primitives it sequences are Email Triage, Quote Builder, Invoice and Payment Tracker and Customer Follow-Up. The design frame for a service business that runs on systems rather than the practitioner\'s working memory is the Sovereign Life Playbook.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -1544,7 +1544,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Website Builder produces the site. The upstream design frame for which sites are worth building, and what they\'re expressions of, is the Sovereign Life Playbook. The Playbook is the architecture behind the artifact. The skill ships the code; the Playbook shapes the intention behind it.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -1679,7 +1679,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Ambassador Doctrine is one piece of the larger system: a posture protocol for any agent that operates outside its home system. The full system it lives inside is the Sovereign Life Playbook. The Playbook gives you the design frame for which postures are worth holding in the first place.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -1840,7 +1840,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'The Foundational Creator Bundle is one entry point. The full system the IGOS skills live inside is Infinite Game OS itself. The design frame for which workflows are worth codifying in the first place is the Sovereign Life Playbook.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -1974,7 +1974,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'The Builder Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for which workflows are worth shipping in the first place, and which finite games to play inside the Infinite one, is the Sovereign Life Playbook.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -2115,7 +2115,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'The Writer Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for the longer arc, where voice protected today becomes a body of work that compounds across decades, is the Sovereign Life Playbook.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -2257,7 +2257,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'The Performer Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for the longer arc, where the recording rhythm becomes a body of work that compounds across years, is the Sovereign Life Playbook.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -2385,7 +2385,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'The Teacher Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for the longer arc, where the curriculum becomes a body of work that compounds across cohorts, students and decades, is the Sovereign Life Playbook.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -2518,7 +2518,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'The Curator Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for the longer arc, where taste compounds into a relationship at scale across years of issues, is the Sovereign Life Playbook.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },
@@ -2659,7 +2659,7 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'The Strategist Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for the longer arc, where pattern libraries become a sovereign intellectual asset that compounds across decades, is the Sovereign Life Playbook.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
   },

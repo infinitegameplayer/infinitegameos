@@ -491,7 +491,7 @@ export default function SovereigntyPage() {
                 protocol you can run.
               </p>
               <a
-                href="https://sidequesthq.co/products/sovereign-life-playbook"
+                href="https://www.sidequesthq.co/products/sovereign-life-playbook"
                 className="btn-outline"
               >
                 Explore the Playbook

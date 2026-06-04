@@ -121,7 +121,7 @@ export const concepts: Concept[] = [
     ],
     productCard: {
       body: 'Earn the Right to Automate is the timing companion to the Creator Flywheel. The flywheel describes the engine. The Field Guide installs the discipline that decides what belongs inside it. Twenty manual reps before automation is on the table. A five-question decision tree. The work that has become a flywheel earns the automation. The work that is still a job does not.',
-      ctaHref: 'https://sidequesthq.co/products/earn-the-right-to-automate',
+      ctaHref: 'https://www.sidequesthq.co/products/earn-the-right-to-automate',
       ctaLabel: 'Earn the Right to Automate · $9',
     },
   },
@@ -191,7 +191,7 @@ export const concepts: Concept[] = [
     ],
     productCard: {
       body: 'Yours to Make is the Field Guide for the Pioneer building their own path with AI in the room. The voice-drift texture named. Curiosity as the invisible thread. The collaborator brief that re-roles AI from generator to co-player. The work stays undeniably yours because a clearer self walks into the room where AI operates.',
-      ctaHref: 'https://sidequesthq.co/products/yours-to-make',
+      ctaHref: 'https://www.sidequesthq.co/products/yours-to-make',
       ctaLabel: 'Yours to Make · $9',
     },
   },
@@ -322,7 +322,7 @@ export const concepts: Concept[] = [
     ],
     productCard: {
       body: 'Whose Game Are You Playing with AI is the practice companion to this distinction. The conditioned identity runs the prompts on autopilot and takes the averaged answer. The authentic one asks whose game the output serves. The Field Guide installs AI as a mirror with limits. The mirror prompt. The reframe that returns you to your own knowing instead of the conditioned default.',
-      ctaHref: 'https://sidequesthq.co/products/whose-game-are-you-playing-with-ai',
+      ctaHref: 'https://www.sidequesthq.co/products/whose-game-are-you-playing-with-ai',
       ctaLabel: 'Whose Game Are You Playing with AI · $9',
     },
   },
@@ -393,7 +393,7 @@ export const concepts: Concept[] = [
     ],
     productCard: {
       body: 'Stack Calm is the tool-layer companion to the Ideal Month. The month sets the structure. The Field Guide installs the aliveness filter that decides which tools belong inside it. Personal stack ledger. Quarterly review. New-tool test before any subscription joins. The Ideal Month becomes the architecture. Stack Calm keeps the architecture clear.',
-      ctaHref: 'https://sidequesthq.co/products/stack-calm',
+      ctaHref: 'https://www.sidequesthq.co/products/stack-calm',
       ctaLabel: 'Stack Calm · $9',
     },
   },
@@ -471,7 +471,7 @@ export const concepts: Concept[] = [
     ],
     productCard: {
       body: 'The Sovereign Life Playbook is where the Playgrounds of Exploration become the architecture of your day. Chapter 4 is dedicated to this practice: mapping your current Playgrounds, designing intentional ones, building the day from aliveness rather than obligation.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'Explore the Playbook',
     },
   },
@@ -548,7 +548,7 @@ export const concepts: Concept[] = [
     ],
     productCard: {
       body: 'The Sovereign Life Playbook is where the Infinite Playlist becomes a daily posture. Chapter 5 is dedicated to this practice: how to hold your Playgrounds loosely enough that life can play through them, how to maintain the opening that lets the unexpected arrive.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-life-playbook',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'Explore the Playbook',
     },
   },
@@ -634,7 +634,7 @@ export const concepts: Concept[] = [
     ],
     productCard: {
       body: 'Sovereign Capture is the practice that operationalizes data sovereignty day to day. Files local and yours. A five-step capture flow that keeps the loop on your machine. The Field Guide installs the practice so the foundation you own gets used, not just admired.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-capture',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-capture',
       ctaLabel: 'Sovereign Capture · $7',
     },
   },
@@ -801,7 +801,7 @@ export const concepts: Concept[] = [
     ],
     productCard: {
       body: 'Sovereign Capture is the practice companion to the AI Second Brain. The framework names the loop. The Field Guide installs the part most operators skip: presence as the practice. The five-step capture flow. Capture, tag, surface, release, trust. The release is where most stall. The trust is the move that compounds. Your week stops happening to you because the architecture is holding it.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-capture',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-capture',
       ctaLabel: 'Sovereign Capture · $7',
     },
   },
@@ -868,7 +868,7 @@ export const concepts: Concept[] = [
     ],
     productCard: {
       body: 'Sovereign Capture the Field Guide installs this practice as seven Moves you drop into your week. Body as the first container. The five-step flow in your tool of choice. The weekly sift your AI walks you through. The capture stays in your hands so presence stays the practice.',
-      ctaHref: 'https://sidequesthq.co/products/sovereign-capture',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-capture',
       ctaLabel: 'Start With Sovereign Capture · $7',
     },
   },
@@ -935,7 +935,7 @@ export const concepts: Concept[] = [
     ],
     productCard: {
       body: 'Whose Game Are You Playing with AI is the Field Guide that installs this practice as seven Moves. The paradigm question productivity AI cannot ask. The three-paragraph manifesto template. AI as mirror with the mirror prompt. The contemplative question practice as a returning rhythm. The reading is the on-ramp. The Move is the point.',
-      ctaHref: 'https://sidequesthq.co/products/whose-game-are-you-playing-with-ai',
+      ctaHref: 'https://www.sidequesthq.co/products/whose-game-are-you-playing-with-ai',
       ctaLabel: 'The P1 Field Guide · $9',
     },
   },

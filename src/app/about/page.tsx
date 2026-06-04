@@ -258,7 +258,7 @@ export default function AboutPage() {
                 lanebelone.com
               </a>
               <a
-                href="https://sidequesthq.co"
+                href="https://www.sidequesthq.co"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline"

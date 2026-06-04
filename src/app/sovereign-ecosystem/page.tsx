@@ -224,7 +224,7 @@ export default function SovereignEcosystemPage() {
               </p>
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                 <a
-                  href="https://sidequesthq.co/downloads/sovereign-ecosystem-quick-start-guide.pdf"
+                  href="https://www.sidequesthq.co/downloads/sovereign-ecosystem-quick-start-guide.pdf"
                   className="btn-accent"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -232,7 +232,7 @@ export default function SovereignEcosystemPage() {
                   Quick Start Guide (PDF)
                 </a>
                 <a
-                  href="https://sidequesthq.co/downloads/sovereign-ecosystem-session-guide.pdf"
+                  href="https://www.sidequesthq.co/downloads/sovereign-ecosystem-session-guide.pdf"
                   className="btn-outline"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -561,7 +561,7 @@ export default function SovereignEcosystemPage() {
                 the install. Some prefer a hand.
               </p>
               <a
-                href="https://sidequesthq.co/sovereign-ecosystem-install"
+                href="https://www.sidequesthq.co/sovereign-ecosystem-install"
                 className="btn-outline"
                 target="_blank"
                 rel="noopener noreferrer"
