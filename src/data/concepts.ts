@@ -328,9 +328,9 @@ export const concepts: Concept[] = [
       { href: '/concepts/joyful-sovereignty', label: 'Joyful Sovereignty', variant: 'outline' },
     ],
     productCard: {
-      body: 'Whose Game Are You Playing with AI is the practice companion to this distinction. The conditioned identity runs the prompts on autopilot and takes the averaged answer. The authentic one asks whose game the output serves. The Field Guide installs AI as a mirror with limits. The mirror prompt. The reframe that returns you to your own knowing instead of the conditioned default.',
+      body: 'Whose Game Are You Playing with AI? is the practice companion to this distinction. The conditioned identity runs the prompts on autopilot and takes the averaged answer. The authentic one asks whose game the output serves. The Field Guide installs AI as a mirror with limits. The mirror prompt. The reframe that returns you to your own knowing instead of the conditioned default.',
       ctaHref: 'https://www.sidequesthq.co/products/whose-game-are-you-playing-with-ai',
-      ctaLabel: 'Whose Game Are You Playing with AI · $9',
+      ctaLabel: 'Whose Game Are You Playing with AI? · $9',
     },
   },
   {
@@ -949,7 +949,7 @@ export const concepts: Concept[] = [
       { href: '/concepts/the-north-star', label: 'The North Star', variant: 'outline' },
     ],
     productCard: {
-      body: 'Whose Game Are You Playing with AI is the Field Guide that installs this practice as seven Moves. The paradigm question productivity AI cannot ask. The three-paragraph manifesto template. AI as mirror with the mirror prompt. The contemplative question practice as a returning rhythm. The reading is the on-ramp. The Move is the point.',
+      body: 'Whose Game Are You Playing with AI? is the Field Guide that installs this practice as seven Moves. The paradigm question productivity AI cannot ask. The three-paragraph manifesto template. AI as mirror with the mirror prompt. The contemplative question practice as a returning rhythm. The reading is the on-ramp. The Move is the point.',
       ctaHref: 'https://www.sidequesthq.co/products/whose-game-are-you-playing-with-ai',
       ctaLabel: 'The P1 Field Guide · $9',
     },
