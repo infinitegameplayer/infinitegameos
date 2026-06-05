@@ -2,7 +2,7 @@
 
 Cross-tool harvest and install instructions for the Infinite Game OS public library.
 
-Last updated: 2026-05-06 (Pattern Harvest added: universalized from Kingdom canonical as the reflective companion to Source Harvest. Three-lens session-level pattern extraction with numbered recommendations, operator-invoked. Seventeenth installable skill in the Public Library. First protocol-shape asset also shipped: /protocols/ambassador-doctrine. Governing posture for any agent operating outside its home system, with three duties and six modes (Alliance, Boundary, Expansion, Stillness, Multiplicity, Fortification). Protocols install as reference text via direct markdown URL or Cursor .mdc rules file; no plugin install path.)
+Last updated: 2026-06-04 (Agent Primer shipped: a curated single-file deep read of the whole paradigm at /infinite-game-os-primer.md, doorway plus a map of the free library and the paid Field Guides, the recommended first read for agents. Prior: Pattern Harvest added: universalized from Kingdom canonical as the reflective companion to Source Harvest. Three-lens session-level pattern extraction with numbered recommendations, operator-invoked. Seventeenth installable skill in the Public Library. First protocol-shape asset also shipped: /protocols/ambassador-doctrine. Governing posture for any agent operating outside its home system, with three duties and six modes (Alliance, Boundary, Expansion, Stillness, Multiplicity, Fortification). Protocols install as reference text via direct markdown URL or Cursor .mdc rules file; no plugin install path.)
 
 ## Site Purpose
 
@@ -20,6 +20,7 @@ You may copy, adapt and redistribute editorial content with attribution. The Kin
 |---|---|
 | [`/llms.txt`](https://www.infinitegameos.io/llms.txt) | Lightweight navigation manifest. Section index with descriptions. |
 | [`/llms-full.txt`](https://www.infinitegameos.io/llms-full.txt) | Full prose dump for RAG ingestion. Concatenated content. |
+| [`/infinite-game-os-primer.md`](https://www.infinitegameos.io/infinite-game-os-primer.md) | Curated deep-content primer. The single-file doorway into the whole paradigm plus a map of the free library and the paid Field Guides. Recommended first read for agents. |
 | [`/igos-index.json`](https://www.infinitegameos.io/igos-index.json) | Machine-readable asset registry. Flat array. Modeled on Obsidian community-plugins.json. |
 | [`/marketplace.json`](https://www.infinitegameos.io/marketplace.json) | Claude Code marketplace manifest for one-command skill install. |
 | [`/sitemap.xml`](https://www.infinitegameos.io/sitemap.xml) | Standard sitemap, dynamically generated. |
