@@ -48,7 +48,7 @@ export const concepts: Concept[] = [
     title: 'The Creator Flywheel',
     label: 'Framework',
     capsule:
-      'Be yourself. Let what is alive in you animate your creativity. Build, write, speak, advise. Whatever form your creative expression takes, bring it fully. Share it as structured artifacts that persist. People who resonate find their way to you not because you marketed at them but because what you created was real and locatable. This is the creator economy at its highest expression: getting paid to be yourself, not performing a version of it.',
+      'The operating engine for getting paid to be yourself. Let what\'s alive in you animate your creativity. Build, write, speak, advise. Share it as structured artifacts that persist. People who resonate find you because what you made was real and locatable, not because you marketed at them.',
     subtitle:
       'The operating engine for any creator who builds from aliveness, contributes from genuine expression and lets the business follow.',
     sections: [
@@ -490,7 +490,7 @@ export const concepts: Concept[] = [
     title: 'The Infinite Playlist',
     label: 'Framework',
     capsule:
-      'The Infinite Playlist is the soundtrack to the movie of your life. An eternal sequence of songs, some chosen and some received, always playing in the background of a sovereign day. Where Playgrounds of Exploration are what the Pioneer engages through the senses, the Infinite Playlist is the invisible music floating in the air. You can\'t see it, but you can hear it, dance to it, play with it.',
+      'The soundtrack to the movie of your life. An eternal sequence of songs, some chosen and some received, always playing under a sovereign day. Where Playgrounds are what the Pioneer engages through the senses, the Infinite Playlist is the invisible music in the air. You can\'t see it. You can hear it, dance to it, play with it.',
     subtitle:
       'The invisible music floating in the air, always playing, waiting to be heard.',
     sections: [
@@ -568,7 +568,7 @@ export const concepts: Concept[] = [
     title: 'Data Sovereignty',
     label: 'Foundation',
     capsule:
-      'Your files on your computer. Your data, your context, your history. Not in someone else\'s cloud. Not locked behind a platform that may change its terms next quarter. Different AI tools can read and rewrite the same files because the files belong to you, not to the tool. Build the foundation today and every future decision about which AI, which platform, which workflow gets easier. The corporations are building the convenient lock-in. Data sovereignty is the other path.',
+      'Your files on your computer. Your data, your context, your history. Not in someone else\'s cloud, not locked behind a platform that may change its terms next quarter. Different AI tools read and rewrite the same files because the files belong to you, not the tool. The corporations are building convenient lock-in. Data sovereignty is the other path.',
     subtitle:
       'The foundation underneath everything else. Your files, your machine, your terms. The AI as a tool that serves you, not a platform that owns you.',
     sections: [
@@ -655,7 +655,7 @@ export const concepts: Concept[] = [
     title: 'The North Star',
     label: 'Practice',
     capsule:
-      'The point on the horizon you are walking toward. Zero to three months out, with longer horizons sketched beyond. Active quests instead of tasks, because a quest is something you embark on with curiosity. Filled in once, revisited often. Once the North Star lives in your system, the AI organizes your day-to-day work around it. You stop carrying the trajectory in your head. The North Star holds it for you, and you get to be present with whatever is most alive today.',
+      'The point on the horizon you\'re walking toward. Zero to three months out, with longer horizons sketched beyond. Active quests instead of tasks, because a quest is something you embark on with curiosity. Once the North Star lives in your system, the AI organizes your day around it. You stop carrying the trajectory in your head.',
     subtitle:
       'The compass that lets the AI organize your work around your direction. A living document, not a fixed plan.',
     sections: [
@@ -735,7 +735,7 @@ export const concepts: Concept[] = [
     title: 'The AI Second Brain',
     label: 'Framework',
     capsule:
-      'The system you trust to hold what is in your head so you do not have to. An idea hits at a meetup. You open Obsidian on your phone. You write it down. The note syncs to your home setup. You walk back into the conversation as a present human being. The fog clears because your second brain holds the load. Tiago Forte built the original Building a Second Brain framework. The AI Second Brain is the next move: an active intelligence layer over the same files. Capture, organize, distill, express. The loop runs.',
+      'An active intelligence layer over the files you already trust to hold what\'s in your head. An idea hits at a meetup. You open Obsidian on your phone, write it down, walk back in present. Tiago Forte built the original Building a Second Brain. The AI Second Brain is the next move. Capture, organize, distill, express. The loop runs.',
     subtitle:
       'The system that holds your thoughts so you do not have to. Capture from anywhere. Organize, distill and express through the AI you already use.',
     sections: [
@@ -824,7 +824,7 @@ export const concepts: Concept[] = [
     title: 'Sovereign Capture',
     label: 'Practice',
     capsule:
-      'The practice of holding what wants to arrive without losing your presence to the work. Ideas land all day. Most capture systems optimize for retrieval and quietly make you the manager of your own inbox. Sovereign Capture asks a different question. How do you honor the ideas and stay present to the life they arrive inside. Body as the first container. A five-step flow that runs capture, tag, surface, release, trust. The release is where most people stall. The trust is the move that compounds. Your week stops happening to you because the structure does the remembering.',
+      'The practice of holding what wants to arrive without losing your presence to the work. Ideas land all day. Most capture systems make you the manager of your own inbox. Sovereign Capture asks a different question: how do you honor the ideas and stay present to the life they arrive inside. Body as the first container. Capture, tag, surface, release, trust.',
     subtitle:
       'The capture practice that keeps you present to the work while honoring the ideas that want to arrive.',
     sections: [
@@ -892,7 +892,7 @@ export const concepts: Concept[] = [
     title: 'The Contemplative Question Practice',
     label: 'Practice',
     capsule:
-      'A real question you hold before you open the prompt window. Productivity AI assumes you already know whose game you are playing. The contemplative question practice installs the move productivity AI cannot make. You hold one precise question. You let it work on you across a week of sessions rather than rushing to resolve it. The AI becomes a mirror rather than an engine. Aliveness becomes the compass. The work starts coming from you instead of averaging you away from yourself.',
+      'A real question you hold before you open the prompt window. Productivity AI assumes you already know whose game you\'re playing. This practice installs the move it can\'t make. You hold one precise question and let it work on you across a week of sessions. The AI becomes a mirror rather than an engine. The work starts coming from you.',
     subtitle:
       'The practice of holding a real question before the session opens, so AI returns you to yourself rather than averages you away.',
     sections: [
