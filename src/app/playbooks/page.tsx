@@ -27,7 +27,7 @@ const articleSchema = {
   headline: 'Playbooks and Frameworks',
   description:
     'Infinite Game playbooks give you enough structure to improvise freely. Practical frameworks for sovereign life design, long-term thinking and agentic systems.',
-  author: { '@id': 'https://www.infinitegameos.io/#person' },
+  author: { '@id': 'https://infinitegameos.io/#person' },
   publisher: { '@id': 'https://www.infinitegameos.io/#website' },
   url: 'https://www.infinitegameos.io/playbooks',
   mainEntityOfPage: 'https://www.infinitegameos.io/playbooks',

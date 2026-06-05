@@ -20,32 +20,10 @@ export const metadata: Metadata = {
   },
 }
 
-const personSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  '@id': 'https://www.infinitegameos.io/about#lane-belone',
-  name: 'Lane Belone',
-  url: 'https://lanebelone.com',
-  jobTitle:
-    'Infinite Game practitioner, agentic systems architect, sovereign life design coach',
-  description:
-    'Lane Belone works at the intersection of Infinite Game philosophy, sovereign creative operating systems, and agentic architecture. He writes from inside the practice, documenting what it looks like to build sovereign presence in a Post Web environment.',
-  knowsAbout: igosExpertise,
-  sameAs: [
-    'https://www.wikidata.org/wiki/Q139889543',
-    'https://lanebelone.com',
-    'https://sidequesthq.co',
-    'https://www.linkedin.com/in/lanebelone/',
-    'https://www.instagram.com/increasefreedom/',
-    'https://lanebelone.substack.com/',
-    'https://github.com/InfiniteGamePlayer',
-  ],
-}
-
 const profilePageSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
-  mainEntity: { '@id': 'https://www.infinitegameos.io/about#lane-belone' },
+  mainEntity: { '@id': 'https://infinitegameos.io/#person' },
   url: 'https://www.infinitegameos.io/about',
   name: 'About Lane Belone',
   description:
@@ -70,10 +48,6 @@ const breadcrumbSchema = {
 export default function AboutPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }}

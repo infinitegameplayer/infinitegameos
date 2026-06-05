@@ -45,6 +45,12 @@ export default async function ConceptPage({ params }: PageProps) {
     .map(s => allUpdates.find(u => u.slug === s))
     .filter((u): u is NonNullable<typeof u> => Boolean(u))
 
+  const updatedLabel = new Date(`${concept.updated}T00:00:00Z`).toLocaleDateString('en-US', {
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  })
+
   const definedTermSchema = {
     '@context': 'https://schema.org',
     '@type': 'DefinedTerm',
@@ -89,11 +95,12 @@ export default async function ConceptPage({ params }: PageProps) {
     '@type': ['Article', 'LearningResource'],
     headline: concept.title,
     description: concept.capsule,
-    author: { '@id': 'https://www.infinitegameos.io/#person' },
+    author: { '@id': 'https://infinitegameos.io/#person' },
     publisher: { '@id': 'https://www.infinitegameos.io/#website' },
     url: `https://www.infinitegameos.io/concepts/${concept.slug}`,
     mainEntityOfPage: `https://www.infinitegameos.io/concepts/${concept.slug}`,
     about: { '@id': `https://www.infinitegameos.io/concepts/${concept.slug}#term` },
+    dateModified: `${concept.updated}T00:00:00Z`,
     learningResourceType: 'concept definition',
     educationalLevel: 'practitioner',
     license: 'https://creativecommons.org/licenses/by/4.0/',
@@ -162,6 +169,17 @@ export default async function ConceptPage({ params }: PageProps) {
               }}
             >
               {concept.subtitle}
+            </p>
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '0.8rem',
+                color: 'var(--color-muted)',
+                marginTop: '1.25rem',
+                opacity: 0.8,
+              }}
+            >
+              Updated {updatedLabel}
             </p>
           </SectionReveal>
         </header>

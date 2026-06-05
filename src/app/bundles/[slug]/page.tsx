@@ -70,7 +70,7 @@ export default async function BundlePage({ params }: PageProps) {
     '@type': ['TechArticle', 'Article'],
     headline: asset.title,
     description: asset.description,
-    author: { '@id': `${SITE}/#person` },
+    author: { '@id': 'https://infinitegameos.io/#person' },
     publisher: { '@id': `${SITE}/#website` },
     url: `${SITE}/bundles/${asset.slug}`,
     mainEntityOfPage: `${SITE}/bundles/${asset.slug}`,

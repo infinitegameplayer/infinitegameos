@@ -26,7 +26,7 @@ const articleSchema = {
   headline: 'The Post Web and the Infinite Game: A Practitioner\u2019s Guide',
   description:
     'The internet is shifting from an Attention Economy to an Intention Economy. AI agents now generate 3.6x more web requests than Googlebot. This is what that means for practitioners.',
-  author: { '@id': 'https://www.infinitegameos.io/#person' },
+  author: { '@id': 'https://infinitegameos.io/#person' },
   publisher: { '@id': 'https://www.infinitegameos.io/#website' },
   url: 'https://www.infinitegameos.io/agentic-systems',
   mainEntityOfPage: 'https://www.infinitegameos.io/agentic-systems',

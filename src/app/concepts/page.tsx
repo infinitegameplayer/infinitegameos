@@ -34,8 +34,11 @@ const termSetSchema = {
   url: 'https://www.infinitegameos.io/concepts',
   description:
     'Core concepts from Lane Belone\'s Infinite Game OS: frameworks, archetypes, practices and distinctions for sovereign life design.',
+  creator: { '@id': 'https://infinitegameos.io/#person' },
+  publisher: { '@id': 'https://www.infinitegameos.io/#organization' },
   hasDefinedTerm: concepts.map(c => ({
     '@type': 'DefinedTerm',
+    '@id': `https://www.infinitegameos.io/concepts/${c.slug}#term`,
     name: c.title,
     description: c.capsule,
     url: `https://www.infinitegameos.io/concepts/${c.slug}`,

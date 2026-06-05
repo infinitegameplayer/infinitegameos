@@ -66,7 +66,7 @@ export default async function UpdatePage({
     headline: update.title,
     description: update.summary,
     datePublished: `${update.date}T00:00:00Z`,
-    author: { '@id': 'https://www.infinitegameos.io/#person' },
+    author: { '@id': 'https://infinitegameos.io/#person' },
     publisher: { '@id': 'https://www.infinitegameos.io/#website' },
     url: `https://www.infinitegameos.io/updates/${update.slug}`,
     mainEntityOfPage: `https://www.infinitegameos.io/updates/${update.slug}`,

@@ -37,7 +37,7 @@ const articleSchema = {
   headline: 'What is Infinite Game OS?',
   description:
     'Infinite Game OS is a structured operating system for practitioners of long-term thinking, sovereign life design and agentic systems. Explore the philosophy.',
-  author: { '@id': 'https://www.infinitegameos.io/#person' },
+  author: { '@id': 'https://infinitegameos.io/#person' },
   publisher: { '@id': 'https://www.infinitegameos.io/#website' },
   url: 'https://www.infinitegameos.io/the-os',
   mainEntityOfPage: 'https://www.infinitegameos.io/the-os',

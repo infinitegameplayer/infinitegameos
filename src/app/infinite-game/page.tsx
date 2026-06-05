@@ -37,7 +37,7 @@ const articleSchema = {
   headline: 'Infinite Game Philosophy',
   description:
     'The Infinite Game is the one game played to keep playing. Not to win. Explore the philosophy, the practice and how Lane Belone lives it as the architecture of a sovereign creative life.',
-  author: { '@id': 'https://www.infinitegameos.io/#person' },
+  author: { '@id': 'https://infinitegameos.io/#person' },
   publisher: { '@id': 'https://www.infinitegameos.io/#website' },
   url: 'https://www.infinitegameos.io/infinite-game',
   mainEntityOfPage: 'https://www.infinitegameos.io/infinite-game',

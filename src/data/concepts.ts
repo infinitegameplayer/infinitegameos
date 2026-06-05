@@ -18,6 +18,9 @@ export interface Concept {
   slug: string
   title: string
   label: string
+  // updated: ISO date of last meaningful revision. Feeds dateModified in the
+  // Article JSON-LD and the visible "Updated [month year]" freshness line.
+  updated: string
   capsule: string
   subtitle: string
   sections: ConceptSection[]
@@ -41,6 +44,7 @@ export interface Concept {
 export const concepts: Concept[] = [
   {
     slug: 'creator-flywheel',
+    updated: '2026-06-04',
     title: 'The Creator Flywheel',
     label: 'Framework',
     capsule:
@@ -127,6 +131,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'the-pioneer',
+    updated: '2026-06-04',
     title: 'The Pioneer',
     label: 'Archetype',
     capsule:
@@ -197,6 +202,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'joyful-sovereignty',
+    updated: '2026-06-04',
     title: 'Joyful Sovereignty',
     label: 'Philosophy',
     capsule:
@@ -258,6 +264,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'conditioned-vs-authentic-identity',
+    updated: '2026-06-04',
     title: 'Conditioned vs Authentic Identity',
     label: 'Core Distinction',
     capsule:
@@ -328,6 +335,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'ideal-month',
+    updated: '2026-06-04',
     title: 'The Ideal Month',
     label: 'Practice',
     capsule:
@@ -399,6 +407,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'playgrounds-of-exploration',
+    updated: '2026-06-04',
     title: 'Playgrounds of Exploration',
     label: 'Framework',
     capsule:
@@ -477,6 +486,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'infinite-playlist',
+    updated: '2026-06-04',
     title: 'The Infinite Playlist',
     label: 'Framework',
     capsule:
@@ -554,6 +564,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'data-sovereignty',
+    updated: '2026-06-04',
     title: 'Data Sovereignty',
     label: 'Foundation',
     capsule:
@@ -622,7 +633,7 @@ export const concepts: Concept[] = [
         a: 'A $20 to $200 monthly subscription on a sovereign-first foundation gets you 95% of the way there today. The AI runs in the cloud and reads files from your machine. Local hardware setups that eliminate cloud dependency entirely currently run $10,000 to $15,000 and the price will keep dropping. The foundation you build now makes that future step a smooth migration rather than a full rebuild.',
       },
     ],
-    relatedSlugs: ['ai-second-brain', 'the-north-star', 'joyful-sovereignty', 'creator-flywheel', 'grant-researcher'],
+    relatedSlugs: ['ai-second-brain', 'the-north-star', 'joyful-sovereignty', 'creator-flywheel', 'sovereign-capture'],
     relatedUpdateSlugs: [
       'what-is-data-sovereignty-for-creators',
       'how-to-build-an-ai-second-brain',
@@ -640,6 +651,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'the-north-star',
+    updated: '2026-06-04',
     title: 'The North Star',
     label: 'Practice',
     capsule:
@@ -719,6 +731,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'ai-second-brain',
+    updated: '2026-06-04',
     title: 'The AI Second Brain',
     label: 'Framework',
     capsule:
@@ -807,6 +820,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'sovereign-capture',
+    updated: '2026-06-04',
     title: 'Sovereign Capture',
     label: 'Practice',
     capsule:
@@ -874,6 +888,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'contemplative-question-practice',
+    updated: '2026-06-04',
     title: 'The Contemplative Question Practice',
     label: 'Practice',
     capsule:

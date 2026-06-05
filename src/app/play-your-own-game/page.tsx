@@ -37,7 +37,7 @@ const articleSchema = {
   headline: 'How to play your own game',
   description:
     'Playing your own game begins with identifying which game you are currently playing. A forensic game-audit approach for the already-accomplished person who senses the script is wrong.',
-  author: { '@id': 'https://www.infinitegameos.io/#person' },
+  author: { '@id': 'https://infinitegameos.io/#person' },
   publisher: { '@id': 'https://www.infinitegameos.io/#website' },
   url: 'https://www.infinitegameos.io/play-your-own-game',
   mainEntityOfPage: 'https://www.infinitegameos.io/play-your-own-game',

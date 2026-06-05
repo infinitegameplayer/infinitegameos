@@ -68,7 +68,7 @@ export default async function ProtocolPage({ params }: PageProps) {
     '@type': ['TechArticle', 'Article'],
     headline: asset.title,
     description: asset.description,
-    author: { '@id': `${SITE}/#person` },
+    author: { '@id': 'https://infinitegameos.io/#person' },
     publisher: { '@id': `${SITE}/#website` },
     url: `${SITE}/protocols/${asset.slug}`,
     mainEntityOfPage: `${SITE}/protocols/${asset.slug}`,

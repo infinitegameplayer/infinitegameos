@@ -37,7 +37,7 @@ const articleSchema = {
   headline: 'Infinite Game OS',
   description:
     'The Infinite Game OS is a living architecture: a vault, an agentic layer, a governance structure and a deploy pipeline working together as one applied operating system for a Creator-led life on a long arc.',
-  author: { '@id': 'https://www.infinitegameos.io/#person' },
+  author: { '@id': 'https://infinitegameos.io/#person' },
   publisher: { '@id': 'https://www.infinitegameos.io/#website' },
   url: 'https://www.infinitegameos.io/infinite-game-os',
   mainEntityOfPage: 'https://www.infinitegameos.io/infinite-game-os',

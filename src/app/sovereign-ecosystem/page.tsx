@@ -39,7 +39,7 @@ const articleSchema = {
   headline: 'Sovereign Ecosystem. Foundational Obsidian + Claude Code Template',
   description:
     'The Sovereign Ecosystem is a foundational Obsidian + Claude Code workspace template. Directory structure, governance scaffolding, North Star template and an initial skill set. The three-tier stack origin for sovereign-first AI practitioners.',
-  author: { '@id': 'https://www.infinitegameos.io/#person' },
+  author: { '@id': 'https://infinitegameos.io/#person' },
   publisher: { '@id': 'https://www.infinitegameos.io/#website' },
   url: 'https://www.infinitegameos.io/sovereign-ecosystem',
   mainEntityOfPage: 'https://www.infinitegameos.io/sovereign-ecosystem',
