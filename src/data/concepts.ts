@@ -35,6 +35,10 @@ export interface Concept {
   relatedUpdateSlugs?: string[]
   ctaLinks: { href: string; label: string; variant: 'accent' | 'outline' }[]
   productCard?: ConceptProductCard
+  // Cross-property connective callout to the free Creator Flywheel Starter Kit
+  // (SQHQ lead magnet). Rendered as a visible accent-anchored block, distinct
+  // from productCard so a concept can carry both a paid pairing and the free on-ramp.
+  kitCallout?: ConceptProductCard
 }
 
 // FAQ content authored 2026-05-19 for all live concepts (Phase 1 of
@@ -127,6 +131,11 @@ export const concepts: Concept[] = [
       body: 'Earn the Right to Automate is the timing companion to the Creator Flywheel. The flywheel describes the engine. The Field Guide installs the discipline that decides what belongs inside it. Twenty manual reps before automation is on the table. A five-question decision tree. The work that has become a flywheel earns the automation. The work that is still a job does not.',
       ctaHref: 'https://www.sidequesthq.co/products/earn-the-right-to-automate',
       ctaLabel: 'Earn the Right to Automate · $9',
+    },
+    kitCallout: {
+      body: 'New to the Creator Flywheel? The free Starter Kit is the paradigm in a guide and worksheet. One full flywheel rep on paper in under 30 minutes.',
+      ctaHref: 'https://www.sidequesthq.co/creator-flywheel',
+      ctaLabel: 'Get the free Starter Kit',
     },
   },
   {

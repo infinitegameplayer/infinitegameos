@@ -196,6 +196,37 @@ export default async function ConceptPage({ params }: PageProps) {
             ))}
           </div>
 
+          {concept.kitCallout && (
+            <SectionReveal delay={concept.sections.length * 80}>
+              <div
+                style={{
+                  marginTop: '3rem',
+                  padding: '1.75rem 2rem',
+                  border: '1px solid var(--color-border)',
+                  borderLeft: '3px solid var(--color-accent)',
+                  borderRadius: '12px',
+                  background: 'var(--color-card, rgba(255, 255, 255, 0.02))',
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '1rem',
+                    color: 'var(--color-text)',
+                    lineHeight: 1.75,
+                    maxWidth: '62ch',
+                    marginBottom: '1.5rem',
+                  }}
+                >
+                  {concept.kitCallout.body}
+                </p>
+                <a href={concept.kitCallout.ctaHref} className="btn-accent">
+                  {concept.kitCallout.ctaLabel}
+                </a>
+              </div>
+            </SectionReveal>
+          )}
+
           {concept.faq && concept.faq.length > 0 && (
             <SectionReveal delay={concept.sections.length * 80}>
               <div
