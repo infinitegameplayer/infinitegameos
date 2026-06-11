@@ -2330,7 +2330,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         heading: 'What the install brings (and what it does not)',
         paragraphs: [
-          'The Teacher Bundle install script does two things. First, it verifies the Foundational substrate is present by checking for marketing-skills@marketingskills in your settings.json. Second, it prints the manual git clone command for the GarethManning/claude-education-skills companion library plus the CC BY-SA 4.0 license context. The script does not install GarethManning\'s skills automatically because the library is share-alike licensed and the Kingdom bundle does not redistribute share-alike code.',
+          'The Teacher Bundle install script does two things. First, it verifies the Foundational substrate is present by checking for marketing-skills@marketingskills in your settings.json. Second, it prints the manual git clone command for the GarethManning/claude-education-skills companion library plus the CC BY-SA 4.0 license context. The script does not install GarethManning\'s skills automatically because the library is share-alike licensed and this bundle does not redistribute share-alike code.',
           'Teachers who want the deep pedagogy layer copy the printed git clone command and run it themselves at the location of their choice. The full 111-skill library installs in seconds. After cloning, restart Claude Code and the GarethManning skills are available alongside the Foundational stack.',
           'For Teachers who only need a subset of the GarethManning library, the curriculum design and assessment domain (15 skills) is the highest-leverage starting point. The repo lets you cherry-pick specific skills by copying individual SKILL.md files into ~/.claude/skills/ rather than cloning the full library.',
         ],
@@ -2383,7 +2383,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         q: 'Why is GarethManning\'s library not bundled natively?',
         a:
-          'The claude-education-skills repository carries a CC BY-SA 4.0 license, which is share-alike. Bundling those skills natively into our install pipeline could trigger derivative-work classification, which would propagate the share-alike license to the Kingdom bundle infrastructure. The conservative path is to link Teachers directly to the source repository and have them install from there. This sidesteps the share-alike question entirely while still giving Teachers full access to the 111-skill library.',
+          'The claude-education-skills repository carries a CC BY-SA 4.0 license, which is share-alike. Bundling those skills natively into our install pipeline could trigger derivative-work classification, which would propagate the share-alike license to the bundle infrastructure. The conservative path is to link Teachers directly to the source repository and have them install from there. This sidesteps the share-alike question entirely while still giving Teachers full access to the 111-skill library.',
       },
       {
         q: 'Do I need GarethManning\'s library to use the Teacher Bundle?',
@@ -2468,7 +2468,7 @@ export const igosAssets: IGOSAsset[] = [
         paragraphs: [
           'The install script does two things. First, it clones the Tech Digest repository and copies the digest skill files into the Claude Code skills directory at ~/.claude/skills/tech-digest/. Second, it clones the ai-marketing-claude-code-skills repository and copies the newsletter-creation-curation directory into ~/.claude/skills/newsletter-creation-curation/. Both halves are idempotent. Re-running is safe. The script writes a timestamped backup of any existing skills directory before overwriting.',
           'After install, restart Claude Code. `/digest` becomes available for any feed list configured in the YAML. The newsletter creation skill activates when the work calls for editorial framing, subject-line authoring or stage-aware sequence design.',
-          'A note on the Content Research Writer skill: an additional skill named in the Curator avatar research (ComposioHQ\'s content-research-writer) is omitted from this v1 install pending license confirmation on the upstream repo. The eight-step research-to-draft model it covers (topic understanding, collaborative outlining, source research, hook improvement, section feedback, voice preservation, citation management, final polish) is queued for a Kingdom-native rebuild in v1.1. Curators who write deeper analytical synthesis can reach for the Foundational substrate\'s Researcher in the meantime.',
+          'A note on the Content Research Writer skill: an additional skill named in the Curator avatar research (ComposioHQ\'s content-research-writer) is omitted from this v1 install pending license confirmation on the upstream repo. The eight-step research-to-draft model it covers (topic understanding, collaborative outlining, source research, hook improvement, section feedback, voice preservation, citation management, final polish) is queued for a native rebuild in v1.1. Curators who write deeper analytical synthesis can reach for the Foundational substrate\'s Researcher in the meantime.',
         ],
       },
       {
@@ -2521,7 +2521,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         q: 'Why is Content Research Writer not in the install script?',
         a:
-          'The ComposioHQ content-research-writer skill named in the Curator avatar research is omitted from v1 pending license confirmation on the upstream repository. The eight-capability research-to-draft model it covers is queued for a Kingdom-native rebuild in v1.1. In the meantime, the Foundational substrate\'s Researcher handles the deeper analytical context that this skill would otherwise cover.',
+          'The ComposioHQ content-research-writer skill named in the Curator avatar research is omitted from v1 pending license confirmation on the upstream repository. The eight-capability research-to-draft model it covers is queued for a native rebuild in v1.1. In the meantime, the Foundational substrate\'s Researcher handles the deeper analytical context that this skill would otherwise cover.',
       },
       {
         q: 'How is Tech Digest different from a regular RSS reader?',
