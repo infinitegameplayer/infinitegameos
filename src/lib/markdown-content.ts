@@ -439,7 +439,9 @@ Opens the Claude Code plugins dialog with the marketplace and skill prefilled. R
 curl ${SITE}/markdown/${asset.type}s/${asset.slug}
 \`\`\`
 
-Or send \`Accept: text/markdown\` to ${SITE}/${asset.type}s/${asset.slug}`)
+Or send \`Accept: text/markdown\` to ${SITE}/${asset.type}s/${asset.slug}
+
+_This URL returns the narrative concept page. The plugin install path above delivers the operational SKILL.md instruction file._`)
 
   if (asset.installable?.cursorMdc) {
     installBlocks.push(`### Cursor
@@ -494,6 +496,10 @@ aider --read ${asset.slug}.md
     ? `\n\n[${asset.softHook.ctaLabel}](${asset.softHook.ctaHref})`
     : ''
 
+  const provenanceFooter = asset.seOrigin
+    ? `\n\n---\n\n_Provenance: ${asset.seOrigin.note} Template repo: https://github.com/infinitegameplayer/sovereign-ecosystem_`
+    : ''
+
   return `# ${asset.title}
 
 > ${asset.description}
@@ -510,7 +516,7 @@ ${storyBlock}
 
 ---
 
-${asset.softHook.body}${cta}
+${asset.softHook.body}${cta}${provenanceFooter}
 
 ---
 *[Infinite Game OS](${SITE}) · [${asset.label}s](${SITE}/${asset.type}s) · [${asset.title}](${SITE}/${asset.type}s/${asset.slug})*

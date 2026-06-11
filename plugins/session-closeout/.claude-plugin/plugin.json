@@ -1,0 +1,13 @@
+{
+  "name": "session-closeout",
+  "description": "Fast three-action session close: breadcrumb what you touched, refresh your handoff note, commit with a readable body.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lane Belone",
+    "email": "howdy@lanebelone.com"
+  },
+  "homepage": "https://www.infinitegameos.io/skills/session-closeout",
+  "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+  "license": "CC-BY-4.0",
+  "keywords": ["session", "closeout", "git", "breadcrumb", "handoff"]
+}

@@ -5,7 +5,9 @@
   "description": "Installable skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
   "url": "https://www.infinitegameos.io",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "updated_at": "2026-05-06",
+  "updated_at": "2026-06-10",
+  "upstream_version": "3.0.0",
+  "upstream_repo": "https://github.com/infinitegameplayer/sovereign-ecosystem",
   "pages": [
     {
       "id": "sovereign-ecosystem",
@@ -36,7 +38,8 @@
       "article_url": "https://www.infinitegameos.io/skills/source-harvest",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
-      "updated_at": "2026-04-29",
+      "updated_at": "2026-06-10",
+      "se_origin": "dual",
       "changelog_url": null
     },
     {
@@ -76,7 +79,8 @@
       "article_url": "https://www.infinitegameos.io/skills/plan-challenger",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
-      "updated_at": "2026-04-30",
+      "updated_at": "2026-06-10",
+      "se_origin": "graduated",
       "changelog_url": null
     },
     {
@@ -96,7 +100,8 @@
       "article_url": "https://www.infinitegameos.io/skills/systematic-debugging",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
-      "updated_at": "2026-04-30",
+      "updated_at": "2026-06-10",
+      "se_origin": "graduated",
       "changelog_url": null
     },
     {
@@ -116,7 +121,8 @@
       "article_url": "https://www.infinitegameos.io/skills/pending-plan-implementation",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
-      "updated_at": "2026-04-30",
+      "updated_at": "2026-06-10",
+      "se_origin": "graduated",
       "changelog_url": null
     },
     {
@@ -136,7 +142,8 @@
       "article_url": "https://www.infinitegameos.io/skills/skill-creator",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
-      "updated_at": "2026-04-30",
+      "updated_at": "2026-06-10",
+      "se_origin": "graduated",
       "changelog_url": null
     },
     {
@@ -156,7 +163,8 @@
       "article_url": "https://www.infinitegameos.io/skills/researcher",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
-      "updated_at": "2026-04-30",
+      "updated_at": "2026-06-10",
+      "se_origin": "graduated",
       "changelog_url": null
     },
     {
@@ -544,6 +552,69 @@
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "updated_at": "2026-05-06",
+      "changelog_url": null
+    },
+    {
+      "id": "self-healing",
+      "name": "Self-Healing",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Autonomous error recovery during implementation sessions. Diagnose the root cause, apply a fix, continue without stalling on recoverable mistakes. Also ships inside the Sovereign Ecosystem Foundation.",
+      "tags": ["recovery", "errors", "autonomy", "implementation", "resilience", "kingdom-skill"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install self-healing@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/self-healing",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/self-healing.mdc"
+      },
+      "related": ["systematic-debugging", "pending-plan-implementation", "session-closeout", "sovereign-ecosystem"],
+      "article_url": "https://www.infinitegameos.io/skills/self-healing",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-06-10",
+      "se_origin": "dual",
+      "changelog_url": null
+    },
+    {
+      "id": "session-closeout",
+      "name": "Session Closeout",
+      "type": "skill",
+      "version": "1.0",
+      "description": "A fast three-action close for a git-tracked workspace. Breadcrumbs as you work, a refreshed primer, a readable commit as the session summary. Also ships inside the Sovereign Ecosystem Foundation.",
+      "tags": ["session", "closeout", "git", "breadcrumbs", "handoff", "kingdom-skill"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install session-closeout@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/session-closeout",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/session-closeout.mdc"
+      },
+      "related": ["pending-plan-implementation", "pattern-harvest", "self-healing", "sovereign-ecosystem"],
+      "article_url": "https://www.infinitegameos.io/skills/session-closeout",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-06-10",
+      "se_origin": "dual",
+      "changelog_url": null
+    },
+    {
+      "id": "playwright",
+      "name": "Playwright",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Headless browser automation that returns structured data. Scrape pages, extract content, interact with web interfaces. Clean JSON over screenshots. Also ships inside the Sovereign Ecosystem Foundation.",
+      "tags": ["automation", "browser", "scraping", "extraction", "data", "kingdom-skill"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install playwright@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/playwright",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/playwright.mdc"
+      },
+      "related": ["source-harvest", "researcher", "systematic-debugging", "sovereign-ecosystem"],
+      "article_url": "https://www.infinitegameos.io/skills/playwright",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-06-10",
+      "se_origin": "dual",
       "changelog_url": null
     }
   ]

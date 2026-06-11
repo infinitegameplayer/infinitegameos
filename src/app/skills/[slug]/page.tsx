@@ -270,6 +270,17 @@ export default async function SkillPage({ params }: PageProps) {
                 >
                   <code>{markdownUrl}</code>
                 </pre>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '0.75rem',
+                    color: 'var(--color-muted)',
+                    marginTop: '0.5rem',
+                    lineHeight: 1.6,
+                  }}
+                >
+                  This URL returns the narrative concept page. The plugin install path above delivers the operational SKILL.md instruction file.
+                </p>
               </div>
 
               {cursorMdcUrl && (
@@ -326,6 +337,24 @@ aider --read ${asset.slug}.md`}</code>
               </div>
             </div>
           </SectionReveal>
+
+          {asset.seOrigin && (
+            <SectionReveal>
+              <p
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '0.8rem',
+                  color: 'var(--color-muted)',
+                  marginBottom: '2rem',
+                }}
+              >
+                {asset.seOrigin.kind === 'graduated'
+                  ? <>This skill began inside the <Link href="/sovereign-ecosystem" style={{ color: 'var(--color-muted)' }}>Sovereign Ecosystem</Link> Foundation and graduated to the public library in April 2026.</>
+                  : <>This skill ships in both homes, the <Link href="/sovereign-ecosystem" style={{ color: 'var(--color-muted)' }}>Sovereign Ecosystem</Link> Foundation and this library.</>
+                }
+              </p>
+            </SectionReveal>
+          )}
 
           {/* Zone 3: Story body — populated in subsequent sessions */}
           {asset.definition && (

@@ -1,0 +1,13 @@
+{
+  "name": "self-healing",
+  "description": "Autonomous error recovery during implementation sessions. Diagnose root cause, apply fix, continue without stopping for every recoverable mistake.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lane Belone",
+    "email": "howdy@lanebelone.com"
+  },
+  "homepage": "https://www.infinitegameos.io/skills/self-healing",
+  "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+  "license": "CC-BY-4.0",
+  "keywords": ["error-recovery", "debugging", "autonomy", "resilience", "implementation"]
+}

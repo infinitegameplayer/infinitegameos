@@ -311,6 +311,60 @@
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
       }
+    },
+    {
+      "name": "self-healing",
+      "description": "Autonomous error recovery during implementation sessions. Diagnose the root cause, apply a fix, continue without stalling on recoverable mistakes.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/self-healing"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/self-healing",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": ["recovery", "errors", "autonomy", "implementation", "resilience"],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
+    },
+    {
+      "name": "session-closeout",
+      "description": "A fast three-action close for a git-tracked workspace. Breadcrumbs as you work, a refreshed primer, a readable commit as the session summary.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/session-closeout"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/session-closeout",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": ["session", "closeout", "git", "breadcrumbs", "handoff"],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
+    },
+    {
+      "name": "playwright",
+      "description": "Headless browser automation that returns structured data. Scrape pages, extract content, interact with web interfaces. Clean JSON over screenshots.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/playwright"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/playwright",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": ["automation", "browser", "scraping", "extraction", "data"],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
     }
   ]
 }

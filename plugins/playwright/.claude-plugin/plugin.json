@@ -1,0 +1,13 @@
+{
+  "name": "playwright",
+  "description": "Browser automation via headless Chromium. Scrape pages, extract structured data, interact with web interfaces. Returns clean JSON not screenshots.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lane Belone",
+    "email": "howdy@lanebelone.com"
+  },
+  "homepage": "https://www.infinitegameos.io/skills/playwright",
+  "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+  "license": "CC-BY-4.0",
+  "keywords": ["playwright", "browser-automation", "scraping", "web", "data-extraction"]
+}

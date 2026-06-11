@@ -50,6 +50,11 @@ export interface SoftHook {
   ctaLabel?: string
 }
 
+export interface SEOrigin {
+  kind: 'graduated' | 'dual'
+  note: string
+}
+
 export interface IGOSAsset {
   slug: string
   type: AssetType
@@ -68,6 +73,7 @@ export interface IGOSAsset {
   faq?: FAQItem[]
   relatedSlugs?: string[]
   softHook: SoftHook
+  seOrigin?: SEOrigin
 }
 
 export const igosAssets: IGOSAsset[] = [
@@ -166,6 +172,10 @@ export const igosAssets: IGOSAsset[] = [
         'Source Harvest is one entry point. The full system it lives inside is The Sovereign Life Playbook. The Playbook gives you the design frame for which patterns are worth extracting in the first place.',
       ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
+    },
+    seOrigin: {
+      kind: 'dual',
+      note: 'This skill ships in both homes, the Sovereign Ecosystem Foundation and this library.',
     },
   },
   {
@@ -331,6 +341,10 @@ export const igosAssets: IGOSAsset[] = [
       ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
+    seOrigin: {
+      kind: 'graduated',
+      note: 'This skill began inside the Sovereign Ecosystem Foundation and graduated to the public library in April 2026.',
+    },
   },
   {
     slug: 'systematic-debugging',
@@ -399,6 +413,10 @@ export const igosAssets: IGOSAsset[] = [
         'Systematic Debugging is one entry point. The wider operating system that uses it is Infinite Game OS. The full life-design frame that motivates clean architecture in the first place is the Sovereign Life Playbook.',
       ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
+    },
+    seOrigin: {
+      kind: 'graduated',
+      note: 'This skill began inside the Sovereign Ecosystem Foundation and graduated to the public library in April 2026.',
     },
   },
   {
@@ -469,6 +487,10 @@ export const igosAssets: IGOSAsset[] = [
       ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
+    seOrigin: {
+      kind: 'graduated',
+      note: 'This skill began inside the Sovereign Ecosystem Foundation and graduated to the public library in April 2026.',
+    },
   },
   {
     slug: 'skill-creator',
@@ -538,6 +560,10 @@ export const igosAssets: IGOSAsset[] = [
       ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
+    seOrigin: {
+      kind: 'graduated',
+      note: 'This skill began inside the Sovereign Ecosystem Foundation and graduated to the public library in April 2026.',
+    },
   },
   {
     slug: 'researcher',
@@ -606,6 +632,10 @@ export const igosAssets: IGOSAsset[] = [
         'Researcher pairs naturally with Source Harvest. Researcher gathers signals across many sources; Source Harvest extracts patterns from the sources worth digging into. The Sovereign Life Playbook is the upstream design frame for which questions are worth researching in the first place.',
       ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
+    },
+    seOrigin: {
+      kind: 'graduated',
+      note: 'This skill began inside the Sovereign Ecosystem Foundation and graduated to the public library in April 2026.',
     },
   },
   {
@@ -2661,6 +2691,225 @@ export const igosAssets: IGOSAsset[] = [
         'The Strategist Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for the longer arc, where pattern libraries become a sovereign intellectual asset that compounds across decades, is the Sovereign Life Playbook.',
       ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
+    },
+  },
+  {
+    slug: 'self-healing',
+    type: 'skill',
+    title: 'Self-Healing',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-06-10',
+    description:
+      'Autonomous error recovery during implementation sessions. Diagnose the root cause, apply a fix, continue without stalling on recoverable mistakes.',
+    tags: ['recovery', 'errors', 'autonomy', 'implementation', 'kingdom-skill'],
+    capsule:
+      'Self-Healing is the posture that lets a build session keep moving when a routine error appears. Your AI reads the error, finds the root cause, applies the most direct fix and continues, surfacing only what truly needs your attention. The session stops stalling on the small stuff.',
+    installable: {
+      marketplaceId: 'self-healing',
+      cursorMdc: true,
+    },
+    definition:
+      'Self-Healing governs how your AI handles errors throughout any implementation session. It is always active rather than invoked for a single task. When an error appears, the skill reads the full message, identifies the root cause (a missing dependency, a wrong path, a syntax slip, a permission issue), applies the most direct fix and continues the work. Recoverable mistakes resolve in place. Governance-class blocks, external API errors and structural file operations surface immediately rather than self-correct. One fix attempt, then escalation. The skill never loops silently on a fix that is not landing. It also ships inside the Sovereign Ecosystem Foundation, the starting workspace where these disciplines live together.',
+    howItWorks: [
+      {
+        heading: 'Read, diagnose, fix, continue',
+        paragraphs: [
+          'An error is information, not a stop sign. The skill reads the full message first. No guessing, no skipping ahead. It names the root cause, then applies the most direct fix and continues the task. A typo gets corrected inline. A wrong path gets righted. A missing directory gets created when the intent is clear. The work keeps its momentum.',
+          'Triage decides what self-corrects and what surfaces. Syntax errors, wrong paths and clearly intentional missing files resolve in place. A missing dependency proposes an install before running, because the install carries a cost. A failing test gets one diagnose-and-rerun. Permission blocks, governance gates, external API errors and structural file moves surface to you immediately. The same error twice means the fix is not working, so it surfaces rather than loops.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'A long build that no longer stalls on typos',
+        body:
+          'A multi-step implementation session hits a syntax slip in a config file. Without Self-Healing the session pauses and asks. With it, your AI reads the error, corrects the line and continues. The flow holds. You see the result, not the interruption.',
+      },
+      {
+        title: 'A missing dependency handled with a cost gate',
+        body:
+          'A script fails because a package is not installed. The skill identifies the cause precisely, then proposes the install before running it. Cost-bearing actions stay visible. Everything below that line keeps moving on its own.',
+      },
+      {
+        title: 'A governance block that surfaces instead of bypassing',
+        body:
+          'An operation trips an approval gate. Self-Healing does not attempt a workaround. It surfaces the block, names the cause and waits for your call. The boundary between recoverable error and protected action stays sharp.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Does Self-Healing hide errors from me?',
+        a:
+          'No. It hides nothing that matters. Recoverable mistakes resolve in place so the session keeps moving. Governance blocks, external API errors and structural file operations always surface. You see the decisions that need you and skip the ones that do not.',
+      },
+      {
+        q: 'What stops it from looping on a bad fix?',
+        a:
+          'A one-attempt rule. If the same error returns after one fix, the skill surfaces it rather than trying again. Silent loops are the failure mode this skill is built to avoid.',
+      },
+      {
+        q: 'When would I activate it on purpose?',
+        a:
+          'It is always active during implementation. Activate it explicitly only when you notice your AI stopping on routine errors that it could clearly recover from. A single line restores the posture.',
+      },
+    ],
+    relatedSlugs: ['systematic-debugging', 'pending-plan-implementation', 'session-closeout'],
+    softHook: {
+      body:
+        'Self-Healing keeps a session moving. Systematic Debugging is the deeper discipline for when an error resists the quick fix. Both ship inside the Sovereign Ecosystem Foundation, the starting workspace you can adopt and make your own. The full life-design frame behind clean, recoverable systems is the Sovereign Life Playbook.',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+    seOrigin: {
+      kind: 'dual',
+      note: 'This skill ships in both homes, the Sovereign Ecosystem Foundation and this library.',
+    },
+  },
+  {
+    slug: 'session-closeout',
+    type: 'skill',
+    title: 'Session Closeout',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-06-10',
+    description:
+      'A fast three-action close for a git-tracked workspace. Breadcrumbs as you work, a refreshed primer, a readable commit as the session summary.',
+    tags: ['session', 'closeout', 'git', 'breadcrumbs', 'kingdom-skill'],
+    capsule:
+      'Session Closeout ends a working session in three actions and under three minutes. Breadcrumb what you touched, refresh the forward primer, commit with a readable body that doubles as the session record. No separate narrative log. Git is the log.',
+    installable: {
+      marketplaceId: 'session-closeout',
+      cursorMdc: true,
+    },
+    definition:
+      'Session Closeout is a fast close for any session that made commits or governance-level changes. Three actions carry it. First, breadcrumb what you touched, a one-line note dropped into each artifact this session affected, in its own location, so the next reader finds it where they look. Second, refresh the forward primer, the rolling handoff your AI reads at the start of the next session. Third, commit with a readable body of two or three sentences: what shipped, the key decision, what comes next. The commit body is the backward record. The primer is the forward handoff. No per-session narrative log is written. It also ships inside the Sovereign Ecosystem Foundation, where git is wired into the workspace from the start.',
+    howItWorks: [
+      {
+        heading: 'Three actions, three durable trails',
+        paragraphs: [
+          'Breadcrumbs come first because most of them are already laid as you work. Close is the final settle. Capture what resolved late and the items now clear enough to warrant a note in more than one place. Each breadcrumb lands in the artifact it describes, not in a separate summary. The note in the file is the reconciliation.',
+          'Then the primer refreshes to the rolling horizon: the most alive next move, work in motion, near-term commitments and anything parked on an external trigger. Stale blockers get purged first. Completed-this-session history does not carry forward, because the commit body already holds it. The close ends with a single auto-commit whose body reads like a sentence a human wrote, because it is.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Closing a build session in under three minutes',
+        body:
+          'A session shipped three changes across a codebase and a plan note. Closeout drops a breadcrumb in each touched file, refreshes the primer to the next move and commits with a readable body. The whole close runs in minutes, and the trail is exactly where the next session will look.',
+      },
+      {
+        title: 'Resuming cleanly the next morning',
+        body:
+          'The next session opens with the primer, reads the rolling horizon and starts on the most alive next move. No archaeology through old logs. The forward handoff carries the energy, not just the state.',
+      },
+      {
+        title: 'Two sessions running in parallel',
+        body:
+          'A concurrent sibling session left uncommitted work in the tree. Closeout checks the state first, then stages only the files this session touched by name. The sibling work stays untouched under its own message. Concurrency stays clean.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Why no separate session log?',
+        a:
+          'Git is the log. The commit body carries the readable summary the lookup wants, and the primer carries the forward handoff. A per-session narrative log duplicated both and almost never got read. The three trails (breadcrumbs, primer, commit body) hold the record without it.',
+      },
+      {
+        q: 'What if I do not git-track my workspace?',
+        a:
+          'The close assumes a git-tracked workspace, which is why git is wired into it. If you choose not to track with git, you own that tradeoff and add your own record surface. The skill does not bend a live signal surface into a log to cover for git\'s absence.',
+      },
+      {
+        q: 'Does every session run the full close?',
+        a:
+          'Every session that made commits or governance changes runs the three actions. There is no heavier tier for ordinary work. A genuinely large session can escalate to parallel reconciliation workers, but that is a tool on the shelf, not the default.',
+      },
+    ],
+    relatedSlugs: ['pending-plan-implementation', 'pattern-harvest', 'self-healing'],
+    softHook: {
+      body:
+        'Session Closeout is the close. Pattern Harvest is the reflective pass that runs just before it on a substantial session. Both ship inside the Sovereign Ecosystem Foundation, a starting workspace you adopt and shape to your own rhythm. The design frame for sessions worth closing well is the Sovereign Life Playbook.',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+    seOrigin: {
+      kind: 'dual',
+      note: 'This skill ships in both homes, the Sovereign Ecosystem Foundation and this library.',
+    },
+  },
+  {
+    slug: 'playwright',
+    type: 'skill',
+    title: 'Playwright',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-06-10',
+    description:
+      'Headless browser automation that returns structured data. Scrape pages, extract content, interact with web interfaces. Clean JSON over screenshots.',
+    tags: ['automation', 'browser', 'scraping', 'extraction', 'kingdom-skill'],
+    capsule:
+      'Playwright is browser automation that reads the web and hands back clean JSON. Scrape a page, extract a pricing table, pull a changelog, check what a URL contains. It returns structured data rather than screenshots, which keeps each read light and precise.',
+    installable: {
+      marketplaceId: 'playwright',
+      cursorMdc: true,
+    },
+    definition:
+      'Playwright is a browser automation skill built on headless Chromium. It scrapes pages, extracts structured data and interacts with web interfaces, returning clean JSON rather than screenshots. A single script takes a URL and returns the page title, the cleaned body text and the links, ready to read or pass downstream. The read-before-act posture is the discipline: it retrieves, cleans and returns before anything acts on the result. The browser always closes in a finally block, so no external state lingers. It also ships inside the Sovereign Ecosystem Foundation, where it covers structured page reads and watch checks.',
+    howItWorks: [
+      {
+        heading: 'A URL in, clean JSON out',
+        paragraphs: [
+          'The script takes a URL and returns a structured object: the page title, the cleaned body text and the links with their text and href. You tell your AI what you need in plain language, it runs the read and hands back the data. A changelog, a pricing table, an article body, the contents of a page that may or may not load. Each one comes back as data you can work with directly.',
+          'Structured output is the reason this stays light. A screenshot-based read costs many thousands of tokens and returns pixels you still have to interpret. A structured read returns the text and the links already cleaned. The skill asserts data quality too: a blocked or failed scrape surfaces as a clear failure rather than returning corrupted output dressed as a result.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Watching a repo for what shipped',
+        body:
+          'A tech-watch list tracks several repositories. Playwright reads the changelog and release notes, returns the structured text and your AI summarizes what changed since the last check. No manual page visits, no screenshots to squint at.',
+      },
+      {
+        title: 'Pulling a pricing table as data',
+        body:
+          'A competitor publishes pricing on a live page. Playwright extracts the table as a JSON array, ready to compare or store. The read is precise and the output drops straight into the next step.',
+      },
+      {
+        title: 'Confirming a URL loads and what it holds',
+        body:
+          'A link needs verifying before it ships. Playwright loads the page, returns the title and the body text and confirms the content is what you expect. A quick, structured check instead of a manual visit.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Why JSON instead of screenshots?',
+        a:
+          'A structured read returns cleaned text and links you can work with directly. A screenshot returns pixels you still have to interpret, at many times the token cost. JSON keeps each page read light, precise and ready for the next step.',
+      },
+      {
+        q: 'What happens when a site blocks the scrape?',
+        a:
+          'It surfaces as a clear failure rather than returning corrupted output. For sites behind a bot wall, a stealth layer can be added. The discipline is to assert data quality, so a blocked read reads as blocked, not as an empty success.',
+      },
+      {
+        q: 'Does Playwright write to the pages it reads?',
+        a:
+          'No. It reads. The posture is retrieve, clean and return before anything acts on the result. The browser always closes in a finally block, so no external state lingers after a run.',
+      },
+    ],
+    relatedSlugs: ['source-harvest', 'researcher', 'systematic-debugging'],
+    softHook: {
+      body:
+        'Playwright is the read tool. Source Harvest is the discipline for turning what you read into integrated patterns. Both ship inside the Sovereign Ecosystem Foundation, a starting workspace you can adopt and make your own. The wider system that puts structured reads to work is The Sovereign Life Playbook.',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+    seOrigin: {
+      kind: 'dual',
+      note: 'This skill ships in both homes, the Sovereign Ecosystem Foundation and this library.',
     },
   },
 ]
