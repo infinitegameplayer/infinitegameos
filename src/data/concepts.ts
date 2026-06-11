@@ -127,10 +127,12 @@ export const concepts: Concept[] = [
       { href: '/concepts/ideal-month', label: 'The Ideal Month', variant: 'accent' },
       { href: '/creator-business-without-performing', label: 'Build Without Performing', variant: 'outline' },
     ],
+    // Paid pairing swapped to the Creator Flywheel Playbook at its launch
+    // (2026-06-11). The flywheel concept now has its own install layer.
     productCard: {
-      body: 'Earn the Right to Automate is the timing companion to the Creator Flywheel. The flywheel describes the engine. The Field Guide installs the discipline that decides what belongs inside it. Twenty manual reps before automation is on the table. A five-question decision tree. The work that has become a flywheel earns the automation. The work that is still a job does not.',
-      ctaHref: 'https://www.sidequesthq.co/products/earn-the-right-to-automate',
-      ctaLabel: 'Earn the Right to Automate · $9',
+      body: 'The Creator Flywheel Playbook is the install layer for this concept. The flywheel describes the engine. The Playbook builds it: the anatomy every working flywheel shares, the install sequence, the Three Laws that make each rotation smoother and more generative than the last, the maintenance layer that reads a stall before the numbers drop and your AI running the whole system with you. Nine files including the AI Companion File and The Flywheel Codices.',
+      ctaHref: 'https://www.sidequesthq.co/products/creator-flywheel-playbook',
+      ctaLabel: 'Creator Flywheel Playbook · $77',
     },
     kitCallout: {
       body: 'New to the Creator Flywheel? The free Starter Kit is the paradigm in a guide and worksheet. One full flywheel rep on paper in under 30 minutes.',
