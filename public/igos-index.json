@@ -616,6 +616,27 @@
       "updated_at": "2026-06-10",
       "se_origin": "dual",
       "changelog_url": null
+    },
+    {
+      "id": "anti-ai-edit-pass",
+      "name": "Anti-AI Edit Pass",
+      "type": "skill",
+      "version": "1.0",
+      "description": "An editing pass for long-form manuscripts that finds and removes the writing tells of AI authorship. The result reads as your own voice. Also ships inside the Sovereign Ecosystem Foundation.",
+      "tags": ["editing", "manuscript", "writing", "voice", "long-form", "kingdom-skill"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install anti-ai-edit-pass@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/anti-ai-edit-pass",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/anti-ai-edit-pass.mdc"
+      },
+      "related": ["source-harvest", "session-closeout", "sovereign-ecosystem"],
+      "article_url": "https://www.infinitegameos.io/skills/anti-ai-edit-pass",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-06-10",
+      "se_origin": "dual",
+      "changelog_url": null
     }
   ]
 }

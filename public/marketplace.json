@@ -365,6 +365,24 @@
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
       }
+    },
+    {
+      "name": "anti-ai-edit-pass",
+      "description": "An editing pass for long-form manuscripts that finds and removes the writing tells of AI authorship. The result reads as your own voice.",
+      "version": "1.0.0",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/anti-ai-edit-pass"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/anti-ai-edit-pass",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": ["editing", "manuscript", "writing", "voice", "long-form"],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
     }
   ]
 }

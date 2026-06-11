@@ -1,0 +1,13 @@
+{
+  "name": "anti-ai-edit-pass",
+  "description": "Structured editing pass that finds and removes AI writing tells from long-form manuscripts. Eight sweep categories, Sovereign review gate, verified application.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lane Belone",
+    "email": "howdy@lanebelone.com"
+  },
+  "homepage": "https://www.infinitegameos.io/skills/anti-ai-edit-pass",
+  "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+  "license": "CC-BY-4.0",
+  "keywords": ["editing", "writing", "ai-tells", "manuscript", "voice"]
+}

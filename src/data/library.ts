@@ -2912,6 +2912,79 @@ export const igosAssets: IGOSAsset[] = [
       note: 'This skill ships in both homes, the Sovereign Ecosystem Foundation and this library.',
     },
   },
+  {
+    slug: 'anti-ai-edit-pass',
+    type: 'skill',
+    title: 'Anti-AI Edit Pass',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-06-10',
+    description:
+      'An editing pass for long-form manuscripts that finds and removes the writing tells of AI authorship. The result reads as your own voice.',
+    tags: ['editing', 'manuscript', 'writing', 'voice', 'kingdom-skill'],
+    capsule:
+      'Anti-AI Edit Pass reads a manuscript drafted with AI help and finds the patterns that betray the machine. It flags each tell, proposes a replacement in your register, surfaces the set for your judgment and applies only what you approve. The prose comes back sounding like you wrote it.',
+    installable: {
+      marketplaceId: 'anti-ai-edit-pass',
+      cursorMdc: true,
+    },
+    definition:
+      'Anti-AI Edit Pass is a structured editing sweep for long-form work: a book chapter, an ebook, a multi-chapter playbook, a long-form digital product. It runs against a manuscript and surfaces the phrases, openers, hedges, pivots, rhetorical reflexes, register signatures, structural habits and formatting tics that read as AI authorship. The skill does not rewrite wholesale. It flags an instance, proposes a replacement, and assembles a structured edit packet for your review. You approve, modify or reject each finding, then the skill applies what you approved and verifies the result. It runs across a full manuscript or chapter by chapter during drafting, so the tells never accumulate. It also ships inside the Sovereign Ecosystem Foundation, the starting workspace where these editing disciplines live together.',
+    howItWorks: [
+      {
+        heading: 'Eight sweeps, one edit packet, your final call',
+        paragraphs: [
+          'The skill carries a built-in pattern library of eight categories. Lexical tells, opener tells, hedging and padding, negation and pivot constructions, rhetorical reflexes, voice and register signatures, structural tics and formatting tics. Each sweep runs in turn. Every hit is captured with its location, the surrounding sentence and a proposed replacement written in your voice. The voice sweep loads your own writing anchor first, so register judgment measures against you, not against a generic standard.',
+          'The findings assemble into a single edit packet organized by category. You review it, approve what fits, reject what does not and add any tell the library missed. Only approved edits land. A verification pass then re-runs the mechanical sweeps to confirm the fixes held and introduced nothing new. The pattern library is a starting point. You extend it with the tells specific to your own drafting as you go.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'A book chapter that reads as the author wrote it',
+        body:
+          'A chapter drafted with AI help carries the usual tells: temporal openers, hedge stacks, summaries at every level. The pass flags each one, proposes a replacement in the author voice and surfaces the set. The author approves, the edits land and the chapter sounds like a person again.',
+      },
+      {
+        title: 'Chapter-by-chapter cleanup during drafting',
+        body:
+          'Rather than face a backlog of tells at final review, a writer runs the pass after each chapter. The findings stay small and the manuscript holds a clean voice the whole way through. The final review starts from prose that already reads as theirs.',
+      },
+      {
+        title: 'A long-form product before it goes to the shelf',
+        body:
+          'A multi-chapter playbook is nearly ready. The pass sweeps the full manuscript, surfaces the structural and formatting habits that span chapters and proposes the fixes. The author approves the set and the product ships in a voice that is unmistakably their own.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Does it rewrite my prose for me?',
+        a:
+          'No. It flags a tell and proposes a replacement. You approve, modify or reject each one. When a proposed replacement does not fit, you write the line. The skill applies only what you approve, so the voice stays yours throughout.',
+      },
+      {
+        q: 'How does it know my voice and not flag it as a tell?',
+        a:
+          'The voice sweep loads your own writing anchor before it judges register. A word that reads as embodied in your natural vocabulary is permitted. The same word used as mechanical filler is flagged. You can add verified exceptions, and they carry forward.',
+      },
+      {
+        q: 'Can I run it on one chapter at a time?',
+        a:
+          'Yes. It runs against a full manuscript or a single chapter. Running it chapter by chapter during drafting keeps the tells from accumulating, so the final review starts from clean prose.',
+      },
+    ],
+    relatedSlugs: ['source-harvest', 'session-closeout'],
+    softHook: {
+      body:
+        'Anti-AI Edit Pass cleans the prose so it reads as yours. Source Harvest is the discipline for gathering the voice examples that anchor the pass. Both ship inside the Sovereign Ecosystem Foundation, a starting workspace you adopt and shape to your own writing. The wider frame for building a body of work that compounds is The Sovereign Life Playbook.',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+    seOrigin: {
+      kind: 'dual',
+      note: 'This skill ships in both homes, the Sovereign Ecosystem Foundation and this library.',
+    },
+  },
 ]
 
 export function getAssetBySlug(slug: string, type?: AssetType): IGOSAsset | undefined {
