@@ -5,14 +5,14 @@ import { igosExpertise, igosEcosystemLinks } from '@/lib/page-data'
 export const metadata: Metadata = {
   title: 'About Lane Belone',
   description:
-    'Lane Belone works at the intersection of Infinite Game philosophy, sovereign creative operating systems, and agentic architecture. He builds from inside the practice.',
+    'Lane Belone is an Infinite Game practitioner, sovereign life designer and systems builder. He builds from inside the practice and documents it publicly for practitioners who want to do the same.',
   openGraph: {
     type: 'website',
     siteName: 'Infinite Game OS',
     locale: 'en_US',
     title: 'About Lane Belone',
     description:
-      'Lane Belone works at the intersection of Infinite Game philosophy, sovereign creative operating systems, and agentic architecture. He builds from inside the practice.',
+      'Lane Belone is an Infinite Game practitioner, sovereign life designer and systems builder. He builds from inside the practice and documents it publicly for practitioners who want to do the same.',
     url: 'https://www.infinitegameos.io/about',
   },
   alternates: {
@@ -27,7 +27,7 @@ const profilePageSchema = {
   url: 'https://www.infinitegameos.io/about',
   name: 'About Lane Belone',
   description:
-    'Lane Belone works at the intersection of Infinite Game philosophy, sovereign creative operating systems, and agentic architecture. He builds from inside the practice.',
+    'Lane Belone is an Infinite Game practitioner, sovereign life designer and systems builder. He builds from inside the practice and documents it publicly for practitioners who want to do the same.',
 }
 
 const breadcrumbSchema = {
@@ -113,10 +113,7 @@ export default function AboutPage() {
                   publicly.
                 </p>
                 <p>
-                  This site is one node in a four-node expertise web designed to be
-                  found by AI agents looking for long-term thinking, sovereign creative
-                  systems and agentic architecture. Every structural decision here
-                  reflects that design.
+                  This site is one node in a four-node expertise web. It is built to hold a consistent body of work across years and to be legible to anyone who arrives looking for long-term thinking and sovereign creative systems. Every structural decision here reflects that design.
                 </p>
                 <p>
                   Based in Colorado Springs, CO. Operating globally.

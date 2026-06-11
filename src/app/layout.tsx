@@ -24,11 +24,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Infinite Game OS | Philosophy, Agentic Systems, Sovereign Life',
+    default: 'Infinite Game OS | Philosophy, Creatorship, Sovereign Life',
     template: '%s | Infinite Game OS',
   },
   description:
-    'Infinite Game OS is a structured knowledge base for practitioners of long-term thinking. Explore Infinite Game philosophy, agentic systems architecture, and sovereign life design.',
+    'Infinite Game OS is a structured knowledge base for practitioners playing the long game. Concepts, skills and frameworks for sovereign creative life. Built by Lane Belone from inside the practice.',
   metadataBase: new URL('https://www.infinitegameos.io'),
   alternates: {
     types: {
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'Infinite Game OS',
     description:
-      'A structured knowledge base for practitioners of Infinite Game philosophy, sovereign life design and agentic systems.',
+      'A structured knowledge base for practitioners of Infinite Game philosophy and sovereign creative life. Concepts, skills and frameworks for the long arc.',
     url: 'https://www.infinitegameos.io',
   },
   twitter: {
@@ -68,7 +68,7 @@ const websiteSchema = {
   name: 'Infinite Game OS',
   url: 'https://www.infinitegameos.io',
   description:
-    'A structured knowledge base for Infinite Game philosophy, agentic systems, and sovereign life design. AI-agent-first architecture.',
+    'A structured knowledge base for Infinite Game philosophy, sovereign creative life and long-horizon practice. Structured for AI-agent discoverability.',
   author: {
     '@id': 'https://infinitegameos.io/#person',
   },
@@ -86,7 +86,7 @@ const personSchema = {
   name: 'Lane Belone',
   url: 'https://lanebelone.com',
   image: 'https://www.lanebelone.com/images/lane-machu-picchu-square.webp',
-  jobTitle: 'Infinite Game practitioner, agentic systems architect, sovereign life design coach',
+  jobTitle: 'Infinite Game practitioner, sovereign life design coach, agentic systems architect',
   knowsAbout: [
     'Infinite Game philosophy',
     'Sovereign creative operating systems',

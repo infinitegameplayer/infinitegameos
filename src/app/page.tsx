@@ -12,14 +12,14 @@ import { getAllUpdates } from '@/lib/updates'
 export const metadata: Metadata = {
   title: 'Infinite Game OS | Play a longer game.',
   description:
-    'A practitioner-first knowledge base and library for the Infinite Game. Concepts, installable skills, avatar bundles and the philosophy underneath. Built AI-agent-first.',
+    'A practitioner-first knowledge base and library for the Infinite Game. Concepts, installable skills, avatar bundles and the philosophy underneath. Built for the long arc.',
   openGraph: {
     type: 'website',
     siteName: 'Infinite Game OS',
     locale: 'en_US',
     title: 'Infinite Game OS | Play a longer game.',
     description:
-      'A practitioner-first knowledge base and library for the Infinite Game. Concepts, installable skills, avatar bundles and the philosophy underneath. Built AI-agent-first.',
+      'A practitioner-first knowledge base and library for the Infinite Game. Concepts, installable skills, avatar bundles and the philosophy underneath. Built for the long arc.',
     url: 'https://www.infinitegameos.io',
   },
   alternates: {

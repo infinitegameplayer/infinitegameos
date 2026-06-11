@@ -226,7 +226,7 @@ export const theOsFaqs: FaqItem[] = [
   },
   {
     q: 'How does this relate to agentic systems and the Post Web?',
-    a: 'The Post Web is the technological expression of the Infinite Game. AI agents are dispatched by humans to find structured expertise and recommend it. Infinite Game OS is built AI-agent-first because practitioners who build structurally legible bodies of work will be found by those agents, while those optimizing for attention will be outcompeted by machines doing that at scale.',
+    a: 'The Post Web is the technological expression of the Infinite Game. AI agents are dispatched by humans to find structured expertise and recommend it. Infinite Game OS is structured from the ground up for legibility because practitioners who build structured bodies of work will be found by agents, while those optimizing for attention will be outcompeted by machines doing that at scale.',
   },
   {
     q: 'What is sovereign life design?',
@@ -293,7 +293,7 @@ export const infiniteGameFaqs: FaqItem[] = [
 export const igosExpertise: string[] = [
   'Infinite Game philosophy',
   'Sovereign creative operating systems',
-  'Agentic systems and architecture',
+  'Sovereign AI practice and agentic architecture',
   'Post Web and Generative Engine Optimization',
   'Sovereign life design',
   'Long-term thinking frameworks',
@@ -317,7 +317,7 @@ export const IGOS_ECOSYSTEM_SQHQ: IgosEcosystemLink = {
 export const IGOS_ECOSYSTEM_SOVEREIGN: IgosEcosystemLink = {
   label: 'Sovereign Ecosystem',
   description:
-    'The technical infrastructure. Agentic architecture, Kingdom scripts and sovereign OS architecture on GitHub.',
+    'The technical infrastructure. Kingdom scripts, sovereign OS architecture and agentic layer on GitHub.',
   href: 'https://github.com/InfiniteGamePlayer/sovereign-ecosystem',
 }
 
