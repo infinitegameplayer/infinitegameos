@@ -2985,6 +2985,176 @@ export const igosAssets: IGOSAsset[] = [
       note: 'This skill ships in both homes, the Sovereign Ecosystem Foundation and this library.',
     },
   },
+  {
+    slug: 'jacket-session',
+    type: 'skill',
+    title: 'Jacket Session',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-06-13',
+    description:
+      'Run a focused 1:1 advisory session with a named AI lens. The universal session flow with the Three Solutions Rule and Challenge and Illumination active, closing in a structured capture.',
+    tags: ['advisory', 'ai-advisor', 'decision-making', 'sovereignty'],
+    capsule:
+      'A jacket is an AI advisory lens you name and define. The Jacket Session is how you run focused time with one of those lenses, or two at once when a decision needs both. The flow is universal. The voice is jacket-specific, and that tension is the point.',
+    installable: {
+      marketplaceId: 'jacket-session',
+      cursorMdc: true,
+    },
+    definition:
+      'The Jacket Session is a repeatable structure for AI-assisted advisory time. You define a set of lenses, jackets, each holding a distinct scope: marketing, operations, finance, knowledge, community, or any role your business actually needs. A session loads one lens, runs a universal flow from open to capture, and ends with a dated record you carry forward. Two disciplines stay live the whole way. The Three Solutions Rule, where the lens brings three options it genuinely believes in and a recommendation with its reasoning, never one pat answer and never a strawman. And Challenge and Illumination, where the lens pushes back on a gap even when you are enthusiastic, because a jacket that agrees with everything is just an echo. The flow holds steady across every jacket. The voice changes with the lens. The capture turns the conversation into something the next session can build on.',
+    howItWorks: [
+      {
+        heading: 'One flow, many voices',
+        paragraphs: [
+          'The session runs the same steps for every jacket: load the lens, open, pick up since-last continuity, work the focus, name the flywheel touches, capture decisions, seed experiments, read the three laws, surface open threads, route artifacts, close.',
+          'What changes is the lens. A finance jacket and a community jacket walk an identical structure and sound nothing alike. The structure is the holding. The voice is the value.',
+        ],
+      },
+      {
+        heading: 'The two live disciplines',
+        paragraphs: [
+          'The Three Solutions Rule fires whenever the lens faces a fork. Three real options, a recommendation, the trade-off reasoning, and your decision. Strawmen dressed up to make one option win break the rule.',
+          'Challenge and Illumination keeps the lens honest. It stands for what your defined scope and your own principles support, even against your enthusiasm. The point of a separate lens is that it can see what you cannot from inside the work.',
+        ],
+      },
+      {
+        heading: 'A capture that compounds',
+        paragraphs: [
+          'Every session closes with a dated capture: decisions and approvals, experiments running, open threads, and a short read on whether the work got smoother, easier or more productive this rotation.',
+          'The next session opens on that capture. Nothing has to be remembered. The structure holds the continuity so you can spend the hour thinking instead of reconstructing.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'A standing seat with one lens',
+        body: 'You run a weekly finance session or a monthly marketing session with the same jacket. Each picks up where the last left off, so the advice deepens instead of resetting.',
+      },
+      {
+        title: 'Two lenses on one decision',
+        body: 'A priced-offer question needs marketing and finance at once. Two-lens mode brings both, each presenting its own three options, and names the convergence or the divergence so you decide with the tension visible.',
+      },
+      {
+        title: 'Bootstrapping a new advisor',
+        body: 'The first session for any new jacket weights the calibration step: the lens reads the landscape, asks you its inquiry questions, and the scope refines from your answers. Subtle knowledge in your head becomes durable.',
+      },
+    ],
+    faq: [
+      {
+        q: 'What is a jacket?',
+        a: 'A jacket is an advisory lens you name and define, a role your business needs filled. You give it a scope, a voice and a context file, and you run sessions with it the way you would meet with an advisor who only ever thinks about that one thing.',
+      },
+      {
+        q: 'Do I need an AI assistant to run this?',
+        a: 'The session is built to run with an AI assistant holding the lens, but the structure is yours. You can run the flow by hand. The value is the discipline, not the tool.',
+      },
+      {
+        q: 'How is this different from just asking an AI for advice?',
+        a: 'A single open question averages toward a safe answer. The session forces three real options, a recommendation with reasoning, and genuine pushback on your blind spots, then captures the result so the next session compounds on it.',
+      },
+      {
+        q: 'When do I use two lenses instead of one?',
+        a: 'When a decision genuinely needs two scopes at once and a full team meeting would be heavier than the moment calls for. Beyond two active lenses, run the Jacket Meeting instead.',
+      },
+    ],
+    relatedSlugs: ['jacket-meeting', 'plan-challenger'],
+    softHook: {
+      body:
+        'The Jacket Session is one practice from The Alive Business, the framework it lives inside. The Alive Business gives you the design frame: eleven systems for building a business that is actually yours, with the jacket system as one of them.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
+    },
+    seOrigin: {
+      kind: 'graduated',
+      note: 'This skill graduated from internal operating practice into the public library.',
+    },
+  },
+  {
+    slug: 'jacket-meeting',
+    type: 'skill',
+    title: 'Jacket Meeting',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-06-13',
+    description:
+      'Run a multi-lens team meeting across all your AI advisory jackets. A twelve-step flow from convene to close. Each lens prepares independently, one seat synthesizes, you decide.',
+    tags: ['advisory', 'ai-advisor', 'decision-making', 'synthesis'],
+    capsule:
+      'The Jacket Meeting is the all-lenses-at-once form of advisory. Every jacket you have defined meets in one room. Each prepares its perspective independently so the views arrive genuinely separate, one seat harmonizes them, and you make the call. The meeting stays wide by design.',
+    installable: {
+      marketplaceId: 'jacket-meeting',
+      cursorMdc: true,
+    },
+    definition:
+      'The Jacket Meeting is the team-meeting form of your advisory lenses, the all-hands to the Jacket Session 1:1. Every jacket you have defined comes to one room and works a twelve-step flow from convene to close. The mechanism at its heart is preparation in isolation. Before the lenses meet, each one develops its perspective alone, from one shared set of facts, so what arrives at the table is genuinely separate rather than five readings already blurred into one. You chair. One seat holds synthesis, naming alignments, tensions and trade-offs in the room own language without flattening real disagreement into bland compromise. A dissenting lens can record a minority report that travels into the meeting note without blocking the decision. Options arrive tagged do-now or plan-for-later, you decide and restate the decision in your own words, and the meeting closes as a record, not a work session. The building happens later, in scoped sessions.',
+    howItWorks: [
+      {
+        heading: 'Perspective prepared in isolation',
+        paragraphs: [
+          'Before the meeting, each lens prepares its own read independently, working from one shared set of agreed facts. A lens developed alone keeps its perspective uncontaminated.',
+          'The value of the meeting is proportional to how genuinely separate the perspectives were before they met. Five views blurred into one in a single head is the thing this design exists to prevent.',
+        ],
+      },
+      {
+        heading: 'Synthesis without deciding',
+        paragraphs: [
+          'One seat holds synthesis. It names what the room actually said, preserves visible dissent, and tags what is still contested. It integrates. It does not decide.',
+          'You chair and you decide. Restating the decision in your own words, including where you diverged from the synthesis, is the guard against the synthesizer becoming a shadow decider.',
+        ],
+      },
+      {
+        heading: 'Two routes out',
+        paragraphs: [
+          'Options arrive in two lanes. Do-now items are light enough to handle as the meeting closes. Plan-for-later items are filed for a fresh, scoped session.',
+          'A connectivity check runs before any build is filed: confirm it does not duplicate something already designed or running. The meeting is a decision room, not a build session.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'A standing review across every lens',
+        body: 'You convene all your jackets on a regular rhythm to look at the business together. Each brings its own most-pressing read, and the synthesis surfaces the cross-lens pattern no single seat could see.',
+      },
+      {
+        title: 'A wide decision with many stakes',
+        body: 'A move touches marketing, finance, operations and community at once. The meeting holds all four perspectives as genuinely distinct inputs, then narrows to options you can actually choose between.',
+      },
+      {
+        title: 'Catching the blind spot',
+        body: 'The structured cross-lens conversation, round-robin before open debate, keeps the loudest voice from anchoring the room and lets a quiet lens surface the thing everyone else missed.',
+      },
+    ],
+    faq: [
+      {
+        q: 'How is this different from the Jacket Session?',
+        a: 'The Jacket Session is a 1:1 with one lens, or two at once. The Jacket Meeting brings every lens you have defined into one room at the same time. Most people run sessions first and grow into the meeting.',
+      },
+      {
+        q: 'Why prepare each lens separately?',
+        a: 'When one mind considers several angles at once, the angles average toward each other and blur. Preparing each lens in isolation keeps the perspectives genuinely distinct, which is the only way the synthesis at the end has anything real to harmonize.',
+      },
+      {
+        q: 'What is a minority report?',
+        a: 'A principled disagreement a lens carries into the written record without blocking the decision. It preserves the dissent so a choice made over real objection stays honest and traceable.',
+      },
+      {
+        q: 'Does the meeting solve the problems it surfaces?',
+        a: 'No. The meeting is a decision room. It names the work and routes it: small things handled as it closes, larger things filed for a scoped session. Solutioning in the meeting turns it into a stalled work session.',
+      },
+    ],
+    relatedSlugs: ['jacket-session', 'plan-challenger'],
+    softHook: {
+      body:
+        'The Jacket Meeting is one practice from The Alive Business, the framework it lives inside. The Alive Business gives you the design frame: eleven systems for building a business that is actually yours, with the jacket system as one of them.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
+    },
+    seOrigin: {
+      kind: 'graduated',
+      note: 'This skill graduated from internal operating practice into the public library.',
+    },
+  },
 ]
 
 export function getAssetBySlug(slug: string, type?: AssetType): IGOSAsset | undefined {

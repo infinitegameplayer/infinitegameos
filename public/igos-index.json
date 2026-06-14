@@ -5,7 +5,7 @@
   "description": "Installable skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
   "url": "https://www.infinitegameos.io",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "updated_at": "2026-06-10",
+  "updated_at": "2026-06-13",
   "upstream_version": "3.0.0",
   "upstream_repo": "https://github.com/infinitegameplayer/sovereign-ecosystem",
   "pages": [
@@ -636,6 +636,48 @@
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "updated_at": "2026-06-10",
       "se_origin": "dual",
+      "changelog_url": null
+    },
+    {
+      "id": "jacket-session",
+      "name": "Jacket Session",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Run a focused 1:1 advisory session with a named AI lens. The universal session flow with the Three Solutions Rule and Challenge and Illumination active, closing in a structured capture.",
+      "tags": ["advisory", "ai-advisor", "decision-making", "sovereignty"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install jacket-session@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/jacket-session",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/jacket-session.mdc"
+      },
+      "related": ["jacket-meeting", "plan-challenger"],
+      "article_url": "https://www.infinitegameos.io/skills/jacket-session",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-06-13",
+      "se_origin": "graduated",
+      "changelog_url": null
+    },
+    {
+      "id": "jacket-meeting",
+      "name": "Jacket Meeting",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Run a multi-lens team meeting across all your AI advisory jackets. A twelve-step flow from convene to close. Each lens prepares independently, one seat synthesizes, you decide.",
+      "tags": ["advisory", "ai-advisor", "decision-making", "synthesis"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install jacket-meeting@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/jacket-meeting",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/jacket-meeting.mdc"
+      },
+      "related": ["jacket-session", "plan-challenger"],
+      "article_url": "https://www.infinitegameos.io/skills/jacket-meeting",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-06-13",
+      "se_origin": "graduated",
       "changelog_url": null
     }
   ]
