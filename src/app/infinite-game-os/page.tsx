@@ -51,6 +51,7 @@ const articleSchema = {
     sameAs: [
       'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6810541',
       'https://doi.org/10.2139/ssrn.6810541',
+      'https://www.wikidata.org/wiki/Q140235934',
     ],
     identifier: { '@type': 'PropertyValue', propertyID: 'DOI', value: '10.2139/ssrn.6810541' },
     author: { '@id': 'https://infinitegameos.io/#person' },
