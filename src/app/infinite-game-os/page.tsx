@@ -42,7 +42,22 @@ const articleSchema = {
   url: 'https://www.infinitegameos.io/infinite-game-os',
   mainEntityOfPage: 'https://www.infinitegameos.io/infinite-game-os',
   datePublished: '2026-05-19',
-  dateModified: '2026-05-19',
+  dateModified: '2026-06-15',
+  subjectOf: {
+    '@type': 'ScholarlyArticle',
+    '@id': 'https://www.lanebelone.com/cite#ssrn-igos-paper',
+    name: 'The Infinite Game OS. A Framework for Sovereign Creator Practice in the AI Era',
+    url: 'https://ssrn.com/abstract=6810541',
+    sameAs: [
+      'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6810541',
+      'https://doi.org/10.2139/ssrn.6810541',
+    ],
+    identifier: { '@type': 'PropertyValue', propertyID: 'DOI', value: '10.2139/ssrn.6810541' },
+    author: { '@id': 'https://infinitegameos.io/#person' },
+    publisher: { '@type': 'Organization', name: 'SSRN', url: 'https://www.ssrn.com' },
+    datePublished: '2026-06-15',
+    isAccessibleForFree: true,
+  },
 }
 
 const breadcrumbSchema = {

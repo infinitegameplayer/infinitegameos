@@ -114,6 +114,7 @@ const personSchema = {
     'https://www.instagram.com/increasefreedom/',
     'https://lanebelone.substack.com/',
     'https://github.com/InfiniteGamePlayer',
+    'https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=11686488',
   ],
 }
 
