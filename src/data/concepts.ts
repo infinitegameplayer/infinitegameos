@@ -415,6 +415,11 @@ export const concepts: Concept[] = [
       ctaHref: 'https://www.sidequesthq.co/products/stack-calm',
       ctaLabel: 'Stack Calm · $9',
     },
+    kitCallout: {
+      body: 'Want the engine behind the Ideal Month? The free Creator Flywheel Starter Kit is the paradigm in a guide and worksheet. One full rep on paper in under 30 minutes.',
+      ctaHref: 'https://www.sidequesthq.co/creator-flywheel',
+      ctaLabel: 'Get the free Starter Kit',
+    },
   },
   {
     slug: 'playgrounds-of-exploration',
@@ -739,6 +744,11 @@ export const concepts: Concept[] = [
       { href: '/concepts/the-pioneer', label: 'The Pioneer', variant: 'outline' },
       { href: '/sovereign-ecosystem', label: 'The Sovereign Ecosystem', variant: 'outline' },
     ],
+    kitCallout: {
+      body: 'Want a creative engine that keeps your North Star moving? The free Creator Flywheel Starter Kit is the paradigm in a guide and worksheet. One full rep on paper in under 30 minutes.',
+      ctaHref: 'https://www.sidequesthq.co/creator-flywheel',
+      ctaLabel: 'Get the free Starter Kit',
+    },
   },
   {
     slug: 'ai-second-brain',

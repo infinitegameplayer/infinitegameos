@@ -16,6 +16,12 @@ const ecosystemLinks = [
     external: true,
   },
   {
+    label: 'Free Starter Kit',
+    sublabel: 'The Creator Flywheel in a guide and worksheet',
+    href: 'https://www.sidequesthq.co/creator-flywheel',
+    external: true,
+  },
+  {
     label: 'Sovereign Ecosystem',
     sublabel: 'Technical infrastructure',
     href: 'https://github.com/InfiniteGamePlayer/sovereign-ecosystem',
