@@ -16,9 +16,9 @@ const ecosystemLinks = [
     external: true,
   },
   {
-    label: 'Free Starter Kit',
-    sublabel: 'The Creator Flywheel in a guide and worksheet',
-    href: 'https://www.sidequesthq.co/creator-flywheel',
+    label: 'One Alive Thing',
+    sublabel: 'A free mini side quest, under an hour',
+    href: 'https://www.sidequesthq.co/one-alive-thing',
     external: true,
   },
   {
