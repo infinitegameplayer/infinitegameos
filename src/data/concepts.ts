@@ -135,9 +135,9 @@ export const concepts: Concept[] = [
       ctaLabel: 'Creator Flywheel Playbook · $77',
     },
     kitCallout: {
-      body: 'New to the Creator Flywheel? The free Starter Kit is the paradigm in a guide and worksheet. One full flywheel rep on paper in under 30 minutes.',
-      ctaHref: 'https://www.sidequesthq.co/creator-flywheel',
-      ctaLabel: 'Get the free Starter Kit',
+      body: 'Want to feel one rotation before you read the architecture? One Alive Thing is a free guided hour. You make one small real thing from what\'s alive in you, and feel the loop turn once.',
+      ctaHref: 'https://www.sidequesthq.co/one-alive-thing',
+      ctaLabel: 'Try One Alive Thing · free',
     },
   },
   {
@@ -416,9 +416,9 @@ export const concepts: Concept[] = [
       ctaLabel: 'Stack Calm · $9',
     },
     kitCallout: {
-      body: 'Want the engine behind the Ideal Month? The free Creator Flywheel Starter Kit is the paradigm in a guide and worksheet. One full rep on paper in under 30 minutes.',
-      ctaHref: 'https://www.sidequesthq.co/creator-flywheel',
-      ctaLabel: 'Get the free Starter Kit',
+      body: 'Want to feel what an alive month is built from? One Alive Thing is a free guided hour. You find what\'s pulling at you, make one small real thing from it, and feel the shift on the far side of starting.',
+      ctaHref: 'https://www.sidequesthq.co/one-alive-thing',
+      ctaLabel: 'Try One Alive Thing · free',
     },
   },
   {
@@ -745,9 +745,9 @@ export const concepts: Concept[] = [
       { href: '/sovereign-ecosystem', label: 'The Sovereign Ecosystem', variant: 'outline' },
     ],
     kitCallout: {
-      body: 'Want a creative engine that keeps your North Star moving? The free Creator Flywheel Starter Kit is the paradigm in a guide and worksheet. One full rep on paper in under 30 minutes.',
-      ctaHref: 'https://www.sidequesthq.co/creator-flywheel',
-      ctaLabel: 'Get the free Starter Kit',
+      body: 'Want one true step toward your North Star today? One Alive Thing is a free guided hour. You make one small real thing from what\'s alive in you, and walk out holding proof you moved.',
+      ctaHref: 'https://www.sidequesthq.co/one-alive-thing',
+      ctaLabel: 'Try One Alive Thing · free',
     },
   },
   {
