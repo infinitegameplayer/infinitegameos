@@ -95,6 +95,13 @@ const nextConfig: NextConfig = {
             key: 'Content-Signal',
             value: 'ai-train=yes, search=yes, ai-input=yes',
           },
+          // Content-Usage mirrors Content-Signal in the converging IETF aipref vocabulary
+          // (draft-ietf-aipref-attach / vocab-06). Early-align insurance, draft not yet ratified.
+          // train-ai and search are the two standardized tokens. ai-input has no standard equivalent yet.
+          {
+            key: 'Content-Usage',
+            value: 'train-ai=y, search=y',
+          },
           // Vary: Accept — required because /markdown rewrite is content-negotiated.
           // Prevents CDN cache poisoning between text/html and text/markdown responses.
           { key: 'Vary', value: 'Accept' },
