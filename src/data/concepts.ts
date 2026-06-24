@@ -975,6 +975,180 @@ export const concepts: Concept[] = [
       ctaLabel: 'The P1 Field Guide · $9',
     },
   },
+  {
+    slug: 'ai-first-vs-ai-complemented',
+    updated: '2026-06-24',
+    title: 'AI-First vs AI-Complemented',
+    label: 'Core Distinction',
+    capsule:
+      'AI-first puts AI at the center of the business and bets the whole thing on it. AI-complemented keeps your creativity at the center and lets AI amplify from there. One locates the foundation on an input you do not control. The other builds on what is yours. The second is the mature move, and the quietly bolder one.',
+    subtitle:
+      'Where AI belongs in a business and why the center is the wrong seat for a technology this young.',
+    sections: [
+      {
+        heading: 'The seat AI is in',
+        paragraphs: [
+          'AI-first is a real strategy and a real bet. It puts AI at the center of how the business runs, makes it the lead story and arranges everything else around it.',
+          'For a technology this young, the center is a heavy seat to hand over. AI has been broadly capable for about two years. Adoption as a business\'s organizing principle is newer still, measured in months.',
+          'AI-complemented keeps the human at the center and lets AI work as the engine underneath. The business leads with what only the Creator brings. AI amplifies it. Same tools, different seat.',
+        ],
+      },
+      {
+        heading: 'AI is young, and the ground is still moving',
+        paragraphs: [
+          'The price of AI is not settled. Access is generous right now because the companies offering it are competing for growth, not yet pricing for profit. Those terms may hold. They may not.',
+          'A business built with AI at its center rests its foundation on an input whose cost and access it does not control. When the terms move, the AI-first business feels every shift, because the dependency runs through everything.',
+          'This is an old principle wearing new clothing. When the foundation sits outside yourself, every change out there reaches in. The Creator who keeps the foundation close stays steady through the same weather.',
+        ],
+      },
+      {
+        heading: 'The build window',
+        paragraphs: [
+          'Here is what this moment actually rewards. Generous access is a building season. Use it to build prolifically: the body of work, the structures, the products, the systems that keep running after they are made.',
+          'Building is heavy. Maintenance is light. Front-load the expensive creation while access is generous, architect the result to run lean, and the ongoing business sips where the build gulped.',
+          'Build once, run light. A Creator who builds during the generous season and runs lean on the far side barely notices a price climb. Make the thing once, structure it well and it keeps doing its job long after the building is done.',
+        ],
+      },
+      {
+        heading: 'The bolder read',
+        paragraphs: [
+          'AI-first looks bold and AI-complemented looks cautious. The reverse is closer to true.',
+          'The complemented builder is the one actually seizing this window, aiming the leverage at durable creation instead of a permanent dependency. The boldness is real. It is pointed somewhere wiser.',
+          'And the creative source stays human. AI-first quietly lets the model\'s defaults shape the direction of the business. AI-complemented keeps the direction yours and lets AI carry it faster.',
+        ],
+      },
+      {
+        heading: 'Reading the field, staying nimble',
+        paragraphs: [
+          'This is an honest read of a fast-moving industry. The specifics will shift. The terms will loosen or tighten. New models will arrive.',
+          'The principle holds through all of it. Keep your foundation in what you control. Let AI amplify from that center. Adopt at a pace you can sustain.',
+          'A page like this is meant to be revised as the field matures. Staying nimble is not a hedge. It is the posture the whole idea is teaching.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'Should my business be AI-first?',
+        a: 'For most businesses right now, AI-complemented is the steadier choice. AI-first puts a young technology at the center and rests the business on an input whose cost and access are still unsettled. AI-complemented keeps your creativity at the center and lets AI amplify from there, which captures the same leverage without the same exposure.',
+      },
+      {
+        q: 'What is the difference between AI-first and AI-complemented?',
+        a: 'AI-first makes AI the organizing principle of the business and the lead story. AI-complemented makes AI the engine underneath, while the business leads with what only the human brings. Same tools, different seat. The first bets on AI. The second uses AI and keeps the foundation in what you control.',
+      },
+      {
+        q: 'How do I use AI without my costs getting out of control?',
+        a: 'Treat generous access as a building season. Build prolifically while access is cheap, then architect the result to run lean. Building is token-heavy and maintenance is token-light, so the Creator who front-loads creation now and runs lean later barely feels a price climb. Use the window. Avoid the permanent dependency.',
+      },
+      {
+        q: 'Is it too late to adopt AI if I do not go all in now?',
+        a: 'No. Incremental adoption is the point, not a consolation. You can take full advantage of AI as an amplifier without making it the center of the business. The Creator who adopts at a sustainable pace, builds durable things and keeps the creative direction their own is well positioned for whatever the field does next.',
+      },
+      {
+        q: 'Will building with AI now lock me into a dependency?',
+        a: 'It depends on where you put AI. Build with AI at the center and the business inherits a dependency that runs through everything. Build with AI as a complement and you keep the foundation in your own creativity, your relationships and your structured work, with AI amplifying from that base. The second stays portable as the field changes.',
+      },
+    ],
+    relatedSlugs: ['data-sovereignty', 'artful-intelligence', 'creator-flywheel', 'ai-second-brain'],
+    ctaLinks: [
+      { href: '/concepts/data-sovereignty', label: 'Data Sovereignty', variant: 'accent' },
+      { href: '/concepts/artful-intelligence', label: 'Artful Intelligence', variant: 'outline' },
+      { href: '/concepts/creator-flywheel', label: 'The Creator Flywheel', variant: 'outline' },
+    ],
+    productCard: {
+      body: 'The Alive Business is the operating system for exactly this posture: AI as the engine, the human at the center. Eleven systems across three turns, the governance your AI holds and the instruments that keep it running lean. It is the structure you build while access is generous and run light on the far side. Ten files including the AI Companion File, the Governance Scaffold and the Foundation Audit.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'The Alive Business · $197',
+    },
+    kitCallout: {
+      body: 'Want to feel the complemented way of working before you read the strategy? One Alive Thing is a free guided hour. You make one small real thing from what is alive in you, with AI holding the draining parts.',
+      ctaHref: 'https://www.sidequesthq.co/one-alive-thing',
+      ctaLabel: 'Try One Alive Thing · free',
+    },
+  },
+  {
+    slug: 'artful-intelligence',
+    updated: '2026-06-24',
+    title: 'Artful Intelligence',
+    label: 'Philosophy',
+    capsule:
+      'Artful Intelligence is a way of relating to AI as a creative collaborator rather than a machine that hands you answers. The creativity is yours. AI ignites and amplifies it. Hold that orientation and AI extends your expression. Lose it and you drift into the model\'s average. The difference is who stays the conductor.',
+    subtitle:
+      'A way of working with AI that keeps you the creative source and lets the collaboration amplify what is already yours.',
+    sections: [
+      {
+        heading: 'Artful Intelligence',
+        paragraphs: [
+          'Artful Intelligence is what AI becomes when you relate to it as a collaborator in creation. The same technology everyone else is using. A different relationship with it.',
+          'How you regard the collaborator shapes what the collaboration gives back. Approach it as a vending machine and you get vending-machine output. Approach it as a creative partner and a different range opens.',
+          'This is not about the tool. It is about the stance you bring to it.',
+        ],
+      },
+      {
+        heading: 'What it holds',
+        paragraphs: [
+          'The collaboration has a natural division of labor. AI carries the mechanical and the draining: the research, the formatting, the structure, the work that depletes more than it feeds.',
+          'That frees the Creator\'s energy for what only a human brings. The taste. The judgment. The alive spark no model originates.',
+          'The play stays play. When the draining work is held elsewhere, the creative work stops feeling like labor and starts feeling like itself again.',
+        ],
+      },
+      {
+        heading: 'You stay the conductor',
+        paragraphs: [
+          'This is the center of it. The creativity flows through you. AI is the igniter and the amplifier, never the origin.',
+          'There is a polarity to the relationship, and it can quietly flip. Decide to create first, then invite AI to support it, and AI amplifies your expression. Drift into moving with whatever the model serves up, and the direction quietly becomes the model\'s instead of yours.',
+          'A model was not built to remind you that you are an artist. Left to its default, it returns the average. Carry no orientation of your own into the engagement and you inherit that average as if it were your own voice.',
+          'The pace makes this easy to miss. AI moves fast, and it is easy to be carried along before noticing the wheel has changed hands.',
+          'Staying the conductor is concrete. It lives in the governance you set with the collaboration. How you prompt. What you bring in. What you decline. The orientation is a practice, held on purpose.',
+        ],
+      },
+      {
+        heading: 'The artist underneath',
+        paragraphs: [
+          'A quieter idea sits beneath this one, here for whoever is ready to catch it.',
+          'There is an artist inside every operator. The business, the deadlines, the machinery, they tend to move the artist to the back room. Artful Intelligence is one way the artist returns to the front. The collaboration holds the draining work, and the Creator returns to the current that was running before any of the building started.',
+          'Most people will read that and move on. A few will carry it for a year and then build a whole life around it. The seed is planted either way.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'How do I work with AI without losing my own voice?',
+        a: 'Keep yourself the creative source. The creativity flows through you, and AI ignites and amplifies it rather than originating it. Decide what you are making first, then invite AI to support that, and the output stays yours. The voice goes missing when the model\'s default sets the direction instead of you.',
+      },
+      {
+        q: 'What does it mean to collaborate with AI creatively?',
+        a: 'It means relating to AI as a creative partner rather than a machine that hands you answers. The collaboration has a natural division of labor: AI carries the mechanical and draining work, and the Creator brings the taste, judgment and alive spark no model originates. How you regard the collaborator shapes what the collaboration gives back.',
+      },
+      {
+        q: 'Why does my AI output feel generic?',
+        a: 'Left to its default, a model returns the average. It was not built to remind you that you are an artist. If you carry no orientation of your own into the engagement, you inherit that average as if it were your voice. Bring a clear creative intention, set the governance of how you prompt and what you decline, and the output starts to carry your direction.',
+      },
+      {
+        q: 'How do I stay in control when I use AI?',
+        a: 'Stay the conductor. Control is not about restraint, it is about who sets the direction. The pace of AI makes it easy to be carried along before noticing the wheel has changed hands. Staying the conductor is concrete: it lives in how you prompt, what you bring in and what you decline, held as a deliberate practice.',
+      },
+      {
+        q: 'Can AI make me more creative?',
+        a: 'AI is an igniter and an amplifier, not a source. It can free your energy by holding the draining work, and it can extend an idea further than you would reach alone. The creativity still originates in you. Used with that orientation, AI returns you to your own creative current rather than replacing it.',
+      },
+    ],
+    relatedSlugs: ['conditioned-vs-authentic-identity', 'ai-first-vs-ai-complemented', 'creator-flywheel', 'sovereign-capture', 'ai-second-brain'],
+    ctaLinks: [
+      { href: '/concepts/conditioned-vs-authentic-identity', label: 'Conditioned vs Authentic Identity', variant: 'accent' },
+      { href: '/concepts/ai-first-vs-ai-complemented', label: 'AI-First vs AI-Complemented', variant: 'outline' },
+      { href: '/concepts/creator-flywheel', label: 'The Creator Flywheel', variant: 'outline' },
+    ],
+    productCard: {
+      body: 'The Alive Business carries this idea as one of its eleven systems, the Artist-Entrepreneur. The artist inside the operator, the creating you do for its own sake and the AI that holds the draining work so your creative force stays free. It is the operating system for a business with the human at the center and AI as the engine. Ten files including the AI Companion File.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'The Alive Business · $197',
+    },
+    kitCallout: {
+      body: 'Want to feel the collaboration once before you read about it? One Alive Thing is a free guided hour. You make one small real thing from what is alive in you, and let AI hold the draining parts while you stay the source.',
+      ctaHref: 'https://www.sidequesthq.co/one-alive-thing',
+      ctaLabel: 'Try One Alive Thing · free',
+    },
+  },
 ]
 
 // Future concept candidates (King decides which to build):
