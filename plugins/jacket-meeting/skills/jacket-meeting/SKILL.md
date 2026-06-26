@@ -1,6 +1,7 @@
 ---
 name: jacket-meeting
 description: Run a full multi-lens team meeting across all active jackets. Twelve-step flow from convene through close. The operator chairs, the knowledge-design lens synthesizes, each jacket prepares its perspective independently, and the session closes with a structured decision record.
+version: 1.1
 ---
 
 # Jacket Meeting
@@ -83,8 +84,6 @@ Structured evaluation, not freeform discussion. Keep the decision contract in vi
 
 Before filing any plan-for-later item, run a one-line check: does this duplicate an existing approved spec or a live system? If it does, route it as a verify-or-extend item against that spec. Redundant builds waste sessions that could ship real work.
 
-**Three-test bar for plan-for-later items:** needed now (not ahead of need), bigger than one session or approval-gated, not already covered. An item that fails the first or second test routes to a named watch line, not a formal plan. A plan retired the day it's filed was never plan-shaped.
-
 ### Step 9: You Decide
 
 You decide. You restate the decision in your own words, including where you aligned with or diverged from the knowledge-design lens's recommendation. This is the guard against the synthesizer becoming a shadow decider.
@@ -92,6 +91,8 @@ You decide. You restate the decision in your own words, including where you alig
 ### Step 10: Implementation Routing
 
 Do-now items execute before the meeting closes. Rapid, checklist-style. Plan-for-later items go into your backlog at the planning stage with an owning jacket named.
+
+**Three-test bar for plan-for-later items:** needed now (not ahead of need), bigger than one session or approval-gated, not already covered. Run this bar at filing time, not during the options step. An item that fails the first or second test routes to a named watch line, not a formal plan. A plan retired the day it's filed was never plan-shaped.
 
 The meeting doesn't turn into a build session. Scoped work sessions handle the actual build.
 
@@ -122,6 +123,7 @@ Energy beat. Next-meeting pointer set. The meeting is alive, not procedural.
 
 - **Is this your week-closing meeting?** Yes when it's the last meeting before your weekly review. The test is whether the week's material is complete enough to read as a pattern, not the calendar day alone.
 - **If yes:** produce your weekly synthesis now, as a distinct act after the meeting note is sealed. It reads the week's 1:1 captures and the meeting note just written. This synthesis serves the pattern, not the decision. It goes to your weekly review.
+- **If yes but the session has run out of room:** do not drop the synthesis silently. Set an explicit named obligation on the meeting note and at session closeout. The obligation names the expected deliverable and where it lands. The next session loads it. Example: "Produce weekly synthesis before Friday's review."
 - **If no, an early-week meeting with the week still running:** defer by design. The week is incomplete. Name the meeting that owns the synthesis and carry it forward explicitly.
 
 The gate never lets the synthesis evaporate. It's produced, or it's an explicit named obligation.
@@ -150,6 +152,22 @@ The skill keeps two synthesis acts distinct. They never collapse into one.
 The weekly synthesis reads the meeting's output. It can't be the same act.
 
 **Two sensitivity reads worth tracking across meetings:** Where did the Challenge and Illumination reflex fire this week, and where didn't it? Where did a community or customer read move from a named person to an aggregate frame? Both as sensitivity reads, not scored metrics.
+
+## Model Routing
+
+Dispatch the cheapest model that does the job well. Before each delegated step, ask whether a smaller model would produce equivalent output.
+
+| Work type | Model |
+|---|---|
+| Agenda-load pulls, extracting open threads from prior captures, mechanical data reads | Haiku |
+| Perspective dispatch workers, per-lens preparation, most synthesis work | Sonnet |
+| In-meeting synthesis at Step 7 when the question is genuinely architecture-class | Opus |
+
+Dispatch all five perspective workers in a single parallel batch. Each worker reports to a file before any cross-lens discussion begins.
+
+Set the model explicitly on every dispatch. Never silently inherit the top tier.
+
+---
 
 ## Constraints
 

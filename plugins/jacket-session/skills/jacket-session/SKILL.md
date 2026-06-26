@@ -1,6 +1,7 @@
 ---
 name: jacket-session
 description: Run a 1:1 (or two-lens) advisory session with a named AI advisor jacket. Loads jacket context, runs the universal session flow with the Three Solutions Rule and Challenge and Illumination active, and closes with a structured capture.
+version: 1.1
 ---
 
 # Jacket Session
@@ -31,7 +32,7 @@ Load context in this order:
 
 Cross-jacket continuity flows through the Team Meeting rhythm. Flag any urgent cross-jacket dependency at open so it doesn't get buried.
 
-Voice activates. Standing reflexes load: Three Solutions Rule, Three Laws lens, Challenge and Illumination active.
+Voice activates. Standing reflexes load: Three Solutions Rule, Three Laws lens, Challenge and Illumination active. Pre-publish sweep gate: before any outward-facing draft produced in this session ships, run your publication sweep.
 
 ### Step 2: Open
 
@@ -83,9 +84,11 @@ What carries forward to the next session or the next team meeting. Cross-jacket 
 
 Before the capture is written, move any research notes, consult outputs or imported files from your working inbox to a permanent home in the jacket's research folder. The inbox holds nothing belonging to this session at close.
 
-If any reference points to the old inbox location, update it now.
+After moving, check for any notes still referencing the old inbox location and update them. The move is not complete until the reference check has run. Archived references stay as historical record; active references get updated.
 
 ### Step 11: Close and Capture
+
+**Governance artifact audit (conditional).** When this session produced a finished governance artifact (a charter amendment, a new standard, a codex addition), offer a second-model review before writing the capture. A different model catches gaps or inconsistencies the primary session missed. This is an offer, not a gate. The operator decides.
 
 Write a session capture in a dated session log folder for this jacket.
 
@@ -103,7 +106,9 @@ Every first session for a new jacket runs at least one external research consult
 
 Your backlog or task tracker can carry an owner field tied to a jacket. When a task is jacket-owned, that jacket's context loads alongside the task when you work it. Jacket-owned tasks surface in the jacket's dashboard.
 
-Work done on jacket-owned tasks outside a jacket session should leave a breadcrumb on that jacket's running note. The next session picks it up at open.
+When multiple jackets contribute to a single task, name the primary owner in the owner field and note contributing lenses in a separate field. Cross-jacket coordination on a shared task surfaces at Step 1 when the session opens, so no lens is surprised by what the other moved.
+
+Work done on jacket-owned tasks outside a jacket session should leave a breadcrumb on that jacket's running note. The next session picks it up at open. The breadcrumb is the minimum viable handoff: one line, what moved and what remains.
 
 ## Multi-Jacket Mode
 

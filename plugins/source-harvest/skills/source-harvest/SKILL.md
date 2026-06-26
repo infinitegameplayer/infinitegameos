@@ -92,7 +92,7 @@ Ask: "Approve all, approve subset or revise?" Wait for explicit response.
 
 If the operator approves a subset, note which items are deferred for a future run.
 
-This gate is load-bearing. Information collected, decision made, action authorized.
+This gate holds everything. Information collected, decision made, action authorized.
 
 ### Step 7. Execute Approved Changes
 
@@ -105,6 +105,7 @@ Your system's conventions apply to all adoptions:
 - Skill format and frontmatter conventions of your runtime
 - Your system's voice and conventions
 - Approval gates for structural changes
+- When creating a skill that operates externally, add a scope or permissions declaration to signal its external reach. The allowed-tools pattern in the Tool Scoping section applies here.
 
 ### Step 8. Registry Housekeeping
 
@@ -189,3 +190,26 @@ Not all runtimes can use this pattern in every execution environment. Flag it in
 This skill is intelligence gathering first, integration second. The harvest collects information. The approval gate at Step 6 is where information becomes action. Steps 7-12 execute decisions already made.
 
 Source-vs-description discipline is the keystone. Skill descriptions advertise intent. Source code shows the actual implementation, including the patterns invisible from the outside: the four-phase debug gate, the dual confidence gating, the taste-decision surfacing, the per-phase verification-before-commit discipline. These are the patterns worth harvesting. They live in the source.
+
+---
+
+## Model Routing
+
+Dispatch the cheapest model that does the job well. Before each delegated step, ask whether a smaller model would produce equivalent output.
+
+| Step | Default model | Rationale |
+|---|---|---|
+| 1. Confirm Access | Sonnet | Source identification and access verification with light judgment |
+| 2. Inventory the Source | Sonnet | Structured listing and category grouping for operator confirmation |
+| 3. Read Every Component | Sonnet | Multi-file read sweep across heterogeneous component types |
+| 4. Classify Each Component | Opus | Disposition judgment against system equivalents; novelty assessment |
+| 5. Draft Harvest Report | Opus | Synthesis across all classified components; Enrich and Adopt specificity |
+| 6. Approval Gate | (yields, no model) | Operator approval before any changes execute |
+| 7. Execute Approved Changes | Sonnet | File edits and new skill creation per approved classification |
+| 8. Skill Registry Housekeeping | Haiku | Mechanical file writes and registry updates |
+| 9. File Deferred Items | Haiku | Structured append to deferred inventory |
+| 10. Tech Watch Entry | Haiku | Single-row append to watched repos table |
+| 11. Inbox Disposition | Haiku | File archival note or operator confirmation request |
+| 12. Summary Report | Sonnet | Final structured summary across all dispositions |
+
+Set the model explicitly on every subagent dispatch. Never silently inherit the top tier.

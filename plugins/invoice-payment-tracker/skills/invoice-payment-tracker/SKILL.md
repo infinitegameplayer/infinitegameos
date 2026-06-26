@@ -1,5 +1,5 @@
 ---
-description: Use to generate invoices and track paid/unpaid status after every job close. Hybrid architecture routes to Wave, FreshBooks, generic markdown-PDF or paste-into-other-tool based on practitioner setup. Same-day invoicing on job close is the load-bearing discipline. Pairs with Quote Builder and Daily Admin Orchestrator.
+description: Use to generate invoices and track paid/unpaid status after every job close. Hybrid architecture routes to Wave, FreshBooks, generic markdown-PDF or paste-into-other-tool based on practitioner setup. Same-day invoicing on job close is the essential discipline. Pairs with Quote Builder and Daily Admin Orchestrator.
 ---
 
 # Invoice & Payment Tracker
@@ -210,7 +210,7 @@ Reminder to Maya: "Enable the FreshBooks online payment link before sending if y
 ## Constraints
 
 - This skill generates invoices and tracks paid/unpaid status. It does not replace accountant counsel for tax handling, sales tax nexus determination, revenue recognition or compliance questions. Tax rate and late-fee fields are configurable inputs; the operator confirms the correct values for their jurisdiction.
-- Same-day invoicing on job close is the load-bearing discipline. Every drift toward "I'll invoice later" or "I'll batch them at end of week" costs real cash flow. The skill will flag delayed invoicing and prompt immediate action. This is not a soft reminder. It is the highest-leverage behavior change in solopreneur billing.
+- Same-day invoicing on job close is the essential discipline. Every drift toward "I'll invoice later" or "I'll batch them at end of week" costs real cash flow. The skill will flag delayed invoicing and prompt immediate action. This is not a soft reminder. It is the highest-leverage behavior change in solopreneur billing.
 - Platform credentials for Wave and FreshBooks are operator-managed. The skill does not store or transmit login credentials.
 - The overdue follow-up sequence lives in Customer Follow-Up. This skill generates the handoff trigger only. Do not draft overdue messages here.
 - Invoice number sequencing is the operator's responsibility. The skill uses operator-supplied numbers or auto-increments from the last logged number. Gaps or duplicates in the sequence are flagged but not corrected automatically.

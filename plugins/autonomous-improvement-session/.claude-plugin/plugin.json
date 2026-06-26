@@ -1,0 +1,13 @@
+{
+  "name": "autonomous-improvement-session",
+  "description": "Set your system improving on its own when you have spare capacity. Safe, additive, self-contained work runs under a threshold model with a permanent floor of actions it never takes on its own.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lane Belone",
+    "email": "howdy@lanebelone.com"
+  },
+  "homepage": "https://www.infinitegameos.io/skills/autonomous-improvement-session",
+  "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+  "license": "CC-BY-4.0",
+  "keywords": ["autonomous", "improvement", "hygiene", "threshold", "flywheel", "set-and-forget"]
+}

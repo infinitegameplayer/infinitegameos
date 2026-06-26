@@ -12,10 +12,10 @@ The skill is a starting point. Your pricing judgment, your market and your custo
 
 Quote Builder is one of five skills in the Solopreneur Admin Toolkit.
 
-- **Email Triage** (slug: `email-triage`) — sorts inbound email into service-business buckets, drafts replies and surfaces action items. Often where a quote request lands first.
-- **Invoice & Payment Tracker** (slug: `invoice-payment-tracker`) — takes the accepted quote and converts it to a sent invoice. Tracks overdue balances.
-- **Customer Follow-Up** (slug: `customer-follow-up`) — receives the follow-up trigger this skill fires at 48-72h and runs the full relationship cadence from there: thanks, referral ask, seasonal check-in, re-engagement.
-- **Daily Admin Orchestrator** (slug: `daily-admin-orchestrator`) — the primary entry point for the toolkit. Runs a morning briefing and delegates to all four primitives in sequence. Start here if you are using the toolkit as a whole rather than invoking Quote Builder directly.
+- **Email Triage** (slug: `email-triage`): sorts inbound email into service-business buckets, drafts replies and surfaces action items. Often where a quote request lands first.
+- **Invoice & Payment Tracker** (slug: `invoice-payment-tracker`): takes the accepted quote and converts it to a sent invoice. Tracks overdue balances.
+- **Customer Follow-Up** (slug: `customer-follow-up`): receives the follow-up trigger this skill fires at 48-72h and runs the full relationship cadence from there: thanks, referral ask, seasonal check-in, re-engagement.
+- **Daily Admin Orchestrator** (slug: `daily-admin-orchestrator`): the primary entry point for the toolkit. Runs a morning briefing and delegates to all four primitives in sequence. Start here if you are using the toolkit as a whole rather than invoking Quote Builder directly.
 
 ## Make It Yours
 
@@ -90,9 +90,9 @@ Required fields:
 **Step 5. Select output format.** Ask the operator which format this quote goes out in.
 
 Options:
-- `email` — formatted email body, ready to paste into any email client
-- `sms` — compressed plain-text summary under 160 characters for the core figure, with a follow-up line pointing to the full quote
-- `markdown` — full structured document, printable or exportable to PDF via the operator's preferred tool
+- `email`: formatted email body, ready to paste into any email client
+- `sms`: compressed plain-text summary under 160 characters for the core figure, with a follow-up line pointing to the full quote
+- `markdown`: full structured document, printable or exportable to PDF via the operator's preferred tool
 
 If the operator has set a default format, use it without asking.
 
@@ -127,7 +127,7 @@ The skill is tool-agnostic by design. Platform diversity across solopreneurs is 
 **Email body format:**
 
 ```
-Subject: Quote for [service type] — [customer name] — [brief location]
+Subject: Quote for [service type], [customer name], [brief location]
 
 Hi [customer name],
 
@@ -230,7 +230,7 @@ Substitutability: export to PDF via Pandoc (`pandoc quote.md -o quote.pdf`), bro
 **Email body output:**
 
 ```
-Subject: Quote for Tree Trimming and Removal — Patterson — Maplewood Drive
+Subject: Quote for Tree Trimming and Removal, Patterson, Maplewood Drive
 
 Hi [Customer name],
 
@@ -296,7 +296,7 @@ Action: hand to Customer Follow-Up skill or Orchestrator
 **Email body output:**
 
 ```
-Subject: Quote for 6-Session Coaching Program — [Customer name]
+Subject: Quote for 6-Session Coaching Program, [Customer name]
 
 Hi [Customer name],
 
@@ -342,9 +342,9 @@ Action: hand to Customer Follow-Up skill or Orchestrator
 
 ## Outputs
 
-1. **Quote in selected format** — email body, SMS summary or markdown document. Ready to send or export.
-2. **Follow-up trigger payload** — structured block containing customer contact, quote date, job brief, quote total and trigger timing. Passes cleanly to Customer Follow-Up or Daily Admin Orchestrator.
-3. **Cost math transparency** — itemized breakdown visible in the quote. Builds customer trust. Protects the operator from scope disputes.
+1. **Quote in selected format**: email body, SMS summary or markdown document. Ready to send or export.
+2. **Follow-up trigger payload**: structured block containing customer contact, quote date, job brief, quote total and trigger timing. Passes cleanly to Customer Follow-Up or Daily Admin Orchestrator.
+3. **Cost math transparency**: itemized breakdown visible in the quote. Builds customer trust. Protects the operator from scope disputes.
 
 ## Constraints
 

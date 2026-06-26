@@ -5,7 +5,7 @@
   "description": "Installable skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
   "url": "https://www.infinitegameos.io",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "updated_at": "2026-06-13",
+  "updated_at": "2026-06-26",
   "upstream_version": "3.0.0",
   "upstream_repo": "https://github.com/infinitegameplayer/sovereign-ecosystem",
   "pages": [
@@ -25,7 +25,7 @@
       "id": "source-harvest",
       "name": "Source Harvest",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate.",
       "tags": ["harvest", "extraction", "governance", "kingdom-skill"],
       "install": {
@@ -46,7 +46,7 @@
       "id": "pattern-harvest",
       "name": "Pattern Harvest",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Reflective session-level pattern extraction. Three parallel lenses produce a numbered recommendation list the operator selects from. Run before session closeout on substantial sessions.",
       "tags": ["harvest", "reflection", "meta", "session", "governance", "recommendations"],
       "install": {
@@ -66,7 +66,7 @@
       "id": "plan-challenger",
       "name": "Plan Challenger",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Adversarial pre-build pass that challenges a plan before execution begins. Five angles, one verdict.",
       "tags": ["planning", "review", "adversarial", "governance"],
       "install": {
@@ -87,7 +87,7 @@
       "id": "systematic-debugging",
       "name": "Systematic Debugging",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Root-cause investigation discipline. Use before proposing fixes. The Iron Law: no fixes without Phase 1 complete.",
       "tags": ["debugging", "diagnostics", "root-cause", "discipline"],
       "install": {
@@ -108,7 +108,7 @@
       "id": "pending-plan-implementation",
       "name": "Pending Plan Implementation",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Execute approved plans with checkpoint gates, breadcrumb logging and outcome summaries.",
       "tags": ["planning", "execution", "governance", "audit"],
       "install": {
@@ -129,7 +129,7 @@
       "id": "skill-creator",
       "name": "Skill Creator",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Build new skills autonomously. Interview, research, write a complete SKILL.md, propose the install path.",
       "tags": ["meta", "authoring", "skills", "structure"],
       "install": {
@@ -150,7 +150,7 @@
       "id": "researcher",
       "name": "Researcher",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Parallel sub-agent research on a topic, aggregated into a structured report. Up to 4 independent workers, synthesized output.",
       "tags": ["research", "investigation", "parallel", "synthesis"],
       "install": {
@@ -171,7 +171,7 @@
       "id": "social-batch-drafting",
       "name": "Social Batch Drafting",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Draft a 9-post social batch (3 days × 3 platforms) from any source. Voice rules enforced before drafting begins. Pairs with Social Batch Queue.",
       "tags": ["social", "drafting", "voice", "publishing"],
       "install": {
@@ -191,7 +191,7 @@
       "id": "social-batch-queue",
       "name": "Social Batch Queue",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Execute an approved 9-post social batch. Image generation, asset staging, scheduler integration, post-publish handoff. Pairs with Social Batch Drafting.",
       "tags": ["social", "scheduling", "queue", "publishing"],
       "install": {
@@ -351,7 +351,7 @@
       "id": "website-builder",
       "name": "Website Builder",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Build, refresh or extend a website with Claude Code as the primary build engine. Frame-agnostic by design. AI discoverability and three-state deploy verification built in from the first scaffold.",
       "tags": ["website", "web", "build", "deploy", "discoverability", "creator"],
       "install": {
@@ -558,7 +558,7 @@
       "id": "self-healing",
       "name": "Self-Healing",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Autonomous error recovery during implementation sessions. Diagnose the root cause, apply a fix, continue without stalling on recoverable mistakes. Also ships inside the Sovereign Ecosystem Foundation.",
       "tags": ["recovery", "errors", "autonomy", "implementation", "resilience", "kingdom-skill"],
       "install": {
@@ -579,7 +579,7 @@
       "id": "session-closeout",
       "name": "Session Closeout",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "A fast three-action close for a git-tracked workspace. Breadcrumbs as you work, a refreshed primer, a readable commit as the session summary. Also ships inside the Sovereign Ecosystem Foundation.",
       "tags": ["session", "closeout", "git", "breadcrumbs", "handoff", "kingdom-skill"],
       "install": {
@@ -600,7 +600,7 @@
       "id": "playwright",
       "name": "Playwright",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Headless browser automation that returns structured data. Scrape pages, extract content, interact with web interfaces. Clean JSON over screenshots. Also ships inside the Sovereign Ecosystem Foundation.",
       "tags": ["automation", "browser", "scraping", "extraction", "data", "kingdom-skill"],
       "install": {
@@ -621,7 +621,7 @@
       "id": "anti-ai-edit-pass",
       "name": "Anti-AI Edit Pass",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "An editing pass for long-form manuscripts that finds and removes the writing tells of AI authorship. The result reads as your own voice. Also ships inside the Sovereign Ecosystem Foundation.",
       "tags": ["editing", "manuscript", "writing", "voice", "long-form", "kingdom-skill"],
       "install": {
@@ -642,7 +642,7 @@
       "id": "jacket-session",
       "name": "Jacket Session",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Run a focused 1:1 advisory session with a named AI lens. The universal session flow with the Three Solutions Rule and Challenge and Illumination active, closing in a structured capture.",
       "tags": ["advisory", "ai-advisor", "decision-making", "sovereignty"],
       "install": {
@@ -663,7 +663,7 @@
       "id": "jacket-meeting",
       "name": "Jacket Meeting",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Run a multi-lens team meeting across all your AI advisory jackets. A twelve-step flow from convene to close. Each lens prepares independently, one seat synthesizes, you decide.",
       "tags": ["advisory", "ai-advisor", "decision-making", "synthesis"],
       "install": {
@@ -678,6 +678,27 @@
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "updated_at": "2026-06-13",
       "se_origin": "graduated",
+      "changelog_url": null
+    },
+    {
+      "id": "autonomous-improvement-session",
+      "name": "Autonomous Improvement Session",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Run a set-and-forget session that improves your system without active attention. Operator-invoked only. Safe, additive hygiene work executes directly; judgment forks and floor-class items surface for your review. Also ships inside the Sovereign Ecosystem Foundation.",
+      "tags": ["autonomy", "improvement", "hygiene", "session", "flywheel", "kingdom-skill"],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install autonomous-improvement-session@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/autonomous-improvement-session",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/autonomous-improvement-session.mdc"
+      },
+      "related": ["session-closeout", "pattern-harvest", "self-healing", "sovereign-ecosystem"],
+      "article_url": "https://www.infinitegameos.io/skills/autonomous-improvement-session",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-06-26",
+      "se_origin": "dual",
       "changelog_url": null
     }
   ]

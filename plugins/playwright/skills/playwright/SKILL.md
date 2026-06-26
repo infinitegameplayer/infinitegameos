@@ -2,7 +2,7 @@
 name: playwright
 description: Use when you need to scrape pages, extract structured data or interact with web interfaces via headless browser automation without using screenshots.
 status: active
-version: 1.0
+version: 1.1
 ---
 
 # Playwright
@@ -83,6 +83,21 @@ Your AI reads this SKILL.md, runs the script, and returns the data.
 
 If Researcher isn't installed yet: [Install Researcher via Infinite Game OS](https://www.infinitegameos.io/skills/researcher).
 If Source Harvest isn't installed yet: [Install Source Harvest via Infinite Game OS](https://www.infinitegameos.io/skills/source-harvest).
+
+## Model Routing
+
+Dispatch the cheapest model that does the job well. Before each delegated step, ask whether a smaller model would produce equivalent output.
+
+| Task type | Model |
+|---|---|
+| Script invocation, URL scrape, structured data extraction from clean JSON output | Haiku |
+| Changelog or release-note summarization, multi-item synthesis with temporal filtering | Sonnet |
+| Troubleshooting blocked or failed scrapes, multi-step diagnosis and option selection | Sonnet |
+| Interpreting extracted data for a strategic decision | Opus |
+
+Set the model explicitly on every subagent dispatch. Never silently inherit the top tier.
+
+---
 
 ## Refinements
 

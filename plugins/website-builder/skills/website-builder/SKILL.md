@@ -1,5 +1,6 @@
 ---
 description: Use when building, refreshing or extending a website with Claude Code as the primary build engine. Frame-agnostic by design. Triggered by "build the site," a redesign brief, a new page route or any project where the site needs to change.
+version: 1.1
 ---
 
 # Website Builder
@@ -43,11 +44,22 @@ Run a brainstorm pass on this skill before first use or after a first run that s
 
 Sites built in linear conversation sessions drift. Design decisions get made verbally and lost. AI-facing surfaces get written once and never updated. The anti-slop gate gets skipped when the build feels close. The discoverability checklist becomes a post-deploy fix rather than a ship gate. This skill structures the sequence so the discipline is always present, the decisions are always written back to the spec before code is touched and the ship gate runs before the deploy is called complete. The result is a site that works for AI agents and human visitors at the same level of precision.
 
-## Cross-Site Memory Pattern
+## Step 0: Cross-Site Findings Drain
 
 When operating multiple sibling sites, keep a lightweight cross-site findings file. While working on Site A, if you notice a fix that should also apply to Site B, append a one-liner to the Site B section in the file. Do not immediately work on Site B. Continue with Site A's planned scope. The note is the memory; the fix lands in Site B's next session.
 
-Session-start workflow: read the file, surface items for the current site, confirm with the operator whether to address them in this session or defer. For items addressed: remove the line as part of the same commit. This pattern avoids context bloat from bundling two sites in one session while ensuring cross-site fixes don't get lost.
+**Session-start drain workflow:**
+
+1. Read the cross-site findings file.
+2. Surface any items tagged for the current site.
+3. Confirm with the operator: address in this session or defer?
+4. For items the operator approves: queue them into this session's scope.
+5. For items deferred: leave the line. It stays for the next session.
+6. For items addressed during the session: remove the line as part of the same commit.
+
+While working, append new cross-site observations to the file in real time. Format: `YYYY-MM-DD [from: current site] description of the finding`.
+
+This pattern avoids context bloat from bundling two sites in one session while ensuring cross-site fixes don't get lost.
 
 ---
 
@@ -67,7 +79,7 @@ Set `model` explicitly on every `Agent` call. Sonnet for page-scaffolding worker
 
 ## Steps
 
-### Step 1 — Brand Input
+### Step 1: Brand Input
 
 Load your brand and voice materials before writing a single line of prompt.
 
@@ -81,13 +93,13 @@ Fill in the build prompt template (see below) before opening your Claude Code se
 
 **Anti-slop gate:** After scaffold output (Step 3) and before iteration, run an anti-slop scan. Check for generic typography tells (hero headline that could describe any site), color tells (arbitrary blues and grays without rationale), layout tells (generic three-card grid used without intent), motion tells (animation that fires everywhere without purpose) and content tells (lorem ipsum still present, or placeholder copy that wasn't replaced). Flag any instance and fix before proceeding.
 
-### Step 2 — Environment
+### Step 2: Environment
 
 Each site lives in its own directory outside your system's core vault or monorepo.
 
 Open a Claude Code session in the site directory (e.g., `~/sites/your-site-name/`). Confirm Node.js (LTS) is installed. Confirm git is initialized in the directory before scaffold output so no work gets lost.
 
-### Step 3 — Scaffold
+### Step 3: Scaffold
 
 Paste the completed build prompt template into Claude Code. Claude generates the full site structure. Expect:
 
@@ -100,7 +112,7 @@ Run locally: `npm install && npm run dev`
 
 Verify the local build is clean before moving to design preview.
 
-### Step 3.5 — HTML Design Preview
+### Step 3.5: HTML Design Preview
 
 Before writing framework code, build local HTML preview files for operator review. This is a standard step, not optional. The pattern accelerates decisions by making them visual and tangible.
 
@@ -120,7 +132,7 @@ Before writing framework code, build local HTML preview files for operator revie
 
 **Why this is standard:** The pattern accelerates design decisions by turning abstract conversations into "I can see it, I can react to it" moments. Decision-making is fastest when the operator can subtract from visible options. The preview is the source of truth for design parameters before code is written. Write the locked decisions back to your design spec before opening the codebase.
 
-### Step 3.7 — Design Polish
+### Step 3.7: Design Polish
 
 After HTML preview approval and before framework build, run a pre-ship polish pass. Twelve dimensions:
 
@@ -142,7 +154,7 @@ Also verify:
 - Button press feedback (`scale(0.97)` on `:active`) is present on all buttons
 - Animation frequency, purpose, easing and duration each pass your design's motion gates (four gates: is this frequency necessary? is there a purpose? is the easing appropriate? is the duration right?)
 
-### Step 4 — Iterate
+### Step 4: Iterate
 
 Refine conversationally. Examples of valid iteration prompts:
 
@@ -155,11 +167,11 @@ One change at a time. Verify in browser between iterations.
 
 **Design audit capability:** At any point during iteration, run a design audit. Five dimensions scored (accessibility, performance, theming, responsive, anti-patterns) with severity ratings (P0 critical, P1 ship-blocker, P2 polish, P3 nice-to-have). Use this when the build feels "close but something is off" or before final deploy.
 
-### Step 5 — AI Layer
+### Step 5: AI Layer
 
 Before deploying, verify all items on the AI Discoverability Checklist (see below). Most will already be generated from the build prompt template. Verify each one manually.
 
-### Step 6 — Deploy
+### Step 6: Deploy
 
 1. Initialize a git repo in the site directory: `git init && git add . && git commit -m "initial build"`
 2. Push to a new private GitHub repo
@@ -171,7 +183,7 @@ Before deploying, verify all items on the AI Discoverability Checklist (see belo
 8. **Run three-state deploy verification.** Confirm Local / Submitted / Confirmed. A deployment is not complete until it's verified live at the public URL. Never stop at Local or Submitted and call it done.
 9. **Notify search engines.** Run your IndexNow notification script after three-state confirmation. This notifies search engines that content has changed. Run only after verification. Pinging before confirmation notifies crawlers to fetch stale content.
 
-### Step 7 — Seal
+### Step 7: Seal
 
 - Update your build plan: mark status as `implemented`, add breadcrumb with live URL
 - Log in your project tracker: "Site name live at domain. Stack: [your stack summary]."
@@ -217,7 +229,7 @@ COPY DIRECTION
 
 TECHNICAL REQUIREMENTS
 - [Your framework of choice, e.g., Next.js, Astro, Remix]
-- CSS animations only (no Framer Motion). IntersectionObserver for scroll reveals. CSS transitions for hovers and press feedback.
+- CSS animations only. No JS animation libraries (Framer Motion violates strict CSP headers). IntersectionObserver for scroll reveals. CSS transitions for hovers and press feedback.
 - [Your styling approach, e.g., Tailwind CSS, CSS Modules, vanilla CSS]
 - Fully responsive (mobile-first)
 - [Font approach: system fonts / self-hosted / CDN with specific font names]
@@ -267,6 +279,8 @@ When a Figma design file is the source for a site build, use the Figma MCP serve
 
 **Asset rule:** If the Figma MCP returns a localhost source for an image or SVG, use it directly. Never install new icon packages. Never create placeholders when a localhost source is provided.
 
+**Truncation fallback:** If the `get_design_context` response is too large or cuts off mid-response, call `get_metadata` first to retrieve the node structure, then fetch individual child nodes with separate `get_design_context` calls. Never guess at truncated content.
+
 **Validation gate:** Before marking a component or section complete, validate the implemented code against the `get_screenshot` output. Check spacing, typography, colors, interactive states and responsive behavior.
 
 ---
@@ -305,6 +319,7 @@ When refreshing an existing site (not building from scratch), use this 5-engagem
 
 **New Route Checklist (activate when this session adds a new page route):** Before treating any new route as shipped, verify all of the following:
 - `page.tsx` with metadata (title, description, canonical, OG, Twitter card)
+- Rendered `<title>` is 65 characters or fewer, including any brand suffix. When a title would exceed this, use `title: { absolute: '...' }` or your framework's equivalent to suppress suffix overflow.
 - JSON-LD schema (Article, FAQPage, BreadcrumbList as appropriate for the page type)
 - Structured content added to `src/lib/page-data.ts` (for any data arrays or shared strings)
 - Generate function added to `src/lib/markdown-content.ts` and route wired into `getMarkdownForPath`
@@ -323,7 +338,7 @@ The skill names a specific stack as the reference, then frames each component ge
 |---|---|---|
 | Build engine | Claude Code | Universal. Stays. |
 | Framework | Next.js | Astro, Remix, vanilla React, Eleventy, Hugo, SvelteKit |
-| Animation | CSS animations + IntersectionObserver | Framework-agnostic. No JS animation libraries required. |
+| Animation | CSS animations + IntersectionObserver | Framework-agnostic. No JS animation libraries. Framer Motion and similar libraries are excluded because they violate Content Security Policy on hosts that enforce strict CSP headers. |
 | Styling | Tailwind CSS | CSS Modules, vanilla CSS, CSS-in-JS (Stitches, Emotion), Sass |
 | Hosting | Vercel | Netlify, Cloudflare Pages, GitHub Pages, self-hosted VPS |
 | DNS | Registrar-agnostic | Vercel, Netlify and most hosts provide A record and CNAME values. Your registrar applies them. |
@@ -423,6 +438,20 @@ Identify the tier first. Tier 1 exits immediately. Tier 2 exits after a spot-che
 6. **IndexNow ping (Tiers 3 and 4; optional for significant Tier 2 changes):** run your IndexNow script from your project root. Notifies search engines that content has changed. Run only after step 5 confirms markdown endpoints are correct.
 
 **Why this exists:** A site refresh can ship the HTML layer cleanly while leaving `src/lib/markdown-content.ts` and `public/llms.txt` pointing at old copy. AI agents requesting `Accept: text/markdown` would see the old site. This audit is the standing gate that prevents that recurrence.
+
+---
+
+## Model Routing
+
+Dispatch the cheapest model that does the job well. Before each delegated step, ask whether a smaller model would produce equivalent output.
+
+| Work type | Model |
+|---|---|
+| Mechanical lookups, file reads, route inventory, config checks | Haiku |
+| Page scaffolding, copy drafting, multi-step diagnosis, worker dispatch | Sonnet |
+| Architectural judgment: new site structure, cross-page pattern decisions, design system design | Opus |
+
+Set the model explicitly on every subagent dispatch. Never silently inherit the top tier.
 
 ---
 

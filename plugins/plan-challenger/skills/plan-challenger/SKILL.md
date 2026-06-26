@@ -1,8 +1,8 @@
 ---
 name: plan-challenger
-description: Adversarial pre-build pass that challenges a plan before execution begins — five angles, one verdict.
+description: Adversarial pre-build pass that challenges a plan before execution begins. Five angles, one verdict.
 status: active
-version: 1.0
+version: 1.1
 ---
 
 # Plan Challenger Skill
@@ -15,46 +15,46 @@ Status: active
 
 ## Steps
 
-### Step 1 — Load the Plan
+### Step 1: Load the Plan
 
 Read the target plan. If a name was given, locate it in your plans directory. If content was pasted, use it directly.
 
 Confirm the plan title and intent back to the operator in one sentence before proceeding.
 
-### Step 2 — Five-Angle Challenge
+### Step 2: Five-Angle Challenge
 
 Run each angle in sequence. Each angle produces one to three sharp observations or questions, not a list of everything that could go wrong. Surface what matters most.
 
-**Angle 1 — Strategic Fit**
+**Angle 1: Strategic Fit**
 Is this the right problem for this moment? What else is actively competing for this slot? Does this plan advance the operator's current primary arc, or does it branch sideways?
 
-**Angle 2 — Timing**
+**Angle 2: Timing**
 Why now? What changes if this is deferred two weeks? What external factors or internal pressures are driving the timing? Is the urgency real or inherited from habit?
 
-**Angle 3 — Baked-In Assumptions**
+**Angle 3: Baked-In Assumptions**
 What must be true for this plan to succeed that has not been verified? Name the assumptions explicitly. Rate the risk of each: low (safe to proceed), medium (worth a quick check), high (should be resolved before execution begins).
 
-**Angle 4 — Architectural Risk**
+**Angle 4: Architectural Risk**
 What is the most likely way this plan breaks or creates debt? What part of the implementation is most fragile? What does success look like on paper but create pain in six months?
 
-**Angle 5 — Opportunity Cost**
+**Angle 5: Opportunity Cost**
 What are we not doing by doing this? What capability, relationship or momentum is being paused or sacrificed to run this plan now?
 
-### Step 3 — Taste-Decision Surfacing
+### Step 3: Taste-Decision Surfacing
 
 After the five angles, scan for near-call questions. Places where two framings are genuinely close, scope is borderline, or a reasonable case exists for a different direction. Surface these explicitly rather than collapsing to one answer.
 
-Format: "Close call. [question]. Both [framing A] and [framing B] are defensible. The operator decides."
+Format: "Close call: [question]. Both [framing A] and [framing B] are defensible. The operator decides."
 
 Surface only genuine near-calls. Do not manufacture uncertainty where clarity exists.
 
-### Step 4 — Verdict
+### Step 4: Verdict
 
 One line. No hedging.
 
-- **Proceed** — No blocking concerns. Execute as planned.
-- **Revise [specific element]** — One thing to change before execution. Name it.
-- **Pause [specific reason]** — An assumption or risk needs resolution first. Name it.
+- **Proceed:** No blocking concerns. Execute as planned.
+- **Revise [specific element]:** One thing to change before execution. Name it.
+- **Pause [specific reason]:** An assumption or risk needs resolution first. Name it.
 
 The verdict is a recommendation, not a gate. The operator decides.
 
@@ -78,6 +78,20 @@ Filter: any finding scored below 50 is a note, not a challenge. Any finding scor
 
 This scoring layer is optional. Use it when the five angles produce many findings and the operator needs a ranked view before deciding. On straightforward plans, qualitative assessment is sufficient.
 
+## Model Routing
+
+Dispatch the cheapest model that does the job well.
+
+| Step | Default model | Rationale |
+|---|---|---|
+| Step 1: Load the plan | Haiku | File read and one-sentence intent confirmation; no judgment required |
+| Step 2: Five-angle challenge | Opus | Adversarial architectural judgment across five distinct lenses; depth over breadth demands the strongest model |
+| Step 3: Taste-decision surfacing | Opus | Identifying genuine near-calls requires nuanced judgment; false certainty here harms decision quality |
+| Step 4: Verdict | Opus | One-line verdict is an operator-facing judgment call; precision and accountability make Opus the right tier |
+| Confidence scoring (optional) | Sonnet | Applying a rubric to score existing findings is structured evaluation, not fresh architectural judgment |
+
+Set the model explicitly on every subagent dispatch. Never silently inherit the top tier.
+
 ## Constraints
 
 - Does not implement anything.
@@ -91,6 +105,8 @@ This scoring layer is optional. Use it when the five angles produce many finding
 **Source Harvest** is the gateway skill for systematic pattern extraction from external repos and tools. Many users adopt Source Harvest first, then layer additional skills like this one on top.
 
 **Pending Plan Implementation** executes a plan after challenge. Strong pairing for high-stakes work: challenge first, then implement.
+
+Two-skill handoff protocol: after the Pre-Execution Checklist in Pending Plan Implementation, a one-line opt-in appears: "Challenge warranted?" If yes, invoke Plan Challenger with the plan content, work through findings, then return to Pending Plan Implementation Step 1. If no, proceed immediately.
 
 If Source Harvest isn't installed yet: [Install Source Harvest via IGOS](https://www.infinitegameos.io/skills/source-harvest).
 If Pending Plan Implementation isn't installed yet: [Install Pending Plan Implementation via IGOS](https://www.infinitegameos.io/skills/pending-plan-implementation).

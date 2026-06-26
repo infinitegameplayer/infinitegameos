@@ -18,7 +18,7 @@ Inputs:
 
 Outputs: a structured markdown report at `output_path`. Discovery output is a ranked list (top 10 by fit score) plus a disqualified-with-reasons block plus a sources sweep log. Fit Deep-Dive output is a single memo on the named opportunity. Each opportunity entry carries why-it-fits, key criteria, deadline, link, suggested next move and a fit score with component breakdown.
 
-This skill exists because grant discovery without structure produces noise. Newcomers chase opportunities they can't win. Experienced practitioners revisit the same shortlist out of habit and miss adjacent funders. A skill that makes the operator profile load-bearing, runs fit scoring against multiple sources and produces a ranked report keeps the surface honest from cycle to cycle.
+This skill exists because grant discovery without structure produces noise. Newcomers chase opportunities they can't win. Experienced practitioners revisit the same shortlist out of habit and miss adjacent funders. A skill that makes the operator profile the spine of every decision, runs fit scoring against multiple sources and produces a ranked report keeps the surface honest from cycle to cycle.
 
 ## Make It Yours
 

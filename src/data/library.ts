@@ -82,8 +82,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Source Harvest',
     label: 'Skill',
-    version: '1.0',
-    updated: '2026-04-29',
+    version: '1.1',
+    updated: '2026-06-26',
     description:
       'Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate.',
     tags: ['harvest', 'extraction', 'governance', 'kingdom-skill'],
@@ -116,7 +116,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         title: 'Open-source plugin source review',
         body:
-          'When someone publishes a Claude Code plugin, the description rarely surfaces the load-bearing patterns. Source Harvest reads the hooks, commands and skills directly, surfacing patterns like four-phase debug gates, dual confidence scoring rubrics or per-phase verification disciplines that descriptions skip. Each pattern receives a disposition before any code is integrated.',
+          'When someone publishes a Claude Code plugin, the description rarely surfaces the core patterns. Source Harvest reads the hooks, commands and skills directly, surfacing patterns like four-phase debug gates, dual confidence scoring rubrics or per-phase verification disciplines that descriptions skip. Each pattern receives a disposition before any code is integrated.',
       },
       {
         title: 'Closed SaaS platform capability inventory',
@@ -147,7 +147,7 @@ export const igosAssets: IGOSAsset[] = [
     faq: [
       {
         q: 'Why read the source instead of the README?',
-        a: 'Descriptions summarize intent. Source carries the load-bearing patterns. A four-phase debug gate, a dual confidence scoring rubric or a per-phase verification discipline is invisible from a homepage. The patterns live in the skill files, the hook scripts and the configs. Source Harvest treats those as the evidence base.',
+        a: 'Descriptions summarize intent. Source carries the core patterns. A four-phase debug gate, a dual confidence scoring rubric or a per-phase verification discipline is invisible from a homepage. The patterns live in the skill files, the hook scripts and the configs. Source Harvest treats those as the evidence base.',
       },
       {
         q: 'What does each disposition mean in practice?',
@@ -183,8 +183,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Pattern Harvest',
     label: 'Skill',
-    version: '1.0',
-    updated: '2026-05-06',
+    version: '1.1',
+    updated: '2026-06-26',
     description:
       'Reflective session-level pattern extraction. Three parallel lenses produce a numbered recommendation list the operator selects from.',
     tags: ['harvest', 'reflection', 'meta', 'session', 'governance', 'recommendations'],
@@ -275,8 +275,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Plan Challenger',
     label: 'Skill',
-    version: '1.0',
-    updated: '2026-04-29',
+    version: '1.1',
+    updated: '2026-06-26',
     description:
       'Adversarial pre-build pass that challenges a plan before execution begins. Five angles, one verdict.',
     tags: ['planning', 'review', 'adversarial', 'governance'],
@@ -351,8 +351,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Systematic Debugging',
     label: 'Skill',
-    version: '1.0',
-    updated: '2026-04-29',
+    version: '1.1',
+    updated: '2026-06-26',
     description:
       'Root-cause investigation discipline. Use before proposing fixes. The Iron Law: no fixes without Phase 1 complete.',
     tags: ['debugging', 'diagnostics', 'root-cause', 'discipline'],
@@ -424,8 +424,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Pending Plan Implementation',
     label: 'Skill',
-    version: '1.0',
-    updated: '2026-04-29',
+    version: '1.1',
+    updated: '2026-06-26',
     description:
       'Execute approved plans with checkpoint gates, breadcrumb logging and outcome summaries.',
     tags: ['planning', 'execution', 'governance', 'audit'],
@@ -497,8 +497,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Skill Creator',
     label: 'Skill',
-    version: '1.0',
-    updated: '2026-04-29',
+    version: '1.1',
+    updated: '2026-06-26',
     description:
       'Build new skills autonomously. Interview, research, write a complete SKILL.md, propose the install path.',
     tags: ['meta', 'authoring', 'skills', 'structure'],
@@ -533,14 +533,14 @@ export const igosAssets: IGOSAsset[] = [
       {
         title: 'Codifying a discovered pattern after it earns its keep',
         body:
-          'A pattern proved itself across multiple sessions. The operator decides to codify it. Skill Creator runs the interview to surface the load-bearing constraints, drafts the SKILL.md and proposes the registry entry. The pattern becomes permanent infrastructure.',
+          'A pattern proved itself across multiple sessions. The operator decides to codify it. Skill Creator runs the interview to surface the essential constraints, drafts the SKILL.md and proposes the registry entry. The pattern becomes permanent infrastructure.',
       },
     ],
     faq: [
       {
         q: 'Why a five-question interview before writing?',
         a:
-          'Skipping the interview produces generic templates, not system-native skills. The five questions force clarity on purpose, trigger, inputs/outputs, governance and references before any words land. A skill that survives is one whose load-bearing constraints were explicit at creation.',
+          'Skipping the interview produces generic templates, not system-native skills. The five questions force clarity on purpose, trigger, inputs/outputs, governance and references before any words land. A skill that survives is one whose essential constraints were explicit at creation.',
       },
       {
         q: 'What is the external-system check?',
@@ -570,8 +570,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Researcher',
     label: 'Skill',
-    version: '1.0',
-    updated: '2026-04-29',
+    version: '1.1',
+    updated: '2026-06-26',
     description:
       'Parallel sub-agent research on a topic, aggregated into a structured report. Up to 4 independent workers, synthesized output.',
     tags: ['research', 'investigation', 'parallel', 'synthesis'],
@@ -643,8 +643,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Social Batch Drafting',
     label: 'Skill',
-    version: '1.0',
-    updated: '2026-05-03',
+    version: '1.1',
+    updated: '2026-06-26',
     description:
       'Draft a 9-post social batch (3 days × 3 platforms) from any source. Voice rules enforced before drafting begins. Approved batch becomes the durable handoff to the queue skill.',
     tags: ['social', 'drafting', 'voice', 'creator', 'publishing'],
@@ -655,7 +655,7 @@ export const igosAssets: IGOSAsset[] = [
       cursorMdc: true,
     },
     definition:
-      'Social Batch Drafting takes a single source (an article, a session reference, a workshop campaign, a product page) and produces nine posts: three days, three platforms per day. The skill enforces voice rules before drafting begins and re-runs the sweep against the produced copy before presenting it to the operator. Forward-reference threading runs automatically when a series predecessor is named; light breadcrumb weaving runs by default for one-off batches. Anchor arcs (multi-batch escalations like reveal arcs, seat-count countdowns or product hints) carry state across batches so the next installment honors what came before. The output is an approved batch markdown file that becomes the durable handoff artifact for the Social Batch Queue skill. Voice and threading discipline live here; execution and scheduling belong downstream.',
+      'Social Batch Drafting takes a single source (an article, a session reference, a workshop campaign, a product page) and produces nine posts: three days, three platforms per day. The skill enforces voice rules before drafting begins and re-runs the sweep against the produced copy before presenting it to the operator. Subtle threading runs by default on every batch: a light touch that names what came before without making the callback the centerpiece. Anchor arcs (multi-batch escalations like reveal arcs, seat-count countdowns or product hints) carry state across batches so the next installment honors what came before. The output is an approved batch markdown file that becomes the durable handoff artifact for the Social Batch Queue skill. Voice and threading discipline live here; execution and scheduling belong downstream.',
     howItWorks: [
       {
         heading: 'The 9-post structure',
@@ -668,7 +668,7 @@ export const igosAssets: IGOSAsset[] = [
         heading: 'Voice rules and threading as pre-flight discipline',
         paragraphs: [
           'Voice rules run as gates, not suggestions. Em dashes, missing contractions, Oxford commas, internal names in public copy, fabricated anecdotes, pure-negation framing without an affirmative reframe: each gets caught before the draft reaches the operator. The skill ships with the author\'s defaults; operators layer their own rules via voice addenda. The structural enforcement (sweep before drafting, sweep after drafting, halt on violation) is the contribution.',
-          'Forward-reference threading is the second layer of discipline. When a series predecessor is named, all platforms get the thread, not just LinkedIn. The Day 1 opener names what came before and where the batch is now. The carousel close threads the accumulation. The Day 3 action references prior installments before the anchor seed. When no series exists, the skill still surfaces light breadcrumbs from recent batches: a quotable phrase, a sensory image, a recurring opening register. The principle: every social post knows what came before it.',
+          'Threading runs at a subtle default on every batch. A light touch: a quotable phrase carried forward, a sensory image that echoes, a voice anchor that connects without announcing itself. The principle is that every batch knows what came before it, without making the callback the centerpiece. When a series predecessor is named, the thread deepens on all platforms: the Day 1 opener places the batch in the arc, the carousel close threads the accumulation, the Day 3 action references prior installments before the anchor seed. The threading is woven, not announced.',
         ],
       },
     ],
@@ -676,7 +676,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         title: 'Article-driven batch from a polished long-form piece',
         body:
-          'A long-form article ships and the operator wants a 9-post sequence carrying the same thesis to social. Social Batch Drafting reads the article, extracts the load-bearing sensory moments and the lines that would land verbatim, threads any prior-batch references and produces the full 9-post draft. The operator reviews, approves, hands off to the queue skill for scheduling.',
+          'A long-form article ships and the operator wants a 9-post sequence carrying the same thesis to social. Social Batch Drafting reads the article, extracts the essential sensory moments and the lines that would land verbatim, threads any prior-batch references and produces the full 9-post draft. The operator reviews, approves, hands off to the queue skill for scheduling.',
       },
       {
         title: 'Workshop or product-launch campaign with seat-count escalation',
@@ -701,7 +701,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         title: 'Solo nonprofit comms from a program update report',
         body:
-          'A solo nonprofit communications coordinator wants a 9-post arc carrying the latest program update to the community. Social Batch Drafting reads the program update report, extracts the load-bearing community moments and the impact lines that would land in mission-aligned voice, threads any prior-batch references and produces the full 9-post draft. Mission framing stays intact across the arc; the operator reviews and approves before handoff to the queue skill.',
+          'A solo nonprofit communications coordinator wants a 9-post arc carrying the latest program update to the community. Social Batch Drafting reads the program update report, extracts the essential community moments and the impact lines that would land in mission-aligned voice, threads any prior-batch references and produces the full 9-post draft. Mission framing stays intact across the arc; the operator reviews and approves before handoff to the queue skill.',
       },
     ],
     faq: [
@@ -716,9 +716,9 @@ export const igosAssets: IGOSAsset[] = [
           'Layer your own via voice addenda. The skill\'s structural enforcement (sweep before drafting, sweep after drafting, halt on violation) holds. The specific rules are operator choice. Some rules ship as defaults because they catch common failure modes (em dashes reading AI, Oxford commas drifting in via dictation tools); replacing them is a deliberate operator decision.',
       },
       {
-        q: 'How does forward-reference threading work in practice?',
+        q: 'How does threading work in practice?',
         a:
-          'When a series predecessor is named, the skill reads its anchor arc state verbatim, names which prior batches to thread before drafting and writes the Day 1 opener explicitly first. All platforms get the thread, not just LinkedIn. Temporal language carries the references ("a few weeks ago I wrote", "last week", "this week") rather than internal names.',
+          'Subtle threading is the unified default on every batch: a light touch that weaves a callback without centering it. A quotable phrase, a sensory echo, a voice anchor. When a series predecessor is named, the thread deepens: the skill reads the prior batch\'s anchor arc state, names which batches to thread and writes the Day 1 opener first. All platforms carry the thread, not just LinkedIn. Temporal language does the work ("last week", "a few weeks ago") rather than internal names or sequential roll-calls.',
       },
       {
         q: 'What happens if the post-draft sweep catches a voice violation?',
@@ -744,8 +744,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Social Batch Queue',
     label: 'Skill',
-    version: '1.0',
-    updated: '2026-05-03',
+    version: '1.1',
+    updated: '2026-06-26',
     description:
       'Execute an approved 9-post social batch. Image generation, asset staging, scheduler integration with channel discovery, post-publish handoff. Pairs with Social Batch Drafting.',
     tags: ['social', 'scheduling', 'queue', 'image-generation', 'creator', 'publishing'],
@@ -761,8 +761,8 @@ export const igosAssets: IGOSAsset[] = [
       {
         heading: 'Reference implementations and substitutability',
         paragraphs: [
-          'The skill names a specific stack as the reference implementation, then frames each component generically. The reference image-generation pipeline uses fal.ai for backgrounds, Canva for template editing, Vercel Blob for public asset staging and a cloud-synced drive for local archive. The reference scheduler is Buffer with channel discovery and custom-scheduled posting. Operators with different stacks substitute component by component: any image-generation pipeline that produces PNG and PDF outputs and stages them at a public URL works for the asset side; any scheduling tool with channel discovery, slot configuration and a `customScheduled` API works for the scheduler side.',
-          'The structural discipline is what holds across stacks. Desktop review pause as the operator gate. Font sizes locked at template-load time. Vertical centering check after every text replacement on single-headline templates. Heading character budgets enforced at draft time so font sizes never have to drift. Channel IDs discovered at run-time. Native-isolation test as the cheapest first diagnostic on scheduler failure.',
+          'The skill names a specific stack as the reference implementation, then frames each component generically. The reference image-generation pipeline uses a self-hosted local renderer: a headless browser running an HTML/CSS card template with pdf-lib for PDF export. fal.ai generates the cinematic background. Vercel Blob stages assets at a public URL. A cloud-synced drive holds the local archive. The reference scheduler is Buffer with channel discovery and custom-scheduled posting. Operators with different stacks substitute component by component: any image-generation pipeline that produces PNG and PDF outputs and stages them at a public URL works for the asset side; Canva, Midjourney or any hosted design tool works as a template-editing substitution for the local renderer; any scheduling tool with channel discovery, slot configuration and a `customScheduled` API works for the scheduler side.',
+          'The structural discipline is what holds across stacks. Desktop review pause as the operator gate. Heading character budgets enforced at draft time. Channel IDs discovered at run-time. Native-isolation test as the cheapest first diagnostic on scheduler failure. Discipline specific to a hosted design-tool stack (vertical centering math, font auto-resize, signed-URL parallel-download CDN race) applies when the operator uses such a stack and is not applicable to the local renderer.',
         ],
       },
       {
@@ -819,7 +819,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         q: 'Can I use a different image-generation stack?',
         a:
-          'Yes. The skill names fal.ai, Canva and Vercel Blob as the reference implementation. The image-generation pipeline is component-by-component substitutable. The structural discipline is what travels across stacks: Desktop review, font-size lock, vertical centering check, heading character budgets, parallel-download race-condition discipline.',
+          'Yes. The reference implementation uses a self-hosted local renderer (headless browser plus an HTML/CSS card template plus pdf-lib for PDF export). Canva, Midjourney or any hosted design tool works as a substitution for the local renderer. fal.ai and Vercel Blob are also substitutable. The image-generation pipeline is component-by-component replaceable. The structural discipline travels across stacks: Desktop review, heading character budgets, channel IDs at run-time. Discipline specific to hosted design tools (vertical centering math, font auto-resize, CDN race-condition handling) applies to those stacks only.',
       },
       {
         q: 'How does the skill handle scheduler-to-platform failures?',
@@ -841,7 +841,7 @@ export const igosAssets: IGOSAsset[] = [
     title: 'Grant Researcher',
     label: 'Skill',
     version: '1.0',
-    updated: '2026-05-03',
+    updated: '2026-06-26',
     description:
       'Discover grants whose mission alignment, eligibility and deadline runway fit an operator profile. Two modes: Discovery sweeps wide and ranks by fit; Fit Deep-Dive runs a yes/no memo on one opportunity. Pairs with Grant Manager.',
     tags: ['grants', 'research', 'funding', 'nonprofit', 'discovery'],
@@ -937,7 +937,7 @@ export const igosAssets: IGOSAsset[] = [
     title: 'Grant Manager',
     label: 'Skill',
     version: '1.0',
-    updated: '2026-05-03',
+    updated: '2026-06-26',
     description:
       'Manage the full grant lifecycle on a chosen opportunity. LOI drafting, full proposal authoring, budget assistance, submission portal handling, post-award reporting and funder stewardship. Phase-routed. Pairs with Grant Researcher.',
     tags: ['grants', 'management', 'proposals', 'loi', 'stewardship', 'nonprofit'],
@@ -1033,7 +1033,7 @@ export const igosAssets: IGOSAsset[] = [
     title: 'Email Triage',
     label: 'Skill',
     version: '1.0',
-    updated: '2026-05-03',
+    updated: '2026-06-26',
     description:
       'Sort a service-business inbox into seven named buckets, draft replies for repeating scenarios and surface every action item so nothing gets missed.',
     tags: ['email', 'triage', 'inbox', 'solopreneur', 'service-business', 'admin'],
@@ -1124,7 +1124,7 @@ export const igosAssets: IGOSAsset[] = [
     title: 'Quote Builder',
     label: 'Skill',
     version: '1.0',
-    updated: '2026-05-03',
+    updated: '2026-06-26',
     description:
       'Turn a service-business inquiry into a complete quote in email, SMS or markdown-PDF format, with a 48-72h follow-up trigger built in on every run.',
     tags: ['quotes', 'pricing', 'follow-up', 'solopreneur', 'service-business', 'admin'],
@@ -1145,7 +1145,7 @@ export const igosAssets: IGOSAsset[] = [
         ],
       },
       {
-        heading: 'The follow-up trigger as load-bearing discipline',
+        heading: 'The follow-up trigger as the core discipline',
         paragraphs: [
           'After every quote, the skill outputs a follow-up trigger payload containing customer name, contact, quote date, job brief, quote total and timing. The operator hands this to Customer Follow-Up or to Daily Admin Orchestrator. The timing is 48h by default. Adjust to 24h for a hot lead who asked for a quick turnaround, 72h for a higher-value bid where the customer needs room to think.',
           'Quote expiry date is required on every quote. A quote with no expiry is an open-ended liability. The default is 30 days; shorter windows apply for time-sensitive materials, peak-season pricing or coaching programs that fill on a rolling basis. Deposit terms are explicit or explicitly waived: "no deposit required" is a valid terms line; silence is not.',
@@ -1215,18 +1215,18 @@ export const igosAssets: IGOSAsset[] = [
     title: 'Invoice & Payment Tracker',
     label: 'Skill',
     version: '1.0',
-    updated: '2026-05-03',
+    updated: '2026-06-26',
     description:
-      'Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the load-bearing discipline. Pairs with Quote Builder and Daily Admin Orchestrator.',
+      'Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the core discipline. Pairs with Quote Builder and Daily Admin Orchestrator.',
     tags: ['invoicing', 'payments', 'billing', 'cash-flow', 'solopreneur', 'service-business', 'admin'],
     capsule:
-      'Invoice and Payment Tracker is a skill for generating a complete invoice the moment a job closes and maintaining a running paid/unpaid ledger. Four platform paths: Wave, FreshBooks, generic markdown-PDF or paste-into-other-tool. Same-day invoicing on job close is the load-bearing discipline. A delayed invoice is a cash-flow leak with no upside.',
+      'Invoice and Payment Tracker is a skill for generating a complete invoice the moment a job closes and maintaining a running paid/unpaid ledger. Four platform paths: Wave, FreshBooks, generic markdown-PDF or paste-into-other-tool. Same-day invoicing on job close is the core discipline. A delayed invoice is a cash-flow leak with no upside.',
     installable: {
       marketplaceId: 'invoice-payment-tracker',
       cursorMdc: true,
     },
     definition:
-      'Invoice and Payment Tracker generates a complete, accurate invoice the moment a job closes and maintains a running paid/unpaid ledger. First-run setup routes the operator to one of four platform paths: Wave (free tier), FreshBooks (paid), generic markdown-PDF or paste-into-other-tool. Same-day invoicing on job close is the load-bearing behavior the skill enforces on every run. A one-week delay on three $500 jobs is $1,500 of float absorbed by the business for no reason. Overdue invoices hand off to Customer Follow-Up for the reminder sequence; the boundary is firm. The tracker, not the inbox, is where overdue accounts live.',
+      'Invoice and Payment Tracker generates a complete, accurate invoice the moment a job closes and maintains a running paid/unpaid ledger. First-run setup routes the operator to one of four platform paths: Wave (free tier), FreshBooks (paid), generic markdown-PDF or paste-into-other-tool. Same-day invoicing on job close is the core behavior the skill enforces on every run. A one-week delay on three $500 jobs is $1,500 of float absorbed by the business for no reason. Overdue invoices hand off to Customer Follow-Up for the reminder sequence; the boundary is firm. The tracker, not the inbox, is where overdue accounts live.',
     howItWorks: [
       {
         heading: 'Platform routing and same-day discipline',
@@ -1272,7 +1272,7 @@ export const igosAssets: IGOSAsset[] = [
     ],
     faq: [
       {
-        q: 'Why is same-day invoicing the load-bearing behavior?',
+        q: 'Why is same-day invoicing the core behavior?',
         a: 'Delayed invoicing is the single highest-leverage failure point in solopreneur cash flow. A one-week delay on a week of completed jobs is a week of float absorbed for no reason. The invoice is the final act of the job. A job is not done until the invoice is sent. The skill treats this as a hard constraint, not a soft recommendation.',
       },
       {
@@ -1306,7 +1306,7 @@ export const igosAssets: IGOSAsset[] = [
     title: 'Customer Follow-Up',
     label: 'Skill',
     version: '1.0',
-    updated: '2026-05-03',
+    updated: '2026-06-26',
     description:
       'Run a four-touchpoint post-job relationship cadence: thank-you at 24-48h, referral ask at 14d, maintenance check-in at 90d, re-engagement at 180d. CRM-lite for solo service businesses up to 50 customers.',
     tags: ['follow-up', 'crm', 'referrals', 'relationships', 'solopreneur', 'service-business', 'admin'],
@@ -1317,7 +1317,7 @@ export const igosAssets: IGOSAsset[] = [
       cursorMdc: true,
     },
     definition:
-      'Customer Follow-Up runs a four-touchpoint post-job cadence anchored by a single customer note per person in the operator\'s vault. Four touchpoints advance in sequence: thank-you at 24-48 hours from job close, referral ask at 14 days, maintenance check-in at 90 days, re-engagement at 180 days. The next_followup_date field in each note\'s YAML frontmatter is the engine: Daily Admin Orchestrator queries it each morning to surface who is due today. The referral ask at 14 days is the load-bearing touchpoint. Service-business research is clear: it outperforms ad spend at this budget tier, most solopreneurs skip it and the window is exactly 14 days. The skill is designed so none of that gets skipped by accident.',
+      'Customer Follow-Up runs a four-touchpoint post-job cadence anchored by a single customer note per person in the operator\'s vault. Four touchpoints advance in sequence: thank-you at 24-48 hours from job close, referral ask at 14 days, maintenance check-in at 90 days, re-engagement at 180 days. The next_followup_date field in each note\'s YAML frontmatter is the engine: Daily Admin Orchestrator queries it each morning to surface who is due today. The referral ask at 14 days is the essential touchpoint. Service-business research is clear: it outperforms ad spend at this budget tier, most solopreneurs skip it and the window is exactly 14 days. The skill is designed so none of that gets skipped by accident.',
     howItWorks: [
       {
         heading: 'The customer note as second-brain CRM',
@@ -1397,7 +1397,7 @@ export const igosAssets: IGOSAsset[] = [
     title: 'Daily Admin Orchestrator',
     label: 'Skill',
     version: '1.0',
-    updated: '2026-05-03',
+    updated: '2026-06-26',
     description:
       'Run the complete solopreneur admin ritual in one session. Sequences Email Triage, Customer Follow-Up, Invoice and Payment Tracker and Quote Builder in order. Three variants: morning briefing, end-of-day rolldown, Friday weekly review.',
     tags: ['orchestrator', 'admin', 'morning-briefing', 'ritual', 'solopreneur', 'service-business'],
@@ -1408,7 +1408,7 @@ export const igosAssets: IGOSAsset[] = [
       cursorMdc: true,
     },
     definition:
-      'Daily Admin Orchestrator runs Email Triage, Customer Follow-Up, Invoice and Payment Tracker and Quote Builder in sequence, reads each skill\'s handoff payload and routes action items between skills. Three variants calibrate depth per session: morning briefing skims each primitive for today\'s priorities in 5-10 minutes; end-of-day rolldown issues invoices for completed jobs and queues tomorrow\'s touchpoints in under 5 minutes; Friday weekly review runs every primitive to the bottom of its queue in 45-60 minutes. The Orchestrator holds no data of its own. It reads what the four primitives produce and sequences the reads. The load-bearing benefit is one thing: the practitioner does not decide where to start.',
+      'Daily Admin Orchestrator runs Email Triage, Customer Follow-Up, Invoice and Payment Tracker and Quote Builder in sequence, reads each skill\'s handoff payload and routes action items between skills. Three variants calibrate depth per session: morning briefing skims each primitive for today\'s priorities in 5-10 minutes; end-of-day rolldown issues invoices for completed jobs and queues tomorrow\'s touchpoints in under 5 minutes; Friday weekly review runs every primitive to the bottom of its queue in 45-60 minutes. The Orchestrator holds no data of its own. It reads what the four primitives produce and sequences the reads. The core benefit is one thing: the practitioner does not decide where to start.',
     howItWorks: [
       {
         heading: 'The four-step sequence',
@@ -1487,8 +1487,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Website Builder',
     label: 'Skill',
-    version: '1.0',
-    updated: '2026-05-04',
+    version: '1.1',
+    updated: '2026-06-26',
     description:
       'Build, refresh or extend a website with Claude Code as the primary build engine. Frame-agnostic by design. AI discoverability and three-state deploy verification built in from the first scaffold.',
     tags: ['website', 'web', 'build', 'deploy', 'discoverability', 'creator'],
@@ -1692,7 +1692,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         q: 'What does this look like in a single agent session?',
         a:
-          'An agent receives an external-facing task, reads the situation, names the primary mode and one or two secondaries, then acts. Mode declaration is the load-bearing move. It turns reactive external work into principled external work. The declaration also informs any sub-agent dispatch: each sub-agent inherits the prompt pattern with mode framing intact.',
+          'An agent receives an external-facing task, reads the situation, names the primary mode and one or two secondaries, then acts. Mode declaration is the highest-leverage move. It turns reactive external work into principled external work. The declaration also informs any sub-agent dispatch: each sub-agent inherits the prompt pattern with mode framing intact.',
       },
       {
         q: 'How do new surfaces map to the modes?',
@@ -1955,7 +1955,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         title: 'AI agent builder working at the frontier',
         body:
-          'A builder working on Claude Code plugins or n8n workflows operates where documentation is incomplete and APIs change weekly. Context7 is the load-bearing skill: live docs on every coding pass remove the hallucination tax that compounds across an unstable surface. Source Harvest (from the Foundational layer) extracts integration patterns from upstream MCP servers. Plan Challenger catches MCP integration assumptions before they break at runtime.',
+          'A builder working on Claude Code plugins or n8n workflows operates where documentation is incomplete and APIs change weekly. Context7 is the essential skill: live docs on every coding pass remove the hallucination tax that compounds across an unstable surface. Source Harvest (from the Foundational layer) extracts integration patterns from upstream MCP servers. Plan Challenger catches MCP integration assumptions before they break at runtime.',
       },
       {
         title: 'Plugin author extending an existing platform',
@@ -2318,7 +2318,7 @@ export const igosAssets: IGOSAsset[] = [
       ],
     },
     definition:
-      'The Teacher Bundle is the avatar-specific layer for structured-learning creators working with Claude Code in 2026. The Foundational Creator Bundle (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging plus Content Strategy and AI SEO) is the assumed pre-install. For the Teacher archetype, the Foundational Bundle already covers the majority of the working surface. Researcher is the curriculum source-sweep engine. Plan Challenger is the pre-build curriculum review the solo Teacher could never afford to hire. Source Harvest extracts patterns from reference syllabi, open curricula and competitor learning products. Skill Creator builds custom course-design assistants and cohort-Q&A responders. Content Strategy and AI SEO handle the discoverability layer that turns published courses into found courses. The Teacher layer adds one companion-install link to Gareth Manning\'s 111-skill evidence-based pedagogy library, which is CC BY-SA licensed and therefore installed directly from the source rather than redistributed by the bundle. The framing of the bundle is the load-bearing piece. The Foundational stack is already the Teacher\'s stack; the Teacher Bundle teaches the Teacher how to use it as curriculum design rather than as general creator tooling.',
+      'The Teacher Bundle is the avatar-specific layer for structured-learning creators working with Claude Code in 2026. The Foundational Creator Bundle (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging plus Content Strategy and AI SEO) is the assumed pre-install. For the Teacher archetype, the Foundational Bundle already covers the majority of the working surface. Researcher is the curriculum source-sweep engine. Plan Challenger is the pre-build curriculum review the solo Teacher could never afford to hire. Source Harvest extracts patterns from reference syllabi, open curricula and competitor learning products. Skill Creator builds custom course-design assistants and cohort-Q&A responders. Content Strategy and AI SEO handle the discoverability layer that turns published courses into found courses. The Teacher layer adds one companion-install link to Gareth Manning\'s 111-skill evidence-based pedagogy library, which is CC BY-SA licensed and therefore installed directly from the source rather than redistributed by the bundle. The framing of the bundle is the essential piece. The Foundational stack is already the Teacher\'s stack; the Teacher Bundle teaches the Teacher how to use it as curriculum design rather than as general creator tooling.',
     howItWorks: [
       {
         heading: 'Pre-install: the Foundational Creator Bundle',
@@ -2625,7 +2625,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         title: 'Independent management consultant running 3-5 concurrent engagements',
         body:
-          'An independent consultant with four active engagements opens the working session. Researcher dispatches parallel workers on this morning\'s engagement intake. Management Consulting structures the diagnostic in Full Case mode. Plan Challenger reviews the recommendation outline before drafting. MBB Management Consultant applies Pyramid Principle to the executive summary. The deliverable that used to consume a full day of synthesis-to-delivery work ships in two hours with the structural rigor intact and the Strategist\'s judgment as the load-bearing layer.',
+          'An independent consultant with four active engagements opens the working session. Researcher dispatches parallel workers on this morning\'s engagement intake. Management Consulting structures the diagnostic in Full Case mode. Plan Challenger reviews the recommendation outline before drafting. MBB Management Consultant applies Pyramid Principle to the executive summary. The deliverable that used to consume a full day of synthesis-to-delivery work ships in two hours with the structural rigor intact and the Strategist\'s judgment as the essential layer.',
       },
       {
         title: 'Fractional executive embedded across multiple clients',
@@ -2698,8 +2698,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Self-Healing',
     label: 'Skill',
-    version: '1.0',
-    updated: '2026-06-10',
+    version: '1.1',
+    updated: '2026-06-26',
     description:
       'Autonomous error recovery during implementation sessions. Diagnose the root cause, apply a fix, continue without stalling on recoverable mistakes.',
     tags: ['recovery', 'errors', 'autonomy', 'implementation', 'kingdom-skill'],
@@ -2771,8 +2771,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Session Closeout',
     label: 'Skill',
-    version: '1.0',
-    updated: '2026-06-10',
+    version: '1.1',
+    updated: '2026-06-26',
     description:
       'A fast three-action close for a git-tracked workspace. Breadcrumbs as you work, a refreshed primer, a readable commit as the session summary.',
     tags: ['session', 'closeout', 'git', 'breadcrumbs', 'kingdom-skill'],
@@ -2844,8 +2844,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Playwright',
     label: 'Skill',
-    version: '1.0',
-    updated: '2026-06-10',
+    version: '1.1',
+    updated: '2026-06-26',
     description:
       'Headless browser automation that returns structured data. Scrape pages, extract content, interact with web interfaces. Clean JSON over screenshots.',
     tags: ['automation', 'browser', 'scraping', 'extraction', 'kingdom-skill'],
@@ -2917,8 +2917,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Anti-AI Edit Pass',
     label: 'Skill',
-    version: '1.0',
-    updated: '2026-06-10',
+    version: '1.1',
+    updated: '2026-06-26',
     description:
       'An editing pass for long-form manuscripts that finds and removes the writing tells of AI authorship. The result reads as your own voice.',
     tags: ['editing', 'manuscript', 'writing', 'voice', 'kingdom-skill'],
@@ -2990,8 +2990,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Jacket Session',
     label: 'Skill',
-    version: '1.0',
-    updated: '2026-06-13',
+    version: '1.1',
+    updated: '2026-06-26',
     description:
       'Run a focused 1:1 advisory session with a named AI lens. The universal session flow with the Three Solutions Rule and Challenge and Illumination active, closing in a structured capture.',
     tags: ['advisory', 'ai-advisor', 'decision-making', 'sovereignty'],
@@ -3075,8 +3075,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Jacket Meeting',
     label: 'Skill',
-    version: '1.0',
-    updated: '2026-06-13',
+    version: '1.1',
+    updated: '2026-06-26',
     description:
       'Run a multi-lens team meeting across all your AI advisory jackets. A twelve-step flow from convene to close. Each lens prepares independently, one seat synthesizes, you decide.',
     tags: ['advisory', 'ai-advisor', 'decision-making', 'synthesis'],
@@ -3153,6 +3153,86 @@ export const igosAssets: IGOSAsset[] = [
     seOrigin: {
       kind: 'graduated',
       note: 'This skill graduated from internal operating practice into the public library.',
+    },
+  },
+  {
+    slug: 'autonomous-improvement-session',
+    type: 'skill',
+    title: 'Autonomous Improvement Session',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-06-26',
+    description:
+      'Run a set-and-forget session that improves your system without active attention. Operator-invoked only. Safe, additive hygiene work executes directly; judgment forks and floor-class items surface for your review.',
+    tags: ['autonomy', 'improvement', 'hygiene', 'session', 'flywheel', 'kingdom-skill'],
+    capsule:
+      'Autonomous Improvement Session is the skill you run when you have capacity to spare and want your system improving without watching it. You invoke it, it works, it shows you what it did and surfaces only the decisions that genuinely need you. The flywheel grows with every cycle.',
+    installable: {
+      marketplaceId: 'autonomous-improvement-session',
+      cursorMdc: true,
+    },
+    definition:
+      'Autonomous Improvement Session is an operator-invoked hygiene and improvement engine. When you have extra capacity, you fire it and it runs a menu of safe, additive, system-internal work: broken references repaired in place, index entries added for active files, anti-AI sweeps applied to draft articles, slug normalization across memory files. Tier 1 items land edits directly. Tier 2 items are read-only scans that write findings to a decision board for your review. A threshold model governs execution authority: every action carries an autonomy level, and the threshold starts at the lowest level so every starter item runs without asking. The threshold climbs only through ratified decisions you make after reviewing a run. Menu growth is fast and wide; execution authority is slow and earned. The decision board is the single review surface: four buckets (completed this run for review, approvals and questions, new menu candidates, proposed plans) regenerated fresh each run. No report files land in your inbox. The run log entry and version control commit are the durable trail. It also ships inside the Sovereign Ecosystem Foundation, the starting workspace where these disciplines live together.',
+    howItWorks: [
+      {
+        heading: 'Two speeds on purpose',
+        paragraphs: [
+          'The skill runs at two speeds simultaneously. Menu growth is fast and wide: a research rotation casts a wide net for categories and mechanisms of improvement, and the menu of things the skill knows how to do grows every cycle. Execution authority is slow and earned: the threshold starts at the lowest level and climbs only through ratified decisions you make after reviewing the board. A wide net for ideas. A narrow gate for action. The gate widens with proof, never with time.',
+          'Tier 1 items execute and log. Tier 2 items scan and report. The default verb is DO, not propose. If an action is additive, reversible, system-internal and touches no deletion, no canonical governance file and no outward surface, the skill does it and records it. Safe work is act-then-show. The Permanent Floor is the hard ceiling that holds regardless of how high the threshold climbs: no deletions, no voice or copy changes on live surfaces, no outward broadcasts, no direct push to main, no self-modification.',
+        ],
+      },
+      {
+        heading: 'The decision board and the return session',
+        paragraphs: [
+          'Every run closes with a four-bucket decision board regenerated fresh, replacing the prior run\'s open decisions. Bucket one is a skim record: what ran, each item reversible. Bucket two is approvals and questions: genuine judgment forks the skill surfaced rather than acted on. Bucket three is new menu candidates from the research rotation. Bucket four is proposed plans for anything bigger than one session. A clean run leaves bucket two near empty, because safe work is already done.',
+          'The return session is how the flywheel learns. You answer decisions, encode forward rules, accept or decline menu candidates and ratify any autonomy-level moves. An accepted candidate adds a new menu item. A ratified climb raises the threshold by one proven step. The skill never edits its own menu or threshold autonomously. Every move is explicit and operator-triggered.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'End-of-session hygiene when capacity remains',
+        body:
+          'A build session wraps with tokens and time to spare. You invoke Autonomous Improvement. The skill checks eligibility across the starter menu, runs five reference-integrity repairs and two index additions, surfaces two ambiguous routing decisions and one menu candidate from the research rotation. You close the session knowing the system is cleaner than when you started and the decision board is waiting when you\'re ready.',
+      },
+      {
+        title: 'Heading out with a messy system',
+        body:
+          'You\'re leaving for a few hours and your system has accumulated drift: references that moved, index entries not added, draft articles with known anti-AI patterns. You fire Autonomous Improvement with a full-sweep hint. The skill works the Tier 1 menu completely, runs two Tier 2 research scans and writes the board. You come back to a cleaner system and a decision board to skim, not a to-do list to build from scratch.',
+      },
+      {
+        title: 'Growing the menu through the research rotation',
+        body:
+          'After five runs the starter menu starts feeling thin relative to what the system actually accumulates. The research rotation surfaces a new candidate: broken wikilink detection across a notes directory. You review it in bucket three, accept it and encode the execution spec in the return session. The next run includes the new item. The skill\'s reach grew through proven operation, not by assumption.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Why operator-invoked only and never scheduled?',
+        a:
+          'Scheduling is a future direction gated on a track record of clean review-and-climb cycles, not a date. Autonomous improvement on a cron job with an unproven threshold is a liability. Operator invocation keeps you in the loop until the threshold has earned the right to run without you watching. The machinery for scheduling already exists in the threshold model; the cadence comes after the proof.',
+      },
+      {
+        q: 'What is the Permanent Floor and why does it never move?',
+        a:
+          'The floor is the hard ceiling on what the skill does regardless of how high the autonomy threshold climbs: no deletions, no voice or copy changes on live surfaces, no outward broadcasts, no direct push to main, no self-modification. The floor is drawn by action type, not location. A ratified climb, an accepted candidate and a forward rule can never breach it. The safety guard is in the floor, not in the threshold mechanics.',
+      },
+      {
+        q: 'How is this different from just asking my AI to clean things up?',
+        a:
+          'An ad-hoc cleanup request has no memory, no eligibility tracking, no threshold model and no decision board. It does the work once and forgets it happened. Autonomous Improvement Session carries state across runs in the log frontmatter, tracks what ran and when, grows a menu with each cycle and escalates execution authority only through ratified decisions. The difference is a flywheel versus a one-shot.',
+      },
+    ],
+    relatedSlugs: ['session-closeout', 'pattern-harvest', 'self-healing'],
+    softHook: {
+      body:
+        'Autonomous Improvement Session pairs naturally with Session Closeout: run improvement when you have capacity to spare, then run closeout to seal the session. Pattern Harvest works the same flywheel from the reflective side. All three ship inside the Sovereign Ecosystem Foundation. The Sovereign Life Playbook is the upstream design frame for systems worth improving.',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+    seOrigin: {
+      kind: 'dual',
+      note: 'This skill ships in both homes, the Sovereign Ecosystem Foundation and this library.',
     },
   },
 ]

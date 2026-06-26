@@ -1,7 +1,7 @@
 {
   "name": "plan-challenger",
   "description": "Adversarial pre-build pass that challenges a plan before execution begins. Five angles, one verdict.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Lane Belone",
     "email": "howdy@lanebelone.com"

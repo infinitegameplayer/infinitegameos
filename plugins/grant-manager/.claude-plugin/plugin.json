@@ -1,7 +1,7 @@
 {
   "name": "grant-manager",
   "description": "Manage the full grant lifecycle on a chosen opportunity. LOI drafting, full proposal authoring, budget assistance, submission portal handling, post-award reporting and funder stewardship. Pairs with Grant Researcher.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Lane Belone",
     "email": "howdy@lanebelone.com"

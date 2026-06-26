@@ -22,10 +22,10 @@ This skill exists because email without structure turns into a second job. A tre
 
 Email Triage is one of five skills in the Solopreneur Admin Toolkit. The skills are designed to run together or independently.
 
-- **Quote Builder** — turns an inquiry that surfaced in triage into a formal quote, with 48 to 72 hour follow-up built in.
-- **Invoice and Payment Tracker** — picks up payment threads from triage, logs paid and unpaid, handles same-day invoicing on job close.
-- **Customer Follow-Up** — owns the relationship cadence after a job closes: thanks at 24 to 48 hours, referral ask at 14 days, maintenance check-in at 90, re-engagement at 180.
-- **Daily Admin Orchestrator** — the morning-briefing entry point that calls all four primitives in sequence. Start here if you want the full kit running at once.
+- **Quote Builder**: turns an inquiry that surfaced in triage into a formal quote, with 48 to 72 hour follow-up built in.
+- **Invoice and Payment Tracker**: picks up payment threads from triage, logs paid and unpaid, handles same-day invoicing on job close.
+- **Customer Follow-Up**: owns the relationship cadence after a job closes: thanks at 24 to 48 hours, referral ask at 14 days, maintenance check-in at 90, re-engagement at 180.
+- **Daily Admin Orchestrator**: the morning-briefing entry point that calls all four primitives in sequence. Start here if you want the full kit running at once.
 
 The Orchestrator is the delegation surface. The four skills above are what it delegates to. Email Triage is the first step in every Orchestrator run.
 
@@ -63,7 +63,7 @@ Note the session context: is this a morning catch-up, an end-of-day pass or a re
 
 Apply the 4 D's at the bucket level: Do (needs a reply or action today), Defer (needs action but not today), Delete (no action required). For the Noise bucket, automated archive or unsubscribe on first occurrence.
 
-**Worked Example — Monday Morning, 18 emails:**
+**Worked Example: Monday Morning, 18 emails:**
 
 Tomas's inbox arrives pre-sorted by automation. The classification has already run.
 
@@ -80,10 +80,10 @@ Total: eleven minutes. Fifteen messages handled. Three deferred for later.
 Action-item format:
 
 ```
-[ ] Reply to [sender] re: [topic] — by [date or trigger]
+[ ] Reply to [sender] re: [topic], by [date or trigger]
 [ ] Call [client] to discuss [scope item]
 [ ] Prepare quote for [service] before [deadline]
-[ ] Follow up on invoice [#] — unpaid at 7d
+[ ] Follow up on invoice [#], unpaid at 7d
 ```
 
 Surface action items from every bucket except Noise. Active Job: Client and New Job Inquiry threads generate the most. Admin and Compliance threads often carry hard deadlines that are easy to miss.
@@ -110,7 +110,7 @@ Replace this template with two or three real estimate-request replies from your 
 **Scenario B: Invoice follow-up (Invoices and Payments, past due)**
 
 ```
-Subject: Re: Invoice [#] — [job description]
+Subject: Re: Invoice [#], [job description]
 
 Hey [first name],
 
@@ -134,7 +134,7 @@ If anything changes on your end, just shoot me a text.
 
 For messages that don't match a repeating scenario, surface the key context (sender, subject, embedded asks) and note that a reply requires the operator's judgment. Do not draft a reply where the content does not fit a reliable template.
 
-**Worked Example — Estimate Request Draft:**
+**Worked Example: Estimate Request Draft:**
 
 Incoming: "Hi, I saw your truck in the neighborhood. We have three oaks that need trimming and one dead one we think needs to come down. Can you give us a price?"
 

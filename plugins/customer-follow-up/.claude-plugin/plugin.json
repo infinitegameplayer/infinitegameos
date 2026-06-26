@@ -1,7 +1,7 @@
 {
   "name": "customer-follow-up",
   "description": "Run a four-touchpoint post-job relationship cadence: thank-you at 24-48h, referral ask at 14d, maintenance check-in at 90d, re-engagement at 180d. CRM-lite for solo service businesses.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Lane Belone",
     "email": "howdy@lanebelone.com"

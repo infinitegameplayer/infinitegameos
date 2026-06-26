@@ -21,15 +21,15 @@ Customer Follow-Up pairs with the full **Solopreneur Admin Toolkit**:
 
 This skill is a starting point. Three seams are designed for your hands. Edit the SKILL.md directly before or after first use.
 
-**Seam 1 — Cadence intervals.** The default touchpoints (+24-48h, +14d, +90d, +180d) fit a general service business. Tree trimming runs annual maintenance cycles, so the +90d check-in may move to +120d and the re-engagement to +365d. HVAC businesses follow seasonal triggers, not calendar intervals. Coaching practices run quarterly check-ins, making +90d the natural re-engagement beat. Design work often runs 30-60-90 follow-up tightly bound to project delivery.
+**Seam 1: Cadence intervals.** The default touchpoints (+24-48h, +14d, +90d, +180d) fit a general service business. Tree trimming runs annual maintenance cycles, so the +90d check-in may move to +120d and the re-engagement to +365d. HVAC businesses follow seasonal triggers, not calendar intervals. Coaching practices run quarterly check-ins, making +90d the natural re-engagement beat. Design work often runs 30-60-90 follow-up tightly bound to project delivery.
 
 Calibrate before first use. Look at your last ten jobs. When did customers actually call back? When did referrals come in? Your real data beats the defaults. Edit the intervals in the Steps section to match.
 
-**Seam 2 — Customer note schema.** The default YAML frontmatter fields cover the minimum. Your business will tell you what else belongs. A tree trimmer might add `tree_species` or `property_size`. A house painter might track `paint_brand` and `color_codes`. A cleaning service might note `access_code` and `preferred_entry`. The schema is yours. Add fields that make your next visit smarter.
+**Seam 2: Customer note schema.** The default YAML frontmatter fields cover the minimum. Your business will tell you what else belongs. A tree trimmer might add `tree_species` or `property_size`. A house painter might track `paint_brand` and `color_codes`. A cleaning service might note `access_code` and `preferred_entry`. The schema is yours. Add fields that make your next visit smarter.
 
 Do this before first use. Sit with two or three real customer files and ask: what would I want to know in thirty seconds before I show up? Those are your fields.
 
-**Seam 3 — Referral ask language.** The +14d referral ask is the single touchpoint most solopreneurs skip or soften into uselessness. The default copy below is conservative and frictionless. After one cycle of live reps, edit it to match your voice. If you are naturally warm and direct, let the message be warm and direct. If you run a formal trades business, keep it tight and professional. The key is specificity: name the service, give a clear action, make it one sentence. Don't let it drift into a paragraph.
+**Seam 3: Referral ask language.** The +14d referral ask is the single touchpoint most solopreneurs skip or soften into uselessness. The default copy below is conservative and frictionless. After one cycle of live reps, edit it to match your voice. If you are naturally warm and direct, let the message be warm and direct. If you run a formal trades business, keep it tight and professional. The key is specificity: name the service, give a clear action, make it one sentence. Don't let it drift into a paragraph.
 
 ---
 
@@ -89,7 +89,7 @@ After sending: update `next_followup_date` to +14d from `last_service_date`.
 
 **Step 4. Touchpoint 2: Referral ask (+14d).**
 
-This is the load-bearing touchpoint. It outperforms any ad spend per dollar of effort. Most solopreneurs skip it. Do not skip it.
+This is the highest-leverage touchpoint. It outperforms any ad spend per dollar of effort. Most solopreneurs skip it. Do not skip it.
 
 Send at 14 days, when the customer has had time to experience the result and their satisfaction is at its peak. A referral ask too early (same day as the thank-you) feels rushed. A referral ask at 90 days is too late. Fourteen days is the window.
 
@@ -141,7 +141,7 @@ Daniel closed a job on April 28, 2026. Customer note:
 ---
 name: Daniel Reyes
 contact_email: joel@example.com
-job_type: tree trimming — two oak removals
+job_type: tree trimming, two oak removals
 last_service_date: 2026-04-28
 next_followup_date: 2026-04-30
 referral_status: not-asked
@@ -179,7 +179,7 @@ Sarah was the word-of-mouth source for Daniel Reyes. Her note:
 ---
 name: Sarah Chen
 contact_email: sarah@example.com
-job_type: tree trimming — crown reduction
+job_type: tree trimming, crown reduction
 last_service_date: 2026-04-01
 next_followup_date: 2026-04-15
 referral_status: not-asked
@@ -212,7 +212,7 @@ contact_email:
 contact_phone:
 job_type:
 last_service_date:        # ISO 8601: YYYY-MM-DD
-next_followup_date:       # ISO 8601: YYYY-MM-DD — the engine for Dataview surfacing
+next_followup_date:       # ISO 8601: YYYY-MM-DD. The engine for Dataview surfacing
 referral_status:          # not-asked | asked | referred | converted
 notes:
 ---
@@ -250,7 +250,7 @@ Until that threshold, the Obsidian-native pattern is sufficient and has zero sub
 
 ## Constraints
 
-- **The +14d referral ask is load-bearing.** Per service-business research, it outperforms ad spend at this budget tier. It is the most skipped touchpoint and the highest-leverage one. Do not let it slip. Do not fold it into the thank-you. Send it separately, on day 14.
+- **The +14d referral ask is the one that holds it together.** Per service-business research, it outperforms ad spend at this budget tier. It is the most skipped touchpoint and the highest-leverage one. Do not let it slip. Do not fold it into the thank-you. Send it separately, on day 14.
 
 - **The customer notes are second-brain entries, not database rows.** The YAML frontmatter handles structured data. The prose body captures the customer as a person. What they mentioned in passing. What kind of decision-maker they are. What their property tells you about them. This context makes every future interaction feel like a relationship. Strip it down to fields only and you have a spreadsheet with extra steps.
 

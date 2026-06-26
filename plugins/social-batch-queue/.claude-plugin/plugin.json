@@ -1,7 +1,7 @@
 {
   "name": "social-batch-queue",
-  "description": "Execute an approved 9-post social batch. Image generation, asset staging, scheduler integration with channel discovery, and post-publish handoff. Pairs with Social Batch Drafting.",
-  "version": "1.0.0",
+  "description": "Execute an approved 9-post social batch. Image rendering (local self-hosted or any compatible pipeline), asset staging, scheduler integration with channel discovery and channel-health check, and post-publish handoff. Pairs with Social Batch Drafting.",
+  "version": "1.1.0",
   "author": {
     "name": "Lane Belone",
     "email": "howdy@lanebelone.com"

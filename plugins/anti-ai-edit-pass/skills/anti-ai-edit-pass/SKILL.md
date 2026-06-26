@@ -2,7 +2,7 @@
 name: anti-ai-edit-pass
 description: Use when a long-form manuscript (book chapter, ebook, multi-chapter playbook, long-form digital product) needs an editing pass to identify and remove AI writing tells. Sweeps across 8 pattern categories, assembles a structured edit packet for operator review, and applies approved edits.
 status: active
-version: 1.0
+version: 1.1
 ---
 
 # Anti-AI Edit Pass Skill
@@ -23,7 +23,7 @@ Status: active
 
 ## The 8 Pattern Categories (Built-In Reference)
 
-This skill is self-contained. The full pattern reference below replaces the external codex dependency.
+This skill is self-contained. The pattern reference below replaces the external codex dependency. The library is extensible: when new patterns surface during a sweep, surface them as proposals for operator ratification, then add them to this section. Current entry count: 80+ across 8 categories.
 
 ### Category I: Lexical Blacklist
 
@@ -52,78 +52,102 @@ Failure modes at the first sentence of a piece, chapter or section.
 16. **Corrupted imagine opener**: "Imagine..." followed by a hypothetical scenario as emotional buy-in before the actual argument. Replace: drop into the lived moment.
 17. **Sycophantic opener**: "Great question!" "Absolutely!" "Certainly!" in prose. Replace: answer the question or start the substance.
 18. **"By the end of this..." opener**: Promising the reader what they will know by the end. Replace: begin with the lived moment or felt tension.
+19. **Landscape opener**: "The landscape of X is shifting," "In a world where X..." as scene-setter before the actual point. Replace: start with the actual point.
+20. **Empathy opener**: "You've probably felt the frustration of..." performing relatability before earning it. Replace: drop into the situation directly.
+21. **Reciprocal acknowledgment opener**: "As you may already know," "You're probably familiar with..." pre-validating the reader before making a point. Replace: make the point.
+22. **Opening restatement**: First sentence makes a claim. Second sentence restates it slightly differently as if clarifying. Replace: write one sentence, move on.
 
 ### Category III: Hedging, Padding and Disclaimer Reflexes
 
 The most pervasive category. The fix is almost always: state the claim.
 
-19. **Importance hedge**: "It's important to note," "It's worth noting" before stating something. Replace: state the thing.
-20. **Moreover escalator**: Opening consecutive sentences with "Moreover," "Furthermore," "Additionally." Replace: cut the transition or name the relationship.
-21. **That-said pivot**: "That said," "With that said," "That being said." Replace: start the contrasting sentence without the pivot.
-22. **Hedge stacking**: Multiple qualifiers pile onto one assertion: "could potentially," "may often," "might ultimately." Replace: "This works. Here is why."
-23. **Faux humility**: "I'm just one perspective here," "I could be wrong," "Take this with a grain of salt." Replace: state what you know.
-24. **False vulnerability**: Performative self-disclosure that simulates authenticity without genuine risk. Replace: name the actual thing struggled with.
-25. **"I want to be clear" disclaimer**: "I want to be clear," "to be clear," "let me be direct" performing directness rather than being direct. Replace: be direct.
-26. **Tautological padding**: Same point restated in slightly different phrasing across three to four consecutive sentences. Replace: write the sentence once and move on.
-27. **"I should mention" hedge**: "I should mention," "I should note," "One thing to keep in mind." Replace: state the caveat directly or cut it.
-28. **AI-identity disclaimer leakage**: "As an AI language model" or equivalent phrases leaking into human-voice prose. Replace: write from the operator's lived experience.
+23. **Importance hedge**: "It's important to note," "It's worth noting" before stating something. Replace: state the thing.
+24. **Moreover escalator**: Opening consecutive sentences with "Moreover," "Furthermore," "Additionally." Replace: cut the transition or name the relationship.
+25. **That-said pivot**: "That said," "With that said," "That being said." Replace: start the contrasting sentence without the pivot.
+26. **Hedge stacking**: Multiple qualifiers pile onto one assertion: "could potentially," "may often," "might ultimately." Replace: "This works. Here is why."
+27. **Faux humility**: "I'm just one perspective here," "I could be wrong," "Take this with a grain of salt." Replace: state what you know.
+28. **False vulnerability**: Performative self-disclosure that simulates authenticity without genuine risk. Replace: name the actual thing struggled with.
+29. **"I want to be clear" disclaimer**: "I want to be clear," "to be clear," "let me be direct" performing directness rather than being direct. Replace: be direct.
+30. **Tautological padding**: Same point restated in slightly different phrasing across three to four consecutive sentences. Replace: write the sentence once and move on.
+31. **"I should mention" hedge**: "I should mention," "I should note," "One thing to keep in mind." Replace: state the caveat directly or cut it.
+32. **AI-identity disclaimer leakage**: "As an AI language model" or equivalent phrases leaking into human-voice prose. Replace: write from the operator's lived experience.
+33. **Model-specific hedge cluster**: "As a large language model I don't have real-time data," "my training data suggests." Replace: own the scope boundary directly or remove the caveat.
+34. **Certainty-softening reflex**: Adding "I believe," "I think," "it seems" to claims the prose can simply assert. Replace: assert.
+35. **Foreshadowing without delivery**: "I'll address this in more detail later" without the detail ever arriving. Replace: cut the foreshadow or deliver the substance now.
 
 ### Category IV: Negation and Pivot Constructions
 
 Used sparingly in specific idioms. Used reflexively by AI as default rhetorical structure.
 
-29. **"It's not X, it's Y" pivot**: Whole-sentence reframe delivered as revelation. Replace: state Y directly.
-30. **Not-A-Not-B-Not-C triad**: Pure negation run three times before any affirmative content. Replace: lead with the affirmative.
-31. **Not-just-but-also escalation**: "Not just X, but Y." Replace: state Y.
-32. **Balanced-perspective sandwich**: Position A, position B, "the truth lies between." Replace: have a position.
-33. **False concession**: Granting the opposing position without engaging it. Replace: either engage it or do not bring it up.
+36. **"It's not X, it's Y" pivot**: Whole-sentence reframe delivered as revelation. Replace: state Y directly.
+37. **Not-A-Not-B-Not-C triad**: Pure negation run three times before any affirmative content. Replace: lead with the affirmative.
+38. **Not-just-but-also escalation**: "Not just X, but Y." Replace: state Y.
+39. **Balanced-perspective sandwich**: Position A, position B, "the truth lies between." Replace: have a position.
+40. **False concession**: Granting the opposing position without engaging it. Replace: either engage it or do not bring it up.
+41. **Pre-emptive reframe**: "Before we get into X, let me first address Y." Replace: address Y or don't; don't announce the detour.
 
 ### Category V: Rhetorical Reflexes
 
 Multi-sentence patterns that simulate thoughtful structure. The reader senses them as theater.
 
-34. **Faux-Socratic chain**: Sequence of escalating rhetorical questions answering nothing. Replace: one question, let it work.
-35. **Preamble announcement**: "Let me explain what I mean." Replace: start the explanation.
-36. **"Here's why this matters" frame**: Announcing importance before delivering. Replace: state the importance through the sentence itself.
-37. **Engagement-bait revelation**: "Nobody is talking about this," "everyone is getting this wrong." Replace: make the observation; rarity is obvious from the content.
-38. **Anaphoric hammer**: Same phrase opens 3 or more consecutive sentences. Replace: one declarative sentence then white space.
-39. **Explicit insight delivery**: "Here's the key insight." Replace: let the revelation arrive without the flag.
+42. **Faux-Socratic chain**: Sequence of escalating rhetorical questions answering nothing. Replace: one question, let it work.
+43. **Preamble announcement**: "Let me explain what I mean." Replace: start the explanation.
+44. **"Here's why this matters" frame**: Announcing importance before delivering. Replace: state the importance through the sentence itself.
+45. **Engagement-bait revelation**: "Nobody is talking about this," "everyone is getting this wrong." Replace: make the observation; rarity is obvious from the content.
+46. **Anaphoric hammer**: Same phrase opens 3 or more consecutive sentences. Replace: one declarative sentence then white space.
+47. **Explicit insight delivery**: "Here's the key insight." Replace: let the revelation arrive without the flag.
+48. **Rhetorical-question-as-transition**: Closing a paragraph with a question that the next paragraph immediately answers. Replace: write both paragraphs as assertions; let the implicit question do its work.
+49. **AI-introspection theater**: "What does it mean to truly understand X?" as paragraph opener, followed by a tour of sub-questions. Replace: start with what you actually know.
+50. **Clarifying-before-asked construction**: "You might be wondering..." or "To be clear..." anticipating objections that the reader hasn't raised. Replace: make the point clearly enough that the clarification is unnecessary.
 
 ### Category VI: Voice and Register Signatures
 
 Personality-level tells. Above structure, in the felt register the reader picks up.
 
-40. **Wisdom-broker register**: Every paragraph delivers one portable insight. Writer's purpose is to hand the reader a quotable truth. Replace: hold the thought longer; let it arrive through a scene.
-41. **Performed warmth**: Declaring warmth rather than demonstrating it. Replace: warmth lives in noticing a specific thing.
-42. **False intimacy**: "Between you and me," "let's be honest," "here's the thing." Replace: be honest without announcing the honesty.
-43. **Coach voice**: "You need to," "the key is to," "the most important thing." Replace: offer curiosity, never commands.
-44. **TED-talk cadence**: Build, build, build, drop the line. Engineered to feel like revelation. Replace: land the observation at the start.
-45. **Vague-attribution authority**: "Experts say," "research shows," "studies suggest." Replace: own the claim or drop it.
-46. **Wholesome-uplift drift**: Every piece must end inspiring. Arc always resolves upward. Replace: end where the thought ends.
-47. **Uniform register**: Single tonal temperature throughout. Never shifts, never gets specific. Replace: let register move.
+51. **Wisdom-broker register**: Every paragraph delivers one portable insight. Writer's purpose is to hand the reader a quotable truth. Replace: hold the thought longer; let it arrive through a scene.
+52. **Performed warmth**: Declaring warmth rather than demonstrating it. Replace: warmth lives in noticing a specific thing.
+53. **False intimacy**: "Between you and me," "let's be honest," "here's the thing." Replace: be honest without announcing the honesty.
+54. **Coach voice**: "You need to," "the key is to," "the most important thing." Replace: offer curiosity, never commands.
+55. **TED-talk cadence**: Build, build, build, drop the line. Engineered to feel like revelation. Replace: land the observation at the start.
+56. **Vague-attribution authority**: "Experts say," "research shows," "studies suggest." Replace: own the claim or drop it.
+57. **Wholesome-uplift drift**: Every piece must end inspiring. Arc always resolves upward. Replace: end where the thought ends.
+58. **Uniform register**: Single tonal temperature throughout. Never shifts, never gets specific. Replace: let register move.
+59. **Corporate warmth**: Warm-sounding language that is actually organizational-speak in disguise. "We're on a journey together," "You deserve better." Replace: name the actual situation.
+60. **Teacher-explaining-to-the-class register**: Prose that positions the reader as student rather than peer. Explaining things the reader already knows in order to seem thorough. Replace: write to an equal.
+61. **Sage tone**: Measured, slow cadence that performs wisdom without delivering specificity. Replace: be specific or be brief.
+62. **Navigating-complexities we-voice**: "As we navigate these challenges," "when we think about how to move forward." Replace: name who is navigating and what.
+63. **Manufactured stakes**: Urgency or significance inserted without a concrete cause. "This is more important than ever." Replace: name what changed that makes it important.
 
 ### Category VII: Structural Tics
 
 Multi-section and multi-chapter patterns. Most damaging in book form.
 
-48. **Triadic reflex**: Everything in threes regardless of natural fit. Replace: name the actual count.
-49. **Fractal summary**: Summaries at every level (intro, section end, conclusion). Replace: one arc, one arrival.
-50. **Conclusion that closes**: Closing paragraph summarizes what was just said. Replace: end on image or forward pull.
-51. **Chapter-opening preamble**: "In this chapter, we will explore..." Replace: open on the experience or question.
-52. **Chapter-closing recap**: "In this chapter, we covered..." Replace: end on the last true line.
-53. **Elegant variation spiral**: Same concept referred to by a different name every time. Replace: repeat the name of the thing.
+64. **Triadic reflex**: Everything in threes regardless of natural fit. Replace: name the actual count.
+65. **Fractal summary**: Summaries at every level (intro, section end, conclusion). Replace: one arc, one arrival.
+66. **Conclusion that closes**: Closing paragraph summarizes what was just said. Replace: end on image or forward pull.
+67. **Chapter-opening preamble**: "In this chapter, we will explore..." Replace: open on the experience or question.
+68. **Chapter-closing recap**: "In this chapter, we covered..." Replace: end on the last true line.
+69. **Elegant variation spiral**: Same concept referred to by a different name every time. Replace: repeat the name of the thing.
+70. **Predictable section-of-three architecture**: Every chapter has exactly three named sections. The structure is never varied. Replace: let section count follow the actual argument.
+71. **Mirror-close**: The final paragraph mirrors the opening paragraph's imagery or vocabulary as a callback. Looks intentional; reads as a template. Replace: end where the thought ends.
+72. **Graduated revelation structure**: Each section is longer than the one before. Builds to a crescendo. Replace: let natural weight determine section length.
+73. **Pre-conclusion transition paragraph**: A paragraph whose only purpose is to signal the conclusion is coming. "With all of this in mind, let's bring these threads together." Replace: start the conclusion.
 
 ### Category VIII: Formatting and Visual Tics
 
 Visual fingerprints. Especially damaging in book-form prose.
 
-54. **Bolded-every-paragraph**: Every paragraph contains at least one bolded phrase. Replace: let the sentence carry its own weight.
-55. **Header-above-everything**: Descriptive header precedes every paragraph. Replace: visual breaks between major turns only.
-56. **Listicle-creep**: Prose reasoning broken into bullets. Replace: write the sentence that holds all the items.
-57. **Key-takeaways box**: Visually demarcated block labeled "Key Takeaways." Replace: prose carried the point; trust that.
-58. **Markdown-in-book pattern**: Asterisks, hashes, backticks in prose meant to be read as a book. Replace: strip every markdown convention.
-59. **Uniform paragraph weight**: Every paragraph approximately the same length and density. Replace: vary weight deliberately.
-60. **Significance tail**: Sentence ends with a present-participle phrase claiming significance: "highlighting the importance of," "underscoring the need for." Replace: two sentences; no tail.
+74. **Bolded-every-paragraph**: Every paragraph contains at least one bolded phrase. Replace: let the sentence carry its own weight.
+75. **Header-above-everything**: Descriptive header precedes every paragraph. Replace: visual breaks between major turns only.
+76. **Listicle-creep**: Prose reasoning broken into bullets. Replace: write the sentence that holds all the items.
+77. **Key-takeaways box**: Visually demarcated block labeled "Key Takeaways." Replace: prose carried the point; trust that.
+78. **Markdown-in-book pattern**: Asterisks, hashes, backticks in prose meant to be read as a book. Replace: strip every markdown convention.
+79. **Uniform paragraph weight**: Every paragraph approximately the same length and density. Replace: vary weight deliberately.
+80. **Significance tail**: Sentence ends with a present-participle phrase claiming significance: "highlighting the importance of," "underscoring the need for." Replace: two sentences; no tail.
+81. **Em dash as drama**: An em dash used to create a pause or reveal effect. Replace: a period. Then the reveal.
+82. **Nested-bullet explosion**: A three-level nested bullet list for information that could be one sentence. Replace: one sentence.
+83. **Consistent-depth illusion**: Every section has exactly the same number of subsections, giving a false sense of comprehensiveness. Replace: let natural depth determine subsection count.
+84. **Decorative rule between every paragraph**: Horizontal rules used as visual breathing room between normal paragraphs. Replace: white space. Rules are structural, not decorative.
 
 ---
 
@@ -144,6 +168,14 @@ Visual fingerprints. Especially damaging in book-form prose.
 ---
 
 ## Steps
+
+**Step 0. Model routing confirmation.**
+
+Confirm the orchestrator is running at your most capable available model before any sweep begins. Steps 8 and 9 (voice and structural judgment) require high-judgment capacity. Pattern matching in Steps 3-7 runs adequately at a cost-efficient tier. If you are running at a reduced-cost setting, surface that now before the sweep starts so you can choose to escalate or scope to the mechanical categories only.
+
+For manuscripts exceeding approximately 50,000 words, route the Category I lexical sweep to a separate cost-efficient worker rather than the orchestrator. Return structured output in the format: `[{file, line, context, pattern_entry, embodied_check}]`.
+
+---
 
 **Step 1. Entry validation and target load.**
 
@@ -205,11 +237,11 @@ Output: rhetorical findings array.
 
 ---
 
-**Step 8. Voice and Register Sweep (Category VI).**
+**Step 8. Voice and Register Sweep (Category VI).** [Model: highest-capability available]
 
 This step requires the most senior model available. The failure modes are tonal, not pattern-matchable. Read each chapter holistically. Before judging, load the operator's voice anchor: read the operator's Governing Essence (from their Writing Style Codex or equivalent), and the most recent published piece on file. Voice judgment without anchoring produces false flags.
 
-Flag wisdom-broker register, performed warmth, false intimacy, coach voice, TED-talk cadence, vague-attribution authority, wholesome-uplift drift and uniform register.
+Flag wisdom-broker register, performed warmth, false intimacy, coach voice, TED-talk cadence, vague-attribution authority, wholesome-uplift drift, uniform register, corporate warmth, teacher-explaining-to-the-class register, sage tone, navigating-complexities we-voice and manufactured stakes.
 
 Output: voice findings array with chapter-level register notes.
 
@@ -253,7 +285,7 @@ Assemble all findings into a single structured edit packet for operator review. 
 # Anti-AI Edit Pass: Edit Packet
 ## Manuscript: [name]
 ## Date: [YYYY-MM-DD]
-## Pattern Reference: Built-in (60 entries across 8 categories)
+## Pattern Reference: Built-in (84 entries across 8 categories; extensible)
 
 ### Summary
 - Total findings: [count]
@@ -275,6 +307,8 @@ Assemble all findings into a single structured edit packet for operator review. 
 ```
 
 Output: edit packet markdown ready for operator review.
+
+**Cross-model audit gate.** When a chapter exceeds approximately 4,000 words, or when the total findings exceed 40 for a chapter, offer a second-model audit pass on the assembled edit packet before operator review. A different model catches blind-spot patterns the primary sweep missed. This gate is an offer, not a mandate. The operator decides whether to run it.
 
 ---
 
@@ -319,6 +353,22 @@ Append a changelog entry to the manuscript's index or scratch pad noting:
 - Total findings, total applied
 - Any new operator-vocab exceptions surfaced
 - Any new AI tells surfaced (with note to add to the pattern list)
+
+---
+
+## Model Routing
+
+Dispatch the cheapest model that does the job well. Before each step, ask whether a smaller model would produce equivalent output.
+
+| Work type | Model |
+|---|---|
+| Category I lexical scan, file loading, formatting checks (Categories III mechanics, VIII) | Haiku |
+| Hedging/negation/rhetorical sweeps (Categories III, IV, V); edit packet assembly | Sonnet |
+| Voice and structural judgment (Steps 8 and 9); architectural synthesis | Opus |
+
+For large manuscripts (50,000+ words), dispatch the lexical sweep as a separate worker at the cost-efficient tier. The orchestrator handles judgment steps only.
+
+Set the model explicitly on every dispatch. Never silently inherit the top tier.
 
 ---
 

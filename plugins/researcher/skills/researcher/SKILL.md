@@ -2,7 +2,7 @@
 name: researcher
 description: Parallel sub-agent research on a topic, aggregated into a structured report. Spawns up to 4 independent workers and synthesizes findings.
 status: active
-version: 1.0
+version: 1.1
 ---
 
 # Researcher
@@ -21,7 +21,7 @@ Triggered by: "research...", "give me a deep dive on...", "before we plan this, 
 
 ## Steps
 
-**Phase 1 — Clarify angles**
+**Phase 1: Clarify angles**
 
 If the research request does not specify angles, propose them before spawning:
 
@@ -33,7 +33,7 @@ Typical angle patterns:
 - Compatible vs incompatible patterns for your context
 - Short-term vs long-horizon considerations
 
-**Phase 2 — Spawn parallel workers**
+**Phase 2: Spawn parallel workers**
 
 Spawn up to 4 sub-agents simultaneously. Each worker gets:
 - A specific research angle
@@ -42,7 +42,7 @@ Spawn up to 4 sub-agents simultaneously. Each worker gets:
 
 Workers are independent. They do not communicate with each other. Only their final outputs return.
 
-**Phase 3 — Synthesize**
+**Phase 3: Synthesize**
 
 Aggregate all worker outputs into a single structured report:
 
@@ -66,9 +66,25 @@ Date: [YYYY-MM-DD]
 [Files read, repos checked, protocols referenced]
 ```
 
-**Phase 4 — Present**
+**Phase 4: Present**
 
 Present the report. Do not act on findings. The operator decides what moves forward.
+
+## Cross-Model Perspectives
+
+Parallel research workers do not all have to route to the same model or tool. The principle: match each angle's question shape to the substrate best suited for it.
+
+| Angle type | Default substrate | Why |
+|---|---|---|
+| Synthesis-heavy (compare sources, identify patterns) | Main reasoning model | Reasoning across sources |
+| Web-current (post-training-cutoff facts, live state) | Real-time web search tool | Live data beyond model cutoff |
+| Mechanical multi-source pull (changelogs, API diffs, structured extraction) | Smaller/cheaper model | No-judgment volume work |
+| Adversarial check of a claim | Challenger model | Independent cross-model pressure |
+| Voice or intent judgment | Orchestrator model | Register and governance coherence |
+
+Synthesis pass: after all workers return, the orchestrator synthesizes across substrates. Findings from different model types carry different confidence textures; name those differences in the synthesis.
+
+Audit gate: when the synthesized report will inform a major plan or decision, offer a challenger-model review of the synthesis before closing. One line: "Challenger pass warranted?" Do not require it.
 
 ## Constraints
 
@@ -88,9 +104,23 @@ Present the report. Do not act on findings. The operator decides what moves forw
 
 This skill spawns parallel sub-agents for research. Sub-agents are intelligence-gathering only. They do not implement, write to canonical files or trigger external actions. Every report returns to the operator for review and decision. That boundary is non-negotiable.
 
+## Model Routing
+
+Dispatch the cheapest model that does the job well. Before each delegated step, ask whether a smaller model would produce equivalent output.
+
+| Work type | Model |
+|---|---|
+| Mechanical lookups, deterministic commands, structured extraction against a spec | Haiku |
+| Multi-step synthesis, drafting, diagnosis, most worker dispatch | Sonnet |
+| Architectural judgment, plan design, judgment-dense synthesis | Opus |
+
+Per-phase defaults: Phase 1 (clarify angles, operator-facing) and Phase 4 (present, operator-facing) route to Opus. Phase 2 (spawn workers) routes per the Cross-Model Perspectives substrate table above; use Sonnet as the fallback for any angle that does not fit a named type. Phase 3 (synthesize across substrates) routes to Opus because cross-model synthesis carries the highest judgment density.
+
+Set the model explicitly on every subagent dispatch. Never silently inherit the top tier.
+
 ## Pairs With
 
-**Source Harvest** is the gateway skill for systematic pattern extraction from external repos and tools. Researcher gathers signals; Source Harvest extracts patterns once you've decided which sources to dig into. Many users adopt Source Harvest first, then layer additional skills like this one on top.
+**Source Harvest** is the gateway skill for systematic pattern extraction from external repos and tools. Researcher gathers findings; Source Harvest extracts patterns once you've decided which sources to dig into. Many users adopt Source Harvest first, then layer additional skills like this one on top.
 
 If Source Harvest isn't installed yet: [Install Source Harvest via IGOS](https://www.infinitegameos.io/skills/source-harvest).
 

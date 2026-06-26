@@ -2,7 +2,7 @@
 name: session-closeout
 description: Use when wrapping up a session that made commits or governance changes. A fast three-action close: breadcrumb what you touched, refresh your handoff note, commit with a readable body.
 status: active
-version: 1.0
+version: 1.1
 ---
 
 # Session Closeout
@@ -38,9 +38,10 @@ Write a one-line breadcrumb straight into every artifact this session directly t
 Update your primer or handoff note. This is the canonical forward handoff, the first thing your AI reads at session start. Refresh it after the breadcrumbs land, so it reflects the freshly-updated state of what you touched.
 
 - **Stale-blocker purge first.** For each parked item, check whether it references a plan now in your archive. If yes, the plan is implemented. Drop the item. Resolved blockers left in place resurface as false signals every session until caught.
+- **Lead with a `## Session Summary` section, 5 lines max.** Write this first. Your AI context loader should inject this section at session start rather than the full handoff note body. The compact summary is what gets read under token pressure; the detail lives below it.
 - Rewrite to the rolling horizon: **Most Alive Next Move**, **In Execution** (plans and work in motion, high signal), **Active Commitments** (dated actions within the near horizon), **Parked** (waiting on an external trigger or your decision), **Session Opener**.
 - Do not carry forward current-state narrative or completed-this-session history. Those live in the commit body and the git history. Remove items that completed this session. Add new time-bound items that emerged.
-- End with a **Session Opener** line: the intended starting point for next session, or "intent to be determined at session start." This carries the energy forward, not just the state.
+- End with a **Session Opener** line. Content: the intended starting point for next session, written as a one-line action or question ("Continue Chapter 6 voice pass," "Decide on pricing tier before building the paywall"). If the next move is genuinely unknown, write "Intent to be determined at session start." This is the line that carries energy forward. It is not a summary of what happened.
 - **Under a concurrent sibling, read before write.** If another session is active, re-read your handoff note immediately before editing so you build on the sibling's latest write rather than overwriting it.
 
 **Then give your command surface its light touch.** Your command surface is the minimal live-signal glance, not the handoff. The handoff note carries the detail. The command surface stays short. Two touches only: drop anything this session resolved, and shift the headline (Most Alive Next Move) if the lead moved. If neither changed, leave it.
@@ -63,6 +64,8 @@ git -C "<your vault path>" status --short
 ```
 
 Compare current HEAD to the HEAD you saw at session start.
+
+**If your concurrency check script fails or is unavailable:** fall back to the manual check above. Compare current HEAD to the HEAD at session start using `git log --oneline -8`, then run `git status --short` to see what is dirty. A script failure never blocks the commit. It only drops you to the manual check.
 
 **b. Solo path (no sibling active and HEAD unchanged since start).** Use the convenient sweep, then unstage transient runtime files your setup generates:
 
@@ -99,7 +102,27 @@ This is an escalation tool on the shelf, not a standing choice every close.
 
 ## Plan Exit-Criteria Verification (conditional)
 
-If this session advanced a plan, read the plan's exit-criteria block for that session and verify each criterion against actual evidence. Do not accept a self-reported "all criteria met." For each criterion, name the specific file, commit, script output or live test that verifies it. If a criterion cannot be verified, flag it as pending and either address it now or move it to the next session's scope. This is the gate between "I think it landed" and "it is demonstrably landed."
+If this session advanced a plan, read the plan's exit-criteria block for that session and verify each criterion against actual evidence. Do not accept a self-reported "all criteria met." For each criterion, name the specific file, commit, script output or live test that verifies it. If a criterion can't be verified, flag it as pending and either address it now or move it to the next session's scope. This is the gate between "I think it landed" and "it is demonstrably landed."
+
+## Enforcement Regression Gate
+
+If this session changed a skill, a style rule, a hook or a system-level configuration file, run any available validation scripts before the commit. The test is simple: does the changed rule still evaluate correctly against a known-good input? A validation failure before commit is cheap. A broken rule discovered three sessions later is not.
+
+This gate is conditional. It fires when a behavior-governing artifact changed. It does not fire on content-only sessions.
+
+## Model Routing
+
+Dispatch the cheapest model that does the job well. Before each delegated step, ask whether a smaller model would produce equivalent output.
+
+| Work type | Model |
+|---|---|
+| Mechanical lookups, git status reads, file inventory | Haiku |
+| Reconciliation workers, completions sweep, plan breadcrumb drafting | Sonnet |
+| Architectural judgment, complex multi-plan reconciliation | Opus |
+
+Set the model explicitly on every subagent dispatch. Never silently inherit the top tier.
+
+---
 
 ## Pairs With
 

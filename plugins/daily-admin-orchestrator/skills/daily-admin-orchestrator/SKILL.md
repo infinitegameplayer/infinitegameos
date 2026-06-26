@@ -153,7 +153,7 @@ This skill is the orchestration layer. It holds no data of its own. It reads wha
 
 ## Worked Examples
 
-### Monday Morning — Tomas the tree trimmer
+### Monday Morning: Tomas the tree trimmer
 
 Tomas finishes his coffee. It is 7:15 AM. He has four jobs scheduled today and is running the morning briefing before driving to the first site.
 
@@ -185,7 +185,7 @@ Tomas looks at this list for 45 seconds. He knows exactly what to do before he l
 
 ---
 
-### Friday Weekly Review — Tomas, end of week
+### Friday Weekly Review: Tomas, end of week
 
 It is Friday at 6:30 AM. No jobs are scheduled until noon. Tomas runs the full weekly review.
 
@@ -203,7 +203,7 @@ It is Friday at 6:30 AM. No jobs are scheduled until noon. Tomas runs the full w
 
 ## Constraints
 
-The load-bearing benefit of this skill is one thing: the practitioner does not decide where to start. The briefing starts. The sequence runs. That is the value.
+The core benefit of this skill is one thing: the practitioner does not decide where to start. The briefing starts. The sequence runs. That is the value.
 
 Do not add functionality beyond what the four primitives already provide. The orchestrator is a sequencer. It reads handoff payloads. It produces a consolidated summary. It does not have its own data model, its own customer records, its own invoice ledger. Those live in the primitives.
 

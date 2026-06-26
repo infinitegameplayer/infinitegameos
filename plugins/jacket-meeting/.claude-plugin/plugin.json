@@ -1,7 +1,7 @@
 {
   "name": "jacket-meeting",
   "description": "Run a multi-lens team meeting across all your AI advisory jackets. A twelve-step flow from convene to close. Each lens prepares independently, one seat synthesizes, you decide.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Lane Belone",
     "email": "howdy@lanebelone.com"

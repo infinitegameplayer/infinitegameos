@@ -1,7 +1,7 @@
 {
   "name": "quote-builder",
   "description": "Turn a service-business inquiry into a complete quote in email, SMS or markdown-PDF format, with a 48-72h follow-up trigger built in on every run.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Lane Belone",
     "email": "howdy@lanebelone.com"

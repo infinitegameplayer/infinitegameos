@@ -2,7 +2,7 @@
 name: systematic-debugging
 description: Use when encountering any bug, unexpected behavior, test failure or system malfunction before proposing fixes. Use especially when under time pressure or when quick fixes have already failed.
 status: active
-version: 1.0
+version: 1.1
 ---
 
 # Systematic Debugging
@@ -117,10 +117,10 @@ If you catch yourself thinking any of these, stop and return to Phase 1:
 
 Watch for these redirections from the operator:
 
-- "Is that not happening?". The fix assumed something without verifying.
-- "Will it show us...?". Evidence gathering should have happened.
-- "Stop guessing.". Fixes are being proposed without understanding.
-- Expressed frustration at stuck loops. The current approach is not working.
+- "Is that not happening?" means you assumed something without verifying.
+- "Will it show us...?" means evidence gathering should have happened first.
+- "Stop guessing." means fixes are being proposed without understanding.
+- Expressed frustration at stuck loops means the current approach is not working.
 
 When you see these, stop. Return to Phase 1.
 
@@ -150,6 +150,10 @@ When you see these, stop. Return to Phase 1.
 - One hypothesis, one change at a time
 - 3 failed fixes = architectural question to the operator, not a fourth fix
 - Evidence gathering before proposing anything in multi-layer systems
+
+## Model Routing
+
+This skill is orchestrator-level investigation work. No fixed subagent dispatch. When a specific diagnostic step is purely mechanical (running a deterministic command, reading a known file path), a Haiku-tier call is appropriate. Phase 1 evidence gathering and Phase 2 pattern analysis involve enough judgment that Sonnet or above is the right default. Use the cheapest model that produces reliable output at each step.
 
 ## Pairs With
 

@@ -1,7 +1,7 @@
 {
   "name": "self-healing",
   "description": "Autonomous error recovery during implementation sessions. Diagnose root cause, apply fix, continue without stopping for every recoverable mistake.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Lane Belone",
     "email": "howdy@lanebelone.com"

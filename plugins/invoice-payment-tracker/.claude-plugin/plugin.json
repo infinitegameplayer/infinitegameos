@@ -1,7 +1,7 @@
 {
   "name": "invoice-payment-tracker",
-  "description": "Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the load-bearing discipline. Pairs with Quote Builder and Daily Admin Orchestrator.",
-  "version": "1.0.0",
+  "description": "Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the essential discipline. Pairs with Quote Builder and Daily Admin Orchestrator.",
+  "version": "1.0.1",
   "author": {
     "name": "Lane Belone",
     "email": "howdy@lanebelone.com"
