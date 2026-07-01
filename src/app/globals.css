@@ -79,6 +79,51 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 6px 22px rgba(34, 211, 238, 0.08);
 }
 
+/* Shared card content language. One definition, used by concept, skill, bundle
+   and update cards, so the eyebrow / title / body rhythm stops being copied
+   inline across four files. Option A "Quiet Life": the title warms to teal on
+   hover and the eyebrow tick extends. Austere with life, not commercial. */
+.card-eyebrow {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.card-eyebrow::before {
+  content: '';
+  width: 1.25rem;
+  height: 1px;
+  background: var(--color-accent);
+  opacity: 0.5;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+.card:hover .card-eyebrow::before { width: 2rem; opacity: 1; }
+.card-title {
+  font-size: 1.15rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+  transition: color 0.25s ease;
+}
+.card:hover .card-title { color: var(--color-accent-hover); }
+.card-desc {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  line-height: 1.65;
+}
+
+/* Update-card variant: the card family plus its signature left teal rail and a
+   larger type scale. Folds the former bespoke update card into the shared
+   language while keeping the rail as its identity. */
+.card-rail { border-left: 2px solid var(--color-accent); padding: 2.5rem; }
+.card-title-lg { font-size: 1.5rem; font-weight: 600; }
+.card-desc-lg { font-size: 0.95rem; color: rgba(226, 232, 240, 0.75); line-height: 1.7; }
+
 /* Teal shimmer frame for the one primary conversion card per page. A slow
    rotating conic rim, masked to a thin border so it reads as a tasteful
    attention draw, not a slot machine. Site-wide standard: one per page. */
@@ -122,6 +167,7 @@ a { color: inherit; text-decoration: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .shimmer-card::before { animation: none; }
+  .card-eyebrow::before { transition: none; }
 }
 
 .btn-accent {

@@ -101,36 +101,9 @@ export default function SkillsIndexPage() {
                     height: '100%',
                   }}
                 >
-                  <p
-                    style={{
-                      fontSize: '0.7rem',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.12em',
-                      color: 'var(--color-accent)',
-                      marginBottom: '0.75rem',
-                    }}
-                  >
-                    {skill.label}
-                  </p>
-                  <p
-                    style={{
-                      fontSize: '1.15rem',
-                      fontFamily: 'var(--font-display)',
-                      fontWeight: 500,
-                      marginBottom: '0.75rem',
-                    }}
-                  >
-                    {skill.title}
-                  </p>
-                  <p
-                    style={{
-                      fontSize: '0.88rem',
-                      color: 'var(--color-muted)',
-                      lineHeight: 1.65,
-                    }}
-                  >
-                    {skill.description}
-                  </p>
+                  <p className="card-eyebrow">{skill.label}</p>
+                  <p className="card-title">{skill.title}</p>
+                  <p className="card-desc">{skill.description}</p>
                 </Link>
               </SectionReveal>
             ))}

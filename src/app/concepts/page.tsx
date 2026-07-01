@@ -116,36 +116,9 @@ export default function ConceptsIndexPage() {
                     height: '100%',
                   }}
                 >
-                  <p
-                    style={{
-                      fontSize: '0.7rem',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.12em',
-                      color: 'var(--color-accent)',
-                      marginBottom: '0.75rem',
-                    }}
-                  >
-                    {concept.label}
-                  </p>
-                  <p
-                    style={{
-                      fontSize: '1.15rem',
-                      fontFamily: 'var(--font-display)',
-                      fontWeight: 500,
-                      marginBottom: '0.75rem',
-                    }}
-                  >
-                    {concept.title}
-                  </p>
-                  <p
-                    style={{
-                      fontSize: '0.88rem',
-                      color: 'var(--color-muted)',
-                      lineHeight: 1.65,
-                    }}
-                  >
-                    {concept.subtitle}
-                  </p>
+                  <p className="card-eyebrow">{concept.label}</p>
+                  <p className="card-title">{concept.title}</p>
+                  <p className="card-desc">{concept.subtitle}</p>
                 </Link>
               </SectionReveal>
             ))}

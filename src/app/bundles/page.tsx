@@ -102,36 +102,9 @@ export default function BundlesIndexPage() {
                     height: '100%',
                   }}
                 >
-                  <p
-                    style={{
-                      fontSize: '0.7rem',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.12em',
-                      color: 'var(--color-accent)',
-                      marginBottom: '0.75rem',
-                    }}
-                  >
-                    {bundle.label}
-                  </p>
-                  <p
-                    style={{
-                      fontSize: '1.15rem',
-                      fontFamily: 'var(--font-display)',
-                      fontWeight: 500,
-                      marginBottom: '0.75rem',
-                    }}
-                  >
-                    {bundle.title}
-                  </p>
-                  <p
-                    style={{
-                      fontSize: '0.88rem',
-                      color: 'var(--color-muted)',
-                      lineHeight: 1.65,
-                    }}
-                  >
-                    {bundle.description}
-                  </p>
+                  <p className="card-eyebrow">{bundle.label}</p>
+                  <p className="card-title">{bundle.title}</p>
+                  <p className="card-desc">{bundle.description}</p>
                 </Link>
               </SectionReveal>
             ))}

@@ -83,43 +83,15 @@ export default function UpdatesPage() {
                 href={`/updates/${update.slug}`}
                 style={{ display: 'block', textDecoration: 'none', maxWidth: '640px', marginBottom: '1.5rem' }}
               >
-                <div
-                  style={{
-                    padding: '2.5rem',
-                    background: 'var(--color-surface)',
-                    border: '1px solid var(--color-border)',
-                    borderLeft: '2px solid var(--color-accent)',
-                    borderRadius: 'var(--radius)',
-                  }}
-                >
-                  <p className="label" style={{ marginBottom: '0.75rem' }}>
+                <div className="card card-rail">
+                  <p className="card-eyebrow">
                     {new Date(update.date + 'T00:00:00Z').toLocaleDateString('en-US', {
                       month: 'long',
                       year: 'numeric',
                     })}
                   </p>
-                  <h2
-                    style={{
-                      fontFamily: 'var(--font-display)',
-                      fontSize: '1.5rem',
-                      fontWeight: 600,
-                      marginBottom: '1rem',
-                      color: 'var(--color-text)',
-                    }}
-                  >
-                    {update.title}
-                  </h2>
-                  <p
-                    style={{
-                      fontFamily: 'var(--font-body)',
-                      fontSize: '0.95rem',
-                      color: 'rgba(226, 232, 240, 0.75)',
-                      lineHeight: 1.7,
-                      margin: 0,
-                    }}
-                  >
-                    {update.summary}
-                  </p>
+                  <h2 className="card-title card-title-lg">{update.title}</h2>
+                  <p className="card-desc card-desc-lg">{update.summary}</p>
                 </div>
               </Link>
             </SectionReveal>
