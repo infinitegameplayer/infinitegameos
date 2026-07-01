@@ -380,6 +380,26 @@ pre code {
 .mobile-link:hover { background: rgba(34, 211, 238, 0.05); color: var(--color-text); }
 .mobile-link.active { color: var(--color-text); border-left-color: var(--color-accent); background: rgba(34, 211, 238, 0.05); }
 
+/* Directional "browse all" links. Accent text on desktop. On mobile these are
+   the primary onward navigation, so they earn a 44px tap target. */
+.link-more {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-accent);
+  transition: color 0.2s var(--ease-entrance);
+}
+.link-more:hover { color: var(--color-accent-hover); }
+
+/* Mobile refinements. Fires under the 768px breakpoint the .section desktop
+   step uses. Comfortable tap targets and lighter card-rail padding for the
+   mobile-heavy search traffic. */
+@media (max-width: 767px) {
+  .link-more { min-height: 44px; padding: 0.5rem 0; }
+  .card-rail { padding: 1.75rem; }
+}
+
 /* Reduced-motion lane. Fires only for visitors who set reduce motion in their
    OS. Every animation resolves instantly to its final state, no movement, and
    reveals are shown so no content stays hidden. Full motion is the default for

@@ -147,7 +147,7 @@ export default function HomePage() {
                 Concepts to think with.
               </h2>
             </div>
-            <Link href="/concepts" style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-accent)' }}>
+            <Link href="/concepts" className="link-more">
               Browse all concepts →
             </Link>
           </div>
@@ -172,10 +172,10 @@ export default function HomePage() {
               </h2>
             </div>
             <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
-              <Link href="/skills" style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-accent)' }}>
+              <Link href="/skills" className="link-more">
                 Browse all skills →
               </Link>
-              <Link href="/bundles" style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-accent)' }}>
+              <Link href="/bundles" className="link-more">
                 Browse all bundles →
               </Link>
             </div>
@@ -272,7 +272,7 @@ export default function HomePage() {
                   Recent dispatches.
                 </h2>
               </div>
-              <Link href="/updates" style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-accent)' }}>
+              <Link href="/updates" className="link-more">
                 All updates →
               </Link>
             </div>
