@@ -76,6 +76,8 @@ Key terms and entity names used throughout this site:
 - /concepts/ai-second-brain — The system that holds your thoughts so you do not have to; capture from anywhere, organize, distill and express through the AI you already use
 - /concepts/sovereign-capture — The capture practice that keeps you present to the work while honoring the ideas that want to arrive; body as the first container, a five-step flow, a weekly sift
 - /concepts/contemplative-question-practice — The practice of holding a real question before the session opens, so AI returns you to yourself rather than averages you away
+- /concepts/ai-first-vs-ai-complemented — Where AI belongs in a business and why the center is the wrong seat for a technology this young
+- /concepts/artful-intelligence — A way of working with AI that keeps you the creative source and lets the collaboration amplify what is already yours
 
 ## Public Library (Installable Assets)
 
