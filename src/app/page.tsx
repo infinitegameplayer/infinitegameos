@@ -113,7 +113,7 @@ export default function HomePage() {
             style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}
           >
             <Link href="/skills" className="btn-accent">Explore the Library</Link>
-            <Link href="/concepts" className="btn-outline">Read the Concepts</Link>
+            <Link href="/concepts" className="btn-soft-accent">Read the Concepts</Link>
           </div>
         </div>
       </section>
@@ -230,7 +230,7 @@ export default function HomePage() {
                 Before concepts and skills, there is a workspace. The Sovereign Ecosystem is the foundational template. Directory structure, governance scaffolding, first skill set. Free and open. The starting conditions for a sovereign AI practice.
               </p>
             </div>
-            <Link href="/sovereign-ecosystem" className="btn-outline">Get the template</Link>
+            <Link href="/sovereign-ecosystem" className="btn-soft-accent">Get the template</Link>
           </div>
         </section>
       </SectionReveal>

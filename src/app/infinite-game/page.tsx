@@ -252,7 +252,7 @@ export default function InfiniteGamePage() {
                 flexWrap: 'wrap',
               }}
             >
-              <Link href="/sovereignty" className="btn-accent">
+              <Link href="/sovereignty" className="btn-soft-accent">
                 Sovereignty
               </Link>
               <Link href="/playbooks" className="btn-outline">

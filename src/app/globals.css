@@ -124,6 +124,16 @@ a { color: inherit; text-decoration: none; }
 .card-title-lg { font-size: 1.5rem; font-weight: 600; }
 .card-desc-lg { font-size: 0.95rem; color: rgba(226, 232, 240, 0.75); line-height: 1.7; }
 
+/* Action card: a static teal accent frame for a page's primary free action
+   (skill and bundle install blocks). Defined and focal, no rotating shimmer.
+   The rotating .shimmer-card stays reserved for paid conversion cards. */
+.action-card {
+  border: 1px solid rgba(34, 211, 238, 0.22);
+  border-left: 2px solid var(--color-accent);
+  border-radius: 12px;
+  background: rgba(34, 211, 238, 0.03);
+}
+
 /* Teal shimmer frame for the one primary conversion card per page. A slow
    rotating conic rim, masked to a thin border so it reads as a tasteful
    attention draw, not a slot machine. Site-wide standard: one per page. */
@@ -220,6 +230,37 @@ a { color: inherit; text-decoration: none; }
   transition: border-color 0.25s ease, transform 0.15s ease;
 }
 .btn-outline:hover { border-color: rgba(34, 211, 238, 0.4); transform: translateY(-1px); }
+
+/* Soft accent: the middle button tier between the plain outline and the full
+   animated gradient. Teal-tinted fill, accent border, accent text, a soft glow
+   on hover. For warm secondary invitations that should read clearly as a button
+   without shouting. Button hierarchy: btn-outline (tertiary / navigational) <
+   btn-soft-accent (secondary / warm invitation) < btn-accent (primary action). */
+.btn-soft-accent {
+  display: inline-block;
+  background: rgba(34, 211, 238, 0.08);
+  color: var(--color-accent-hover);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(34, 211, 238, 0.5);
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+.btn-soft-accent:hover {
+  background: rgba(34, 211, 238, 0.15);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 20px rgba(34, 211, 238, 0.18);
+  transform: translateY(-1px);
+}
+.btn-soft-accent:active {
+  transform: scale(0.97);
+  transition: transform 0.16s ease-out;
+}
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(18px); }

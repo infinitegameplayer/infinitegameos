@@ -225,7 +225,7 @@ export default function SovereignEcosystemPage() {
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                 <a
                   href="https://www.sidequesthq.co/downloads/sovereign-ecosystem-quick-start-guide.pdf"
-                  className="btn-accent"
+                  className="btn-soft-accent"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -525,12 +525,11 @@ export default function SovereignEcosystemPage() {
 
           <SectionReveal delay={380}>
             <div
+              className="shimmer-card"
               style={{
                 marginTop: '2rem',
                 marginBottom: '2rem',
                 padding: '2rem',
-                border: '1px solid var(--color-border)',
-                borderRadius: '0.5rem',
                 maxWidth: '56ch',
               }}
             >
@@ -562,7 +561,7 @@ export default function SovereignEcosystemPage() {
               </p>
               <a
                 href="https://www.sidequesthq.co/sovereign-ecosystem-install"
-                className="btn-outline"
+                className="btn-soft-accent"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -580,7 +579,7 @@ export default function SovereignEcosystemPage() {
                 flexWrap: 'wrap',
               }}
             >
-              <Link href="/concepts/data-sovereignty" className="btn-accent">
+              <Link href="/concepts/data-sovereignty" className="btn-soft-accent">
                 Data Sovereignty
               </Link>
               <Link href="/concepts/the-north-star" className="btn-outline">

@@ -230,7 +230,7 @@ export default function TheOsPage() {
                 flexWrap: 'wrap',
               }}
             >
-              <Link href="/infinite-game" className="btn-accent">
+              <Link href="/infinite-game" className="btn-soft-accent">
                 The Infinite Game
               </Link>
               <Link href="/agentic-systems" className="btn-outline">

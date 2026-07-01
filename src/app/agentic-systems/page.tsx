@@ -430,7 +430,7 @@ export default function AgenticSystemsPage() {
                 flexWrap: 'wrap',
               }}
             >
-              <Link href="/sovereignty" className="btn-accent">
+              <Link href="/sovereignty" className="btn-soft-accent">
                 Sovereignty
               </Link>
               <Link href="/the-os" className="btn-outline">

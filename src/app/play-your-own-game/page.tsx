@@ -314,7 +314,7 @@ export default function PlayYourOwnGamePage() {
                 flexWrap: 'wrap',
               }}
             >
-              <Link href="/concepts/joyful-sovereignty" className="btn-accent">
+              <Link href="/concepts/joyful-sovereignty" className="btn-soft-accent">
                 Joyful Sovereignty
               </Link>
               <Link href="/infinite-game" className="btn-outline">

@@ -147,7 +147,7 @@ export default function UpdatesPage() {
             <div
               style={{ marginTop: '3rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
             >
-              <Link href="/agentic-systems" className="btn-accent">
+              <Link href="/agentic-systems" className="btn-soft-accent">
                 Read: The Post Web
               </Link>
               <Link href="/the-os" className="btn-outline">

@@ -133,7 +133,7 @@ export default function ConceptsIndexPage() {
                 flexWrap: 'wrap',
               }}
             >
-              <Link href="/the-os" className="btn-accent">
+              <Link href="/the-os" className="btn-soft-accent">
                 The OS
               </Link>
               <Link href="/about" className="btn-outline">

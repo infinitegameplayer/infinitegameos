@@ -119,7 +119,7 @@ export default function BundlesIndexPage() {
                 flexWrap: 'wrap',
               }}
             >
-              <Link href="/skills" className="btn-accent">
+              <Link href="/skills" className="btn-soft-accent">
                 Skills
               </Link>
               <Link href="/the-os" className="btn-outline">

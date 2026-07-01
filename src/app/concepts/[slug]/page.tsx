@@ -292,7 +292,7 @@ export default async function ConceptPage({ params }: PageProps) {
                 >
                   {concept.kitCallout.body}
                 </p>
-                <a href={concept.kitCallout.ctaHref} className="btn-accent">
+                <a href={concept.kitCallout.ctaHref} className="btn-soft-accent">
                   {concept.kitCallout.ctaLabel}
                 </a>
               </div>
@@ -501,7 +501,7 @@ export default async function ConceptPage({ params }: PageProps) {
                 <Link
                   key={cta.href}
                   href={cta.href}
-                  className={cta.variant === 'accent' ? 'btn-accent' : 'btn-outline'}
+                  className={cta.variant === 'accent' ? 'btn-soft-accent' : 'btn-outline'}
                 >
                   {cta.label}
                 </Link>

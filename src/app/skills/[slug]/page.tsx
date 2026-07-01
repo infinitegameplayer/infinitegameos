@@ -147,11 +147,9 @@ export default async function SkillPage({ params }: PageProps) {
         <div className="section" style={{ paddingTop: '0' }}>
           <SectionReveal>
             <div
+              className="action-card"
               style={{
                 padding: '2rem',
-                border: '1px solid var(--color-border)',
-                borderRadius: '12px',
-                background: 'var(--color-card, rgba(255, 255, 255, 0.02))',
                 marginBottom: '3rem',
               }}
             >
@@ -510,7 +508,7 @@ aider --read ${asset.slug}.md`}</code>
               {asset.softHook.ctaHref && asset.softHook.ctaLabel && (
                 <a
                   href={asset.softHook.ctaHref}
-                  className="btn-accent"
+                  className="btn-soft-accent"
                 >
                   {asset.softHook.ctaLabel}
                 </a>

@@ -492,7 +492,7 @@ export default function SovereigntyPage() {
               </p>
               <a
                 href="https://www.sidequesthq.co/products/sovereign-life-playbook"
-                className="btn-outline"
+                className="btn-soft-accent"
               >
                 Explore the Playbook
               </a>
@@ -508,7 +508,7 @@ export default function SovereigntyPage() {
                 flexWrap: 'wrap',
               }}
             >
-              <Link href="/concepts/ideal-month" className="btn-accent">
+              <Link href="/concepts/ideal-month" className="btn-soft-accent">
                 The Ideal Month
               </Link>
               <Link href="/concepts/joyful-sovereignty" className="btn-outline">

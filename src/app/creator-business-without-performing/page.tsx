@@ -272,7 +272,7 @@ export default function CreatorBusinessWithoutPerformingPage() {
                 flexWrap: 'wrap',
               }}
             >
-              <Link href="/concepts/creator-flywheel" className="btn-accent">
+              <Link href="/concepts/creator-flywheel" className="btn-soft-accent">
                 The Creator Flywheel
               </Link>
               <Link href="/sovereignty" className="btn-outline">

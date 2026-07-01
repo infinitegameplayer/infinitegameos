@@ -390,7 +390,7 @@ aider --read ${asset.slug}.md`}</code>
               {asset.softHook.ctaHref && asset.softHook.ctaLabel && (
                 <a
                   href={asset.softHook.ctaHref}
-                  className="btn-accent"
+                  className="btn-soft-accent"
                 >
                   {asset.softHook.ctaLabel}
                 </a>

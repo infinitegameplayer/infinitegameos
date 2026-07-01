@@ -205,7 +205,7 @@ export default function PlaybooksPage() {
                 is being developed, refined and released. Follow along as the OS
                 grows.
               </p>
-              <Link href="/updates" className="btn-outline">
+              <Link href="/updates" className="btn-soft-accent">
                 Updates
               </Link>
             </div>

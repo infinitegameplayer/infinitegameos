@@ -221,20 +221,20 @@ export default function AboutPage() {
               style={{ marginTop: '4rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
             >
               <a
-                href="https://lanebelone.com"
+                href="https://www.sidequesthq.co"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-accent"
+                className="btn-soft-accent"
               >
-                lanebelone.com
+                Work with Lane
               </a>
               <a
-                href="https://www.sidequesthq.co"
+                href="https://lanebelone.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline"
               >
-                Work with Lane
+                lanebelone.com
               </a>
             </div>
           </SectionReveal>

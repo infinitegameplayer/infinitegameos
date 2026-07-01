@@ -285,7 +285,7 @@ export default function DesignYourDayPage() {
                 flexWrap: 'wrap',
               }}
             >
-              <Link href="/concepts/ideal-month" className="btn-accent">
+              <Link href="/concepts/ideal-month" className="btn-soft-accent">
                 Ideal Month
               </Link>
               <Link href="/concepts/playgrounds-of-exploration" className="btn-outline">

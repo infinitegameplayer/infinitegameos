@@ -283,7 +283,7 @@ export default function InfiniteGameOsPage() {
                 flexWrap: 'wrap',
               }}
             >
-              <Link href="/the-os" className="btn-accent">
+              <Link href="/the-os" className="btn-soft-accent">
                 The OS
               </Link>
               <Link href="/infinite-game" className="btn-outline">
