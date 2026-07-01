@@ -184,6 +184,78 @@ export default async function ConceptPage({ params }: PageProps) {
           </SectionReveal>
         </header>
 
+        {concept.pathBridge && (
+          <div className="section" style={{ paddingTop: 0, paddingBottom: '1rem' }}>
+            <SectionReveal>
+              <div
+                style={{
+                  padding: '1.5rem 1.75rem',
+                  border: '1px solid var(--color-border)',
+                  borderLeft: '3px solid var(--color-accent)',
+                  borderRadius: '12px',
+                  background: 'var(--color-card, rgba(255, 255, 255, 0.02))',
+                }}
+              >
+                <p className="label" style={{ marginBottom: '1rem' }}>
+                  {concept.pathBridge.label}
+                </p>
+                <ul
+                  style={{
+                    listStyle: 'none',
+                    margin: 0,
+                    padding: 0,
+                    display: 'grid',
+                    gap: '0.85rem',
+                  }}
+                >
+                  {concept.pathBridge.links.map(link => {
+                    const external = link.href.startsWith('http')
+                    const inner = (
+                      <>
+                        <span aria-hidden style={{ color: 'var(--color-accent)', marginRight: '0.5rem' }}>
+                          {'→'}
+                        </span>
+                        <span
+                          style={{
+                            fontFamily: 'var(--font-display)',
+                            fontWeight: 500,
+                            color: 'var(--color-accent)',
+                          }}
+                        >
+                          {link.label}
+                        </span>
+                        <span style={{ color: 'var(--color-muted)', marginLeft: '0.4rem' }}>
+                          {link.note}
+                        </span>
+                      </>
+                    )
+                    return (
+                      <li
+                        key={link.href}
+                        style={{
+                          fontFamily: 'var(--font-body)',
+                          fontSize: '1rem',
+                          lineHeight: 1.6,
+                        }}
+                      >
+                        {external ? (
+                          <a href={link.href} style={{ textDecoration: 'none' }}>
+                            {inner}
+                          </a>
+                        ) : (
+                          <Link href={link.href} style={{ textDecoration: 'none' }}>
+                            {inner}
+                          </Link>
+                        )}
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
+            </SectionReveal>
+          </div>
+        )}
+
         <div className="section" style={{ paddingTop: '1rem' }}>
           <div className="prose">
             {concept.sections.map((section, i) => (
@@ -227,6 +299,34 @@ export default async function ConceptPage({ params }: PageProps) {
             </SectionReveal>
           )}
 
+          {concept.productCard && (
+            <SectionReveal delay={concept.sections.length * 80}>
+              <div
+                className="shimmer-card"
+                style={{
+                  marginTop: '3rem',
+                  padding: '2rem',
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '1rem',
+                    color: 'var(--color-text)',
+                    lineHeight: 1.75,
+                    maxWidth: '62ch',
+                    marginBottom: '1.5rem',
+                  }}
+                >
+                  {concept.productCard.body}
+                </p>
+                <a href={concept.productCard.ctaHref} className="btn-accent">
+                  {concept.productCard.ctaLabel}
+                </a>
+              </div>
+            </SectionReveal>
+          )}
+
           {concept.faq && concept.faq.length > 0 && (
             <SectionReveal delay={concept.sections.length * 80}>
               <div
@@ -244,39 +344,6 @@ export default async function ConceptPage({ params }: PageProps) {
                     <p>{item.a}</p>
                   </div>
                 ))}
-              </div>
-            </SectionReveal>
-          )}
-
-          {concept.productCard && (
-            <SectionReveal delay={concept.sections.length * 80}>
-              <div
-                style={{
-                  marginTop: '3.5rem',
-                  padding: '2rem',
-                  border: '1px solid var(--color-border)',
-                  borderRadius: '12px',
-                  background: 'var(--color-card, rgba(255, 255, 255, 0.02))',
-                }}
-              >
-                <p
-                  style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '1rem',
-                    color: 'var(--color-text)',
-                    lineHeight: 1.75,
-                    maxWidth: '62ch',
-                    marginBottom: '1.5rem',
-                  }}
-                >
-                  {concept.productCard.body}
-                </p>
-                <a
-                  href={concept.productCard.ctaHref}
-                  className="btn-accent"
-                >
-                  {concept.productCard.ctaLabel}
-                </a>
               </div>
             </SectionReveal>
           )}

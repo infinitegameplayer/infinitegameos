@@ -9,6 +9,22 @@ export interface ConceptProductCard {
   ctaLabel: string
 }
 
+// pathBridge: an above-the-fold onward path rendered directly under the header,
+// before the long body. Exists because a search-landing reader gets the answer
+// up top and leaves before the buried exits (product card, related concepts,
+// CTAs) ever scroll into view. Opt-in per concept. Each link carries a short
+// note naming where it leads (the foundation, the how-to, the Field Guide).
+export interface ConceptPathLink {
+  href: string
+  label: string
+  note: string
+}
+
+export interface ConceptPathBridge {
+  label: string
+  links: ConceptPathLink[]
+}
+
 export interface ConceptFaqItem {
   q: string
   a: string
@@ -39,6 +55,8 @@ export interface Concept {
   // (SQHQ lead magnet). Rendered as a visible accent-anchored block, distinct
   // from productCard so a concept can carry both a paid pairing and the free on-ramp.
   kitCallout?: ConceptProductCard
+  // pathBridge: opt-in above-the-fold onward path. See ConceptPathBridge.
+  pathBridge?: ConceptPathBridge
 }
 
 // FAQ content authored 2026-05-19 for all live concepts (Phase 1 of
@@ -580,7 +598,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'data-sovereignty',
-    updated: '2026-06-04',
+    updated: '2026-07-01',
     title: 'Data Sovereignty',
     label: 'Foundation',
     capsule:
@@ -651,6 +669,7 @@ export const concepts: Concept[] = [
     ],
     relatedSlugs: ['ai-second-brain', 'the-north-star', 'joyful-sovereignty', 'creator-flywheel', 'sovereign-capture'],
     relatedUpdateSlugs: [
+      'local-first-second-brain',
       'what-is-data-sovereignty-for-creators',
       'how-to-build-an-ai-second-brain',
       'structured-to-be-found',
@@ -752,13 +771,21 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'ai-second-brain',
-    updated: '2026-06-04',
+    updated: '2026-07-01',
     title: 'The AI Second Brain',
     label: 'Framework',
     capsule:
       'An active intelligence layer over the files you already trust to hold what\'s in your head. An idea hits at a meetup. You open Obsidian on your phone, write it down, walk back in present. Tiago Forte built the original Building a Second Brain. The AI Second Brain is the next move. Capture, organize, distill, express. The loop runs.',
     subtitle:
       'The system that holds your thoughts so you do not have to. Capture from anywhere. Organize, distill and express through the AI you already use.',
+    pathBridge: {
+      label: 'Where this leads',
+      links: [
+        { href: '/concepts/data-sovereignty', label: 'Data Sovereignty', note: 'the foundation underneath it' },
+        { href: '/updates/how-to-build-an-ai-second-brain', label: 'How to build an AI Second Brain', note: 'the step-by-step' },
+        { href: 'https://www.sidequesthq.co/products/sovereign-capture', label: 'Sovereign Capture', note: 'the Field Guide that installs the practice' },
+      ],
+    },
     sections: [
       {
         heading: 'The capture flow',
@@ -826,6 +853,9 @@ export const concepts: Concept[] = [
     ],
     relatedSlugs: ['data-sovereignty', 'the-north-star', 'ideal-month'],
     relatedUpdateSlugs: [
+      'ai-second-brain-obsidian',
+      'calm-capture-ai-second-brain',
+      'local-first-second-brain',
       'how-to-build-an-ai-second-brain',
       'what-is-data-sovereignty-for-creators',
     ],
@@ -841,13 +871,21 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'sovereign-capture',
-    updated: '2026-06-04',
+    updated: '2026-07-01',
     title: 'Sovereign Capture',
     label: 'Practice',
     capsule:
       'The practice of holding what wants to arrive without losing your presence to the work. Ideas land all day. Most capture systems make you the manager of your own inbox. Sovereign Capture asks a different question: how do you honor the ideas and stay present to the life they arrive inside. Body as the first container. Capture, tag, surface, release, trust.',
     subtitle:
       'The capture practice that keeps you present to the work while honoring the ideas that want to arrive.',
+    pathBridge: {
+      label: 'Where this leads',
+      links: [
+        { href: 'https://www.sidequesthq.co/products/sovereign-capture', label: 'Sovereign Capture', note: 'the $7 Field Guide that installs the practice' },
+        { href: '/concepts/ai-second-brain', label: 'The AI Second Brain', note: 'the framework it serves' },
+        { href: '/concepts/data-sovereignty', label: 'Data Sovereignty', note: 'the foundation underneath it' },
+      ],
+    },
     sections: [
       {
         heading: 'Why most capture systems quietly fail you',
@@ -897,6 +935,10 @@ export const concepts: Concept[] = [
       },
     ],
     relatedSlugs: ['ai-second-brain', 'data-sovereignty', 'the-north-star', 'ideal-month'],
+    relatedUpdateSlugs: [
+      'calm-capture-ai-second-brain',
+      'ai-second-brain-obsidian',
+    ],
     ctaLinks: [
       { href: '/concepts/ai-second-brain', label: 'The AI Second Brain', variant: 'accent' },
       { href: '/concepts/data-sovereignty', label: 'Data Sovereignty', variant: 'outline' },

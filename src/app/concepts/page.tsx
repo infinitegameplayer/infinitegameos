@@ -3,6 +3,17 @@ import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import { concepts } from '@/data/concepts'
 
+// Display order: lead with the AI Second Brain cluster (the search and
+// AI-citation winner plus its foundation and practice siblings), then the rest
+// in canonical order. Reorders the visible grid without moving the data array.
+const FEATURED_SLUGS = ['ai-second-brain', 'data-sovereignty', 'sovereign-capture']
+const orderedConcepts = [
+  ...FEATURED_SLUGS.map(s => concepts.find(c => c.slug === s)).filter(
+    (c): c is NonNullable<typeof c> => Boolean(c)
+  ),
+  ...concepts.filter(c => !FEATURED_SLUGS.includes(c.slug)),
+]
+
 export const metadata: Metadata = {
   title: 'Concepts',
   description:
@@ -94,7 +105,7 @@ export default function ConceptsIndexPage() {
               gap: '1.25rem',
             }}
           >
-            {concepts.map((concept, i) => (
+            {orderedConcepts.map((concept, i) => (
               <SectionReveal key={concept.slug} delay={i * 60}>
                 <Link
                   href={`/concepts/${concept.slug}`}

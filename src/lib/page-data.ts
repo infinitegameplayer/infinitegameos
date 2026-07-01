@@ -125,6 +125,13 @@ export const igosMods: IgosMod[] = [
 
 export const homeFeaturedConcepts: IgosMod[] = [
   {
+    href: '/concepts/ai-second-brain',
+    label: 'Concept',
+    title: 'The AI Second Brain',
+    description:
+      'The system you trust to hold what is in your head so you do not have to. Capture, organize, distill, express. Sovereign by design.',
+  },
+  {
     href: '/concepts/the-pioneer',
     label: 'Concept',
     title: 'The Pioneer',
@@ -144,13 +151,6 @@ export const homeFeaturedConcepts: IgosMod[] = [
     title: 'The Creator Flywheel',
     description:
       'Be yourself. Share the breadcrumbs. Let revenue follow contribution. The operating engine for any creator who builds from aliveness.',
-  },
-  {
-    href: '/concepts/ai-second-brain',
-    label: 'Concept',
-    title: 'The AI Second Brain',
-    description:
-      'The system you trust to hold what is in your head so you do not have to. Capture, organize, distill, express. Sovereign by design.',
   },
 ]
 

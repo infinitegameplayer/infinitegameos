@@ -73,13 +73,69 @@ a { color: inherit; text-decoration: none; }
   transition: border-color 0.25s ease, background 0.25s ease;
 }
 .card:hover {
-  border-color: rgba(34, 211, 238, 0.2);
+  border-color: rgba(34, 211, 238, 0.35);
   background: var(--color-surface-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(34, 211, 238, 0.08);
+}
+
+/* Teal shimmer frame for the one primary conversion card per page. A slow
+   rotating conic rim, masked to a thin border so it reads as a tasteful
+   attention draw, not a slot machine. Site-wide standard: one per page. */
+.shimmer-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.shimmer-card::before {
+  content: '';
+  position: absolute;
+  inset: -150%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(34, 211, 238, 0.55) 40deg,
+    rgba(103, 232, 249, 0.7) 70deg,
+    rgba(34, 211, 238, 0.55) 100deg,
+    transparent 150deg,
+    transparent 360deg
+  );
+  animation: shimmerRotate 9s linear infinite;
+  z-index: 0;
+}
+.shimmer-card::after {
+  content: '';
+  position: absolute;
+  inset: 1.5px;
+  border-radius: 10.5px;
+  background: var(--color-bg);
+  z-index: 1;
+}
+.shimmer-card > * {
+  position: relative;
+  z-index: 2;
+}
+@keyframes shimmerRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shimmer-card::before { animation: none; }
 }
 
 .btn-accent {
   display: inline-block;
-  background: var(--color-accent);
+  background-image: linear-gradient(
+    135deg,
+    var(--color-accent-dim) 0%,
+    var(--color-accent) 40%,
+    var(--color-accent-hover) 60%,
+    var(--color-accent) 80%,
+    var(--color-accent-dim) 100%
+  );
+  background-size: 250% 100%;
+  background-position: right center;
   color: #0a0a18;
   font-family: var(--font-body);
   font-size: 0.875rem;
@@ -90,9 +146,17 @@ a { color: inherit; text-decoration: none; }
   border-radius: var(--radius);
   border: none;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.15s ease;
+  transition: background-position 0.5s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
-.btn-accent:hover { background: var(--color-accent-hover); transform: translateY(-1px); }
+.btn-accent:hover {
+  background-position: left center;
+  box-shadow: 0 4px 24px rgba(34, 211, 238, 0.25);
+  transform: translateY(-1px);
+}
+.btn-accent:active {
+  transform: scale(0.97);
+  transition: transform 0.16s ease-out;
+}
 
 .btn-outline {
   display: inline-block;
