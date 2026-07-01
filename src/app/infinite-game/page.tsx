@@ -246,7 +246,7 @@ export default function InfiniteGamePage() {
           <SectionReveal delay={240}>
             <div
               style={{
-                marginTop: '3rem',
+                marginTop: '4rem',
                 display: 'flex',
                 gap: '1rem',
                 flexWrap: 'wrap',

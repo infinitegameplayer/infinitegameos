@@ -380,7 +380,7 @@ export default function AccordPage() {
           <SectionReveal delay={320}>
             <div
               style={{
-                marginTop: '3rem',
+                marginTop: '4rem',
                 display: 'flex',
                 gap: '1rem',
                 flexWrap: 'wrap',
