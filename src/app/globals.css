@@ -20,6 +20,7 @@
   --font-display: var(--font-space-grotesk), system-ui, sans-serif;
   --font-body: var(--font-geist-sans), var(--font-inter), system-ui, sans-serif;
   --radius: 6px;
+  --ease-entrance: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 * { box-sizing: border-box; padding: 0; margin: 0; }
@@ -70,7 +71,7 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 1.75rem;
-  transition: border-color 0.25s ease, background 0.25s ease;
+  transition: border-color 0.25s var(--ease-entrance), background 0.25s var(--ease-entrance), transform 0.3s var(--ease-entrance), box-shadow 0.3s var(--ease-entrance);
 }
 .card:hover {
   border-color: rgba(34, 211, 238, 0.35);
@@ -99,7 +100,7 @@ a { color: inherit; text-decoration: none; }
   height: 1px;
   background: var(--color-accent);
   opacity: 0.5;
-  transition: width 0.3s ease, opacity 0.3s ease;
+  transition: width 0.3s var(--ease-entrance), opacity 0.3s var(--ease-entrance);
 }
 .card:hover .card-eyebrow::before { width: 2rem; opacity: 1; }
 .card-title {
@@ -108,7 +109,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 500;
   margin-bottom: 0.75rem;
   color: var(--color-text);
-  transition: color 0.25s ease;
+  transition: color 0.25s var(--ease-entrance);
 }
 .card:hover .card-title { color: var(--color-accent-hover); }
 .card-desc {
@@ -175,11 +176,6 @@ a { color: inherit; text-decoration: none; }
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-@media (prefers-reduced-motion: reduce) {
-  .shimmer-card::before { animation: none; }
-  .card-eyebrow::before { transition: none; }
-}
-
 .btn-accent {
   display: inline-block;
   background-image: linear-gradient(
@@ -202,7 +198,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: var(--radius);
   border: none;
   cursor: pointer;
-  transition: background-position 0.5s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  transition: background-position 0.5s var(--ease-entrance), box-shadow 0.3s var(--ease-entrance), transform 0.2s var(--ease-entrance);
 }
 .btn-accent:hover {
   background-position: left center;
@@ -227,7 +223,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: var(--radius);
   border: 1px solid var(--color-border);
   cursor: pointer;
-  transition: border-color 0.25s ease, transform 0.15s ease;
+  transition: border-color 0.25s var(--ease-entrance), transform 0.2s var(--ease-entrance);
 }
 .btn-outline:hover { border-color: rgba(34, 211, 238, 0.4); transform: translateY(-1px); }
 
@@ -249,7 +245,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: var(--radius);
   border: 1px solid rgba(34, 211, 238, 0.5);
   cursor: pointer;
-  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  transition: background 0.25s var(--ease-entrance), border-color 0.25s var(--ease-entrance), box-shadow 0.3s var(--ease-entrance), transform 0.2s var(--ease-entrance);
 }
 .btn-soft-accent:hover {
   background: rgba(34, 211, 238, 0.15);
@@ -266,7 +262,7 @@ a { color: inherit; text-decoration: none; }
   from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.hero-line { opacity: 0; animation: fadeUp 0.7s ease forwards; }
+.hero-line { opacity: 0; animation: fadeUp 0.7s var(--ease-entrance) forwards; }
 .hero-line-1 { animation-delay: 0.08s; }
 .hero-line-2 { animation-delay: 0.20s; }
 .hero-line-3 { animation-delay: 0.32s; }
@@ -275,7 +271,7 @@ a { color: inherit; text-decoration: none; }
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.6s var(--ease-entrance), transform 0.6s var(--ease-entrance);
 }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
@@ -311,4 +307,26 @@ pre code {
     linear-gradient(rgba(34, 211, 238, 0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(34, 211, 238, 0.025) 1px, transparent 1px);
   background-size: 48px 48px;
+}
+
+/* Reduced-motion lane. Fires only for visitors who set reduce motion in their
+   OS. Every animation resolves instantly to its final state, no movement, and
+   reveals are shown so no content stays hidden. Full motion is the default for
+   everyone else. Placed last so it wins the cascade over the definitions above. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-line { opacity: 1; animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .shimmer-card::before { animation: none; }
+  .card,
+  .card-title,
+  .card-eyebrow::before,
+  .btn-accent,
+  .btn-soft-accent,
+  .btn-outline { transition: none; }
+  .card:hover { transform: none; box-shadow: none; }
+  .btn-accent:hover,
+  .btn-soft-accent:hover,
+  .btn-outline:hover { transform: none; box-shadow: none; }
+  .btn-accent:active,
+  .btn-soft-accent:active { transform: none; }
 }

@@ -155,6 +155,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        {/* Crawler safety net: scroll reveals start at opacity 0 and are shown by
+            JS. Without JS (some crawlers and agents) this keeps reveal content
+            visible so nothing is hidden behind motion. */}
+        <noscript>
+          <style>{`.reveal { opacity: 1 !important; transform: none !important; }`}</style>
+        </noscript>
       </head>
       <PostHogProvider>
         <body suppressHydrationWarning>
