@@ -82,13 +82,13 @@ export default function HomePage() {
           }}
         />
         <div style={{ position: 'relative', maxWidth: '720px' }}>
-          <p className="label hero-line hero-line-1" style={{ marginBottom: '1.5rem' }}>Infinite Game OS</p>
+          <p className="label hero-eyebrow hero-line hero-line-1" style={{ marginBottom: '1.75rem' }}>Infinite Game OS</p>
           <h1
             className="hero-line hero-line-2"
             style={{
               fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
               fontWeight: 600,
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.035em',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
             }}
@@ -102,7 +102,7 @@ export default function HomePage() {
               fontSize: 'clamp(1rem, 2vw, 1.2rem)',
               color: 'var(--color-muted)',
               maxWidth: '52ch',
-              margin: '0 auto 2.5rem',
+              margin: '0 auto 2.75rem',
               lineHeight: 1.7,
             }}
           >

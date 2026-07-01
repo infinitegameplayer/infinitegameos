@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 
 const navLinks = [
@@ -16,6 +17,9 @@ const navLinks = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const isActive = (href: string) =>
+    pathname === href || pathname.startsWith(href + '/')
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40)
@@ -55,18 +59,17 @@ export default function Nav() {
         {/* Wordmark */}
         <Link
           href="/"
+          className="nav-wordmark"
           style={{
             fontFamily: 'var(--font-display)',
             fontWeight: 600,
             fontSize: '1rem',
             letterSpacing: '-0.01em',
             color: 'var(--color-text)',
-            opacity: 0.9,
-            transition: 'opacity 0.2s ease',
           }}
         >
           Infinite Game{' '}
-          <span style={{ color: 'var(--color-accent)' }}>OS</span>
+          <span className="os">OS</span>
         </Link>
 
         {/* Desktop nav */}
@@ -78,20 +81,8 @@ export default function Nav() {
             <Link
               key={link.href}
               href={link.href}
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.85rem',
-                fontWeight: 500,
-                letterSpacing: '0.02em',
-                color: 'rgba(226, 232, 240, 0.6)',
-                transition: 'color 0.2s ease',
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = 'var(--color-text)')
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = 'rgba(226, 232, 240, 0.6)')
-              }
+              className={`nav-link${isActive(link.href) ? ' active' : ''}`}
+              aria-current={isActive(link.href) ? 'page' : undefined}
             >
               {link.label}
             </Link>
@@ -167,10 +158,10 @@ export default function Nav() {
         <div
           style={{
             borderTop: '1px solid rgba(226, 232, 240, 0.06)',
-            padding: '1.5rem',
+            padding: '0.75rem 1rem 1.25rem',
             display: 'flex',
             flexDirection: 'column',
-            gap: '1.25rem',
+            gap: '0.15rem',
           }}
         >
           {[...navLinks, { href: '/updates', label: 'Updates' }].map((link) => (
@@ -178,11 +169,8 @@ export default function Nav() {
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '1rem',
-                color: 'rgba(226, 232, 240, 0.75)',
-              }}
+              className={`mobile-link${isActive(link.href) ? ' active' : ''}`}
+              aria-current={isActive(link.href) ? 'page' : undefined}
             >
               {link.label}
             </Link>

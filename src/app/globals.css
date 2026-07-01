@@ -268,6 +268,19 @@ a { color: inherit; text-decoration: none; }
 .hero-line-3 { animation-delay: 0.32s; }
 .hero-line-4 { animation-delay: 0.44s; }
 
+/* Hero eyebrow tick. A centered symmetric pair of short teal rules flanking the
+   eyebrow, tying the hero to the .card-eyebrow tick language site-wide. Static,
+   so the reduced-motion lane needs no entry. */
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; }
+.hero-eyebrow::before,
+.hero-eyebrow::after {
+  content: '';
+  width: 1.5rem;
+  height: 1px;
+  background: var(--color-accent);
+  opacity: 0.6;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -309,6 +322,60 @@ pre code {
   background-size: 48px 48px;
 }
 
+/* Nav wordmark. Opacity lift on hover, the OS mark warms to bright teal. Wires
+   the hover the old inline transition declared but never fired. */
+.nav-wordmark { opacity: 0.9; transition: opacity 0.2s var(--ease-entrance); }
+.nav-wordmark:hover { opacity: 1; }
+.nav-wordmark .os { color: var(--color-accent); transition: color 0.2s var(--ease-entrance); }
+.nav-wordmark:hover .os { color: var(--color-accent-hover); }
+
+/* Primary nav links. Underline-tick active state and a half-width hover ghost,
+   both on the entrance curve. Wayfinding a reference surface owes its readers,
+   borrowing the eyebrow-tick language the cards already speak. */
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(226, 232, 240, 0.6);
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.2s var(--ease-entrance);
+}
+.nav-link:hover { color: var(--color-text); }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: center;
+  opacity: 0;
+  transition: transform 0.3s var(--ease-entrance), opacity 0.3s var(--ease-entrance);
+}
+.nav-link:hover::after { transform: scaleX(0.5); opacity: 0.5; }
+.nav-link.active { color: var(--color-text); }
+.nav-link.active::after,
+.nav-link.active:hover::after { transform: scaleX(1); opacity: 1; }
+
+/* Mobile menu rows. Full-width padded blocks (~44px tap targets) for the
+   mobile-heavy search traffic, active row carries the update-card left rail. */
+.mobile-link {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: rgba(226, 232, 240, 0.75);
+  padding: 0.85rem 0.75rem;
+  border-radius: 6px;
+  border-left: 2px solid transparent;
+  transition: background 0.2s var(--ease-entrance), color 0.2s var(--ease-entrance), border-color 0.2s var(--ease-entrance);
+}
+.mobile-link:hover { background: rgba(34, 211, 238, 0.05); color: var(--color-text); }
+.mobile-link.active { color: var(--color-text); border-left-color: var(--color-accent); background: rgba(34, 211, 238, 0.05); }
+
 /* Reduced-motion lane. Fires only for visitors who set reduce motion in their
    OS. Every animation resolves instantly to its final state, no movement, and
    reveals are shown so no content stays hidden. Full motion is the default for
@@ -329,4 +396,12 @@ pre code {
   .btn-outline:hover { transform: none; box-shadow: none; }
   .btn-accent:active,
   .btn-soft-accent:active { transform: none; }
+  .nav-wordmark,
+  .nav-wordmark .os,
+  .nav-link,
+  .nav-link::after,
+  .mobile-link { transition: none; }
+  .nav-link:hover::after { transform: scaleX(0); opacity: 0; }
+  .nav-link.active::after,
+  .nav-link.active:hover::after { transform: scaleX(1); opacity: 1; }
 }
