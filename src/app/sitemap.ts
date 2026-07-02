@@ -8,21 +8,24 @@ import { getAssetsByType } from '@/data/library'
 // as hardcoded launch-day timestamps. Per codex V.8: lastModified must
 // reflect actual page-data timestamps, not deployment boilerplate.
 const PAGE_DATES: Record<string, string> = {
-  '/':                   '2026-04-19',
-  '/the-os':             '2026-04-19',
-  '/accord':             '2026-04-28',
-  '/infinite-game':      '2026-04-19',
-  '/agentic-systems':    '2026-04-19',
-  '/sovereignty':        '2026-04-26',
-  '/playbooks':          '2026-04-19',
-  '/about':              '2026-04-19',
-  '/concepts':           '2026-04-19',
-  '/protocols':          '2026-05-06',
-  '/sovereign-ecosystem': '2026-05-05',
-  '/play-your-own-game': '2026-05-19',
-  '/design-your-day':    '2026-05-19',
-  '/creator-business-without-performing': '2026-05-19',
-  '/infinite-game-os':   '2026-05-19',
+  // 2026-07-01: HX Design Refresh (6 phases) reworked every page's
+  // presentation (cards, buttons, motion, nav, type scale, spacing,
+  // mobile), verified per-page via git log.
+  '/':                   '2026-07-01',
+  '/the-os':             '2026-07-01',
+  '/accord':             '2026-07-01',
+  '/infinite-game':      '2026-07-01',
+  '/agentic-systems':    '2026-07-01',
+  '/sovereignty':        '2026-07-01',
+  '/playbooks':          '2026-07-01',
+  '/about':              '2026-07-01',
+  '/concepts':           '2026-07-01',
+  '/protocols':          '2026-07-01',
+  '/sovereign-ecosystem': '2026-07-01',
+  '/play-your-own-game': '2026-07-01',
+  '/design-your-day':    '2026-07-01',
+  '/creator-business-without-performing': '2026-07-01',
+  '/infinite-game-os':   '2026-07-01',
 }
 
 function pageDate(path: string): Date {
@@ -39,11 +42,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  // Concepts have no per-entry updated field; use the concepts index date
-  // until per-concept updated timestamps are added to concepts.ts.
+  // Per-concept updated timestamps live in concepts.ts (all 14 carry one).
   const conceptEntries: MetadataRoute.Sitemap = concepts.map(c => ({
     url: `https://www.infinitegameos.io/concepts/${c.slug}`,
-    lastModified: pageDate('/concepts'),
+    lastModified: c.updated ? new Date(c.updated + 'T00:00:00.000Z') : pageDate('/concepts'),
     changeFrequency: 'monthly' as const,
     priority: 0.85,
   }))
