@@ -8,8 +8,9 @@
   "plugins": [
     {
       "name": "source-harvest",
-      "description": "Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate.",
+      "description": "Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate what serves your system.",
       "version": "1.1.0",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -18,7 +19,12 @@
       "homepage": "https://www.infinitegameos.io/skills/source-harvest",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["harvest", "extraction", "governance"],
+      "tags": [
+        "harvest",
+        "extraction",
+        "governance",
+        "kingdom-skill"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -28,6 +34,7 @@
       "name": "pattern-harvest",
       "description": "Reflective session-level pattern extraction. Three parallel lenses produce a numbered recommendation list the operator selects from. Run before session closeout on substantial sessions.",
       "version": "1.1.0",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -36,7 +43,14 @@
       "homepage": "https://www.infinitegameos.io/skills/pattern-harvest",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["harvest", "reflection", "meta", "session", "governance"],
+      "tags": [
+        "harvest",
+        "reflection",
+        "meta",
+        "session",
+        "governance",
+        "recommendations"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -46,6 +60,7 @@
       "name": "plan-challenger",
       "description": "Adversarial pre-build pass that challenges a plan before execution begins. Five angles, one verdict.",
       "version": "1.1.0",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -54,7 +69,12 @@
       "homepage": "https://www.infinitegameos.io/skills/plan-challenger",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["planning", "review", "adversarial", "governance"],
+      "tags": [
+        "planning",
+        "review",
+        "adversarial",
+        "governance"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -64,6 +84,7 @@
       "name": "systematic-debugging",
       "description": "Root-cause investigation discipline. Use before proposing fixes. The Iron Law: no fixes without Phase 1 complete.",
       "version": "1.1.0",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -72,7 +93,12 @@
       "homepage": "https://www.infinitegameos.io/skills/systematic-debugging",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["debugging", "diagnostics", "root-cause", "discipline"],
+      "tags": [
+        "debugging",
+        "diagnostics",
+        "root-cause",
+        "discipline"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -82,6 +108,7 @@
       "name": "pending-plan-implementation",
       "description": "Execute approved plans with checkpoint gates, breadcrumb logging and outcome summaries.",
       "version": "1.1.0",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -90,7 +117,12 @@
       "homepage": "https://www.infinitegameos.io/skills/pending-plan-implementation",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["planning", "execution", "governance", "audit"],
+      "tags": [
+        "planning",
+        "execution",
+        "governance",
+        "audit"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -100,6 +132,7 @@
       "name": "skill-creator",
       "description": "Build new skills autonomously. Interview, research, write a complete SKILL.md, propose the install path.",
       "version": "1.1.0",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -108,7 +141,12 @@
       "homepage": "https://www.infinitegameos.io/skills/skill-creator",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["meta", "authoring", "skills", "structure"],
+      "tags": [
+        "meta",
+        "authoring",
+        "skills",
+        "structure"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -118,6 +156,7 @@
       "name": "researcher",
       "description": "Parallel sub-agent research on a topic, aggregated into a structured report. Up to 4 independent workers, synthesized output.",
       "version": "1.1.0",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -126,7 +165,12 @@
       "homepage": "https://www.infinitegameos.io/skills/researcher",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["research", "investigation", "parallel", "synthesis"],
+      "tags": [
+        "research",
+        "investigation",
+        "parallel",
+        "synthesis"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -134,8 +178,9 @@
     },
     {
       "name": "social-batch-drafting",
-      "description": "Draft a 9-post social batch (3 days × 3 platforms) from any source. Voice rules enforced before drafting begins. Pairs with Social Batch Queue.",
+      "description": "Draft a 9-post social batch (3 days × 3 platforms) from any source. Voice rules enforced before drafting begins. Approved batch becomes the durable handoff to the queue skill.",
       "version": "1.1.0",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -144,7 +189,13 @@
       "homepage": "https://www.infinitegameos.io/skills/social-batch-drafting",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["social", "drafting", "voice", "publishing"],
+      "tags": [
+        "social",
+        "drafting",
+        "voice",
+        "creator",
+        "publishing"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -152,8 +203,9 @@
     },
     {
       "name": "social-batch-queue",
-      "description": "Execute an approved 9-post social batch. Image generation, asset staging, scheduler integration with channel discovery, post-publish handoff. Pairs with Social Batch Drafting.",
+      "description": "Execute an approved 9-post social batch. Image rendering (local self-hosted or any compatible pipeline), asset staging, scheduler integration with channel discovery and channel-health check, and post-publish handoff. Pairs with Social Batch Drafting.",
       "version": "1.1.0",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -162,7 +214,14 @@
       "homepage": "https://www.infinitegameos.io/skills/social-batch-queue",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["social", "scheduling", "queue", "publishing"],
+      "tags": [
+        "social",
+        "scheduling",
+        "queue",
+        "image-generation",
+        "creator",
+        "publishing"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -170,8 +229,9 @@
     },
     {
       "name": "grant-researcher",
-      "description": "Discover grants whose mission alignment, eligibility and deadline runway fit an operator profile. Two modes: Discovery sweeps wide and ranks by fit; Fit Deep-Dive runs a yes/no memo on one opportunity. Pairs with Grant Manager.",
+      "description": "Discover grants whose mission alignment, eligibility and deadline runway fit an operator profile. Two modes: Discovery for cold-start sweeps, Fit Deep-Dive for one-opportunity yes/no memos. Pairs with Grant Manager.",
       "version": "1.0.1",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -180,7 +240,13 @@
       "homepage": "https://www.infinitegameos.io/skills/grant-researcher",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["grants", "research", "funding", "nonprofit", "discovery"],
+      "tags": [
+        "grants",
+        "research",
+        "funding",
+        "nonprofit",
+        "discovery"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -190,6 +256,7 @@
       "name": "grant-manager",
       "description": "Manage the full grant lifecycle on a chosen opportunity. LOI drafting, full proposal authoring, budget assistance, submission portal handling, post-award reporting and funder stewardship. Pairs with Grant Researcher.",
       "version": "1.0.1",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -198,7 +265,14 @@
       "homepage": "https://www.infinitegameos.io/skills/grant-manager",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["grants", "management", "proposals", "stewardship", "nonprofit"],
+      "tags": [
+        "grants",
+        "management",
+        "proposals",
+        "loi",
+        "stewardship",
+        "nonprofit"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -208,6 +282,7 @@
       "name": "email-triage",
       "description": "Sort a service-business inbox into seven named buckets, draft replies for repeating scenarios and surface every action item so nothing gets missed.",
       "version": "1.0.1",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -216,7 +291,14 @@
       "homepage": "https://www.infinitegameos.io/skills/email-triage",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["email", "triage", "inbox", "solopreneur", "service-business", "admin"],
+      "tags": [
+        "email",
+        "triage",
+        "inbox",
+        "solopreneur",
+        "service-business",
+        "admin"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -226,6 +308,7 @@
       "name": "quote-builder",
       "description": "Turn a service-business inquiry into a complete quote in email, SMS or markdown-PDF format, with a 48-72h follow-up trigger built in on every run.",
       "version": "1.0.1",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -234,7 +317,14 @@
       "homepage": "https://www.infinitegameos.io/skills/quote-builder",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["quotes", "pricing", "follow-up", "solopreneur", "service-business", "admin"],
+      "tags": [
+        "quotes",
+        "pricing",
+        "follow-up",
+        "solopreneur",
+        "service-business",
+        "admin"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -242,8 +332,9 @@
     },
     {
       "name": "invoice-payment-tracker",
-      "description": "Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the load-bearing discipline. Pairs with Quote Builder and Daily Admin Orchestrator.",
+      "description": "Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the essential discipline. Pairs with Quote Builder and Daily Admin Orchestrator.",
       "version": "1.0.1",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -252,7 +343,15 @@
       "homepage": "https://www.infinitegameos.io/skills/invoice-payment-tracker",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["invoicing", "payments", "billing", "solopreneur", "service-business", "admin"],
+      "tags": [
+        "invoicing",
+        "payments",
+        "billing",
+        "cash-flow",
+        "solopreneur",
+        "service-business",
+        "admin"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -260,8 +359,9 @@
     },
     {
       "name": "customer-follow-up",
-      "description": "Run a four-touchpoint post-job relationship cadence: thank-you at 24-48h, referral ask at 14d, maintenance check-in at 90d, re-engagement at 180d. CRM-lite for solo service businesses up to 50 customers.",
+      "description": "Run a four-touchpoint post-job relationship cadence: thank-you at 24-48h, referral ask at 14d, maintenance check-in at 90d, re-engagement at 180d. CRM-lite for solo service businesses.",
       "version": "1.0.1",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -270,7 +370,15 @@
       "homepage": "https://www.infinitegameos.io/skills/customer-follow-up",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["follow-up", "crm", "referrals", "relationships", "solopreneur", "service-business", "admin"],
+      "tags": [
+        "follow-up",
+        "crm",
+        "referrals",
+        "relationships",
+        "solopreneur",
+        "service-business",
+        "admin"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -280,6 +388,7 @@
       "name": "daily-admin-orchestrator",
       "description": "Run the complete solopreneur admin ritual in one session. Sequences Email Triage, Customer Follow-Up, Invoice and Payment Tracker and Quote Builder in order. Three variants: morning briefing, end-of-day rolldown, Friday weekly review.",
       "version": "1.0.1",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -288,7 +397,14 @@
       "homepage": "https://www.infinitegameos.io/skills/daily-admin-orchestrator",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["orchestrator", "admin", "morning-briefing", "ritual", "solopreneur", "service-business"],
+      "tags": [
+        "orchestrator",
+        "admin",
+        "morning-briefing",
+        "ritual",
+        "solopreneur",
+        "service-business"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -298,6 +414,7 @@
       "name": "website-builder",
       "description": "Build, refresh or extend a website with Claude Code as the primary build engine. Frame-agnostic by design. Reference stack named, every component substitutable. AI discoverability and three-state deploy verification built in.",
       "version": "1.1.0",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -306,7 +423,14 @@
       "homepage": "https://www.infinitegameos.io/skills/website-builder",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["website", "web", "build", "deploy", "discoverability", "creator"],
+      "tags": [
+        "website",
+        "web",
+        "build",
+        "deploy",
+        "discoverability",
+        "creator"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -314,8 +438,9 @@
     },
     {
       "name": "self-healing",
-      "description": "Autonomous error recovery during implementation sessions. Diagnose the root cause, apply a fix, continue without stalling on recoverable mistakes.",
+      "description": "Autonomous error recovery during implementation sessions. Diagnose root cause, apply fix, continue without stopping for every recoverable mistake.",
       "version": "1.1.0",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -324,7 +449,13 @@
       "homepage": "https://www.infinitegameos.io/skills/self-healing",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["recovery", "errors", "autonomy", "implementation", "resilience"],
+      "tags": [
+        "recovery",
+        "errors",
+        "autonomy",
+        "implementation",
+        "kingdom-skill"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -332,8 +463,9 @@
     },
     {
       "name": "session-closeout",
-      "description": "A fast three-action close for a git-tracked workspace. Breadcrumbs as you work, a refreshed primer, a readable commit as the session summary.",
+      "description": "Fast three-action session close: breadcrumb what you touched, refresh your handoff note, commit with a readable body.",
       "version": "1.1.0",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -342,7 +474,13 @@
       "homepage": "https://www.infinitegameos.io/skills/session-closeout",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["session", "closeout", "git", "breadcrumbs", "handoff"],
+      "tags": [
+        "session",
+        "closeout",
+        "git",
+        "breadcrumbs",
+        "kingdom-skill"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -350,8 +488,9 @@
     },
     {
       "name": "playwright",
-      "description": "Headless browser automation that returns structured data. Scrape pages, extract content, interact with web interfaces. Clean JSON over screenshots.",
+      "description": "Browser automation via headless Chromium. Scrape pages, extract structured data, interact with web interfaces. Returns clean JSON not screenshots.",
       "version": "1.1.0",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -360,7 +499,13 @@
       "homepage": "https://www.infinitegameos.io/skills/playwright",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["automation", "browser", "scraping", "extraction", "data"],
+      "tags": [
+        "automation",
+        "browser",
+        "scraping",
+        "extraction",
+        "kingdom-skill"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -368,8 +513,9 @@
     },
     {
       "name": "anti-ai-edit-pass",
-      "description": "An editing pass for long-form manuscripts that finds and removes the writing tells of AI authorship. The result reads as your own voice.",
+      "description": "Structured editing pass that finds and removes AI writing tells from long-form manuscripts. Eight sweep categories, Sovereign review gate, verified application.",
       "version": "1.1.0",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -378,7 +524,13 @@
       "homepage": "https://www.infinitegameos.io/skills/anti-ai-edit-pass",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["editing", "manuscript", "writing", "voice", "long-form"],
+      "tags": [
+        "editing",
+        "manuscript",
+        "writing",
+        "voice",
+        "kingdom-skill"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -388,6 +540,7 @@
       "name": "jacket-session",
       "description": "Run a focused 1:1 advisory session with a named AI lens. The universal session flow with the Three Solutions Rule and Challenge and Illumination active, closing in a structured capture.",
       "version": "1.1.0",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -396,7 +549,12 @@
       "homepage": "https://www.infinitegameos.io/skills/jacket-session",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["advisory", "ai-advisor", "decision-making"],
+      "tags": [
+        "advisory",
+        "ai-advisor",
+        "decision-making",
+        "sovereignty"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -406,6 +564,7 @@
       "name": "jacket-meeting",
       "description": "Run a multi-lens team meeting across all your AI advisory jackets. A twelve-step flow from convene to close. Each lens prepares independently, one seat synthesizes, you decide.",
       "version": "1.1.0",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -414,7 +573,12 @@
       "homepage": "https://www.infinitegameos.io/skills/jacket-meeting",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["advisory", "ai-advisor", "decision-making"],
+      "tags": [
+        "advisory",
+        "ai-advisor",
+        "decision-making",
+        "synthesis"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
@@ -422,8 +586,9 @@
     },
     {
       "name": "autonomous-improvement-session",
-      "description": "Run a set-and-forget session that improves your system without active attention. Operator-invoked only. Safe, additive hygiene work executes directly; judgment forks and floor-class items surface for your review.",
+      "description": "Set your system improving on its own when you have spare capacity. Safe, additive, self-contained work runs under a threshold model with a permanent floor of actions it never takes on its own.",
       "version": "1.0.0",
+      "category": "skill",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
@@ -432,7 +597,14 @@
       "homepage": "https://www.infinitegameos.io/skills/autonomous-improvement-session",
       "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
       "license": "CC-BY-4.0",
-      "tags": ["autonomy", "improvement", "hygiene", "session", "flywheel", "kingdom-skill"],
+      "tags": [
+        "autonomy",
+        "improvement",
+        "hygiene",
+        "session",
+        "flywheel",
+        "kingdom-skill"
+      ],
       "author": {
         "name": "Lane Belone",
         "email": "howdy@lanebelone.com"
