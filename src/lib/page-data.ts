@@ -327,43 +327,6 @@ export const igosEcosystemLinks: IgosEcosystemLink[] = [
   IGOS_ECOSYSTEM_SOVEREIGN,
 ]
 
-// --- Playbooks ---
-
-export const IGOS_PLAYBOOK_VOCABULARY: UpcomingPlaybook = {
-  title: 'The Vocabulary System',
-  description:
-    'How to build a consistent vocabulary for your body of work. The framework behind GEO-ready expertise positioning.',
-  status: 'coming soon',
-}
-
-export const IGOS_PLAYBOOK_TWO_LAYER: UpcomingPlaybook = {
-  title: 'The Two-Layer Game Structure',
-  description:
-    'Designing finite games (side quests) that fund and support the Infinite Game. The architecture behind SideQuestHQ.',
-  status: 'coming soon',
-}
-
-export const IGOS_PLAYBOOK_PRESENCE_AUDIT: UpcomingPlaybook = {
-  title: 'The Sovereign Presence Audit',
-  description:
-    'A five-question audit for evaluating your current digital presence against Post Web standards. Is your expertise AI-agent-legible?',
-  status: 'coming soon',
-}
-
-export const IGOS_PLAYBOOK_FOUR_NODE: UpcomingPlaybook = {
-  title: 'The Four-Node Expertise Web',
-  description:
-    'How to build a cross-linked, multi-node expertise web that compounds across years. The architecture behind this OS.',
-  status: 'coming soon',
-}
-
-export const igosUpcomingPlaybooks: UpcomingPlaybook[] = [
-  IGOS_PLAYBOOK_VOCABULARY,
-  IGOS_PLAYBOOK_TWO_LAYER,
-  IGOS_PLAYBOOK_PRESENCE_AUDIT,
-  IGOS_PLAYBOOK_FOUR_NODE,
-]
-
 // --- Play Your Own Game (audience-search front door, A2) ---
 
 export const playYourOwnGameFaqs: FaqItem[] = [

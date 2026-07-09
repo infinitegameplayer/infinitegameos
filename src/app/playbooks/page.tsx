@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
-import { igosUpcomingPlaybooks } from '@/lib/page-data'
 
 export const metadata: Metadata = {
   title: 'Playbooks and Frameworks',
@@ -120,61 +119,6 @@ export default function PlaybooksPage() {
                 Each one will have its own page with the full rationale and usage
                 guide as the OS builds out.
               </p>
-            </div>
-          </SectionReveal>
-
-          <SectionReveal delay={80}>
-            <p className="label" style={{ marginBottom: '1.5rem' }}>
-              In development
-            </p>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-                gap: '1.25rem',
-              }}
-            >
-              {igosUpcomingPlaybooks.map((pb, i) => (
-                <SectionReveal key={pb.title} delay={i * 50}>
-                  <div className="card" style={{ opacity: 0.65 }}>
-                    <div
-                      style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'flex-start',
-                        marginBottom: '0.75rem',
-                      }}
-                    >
-                      <span
-                        className="label"
-                        style={{ color: 'var(--color-muted)' }}
-                      >
-                        {pb.status}
-                      </span>
-                    </div>
-                    <h3
-                      style={{
-                        fontFamily: 'var(--font-display)',
-                        fontSize: '1rem',
-                        fontWeight: 600,
-                        marginBottom: '0.6rem',
-                      }}
-                    >
-                      {pb.title}
-                    </h3>
-                    <p
-                      style={{
-                        fontFamily: 'var(--font-body)',
-                        fontSize: '0.875rem',
-                        color: 'var(--color-muted)',
-                        lineHeight: 1.65,
-                      }}
-                    >
-                      {pb.description}
-                    </p>
-                  </div>
-                </SectionReveal>
-              ))}
             </div>
           </SectionReveal>
 

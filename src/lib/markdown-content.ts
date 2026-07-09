@@ -15,7 +15,6 @@ import {
   accordFaqs,
   igosExpertise,
   igosEcosystemLinks,
-  igosUpcomingPlaybooks,
   playYourOwnGameFaqs,
   designYourDayFaqs,
   creatorBusinessWithoutPerformingFaqs,
@@ -281,10 +280,6 @@ Sovereign life design starts from one premise: you can architect a life with the
 }
 
 function generatePlaybooksMarkdown(): string {
-  const upcomingList = igosUpcomingPlaybooks
-    .map(pb => `- **${pb.title}** · ${pb.description}`)
-    .join('\n')
-
   return `# Playbooks and Frameworks
 
 > Infinite Game playbooks give you enough structure to improvise freely. Practical frameworks for sovereign life design, long-term thinking and agentic systems.
@@ -294,10 +289,6 @@ A playbook in this context is structure for improvisation. Enough of a foundatio
 ## Available
 
 - **[The Sovereign Life Playbook](${SLP_HREF})** · A framework for peeling away the inherited game and designing what's actually yours. Available now.
-
-## Coming Soon
-
-${upcomingList}
 
 ## Related
 
