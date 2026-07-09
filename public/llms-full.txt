@@ -220,8 +220,10 @@ game design (the meta is a living playbook shaped by community).
 Three-layer architecture: initiatory (shared foundation), role (make it yours),
 living compendium (built over time through experimentation).
 
-Four playbooks in development: The Vocabulary System, The Two-Layer Game Structure,
-The Sovereign Presence Audit, The Four-Node Expertise Web. All coming soon.
+These frameworks are concrete tools built from inside the practice. Each one will
+have its own page with the full rationale and usage guide as the OS builds out.
+Playbooks ship as they are built. The Updates section documents what is being
+developed and released.
 
 ---
 

@@ -389,7 +389,7 @@ export default function AgenticSystemsPage() {
                 >
                   Playbooks
                 </Link>{' '}
-                section for concrete frameworks on building that vocabulary system.
+                section for concrete frameworks on building that shared vocabulary.
               </p>
               <hr />
               <p style={{ fontSize: '0.85rem', color: 'var(--color-muted)', fontStyle: 'italic' }}>
