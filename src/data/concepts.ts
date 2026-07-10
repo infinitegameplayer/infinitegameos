@@ -1109,7 +1109,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'artful-intelligence',
-    updated: '2026-06-24',
+    updated: '2026-07-09',
     title: 'Artful Intelligence',
     label: 'Philosophy',
     capsule:
@@ -1141,6 +1141,7 @@ export const concepts: Concept[] = [
           'A model was not built to remind you that you are an artist. Left to its default, it returns the average. Carry no orientation of your own into the engagement and you inherit that average as if it were your own voice.',
           'The pace makes this easy to miss. AI moves fast, and it is easy to be carried along before noticing the wheel has changed hands.',
           'Staying the conductor is concrete. It lives in the governance you set with the collaboration. How you prompt. What you bring in. What you decline. The orientation is a practice, held on purpose.',
+          'There is a named working stance that keeps this polarity right, and it has its own page. This page holds the philosophy of creating with AI. The stance where you stay the artist and AI works as the apprentice holds the day-to-day working relationship the philosophy asks for.',
         ],
       },
       {
@@ -1173,12 +1174,16 @@ export const concepts: Concept[] = [
         q: 'Can AI make me more creative?',
         a: 'AI is an igniter and an amplifier, not a source. It can free your energy by holding the draining work, and it can extend an idea further than you would reach alone. The creativity still originates in you. Used with that orientation, AI returns you to your own creative current rather than replacing it.',
       },
+      {
+        q: 'What is the difference between Artful Intelligence and AI as an apprentice?',
+        a: 'Artful Intelligence is the philosophy: relating to AI as a creative collaborator so the creativity stays yours. AI Is the Apprentice, You Are the Artist is the named working stance inside that philosophy, where you hold the vision and the apprentice serves it, asking harder questions and challenging the first easy choice. The first is the orientation. The second is how the orientation runs day to day.',
+      },
     ],
-    relatedSlugs: ['conditioned-vs-authentic-identity', 'ai-first-vs-ai-complemented', 'creator-flywheel', 'sovereign-capture', 'ai-second-brain'],
+    relatedSlugs: ['ai-is-the-apprentice-you-are-the-artist', 'conditioned-vs-authentic-identity', 'ai-first-vs-ai-complemented', 'creator-flywheel', 'sovereign-capture', 'ai-second-brain'],
     ctaLinks: [
-      { href: '/concepts/conditioned-vs-authentic-identity', label: 'Conditioned vs Authentic Identity', variant: 'accent' },
+      { href: '/concepts/ai-is-the-apprentice-you-are-the-artist', label: 'AI Is the Apprentice, You Are the Artist', variant: 'accent' },
+      { href: '/concepts/conditioned-vs-authentic-identity', label: 'Conditioned vs Authentic Identity', variant: 'outline' },
       { href: '/concepts/ai-first-vs-ai-complemented', label: 'AI-First vs AI-Complemented', variant: 'outline' },
-      { href: '/concepts/creator-flywheel', label: 'The Creator Flywheel', variant: 'outline' },
     ],
     productCard: {
       body: 'The Alive Business carries this idea as one of its eleven systems, the Artist-Entrepreneur. The artist inside the operator, the creating you do for its own sake and the AI that holds the draining work so your creative force stays free. It is the operating system for a business with the human at the center and AI as the engine. Ten files including the AI Companion File.',
@@ -1345,6 +1350,240 @@ export const concepts: Concept[] = [
       body: 'Whose Game Are You Playing with AI? is the Field Guide that installs this stance as seven Moves, including the mirror prompt and the custom instruction that holds the reflection posture across every session. The reading is the on-ramp. The Move is the point.',
       ctaHref: 'https://www.sidequesthq.co/products/whose-game-are-you-playing-with-ai',
       ctaLabel: 'The P1 Field Guide · $9',
+    },
+  },
+  {
+    slug: 'ai-is-the-apprentice-you-are-the-artist',
+    updated: '2026-07-09',
+    title: 'AI Is the Apprentice, You Are the Artist',
+    label: 'Core Distinction',
+    capsule:
+      'The default relationship has AI leading and the human reacting. AI Is the Apprentice, You Are the Artist inverts it. The artist stays the source. The apprentice is skilled, fast and tireless, and it works in service of a vision it did not originate. Held that way, AI stops finishing your sentences and starts sending you back to your own well: better questions, sharper challenges, the first comfortable choice held up for a second look. The art still comes from you. The apprentice makes you reach further for it.',
+    subtitle:
+      'Invert the default. You stay the source of the work, and AI becomes the apprentice who sharpens it and sends you back to your own well.',
+    sections: [
+      {
+        heading: 'The role inversion',
+        paragraphs: [
+          'The default way people use AI puts the model in front. You ask, it answers, you take the answer. Over time the human slides into the reactive seat, editing whatever the machine produced.',
+          'Turn it around. You are the artist. The vision, the taste, the reason any of this is being made, all of it originates in you. AI is the apprentice: capable, fast, endlessly patient, and working in service of something it did not start.',
+          'An apprentice in a real studio never sets the direction. It prepares the surface, runs the errand, tries the rough version. The master decides what the work is. That hierarchy is the whole point, and it is exactly the one the default gets backwards.',
+        ],
+      },
+      {
+        heading: 'What a good apprentice does',
+        paragraphs: [
+          'A good apprentice does more than execute. It makes the artist better.',
+          'It asks the question you were avoiding. It challenges the first comfortable choice instead of racing to fulfill it. It offers three rough directions so you can feel which one is alive. It handles the mechanical preparation so your attention stays on the part only you can do.',
+          'None of that replaces the art. All of it sends you back to your own well with a sharper thirst. The best sessions end with you having reached further into yourself, rather than the machine having reached further for you.',
+        ],
+      },
+      {
+        heading: 'Why the polarity flips so easily',
+        paragraphs: [
+          'The apprentice is good enough to tempt you out of the artist\'s seat. It writes a passable draft in seconds, and passable is the danger.',
+          'The moment you start accepting the apprentice\'s first attempt because it is fine, the roles have quietly traded. Now the machine sets the direction and you approve it. The work drifts toward the model\'s center, which is the average of everything, which is nobody\'s art.',
+          'Staying the artist is an act you repeat, not a setting you flip once. You bring the vision first. You use the apprentice to pressure-test and extend it. You keep the verdict.',
+        ],
+      },
+      {
+        heading: 'The artist was always the point',
+        paragraphs: [
+          'This stance is an old idea wearing new clothes. The tools were never the source of the art. A better brush did not make a painter, and a faster model does not make a maker.',
+          'What changes with a genuinely capable apprentice is how far you can reach once your hands are free of the mechanical work. The art was always going to come from you. Now more of your energy gets to go there.',
+          'Held this way, AI makes you more of an artist, not less. It removes the excuses that kept the artist in the back room.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'Should AI do the creative work or should I?',
+        a: 'You do the creative work. AI does the work around it. The vision, the taste and the final call originate in you, while the model prepares surfaces, tries rough versions and handles the mechanical load so your attention stays on the part only you can do. When AI starts setting the direction and you start approving it, the roles have flipped and the work drifts toward the average.',
+      },
+      {
+        q: 'What does it mean that AI is the apprentice and I am the artist?',
+        a: 'It names a working hierarchy. The artist sets the direction and holds the standard. The apprentice is skilled, fast and tireless, and it serves a vision it did not originate. A good apprentice sharpens the artist by asking harder questions and challenging the first easy choice, rather than replacing the artist\'s hand.',
+      },
+      {
+        q: 'How do I use AI without it taking over my creative work?',
+        a: 'Bring the vision before you open the model, not after. Use AI to pressure-test and extend what is already yours: ask it for challenges, for three rough directions, for the question you were avoiding. Keep the verdict on every output. The stance is a thing you repeat each session, because a capable apprentice stays tempting enough to pull you out of the artist\'s seat.',
+      },
+      {
+        q: 'Will AI make me a worse creator?',
+        a: 'It depends on which seat you keep. Used as an engine that hands you finished work, it trains you to accept the average and your own edge fades. Used as an apprentice that sends you back to your own well, it frees your energy for the part only you bring and your edge sharpens. The tool is the same. The relationship decides the outcome.',
+      },
+      {
+        q: 'Is using an AI apprentice the same as the tool doing it for you?',
+        a: 'No. An apprentice prepares and challenges. It does not author. The difference shows up in where the work originates. If the idea, the taste and the direction still start in you, the apprentice is extending your reach. If they start in the model and you are editing its output, the tool is doing it for you, and the work will read like it.',
+      },
+    ],
+    relatedSlugs: ['artful-intelligence', 'ai-is-a-mirror-not-an-engine', 'voice-is-the-moat', 'ai-first-vs-ai-complemented', 'conditioned-vs-authentic-identity'],
+    relatedUpdateSlugs: ['is-ai-supposed-to-do-the-creative-work'],
+    ctaLinks: [
+      { href: '/concepts/artful-intelligence', label: 'Artful Intelligence', variant: 'accent' },
+      { href: '/concepts/ai-is-a-mirror-not-an-engine', label: 'AI Is a Mirror, Not an Engine', variant: 'outline' },
+      { href: '/concepts/voice-is-the-moat', label: 'Voice Is the Moat', variant: 'outline' },
+    ],
+    productCard: {
+      body: 'Yours to Make is the Field Guide for the maker who feels the voice drifting toward generic. It installs this stance as seven Moves, including the apprentice brief that holds AI in the supporting seat across every session. The reading is the on-ramp. The Move is the point.',
+      ctaHref: 'https://www.sidequesthq.co/products/yours-to-make',
+      ctaLabel: 'The P2 Field Guide · $9',
+    },
+  },
+  {
+    slug: 'held-by-structure',
+    updated: '2026-07-09',
+    title: 'Held by Structure',
+    label: 'Practice',
+    capsule:
+      'Held by Structure names the quiet mechanism under every practice that actually lasts. Discipline held by willpower fails at the exact moment willpower is lowest, which is usually the moment it matters. Discipline held by structure keeps working while you are tired, distracted or uninspired, because the system carries the load instead of your resolve. Build the structure once, on a good day, and it holds the line on the bad ones. The goal is not more willpower. It is needing less of it.',
+    subtitle:
+      'The system holds the discipline so willpower does not have to. Build it once and it carries the practice on the days your resolve runs low.',
+    sections: [
+      {
+        heading: 'Willpower is the wrong foundation',
+        paragraphs: [
+          'Willpower is real and it is finite. It runs high in the morning, high right after a decision to change, high while the inspiration lasts. Then it drains.',
+          'The trouble is that the drain and the need arrive together. The day you least feel like doing the practice is the day the practice matters most, and it is the exact day willpower has the least to give. A discipline resting on resolve is strongest when it is needed least.',
+          'So the answer is not to summon more resolve. It is to build something that keeps working after the resolve is gone.',
+        ],
+      },
+      {
+        heading: 'What structure holds',
+        paragraphs: [
+          'Structure is everything that keeps a practice running without a fresh decision. The time already blocked. The template already open. The default that fires unless you stop it. The environment arranged so the right move is the easy one.',
+          'Each of these takes a decision off the table. A practice with no decisions left in it costs almost no willpower to run, because there is nothing to talk yourself out of.',
+          'This is why the same person fails a habit built on motivation and keeps one built on structure. The person did not change. The load did.',
+        ],
+      },
+      {
+        heading: 'Build it once, on a good day',
+        paragraphs: [
+          'Structure gets built when willpower is high and spent when willpower is low. That trade is the whole move.',
+          'On a clear day, you have the energy to design the system: block the time, write the template, set the default, arrange the space. That work is a gift from your rested self to your depleted self.',
+          'Then on the hard day, there is nothing to design and nothing to decide. The structure is already there, holding the line you drew when you could see clearly.',
+        ],
+      },
+      {
+        heading: 'Less willpower, not more',
+        paragraphs: [
+          'The instinct when a practice slips is to promise more discipline. That is doubling down on the foundation that already broke.',
+          'The better response is to look at what the practice is resting on and move it onto structure. Not what will I force, but what can I build so forcing is never required.',
+          'A life that runs on structure is not a rigid life. It is a free one. The structure holds the discipline so your attention gets to go somewhere more alive than self-management.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'How do I stay consistent without relying on willpower?',
+        a: 'Move the practice off willpower and onto structure. Block the time in advance, prepare the template, set a default that fires unless you stop it and arrange your environment so the right move is the easy one. Each of those removes a decision, and a practice with no decisions left in it barely costs willpower to run. Consistency comes from needing less resolve, not from summoning more.',
+      },
+      {
+        q: 'Why does my discipline keep failing?',
+        a: 'Because it is probably resting on willpower, which drains exactly when you need it most. The day you least feel like showing up is the day it matters, and that is the day resolve has the least to give. A discipline built on structure keeps working while you are tired or uninspired, because the system carries the load your willpower was carrying.',
+      },
+      {
+        q: 'What does held by structure mean?',
+        a: 'It means the system holds the discipline so your willpower does not have to. Instead of forcing the practice each day, you build something once that keeps it running: blocked time, ready templates, sensible defaults, an arranged environment. Built on a clear day, the structure holds the line on the hard days when your resolve runs low.',
+      },
+      {
+        q: 'Is relying on structure just a way to avoid building discipline?',
+        a: 'Structure is how discipline actually gets built and kept. Willpower is finite and it fails under exactly the conditions that test a practice. Structure turns a repeated act into a default, and defaults survive tired days that resolve does not. You still choose the direction. You just stop paying full price in willpower every single time.',
+      },
+      {
+        q: 'How do I build structure for a new habit?',
+        a: 'Build it while your energy is high, because that work is a gift to your depleted future self. Pick one practice, block the time before you need it, prepare whatever the practice requires so it is ready to start, and set the default so the practice happens unless you actively stop it. Then on the hard day there is nothing to decide, only a line already drawn to follow.',
+      },
+    ],
+    relatedSlugs: ['practice-is-the-proof', 'sovereign-capture', 'data-sovereignty', 'contemplative-question-practice', 'creator-flywheel'],
+    relatedUpdateSlugs: ['how-to-stay-consistent-without-willpower'],
+    ctaLinks: [
+      { href: '/concepts/practice-is-the-proof', label: 'Practice Is the Proof', variant: 'accent' },
+      { href: '/concepts/sovereign-capture', label: 'Sovereign Capture', variant: 'outline' },
+      { href: '/concepts/data-sovereignty', label: 'Data Sovereignty', variant: 'outline' },
+    ],
+    productCard: {
+      body: 'The Foundation Collection is all six Field Guides as one system, the business axis and the personal axis. Structure is the mechanism running under every one of them: each guide turns a philosophy into Moves you install once and keep. The reading is the on-ramp. The Move is the point.',
+      ctaHref: 'https://www.sidequesthq.co/products/foundation-bundle',
+      ctaLabel: 'The Foundation Collection · $27',
+    },
+  },
+  {
+    slug: 'practice-is-the-proof',
+    updated: '2026-07-09',
+    title: 'Practice Is the Proof',
+    label: 'Practice',
+    capsule:
+      'Practice Is the Proof names the moment a plan meets reality and finds out whether it was right. It sits inside a four-beat rhythm that runs under any system worth keeping: make your best guess, operationalize it into something real, let the practice prove it, then iterate on what the practice showed. The plan is a hypothesis. The reps are the experiment. Most people stall on the first beat, polishing a guess they never test. The truth was always waiting in the practice.',
+    subtitle:
+      'A plan is a hypothesis. The practice is where it proves out or falls apart. Four beats: best guess, operationalize, practice is the proof, iterate.',
+    sections: [
+      {
+        heading: 'The four-beat rhythm',
+        paragraphs: [
+          'Any working system moves through the same four beats, whether or not the builder names them.',
+          'Best guess: you do not know the right answer yet, so you make the most informed guess you can and commit to it as a starting point, not a verdict. Operationalize: you turn the guess into something real enough to run, a routine, a template, an actual attempt in the actual conditions. Practice is the proof: you run it, and the running reveals what the plan could not. Iterate: you adjust based on what the practice showed, and the loop begins again from a smarter guess.',
+          'The beats are ordinary. Naming them is what keeps you from getting stuck on one.',
+        ],
+      },
+      {
+        heading: 'The plan is only a hypothesis',
+        paragraphs: [
+          'A plan feels like knowledge. It is closer to a bet. However carefully reasoned, it is a set of predictions about conditions you have not entered yet.',
+          'Treating the plan as truth is what produces months of polishing before anything ships. The guess gets refined and re-refined, and refinement feels like progress while producing none, because a guess examined by more guessing is still a guess.',
+          'The only thing that upgrades a hypothesis is contact with reality. Until the plan runs, its accuracy is unknown, and no amount of thinking about it closes that gap.',
+        ],
+      },
+      {
+        heading: 'The practice reports what thinking misses',
+        paragraphs: [
+          'Run the plan and information arrives that was invisible from the desk. The step that looked simple takes an hour. The feature nobody planned for turns out to be the whole thing. The routine that made sense on paper fights the actual shape of your day.',
+          'None of that shows up in the plan. All of it shows up in the first week of practice.',
+          'The practice proves the guess against reality, and its report is the only one that counts. A verdict from someone who has run the move outranks any prediction from someone who has not, including your own earlier self.',
+        ],
+      },
+      {
+        heading: 'Iterate from what the reps showed',
+        paragraphs: [
+          'Proof is not the end of the rhythm. It is the input to the next guess.',
+          'What the practice reveals feeds directly back into a sharper version: keep what held, redesign what broke, and run it again. Each turn of the loop starts from a guess that has already survived contact with reality once, which is why the second version is almost always better than the first could have been.',
+          'The rhythm never really finishes. A living system is one that keeps cycling through the four beats, getting truer each pass. The proof is not a gate you clear once. It is the engine that keeps the whole thing honest.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'How do you know if a new system actually works?',
+        a: 'You run it. A plan is a hypothesis, and its accuracy stays unknown until it meets real conditions. Practice is the proof: the first week of actually doing it reveals what no amount of planning could, the step that takes far longer than expected, the part nobody accounted for, the routine that fights the real shape of your day. The practice returns the only verdict that counts.',
+      },
+      {
+        q: 'What is the best guess, operationalize, practice, iterate rhythm?',
+        a: 'It is a four-beat loop that runs under any system worth keeping. Make your best guess and commit to it as a starting point. Operationalize it into something real enough to run. Let the practice prove it, since running it reveals what the plan could not. Then iterate on what the practice showed and loop again from a smarter guess. Naming the beats keeps you from getting stuck polishing the first one.',
+      },
+      {
+        q: 'Why does my planning never turn into results?',
+        a: 'Often because the plan is being treated as truth instead of a bet. Refining a guess with more thinking feels like progress while producing none, because a guess examined by more guessing is still a guess. The only thing that upgrades a plan is contact with reality. Operationalize the guess quickly, let the practice prove it and iterate from what actually happened.',
+      },
+      {
+        q: 'Should I perfect my plan before I start?',
+        a: 'Perfecting a plan is refining a hypothesis you have not tested. Past a point, more planning stops adding accuracy and just delays the moment you would learn something real. Make the guess good enough to run, then start, and let the practice show you what to fix. The first version exists to teach the second one.',
+      },
+      {
+        q: 'What does practice is the proof mean?',
+        a: 'It means the doing is what verifies the plan, not the thinking. Your best guess predicts how something will go. The practice is where the prediction proves out or falls apart, and it surfaces the truths a desk view never could. Proof is not the end of the work either. What the practice reveals becomes the input to a sharper next guess.',
+      },
+    ],
+    relatedSlugs: ['held-by-structure', 'creator-flywheel', 'ideal-month', 'sovereign-capture', 'ai-first-vs-ai-complemented'],
+    relatedUpdateSlugs: ['how-do-you-know-if-your-system-works'],
+    ctaLinks: [
+      { href: '/concepts/held-by-structure', label: 'Held by Structure', variant: 'accent' },
+      { href: '/concepts/creator-flywheel', label: 'The Creator Flywheel', variant: 'outline' },
+      { href: '/concepts/ideal-month', label: 'The Ideal Month', variant: 'outline' },
+    ],
+    productCard: {
+      body: 'Earn the Right to Automate is the Field Guide for the operator whose automations kept breaking. It runs on this exact rhythm: prove the move by hand until the reps show it is ready, and only then let a machine hold it. Seven Moves. The reading is the on-ramp. The Move is the point.',
+      ctaHref: 'https://www.sidequesthq.co/products/earn-the-right-to-automate',
+      ctaLabel: 'The B3 Field Guide · $9',
     },
   },
 ]
