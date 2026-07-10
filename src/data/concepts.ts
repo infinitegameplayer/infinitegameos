@@ -140,6 +140,7 @@ export const concepts: Concept[] = [
       'what-is-the-creator-flywheel',
       'how-to-build-a-creator-business-off-social-media',
       'how-to-build-a-creator-business-without-performing-constantly',
+      'from-automations-to-a-working-flywheel',
     ],
     ctaLinks: [
       { href: '/concepts/ideal-month', label: 'The Ideal Month', variant: 'accent' },
@@ -351,6 +352,7 @@ export const concepts: Concept[] = [
     relatedUpdateSlugs: [
       'conditioned-vs-authentic-identity',
       'self-authorization-in-the-age-of-ai',
+      'structural-safeguards-against-ai-eroding-self',
     ],
     ctaLinks: [
       { href: '/concepts/the-pioneer', label: 'The Pioneer', variant: 'accent' },
@@ -673,6 +675,7 @@ export const concepts: Concept[] = [
       'what-is-data-sovereignty-for-creators',
       'how-to-build-an-ai-second-brain',
       'structured-to-be-found',
+      'repairing-a-fragmented-ai-practice',
     ],
     ctaLinks: [
       { href: '/concepts/ai-second-brain', label: 'The AI Second Brain', variant: 'accent' },
@@ -938,6 +941,7 @@ export const concepts: Concept[] = [
     relatedUpdateSlugs: [
       'calm-capture-ai-second-brain',
       'ai-second-brain-obsidian',
+      'an-ai-stack-that-serves-the-body',
     ],
     ctaLinks: [
       { href: '/concepts/ai-second-brain', label: 'The AI Second Brain', variant: 'accent' },
@@ -1262,7 +1266,7 @@ export const concepts: Concept[] = [
       },
     ],
     relatedSlugs: ['artful-intelligence', 'ai-is-a-mirror-not-an-engine', 'ai-first-vs-ai-complemented', 'conditioned-vs-authentic-identity'],
-    relatedUpdateSlugs: ['why-does-ai-make-everyone-sound-the-same'],
+    relatedUpdateSlugs: ['why-does-ai-make-everyone-sound-the-same', 'how-to-get-cited-by-ai-as-a-creator'],
     ctaLinks: [
       { href: '/concepts/artful-intelligence', label: 'Artful Intelligence', variant: 'accent' },
       { href: '/concepts/ai-is-a-mirror-not-an-engine', label: 'AI Is a Mirror, Not an Engine', variant: 'outline' },
