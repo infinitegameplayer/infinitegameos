@@ -5,8 +5,8 @@
   "description": "Installable skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
   "url": "https://www.infinitegameos.io",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "updated_at": "2026-06-26",
-  "upstream_version": "3.0.0",
+  "updated_at": "2026-07-10",
+  "upstream_version": "3.3.0",
   "upstream_repo": "https://github.com/infinitegameplayer/sovereign-ecosystem",
   "pages": [
     {
@@ -16,8 +16,15 @@
       "description": "Foundational Obsidian + Claude Code workspace template. Three-tier stack origin (foundation, reader/editor, AI interface). Directory structure, governance scaffolding, North Star template and initial skill set. Encouraged-not-required on-ramp. Article + FAQPage + BreadcrumbList schema.",
       "repo": "https://github.com/InfiniteGamePlayer/sovereign-ecosystem",
       "download_zip": "https://github.com/InfiniteGamePlayer/sovereign-ecosystem/archive/refs/heads/master.zip",
-      "tags": ["template", "obsidian", "claude-code", "foundational", "three-tier-stack", "sovereign-ecosystem"],
-      "updated_at": "2026-05-05"
+      "tags": [
+        "template",
+        "obsidian",
+        "claude-code",
+        "foundational",
+        "three-tier-stack",
+        "sovereign-ecosystem"
+      ],
+      "updated_at": "2026-07-10"
     }
   ],
   "assets": [
@@ -27,14 +34,27 @@
       "type": "skill",
       "version": "1.1",
       "description": "Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate.",
-      "tags": ["harvest", "extraction", "governance", "kingdom-skill"],
+      "tags": [
+        "harvest",
+        "extraction",
+        "governance",
+        "kingdom-skill"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install source-harvest@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/source-harvest",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/source-harvest.mdc"
       },
-      "related": ["pattern-harvest", "plan-challenger", "systematic-debugging", "pending-plan-implementation", "skill-creator", "researcher", "website-builder"],
+      "related": [
+        "pattern-harvest",
+        "plan-challenger",
+        "systematic-debugging",
+        "pending-plan-implementation",
+        "skill-creator",
+        "researcher",
+        "website-builder"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/source-harvest",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -46,20 +66,32 @@
       "id": "pattern-harvest",
       "name": "Pattern Harvest",
       "type": "skill",
-      "version": "1.1",
+      "version": "1.2",
       "description": "Reflective session-level pattern extraction. Three parallel lenses produce a numbered recommendation list the operator selects from. Run before session closeout on substantial sessions.",
-      "tags": ["harvest", "reflection", "meta", "session", "governance", "recommendations"],
+      "tags": [
+        "harvest",
+        "reflection",
+        "meta",
+        "session",
+        "governance",
+        "recommendations"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install pattern-harvest@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/pattern-harvest",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/pattern-harvest.mdc"
       },
-      "related": ["source-harvest", "plan-challenger", "skill-creator", "systematic-debugging"],
+      "related": [
+        "source-harvest",
+        "plan-challenger",
+        "skill-creator",
+        "systematic-debugging"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/pattern-harvest",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
-      "updated_at": "2026-05-06",
+      "updated_at": "2026-07-10",
       "changelog_url": null
     },
     {
@@ -68,14 +100,22 @@
       "type": "skill",
       "version": "1.1",
       "description": "Adversarial pre-build pass that challenges a plan before execution begins. Five angles, one verdict.",
-      "tags": ["planning", "review", "adversarial", "governance"],
+      "tags": [
+        "planning",
+        "review",
+        "adversarial",
+        "governance"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install plan-challenger@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/plan-challenger",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/plan-challenger.mdc"
       },
-      "related": ["pending-plan-implementation", "source-harvest"],
+      "related": [
+        "pending-plan-implementation",
+        "source-harvest"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/plan-challenger",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -89,14 +129,21 @@
       "type": "skill",
       "version": "1.1",
       "description": "Root-cause investigation discipline. Use before proposing fixes. The Iron Law: no fixes without Phase 1 complete.",
-      "tags": ["debugging", "diagnostics", "root-cause", "discipline"],
+      "tags": [
+        "debugging",
+        "diagnostics",
+        "root-cause",
+        "discipline"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install systematic-debugging@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/systematic-debugging",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/systematic-debugging.mdc"
       },
-      "related": ["source-harvest"],
+      "related": [
+        "source-harvest"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/systematic-debugging",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -110,14 +157,22 @@
       "type": "skill",
       "version": "1.1",
       "description": "Execute approved plans with checkpoint gates, breadcrumb logging and outcome summaries.",
-      "tags": ["planning", "execution", "governance", "audit"],
+      "tags": [
+        "planning",
+        "execution",
+        "governance",
+        "audit"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install pending-plan-implementation@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/pending-plan-implementation",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/pending-plan-implementation.mdc"
       },
-      "related": ["plan-challenger", "source-harvest"],
+      "related": [
+        "plan-challenger",
+        "source-harvest"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/pending-plan-implementation",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -131,14 +186,22 @@
       "type": "skill",
       "version": "1.1",
       "description": "Build new skills autonomously. Interview, research, write a complete SKILL.md, propose the install path.",
-      "tags": ["meta", "authoring", "skills", "structure"],
+      "tags": [
+        "meta",
+        "authoring",
+        "skills",
+        "structure"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install skill-creator@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/skill-creator",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/skill-creator.mdc"
       },
-      "related": ["source-harvest", "researcher"],
+      "related": [
+        "source-harvest",
+        "researcher"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/skill-creator",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -150,20 +213,28 @@
       "id": "researcher",
       "name": "Researcher",
       "type": "skill",
-      "version": "1.1",
+      "version": "1.2",
       "description": "Parallel sub-agent research on a topic, aggregated into a structured report. Up to 4 independent workers, synthesized output.",
-      "tags": ["research", "investigation", "parallel", "synthesis"],
+      "tags": [
+        "research",
+        "investigation",
+        "parallel",
+        "synthesis"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install researcher@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/researcher",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/researcher.mdc"
       },
-      "related": ["source-harvest", "skill-creator"],
+      "related": [
+        "source-harvest",
+        "skill-creator"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/researcher",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
-      "updated_at": "2026-06-10",
+      "updated_at": "2026-07-10",
       "se_origin": "graduated",
       "changelog_url": null
     },
@@ -173,14 +244,23 @@
       "type": "skill",
       "version": "1.1",
       "description": "Draft a 9-post social batch (3 days × 3 platforms) from any source. Voice rules enforced before drafting begins. Pairs with Social Batch Queue.",
-      "tags": ["social", "drafting", "voice", "publishing"],
+      "tags": [
+        "social",
+        "drafting",
+        "voice",
+        "publishing"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install social-batch-drafting@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/social-batch-drafting",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/social-batch-drafting.mdc"
       },
-      "related": ["social-batch-queue", "pending-plan-implementation", "plan-challenger"],
+      "related": [
+        "social-batch-queue",
+        "pending-plan-implementation",
+        "plan-challenger"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/social-batch-drafting",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -193,14 +273,23 @@
       "type": "skill",
       "version": "1.1",
       "description": "Execute an approved 9-post social batch. Image generation, asset staging, scheduler integration, post-publish handoff. Pairs with Social Batch Drafting.",
-      "tags": ["social", "scheduling", "queue", "publishing"],
+      "tags": [
+        "social",
+        "scheduling",
+        "queue",
+        "publishing"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install social-batch-queue@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/social-batch-queue",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/social-batch-queue.mdc"
       },
-      "related": ["social-batch-drafting", "systematic-debugging", "pending-plan-implementation"],
+      "related": [
+        "social-batch-drafting",
+        "systematic-debugging",
+        "pending-plan-implementation"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/social-batch-queue",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -213,14 +302,24 @@
       "type": "skill",
       "version": "1.0",
       "description": "Discover grants whose mission alignment, eligibility and deadline runway fit an operator profile. Two modes: Discovery sweeps wide and ranks by fit; Fit Deep-Dive runs a yes/no memo on one opportunity. Pairs with Grant Manager.",
-      "tags": ["grants", "research", "funding", "nonprofit", "discovery"],
+      "tags": [
+        "grants",
+        "research",
+        "funding",
+        "nonprofit",
+        "discovery"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install grant-researcher@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/grant-researcher",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/grant-researcher.mdc"
       },
-      "related": ["grant-manager", "plan-challenger", "pending-plan-implementation"],
+      "related": [
+        "grant-manager",
+        "plan-challenger",
+        "pending-plan-implementation"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/grant-researcher",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -233,14 +332,24 @@
       "type": "skill",
       "version": "1.0",
       "description": "Manage the full grant lifecycle on a chosen opportunity. LOI drafting, full proposal authoring, budget assistance, submission portal handling, post-award reporting and funder stewardship. Pairs with Grant Researcher.",
-      "tags": ["grants", "management", "proposals", "stewardship", "nonprofit"],
+      "tags": [
+        "grants",
+        "management",
+        "proposals",
+        "stewardship",
+        "nonprofit"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install grant-manager@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/grant-manager",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/grant-manager.mdc"
       },
-      "related": ["grant-researcher", "plan-challenger", "pending-plan-implementation"],
+      "related": [
+        "grant-researcher",
+        "plan-challenger",
+        "pending-plan-implementation"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/grant-manager",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -253,14 +362,25 @@
       "type": "skill",
       "version": "1.0",
       "description": "Sort a service-business inbox into seven named buckets, draft replies for repeating scenarios and surface every action item so nothing gets missed.",
-      "tags": ["email", "triage", "inbox", "solopreneur", "service-business", "admin"],
+      "tags": [
+        "email",
+        "triage",
+        "inbox",
+        "solopreneur",
+        "service-business",
+        "admin"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install email-triage@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/email-triage",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/email-triage.mdc"
       },
-      "related": ["daily-admin-orchestrator", "customer-follow-up", "quote-builder"],
+      "related": [
+        "daily-admin-orchestrator",
+        "customer-follow-up",
+        "quote-builder"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/email-triage",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -273,14 +393,25 @@
       "type": "skill",
       "version": "1.0",
       "description": "Turn a service-business inquiry into a complete quote in email, SMS or markdown-PDF format, with a 48-72h follow-up trigger built in on every run.",
-      "tags": ["quotes", "pricing", "follow-up", "solopreneur", "service-business", "admin"],
+      "tags": [
+        "quotes",
+        "pricing",
+        "follow-up",
+        "solopreneur",
+        "service-business",
+        "admin"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install quote-builder@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/quote-builder",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/quote-builder.mdc"
       },
-      "related": ["daily-admin-orchestrator", "invoice-payment-tracker", "customer-follow-up"],
+      "related": [
+        "daily-admin-orchestrator",
+        "invoice-payment-tracker",
+        "customer-follow-up"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/quote-builder",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -293,14 +424,26 @@
       "type": "skill",
       "version": "1.0",
       "description": "Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the load-bearing discipline. Pairs with Quote Builder and Daily Admin Orchestrator.",
-      "tags": ["invoicing", "payments", "billing", "cash-flow", "solopreneur", "service-business", "admin"],
+      "tags": [
+        "invoicing",
+        "payments",
+        "billing",
+        "cash-flow",
+        "solopreneur",
+        "service-business",
+        "admin"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install invoice-payment-tracker@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/invoice-payment-tracker",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/invoice-payment-tracker.mdc"
       },
-      "related": ["daily-admin-orchestrator", "quote-builder", "customer-follow-up"],
+      "related": [
+        "daily-admin-orchestrator",
+        "quote-builder",
+        "customer-follow-up"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/invoice-payment-tracker",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -313,14 +456,26 @@
       "type": "skill",
       "version": "1.0",
       "description": "Run a four-touchpoint post-job relationship cadence: thank-you at 24-48h, referral ask at 14d, maintenance check-in at 90d, re-engagement at 180d. CRM-lite for solo service businesses up to 50 customers.",
-      "tags": ["follow-up", "crm", "referrals", "relationships", "solopreneur", "service-business", "admin"],
+      "tags": [
+        "follow-up",
+        "crm",
+        "referrals",
+        "relationships",
+        "solopreneur",
+        "service-business",
+        "admin"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install customer-follow-up@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/customer-follow-up",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/customer-follow-up.mdc"
       },
-      "related": ["daily-admin-orchestrator", "email-triage", "invoice-payment-tracker"],
+      "related": [
+        "daily-admin-orchestrator",
+        "email-triage",
+        "invoice-payment-tracker"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/customer-follow-up",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -333,14 +488,26 @@
       "type": "skill",
       "version": "1.0",
       "description": "Run the complete solopreneur admin ritual in one session. Sequences Email Triage, Customer Follow-Up, Invoice and Payment Tracker and Quote Builder in order. Three variants: morning briefing, end-of-day rolldown, Friday weekly review.",
-      "tags": ["orchestrator", "admin", "morning-briefing", "ritual", "solopreneur", "service-business"],
+      "tags": [
+        "orchestrator",
+        "admin",
+        "morning-briefing",
+        "ritual",
+        "solopreneur",
+        "service-business"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install daily-admin-orchestrator@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/daily-admin-orchestrator",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/daily-admin-orchestrator.mdc"
       },
-      "related": ["email-triage", "quote-builder", "invoice-payment-tracker", "customer-follow-up"],
+      "related": [
+        "email-triage",
+        "quote-builder",
+        "invoice-payment-tracker",
+        "customer-follow-up"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/daily-admin-orchestrator",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -353,14 +520,23 @@
       "type": "skill",
       "version": "1.1",
       "description": "Build, refresh or extend a website with Claude Code as the primary build engine. Frame-agnostic by design. AI discoverability and three-state deploy verification built in from the first scaffold.",
-      "tags": ["website", "web", "build", "deploy", "discoverability", "creator"],
+      "tags": [
+        "website",
+        "web",
+        "build",
+        "deploy",
+        "discoverability",
+        "creator"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install website-builder@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/website-builder",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/website-builder.mdc"
       },
-      "related": ["source-harvest"],
+      "related": [
+        "source-harvest"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/website-builder",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -373,22 +549,70 @@
       "type": "bundle",
       "version": "1.0",
       "description": "Seven Claude Code skills that form the universal substrate for any creator working with AI agents in 2026. Five IGOS-native plus the marketing-skills plugin from Corey Haines.",
-      "tags": ["bundle", "creator", "foundational", "claude-code", "creator-os", "2026"],
+      "tags": [
+        "bundle",
+        "creator",
+        "foundational",
+        "claude-code",
+        "creator-os",
+        "2026"
+      ],
       "install": {
         "one_line_command": "curl -sSL https://www.infinitegameos.io/bundles/foundational-creator/install.sh | bash",
         "script_url": "https://www.infinitegameos.io/bundles/foundational-creator/install.sh",
         "markdown_url": "https://www.infinitegameos.io/markdown/bundles/foundational-creator"
       },
       "skills": [
-        { "title": "Researcher", "source": "IGOS Library", "license": "CC-BY-4.0", "url": "https://www.infinitegameos.io/skills/researcher" },
-        { "title": "Plan Challenger", "source": "IGOS Library", "license": "CC-BY-4.0", "url": "https://www.infinitegameos.io/skills/plan-challenger" },
-        { "title": "Source Harvest", "source": "IGOS Library", "license": "CC-BY-4.0", "url": "https://www.infinitegameos.io/skills/source-harvest" },
-        { "title": "Skill Creator", "source": "IGOS Library", "license": "CC-BY-4.0", "url": "https://www.infinitegameos.io/skills/skill-creator" },
-        { "title": "Systematic Debugging", "source": "IGOS Library", "license": "CC-BY-4.0", "url": "https://www.infinitegameos.io/skills/systematic-debugging" },
-        { "title": "Content Strategy", "source": "marketing-skills (Corey Haines)", "license": "MIT", "url": "https://github.com/coreyhaines31/marketingskills/tree/main/skills/content-strategy" },
-        { "title": "AI SEO", "source": "marketing-skills (Corey Haines)", "license": "MIT", "url": "https://github.com/coreyhaines31/marketingskills/tree/main/skills/ai-seo" }
+        {
+          "title": "Researcher",
+          "source": "IGOS Library",
+          "license": "CC-BY-4.0",
+          "url": "https://www.infinitegameos.io/skills/researcher"
+        },
+        {
+          "title": "Plan Challenger",
+          "source": "IGOS Library",
+          "license": "CC-BY-4.0",
+          "url": "https://www.infinitegameos.io/skills/plan-challenger"
+        },
+        {
+          "title": "Source Harvest",
+          "source": "IGOS Library",
+          "license": "CC-BY-4.0",
+          "url": "https://www.infinitegameos.io/skills/source-harvest"
+        },
+        {
+          "title": "Skill Creator",
+          "source": "IGOS Library",
+          "license": "CC-BY-4.0",
+          "url": "https://www.infinitegameos.io/skills/skill-creator"
+        },
+        {
+          "title": "Systematic Debugging",
+          "source": "IGOS Library",
+          "license": "CC-BY-4.0",
+          "url": "https://www.infinitegameos.io/skills/systematic-debugging"
+        },
+        {
+          "title": "Content Strategy",
+          "source": "marketing-skills (Corey Haines)",
+          "license": "MIT",
+          "url": "https://github.com/coreyhaines31/marketingskills/tree/main/skills/content-strategy"
+        },
+        {
+          "title": "AI SEO",
+          "source": "marketing-skills (Corey Haines)",
+          "license": "MIT",
+          "url": "https://github.com/coreyhaines31/marketingskills/tree/main/skills/ai-seo"
+        }
       ],
-      "related": ["researcher", "plan-challenger", "source-harvest", "skill-creator", "systematic-debugging"],
+      "related": [
+        "researcher",
+        "plan-challenger",
+        "source-harvest",
+        "skill-creator",
+        "systematic-debugging"
+      ],
       "article_url": "https://www.infinitegameos.io/bundles/foundational-creator",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -401,18 +625,47 @@
       "type": "bundle",
       "version": "1.0",
       "description": "Three avatar-specific Claude Code skills for solo SaaS founders, indie hackers, AI agent builders, plugin authors and hardware makers in 2026. gstack, Context7 and Impeccable on top of the Foundational Creator Bundle substrate.",
-      "tags": ["bundle", "builder", "solo-saas", "indie-hacker", "claude-code", "shipping", "creator-os", "2026"],
+      "tags": [
+        "bundle",
+        "builder",
+        "solo-saas",
+        "indie-hacker",
+        "claude-code",
+        "shipping",
+        "creator-os",
+        "2026"
+      ],
       "install": {
         "one_line_command": "curl -sSL https://www.infinitegameos.io/bundles/the-builder/install.sh | bash",
         "script_url": "https://www.infinitegameos.io/bundles/the-builder/install.sh",
         "markdown_url": "https://www.infinitegameos.io/markdown/bundles/the-builder"
       },
       "skills": [
-        { "title": "gstack (ship, land-and-deploy, canary, plus 30 companion commands)", "source": "garrytan/gstack", "license": "MIT", "url": "https://github.com/garrytan/gstack" },
-        { "title": "Context7 (live documentation injection MCP)", "source": "upstash/context7", "license": "MIT", "url": "https://github.com/upstash/context7" },
-        { "title": "Impeccable (design steering for code-first builders)", "source": "pbakaus/impeccable", "license": "Apache-2.0", "url": "https://github.com/pbakaus/impeccable" }
+        {
+          "title": "gstack (ship, land-and-deploy, canary, plus 30 companion commands)",
+          "source": "garrytan/gstack",
+          "license": "MIT",
+          "url": "https://github.com/garrytan/gstack"
+        },
+        {
+          "title": "Context7 (live documentation injection MCP)",
+          "source": "upstash/context7",
+          "license": "MIT",
+          "url": "https://github.com/upstash/context7"
+        },
+        {
+          "title": "Impeccable (design steering for code-first builders)",
+          "source": "pbakaus/impeccable",
+          "license": "Apache-2.0",
+          "url": "https://github.com/pbakaus/impeccable"
+        }
       ],
-      "related": ["foundational-creator", "source-harvest", "systematic-debugging", "plan-challenger"],
+      "related": [
+        "foundational-creator",
+        "source-harvest",
+        "systematic-debugging",
+        "plan-challenger"
+      ],
       "article_url": "https://www.infinitegameos.io/bundles/the-builder",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -425,18 +678,48 @@
       "type": "bundle",
       "version": "1.0",
       "description": "Two avatar-specific Claude Code skills for newsletter operators, essayists, ghostwriters and indie authors in 2026. Voice Ghostwriter and Humanizer install on top of the Foundational Creator Bundle substrate. Multi-Format Content Writer ships as a companion workspace template.",
-      "tags": ["bundle", "writer", "newsletter", "essayist", "ghostwriter", "claude-code", "voice", "creator-os", "2026"],
+      "tags": [
+        "bundle",
+        "writer",
+        "newsletter",
+        "essayist",
+        "ghostwriter",
+        "claude-code",
+        "voice",
+        "creator-os",
+        "2026"
+      ],
       "install": {
         "one_line_command": "curl -sSL https://www.infinitegameos.io/bundles/the-writer/install.sh | bash",
         "script_url": "https://www.infinitegameos.io/bundles/the-writer/install.sh",
         "markdown_url": "https://www.infinitegameos.io/markdown/bundles/the-writer"
       },
       "skills": [
-        { "title": "Voice Ghostwriter (calibration plus interview-driven drafting)", "source": "BayramAnnakov/founder-voice-ghostwriter", "license": "MIT", "url": "https://github.com/BayramAnnakov/founder-voice-ghostwriter" },
-        { "title": "Humanizer (37-pattern AI-writing detector and rewriter)", "source": "Aboudjem/humanizer-skill", "license": "MIT", "url": "https://github.com/Aboudjem/humanizer-skill" },
-        { "title": "Multi-Format Content Writer (companion workspace template)", "source": "WomenDefiningAI/claudecode-writer", "license": "MIT", "url": "https://github.com/WomenDefiningAI/claudecode-writer" }
+        {
+          "title": "Voice Ghostwriter (calibration plus interview-driven drafting)",
+          "source": "BayramAnnakov/founder-voice-ghostwriter",
+          "license": "MIT",
+          "url": "https://github.com/BayramAnnakov/founder-voice-ghostwriter"
+        },
+        {
+          "title": "Humanizer (37-pattern AI-writing detector and rewriter)",
+          "source": "Aboudjem/humanizer-skill",
+          "license": "MIT",
+          "url": "https://github.com/Aboudjem/humanizer-skill"
+        },
+        {
+          "title": "Multi-Format Content Writer (companion workspace template)",
+          "source": "WomenDefiningAI/claudecode-writer",
+          "license": "MIT",
+          "url": "https://github.com/WomenDefiningAI/claudecode-writer"
+        }
       ],
-      "related": ["foundational-creator", "researcher", "plan-challenger", "source-harvest"],
+      "related": [
+        "foundational-creator",
+        "researcher",
+        "plan-challenger",
+        "source-harvest"
+      ],
       "article_url": "https://www.infinitegameos.io/bundles/the-writer",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -449,18 +732,48 @@
       "type": "bundle",
       "version": "1.0",
       "description": "Two avatar-specific Claude Code skills for YouTubers, podcasters, livestreamers and short-form video creators in 2026. YouTube Channel Manager and Video Watcher install on top of the Foundational Creator Bundle substrate. Content Repurposing rides the marketing-skills plugin already installed via the Foundational Bundle.",
-      "tags": ["bundle", "performer", "youtube", "podcast", "shorts", "claude-code", "video", "creator-os", "2026"],
+      "tags": [
+        "bundle",
+        "performer",
+        "youtube",
+        "podcast",
+        "shorts",
+        "claude-code",
+        "video",
+        "creator-os",
+        "2026"
+      ],
       "install": {
         "one_line_command": "curl -sSL https://www.infinitegameos.io/bundles/the-performer/install.sh | bash",
         "script_url": "https://www.infinitegameos.io/bundles/the-performer/install.sh",
         "markdown_url": "https://www.infinitegameos.io/markdown/bundles/the-performer"
       },
       "skills": [
-        { "title": "YouTube Channel Manager (audits, video SEO, retention scripts, hooks, thumbnails, Shorts and analytics)", "source": "AgriciDaniel/claude-youtube", "license": "MIT", "url": "https://github.com/AgriciDaniel/claude-youtube" },
-        { "title": "Video Watcher (give Claude the ability to watch a video, extract frames and transcribe audio)", "source": "bradautomates/claude-video", "license": "MIT", "url": "https://github.com/bradautomates/claude-video" },
-        { "title": "Content Repurposing (already in your Foundational substrate via marketing-skills plugin)", "source": "coreyhaines31/marketingskills (video skill)", "license": "MIT", "url": "https://github.com/coreyhaines31/marketingskills/tree/main/skills/video" }
+        {
+          "title": "YouTube Channel Manager (audits, video SEO, retention scripts, hooks, thumbnails, Shorts and analytics)",
+          "source": "AgriciDaniel/claude-youtube",
+          "license": "MIT",
+          "url": "https://github.com/AgriciDaniel/claude-youtube"
+        },
+        {
+          "title": "Video Watcher (give Claude the ability to watch a video, extract frames and transcribe audio)",
+          "source": "bradautomates/claude-video",
+          "license": "MIT",
+          "url": "https://github.com/bradautomates/claude-video"
+        },
+        {
+          "title": "Content Repurposing (already in your Foundational substrate via marketing-skills plugin)",
+          "source": "coreyhaines31/marketingskills (video skill)",
+          "license": "MIT",
+          "url": "https://github.com/coreyhaines31/marketingskills/tree/main/skills/video"
+        }
       ],
-      "related": ["foundational-creator", "researcher", "source-harvest", "plan-challenger"],
+      "related": [
+        "foundational-creator",
+        "researcher",
+        "source-harvest",
+        "plan-challenger"
+      ],
       "article_url": "https://www.infinitegameos.io/bundles/the-performer",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -473,16 +786,38 @@
       "type": "bundle",
       "version": "1.0",
       "description": "The smallest avatar bundle by design. The Foundational Creator Bundle already covers most of the Teacher's working surface. The Teacher layer adds one optional companion-install link to GarethManning's 111-skill evidence-based pedagogy library plus the framing that turns the universal stack into curriculum design.",
-      "tags": ["bundle", "teacher", "course-creator", "cohort", "tutorial", "knowledge-product", "claude-code", "pedagogy", "creator-os", "2026"],
+      "tags": [
+        "bundle",
+        "teacher",
+        "course-creator",
+        "cohort",
+        "tutorial",
+        "knowledge-product",
+        "claude-code",
+        "pedagogy",
+        "creator-os",
+        "2026"
+      ],
       "install": {
         "one_line_command": "curl -sSL https://www.infinitegameos.io/bundles/the-teacher/install.sh | bash",
         "script_url": "https://www.infinitegameos.io/bundles/the-teacher/install.sh",
         "markdown_url": "https://www.infinitegameos.io/markdown/bundles/the-teacher"
       },
       "skills": [
-        { "title": "Claude Education Skills (companion install, not bundled natively)", "source": "GarethManning/claude-education-skills", "license": "CC-BY-SA-4.0", "url": "https://github.com/GarethManning/claude-education-skills" }
+        {
+          "title": "Claude Education Skills (companion install, not bundled natively)",
+          "source": "GarethManning/claude-education-skills",
+          "license": "CC-BY-SA-4.0",
+          "url": "https://github.com/GarethManning/claude-education-skills"
+        }
       ],
-      "related": ["foundational-creator", "researcher", "plan-challenger", "source-harvest", "skill-creator"],
+      "related": [
+        "foundational-creator",
+        "researcher",
+        "plan-challenger",
+        "source-harvest",
+        "skill-creator"
+      ],
       "article_url": "https://www.infinitegameos.io/bundles/the-teacher",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -495,17 +830,42 @@
       "type": "bundle",
       "version": "1.0",
       "description": "Two avatar-specific Claude Code skills for newsletter curators, industry digest writers, taste-forward newsletter authors and link aggregators in 2026. Tech Digest and Newsletter Creation and Curation install on top of the Foundational Creator Bundle substrate.",
-      "tags": ["bundle", "curator", "newsletter", "digest", "rss", "taste", "claude-code", "creator-os", "2026"],
+      "tags": [
+        "bundle",
+        "curator",
+        "newsletter",
+        "digest",
+        "rss",
+        "taste",
+        "claude-code",
+        "creator-os",
+        "2026"
+      ],
       "install": {
         "one_line_command": "curl -sSL https://www.infinitegameos.io/bundles/the-curator/install.sh | bash",
         "script_url": "https://www.infinitegameos.io/bundles/the-curator/install.sh",
         "markdown_url": "https://www.infinitegameos.io/markdown/bundles/the-curator"
       },
       "skills": [
-        { "title": "Tech Digest (RSS aggregation, scoring, dedup, structured shortlist)", "source": "camilleroux/tech-digest", "license": "MIT", "url": "https://github.com/camilleroux/tech-digest" },
-        { "title": "Newsletter Creation and Curation (editorial framing, synthesis, subject lines)", "source": "BrianRWagner/ai-marketing-claude-code-skills", "license": "MIT", "url": "https://github.com/BrianRWagner/ai-marketing-claude-code-skills/tree/main/newsletter-creation-curation" }
+        {
+          "title": "Tech Digest (RSS aggregation, scoring, dedup, structured shortlist)",
+          "source": "camilleroux/tech-digest",
+          "license": "MIT",
+          "url": "https://github.com/camilleroux/tech-digest"
+        },
+        {
+          "title": "Newsletter Creation and Curation (editorial framing, synthesis, subject lines)",
+          "source": "BrianRWagner/ai-marketing-claude-code-skills",
+          "license": "MIT",
+          "url": "https://github.com/BrianRWagner/ai-marketing-claude-code-skills/tree/main/newsletter-creation-curation"
+        }
       ],
-      "related": ["foundational-creator", "source-harvest", "researcher", "skill-creator"],
+      "related": [
+        "foundational-creator",
+        "source-harvest",
+        "researcher",
+        "skill-creator"
+      ],
       "article_url": "https://www.infinitegameos.io/bundles/the-curator",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -518,18 +878,49 @@
       "type": "bundle",
       "version": "1.0",
       "description": "Three avatar-specific Claude Code skills for independent management consultants, fractional executives, frameworks writers, growth strategists, decision-systems authors and applied operators in 2026. Management Consulting (42 frameworks, three output modes), Decision Toolkit and MBB Management Consultant install on top of the Foundational Creator Bundle substrate.",
-      "tags": ["bundle", "strategist", "consultant", "fractional", "frameworks", "advisory", "claude-code", "creator-os", "2026"],
+      "tags": [
+        "bundle",
+        "strategist",
+        "consultant",
+        "fractional",
+        "frameworks",
+        "advisory",
+        "claude-code",
+        "creator-os",
+        "2026"
+      ],
       "install": {
         "one_line_command": "curl -sSL https://www.infinitegameos.io/bundles/the-strategist/install.sh | bash",
         "script_url": "https://www.infinitegameos.io/bundles/the-strategist/install.sh",
         "markdown_url": "https://www.infinitegameos.io/markdown/bundles/the-strategist"
       },
       "skills": [
-        { "title": "Management Consulting (42 frameworks across strategy, problem-solving, decision-making, financial, operations and innovation; three output modes)", "source": "gcamilo/management-consulting", "license": "MIT", "url": "https://github.com/gcamilo/management-consulting" },
-        { "title": "Decision Toolkit (structured decision frameworks plus cognitive bias checkers)", "source": "glebis/claude-skills", "license": "MIT", "url": "https://github.com/glebis/claude-skills" },
-        { "title": "MBB Management Consultant (Pyramid Principle executive communication, market sizing, profitability trees, sector-specific strategy across nine industries)", "source": "charlie989898/-mbb-management-consultant-claude-skill", "license": "MIT", "url": "https://github.com/charlie989898/-mbb-management-consultant-claude-skill" }
+        {
+          "title": "Management Consulting (42 frameworks across strategy, problem-solving, decision-making, financial, operations and innovation; three output modes)",
+          "source": "gcamilo/management-consulting",
+          "license": "MIT",
+          "url": "https://github.com/gcamilo/management-consulting"
+        },
+        {
+          "title": "Decision Toolkit (structured decision frameworks plus cognitive bias checkers)",
+          "source": "glebis/claude-skills",
+          "license": "MIT",
+          "url": "https://github.com/glebis/claude-skills"
+        },
+        {
+          "title": "MBB Management Consultant (Pyramid Principle executive communication, market sizing, profitability trees, sector-specific strategy across nine industries)",
+          "source": "charlie989898/-mbb-management-consultant-claude-skill",
+          "license": "MIT",
+          "url": "https://github.com/charlie989898/-mbb-management-consultant-claude-skill"
+        }
       ],
-      "related": ["foundational-creator", "researcher", "source-harvest", "plan-challenger", "systematic-debugging"],
+      "related": [
+        "foundational-creator",
+        "researcher",
+        "source-harvest",
+        "plan-challenger",
+        "systematic-debugging"
+      ],
       "article_url": "https://www.infinitegameos.io/bundles/the-strategist",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -542,12 +933,23 @@
       "type": "protocol",
       "version": "1.0",
       "description": "Governing posture for any agent that operates outside its home system. Three duties (represent, protect, advance) and six modes that read each external situation.",
-      "tags": ["protocol", "governance", "ambassador", "agentic", "external-engagement"],
+      "tags": [
+        "protocol",
+        "governance",
+        "ambassador",
+        "agentic",
+        "external-engagement"
+      ],
       "install": {
         "markdown_url": "https://www.infinitegameos.io/markdown/protocols/ambassador-doctrine",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/ambassador-doctrine.mdc"
       },
-      "related": ["source-harvest", "skill-creator", "researcher", "plan-challenger"],
+      "related": [
+        "source-harvest",
+        "skill-creator",
+        "researcher",
+        "plan-challenger"
+      ],
       "article_url": "https://www.infinitegameos.io/protocols/ambassador-doctrine",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -555,19 +957,64 @@
       "changelog_url": null
     },
     {
+      "id": "external-worker-routing",
+      "name": "External Worker Routing",
+      "type": "protocol",
+      "version": "1.0",
+      "description": "Routing discipline for deterministic, no-judgment work to secondary AI providers. Four providers, one dispatch script and a five-condition test that decides what qualifies.",
+      "tags": [
+        "protocol",
+        "routing",
+        "external-workers",
+        "dispatch",
+        "agentic",
+        "cost-efficiency"
+      ],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install external-worker-routing@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/protocols/external-worker-routing",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/external-worker-routing.mdc"
+      },
+      "related": [
+        "ambassador-doctrine",
+        "source-harvest",
+        "researcher",
+        "systematic-debugging"
+      ],
+      "article_url": "https://www.infinitegameos.io/protocols/external-worker-routing",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-07-10",
+      "changelog_url": null,
+      "se_origin": "dual"
+    },
+    {
       "id": "self-healing",
       "name": "Self-Healing",
       "type": "skill",
       "version": "1.1",
       "description": "Autonomous error recovery during implementation sessions. Diagnose the root cause, apply a fix, continue without stalling on recoverable mistakes. Also ships inside the Sovereign Ecosystem Foundation.",
-      "tags": ["recovery", "errors", "autonomy", "implementation", "resilience", "kingdom-skill"],
+      "tags": [
+        "recovery",
+        "errors",
+        "autonomy",
+        "implementation",
+        "resilience",
+        "kingdom-skill"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install self-healing@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/self-healing",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/self-healing.mdc"
       },
-      "related": ["systematic-debugging", "pending-plan-implementation", "session-closeout", "sovereign-ecosystem"],
+      "related": [
+        "systematic-debugging",
+        "pending-plan-implementation",
+        "session-closeout",
+        "sovereign-ecosystem"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/self-healing",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -579,20 +1026,32 @@
       "id": "session-closeout",
       "name": "Session Closeout",
       "type": "skill",
-      "version": "1.1",
+      "version": "1.2",
       "description": "A fast three-action close for a git-tracked workspace. Breadcrumbs as you work, a refreshed primer, a readable commit as the session summary. Also ships inside the Sovereign Ecosystem Foundation.",
-      "tags": ["session", "closeout", "git", "breadcrumbs", "handoff", "kingdom-skill"],
+      "tags": [
+        "session",
+        "closeout",
+        "git",
+        "breadcrumbs",
+        "handoff",
+        "kingdom-skill"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install session-closeout@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/session-closeout",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/session-closeout.mdc"
       },
-      "related": ["pending-plan-implementation", "pattern-harvest", "self-healing", "sovereign-ecosystem"],
+      "related": [
+        "pending-plan-implementation",
+        "pattern-harvest",
+        "self-healing",
+        "sovereign-ecosystem"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/session-closeout",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
-      "updated_at": "2026-06-10",
+      "updated_at": "2026-07-10",
       "se_origin": "dual",
       "changelog_url": null
     },
@@ -602,14 +1061,26 @@
       "type": "skill",
       "version": "1.1",
       "description": "Headless browser automation that returns structured data. Scrape pages, extract content, interact with web interfaces. Clean JSON over screenshots. Also ships inside the Sovereign Ecosystem Foundation.",
-      "tags": ["automation", "browser", "scraping", "extraction", "data", "kingdom-skill"],
+      "tags": [
+        "automation",
+        "browser",
+        "scraping",
+        "extraction",
+        "data",
+        "kingdom-skill"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install playwright@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/playwright",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/playwright.mdc"
       },
-      "related": ["source-harvest", "researcher", "systematic-debugging", "sovereign-ecosystem"],
+      "related": [
+        "source-harvest",
+        "researcher",
+        "systematic-debugging",
+        "sovereign-ecosystem"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/playwright",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -621,20 +1092,31 @@
       "id": "anti-ai-edit-pass",
       "name": "Anti-AI Edit Pass",
       "type": "skill",
-      "version": "1.1",
+      "version": "1.2",
       "description": "An editing pass for long-form manuscripts that finds and removes the writing tells of AI authorship. The result reads as your own voice. Also ships inside the Sovereign Ecosystem Foundation.",
-      "tags": ["editing", "manuscript", "writing", "voice", "long-form", "kingdom-skill"],
+      "tags": [
+        "editing",
+        "manuscript",
+        "writing",
+        "voice",
+        "long-form",
+        "kingdom-skill"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install anti-ai-edit-pass@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/anti-ai-edit-pass",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/anti-ai-edit-pass.mdc"
       },
-      "related": ["source-harvest", "session-closeout", "sovereign-ecosystem"],
+      "related": [
+        "source-harvest",
+        "session-closeout",
+        "sovereign-ecosystem"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/anti-ai-edit-pass",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
-      "updated_at": "2026-06-10",
+      "updated_at": "2026-07-10",
       "se_origin": "dual",
       "changelog_url": null
     },
@@ -644,14 +1126,22 @@
       "type": "skill",
       "version": "1.1",
       "description": "Run a focused 1:1 advisory session with a named AI lens. The universal session flow with the Three Solutions Rule and Challenge and Illumination active, closing in a structured capture.",
-      "tags": ["advisory", "ai-advisor", "decision-making", "sovereignty"],
+      "tags": [
+        "advisory",
+        "ai-advisor",
+        "decision-making",
+        "sovereignty"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install jacket-session@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/jacket-session",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/jacket-session.mdc"
       },
-      "related": ["jacket-meeting", "plan-challenger"],
+      "related": [
+        "jacket-meeting",
+        "plan-challenger"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/jacket-session",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -665,14 +1155,22 @@
       "type": "skill",
       "version": "1.1",
       "description": "Run a multi-lens team meeting across all your AI advisory jackets. A twelve-step flow from convene to close. Each lens prepares independently, one seat synthesizes, you decide.",
-      "tags": ["advisory", "ai-advisor", "decision-making", "synthesis"],
+      "tags": [
+        "advisory",
+        "ai-advisor",
+        "decision-making",
+        "synthesis"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install jacket-meeting@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/jacket-meeting",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/jacket-meeting.mdc"
       },
-      "related": ["jacket-session", "plan-challenger"],
+      "related": [
+        "jacket-session",
+        "plan-challenger"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/jacket-meeting",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -684,22 +1182,126 @@
       "id": "autonomous-improvement-session",
       "name": "Autonomous Improvement Session",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Run a set-and-forget session that improves your system without active attention. Operator-invoked only. Safe, additive hygiene work executes directly; judgment forks and floor-class items surface for your review. Also ships inside the Sovereign Ecosystem Foundation.",
-      "tags": ["autonomy", "improvement", "hygiene", "session", "flywheel", "kingdom-skill"],
+      "tags": [
+        "autonomy",
+        "improvement",
+        "hygiene",
+        "session",
+        "flywheel",
+        "kingdom-skill"
+      ],
       "install": {
         "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
         "claude_code_command": "/plugin install autonomous-improvement-session@igos-library",
         "markdown_url": "https://www.infinitegameos.io/markdown/skills/autonomous-improvement-session",
         "cursor_mdc": "https://www.infinitegameos.io/install/cursor/autonomous-improvement-session.mdc"
       },
-      "related": ["session-closeout", "pattern-harvest", "self-healing", "sovereign-ecosystem"],
+      "related": [
+        "session-closeout",
+        "pattern-harvest",
+        "self-healing",
+        "sovereign-ecosystem"
+      ],
       "article_url": "https://www.infinitegameos.io/skills/autonomous-improvement-session",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
-      "updated_at": "2026-06-26",
+      "updated_at": "2026-07-10",
       "se_origin": "dual",
       "changelog_url": null
+    },
+    {
+      "id": "plan-harvest-and-retire",
+      "name": "Plan Harvest and Retire",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Retire a stalled or indefinitely-deferred plan without losing its value. Candidate scan, harvest, distribute, sweep, archive and codify.",
+      "tags": [
+        "planning",
+        "governance",
+        "archival",
+        "review"
+      ],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install plan-harvest-and-retire@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/plan-harvest-and-retire",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/plan-harvest-and-retire.mdc"
+      },
+      "related": [
+        "pending-plan-implementation",
+        "plan-challenger",
+        "batch-archival",
+        "source-harvest"
+      ],
+      "article_url": "https://www.infinitegameos.io/skills/plan-harvest-and-retire",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-07-10",
+      "changelog_url": null,
+      "se_origin": "graduated"
+    },
+    {
+      "id": "pr-code-review",
+      "name": "PR Code Review",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Automated pull request review for your repos. Five parallel agents, confidence scoring, convention-file compliance, and GitHub comment posting.",
+      "tags": [
+        "code-review",
+        "github",
+        "pull-request",
+        "quality"
+      ],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install pr-code-review@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/pr-code-review",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/pr-code-review.mdc"
+      },
+      "related": [
+        "systematic-debugging",
+        "plan-challenger",
+        "source-harvest"
+      ],
+      "article_url": "https://www.infinitegameos.io/skills/pr-code-review",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-07-10",
+      "changelog_url": null,
+      "se_origin": "graduated"
+    },
+    {
+      "id": "batch-archival",
+      "name": "Batch Archival",
+      "type": "skill",
+      "version": "1.0",
+      "description": "Archive several finished artifacts at once without losing anything. Scan, classify, audit readiness, then move nothing without explicit approval.",
+      "tags": [
+        "archival",
+        "lifecycle",
+        "approval-gates",
+        "workspace-hygiene",
+        "kingdom-skill"
+      ],
+      "install": {
+        "claude_code_marketplace": "https://www.infinitegameos.io/marketplace.json",
+        "claude_code_command": "/plugin install batch-archival@igos-library",
+        "markdown_url": "https://www.infinitegameos.io/markdown/skills/batch-archival",
+        "cursor_mdc": "https://www.infinitegameos.io/install/cursor/batch-archival.mdc"
+      },
+      "related": [
+        "session-closeout",
+        "pending-plan-implementation",
+        "autonomous-improvement-session"
+      ],
+      "article_url": "https://www.infinitegameos.io/skills/batch-archival",
+      "repo": null,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "updated_at": "2026-07-10",
+      "changelog_url": null,
+      "se_origin": "dual"
     }
   ]
 }

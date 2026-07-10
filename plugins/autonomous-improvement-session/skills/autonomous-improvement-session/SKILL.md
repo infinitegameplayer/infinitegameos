@@ -2,7 +2,7 @@
 name: autonomous-improvement-session
 description: Use when you have spare capacity and want to set your system improving without active attention. Operator-invoked only, never scheduled. Safe, additive, reversible hygiene work runs under a threshold model with a permanent floor of actions the agent never takes on its own.
 status: active
-version: 1.0
+version: 1.1
 ---
 
 # Autonomous Improvement Session
@@ -144,6 +144,18 @@ Eligibility: not run in 60+ days, or when memory index exceeds your defined line
 Gather changed governance artifacts from recent version control history (last 14 days). For each, grep the system for inbound references and documents that enumerate the same subject. For each with candidate parallel docs, check whether those docs reflect the change or carry a now-stale claim. Read-only. Propose the reconciliation; do not apply it. Check version history before calling any mismatch drift: mismatches often have intentional history.
 Eligibility: not run in 14+ days.
 
+**T2-9: Style-guide conformance sweep.**
+Scope to durable canonical content only: reference docs, protocols, product pages and other content meant to stand indefinitely. Skip in-progress drafts and already-shipped ephemera; expression quality on live drafts belongs at drafting time, not a background sweep. If your system ships a style guide or an anti-AI writing-patterns document, check conformance against its stated rules (banned phrases, capitalization conventions, punctuation rules). Skip entirely if no such document exists. Read-only; every finding surfaces for review.
+Eligibility: not run in 30+ days.
+
+**T2-10: YAML frontmatter validity scan.**
+Walk all files that carry YAML frontmatter. Parse each block. An unquoted colon inside a value (commonly a title or description field) can silently break the whole properties block, defeating every frontmatter-based check for that file with no visible error. Flag every file that fails to parse cleanly, with the specific line at fault.
+Eligibility: not run in 30+ days.
+
+**T2-11: MCP tool-description integrity sweep.**
+Hash the descriptions of your active MCP tool schemas each run and diff against the prior hash. A tool description that changes without a corresponding version bump is the signature of a supply-chain rug-pull on a trust boundary you rely on. Flag any drift for review.
+Eligibility: not run in 14+ days.
+
 ---
 
 ## Steps
@@ -189,6 +201,8 @@ Immediately after each Tier 1 item completes, ask: "Did running this item surfac
 ### Step 7: Execute Tier 2 items
 
 Dispatch all Tier 2 items in parallel as Sonnet subagents (read-only scans are safely parallel). Each returns a structured finding. When a finding needs a ruling the return session should act on, mirror it as a board bucket-2 entry.
+
+**Single-context workers.** Every worker prompt states: run single-context, do not spawn subagents. A worker that fans out returns narration about its own children instead of findings, and per-item results get lost in the hop. This rule applies to every dispatched worker, Tier 1 editors included, not just Tier 2 scans.
 
 ### Step 8: Research rotation (every run)
 
@@ -258,6 +272,8 @@ v1 is operator-invoked only. Scheduling is a future direction, gated on a track 
 ## Log Structure
 
 Single file at a path you choose (for example `Logs/Autonomous Improvement Log.md`).
+
+**Retention rule.** At session open, when the log body exceeds roughly 1200 lines, compress the oldest full run entries into one-line summaries (run number, date, items executed, board outcome) until the body sits under 1000 lines, keeping the newest 8 runs in full. Frontmatter state is never compressed. The compression runs as part of the session; it needs no separate approval. The log that watches other logs' rotation carries its own window.
 
 **Frontmatter:**
 

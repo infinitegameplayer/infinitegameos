@@ -1,0 +1,13 @@
+{
+  "name": "external-worker-routing",
+  "description": "Routing discipline for deterministic, no-judgment work to secondary AI providers. Provider catalog, five-condition eligibility test and the dispatch script.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lane Belone",
+    "email": "howdy@lanebelone.com"
+  },
+  "homepage": "https://www.infinitegameos.io/protocols/external-worker-routing",
+  "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+  "license": "CC-BY-4.0",
+  "keywords": ["routing", "external-worker", "dispatch", "providers", "protocol", "agentic"]
+}

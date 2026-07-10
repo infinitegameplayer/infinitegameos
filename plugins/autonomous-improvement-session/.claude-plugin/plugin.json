@@ -1,7 +1,7 @@
 {
   "name": "autonomous-improvement-session",
   "description": "Set your system improving on its own when you have spare capacity. Safe, additive, self-contained work runs under a threshold model with a permanent floor of actions it never takes on its own.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Lane Belone",
     "email": "howdy@lanebelone.com"

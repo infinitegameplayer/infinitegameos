@@ -1,0 +1,13 @@
+{
+  "name": "batch-archival",
+  "description": "Archive several workspace artifacts at once under per-artifact approval gates. Scan, classify, audit readiness, then move nothing without explicit approval.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lane Belone",
+    "email": "howdy@lanebelone.com"
+  },
+  "homepage": "https://www.infinitegameos.io/skills/batch-archival",
+  "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+  "license": "CC-BY-4.0",
+  "keywords": ["archival", "vault", "approval-gates", "workspace-hygiene", "lifecycle"]
+}

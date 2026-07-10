@@ -2,7 +2,7 @@
 name: anti-ai-edit-pass
 description: Use when a long-form manuscript (book chapter, ebook, multi-chapter playbook, long-form digital product) needs an editing pass to identify and remove AI writing tells. Sweeps across 8 pattern categories, assembles a structured edit packet for operator review, and applies approved edits.
 status: active
-version: 1.1
+version: 1.2
 ---
 
 # Anti-AI Edit Pass Skill
@@ -23,7 +23,7 @@ Status: active
 
 ## The 8 Pattern Categories (Built-In Reference)
 
-This skill is self-contained. The pattern reference below replaces the external codex dependency. The library is extensible: when new patterns surface during a sweep, surface them as proposals for operator ratification, then add them to this section. Current entry count: 80+ across 8 categories.
+This skill is self-contained. The pattern reference below replaces the external codex dependency. The library is extensible: when new patterns surface during a sweep, surface them as proposals for operator ratification, then add them to this section. Current entry count: 112 across 8 categories.
 
 ### Category I: Lexical Blacklist
 
@@ -41,6 +41,13 @@ Single words and short phrases that appear so often in AI-generated text they re
 10. **Testament/serves-as construction**: Copula avoidance: "is a testament to," "serves as," "acts as." Replace: use "is."
 11. **Business jargon cluster**: "Move the needle," "circle back," "double down," "low-hanging fruit." Replace: name what actually changes.
 12. **Vague demonstrative anchor**: Overuse of "this" and "these" as paragraph openers without clear antecedent. Replace: name the actual thing.
+12a. **Worth-sitting-with phrase**: "Worth sitting with," "sit with that," "let that sit" appended to an idea as a reflective-weight marker. Replace: end the section and let white space do the sitting.
+12b. **Seamless/cutting-edge pair**: "Seamless" and "cutting-edge" as default quality markers for technology or process. Replace: describe the experience.
+12c. **Superlative inflation cluster**: "Unprecedented," "groundbreaking," "revolutionary" applied to incremental change. Replace: describe what changed; genuine rarity shows in the facts.
+12d. **Actionable-insights phrase**: "Actionable insights," "valuable insights" as a substitute for naming the insight. Replace: state one insight concretely.
+12e. **Ecosystem noun**: "Ecosystem" as default metaphor for any interconnected set when the components could be named. Replace: name the components; keep the word only when the system is genuinely interconnected and self-organizing.
+12f. **Embark opener**: "Embark on a journey of..." framing any process or learning experience. Replace: start the thing without announcing it.
+12g. **Redundant adverb stack**: "Truly," "really," "profoundly," "fundamentally," "ultimately" stacked before adjectives to inflate weight. Replace: cut the adverb; if the noun cannot carry the weight, find a stronger noun.
 
 ### Category II: Opener Tells
 
@@ -74,6 +81,9 @@ The most pervasive category. The fix is almost always: state the claim.
 33. **Model-specific hedge cluster**: "As a large language model I don't have real-time data," "my training data suggests." Replace: own the scope boundary directly or remove the caveat.
 34. **Certainty-softening reflex**: Adding "I believe," "I think," "it seems" to claims the prose can simply assert. Replace: assert.
 35. **Foreshadowing without delivery**: "I'll address this in more detail later" without the detail ever arriving. Replace: cut the foreshadow or deliver the substance now.
+35a. **Hedge-then-pivot**: Acknowledging a position the writer does not hold, then pivoting to the real claim, using the hedge as unearned credibility scaffolding. Replace: state the real claim plainly; grant the other position only if it changes the argument.
+35b. **Pronouncement inflation**: Ordinary claims amplified via "fundamentally," "ultimately," "undoubtedly," "essentially," "at its core." Replace: let the claim carry its own weight.
+35c. **Safety-disclaimer reflex**: Formulaic "consult a qualified professional" or "individual results vary" disclaimers attached to general reflection rather than specific advice. Replace: if a real boundary exists, write it in your own voice; otherwise cut the template.
 
 ### Category IV: Negation and Pivot Constructions
 
@@ -85,6 +95,8 @@ Used sparingly in specific idioms. Used reflexively by AI as default rhetorical 
 39. **Balanced-perspective sandwich**: Position A, position B, "the truth lies between." Replace: have a position.
 40. **False concession**: Granting the opposing position without engaging it. Replace: either engage it or do not bring it up.
 41. **Pre-emptive reframe**: "Before we get into X, let me first address Y." Replace: address Y or don't; don't announce the detour.
+41a. **Stacked classifying negation**: Two or more consecutive denials classifying a thing by what it is, before the affirmative lands ("It isn't X. It isn't Y. It's Z."). Replace: lead with the affirmative; let one contrast earn its place only if the sentence truly needs it.
+41b. **Counterfactual frame**: "I won't pretend," "I don't mean to imply," constructing sentences around what the writer is not doing. Replace: direct affirmation of what is.
 
 ### Category V: Rhetorical Reflexes
 
@@ -99,6 +111,10 @@ Multi-sentence patterns that simulate thoughtful structure. The reader senses th
 48. **Rhetorical-question-as-transition**: Closing a paragraph with a question that the next paragraph immediately answers. Replace: write both paragraphs as assertions; let the implicit question do its work.
 49. **AI-introspection theater**: "What does it mean to truly understand X?" as paragraph opener, followed by a tour of sub-questions. Replace: start with what you actually know.
 50. **Clarifying-before-asked construction**: "You might be wondering..." or "To be clear..." anticipating objections that the reader hasn't raised. Replace: make the point clearly enough that the clarification is unnecessary.
+50a. **Named-plainly move**: Announcing that naming is happening: "named plainly," "to name it plainly," "call it what it is." Replace: skip the announcement and write the plain sentence.
+50b. **"This is where X comes in" hinge**: Announcing a concept's arrival rather than letting it arrive. Replace: the concept arrives in the prose; no announcement.
+50c. **"And that's the beauty of it" closer**: Announcing that preceding content is beautiful or profound. Replace: end on the image; the image carries the beauty.
+50d. **Reader-steering pre-annotation**: Labels for how the reader should experience information: "interestingly," "importantly," "surprisingly." Replace: write the fact; let the reader decide what is interesting.
 
 ### Category VI: Voice and Register Signatures
 
@@ -117,6 +133,10 @@ Personality-level tells. Above structure, in the felt register the reader picks 
 61. **Sage tone**: Measured, slow cadence that performs wisdom without delivering specificity. Replace: be specific or be brief.
 62. **Navigating-complexities we-voice**: "As we navigate these challenges," "when we think about how to move forward." Replace: name who is navigating and what.
 63. **Manufactured stakes**: Urgency or significance inserted without a concrete cause. "This is more important than ever." Replace: name what changed that makes it important.
+63a. **Reader-instruction on feeling**: Directing the reader's inner state: "notice what comes up," "let that land," "feel the difference," "take a breath here." Replace: build the moment that produces the feeling; the reader's inner state is theirs.
+63b. **Earn-it framing**: Telling the reader something must be earned before it lands: "you have to earn this," "the ending earns its weight," "an earned insight." Replace: do the earning invisibly; the verdict word belongs to critics, not the page.
+63c. **Constant reader validation**: Narrating the reader's experience back as affirmation: "if you've ever felt this way," "you're not alone." Replace: write from your own experience precisely; the reader finds themselves in the specificity.
+63d. **Sycophantic closer**: "I hope this helps!" "Let me know if you have questions!" bleeding from chat mode into prose. Replace: end on substance, image or forward pull.
 
 ### Category VII: Structural Tics
 
@@ -132,6 +152,12 @@ Multi-section and multi-chapter patterns. Most damaging in book form.
 71. **Mirror-close**: The final paragraph mirrors the opening paragraph's imagery or vocabulary as a callback. Looks intentional; reads as a template. Replace: end where the thought ends.
 72. **Graduated revelation structure**: Each section is longer than the one before. Builds to a crescendo. Replace: let natural weight determine section length.
 73. **Pre-conclusion transition paragraph**: A paragraph whose only purpose is to signal the conclusion is coming. "With all of this in mind, let's bring these threads together." Replace: start the conclusion.
+73a. **Rigid-progression framing**: Any development framed as a fixed staged sequence ("first you notice, then you name, finally you release") imposed on material that lives non-linearly. Replace: let the material keep its real shape; if it loops, write the loop.
+73b. **Symmetry-forced parallel**: All list items forced into identical grammatical structure at the cost of natural emphasis. Replace: let items take different shapes if the ideas have different shapes, or dissolve into prose.
+73c. **Therapeutic close**: Ending by affirming the reader emotionally: "Trust the process. You've got this." Replace: end on image, sensation or open question.
+73d. **Balanced conclusion default**: A conclusion that refuses to land on a claim: "ultimately, it's about finding what works for you." Replace: take a position.
+73e. **Reader walkthrough**: Narrating the reader's journey in advance: "First we'll look at... Next we'll explore... Finally we'll see..." Replace: drop the reader into the first true sentence; the arc carries itself.
+73f. **Listicle-in-a-trench-coat**: Prose that is actually a numbered list with "first/second/third" substituted for bullets. Replace: develop the ideas as paragraphs or collapse them into one sentence; never numbered.
 
 ### Category VIII: Formatting and Visual Tics
 
@@ -148,6 +174,8 @@ Visual fingerprints. Especially damaging in book-form prose.
 82. **Nested-bullet explosion**: A three-level nested bullet list for information that could be one sentence. Replace: one sentence.
 83. **Consistent-depth illusion**: Every section has exactly the same number of subsections, giving a false sense of comprehensiveness. Replace: let natural depth determine subsection count.
 84. **Decorative rule between every paragraph**: Horizontal rules used as visual breathing room between normal paragraphs. Replace: white space. Rules are structural, not decorative.
+85. **TL;DR reflex**: A summary labeled "TL;DR" at top or bottom, a preemptive escape from the reading itself. Replace: if a summary is needed before engagement, the opening failed; fix the opening.
+86. **Definition-list reflex**: Abstract terms followed by a colon and a one-sentence definition, turning prose into a glossary. Replace: name the concept in context; let the prose demonstrate before defining.
 
 ---
 
@@ -285,7 +313,7 @@ Assemble all findings into a single structured edit packet for operator review. 
 # Anti-AI Edit Pass: Edit Packet
 ## Manuscript: [name]
 ## Date: [YYYY-MM-DD]
-## Pattern Reference: Built-in (84 entries across 8 categories; extensible)
+## Pattern Reference: Built-in (112 entries across 8 categories; extensible)
 
 ### Summary
 - Total findings: [count]

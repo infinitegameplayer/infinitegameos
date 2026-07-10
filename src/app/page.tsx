@@ -118,6 +118,42 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 1a. Install CTA: compact command block, first screen after hero */}
+      <section className="section" style={{ paddingTop: '0', paddingBottom: '2rem' }}>
+        <SectionReveal>
+          <div className="action-card" style={{ padding: '1.75rem', maxWidth: '640px', margin: '0 auto' }}>
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '0.9rem',
+                color: 'var(--color-muted)',
+                marginBottom: '1rem',
+              }}
+            >
+              Already running Claude Code? Install a skill straight from your terminal.
+            </p>
+            <pre
+              style={{
+                background: 'rgba(0, 0, 0, 0.4)',
+                padding: '1rem',
+                borderRadius: '6px',
+                overflowX: 'auto',
+                fontSize: '0.85rem',
+                lineHeight: 1.6,
+              }}
+            >
+              <code>
+{`/plugin marketplace add https://www.infinitegameos.io/marketplace.json
+/plugin install <skill-name>@igos-library`}
+              </code>
+            </pre>
+            <Link href="/skills" className="link-more" style={{ marginTop: '1rem' }}>
+              Browse the library →
+            </Link>
+          </div>
+        </SectionReveal>
+      </section>
+
       {/* 2. Thin philosophy beat */}
       <section className="section">
         <SectionReveal>
@@ -137,7 +173,7 @@ export default function HomePage() {
         </SectionReveal>
       </section>
 
-      {/* 3. The thinking — featured Concepts */}
+      {/* 3. The thinking: featured Concepts */}
       <section className="section" style={{ paddingTop: '1rem' }}>
         <SectionReveal>
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '2.5rem' }}>
@@ -161,7 +197,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. The doing — featured Skills + Bundles */}
+      {/* 4. The doing: featured Skills + Bundles */}
       <section className="section" style={{ paddingTop: '1rem' }}>
         <SectionReveal>
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '2.5rem' }}>

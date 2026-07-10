@@ -33,7 +33,7 @@
     {
       "name": "pattern-harvest",
       "description": "Reflective session-level pattern extraction. Three parallel lenses produce a numbered recommendation list the operator selects from. Run before session closeout on substantial sessions.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -129,6 +129,54 @@
       }
     },
     {
+      "name": "plan-harvest-and-retire",
+      "description": "Retire a stalled or indefinitely-deferred plan without losing its value. Candidate scan, harvest, distribute, sweep, archive and codify.",
+      "version": "1.0.0",
+      "category": "skill",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/plan-harvest-and-retire"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/plan-harvest-and-retire",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": [
+        "planning",
+        "governance",
+        "archival",
+        "review"
+      ],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
+    },
+    {
+      "name": "pr-code-review",
+      "description": "Automated pull request review for your repos. Five parallel agents, confidence scoring, convention-file compliance, and GitHub comment posting.",
+      "version": "1.0.0",
+      "category": "skill",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/pr-code-review"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/pr-code-review",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": [
+        "code-review",
+        "github",
+        "pull-request",
+        "quality"
+      ],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
+    },
+    {
       "name": "skill-creator",
       "description": "Build new skills autonomously. Interview, research, write a complete SKILL.md, propose the install path.",
       "version": "1.1.0",
@@ -155,7 +203,7 @@
     {
       "name": "researcher",
       "description": "Parallel sub-agent research on a topic, aggregated into a structured report. Up to 4 independent workers, synthesized output.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -437,6 +485,32 @@
       }
     },
     {
+      "name": "external-worker-routing",
+      "description": "Routing discipline for deterministic, no-judgment work to secondary AI providers. Provider catalog, five-condition eligibility test and the dispatch script.",
+      "version": "1.0.0",
+      "category": "protocol",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/external-worker-routing"
+      },
+      "homepage": "https://www.infinitegameos.io/protocols/external-worker-routing",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": [
+        "protocol",
+        "routing",
+        "external-workers",
+        "dispatch",
+        "agentic",
+        "cost-efficiency"
+      ],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
+    },
+    {
       "name": "self-healing",
       "description": "Autonomous error recovery during implementation sessions. Diagnose root cause, apply fix, continue without stopping for every recoverable mistake.",
       "version": "1.1.0",
@@ -464,7 +538,7 @@
     {
       "name": "session-closeout",
       "description": "Fast three-action session close: breadcrumb what you touched, refresh your handoff note, commit with a readable body.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -514,7 +588,7 @@
     {
       "name": "anti-ai-edit-pass",
       "description": "Structured editing pass that finds and removes AI writing tells from long-form manuscripts. Eight sweep categories, Sovereign review gate, verified application.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -587,7 +661,7 @@
     {
       "name": "autonomous-improvement-session",
       "description": "Set your system improving on its own when you have spare capacity. Safe, additive, self-contained work runs under a threshold model with a permanent floor of actions it never takes on its own.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -603,6 +677,31 @@
         "hygiene",
         "session",
         "flywheel",
+        "kingdom-skill"
+      ],
+      "author": {
+        "name": "Lane Belone",
+        "email": "howdy@lanebelone.com"
+      }
+    },
+    {
+      "name": "batch-archival",
+      "description": "Archive several workspace artifacts at once under per-artifact approval gates. Scan, classify, audit readiness, then move nothing without explicit approval.",
+      "version": "1.0.0",
+      "category": "skill",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/InfiniteGamePlayer/infinitegameos.git",
+        "path": "plugins/batch-archival"
+      },
+      "homepage": "https://www.infinitegameos.io/skills/batch-archival",
+      "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+      "license": "CC-BY-4.0",
+      "tags": [
+        "archival",
+        "lifecycle",
+        "approval-gates",
+        "workspace-hygiene",
         "kingdom-skill"
       ],
       "author": {

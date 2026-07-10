@@ -1,8 +1,8 @@
 ---
 name: researcher
-description: Parallel sub-agent research on a topic, aggregated into a structured report. Spawns up to 4 independent workers and synthesizes findings.
+description: Use when the operator wants parallel sub-agent research aggregated into a structured report. Spawns up to 4 independent workers each investigating a different angle, then synthesizes findings for operator review. Research feeds decisions, does not trigger execution.
 status: active
-version: 1.1
+version: 1.2
 ---
 
 # Researcher

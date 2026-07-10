@@ -1,0 +1,13 @@
+{
+  "name": "plan-harvest-and-retire",
+  "description": "Retire a stalled or indefinitely-deferred plan without losing its value. Candidate scan, harvest, distribute, sweep, archive and codify.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lane Belone",
+    "email": "howdy@lanebelone.com"
+  },
+  "homepage": "https://www.infinitegameos.io/skills/plan-harvest-and-retire",
+  "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+  "license": "CC-BY-4.0",
+  "keywords": ["planning", "governance", "archival", "review"]
+}

@@ -1,8 +1,8 @@
 ---
 name: session-closeout
-description: Use when wrapping up a session that made commits or governance changes. A fast three-action close: breadcrumb what you touched, refresh your handoff note, commit with a readable body.
+description: "Use when wrapping up a session that made commits or governance changes. A fast three-action close: breadcrumb what you touched, refresh your handoff note, commit with a readable body."
 status: active
-version: 1.1
+version: 1.2
 ---
 
 # Session Closeout

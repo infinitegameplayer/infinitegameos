@@ -1,0 +1,13 @@
+{
+  "name": "pr-code-review",
+  "description": "Automated pull request review for your repos. Five parallel agents, confidence scoring, convention-file compliance, and GitHub comment posting.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lane Belone",
+    "email": "howdy@lanebelone.com"
+  },
+  "homepage": "https://www.infinitegameos.io/skills/pr-code-review",
+  "repository": "https://github.com/InfiniteGamePlayer/infinitegameos",
+  "license": "CC-BY-4.0",
+  "keywords": ["code-review", "github", "pull-request", "quality"]
+}

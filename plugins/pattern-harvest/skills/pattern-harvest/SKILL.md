@@ -4,7 +4,7 @@ contrast_not: session logging, vault archival, plan reconciliation
 false_twins: Session Closeout (logs what happened), system-level security audit
 anti_patterns: running as a checklist; producing a document; replacing session closeout; running automatically
 boundary_conditions: operator-invoked only; skip for lightweight sessions; run before session closeout when warranted
-clarity_triggers: "analyze this session", "meta patterns", "pattern harvest", "ways to improve my system", "upgrade recommendations"
+clarity_triggers: ["analyze this session", "meta patterns", "pattern harvest", "ways to improve my system", "upgrade recommendations"]
 ---
 
 # Pattern Harvest

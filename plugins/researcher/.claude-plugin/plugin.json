@@ -1,7 +1,7 @@
 {
   "name": "researcher",
   "description": "Parallel sub-agent research on a topic, aggregated into a structured report. Up to 4 independent workers, synthesized output.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": {
     "name": "Lane Belone",
     "email": "howdy@lanebelone.com"

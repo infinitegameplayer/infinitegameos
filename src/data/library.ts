@@ -183,8 +183,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Pattern Harvest',
     label: 'Skill',
-    version: '1.1',
-    updated: '2026-06-26',
+    version: '1.2',
+    updated: '2026-07-10',
     description:
       'Reflective session-level pattern extraction. Three parallel lenses produce a numbered recommendation list the operator selects from.',
     tags: ['harvest', 'reflection', 'meta', 'session', 'governance', 'recommendations'],
@@ -334,7 +334,7 @@ export const igosAssets: IGOSAsset[] = [
           'Use it when the five angles produce many findings and you need a ranked view before deciding. On straightforward plans, qualitative assessment is sufficient. The scoring layer is optional, not default.',
       },
     ],
-    relatedSlugs: ['pending-plan-implementation', 'source-harvest'],
+    relatedSlugs: ['pending-plan-implementation', 'source-harvest', 'plan-harvest-and-retire'],
     softHook: {
       body:
         'Plan Challenger pairs naturally with Pending Plan Implementation. Challenge the plan, then execute. If you want the design frame for which plans are worth running in the first place, the Sovereign Life Playbook is the upstream architecture.',
@@ -407,7 +407,7 @@ export const igosAssets: IGOSAsset[] = [
           'It means the architecture is wrong, not the hypothesis. Stop attempting fixes. Surface the architectural question to the operator. A fourth attempt without that conversation creates more debt and moves further from resolution.',
       },
     ],
-    relatedSlugs: ['source-harvest'],
+    relatedSlugs: ['source-harvest', 'pr-code-review'],
     softHook: {
       body:
         'Systematic Debugging is one entry point. The wider operating system that uses it is Infinite Game OS. The full life-design frame that motivates clean architecture in the first place is the Sovereign Life Playbook.',
@@ -480,7 +480,7 @@ export const igosAssets: IGOSAsset[] = [
           'No. The skill confirms approved scope explicitly at the start of each session. Status changes propose for explicit consent. Approval is granular and per-session, not blanket and persistent.',
       },
     ],
-    relatedSlugs: ['plan-challenger', 'source-harvest'],
+    relatedSlugs: ['plan-challenger', 'source-harvest', 'plan-harvest-and-retire'],
     softHook: {
       body:
         'Pending Plan Implementation pairs naturally with Plan Challenger. Challenge first, then implement. Both are tools for an operator playing a longer game. The full architectural frame that motivates per-plan governance is the Sovereign Life Playbook.',
@@ -490,6 +490,152 @@ export const igosAssets: IGOSAsset[] = [
     seOrigin: {
       kind: 'graduated',
       note: 'This skill began inside the Sovereign Ecosystem Foundation and graduated to the public library in April 2026.',
+    },
+  },
+  {
+    slug: 'plan-harvest-and-retire',
+    type: 'skill',
+    title: 'Plan Harvest and Retire',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-07-10',
+    description:
+      'Retire a stalled or indefinitely-deferred plan without losing its value. Candidate scan, harvest, distribute, sweep, archive and codify.',
+    tags: ['planning', 'governance', 'archival', 'review'],
+    capsule:
+      'Plan Harvest and Retire is a skill for closing a plan that stalled without pretending the thinking behind it was wasted. A lean candidate scan finds plans stuck in value-plus-deferral (not staleness alone), then a six-step sequence sorts the plan into implementable slivers, durable vision and cross-plan breadcrumbs, distributes each pile to a home where it survives, sweeps every reference and archives the file clean. The queue gets lighter. Nothing of worth gets lost.',
+    installable: {
+      marketplaceId: 'plan-harvest-and-retire',
+      cursorMdc: true,
+    },
+    definition:
+      'Plan Harvest and Retire retires a stalled or indefinitely-deferred Pending Plan without losing its value. A lightweight candidate scan runs first: read the plans index, shortlist anything stale and in an early-stage status, grep for deferral language, confirm the value is preservable elsewhere and the build gate is genuinely far-off. That scan is read-only and presents a candidate list; nothing archives without per-plan consent. For a confirmed candidate, the plan gets read once and sorted into three piles: implementable-now slivers, durable vision or architecture, and cross-plan breadcrumbs. Each pile distributes to its own durable home (a focused new plan, a deferred-items tracker entry, or another active plan\'s log) before a full reference sweep repoints every active mention away from the retiring plan. Only then does the file archive, with status set to retired and a superseded-by field pointing at wherever the value now lives. A final optional step codifies any meta-lesson the retire surfaced into a durable doc, gated on the same sign-off your team already uses for governance changes.',
+    howItWorks: [
+      {
+        heading: 'Scan, sort, distribute, sweep, archive, codify',
+        paragraphs: [
+          'The candidate scan stays lean by design: an index read plus a targeted grep, never a full-corpus body read. The retire signal requires both a stale, early-stage status AND deferral language AND a genuinely far-off build gate, so a plan simply waiting its turn in the queue never gets flagged. A plan parked on a near, dated activation gate is explicitly protected as an anti-signal.',
+          'Once a candidate is confirmed, the value gets sorted into three piles and each pile lands in a home built to hold it: slivers become their own small plan, durable vision goes to a deferred-items tracker with an explicit promotion signal naming what would resurrect it, and cross-plan notes append to whatever plan they actually belong to. Only after every inbound reference has been swept and repointed does the file move to archive. The retirement is not complete until that sweep has run.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'A stalled plan clogging the active queue',
+        body:
+          'A plan has sat at proposed status for two months with placeholder language throughout ("not designed yet", "long-horizon"). The candidate scan surfaces it, the operator confirms, and the skill sorts its actual content: one implementable sliver ships as its own small plan immediately, the rest of the vision moves to a deferred-items tracker with a clear promotion signal. The queue is lighter and nothing is lost.',
+      },
+      {
+        title: 'Distinguishing parked from orphaned',
+        body:
+          'Two plans both look stale on the surface. One is gated on a specific event three weeks out; it stays parked, untouched. The other has no real gate at all, just inherited urgency that never materialized; it becomes a retire candidate. The value-plus-deferral signal keeps the scan from flagging the wrong one.',
+      },
+      {
+        title: 'A meta-lesson worth keeping after the fact',
+        body:
+          'A retire surfaces a pattern: three plans in a row stalled for the same structural reason. Step 6 codifies that pattern into a standing rule in the team\'s conventions doc, gated on the usual sign-off, so the next plan of that shape gets caught earlier instead of running the same stall again.',
+      },
+    ],
+    faq: [
+      {
+        q: 'How is this different from just deleting a stalled plan?',
+        a:
+          'Deletion loses the thinking behind the plan. This skill never deletes. It distributes every pile of value to a durable home first, then archives the now-empty queue item. The archive is a lifecycle step, not a loss.',
+      },
+      {
+        q: 'Does the scan run automatically?',
+        a:
+          'No. It is operator-invoked, or it can surface as a one-line lens inside a regular weekly review. The scan itself is read-only and safe to run freely; the harvest and archive steps that follow always wait on per-plan consent.',
+      },
+      {
+        q: 'What if I do not have a deferred-items tracker yet?',
+        a:
+          'Build the simplest version first: one markdown file, one entry per deferred idea, with a source, a deferred reason, a promotion signal and context notes. The skill needs somewhere for durable vision to land before it can retire a plan into it.',
+      },
+    ],
+    relatedSlugs: ['pending-plan-implementation', 'plan-challenger', 'batch-archival', 'source-harvest'],
+    softHook: {
+      body:
+        'Plan Harvest and Retire closes the loop that Plan Challenger and Pending Plan Implementation open. If you want the design frame for which plans are worth running (and worth retiring) in the first place, the Sovereign Life Playbook is the upstream architecture.',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+    seOrigin: {
+      kind: 'graduated',
+      note: 'This skill began as an internal planning-hygiene process and graduated to the public library in July 2026.',
+    },
+  },
+  {
+    slug: 'pr-code-review',
+    type: 'skill',
+    title: 'PR Code Review',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-07-10',
+    description:
+      'Automated pull request review for your repos. Five parallel agents, confidence scoring, convention-file compliance, and GitHub comment posting.',
+    tags: ['code-review', 'github', 'pull-request', 'quality'],
+    capsule:
+      'PR Code Review is a skill for catching real issues before a pull request merges, without adding a human reviewer to the critical path. Five agents read the diff from five independent angles (convention compliance, bugs, git history, prior PR comments, code comments), every finding gets a 0-100 confidence score, and only scores of 80 or above post as a GitHub comment. Quiet on clean PRs. Precise on the ones that need a second look.',
+    installable: {
+      marketplaceId: 'pr-code-review',
+      cursorMdc: true,
+    },
+    definition:
+      'PR Code Review runs an automated review on any open pull request before it merges. Five specialized agents analyze the diff from independent angles: convention-file compliance (your CLAUDE.md, README or equivalent), a shallow bug scan scoped to the diff, git history and blame context, prior PR comments on the same files, and inline code comment compliance. Each finding from those five agents is scored for confidence against an explicit 0-100 rubric by a dedicated scoring pass, and only findings at 80 or above survive the filter. Surviving issues post as a single GitHub PR comment with exact file links and full commit SHAs, using the gh CLI end to end. A false positive taxonomy of eleven categories (pre-existing issues, linter-catchable issues, pedantic nitpicks and more) rides along with every scoring pass to keep the signal-to-noise ratio high on a public surface.',
+    howItWorks: [
+      {
+        heading: 'Five lenses, one confidence gate',
+        paragraphs: [
+          'An eligibility check runs first and last: skip draft PRs, closed PRs, automated PRs and anything already reviewed. In between, five agents work the diff in parallel, each blind to the others: what does the convention file require, what looks like an outright bug, what does the git history say about intentional patterns, what did earlier PR comments on these files already resolve, and what do the code comments themselves promise.',
+          'Every issue those five agents surface gets its own confidence-scoring pass against a verbatim rubric, no exceptions. Below 80 the issue is a note that never leaves the session. At or above 80 it earns a spot in the single comment that posts to GitHub, complete with the full SHA and a direct line link. One comment per run, or a clean no-issues confirmation. Nothing in between.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Merge-gate review without a second human in the loop',
+        body:
+          'A solo builder or small team ships PRs faster than a human reviewer can keep pace with. PR Code Review runs automatically on each open PR, catches the convention violations and real bugs that matter, and stays silent on the PRs that are already clean. The merge gate holds without adding review latency.',
+      },
+      {
+        title: 'Enforcing a convention file that keeps drifting in practice',
+        body:
+          'A CLAUDE.md or CONTRIBUTING.md exists but nobody consistently checks new PRs against it by hand. Agent 1 reads the convention file fresh on every run and flags only the violations the file actually calls out, so the standard stays live instead of decaying into a document nobody rereads.',
+      },
+      {
+        title: 'Multi-repo consistency across a small fleet of sites or services',
+        body:
+          'A team runs several repos with a shared review bar but no shared reviewer bandwidth. The same skill runs identically on each repo, reading whatever convention file lives there, so the bar holds without a person context-switching between codebases all day.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Does this replace human code review?',
+        a:
+          'No. It is a merge gate, not a reviewer. It catches convention violations and obvious bugs scoped to the diff, at a high confidence threshold, so a human reviewer spends their attention on judgment calls rather than mechanical compliance checks.',
+      },
+      {
+        q: 'Why the 80 confidence threshold specifically?',
+        a:
+          'A false positive on a public PR costs credibility, not just review time. The threshold defaults high on purpose, and the skill treats lowering it as a deliberate operator decision rather than a tuning knob to reach for casually.',
+      },
+      {
+        q: 'What if my repo does not have a CLAUDE.md?',
+        a:
+          'Point Agent 1 at whatever convention file you do have: README, CONTRIBUTING.md, a .cursorrules file, a style guide. The lens generalizes to any document that states how your team wants code written.',
+      },
+    ],
+    relatedSlugs: ['systematic-debugging', 'plan-challenger', 'source-harvest'],
+    softHook: {
+      body:
+        'PR Code Review is one entry point. The wider operating system that uses it is Infinite Game OS. The full life-design frame that motivates clean architecture in the first place is the Sovereign Life Playbook.',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+    seOrigin: {
+      kind: 'graduated',
+      note: 'This skill began as an internal merge gate and graduated to the public library in July 2026.',
     },
   },
   {
@@ -570,8 +716,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Researcher',
     label: 'Skill',
-    version: '1.1',
-    updated: '2026-06-26',
+    version: '1.2',
+    updated: '2026-07-10',
     description:
       'Parallel sub-agent research on a topic, aggregated into a structured report. Up to 4 independent workers, synthesized output.',
     tags: ['research', 'investigation', 'parallel', 'synthesis'],
@@ -1714,6 +1860,115 @@ export const igosAssets: IGOSAsset[] = [
     },
   },
   {
+    slug: 'external-worker-routing',
+    type: 'protocol',
+    title: 'External Worker Routing',
+    label: 'Protocol',
+    version: '1.0',
+    updated: '2026-07-10',
+    description:
+      'Routing discipline for deterministic, no-judgment work to secondary AI providers. Four providers, one dispatch script and a five-condition test that decides what qualifies.',
+    tags: ['protocol', 'routing', 'external-workers', 'dispatch', 'agentic', 'cost-efficiency'],
+    capsule:
+      'External Worker Routing is the discipline of giving deterministic, no-judgment work a cheaper home than your primary AI interface. Four secondary providers sit behind one dispatch script. A five-condition eligibility test decides what routes there. Voice-bound and judgment-bound work never leaves your primary interface, and that boundary is permanent.',
+    installable: {
+      marketplaceId: 'external-worker-routing',
+      cursorMdc: true,
+    },
+    definition:
+      'External Worker Routing is a protocol for dispatching deterministic, no-judgment work to secondary AI model providers instead of burning your primary interface\'s capacity on it. Audit sweeps, schema validation, smoke tests against a known baseline, repetitive classification where the rule is fully specified. These are worker shapes. Four providers cover them: OpenRouter as the broadest free-tier entry point, NVIDIA NIM for tool-use patterns and long-context classification, Groq for latency-sensitive calls on open-weight models and DeepSeek for low-cost code-focused work behind an Anthropic-compatible endpoint. One script is the single dispatch entry point. It injects an ambassador orientation on every call, logs every dispatch and fails loud instead of falling back silently. The protocol\'s spine is a five-condition eligibility test and one permanent boundary: voice-bound and judgment-bound work stays on your primary interface, always. The pattern underneath is gather on the primary interface, synthesize on the worker, verify back on the primary interface.',
+    howItWorks: [
+      {
+        heading: 'The split principle',
+        paragraphs: [
+          'A task class is worker-eligible when its work divides cleanly along the filesystem and network boundary. Gathering (walking directories, running greps, fetching pages, checking whether files exist) stays on your primary interface, because a secondary worker has no disk or network access of its own. Synthesis (grouping, ranking, flagging, formatting a pre-gathered dataset) routes to the worker. Verification (spot-checking the worker\'s output against the gathered data) returns to your primary interface.',
+          'That gather-synthesize-verify shape is the template for every worker-eligible class. It also explains what never routes: any task whose value lives in judgment, voice or the full context only your primary interface holds. A task that reads as "just formatting" but encodes a stylistic choice belongs on the primary interface, no matter how mechanical it looks.',
+        ],
+      },
+      {
+        heading: 'The five-condition eligibility test',
+        paragraphs: [
+          'Before a task class routes to an external worker, it must satisfy all five conditions. One: the synthesis is deterministic and no-judgment, with the rule fully specified. Two: the output is bounded, because a worker asked to faithfully reproduce a long flat list is unreliable while judgment over a small number of groups is reliable. Three: no disk or network access is required, because the primary interface pre-gathers every input. Four: the task is not voice-bound, since voice-adjacent and style-sensitive work stays home. Five: the primary interface can verify the result without redoing the synthesis itself.',
+          'The test is conservative on purpose. A class fails until it passes all five, and it is not promoted to active use until an actual dispatch produced acceptable output. Some classes stay on the primary interface forever even though they look mechanical: completeness verification against a spec resists full specification, and compression candidates are judgment about meaning. Naming those exclusions explicitly is half the protocol\'s value.',
+        ],
+      },
+      {
+        heading: 'The provider catalog',
+        paragraphs: [
+          'Each provider gets its own account, its own key and its own env-var slot: OPENROUTER_API_KEY, NVIDIA_NIM_API_KEY, GROQ_API_KEY and DEEPSEEK_API_KEY. OpenRouter is the default free-tier entry point, an aggregator where two rate limits run in parallel, so every OpenRouter slot pairs with a fallback on a different host. NVIDIA NIM covers tool-use orchestration and long-context bulk classification on a direct-host free tier. Groq runs open-weight models on LPU hardware at very low latency, the right call when wall-clock time matters more than context window. DeepSeek offers a native Anthropic-compatible endpoint at low per-call cost, with a standing risk-scoping guardrail: treat it as an untrusted worker and dispatch only non-sensitive batch work.',
+          'A working key is not a guarantee of dispatch. Signup, key acquisition and first dispatch are three separate gates, and a paid provider can issue a valid key against a zero-balance account. The first dispatch may return a balance error rather than a model response. The protocol treats that as a normal state to check for, not a surprise.',
+        ],
+      },
+      {
+        heading: 'The dispatch script',
+        paragraphs: [
+          'One script is the single entry point for every secondary-provider call. It reads credentials from the environment, injects an ambassador orientation block as the system prompt on every dispatch, returns output to stdout as plain text or a JSON envelope and logs provider, model, prompt hash, latency and token count for every call. It fails loud on missing keys, network errors and rate limits. No silent fallback to another provider.',
+          'One integration reality the script handles that most wrappers miss: a refusal arrives as HTTP 200. A response with a stop reason of refusal is not a successful completion, and a handler that only checks the status code will misread it as one. The script exits nonzero on refusal and logs it, and anything wrapping the script should preserve that behavior.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'High-volume audit sweep',
+        body:
+          'A workspace audit produces four hundred cross-reference records that need grouping by failure type with a suggested fix per group. The primary interface gathers the records with greps and existence checks, packs them into a context file and dispatches the grouping to a free-tier worker. The worker returns clusters and suggestions. The primary interface spot-checks three clusters against the raw data before acting. The judgment stayed home; the bulk synthesis cost nothing.',
+      },
+      {
+        title: 'Schema validation against a known baseline',
+        body:
+          'A deploy pipeline needs every JSON-LD block compared against a locked baseline shape. The rule is fully specified, the output is bounded to a drift list and no network access is needed once the pages are fetched. All five conditions pass. The comparison routes to a worker while the primary interface holds the fetch and the final verdict on whether each drift is real.',
+      },
+      {
+        title: 'Deciding what NOT to route',
+        body:
+          'A tempting candidate: scanning draft articles for weak openings. It looks mechanical until condition four fires. Judging an opening is voice-bound, style-sensitive work. The protocol holds it on the primary interface and records the exclusion in the taxonomy, so the same tempting shortcut does not get re-litigated next month.',
+      },
+      {
+        title: 'Latency-sensitive check loop',
+        body:
+          'A watch script needs a short classification on each of thirty items in a tight loop, where total wall-clock time matters more than context window. Groq\'s LPU-backed inference fits exactly this shape. The dispatch script handles the loop with structured-output enforcement done through prompt discipline plus client-side validation rather than schema reliance.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Why not route everything cheap and keep only drafting on the primary interface?',
+        a:
+          'Because eligibility is about task shape, not cost. A worker with no disk access, no network access and no accumulated session context can only synthesize what you hand it, and only reliably when the rule is fully specified and the output bounded. Work that fails any of the five conditions produces output you would have to redo to verify, which erases the savings.',
+      },
+      {
+        q: 'What is the ambassador orientation and why is it not optional?',
+        a:
+          'Every dispatch leaves your system\'s boundary, which makes the worker an ambassador of your system whether you frame it that way or not. The script injects a compact orientation block as the system prompt on every call: represent the system accurately, protect what should not leak, advance its long-horizon interests and return structured findings without acting beyond the assigned scope. Making it automatic removes the drift where some dispatches carry the posture and some do not.',
+      },
+      {
+        q: 'How do I handle provider rate limits?',
+        a:
+          'Know your provider\'s architecture. Aggregators like OpenRouter run two limits in parallel: your per-key ceiling and the upstream host\'s capacity, and the second one is outside your control. Pair every aggregator slot with a fallback slug on a different host. Direct-host providers carry one limit layer. Either way the script fails loud on a 429 rather than silently retrying, so your orchestration layer decides what happens next with full information.',
+      },
+      {
+        q: 'Is the voice-bound boundary a maturity stage that opens later?',
+        a:
+          'No. It is a permanent boundary, not a held-pending-maturity classification. Voice-bound drafting, strategy work and judgment-dense synthesis stay on the primary interface regardless of how good secondary models get, because the constraint is not model quality. It is that voice and judgment live in the accumulated context and standards of your primary interface, which a stateless worker never holds.',
+      },
+      {
+        q: 'What happens when a worker fails a dispatch?',
+        a:
+          'The script surfaces the failure with the provider, model, HTTP status and error, and the dispatch log keeps the record. A failed dispatch does not automatically demote the task class from the taxonomy. Check whether the failure was a rate limit, a key or balance problem or a genuine quality miss before deciding whether the class stays eligible.',
+      },
+    ],
+    relatedSlugs: ['ambassador-doctrine', 'source-harvest', 'researcher', 'systematic-debugging'],
+    softHook: {
+      body:
+        'External Worker Routing decides where work runs. Ambassador Doctrine governs how any agent behaves once it operates outside your system, and every dispatch this protocol makes carries that posture automatically. Both are pieces of a larger architecture. The design frame for which work is worth systematizing at all is the Sovereign Life Playbook.',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+    seOrigin: {
+      kind: 'dual',
+      note: 'This protocol ships in both homes, the Sovereign Ecosystem Foundation (as the External Model Routing Codex and its dispatch script) and this library.',
+    },
+  },
+  {
     slug: 'foundational-creator',
     type: 'bundle',
     title: 'The Foundational Creator Bundle',
@@ -2771,8 +3026,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Session Closeout',
     label: 'Skill',
-    version: '1.1',
-    updated: '2026-06-26',
+    version: '1.2',
+    updated: '2026-07-10',
     description:
       'A fast three-action close for a git-tracked workspace. Breadcrumbs as you work, a refreshed primer, a readable commit as the session summary.',
     tags: ['session', 'closeout', 'git', 'breadcrumbs', 'kingdom-skill'],
@@ -2917,8 +3172,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Anti-AI Edit Pass',
     label: 'Skill',
-    version: '1.1',
-    updated: '2026-06-26',
+    version: '1.2',
+    updated: '2026-07-10',
     description:
       'An editing pass for long-form manuscripts that finds and removes the writing tells of AI authorship. The result reads as your own voice.',
     tags: ['editing', 'manuscript', 'writing', 'voice', 'kingdom-skill'],
@@ -3160,8 +3415,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Autonomous Improvement Session',
     label: 'Skill',
-    version: '1.0',
-    updated: '2026-06-26',
+    version: '1.1',
+    updated: '2026-07-10',
     description:
       'Run a set-and-forget session that improves your system without active attention. Operator-invoked only. Safe, additive hygiene work executes directly; judgment forks and floor-class items surface for your review.',
     tags: ['autonomy', 'improvement', 'hygiene', 'session', 'flywheel', 'kingdom-skill'],
@@ -3227,6 +3482,86 @@ export const igosAssets: IGOSAsset[] = [
     softHook: {
       body:
         'Autonomous Improvement Session pairs naturally with Session Closeout: run improvement when you have capacity to spare, then run closeout to seal the session. Pattern Harvest works the same flywheel from the reflective side. All three ship inside the Sovereign Ecosystem Foundation. The Sovereign Life Playbook is the upstream design frame for systems worth improving.',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'See the Sovereign Life Playbook',
+    },
+    seOrigin: {
+      kind: 'dual',
+      note: 'This skill ships in both homes, the Sovereign Ecosystem Foundation and this library.',
+    },
+  },
+  {
+    slug: 'batch-archival',
+    type: 'skill',
+    title: 'Batch Archival',
+    label: 'Skill',
+    version: '1.0',
+    updated: '2026-07-10',
+    description:
+      'Archive several finished artifacts at once without losing anything. Scan, classify, audit readiness, then move nothing without explicit approval.',
+    tags: ['archival', 'lifecycle', 'approval-gates', 'workspace-hygiene', 'kingdom-skill'],
+    capsule:
+      'Batch Archival moves finished work into your archive in batches, under per-artifact approval gates. The scan proposes candidates by terminal status, a readiness audit checks each one will land clean and nothing moves until you approve it. Completed work leaves the active workspace without a single accidental loss.',
+    installable: {
+      marketplaceId: 'batch-archival',
+      cursorMdc: true,
+    },
+    definition:
+      'Batch Archival is a skill for archiving several workspace artifacts at once with approval gates at every step that matters. An active workspace accumulates finished work: implemented plans, completed notes, retired projects. Left in place, they blur the line between what is alive and what is done. Moved carelessly, a batch sweep breaks links and buries something still needed. Batch Archival threads that needle. It scans your active containers for artifacts carrying a terminal status, classifies them by domain, runs a lightweight readiness audit on each candidate (metadata completeness, links, destination routing) and presents an approval list. The operator approves per artifact or per domain. Only then do files move. Status never changes as a side effect: archival is a location change and the lifecycle status stays what it was. Draft, proposed and in-flight work is excluded by default because those statuses mean the work is still alive.',
+    howItWorks: [
+      {
+        heading: 'Terminal status is the eligibility signal',
+        paragraphs: [
+          'A file becomes an archival candidate because its lifecycle ended, not because it looks old. Plans qualify at implemented. Non-plan artifacts qualify at complete. Object types with their own vocabulary qualify at their own terminal status, like retired for quest-style notes. Everything still carrying draft, proposed, approved or ready-for-execution is excluded by default, because those statuses mean the work is alive. Age is not a status. A three-month-old plan that never shipped is stalled, not archivable, and it needs a different conversation.',
+          'Where an object type distinguishes completed from retired, the metadata preserves the distinction even when both land in a shared archive folder. The archive stays flat and the frontmatter stays honest, which keeps future review workflows possible without folder sprawl.',
+        ],
+      },
+      {
+        heading: 'The readiness audit and the approval gate',
+        paragraphs: [
+          'Before anything is proposed for a move, a lightweight audit checks that the move will land clean: the destination path resolves, domain routing is correct, object-specific links hold and any support-file subtrees a plan kept during execution are dispersed to their permanent homes first. The audit is proposal-only. It produces notes and blockers, never moves.',
+          'The approval gate is the spine. Early operation requires explicit approval per domain or per artifact, and one pilot batch runs before full activation. Time-gated material like transcripts past a holding period gets its own proposal-only audit. Automation is earned one proven artifact class at a time, never assumed. The scan proposes, the operator disposes.',
+        ],
+      },
+    ],
+    useCases: [
+      {
+        title: 'Quarterly sweep of implemented plans',
+        body:
+          'A quarter of steady shipping leaves a dozen implemented plans sitting in the active planning folder. Batch Archival scans on terminal status, groups the candidates, audits that each plan\'s support files have been dispersed and presents the approval list. One approval per domain and the planning folder returns to holding only what is actually in motion.',
+      },
+      {
+        title: 'The stale-notes cleanup that finally happens',
+        body:
+          'Completed project notes, finished checklists and retired experiments have accumulated across three containers. A manual cleanup keeps getting deferred because moving files one at a time is tedious and moving them in bulk feels dangerous. Batch Archival makes the bulk move safe: every candidate is audited and listed, and nothing leaves until approved. The cleanup that was always postponed takes one session.',
+      },
+      {
+        title: 'Catching the artifact that was not ready',
+        body:
+          'A sweep proposes eleven candidates. The readiness audit flags one: a completed creative artifact whose companion strategy note never got its backlink. The flag surfaces as a blocker in the approval list rather than a broken link discovered months later. The operator fixes the link, approves the batch and the archive stays coherent.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Why per-artifact approval instead of trusting the status scan?',
+        a:
+          'Because a status field can be wrong, stale or ambiguous, and an archive move buries the mistake. The scan is the intelligence pass and the approval is the decision. Early on, every artifact or domain gets explicit approval. After stable operation, automation can open one proven artifact class at a time. The gate loosens with evidence, never with optimism.',
+      },
+      {
+        q: 'Does archiving change an artifact\'s status?',
+        a:
+          'No. Archival is a location change and nothing else. An implemented plan stays implemented, a retired note stays retired. Keeping status and location independent means the archive remains queryable by lifecycle state, and it removes a whole class of accidental status regressions from bulk operations.',
+      },
+      {
+        q: 'What about material that becomes archivable on a clock rather than a status?',
+        a:
+          'Time-gated material like transcripts or session notes past a holding period gets a proposal-only eligibility audit. The audit surfaces candidates with their gate condition, and the operator approves before anything moves. The clock qualifies a candidate; it never executes a move.',
+      },
+    ],
+    relatedSlugs: ['session-closeout', 'pending-plan-implementation', 'autonomous-improvement-session'],
+    softHook: {
+      body:
+        'Batch Archival is the sweep that keeps the active workspace honest. Session Closeout marks the work that queues for it, and Pending Plan Implementation produces the implemented plans it eventually carries home. All three ship inside the Sovereign Ecosystem Foundation. The design frame for a workspace worth keeping clean is the Sovereign Life Playbook.',
       ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
