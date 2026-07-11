@@ -25,8 +25,8 @@ import {
   EMAIL_CHANGE_TTL_SECONDS,
 } from '@/lib/unsubscribe-token'
 
-export type ListKey = 'personal' | 'articles' | 'infinite_game'
-export type ListSite = 'lanebelone' | 'infinitegameos'
+export type ListKey = 'personal' | 'articles' | 'infinite_game' | 'sqhq'
+export type ListSite = 'lanebelone' | 'infinitegameos' | 'sqhq'
 
 export interface ListDef {
   key: ListKey
@@ -72,6 +72,19 @@ export const LISTS: ListDef[] = [
     audienceEnv: 'RESEND_AUDIENCE_INFINITE_GAME_ID',
     fromAddress: 'Lane Belone <play@infinitegameos.io>',
     site: 'infinitegameos',
+  },
+  // SQHQ commercial list. Entered via the Creator Flywheel Starter Kit lead
+  // magnet or a purchase. Carried here so a person arriving from an IGOS email
+  // sees and controls every list they are on, not just this site's.
+  {
+    key: 'sqhq',
+    tag: 'sqhq',
+    label: 'Side Quest HQ',
+    description: 'Started with One Alive Thing. Practical letters on building in the Creator Economy without performing.',
+    audienceName: 'Side Quest HQ',
+    audienceEnv: 'RESEND_AUDIENCE_SQHQ_ID',
+    fromAddress: 'Lane Belone <lane@sidequesthq.co>',
+    site: 'sqhq',
   },
 ]
 
