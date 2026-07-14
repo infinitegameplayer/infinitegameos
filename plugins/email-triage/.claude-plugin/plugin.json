@@ -1,7 +1,7 @@
 {
   "name": "email-triage",
   "description": "Sort a service-business inbox into seven named buckets, draft replies for repeating scenarios and surface every action item so nothing gets missed.",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": {
     "name": "Lane Belone",
     "email": "howdy@lanebelone.com"

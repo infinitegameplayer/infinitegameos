@@ -278,7 +278,7 @@
     {
       "name": "grant-researcher",
       "description": "Discover grants whose mission alignment, eligibility and deadline runway fit an operator profile. Two modes: Discovery for cold-start sweeps, Fit Deep-Dive for one-opportunity yes/no memos. Pairs with Grant Manager.",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -303,7 +303,7 @@
     {
       "name": "grant-manager",
       "description": "Manage the full grant lifecycle on a chosen opportunity. LOI drafting, full proposal authoring, budget assistance, submission portal handling, post-award reporting and funder stewardship. Pairs with Grant Researcher.",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -329,7 +329,7 @@
     {
       "name": "email-triage",
       "description": "Sort a service-business inbox into seven named buckets, draft replies for repeating scenarios and surface every action item so nothing gets missed.",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -355,7 +355,7 @@
     {
       "name": "quote-builder",
       "description": "Turn a service-business inquiry into a complete quote in email, SMS or markdown-PDF format, with a 48-72h follow-up trigger built in on every run.",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -381,7 +381,7 @@
     {
       "name": "invoice-payment-tracker",
       "description": "Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the essential discipline. Pairs with Quote Builder and Daily Admin Orchestrator.",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -408,7 +408,7 @@
     {
       "name": "customer-follow-up",
       "description": "Run a four-touchpoint post-job relationship cadence: thank-you at 24-48h, referral ask at 14d, maintenance check-in at 90d, re-engagement at 180d. CRM-lite for solo service businesses.",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -435,7 +435,7 @@
     {
       "name": "daily-admin-orchestrator",
       "description": "Run the complete solopreneur admin ritual in one session. Sequences Email Triage, Customer Follow-Up, Invoice and Payment Tracker and Quote Builder in order. Three variants: morning briefing, end-of-day rolldown, Friday weekly review.",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",

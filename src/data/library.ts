@@ -986,7 +986,7 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Grant Researcher',
     label: 'Skill',
-    version: '1.0',
+    version: '1.1',
     updated: '2026-06-26',
     description:
       'Discover grants whose mission alignment, eligibility and deadline runway fit an operator profile. Two modes: Discovery sweeps wide and ranks by fit; Fit Deep-Dive runs a yes/no memo on one opportunity. Pairs with Grant Manager.',
@@ -1082,7 +1082,7 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Grant Manager',
     label: 'Skill',
-    version: '1.0',
+    version: '1.1',
     updated: '2026-06-26',
     description:
       'Manage the full grant lifecycle on a chosen opportunity. LOI drafting, full proposal authoring, budget assistance, submission portal handling, post-award reporting and funder stewardship. Phase-routed. Pairs with Grant Researcher.',
@@ -1178,7 +1178,7 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Email Triage',
     label: 'Skill',
-    version: '1.0',
+    version: '1.1',
     updated: '2026-06-26',
     description:
       'Sort a service-business inbox into seven named buckets, draft replies for repeating scenarios and surface every action item so nothing gets missed.',
@@ -1269,7 +1269,7 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Quote Builder',
     label: 'Skill',
-    version: '1.0',
+    version: '1.1',
     updated: '2026-06-26',
     description:
       'Turn a service-business inquiry into a complete quote in email, SMS or markdown-PDF format, with a 48-72h follow-up trigger built in on every run.',
@@ -1360,7 +1360,7 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Invoice & Payment Tracker',
     label: 'Skill',
-    version: '1.0',
+    version: '1.1',
     updated: '2026-06-26',
     description:
       'Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the core discipline. Pairs with Quote Builder and Daily Admin Orchestrator.',
@@ -1451,7 +1451,7 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Customer Follow-Up',
     label: 'Skill',
-    version: '1.0',
+    version: '1.1',
     updated: '2026-06-26',
     description:
       'Run a four-touchpoint post-job relationship cadence: thank-you at 24-48h, referral ask at 14d, maintenance check-in at 90d, re-engagement at 180d. CRM-lite for solo service businesses up to 50 customers.',
@@ -1542,7 +1542,7 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Daily Admin Orchestrator',
     label: 'Skill',
-    version: '1.0',
+    version: '1.1',
     updated: '2026-06-26',
     description:
       'Run the complete solopreneur admin ritual in one session. Sequences Email Triage, Customer Follow-Up, Invoice and Payment Tracker and Quote Builder in order. Three variants: morning briefing, end-of-day rolldown, Friday weekly review.',
