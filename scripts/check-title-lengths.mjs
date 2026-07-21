@@ -49,7 +49,7 @@ function selfTest() {
     console.log('Positive control passed. The gate flags a 60-char title once the template lands, and clears a short seoTitle.')
     process.exit(0)
   }
-  console.error('Positive control FAILED. The gate cannot detect a violation and must not be trusted.')
+  console.error('Positive control FAILED. The gate failed to detect a violation and must not be trusted.')
   process.exit(1)
 }
 
