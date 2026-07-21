@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/check-title-lengths.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:titles": "node scripts/check-title-lengths.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.105.4",
