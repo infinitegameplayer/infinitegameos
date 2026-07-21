@@ -70,7 +70,7 @@ This is judgment work. Read the plan for what it actually carries, not what its 
 ## Step 3: Distribute Each Pile to Its Durable Home
 
 - **Implementable-now slivers** become their own focused plan, or fold into an existing one, only when the operator wants them active. Otherwise they ride along with the vision in the tracker.
-- **Durable vision or architecture** goes to your deferred-items tracker as a new entry with source, deferred reason, promotion signal and context notes. The promotion signal is the load-bearing field. It names the dated or event-based trigger that would resurrect the vision as an active plan.
+- **Durable vision or architecture** goes to your deferred-items tracker as a new entry with source, deferred reason, promotion signal and context notes. The promotion signal is the critical field. It names the dated or event-based trigger that would resurrect the vision as an active plan.
 - **Cross-plan breadcrumbs** get appended to the owning plan's body or activity log, so the context lands where the next session on that plan will see it. This pairs directly with the `#decision` quick entry tag from Pending Plan Implementation, if you're using that convention.
 
 Every pile lands somewhere before the plan archives. A pile with no home is a blocker. Surface it rather than dropping it.

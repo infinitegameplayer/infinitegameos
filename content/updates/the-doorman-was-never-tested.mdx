@@ -1,0 +1,86 @@
+---
+title: "The Doorman Was Never Tested."
+seoTitle: "The Doorman Was Never Tested: What Mutation Testing Found in a Green Suite"
+date: 2026-07-21
+slug: the-doorman-was-never-tested
+summary: "Twenty-four tests covered the security seal. Zero reached the function deciding who could touch it. What mutation testing found in a suite that had been green for weeks, and why coverage was never the measurement."
+faq:
+  - q: "What is mutation testing?"
+    a: "Mutation testing breaks your code on purpose and checks whether your tests notice. You change a line so it does the wrong thing, run the suite and watch for a failure. A test that goes red has killed the mutant and proven it was watching that line. A mutant that survives means no test was looking. Coverage tells you a line ran. Mutation score tells you a line was observed."
+  - q: "How is mutation testing different from code coverage?"
+    a: "Coverage counts execution. A line can run inside a test that asserts nothing about it and still count as covered. Mutation testing counts consequence. It asks whether breaking that line would cause any test to complain. This is why a suite can report high coverage while leaving critical logic completely unguarded."
+  - q: "Do I need to be an engineer to use this?"
+    a: "No. Mutation testing is the rare verification practice that requires no ability to read the code. You break something on purpose and watch what happens. If nothing goes red, nothing was watching. The evidence arrives as an observable event rather than as a judgment about source you would have to be qualified to make."
+  - q: "What is a liveness control?"
+    a: "A liveness control is proof that the channel producing a result was capable of producing a failure. Before trusting any green test, passing scan or clean audit, you demonstrate the instrument could have gone the other way. A green result with no liveness control is not evidence of safety. It's only evidence that nothing was measured."
+  - q: "Why did the tests miss the access check?"
+    a: "Every test passed the identity in as an argument. That means they verified what the seal does once an identity is known and never touched the separate function that determines the identity in the first place. The tests were well written and aimed with confidence at the wrong target. This is the common failure shape: the boundary gets tested and the thing guarding the boundary doesn't."
+---
+
+My system has a seal on it. No machine sends anything outward on its own: no post, no email, no publish. A person taps the button or the thing doesn't go.
+
+That seal is the most important code I own. It had twenty-four tests. All of them passing, for weeks.
+
+Then I broke the file on purpose and watched nothing happen.
+
+## The measurement that was missing
+
+The practice is called mutation testing and it inverts what most people do with a test suite.
+
+Normally you write tests and watch them pass. Mutation testing takes working code, damages it deliberately and checks whether any test complains. Change a comparison. Flip a boolean. Delete a return. Run the suite. If a test goes red, that test was genuinely watching. If everything stays green, you've just proven that nothing was.
+
+The difference from code coverage is the whole point. Coverage says a line was executed. Mutation score says a line was observed. A line can execute inside a test that never asserts anything about it and still be reported as covered, which is how a suite reaches an impressive number while leaving the important logic completely alone.
+
+I ran sixty deliberate breakages against the file holding the access check.
+
+None were killed. None were even reached.
+
+## Where the tests were actually pointed
+
+The suite was careful. It was aimed, with total confidence, at the wrong target.
+
+Every one of those twenty-four tests passed the identity in as an argument. The test would state who was asking, hand that to the seal and verify the seal behaved correctly for that person. Which it did, every time, exactly as designed.
+
+So the tests proved what the seal does *given* an identity.
+
+They never touched the function that decides which identity you are.
+
+That function is the doorman. It's the code that looks at an incoming request and rules on whether a human is present or a machine is asking. Everything downstream is correct and irrelevant if the doorman is wrong, because a machine that gets past it arrives holding a valid badge and every subsequent check waves it through politely.
+
+Zero tests reached it. Eighty-six seconds to find out, once I stopped reading and started breaking.
+
+## Why reading would never have caught it
+
+I'm not an engineer. I could have read that file for an hour and come away reassured, because the code looked exactly like code that works. It was well named. It was short. It did the obvious thing.
+
+Reading the source requires the exact ability I lack. Breaking it requires nothing but willingness.
+
+The verification move available to a non-technical principal is stronger than the one available through comprehension. Reading produces an opinion. Firing produces an event. When you break a guard and watch a test go red, you've witnessed something that could have gone the other way and didn't.
+
+That's evidence. Everything else is a mood.
+
+## What made this possible to catch
+
+The finding wasn't luck. It came from a rule I'd written down a few hours earlier: before trusting any result that reports nothing wrong, prove the channel it depends on was live.
+
+A guard that held. A test that passed. A scan that found nothing. Each of those is a claim. Each is worth nothing until something demonstrates it was capable of failing.
+
+I'd learned that lesson four separate times in a single week, each time in a different costume. An audit that confirmed a deletion guard by searching the source for a string, never once firing the guard. An agent whose tool loadout was correct by accident, held in place by a settings file that happened to be absent. A vision model that described an image accurately when the image was a single blank pixel. An injection test that scored a perfect zero and would have scored a perfect zero whether or not the exploit channel existed at all.
+
+Four green results. Four instruments that weren't plugged in.
+
+The doorman was the fifth, and the first one caught on purpose.
+
+## Aimed at the wrong target
+
+Twenty-four tests on a security boundary is more care than most code receives. Every one of them was well constructed. The testing was good.
+
+It was also aimed. It went exactly where a careful person would send it. It covered the thing that looked like the boundary. What it missed was the smaller, quieter function standing in front of the boundary, deciding who gets to approach.
+
+Absence is not a guard. A limit that holds because a file is missing, a flag is unset or nobody has tried yet is a coincidence with good manners. It holds until the day somebody adds the file. The question to ask of every protection you own is whether it refuses, or whether it merely hasn't been asked yet.
+
+The ceiling was tested. The doorman was not.
+
+---
+
+The longer argument this receipt belongs to: [Read the Refusal](/concepts/read-the-refusal), on governing AI-generated software you didn't write and couldn't audit.

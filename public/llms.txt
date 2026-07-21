@@ -83,6 +83,7 @@ Key terms and entity names used throughout this site:
 - /concepts/ai-is-the-apprentice-you-are-the-artist — Invert the default: you stay the source of the work and AI becomes the apprentice who sharpens it and sends you back to your own well
 - /concepts/held-by-structure — The system holds the discipline so willpower does not have to; build the structure once on a good day and it carries the practice on the hard ones
 - /concepts/practice-is-the-proof — A plan is a hypothesis and the practice is where it proves out or falls apart; the four-beat rhythm of best guess, operationalize, practice is the proof, iterate
+- /concepts/read-the-refusal — Software governance for non-engineers: approving and verifying code you didn't write and couldn't audit; the liveness control, three tests before adopting a borrowed pattern, blast radius as the explanation budget
 
 ## Public Library (Installable Assets)
 
@@ -103,7 +104,7 @@ The IGOS Public Library publishes installable skills, protocols, codices, concep
 - /skills/grant-manager — Grant Manager. Manage the full grant lifecycle on a chosen opportunity. LOI drafting, full proposal authoring, budget assistance, submission portal handling, post-award reporting and funder stewardship. Phase-routed. Pairs with Grant Researcher.
 - /skills/email-triage — Email Triage. Sort a service-business inbox into seven named buckets, draft replies for repeating scenarios and surface every action item so nothing gets missed. Part of the Solopreneur Admin Toolkit.
 - /skills/quote-builder — Quote Builder. Turn a service-business inquiry into a complete quote in email, SMS or markdown-PDF format, with a 48-72h follow-up trigger built in on every run. Part of the Solopreneur Admin Toolkit.
-- /skills/invoice-payment-tracker — Invoice and Payment Tracker. Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the load-bearing discipline. Part of the Solopreneur Admin Toolkit.
+- /skills/invoice-payment-tracker — Invoice and Payment Tracker. Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the essential discipline. Part of the Solopreneur Admin Toolkit.
 - /skills/customer-follow-up — Customer Follow-Up. Four-touchpoint post-job relationship cadence: thank-you at 24-48h, referral ask at 14d, maintenance check-in at 90d, re-engagement at 180d. CRM-lite for solo service businesses up to 50 customers. Part of the Solopreneur Admin Toolkit.
 - /skills/daily-admin-orchestrator — Daily Admin Orchestrator. Run the complete solopreneur admin ritual in one session. Sequences Email Triage, Customer Follow-Up, Invoice and Payment Tracker and Quote Builder in order. Three variants: morning briefing, end-of-day rolldown, Friday weekly review.
 - /skills/website-builder: Website Builder. Build, refresh or extend a website with Claude Code as the primary build engine; frame-agnostic, AI discoverability built in, three-state deploy verification at close.

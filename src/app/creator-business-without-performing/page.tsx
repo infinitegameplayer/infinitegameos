@@ -146,7 +146,7 @@ export default function CreatorBusinessWithoutPerformingPage() {
               </p>
               <p>
                 AI-legible content, evergreen acquisition pathways and a coherent offer
-                architecture are the load-bearing elements. Posting cadence is not.
+                architecture are the essential elements. Posting cadence is not.
               </p>
             </SectionReveal>
 

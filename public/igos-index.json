@@ -423,7 +423,7 @@
       "name": "Invoice & Payment Tracker",
       "type": "skill",
       "version": "1.0",
-      "description": "Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the load-bearing discipline. Pairs with Quote Builder and Daily Admin Orchestrator.",
+      "description": "Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the essential discipline. Pairs with Quote Builder and Daily Admin Orchestrator.",
       "tags": [
         "invoicing",
         "payments",

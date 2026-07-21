@@ -81,7 +81,7 @@ Read the convention files identified in Step 2. Check whether the changes comply
 Read the file changes in the PR. Do a shallow scan for obvious bugs. Do not read extra context beyond the diff. Focus on large bugs. Avoid small issues and nitpicks. Ignore likely false positives.
 
 **Agent 3: Git History Context**
-Read the git blame and history of the files modified. Identify any bugs in light of that historical context, patterns that were intentional, decisions that have been made before, constraints that are load-bearing.
+Read the git blame and history of the files modified. Identify any bugs in light of that historical context, patterns that were intentional, decisions that have been made before, constraints that are structural.
 
 **Agent 4: Prior PR Comment Review**
 Read previous PRs that touched the same files. Check for comments on those PRs that may also apply to the current change.

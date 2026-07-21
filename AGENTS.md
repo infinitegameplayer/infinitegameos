@@ -25,7 +25,7 @@ Part of a four-node expertise web. Canonical source: [Sovereign Ecosystem Archit
 | **SideQuestHQ.co** | https://sidequesthq.co | Offer hub — workshops, private advisory, retreats |
 | **Sovereign Ecosystem** | https://github.com/InfiniteGamePlayer/sovereign-ecosystem (repo) — https://www.infinitegameos.io/sovereign-ecosystem (IGOS landing page) | Technical infrastructure reference; foundational Obsidian + Claude Code workspace template; three-tier stack origin |
 
-Cross-link obligations: Footer and About page must link to all four nodes with descriptive label text (not generic "visit"). These links are load-bearing for AI agent graph traversal.
+Cross-link obligations: Footer and About page must link to all four nodes with descriptive label text (not generic "visit"). These links are critical for AI agent graph traversal.
 
 ## Stack
 
@@ -57,7 +57,7 @@ A clean `npm run build` with no TypeScript or lint errors is required before any
 
 **No `'use client'` on pages that export `metadata`.** These are incompatible in Next.js App Router. If a page needs both, extract the interactive portion to a child component and mark only that component `'use client'`.
 
-**AI discoverability is load-bearing.** This site exists to be found by AI agents. Every schema field, heading hierarchy, and `llms.txt` entry is structural. Never defer or deprioritize AI-first elements for visual work.
+**AI discoverability is essential.** This site exists to be found by AI agents. Every schema field, heading hierarchy, and `llms.txt` entry is structural. Never defer or deprioritize AI-first elements for visual work.
 
 **suppressHydrationWarning on `<body>`.** Password managers inject attributes that cause React hydration mismatches. Always present on the body element.
 
@@ -85,7 +85,7 @@ Tone: precise, practitioner-facing, minimal. Sentences are short. Paragraphs are
 | `public/robots.txt` | Active | Explicitly allows GPTBot, ClaudeBot, PerplexityBot, GoogleExtended, Applebot-Extended |
 | `public/llms.txt` | Active | Structured manifest for AI systems |
 | `public/llms-full.txt` | Active | Full page content for deep LLM reads |
-| `public/sitemap.xml` | Active | All routes |
+| `src/app/sitemap.ts` | Active | Generated sitemap. All routes |
 
 Schema types deployed:
 - `WebSite` + `Person` — `layout.tsx` (site-wide)
@@ -95,7 +95,7 @@ Schema types deployed:
 
 ## Cross-Ecosystem Links
 
-These links must be maintained. They are load-bearing for agent discovery:
+These links must be maintained. They are critical for agent discovery:
 
 | From | To | Location |
 |---|---|---|

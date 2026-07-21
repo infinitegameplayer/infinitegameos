@@ -821,7 +821,7 @@ The conventional Creator Economy model assumes that visibility comes from volume
 
 This inversion has a name in the Infinite Game OS framework: the Creator Flywheel. It replaces the perform-to-be-found assumption with a structured-to-be-found operating principle.
 
-AI-legible content, evergreen acquisition pathways and a coherent offer architecture are the load-bearing elements. Posting cadence is not.
+AI-legible content, evergreen acquisition pathways and a coherent offer architecture are the essential elements. Posting cadence is not.
 
 ## An offer ladder with leverage points
 

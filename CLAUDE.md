@@ -26,14 +26,16 @@ src/data/
 
 src/components/
   Nav.tsx                     Navigation ('use client' — scroll detection)
-  Footer.tsx                  Four-node ecosystem links (load-bearing for agent traversal)
+  Footer.tsx                  Four-node ecosystem links (critical for agent traversal)
   SectionReveal.tsx           Scroll reveals (vanilla IntersectionObserver, no Framer Motion)
 
 public/
   robots.txt                  AI crawlers explicitly allowed
   llms.txt                    Structured AI manifest
   llms-full.txt               Full content for deep LLM reads (update quarterly)
-  sitemap.xml                 All routes
+
+src/app/
+  sitemap.ts                  Generated sitemap. All routes
 ```
 
 ## Concept Pages
@@ -70,7 +72,7 @@ All tokens defined in `@theme {}` in `globals.css`. Reference via CSS vars or Ta
 
 ## Session Maintenance
 
-**When adding a new page:** Add its route to `public/sitemap.xml`. Add an entry to `public/llms.txt`. If the page has significant content, add a summary line to `public/llms-full.txt`.
+**When adding a new page:** Add its route to `src/app/sitemap.ts`. Add an entry to `public/llms.txt`. If the page has significant content, add a summary line to `public/llms-full.txt`.
 
 **When updating content:** Update `dateModified` in any relevant Article schema. Refresh `llms-full.txt` entry for that page.
 

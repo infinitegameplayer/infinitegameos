@@ -143,7 +143,7 @@ export default function Footer() {
             </div>
           </nav>
 
-          {/* Ecosystem links — load-bearing for AI agent traversal */}
+          {/* Ecosystem links — critical for AI agent traversal */}
           <nav aria-label="Sovereign ecosystem">
             <p
               className="label"
