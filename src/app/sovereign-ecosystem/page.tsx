@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import { sovereignEcosystemFaqs } from '@/lib/page-data'
+import { upstreamVersion, upstreamUpdatedAt } from '@/lib/upstream'
 
 export const metadata: Metadata = {
   title: {
@@ -44,7 +45,7 @@ const articleSchema = {
   url: 'https://www.infinitegameos.io/sovereign-ecosystem',
   mainEntityOfPage: 'https://www.infinitegameos.io/sovereign-ecosystem',
   datePublished: '2026-05-05',
-  dateModified: '2026-05-05',
+  dateModified: upstreamUpdatedAt,
 }
 
 const breadcrumbSchema = {
@@ -296,11 +297,29 @@ export default function SovereignEcosystemPage() {
                   bundles, built out to a level no foundational template needs
                   to carry.
                 </li>
+                <li>
+                  <strong>Guards that ship with their proof.</strong> Hooks that
+                  refuse an unapproved deletion, catch encoding corruption and
+                  flag links left dangling after a move. Every one travels with
+                  a control that fires it, because a guard you have read is not
+                  a guard you have fired. Continuous integration runs those
+                  controls on every change, and runs a negative control that
+                  replays each test against a hook that does nothing. A test
+                  that still passes then was proving nothing, and it fails the
+                  build.
+                </li>
               </ul>
               <p>
-                At v2.4.0, the repo trimmed to foundational only. Source
-                Harvest stayed as a dual-distribution surface. Everything else
-                that grew beyond template scope shipped here instead.
+                The repo trimmed to foundational scope at v2.4.0 and has been
+                hardening ever since. Seven skills now ship inside the template
+                and also install from this site as standalone plugins.
+                Everything that grew past template scope lives here instead.
+              </p>
+              <p>
+                Current release: <strong>{upstreamVersion}</strong>. Each
+                release carries an update package written as specification plus
+                test rather than a patch, so a vault you have already
+                customized can still take the change.
               </p>
             </SectionReveal>
 
