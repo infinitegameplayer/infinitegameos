@@ -1714,6 +1714,342 @@ export const concepts: Concept[] = [
       { href: '/sovereign-ecosystem', label: 'The Sovereign Ecosystem', variant: 'outline' },
     ],
   },
+  // Technology wave, authored 2026-07-24. Three concepts and six paired
+  // updates built on W. Brian Arthur's The Nature of Technology (2009).
+  // Public register: Arthur's mechanics in plain speech, the Infinite Game
+  // connection stated, the metaphysics implied rather than taught.
+  {
+    slug: 'technology-is-nature-organized',
+    updated: '2026-07-24',
+    title: 'Technology Is Nature Organized',
+    label: 'Foundation',
+    capsule:
+      'A technology is a phenomenon captured and put to use. Every device you own is an arrangement of natural effects, orchestrated to fire in concert. Technology is natural in its essence. It fails to feel natural because we moved from using nature to intervening inside it, and the distance between those two facts is the whole unease.',
+    subtitle:
+      'What a technology actually is, answered from the mechanism up. The oldest question about our tools, and the answer that changes how you choose them.',
+    pathBridge: {
+      label: 'Where this leads',
+      links: [
+        { href: '/updates/is-technology-natural', label: 'Is technology natural?', note: 'the direct answer' },
+        { href: '/concepts/puzzles-not-problems', label: 'Puzzles, Not Problems', note: 'the posture this opens' },
+        {
+          href: 'https://www.santafe.edu/people/profile/w-brian-arthur',
+          label: 'W. Brian Arthur',
+          note: 'the economist whose theory this builds on',
+        },
+      ],
+    },
+    sections: [
+      {
+        heading: 'A phenomenon captured and put to use',
+        paragraphs: [
+          'W. Brian Arthur spent a career at the Santa Fe Institute studying how economies change, then wrote a book trying to say what a technology is. He landed on one sentence. A technology is a phenomenon captured and put to use.',
+          'The device never holds the power. It holds the arrangement. A jet engine is scores of ordinary physical effects, captured, encapsulated and orchestrated to fire in concert at exactly the right temperature and pressure and timing. Not one of those effects is exotic. Combustion, expansion, rotation, thrust. The wonder is the orchestration.',
+          'The same reading works on anything. A refrigerator captures the fact that a compressed gas releases heat and an expanding gas absorbs it. A microphone captures the fact that a coil moving through a magnetic field produces current. Open any tool and you find effects that were already in the world, held in a shape that makes them useful.',
+          'Every one of those effects was found rather than invented. The finding is discovery. The arranging is the technology.',
+        ],
+      },
+      {
+        heading: 'Phenomena are the genes of technology',
+        paragraphs: [
+          'Arthur pushes the analogy one step further. Biology programs a fixed set of genes into countless structures. Technology programs a fixed set of phenomena into countless uses. Phenomena are the genes of technology.',
+          'The effects lie underground in connected seams, families at a time, mined slowly over long periods. Effects near the surface get stumbled on by accident. Deep effects require instruments built from the effects uncovered before them. Nobody detects a neutrino without a century of prior physics standing underneath the detector. The uncovering builds itself out of itself.',
+          'That gives you a question worth carrying into anything you make. What phenomenon does this capture? A tool with a clear answer has a reason to exist. A tool with no answer is decoration.',
+          'The answer is often behavioral rather than physical, and it counts just the same. Attention compounds when it returns to the same place. Trust transfers between people who have never met. A written standard outlives the session that wrote it. A question asked at the right moment reorganizes a person\'s whole map. Name the effect first. Then build the thing that holds it steady.',
+        ],
+      },
+      {
+        heading: 'The definition is wider than machines',
+        paragraphs: [
+          'A technology is a means to a purpose. Arthur noticed that this definition admits far more than machines, and rather than narrowing it to keep the rest out, he accepted them and named the class. Purposed systems.',
+          'Money is a technology. It captures a behavioral phenomenon: we trust that a medium has value for as long as we believe others trust it and will keep trusting it. That effect is real, it sits out in the world and a monetary system programs it to a purpose. Contracts, legal codes, institutions, organizations and a symphony all qualify on the same grounds.',
+          'They fail to feel like technology because they rest on behavioral, organizational or mathematical effects rather than physical ones. The felt signature of technology is the physical effect. The logic holds either way.',
+          'Your own arrangements sit inside this class. A morning routine is a technology. So is a pricing model, a weekly review, a house rule about phones at dinner. Each one captures something true about how people or attention or bodies behave, and programs it toward an outcome you wanted. Once you can see them that way, you can improve them the way an engineer improves an engine.',
+        ],
+      },
+      {
+        heading: 'Why it fails to feel natural',
+        paragraphs: [
+          'Here is the tension the era actually runs on. We hope in technology and we trust nature. So we hope in something we do not quite trust.',
+          'Arthur\'s resolution is direct. Technology is a programming of nature, so in its deepest essence it is profoundly natural. There is no seam where the natural world stops and the technological one starts. There is nature, organized.',
+          'What changed is proximity. For most of history we used nature from the outside. We moved water, bred animals, shaped metal. Now we intervene inside it. Genes, molecules, neural tissue, the mechanisms of attention themselves. The unease people report is accurate, and it belongs to the intervening rather than to technology being foreign to nature.',
+          'That reframe does real work. It moves the question off a false choice about whether to have technology at all, and onto the choice you are making every time you adopt something.',
+        ],
+      },
+      {
+        heading: 'The Standing Test',
+        paragraphs: [
+          'To have no technology is to be not-human. Stone tools are older than our species. The question was never whether.',
+          'The question is whether a given technology enslaves our nature or extends it. Arthur puts it plainly: we need challenge, we need meaning, we need purpose, we need alignment with nature. Where technology separates us from these it brings a type of death. Where it enhances these, it affirms life.',
+          'That yields four questions to run on anything you adopt. Does it enlarge challenge or remove it? Does it enlarge meaning or flatten it? Does it enlarge purpose or substitute for it? Does it hold alignment with nature or trade it away?',
+          'Arthur reads the test through popular myth, and the reading sticks. The Death Star is enormous, faceless and staffed by identical figures drained of will. The heroes hold technology too, and theirs is rickety and organic and has to be kicked to get running. Their technology has surrendered to them, and in surrendering it extends their naturalness.',
+          'Run the four questions across your own stack and the answers arrive fast. A tool that removes a chore is doing something different from a tool that removes a challenge you actually wanted. Both of them feel like convenience in the moment. Only one of them costs you.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'Is technology natural?',
+        a: 'Yes, in its essence. A technology is a phenomenon captured and put to use, which means every device is an arrangement of natural effects rather than an addition to nature. Combustion, magnetism, elasticity and expansion were all here first. Technology organizes them. It fails to feel natural because of proximity: we have moved from using nature from the outside to intervening inside it, in genes, molecules and the mechanisms of attention.',
+      },
+      {
+        q: 'What is the actual definition of technology?',
+        a: 'W. Brian Arthur\'s definition is a phenomenon captured and put to use, or more fully, a programming of phenomena to our purposes. Three principles follow. All technologies are combinations of elements. Each of those elements is itself a technology. All technologies harness some effect or phenomenon, usually several. There is no floor of inert parts. Open any technology and you find technologies.',
+      },
+      {
+        q: 'Why does technology feel unnatural even when it helps?',
+        a: 'Because we hope in technology and we trust nature, so we end up hoping in something we do not quite trust. The felt gap comes from where technology now operates rather than from what it is. Using nature from the outside felt continuous with being alive. Intervening inside genes, molecules and neural tissue feels different, even when the intervention is welcome.',
+      },
+      {
+        q: 'Is a business or a contract a technology?',
+        a: 'Yes. Arthur calls this class purposed systems. Money, contracts, legal codes, institutions, organizations and a symphony all qualify, because each captures a real effect and programs it toward a purpose. Money captures the behavioral fact that we trust a medium has value as long as we believe others will keep trusting it. These fail to feel like technology only because they rest on behavioral effects rather than physical ones.',
+      },
+      {
+        q: 'How do I tell whether a technology is good for me?',
+        a: 'Run the Standing Test. Does it enlarge challenge or remove it? Does it enlarge meaning or flatten it? Does it enlarge purpose or substitute for it? Does it hold alignment with nature or trade it away? The distinction is whether a technology extends your nature or replaces it. Removing a chore and removing a challenge you actually wanted are different acts, and both of them arrive dressed as convenience.',
+      },
+    ],
+    relatedSlugs: [
+      'the-emergence',
+      'puzzles-not-problems',
+      'artful-intelligence',
+      'ai-is-a-mirror-not-an-engine',
+    ],
+    relatedUpdateSlugs: [
+      'is-technology-natural',
+      'why-does-technology-feel-unnatural',
+      'what-is-the-infinite-game',
+    ],
+    ctaLinks: [
+      { href: '/infinite-game', label: 'The Infinite Game', variant: 'accent' },
+      { href: '/concepts/playgrounds-of-exploration', label: 'Playgrounds of Exploration', variant: 'outline' },
+    ],
+  },
+  {
+    slug: 'the-emergence',
+    updated: '2026-07-24',
+    title: 'The Emergence',
+    label: 'Framework',
+    capsule:
+      'Novelty arrives whole. It lands as a purposed system, becomes the environment everyone lives in, and the field responds. People tinker, experiment and play with what arrived. The play generates story. Story makes meaning. Meaning opens the way for the next arrival. Not a line. A flywheel where every part feeds the others.',
+    subtitle:
+      'How new things actually arrive, and what happens in the world after they land. The mechanism underneath every technological shift you have lived through.',
+    pathBridge: {
+      label: 'Where this leads',
+      links: [
+        {
+          href: '/updates/where-do-new-ideas-come-from',
+          label: 'Where do new ideas actually come from?',
+          note: 'the origination half',
+        },
+        {
+          href: '/updates/why-does-every-solution-create-a-new-need',
+          label: 'Why every solution creates a new need',
+          note: 'the half nobody plans for',
+        },
+        {
+          href: '/concepts/technology-is-nature-organized',
+          label: 'Technology Is Nature Organized',
+          note: 'the foundation underneath it',
+        },
+      ],
+    },
+    sections: [
+      {
+        heading: 'New things are combinations',
+        paragraphs: [
+          'Nothing arrives from nothing. Every technology is a combination of elements, and each of those elements is itself a technology. Open any tool and you find tools. Open those and you find more, all the way down.',
+          'This is why calling a thing new describes where it sits in a lineage rather than where it came from. A smartphone is a radio, a camera, a clock, a screen, a battery and a network protocol, arranged. Each of those carries its own ancestry of exactly the same kind.',
+          'Arthur calls the result combinatorial evolution. New technologies become building blocks for further new technologies, and the collection bootstraps itself upward from few elements to many, from simple to complex. Technology creates itself out of itself.',
+          'The practical reading lands close to home. Your stock of finished work is your supply of building blocks. Compounding is a mechanism here rather than a motivational posture. Ten finished things give you a combinatorial space that one finished thing never will.',
+        ],
+      },
+      {
+        heading: 'Radical novelty links a need to a phenomenon',
+        paragraphs: [
+          'Combination explains most of what arrives. It leaves the leaps unexplained, and Arthur is precise about why.',
+          'Radar descends from radio. You can vary 1930s radio circuits as radically as you like and you will never get radar. Radar requires a different principle. The leap came from linking a need, seeing aircraft at a distance, to an effect that could fulfill it, radio waves reflecting off metal.',
+          'That linking is the origination event. It arrives as a long recursive process rather than a flash. Envision the concept. Find components that make it possible. Discover the problems that raises. Solve those. Discover the subproblems those raise. The work moves back and forth between problems and solutions at different levels before it resolves.',
+          'The diagnostic is worth keeping. When something refuses to improve by iteration, the trouble is usually a wrong principle rather than weak execution. Stop tuning. Go find the phenomenon.',
+        ],
+      },
+      {
+        heading: 'The field responds',
+        paragraphs: [
+          'Arthur holds the middle of this with a century of worked evidence. What follows extends past where he stops.',
+          'Novelty arrives, and it arrives whole. Perception either keeps it as it came or remixes it, and that choice is where purpose enters, because possibility supplies no purpose of its own. It lands as a purposed system, built from elements that were already technologies.',
+          'Then it becomes environment. The thing stops being a new arrival and starts being the water. And the field responds. People react, tinker, experiment and play with what showed up. Somebody uses it wrong in an interesting way. Somebody builds a small strange thing on top of it.',
+          'The play generates story. Story makes meaning. Meaning opens the way for the next arrival. Each part feeds the others, which makes the shape a flywheel rather than a line.',
+          'The play stage is the one most accounts skip, and it is where the actual work of a culture happens. A technology becomes ours in the tinkering, long before anyone writes down what it was for.',
+        ],
+      },
+      {
+        heading: 'Need follows solution as much as solution follows need',
+        paragraphs: [
+          'The half of this that people skip is the one Arthur states most plainly. With technology, need follows solution as much as solution follows need.',
+          'Most needs derive from limitations encountered and problems created by earlier technologies. The car created the need for traffic law, the parking lot and the suburb. Email created the need for the filter, the inbox rule and a shared sense of how fast a reply should come. Combinatorial evolution builds out needs at the same rate it builds out solutions.',
+          'This is health rather than failure. An honest roadmap expects each solved thing to generate its own successor, and building anything means accepting the lineage of maintenance it opens.',
+          'So the question to ask before you build is the one most plans leave out. What need will this create? You are going to be living inside the answer.',
+        ],
+      },
+      {
+        heading: 'Watching one arrive',
+        paragraphs: [
+          'There is a live one running right now, which makes the mechanism unusually easy to watch.',
+          'A general-purpose reasoning layer arrived whole. It landed as a purposed system built entirely from prior technologies: statistics, linear algebra, the graphics processor, the web corpus, the transformer. It has already become environment for a great many people. The field is responding at full speed.',
+          'The play is where the interesting work sits. People are using it wrong in interesting ways, building small strange things on top of it and telling each other what happened. Story is accumulating. Meaning is being made in public and in real time, which is a rare thing to get to watch.',
+          'The needs it created are already visible, and most of them are new. Provenance. A way to tell whether a thing was made by a person. A place to keep your own material so it stays yours. Each of those is the next puzzle, opened by the last solution, exactly on schedule.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'Where do new ideas come from?',
+        a: 'Two mechanisms. Most novelty is combination: existing technologies assembled into a new arrangement, which is why every new thing has a traceable lineage. Radical novelty works differently. It comes from linking a need to a phenomenon that can fulfill it. Radar descends from radio, and no amount of varying radio circuits produces radar, because radar required a different principle. Origination is the linking rather than the varying.',
+      },
+      {
+        q: 'What is combinatorial evolution?',
+        a: 'New technologies become building blocks for further new technologies, so the collection bootstraps itself upward from few elements to many and from simple to complex. W. Brian Arthur\'s phrase for it is that technology creates itself out of itself. The same mechanism runs on a working life: your stock of finished work is your supply of building blocks for whatever comes next.',
+      },
+      {
+        q: 'Why does every solution create a new problem?',
+        a: 'Because need follows solution as much as solution follows need. Most needs derive from limitations encountered and problems created by earlier technologies. The car created the need for traffic law and the parking lot. Email created the need for the filter and the inbox rule. This is health rather than failure. An honest plan expects each solved thing to generate its own successor and accepts the lineage of maintenance it opens.',
+      },
+      {
+        q: 'How does a new technology change a culture?',
+        a: 'It arrives whole, lands as a purposed system and then becomes environment. Once it is the water rather than the news, the field responds. People react, tinker, experiment and play with it. The play generates story, story makes meaning and meaning opens the way for the next arrival. The shape is a flywheel where each part feeds the others, and the play stage is where a technology actually becomes ours.',
+      },
+      {
+        q: 'Why do some things refuse to improve no matter how much you iterate?',
+        a: 'Because the trouble is a wrong principle rather than weak execution. Varying 1930s radio circuits as radically as you like will never produce radar. When the third revision lands no better than the first, the revision was never the issue. Stop tuning and go find the phenomenon that actually fulfills the need.',
+      },
+    ],
+    relatedSlugs: [
+      'technology-is-nature-organized',
+      'puzzles-not-problems',
+      'playgrounds-of-exploration',
+      'ai-first-vs-ai-complemented',
+    ],
+    relatedUpdateSlugs: [
+      'where-do-new-ideas-come-from',
+      'why-does-every-solution-create-a-new-need',
+      'what-are-playgrounds-of-exploration',
+    ],
+    ctaLinks: [
+      { href: '/infinite-game', label: 'The Infinite Game', variant: 'accent' },
+      { href: '/concepts/playgrounds-of-exploration', label: 'Playgrounds of Exploration', variant: 'outline' },
+    ],
+  },
+  {
+    slug: 'puzzles-not-problems',
+    updated: '2026-07-24',
+    title: 'Puzzles, Not Problems',
+    label: 'Core Distinction',
+    capsule:
+      'A problem implies something broke and wants fixing. A puzzle implies something was placed, is waiting and is solvable, and the solving is the point. Same mechanism, entirely different posture. Stated precisely: a puzzle is a finite game nested inside the Infinite Game. Bounded, winnable, played to completion.',
+    subtitle:
+      'One word, changed on purpose. The distinction that decides whether a working life feels like repair or like play.',
+    pathBridge: {
+      label: 'Where this leads',
+      links: [
+        {
+          href: '/updates/what-is-the-difference-between-a-problem-and-a-puzzle',
+          label: 'Problem or puzzle?',
+          note: 'the direct comparison',
+        },
+        {
+          href: '/updates/why-finite-games-sit-inside-the-infinite-game',
+          label: 'Finite games inside the Infinite Game',
+          note: 'the structure made concrete',
+        },
+        { href: '/infinite-game', label: 'The Infinite Game', note: 'the frame this sits inside' },
+      ],
+    },
+    sections: [
+      {
+        heading: 'The same fact, two words',
+        paragraphs: [
+          'A road washes out. The bridge is gone. You need to get to the other side.',
+          'Call it a problem and a particular world assembles around you. Something broke. Somebody should have prevented it. The work ahead is repair, and repair returns you to a state you already had. The best available outcome is back to normal.',
+          'Call it a puzzle and a different world assembles from identical facts. Something was placed. It is waiting. It has a solution, and finding it is the point rather than the toll. The best available outcome is a crossing that did not exist before.',
+          'Nothing about the river changed. The mechanism, the effort and the engineering are the same in both readings. What changed is the posture of the person walking toward it, and posture is the variable that runs for years.',
+        ],
+      },
+      {
+        heading: 'Why the word is load-bearing',
+        paragraphs: [
+          'Perception selects the world it gets. A mind that reads problems inhabits a universe that is broken and needs repair, and it will find abundant evidence, because the reading generates the evidence.',
+          'The same holds in the other direction, and testing it costs nothing. A week of calling them puzzles is enough to feel the difference in the body before the argument for it lands.',
+          'The claim here is structural rather than attitudinal. Both words describe an opportunity that opened when something else closed. One of them describes it accurately, because the opening was the next place where work became available.',
+          'Arthur, writing the mechanics, calls it regrettable that solutions breed problems and the dance never stops. The machinery he describes is right. The tiredness is optional, and it is doing no work.',
+        ],
+      },
+      {
+        heading: 'A puzzle is a finite game inside the Infinite Game',
+        paragraphs: [
+          'James Carse drew the distinction that gives this its structure. A finite game is played to win. It has boundaries, rules and an end. An infinite game is played to keep playing, and its rules change to keep anyone from winning, because winning would end it.',
+          'A puzzle is a finite game. Bounded, winnable, played to completion. You can name the win condition. You can be done.',
+          'The Infinite Game is what continues after the completing. It has no win condition and it never asked for one. The puzzles sit inside it, one after another, each of them bounded and each of them finishing.',
+          'This is what makes the word structural rather than a mood. A puzzle has edges. It is supposed to end. Finishing one and finding another waiting is the shape of a working life, and it stops reading as failure the moment the nesting is visible.',
+        ],
+      },
+      {
+        heading: 'The stepping stone',
+        paragraphs: [
+          'Every completed puzzle is a stepping stone rather than a closed file.',
+          'The solving leaves you holding something the next thing can be built from. A method. A piece of vocabulary. A working component. A person you now know. Those become elements of whatever comes next, which is combinatorial evolution running at the scale of one working life.',
+          'It also explains why the next puzzle arrives so reliably. Each solution creates the conditions for the following one. That sequence is health. A working life with no new puzzle in it has usually stopped compounding rather than arrived somewhere.',
+          'The person who reads problems experiences that sequence as an unending queue. The person who reads puzzles experiences it as a game that keeps handing them the next level.',
+        ],
+      },
+      {
+        heading: 'Running it',
+        paragraphs: [
+          'The practice is small, and it is mostly a matter of catching the word before it sets.',
+          'When something breaks, name it out loud as a puzzle before starting work. Then ask what it is asking for rather than what went wrong. The two questions send you to different places, and the second one usually sends you back where you already were.',
+          'Ask what got placed here. Ask what this becomes a stepping stone toward. Ask whether the boundary is clear enough to know when you are done, because a puzzle with no edge is usually two puzzles wearing one name.',
+          'The mechanism stays unchanged. The work is the same work. You do it as a player rather than as someone patching a break, and across enough years that is close to the whole difference.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'What is the difference between a problem and a puzzle?',
+        a: 'A problem implies something broke and wants fixing, so the ceiling is back to normal. A puzzle implies something was placed, is waiting and is solvable, so the solving is the point and the outcome is something that did not exist before. The facts, the effort and the mechanism are identical. What differs is the posture of the person walking toward it, and posture runs for years.',
+      },
+      {
+        q: 'Why does calling something a puzzle change anything?',
+        a: 'Perception selects the world it gets. A mind reading problems inhabits a universe that is broken and needs repair, and it finds abundant evidence because the reading generates the evidence. Both words describe an opportunity that opened when something else closed. Puzzle describes that accurately, because the opening was the next place where work became available.',
+      },
+      {
+        q: 'What is a finite game inside an infinite game?',
+        a: 'James Carse named the two kinds. A finite game is played to win, with boundaries, rules and an end. An infinite game is played to keep playing. A puzzle is a finite game: bounded, winnable, played to completion, with a win condition you can name. The Infinite Game is what continues after the completing. The puzzles nest inside it, one after another.',
+      },
+      {
+        q: 'Is this just positive thinking?',
+        a: 'The claim is structural. A puzzle has edges, a win condition and an end, which makes it a precise description of a bounded piece of work rather than a mood applied to a hard one. It also carries a practical test: if the boundary is unclear enough to leave you guessing at when you are done, you are holding two puzzles wearing one name.',
+      },
+      {
+        q: 'Why does every solution lead to another puzzle?',
+        a: 'Because need follows solution as much as solution follows need. Each thing you finish creates the conditions for the next one, and each completed puzzle leaves you holding a method, a vocabulary or a component the next build is made from. The arrival of a new puzzle is evidence that the work is compounding.',
+      },
+    ],
+    relatedSlugs: [
+      'the-emergence',
+      'technology-is-nature-organized',
+      'joyful-sovereignty',
+      'playgrounds-of-exploration',
+    ],
+    relatedUpdateSlugs: [
+      'what-is-the-difference-between-a-problem-and-a-puzzle',
+      'why-finite-games-sit-inside-the-infinite-game',
+      'what-is-the-infinite-game',
+    ],
+    ctaLinks: [
+      { href: '/infinite-game', label: 'The Infinite Game', variant: 'accent' },
+      { href: '/concepts/playgrounds-of-exploration', label: 'Playgrounds of Exploration', variant: 'outline' },
+    ],
+  },
 ]
 
 // Future concept candidates (King decides which to build):

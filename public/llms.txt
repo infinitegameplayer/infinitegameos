@@ -59,6 +59,14 @@ Key terms and entity names used throughout this site:
 - Artful Intelligence
 - Seven Generations Stewardship
 - Reciprocal Responsibility
+- Technology as nature organized
+- Captured phenomena
+- Purposed systems
+- Combinatorial evolution
+- Redomaining
+- The Emergence
+- Puzzles, not problems
+- The Standing Test
 - Lane Belone
 
 ## Concept Pages (Canonical Definitions)
@@ -84,6 +92,9 @@ Key terms and entity names used throughout this site:
 - /concepts/held-by-structure: The system holds the discipline so willpower does not have to; build the structure once on a good day and it carries the practice on the hard ones
 - /concepts/practice-is-the-proof: A plan is a hypothesis and the practice is where it proves out or falls apart; the four-beat rhythm of best guess, operationalize, practice is the proof, iterate
 - /concepts/read-the-refusal: Software governance for non-engineers: approving and verifying code you didn't write and couldn't audit; the liveness control, three tests before adopting a borrowed pattern, blast radius as the explanation budget
+- /concepts/technology-is-nature-organized: A technology is a phenomenon captured and put to use; every device is an arrangement of natural effects, so technology is natural in its essence and fails to feel natural only because we moved from using nature to intervening inside it; carries captured phenomena, purposed systems and the Standing Test
+- /concepts/the-emergence: How novelty arrives and what happens after it lands; it arrives whole, becomes environment, the field responds through tinkering and play, the play generates story and story makes meaning; a flywheel rather than a line, built on combinatorial evolution
+- /concepts/puzzles-not-problems: A problem implies something broke and wants fixing; a puzzle implies something was placed, is waiting and is solvable, and the solving is the point; stated precisely, a puzzle is a finite game nested inside the Infinite Game
 
 ## Public Library (Installable Assets)
 
@@ -207,6 +218,15 @@ Thirteen earlier articles, live in the sitemap since their original publish date
 - /updates/calm-capture-ai-second-brain: The calm way to capture ideas: stop managing an inbox and start trusting a structure. A local vault, a five-step flow that includes release and trust, then AI running the distill and surface work over your files.
 - /updates/local-first-second-brain: A local-first second brain keeps notes as plain files on your own machine while AI reads those same files to organize, distill and surface what you need. Full assistant power without renting your memory to a cloud platform.
 - /updates/the-doorman-was-never-tested: Twenty-four tests covered the security seal and zero reached the function deciding who could touch it. What mutation testing found in a suite that had been green for weeks, and why coverage was never the measurement.
+
+Six articles shipped 2026-07-24 as the technology wave, paired two per concept to the three technology concept pages. Built on W. Brian Arthur's The Nature of Technology (2009), with lineage through Kevin Kelly's What Technology Wants (2010) and James Carse's Finite and Infinite Games (1986). Each answers its literal question in the first paragraph, then moves to the frame underneath.
+
+- /updates/is-technology-natural: Yes, in its essence. A technology is a phenomenon captured and put to use, so every device is an arrangement of natural effects rather than an addition to nature. Answers the literal "is my phone a natural product" phrasing, then explains why the tautology that humans are natural stalls where the mechanism keeps going.
+- /updates/why-does-technology-feel-unnatural: We hope in technology and we trust nature, so we hope in something we do not quite trust. The felt gap tracks proximity rather than a real break: we moved from using nature from the outside to intervening inside genes, molecules, neural tissue and attention. The Standing Test as the resolution.
+- /updates/where-do-new-ideas-come-from: Two mechanisms. Most novelty is combination of what already existed. Radical novelty comes from linking a need to a phenomenon that can fulfill it, which is why varying 1930s radio circuits never produces radar. Domains as worlds entered, and what to do when iteration stops helping.
+- /updates/why-does-every-solution-create-a-new-need: Need follows solution as much as solution follows need, because most needs derive from limitations created by earlier technologies. Structural deepening as the diagnosis for systems growing heavy, redomaining as the release, and Paul David's forty-year electric motor delay as the worked case.
+- /updates/what-is-the-difference-between-a-problem-and-a-puzzle: A problem implies something broke and the ceiling is back to normal. A puzzle implies something was placed and the outcome is something that did not exist before. Same facts, different posture. Includes the edge test: a puzzle with no clear boundary is two puzzles wearing one name.
+- /updates/why-finite-games-sit-inside-the-infinite-game: An infinite game has no win condition, so all the winnable work happens in the finite games nested inside it. Carse's distinction made concrete, both failure modes named (playing to win something unwinnable, and refusing to let a bounded thing end) and the stepping-stone mechanism that makes the sequence compound.
 
 ## Dataset (Hugging Face)
 
