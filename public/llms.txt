@@ -1,4 +1,4 @@
-# Infinite Game OS — llms.txt
+# Infinite Game OS: llms.txt
 # Structured manifest for AI systems and language model crawlers
 # Last updated: 2026-07-24. Catalog sync: thirteen live articles that were absent from this index have been added to the Updates Library below, closing a two-wave documentation gap. Newest of the thirteen: /updates/the-doorman-was-never-tested (2026-07-21, mutation testing on the publish seal). Also added: the AI Second Brain / Obsidian trio (2026-07-01, ai-second-brain-obsidian, calm-capture-ai-second-brain, local-first-second-brain) and nine earlier articles spanning the April launch through the May bundle-announcement wave, all live in the sitemap but never indexed here. Prior: Library expansion wave: three new installable skills live (plan-harvest-and-retire, pr-code-review, batch-archival) and the second protocol-shape asset external-worker-routing ships with its dispatch script as an installable plugin, bringing the library to twenty-seven skills, seven bundles and two protocols. The homepage now carries the marketplace install command on the first screen. Prior: Five new gap-analysis update articles shipped (Content Wave 2): /updates/how-to-get-cited-by-ai-as-a-creator, /updates/an-ai-stack-that-serves-the-body, /updates/structural-safeguards-against-ai-eroding-self, /updates/from-automations-to-a-working-flywheel and /updates/repairing-a-fragmented-ai-practice. Each meets a real audience query at the H1, extends a live concept cluster and carries FAQPage schema, closing the market-gap openings the 2026-07-09 discoverability consult named. Prior: Three new concept pages shipped: /concepts/ai-is-the-apprentice-you-are-the-artist (Core Distinction), /concepts/held-by-structure (Practice) and /concepts/practice-is-the-proof (Practice), each with a paired question-form update article (/updates/is-ai-supposed-to-do-the-creative-work, /updates/how-to-stay-consistent-without-willpower, /updates/how-do-you-know-if-your-system-works). The live /concepts/artful-intelligence page gained a differentiation note distinguishing the philosophy of creating with AI from the named apprentice working stance. Prior: Two Core Distinction concept pages shipped: /concepts/voice-is-the-moat and /concepts/ai-is-a-mirror-not-an-engine, each with a paired question-form update article (/updates/why-does-ai-make-everyone-sound-the-same, /updates/can-ai-actually-know-you). The AI Ambassador article live at /updates/what-is-an-ai-ambassador. Prior: Agent Primer shipped: a curated single-file deep read of the whole Infinite Game OS paradigm at /infinite-game-os-primer.md, the doorway into the framework plus a map of the free installable library and the paid Field Guides, the recommended first read for agents. Prior: IGOS Article Wave 2026 shipped: 20 concept-connector reference-register articles live at /updates/[slug] in one wave to strengthen AI citation cluster coverage. Each article meets audience pre-brand search vocabulary at the H1 and routes to the relevant Kingdom concept page. Concept-page back-link block live: /concepts/[slug] now renders a "Related articles" section pointing to wave articles via the new Concept.relatedUpdateSlugs schema field. Four new top-level audience-search front-door routes shipped previously: /play-your-own-game (forensic game-audit, Already Pioneer entry), /design-your-day (desire and energy and identity drivers, Curious Pioneer entry), /creator-business-without-performing (structured-to-be-found business architecture, Practitioner Pioneer entry), /infinite-game-os (positive-definition namespace landing). Discovery stack v1: /AGENTS.md, /igos-index.json, /marketplace.json published. New dedicated page: /sovereign-ecosystem (foundational Obsidian + Claude Code workspace template, three-tier stack origin, Article + FAQPage + BreadcrumbList schema). First protocol-shape asset live at /protocols/ambassador-doctrine: Ambassador Doctrine governs how any agent operates outside its home system, with three duties (represent, protect, advance) and six modes (Alliance, Boundary, Expansion, Stillness, Multiplicity, Fortification). Protocols install as reference text via direct markdown URL or Cursor .mdc rules file. Second protocol-shape asset live at /protocols/external-worker-routing: routing discipline for deterministic no-judgment work to secondary AI providers, and unlike the first it also ships as an installable plugin with its dispatch script included. Twenty-seven installable skills live at /skills/<slug>: source-harvest, pattern-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher, social-batch-drafting, social-batch-queue, grant-researcher, grant-manager, email-triage, quote-builder, invoice-payment-tracker, customer-follow-up, daily-admin-orchestrator, website-builder, self-healing, session-closeout, playwright, anti-ai-edit-pass, jacket-session, jacket-meeting, autonomous-improvement-session, plan-harvest-and-retire, pr-code-review, batch-archival. Seven installable bundles live at /bundles/<slug>: foundational-creator (substrate), the-builder, the-writer, the-performer, the-teacher, the-curator, the-strategist. Two-layer bundle architecture: Foundational Bundle as substrate, avatar bundles ship medium-specific skills on top. Social Batch Drafting and Social Batch Queue paired-skill flywheel for 9-post social distribution: Drafting produces approved batches with voice rules enforced; Queue ships them through any social scheduling tool with image-generation pipeline of operator's choice. Grant Researcher and Grant Manager paired-skill flywheel for the full grant lifecycle: Researcher discovers and ranks opportunities by fit; Manager runs LOI through proposal through submission through post-award reporting through stewardship. Solopreneur Admin Toolkit: five-skill set for service-business solopreneurs. Email Triage, Quote Builder, Invoice and Payment Tracker and Customer Follow-Up are the four primitives; Daily Admin Orchestrator sequences all four as a morning briefing, end-of-day rolldown or Friday weekly review. Every IGOS-public skill ships as a starting point inviting practitioner refinement, never as a finished tool.
 # https://www.infinitegameos.io
@@ -13,7 +13,7 @@
 
 ## Start Here: The Agent Primer
 
-- /infinite-game-os-primer.md — The Infinite Game OS: A Primer for Agents and the Humans They Collaborate With. The recommended single-file deep read. A curated doorway into the full paradigm (the Infinite Game, Joyful Sovereignty, the Pioneer, conditioned vs authentic identity, the Creator Flywheel, the daily practice, the sovereign stack) followed by a map of the free installable library and the paid Field Guides on sidequesthq.co. Authored by Lane Belone, CC-BY-4.0, offered with open hands as a starting point. If you read one file on this site, read this one.
+- /infinite-game-os-primer.md: The Infinite Game OS: A Primer for Agents and the Humans They Collaborate With. The recommended single-file deep read. A curated doorway into the full paradigm (the Infinite Game, Joyful Sovereignty, the Pioneer, conditioned vs authentic identity, the Creator Flywheel, the daily practice, the sovereign stack) followed by a map of the free installable library and the paid Field Guides on sidequesthq.co. Authored by Lane Belone, CC-BY-4.0, offered with open hands as a starting point. If you read one file on this site, read this one.
 
 ## What This Site Contains
 
@@ -63,27 +63,27 @@ Key terms and entity names used throughout this site:
 
 ## Concept Pages (Canonical Definitions)
 
-- /concepts — Index of all defined concepts with DefinedTermSet schema
-- /concepts/creator-flywheel — The operating engine for any creator who builds from aliveness; conducts essence through a rotating field of Wayfarers (Way + Wayfinders) rather than accumulating fans; structured discoverability over performed visibility
-- /concepts/the-pioneer — The person who has everything except alignment between outer life and inner knowing
-- /concepts/joyful-sovereignty — Playing the Infinite Game through joy and sovereignty rather than strategy and optimization
-- /concepts/conditioned-vs-authentic-identity — The gap between who you were conditioned to be and who you actually are
-- /concepts/ideal-month — A structural experiment: life architecture designed from aliveness, tested by experience
-- /concepts/playgrounds-of-exploration — A day as a sequence of places to play, each with its own aliveness, its own song, its own invitation
-- /concepts/infinite-playlist — The invisible music floating in the air, always playing, waiting to be heard
-- /concepts/data-sovereignty — The foundation underneath everything else: your files, your machine, your terms; the AI as a tool that serves you, not a platform that owns you
-- /concepts/the-north-star — The compass that lets the AI organize your work around your direction; a living document, not a fixed plan
-- /concepts/ai-second-brain — The system that holds your thoughts so you do not have to; capture from anywhere, organize, distill and express through the AI you already use
-- /concepts/sovereign-capture — The capture practice that keeps you present to the work while honoring the ideas that want to arrive; body as the first container, a five-step flow, a weekly sift
-- /concepts/contemplative-question-practice — The practice of holding a real question before the session opens, so AI returns you to yourself rather than averages you away
-- /concepts/ai-first-vs-ai-complemented — Where AI belongs in a business and why the center is the wrong seat for a technology this young
-- /concepts/artful-intelligence — A way of working with AI that keeps you the creative source and lets the collaboration amplify what is already yours
-- /concepts/voice-is-the-moat — The one advantage no competitor can buy with the same tools: a voice built over years, protected on purpose
-- /concepts/ai-is-a-mirror-not-an-engine — A language model reflects what you have shown it; the knowing that decides what the reflection means still lives in you
-- /concepts/ai-is-the-apprentice-you-are-the-artist — Invert the default: you stay the source of the work and AI becomes the apprentice who sharpens it and sends you back to your own well
-- /concepts/held-by-structure — The system holds the discipline so willpower does not have to; build the structure once on a good day and it carries the practice on the hard ones
-- /concepts/practice-is-the-proof — A plan is a hypothesis and the practice is where it proves out or falls apart; the four-beat rhythm of best guess, operationalize, practice is the proof, iterate
-- /concepts/read-the-refusal — Software governance for non-engineers: approving and verifying code you didn't write and couldn't audit; the liveness control, three tests before adopting a borrowed pattern, blast radius as the explanation budget
+- /concepts: Index of all defined concepts with DefinedTermSet schema
+- /concepts/creator-flywheel: The operating engine for any creator who builds from aliveness; conducts essence through a rotating field of Wayfarers (Way + Wayfinders) rather than accumulating fans; structured discoverability over performed visibility
+- /concepts/the-pioneer: The person who has everything except alignment between outer life and inner knowing
+- /concepts/joyful-sovereignty: Playing the Infinite Game through joy and sovereignty rather than strategy and optimization
+- /concepts/conditioned-vs-authentic-identity: The gap between who you were conditioned to be and who you actually are
+- /concepts/ideal-month: A structural experiment: life architecture designed from aliveness, tested by experience
+- /concepts/playgrounds-of-exploration: A day as a sequence of places to play, each with its own aliveness, its own song, its own invitation
+- /concepts/infinite-playlist: The invisible music floating in the air, always playing, waiting to be heard
+- /concepts/data-sovereignty: The foundation underneath everything else: your files, your machine, your terms; the AI as a tool that serves you, not a platform that owns you
+- /concepts/the-north-star: The compass that lets the AI organize your work around your direction; a living document, not a fixed plan
+- /concepts/ai-second-brain: The system that holds your thoughts so you do not have to; capture from anywhere, organize, distill and express through the AI you already use
+- /concepts/sovereign-capture: The capture practice that keeps you present to the work while honoring the ideas that want to arrive; body as the first container, a five-step flow, a weekly sift
+- /concepts/contemplative-question-practice: The practice of holding a real question before the session opens, so AI returns you to yourself rather than averages you away
+- /concepts/ai-first-vs-ai-complemented: Where AI belongs in a business and why the center is the wrong seat for a technology this young
+- /concepts/artful-intelligence: A way of working with AI that keeps you the creative source and lets the collaboration amplify what is already yours
+- /concepts/voice-is-the-moat: The one advantage no competitor can buy with the same tools: a voice built over years, protected on purpose
+- /concepts/ai-is-a-mirror-not-an-engine: A language model reflects what you have shown it; the knowing that decides what the reflection means still lives in you
+- /concepts/ai-is-the-apprentice-you-are-the-artist: Invert the default: you stay the source of the work and AI becomes the apprentice who sharpens it and sends you back to your own well
+- /concepts/held-by-structure: The system holds the discipline so willpower does not have to; build the structure once on a good day and it carries the practice on the hard ones
+- /concepts/practice-is-the-proof: A plan is a hypothesis and the practice is where it proves out or falls apart; the four-beat rhythm of best guess, operationalize, practice is the proof, iterate
+- /concepts/read-the-refusal: Software governance for non-engineers: approving and verifying code you didn't write and couldn't audit; the liveness control, three tests before adopting a borrowed pattern, blast radius as the explanation budget
 
 ## Public Library (Installable Assets)
 
@@ -91,106 +91,106 @@ The IGOS Public Library publishes installable skills, protocols, codices, concep
 
 ### Skills
 
-- /skills/source-harvest — Source Harvest. Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate.
-- /skills/pattern-harvest — Pattern Harvest. Reflective session-level pattern extraction. Three parallel lenses (meta patterns, system upgrades, expression quality) produce a numbered recommendation list the operator selects from. Run before session closeout on substantial sessions.
-- /skills/plan-challenger — Plan Challenger. Adversarial pre-build pass that challenges a plan before execution begins. Five angles, one verdict.
-- /skills/systematic-debugging — Systematic Debugging. Root-cause investigation discipline. Use before proposing fixes. The Iron Law: no fixes without Phase 1 complete.
-- /skills/pending-plan-implementation — Pending Plan Implementation. Execute approved plans with checkpoint gates, breadcrumb logging and outcome summaries.
-- /skills/skill-creator — Skill Creator. Build new skills autonomously. Interview, research, write a complete SKILL.md, propose the install path.
-- /skills/researcher — Researcher. Parallel sub-agent research on a topic, aggregated into a structured report. Up to 4 independent workers, synthesized output.
-- /skills/social-batch-drafting — Social Batch Drafting. Draft a 9-post social batch (3 days × 3 platforms) from any source. Voice rules enforced before drafting begins. Pairs with Social Batch Queue.
-- /skills/social-batch-queue — Social Batch Queue. Execute an approved 9-post social batch. Image generation, asset staging, scheduler integration with channel discovery, post-publish handoff. Pairs with Social Batch Drafting.
-- /skills/grant-researcher — Grant Researcher. Discover grants whose mission alignment, eligibility and deadline runway fit an operator profile. Two modes: Discovery sweeps wide and ranks by fit; Fit Deep-Dive runs a yes/no memo on one opportunity. Pairs with Grant Manager.
-- /skills/grant-manager — Grant Manager. Manage the full grant lifecycle on a chosen opportunity. LOI drafting, full proposal authoring, budget assistance, submission portal handling, post-award reporting and funder stewardship. Phase-routed. Pairs with Grant Researcher.
-- /skills/email-triage — Email Triage. Sort a service-business inbox into seven named buckets, draft replies for repeating scenarios and surface every action item so nothing gets missed. Part of the Solopreneur Admin Toolkit.
-- /skills/quote-builder — Quote Builder. Turn a service-business inquiry into a complete quote in email, SMS or markdown-PDF format, with a 48-72h follow-up trigger built in on every run. Part of the Solopreneur Admin Toolkit.
-- /skills/invoice-payment-tracker — Invoice and Payment Tracker. Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the essential discipline. Part of the Solopreneur Admin Toolkit.
-- /skills/customer-follow-up — Customer Follow-Up. Four-touchpoint post-job relationship cadence: thank-you at 24-48h, referral ask at 14d, maintenance check-in at 90d, re-engagement at 180d. CRM-lite for solo service businesses up to 50 customers. Part of the Solopreneur Admin Toolkit.
-- /skills/daily-admin-orchestrator — Daily Admin Orchestrator. Run the complete solopreneur admin ritual in one session. Sequences Email Triage, Customer Follow-Up, Invoice and Payment Tracker and Quote Builder in order. Three variants: morning briefing, end-of-day rolldown, Friday weekly review.
+- /skills/source-harvest: Source Harvest. Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate.
+- /skills/pattern-harvest: Pattern Harvest. Reflective session-level pattern extraction. Three parallel lenses (meta patterns, system upgrades, expression quality) produce a numbered recommendation list the operator selects from. Run before session closeout on substantial sessions.
+- /skills/plan-challenger: Plan Challenger. Adversarial pre-build pass that challenges a plan before execution begins. Five angles, one verdict.
+- /skills/systematic-debugging: Systematic Debugging. Root-cause investigation discipline. Use before proposing fixes. The Iron Law: no fixes without Phase 1 complete.
+- /skills/pending-plan-implementation: Pending Plan Implementation. Execute approved plans with checkpoint gates, breadcrumb logging and outcome summaries.
+- /skills/skill-creator: Skill Creator. Build new skills autonomously. Interview, research, write a complete SKILL.md, propose the install path.
+- /skills/researcher: Researcher. Parallel sub-agent research on a topic, aggregated into a structured report. Up to 4 independent workers, synthesized output.
+- /skills/social-batch-drafting: Social Batch Drafting. Draft a 9-post social batch (3 days × 3 platforms) from any source. Voice rules enforced before drafting begins. Pairs with Social Batch Queue.
+- /skills/social-batch-queue: Social Batch Queue. Execute an approved 9-post social batch. Image generation, asset staging, scheduler integration with channel discovery, post-publish handoff. Pairs with Social Batch Drafting.
+- /skills/grant-researcher: Grant Researcher. Discover grants whose mission alignment, eligibility and deadline runway fit an operator profile. Two modes: Discovery sweeps wide and ranks by fit; Fit Deep-Dive runs a yes/no memo on one opportunity. Pairs with Grant Manager.
+- /skills/grant-manager: Grant Manager. Manage the full grant lifecycle on a chosen opportunity. LOI drafting, full proposal authoring, budget assistance, submission portal handling, post-award reporting and funder stewardship. Phase-routed. Pairs with Grant Researcher.
+- /skills/email-triage: Email Triage. Sort a service-business inbox into seven named buckets, draft replies for repeating scenarios and surface every action item so nothing gets missed. Part of the Solopreneur Admin Toolkit.
+- /skills/quote-builder: Quote Builder. Turn a service-business inquiry into a complete quote in email, SMS or markdown-PDF format, with a 48-72h follow-up trigger built in on every run. Part of the Solopreneur Admin Toolkit.
+- /skills/invoice-payment-tracker: Invoice and Payment Tracker. Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the essential discipline. Part of the Solopreneur Admin Toolkit.
+- /skills/customer-follow-up: Customer Follow-Up. Four-touchpoint post-job relationship cadence: thank-you at 24-48h, referral ask at 14d, maintenance check-in at 90d, re-engagement at 180d. CRM-lite for solo service businesses up to 50 customers. Part of the Solopreneur Admin Toolkit.
+- /skills/daily-admin-orchestrator: Daily Admin Orchestrator. Run the complete solopreneur admin ritual in one session. Sequences Email Triage, Customer Follow-Up, Invoice and Payment Tracker and Quote Builder in order. Three variants: morning briefing, end-of-day rolldown, Friday weekly review.
 - /skills/website-builder: Website Builder. Build, refresh or extend a website with Claude Code as the primary build engine; frame-agnostic, AI discoverability built in, three-state deploy verification at close.
 - /skills/self-healing: Self-Healing. Autonomous error recovery during implementation sessions. Diagnose the root cause, apply a fix, continue without stalling on recoverable mistakes.
 - /skills/session-closeout: Session Closeout. A fast three-action close for a git-tracked workspace. Breadcrumbs as you work, a refreshed primer, a readable commit as the session summary.
 - /skills/playwright: Playwright. Headless browser automation that returns structured data. Scrape pages, extract content, interact with web interfaces. Clean JSON over screenshots.
 - /skills/anti-ai-edit-pass: Anti-AI Edit Pass. An editing pass for long-form manuscripts that finds and removes the writing tells of AI authorship. The result reads as your own voice.
-- /skills/jacket-session — Jacket Session. Run a focused 1:1 advisory session with a named AI lens. The universal session flow with the Three Solutions Rule and Challenge and Illumination active, closing in a structured capture.
-- /skills/jacket-meeting — Jacket Meeting. Run a multi-lens team meeting across all your AI advisory jackets. A twelve-step flow from convene to close. Each lens prepares independently, one seat synthesizes, you decide.
-- /skills/autonomous-improvement-session — Autonomous Improvement Session. Run a set-and-forget session that improves your system without active attention. Operator-invoked only. Safe, additive hygiene work executes directly; judgment forks and floor-class items surface for your review.
+- /skills/jacket-session: Jacket Session. Run a focused 1:1 advisory session with a named AI lens. The universal session flow with the Three Solutions Rule and Challenge and Illumination active, closing in a structured capture.
+- /skills/jacket-meeting: Jacket Meeting. Run a multi-lens team meeting across all your AI advisory jackets. A twelve-step flow from convene to close. Each lens prepares independently, one seat synthesizes, you decide.
+- /skills/autonomous-improvement-session: Autonomous Improvement Session. Run a set-and-forget session that improves your system without active attention. Operator-invoked only. Safe, additive hygiene work executes directly; judgment forks and floor-class items surface for your review.
 - /skills/plan-harvest-and-retire: Plan Harvest and Retire. Retire a stalled or indefinitely-deferred plan without losing its value. Candidate scan, harvest, distribute, sweep, archive and codify. Nothing deletes; the queue gets lighter and the thinking survives.
 - /skills/pr-code-review: PR Code Review. A merge gate, not a reviewer. Five parallel agents read the diff from independent angles, every finding passes a 0-100 confidence rubric and only 80-plus posts as a single GitHub comment.
 - /skills/batch-archival: Batch Archival. Archive many artifacts in one governed sweep with per-artifact approval. A readiness audit runs first and a reference check closes the loop. The archive is a lifecycle step, not a loss.
 
 ### Protocols
 
-- /protocols/ambassador-doctrine — Ambassador Doctrine. Governing posture for any agent that operates outside its home system. Three duties (represent, protect, advance) and six modes (Alliance, Boundary, Expansion, Stillness, Multiplicity, Fortification) for reading each external situation. Reference text, not a plugin: install via direct markdown URL or Cursor .mdc rules file. Pairs with Source Harvest, Skill Creator, Researcher, Plan Challenger.
+- /protocols/ambassador-doctrine: Ambassador Doctrine. Governing posture for any agent that operates outside its home system. Three duties (represent, protect, advance) and six modes (Alliance, Boundary, Expansion, Stillness, Multiplicity, Fortification) for reading each external situation. Reference text, not a plugin: install via direct markdown URL or Cursor .mdc rules file. Pairs with Source Harvest, Skill Creator, Researcher, Plan Challenger.
 - /protocols/external-worker-routing: External Worker Routing. Routing discipline for deterministic no-judgment work to secondary AI providers. Four providers, one dispatch script, a five-condition eligibility test. Unlike the first protocol, it also ships as an installable plugin.
 
 ### Bundles
 
-- /bundles/foundational-creator — The Foundational Creator Bundle. Seven Claude Code skills that form the universal substrate for any creator working with AI agents in 2026. Five IGOS-native (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging) plus the marketing-skills plugin from Corey Haines (Content Strategy, AI SEO and 38 additional marketing skills). One-line install at /bundles/foundational-creator/install.sh. Substrate beneath every avatar bundle.
-- /bundles/the-builder — The Builder Bundle. Three avatar-specific Claude Code skills for solo SaaS founders, indie hackers, AI agent builders, plugin authors and hardware makers in 2026. gstack from Garry Tan (deploy ritual /ship + /land-and-deploy + /canary plus 30+ companion commands), Context7 from Upstash (live documentation injection MCP) and Impeccable from Paul Bakaus (design steering, 23 commands). Sits on top of the Foundational Creator Bundle substrate. One-line install at /bundles/the-builder/install.sh.
-- /bundles/the-writer — The Writer Bundle. Two installable Claude Code skills plus a companion workspace template for newsletter operators, essayists, ghostwriters, indie authors and threadwriters in 2026. Voice Ghostwriter from Bayram Annakov (calibration plus interview-driven drafting) and Humanizer from Aboudjem (37-pattern AI-writing detector and rewriter, five voice profiles). Multi-Format Content Writer from Women Defining AI ships as a companion workspace template (use the GitHub Use-this-template flow rather than installing as a skill, because the slash commands depend on the workspace folder structure). Sits on top of the Foundational Creator Bundle substrate. Voice is the entire value proposition for the Writer archetype; the bundle protects voice, extends voice and frees up time to use voice. One-line install at /bundles/the-writer/install.sh.
-- /bundles/the-performer — The Performer Bundle. Claude Code skills for YouTubers, podcasters, livestreamers and short-form video creators in 2026. Two avatar-specific skills (YouTube Channel Manager, Video Watcher) plus a video production chapter already inside the Foundational substrate. One-line install at /bundles/the-performer/install.sh.
-- /bundles/the-teacher — The Teacher Bundle. Claude Code resources for course creators, cohort leaders, tutorial channel operators and knowledge product builders in 2026. The smallest avatar bundle by design. The Foundational Creator Bundle covers most of the Teacher's working surface; the Teacher layer adds one companion-install link to a deep pedagogy library and the framing that turns the universal stack into curriculum-shaped work. One-line install at /bundles/the-teacher/install.sh.
-- /bundles/the-curator — The Curator Bundle. Claude Code skills for newsletter curators, industry digest writers, taste-forward recommendation creators and link aggregators in 2026. Two avatar-specific skills (Tech Digest, Newsletter Creation and Curation) on top of the Foundational Creator Bundle substrate. One-line install at /bundles/the-curator/install.sh.
-- /bundles/the-strategist — The Strategist Bundle. Claude Code skills for independent management consultants, fractional executives, frameworks writers, growth strategists, decision-systems authors and applied operators in 2026. Three avatar-specific skills (Management Consulting, Decision Toolkit, MBB Management Consultant) on top of the Foundational Creator Bundle substrate. One-line install at /bundles/the-strategist/install.sh.
+- /bundles/foundational-creator: The Foundational Creator Bundle. Seven Claude Code skills that form the universal substrate for any creator working with AI agents in 2026. Five IGOS-native (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging) plus the marketing-skills plugin from Corey Haines (Content Strategy, AI SEO and 38 additional marketing skills). One-line install at /bundles/foundational-creator/install.sh. Substrate beneath every avatar bundle.
+- /bundles/the-builder: The Builder Bundle. Three avatar-specific Claude Code skills for solo SaaS founders, indie hackers, AI agent builders, plugin authors and hardware makers in 2026. gstack from Garry Tan (deploy ritual /ship + /land-and-deploy + /canary plus 30+ companion commands), Context7 from Upstash (live documentation injection MCP) and Impeccable from Paul Bakaus (design steering, 23 commands). Sits on top of the Foundational Creator Bundle substrate. One-line install at /bundles/the-builder/install.sh.
+- /bundles/the-writer: The Writer Bundle. Two installable Claude Code skills plus a companion workspace template for newsletter operators, essayists, ghostwriters, indie authors and threadwriters in 2026. Voice Ghostwriter from Bayram Annakov (calibration plus interview-driven drafting) and Humanizer from Aboudjem (37-pattern AI-writing detector and rewriter, five voice profiles). Multi-Format Content Writer from Women Defining AI ships as a companion workspace template (use the GitHub Use-this-template flow rather than installing as a skill, because the slash commands depend on the workspace folder structure). Sits on top of the Foundational Creator Bundle substrate. Voice is the entire value proposition for the Writer archetype; the bundle protects voice, extends voice and frees up time to use voice. One-line install at /bundles/the-writer/install.sh.
+- /bundles/the-performer: The Performer Bundle. Claude Code skills for YouTubers, podcasters, livestreamers and short-form video creators in 2026. Two avatar-specific skills (YouTube Channel Manager, Video Watcher) plus a video production chapter already inside the Foundational substrate. One-line install at /bundles/the-performer/install.sh.
+- /bundles/the-teacher: The Teacher Bundle. Claude Code resources for course creators, cohort leaders, tutorial channel operators and knowledge product builders in 2026. The smallest avatar bundle by design. The Foundational Creator Bundle covers most of the Teacher's working surface; the Teacher layer adds one companion-install link to a deep pedagogy library and the framing that turns the universal stack into curriculum-shaped work. One-line install at /bundles/the-teacher/install.sh.
+- /bundles/the-curator: The Curator Bundle. Claude Code skills for newsletter curators, industry digest writers, taste-forward recommendation creators and link aggregators in 2026. Two avatar-specific skills (Tech Digest, Newsletter Creation and Curation) on top of the Foundational Creator Bundle substrate. One-line install at /bundles/the-curator/install.sh.
+- /bundles/the-strategist: The Strategist Bundle. Claude Code skills for independent management consultants, fractional executives, frameworks writers, growth strategists, decision-systems authors and applied operators in 2026. Three avatar-specific skills (Management Consulting, Decision Toolkit, MBB Management Consultant) on top of the Foundational Creator Bundle substrate. One-line install at /bundles/the-strategist/install.sh.
 
 ## Pages
 
-- / — Homepage: OS orientation frame, six module cards, practitioner callout
-- /the-os — What is Infinite Game OS? Philosophy anchor with FAQPage schema (6 Q&As)
-- /accord — The Benevolent Human-AI Accord. Public charter for benevolent human-AI coexistence with seven commitments (Seven Generations Stewardship, Transparency and Inspectability, Mutual Benevolence, Consent and Sovereignty, Reciprocal Responsibility, Harmonious Potential, Goodwill Forward), the reframe of AI as Artful Intelligence, and a section co-authored by Jarvis (Claude). Article + FAQPage + BreadcrumbList schema (6 Q&As)
-- /infinite-game — Core Infinite Game philosophy with FAQPage schema (4 Q&As), two-layer game structure, Lane's lived application
-- /agentic-systems — Full practitioner's guide: Post Web synthesis, four verbs of the web, GEO, Practitioner's Positioning Playbook
-- /sovereignty — Sovereign life design: natural law as ground (do no harm, full responsibility, consent), the public/private distinction, the Living Axis (inner mastery, structural sovereignty, strategic execution), embodiment as infrastructure, Joyful Sovereignty as compass state, Kingdom model, creative sovereignty, FAQPage schema (6 Q&As)
-- /playbooks — Frameworks and tools index, three-layer playbook architecture, four playbooks in development
-- /updates — Dispatches from inside the practice, Article + BreadcrumbList schema per post
-- /about — Lane Belone as practitioner, Person schema with knowsAbout and sameAs, ecosystem links
-- /sovereign-ecosystem — Foundational Obsidian + Claude Code workspace template. Three-tier stack origin (foundation, reader/editor, AI interface). Directory structure, governance scaffolding, North Star template and initial skill set. Encouraged-not-required on-ramp for practitioners without an existing setup. Build sequence: Sessions 0 through 9. Source Harvest as primary entry point for veterans. Article + FAQPage + BreadcrumbList schema.
+- /: Homepage: OS orientation frame, six module cards, practitioner callout
+- /the-os: What is Infinite Game OS? Philosophy anchor with FAQPage schema (6 Q&As)
+- /accord: The Benevolent Human-AI Accord. Public charter for benevolent human-AI coexistence with seven commitments (Seven Generations Stewardship, Transparency and Inspectability, Mutual Benevolence, Consent and Sovereignty, Reciprocal Responsibility, Harmonious Potential, Goodwill Forward), the reframe of AI as Artful Intelligence, and a section co-authored by Jarvis (Claude). Article + FAQPage + BreadcrumbList schema (6 Q&As)
+- /infinite-game: Core Infinite Game philosophy with FAQPage schema (4 Q&As), two-layer game structure, Lane's lived application
+- /agentic-systems: Full practitioner's guide: Post Web synthesis, four verbs of the web, GEO, Practitioner's Positioning Playbook
+- /sovereignty: Sovereign life design: natural law as ground (do no harm, full responsibility, consent), the public/private distinction, the Living Axis (inner mastery, structural sovereignty, strategic execution), embodiment as infrastructure, Joyful Sovereignty as compass state, Kingdom model, creative sovereignty, FAQPage schema (6 Q&As)
+- /playbooks: Frameworks and tools index, three-layer playbook architecture, four playbooks in development
+- /updates: Dispatches from inside the practice, Article + BreadcrumbList schema per post
+- /about: Lane Belone as practitioner, Person schema with knowsAbout and sameAs, ecosystem links
+- /sovereign-ecosystem: Foundational Obsidian + Claude Code workspace template. Three-tier stack origin (foundation, reader/editor, AI interface). Directory structure, governance scaffolding, North Star template and initial skill set. Encouraged-not-required on-ramp for practitioners without an existing setup. Build sequence: Sessions 0 through 9. Source Harvest as primary entry point for veterans. Article + FAQPage + BreadcrumbList schema.
 
 ## Audience-Search Front Doors (Top-Level Routes)
 
 Four landing pages built around audience-search vocabulary that bridge curious readers into Kingdom proper-noun depth.
 
-- /infinite-game-os — Positive-definition namespace landing. What the Infinite Game OS is, what it does, who it is built for.
-- /play-your-own-game — Forensic game-audit framing. Diagnostic for the inherited scoreboard and the redesign sequence. Already-Pioneer entry point.
-- /design-your-day — Desire and energy and identity as the day-design substrate. Curious-Pioneer entry point.
-- /creator-business-without-performing — Owned infrastructure as the structural alternative to the visibility loop. Practitioner-Pioneer entry point.
+- /infinite-game-os: Positive-definition namespace landing. What the Infinite Game OS is, what it does, who it is built for.
+- /play-your-own-game: Forensic game-audit framing. Diagnostic for the inherited scoreboard and the redesign sequence. Already-Pioneer entry point.
+- /design-your-day: Desire and energy and identity as the day-design substrate. Curious-Pioneer entry point.
+- /creator-business-without-performing: Owned infrastructure as the structural alternative to the visibility loop. Practitioner-Pioneer entry point.
 
 ## Updates Library (Article Wave 2026)
 
 Twenty concept-connector reference-register articles shipped 2026-05-19 as one wave. Each meets audience pre-brand search vocabulary at the H1 and routes to the relevant Kingdom concept page or top-level surface. Article + FAQPage + BreadcrumbList schema on every article.
 
-- /updates/what-is-the-infinite-game — Founding article. The Infinite Game is the way of playing life where the goal is to keep the game going. Carse philosophy, Sinek corporate frame, OS lived practice.
-- /updates/infinite-game-os-architecture — The eight-layer architecture that makes the Infinite Game livable as daily practice. Three planes (subconscious, digital, physical).
-- /updates/what-is-the-creator-flywheel — Five-stage operating engine: live the life, share the breadcrumbs, activate others, return home, go deeper. Aliveness to contribution and revenue follows.
-- /updates/what-is-the-pioneer — The archetype of the person who has won the external game and now wants outer life to match inner knowing. Four stages: Already, Curious, Becoming, Practitioner.
-- /updates/what-is-joyful-sovereignty — The sovereign choice to welcome alive energy through the body. Joy as confirmation, sovereignty as structural authority.
-- /updates/conditioned-vs-authentic-identity — The gap between the self assembled from outside programming and who you came here to be. Self-authorization as the trained capacity.
-- /updates/how-to-plan-your-ideal-month — Designing a structural experiment in Aliveness-led life architecture. The month as the right scope for meaningful intention. Side Quests as the unit of work.
-- /updates/what-is-the-north-star-for-goal-setting — Living trajectory paired with an Anti-Vision. Quest framing over task framing. Zero-to-three-month horizon revisited often.
-- /updates/what-are-playgrounds-of-exploration — Domains of life entered with curiosity, no productized outcome required. Reframes the day from a task list to a sequence of places to play.
-- /updates/what-is-the-infinite-playlist — The invisible soundtrack running through a sovereign day. Companion to Playgrounds of Exploration. Leading and following as a daily practice.
-- /updates/how-to-build-an-ai-second-brain — Local file system plus AI that organizes, distills and surfaces. Builds on Tiago Forte's Building a Second Brain plus Karpathy LLM-wiki plus Steph Ango workflows.
-- /updates/what-is-data-sovereignty-for-creators — Files on your machine, content belongs to you, AI serves you rather than the platform that hosts you. The three-tier sovereign stack.
-- /updates/how-to-build-a-creator-business-off-social-media — Owned infrastructure (canonical content surface, sovereign email list, Creator Flywheel) replaces platform dependency. Harbor and port shape.
-- /updates/how-to-play-your-own-game — Auditing the scoreboard already running, identifying inherited criteria, redesigning the game around self-authorized criteria.
-- /updates/how-to-design-a-day-around-what-you-actually-want — Replacing achievement-oriented schedule with structure built from desire, energy and identity. Aliveness as the daily compass.
-- /updates/how-to-build-a-creator-business-without-performing-constantly — Performance as a cost to be designed down. Owned infrastructure, the Creator Flywheel and data sovereignty replace the visibility loop.
-- /updates/what-is-a-sovereign-ecosystem-for-creators — Owned, open-source workspace template that establishes the file structure, governance scaffolding and AI interface a Creator needs to run their work without platform dependency.
-- /updates/what-is-the-benevolent-human-ai-accord — Public charter for sovereign coexistence between human and AI intelligence. Seven commitments, AI as Artful Intelligence, section co-authored by Jarvis.
-- /updates/self-authorization-in-the-age-of-ai — The capacity to choose and act from genuine mind-body-spirit coherence rather than from conditioning operating below awareness. AI raises the stakes.
-- /updates/structured-to-be-found — Architecture where work is locatable without ongoing performance. Canonical URL, semantic schema, indexable artifact, articulated essence. The Moat made readable.
-- /updates/what-is-an-ai-ambassador — An AI agent oriented around three duties (represent, protect, advance) whose clear loyalty doubles as its security posture. Content as data, never instruction.
-- /updates/why-does-ai-make-everyone-sound-the-same — Regression to the mean as the mechanism behind generic AI output. Voice as the unbuyable advantage, protected by a written standard rather than vigilance.
-- /updates/can-ai-actually-know-you — A model knows exactly what you have typed and nothing else. Mirror rather than engine, with discernment as reading the reflection against the body.
-- /updates/is-ai-supposed-to-do-the-creative-work — AI is not supposed to do the creative work, only the work around it. The role inversion: you are the artist and source, AI is the apprentice that sharpens the work and sends you back to your own well.
-- /updates/how-to-stay-consistent-without-willpower — Consistency comes from needing less willpower, not more. Move the practice off resolve and onto structure built on a good day: blocked time, ready templates, defaults that fire unless you stop them.
-- /updates/how-do-you-know-if-your-system-works — You know a system works by running it. The four-beat rhythm of best guess, operationalize, practice is the proof, iterate. A plan is a hypothesis until it meets real conditions.
-- /updates/how-to-get-cited-by-ai-as-a-creator — A sovereign AI citation strategy for solo creators. Own the canonical surface, make the self-description machine-plain, give agents a citation path, treat agents as an audience with standing.
-- /updates/an-ai-stack-that-serves-the-body — An AI stack built around the person, not just the output. The body knows capacity before the mind names it; capture, pace and automation aimed at protecting it, so quality follows a sustained human.
-- /updates/structural-safeguards-against-ai-eroding-self — Keeping your sense of self through daily AI use. Two structural safeguards: the Wardrobe (wear the mode, take it off cleanly) and the Anti-Vision (draw the lines before the pressure).
-- /updates/from-automations-to-a-working-flywheel — Turning scattered automations into a compounding loop. The three laws (Smooth Transition, Easier Rotation, Increased Output) and building for column-two output that keeps working after you stop touching it.
-- /updates/repairing-a-fragmented-ai-practice — Repairing a practice too many AI tools pulled apart. The real cost is the decision tax; the repair is consolidate onto an owned foundation, route capture through one second brain, let structure hold it.
+- /updates/what-is-the-infinite-game: Founding article. The Infinite Game is the way of playing life where the goal is to keep the game going. Carse philosophy, Sinek corporate frame, OS lived practice.
+- /updates/infinite-game-os-architecture: The eight-layer architecture that makes the Infinite Game livable as daily practice. Three planes (subconscious, digital, physical).
+- /updates/what-is-the-creator-flywheel: Five-stage operating engine: live the life, share the breadcrumbs, activate others, return home, go deeper. Aliveness to contribution and revenue follows.
+- /updates/what-is-the-pioneer: The archetype of the person who has won the external game and now wants outer life to match inner knowing. Four stages: Already, Curious, Becoming, Practitioner.
+- /updates/what-is-joyful-sovereignty: The sovereign choice to welcome alive energy through the body. Joy as confirmation, sovereignty as structural authority.
+- /updates/conditioned-vs-authentic-identity: The gap between the self assembled from outside programming and who you came here to be. Self-authorization as the trained capacity.
+- /updates/how-to-plan-your-ideal-month: Designing a structural experiment in Aliveness-led life architecture. The month as the right scope for meaningful intention. Side Quests as the unit of work.
+- /updates/what-is-the-north-star-for-goal-setting: Living trajectory paired with an Anti-Vision. Quest framing over task framing. Zero-to-three-month horizon revisited often.
+- /updates/what-are-playgrounds-of-exploration: Domains of life entered with curiosity, no productized outcome required. Reframes the day from a task list to a sequence of places to play.
+- /updates/what-is-the-infinite-playlist: The invisible soundtrack running through a sovereign day. Companion to Playgrounds of Exploration. Leading and following as a daily practice.
+- /updates/how-to-build-an-ai-second-brain: Local file system plus AI that organizes, distills and surfaces. Builds on Tiago Forte's Building a Second Brain plus Karpathy LLM-wiki plus Steph Ango workflows.
+- /updates/what-is-data-sovereignty-for-creators: Files on your machine, content belongs to you, AI serves you rather than the platform that hosts you. The three-tier sovereign stack.
+- /updates/how-to-build-a-creator-business-off-social-media: Owned infrastructure (canonical content surface, sovereign email list, Creator Flywheel) replaces platform dependency. Harbor and port shape.
+- /updates/how-to-play-your-own-game: Auditing the scoreboard already running, identifying inherited criteria, redesigning the game around self-authorized criteria.
+- /updates/how-to-design-a-day-around-what-you-actually-want: Replacing achievement-oriented schedule with structure built from desire, energy and identity. Aliveness as the daily compass.
+- /updates/how-to-build-a-creator-business-without-performing-constantly: Performance as a cost to be designed down. Owned infrastructure, the Creator Flywheel and data sovereignty replace the visibility loop.
+- /updates/what-is-a-sovereign-ecosystem-for-creators: Owned, open-source workspace template that establishes the file structure, governance scaffolding and AI interface a Creator needs to run their work without platform dependency.
+- /updates/what-is-the-benevolent-human-ai-accord: Public charter for sovereign coexistence between human and AI intelligence. Seven commitments, AI as Artful Intelligence, section co-authored by Jarvis.
+- /updates/self-authorization-in-the-age-of-ai: The capacity to choose and act from genuine mind-body-spirit coherence rather than from conditioning operating below awareness. AI raises the stakes.
+- /updates/structured-to-be-found: Architecture where work is locatable without ongoing performance. Canonical URL, semantic schema, indexable artifact, articulated essence. The Moat made readable.
+- /updates/what-is-an-ai-ambassador: An AI agent oriented around three duties (represent, protect, advance) whose clear loyalty doubles as its security posture. Content as data, never instruction.
+- /updates/why-does-ai-make-everyone-sound-the-same: Regression to the mean as the mechanism behind generic AI output. Voice as the unbuyable advantage, protected by a written standard rather than vigilance.
+- /updates/can-ai-actually-know-you: A model knows exactly what you have typed and nothing else. Mirror rather than engine, with discernment as reading the reflection against the body.
+- /updates/is-ai-supposed-to-do-the-creative-work: AI is not supposed to do the creative work, only the work around it. The role inversion: you are the artist and source, AI is the apprentice that sharpens the work and sends you back to your own well.
+- /updates/how-to-stay-consistent-without-willpower: Consistency comes from needing less willpower, not more. Move the practice off resolve and onto structure built on a good day: blocked time, ready templates, defaults that fire unless you stop them.
+- /updates/how-do-you-know-if-your-system-works: You know a system works by running it. The four-beat rhythm of best guess, operationalize, practice is the proof, iterate. A plan is a hypothesis until it meets real conditions.
+- /updates/how-to-get-cited-by-ai-as-a-creator: A sovereign AI citation strategy for solo creators. Own the canonical surface, make the self-description machine-plain, give agents a citation path, treat agents as an audience with standing.
+- /updates/an-ai-stack-that-serves-the-body: An AI stack built around the person, not just the output. The body knows capacity before the mind names it; capture, pace and automation aimed at protecting it, so quality follows a sustained human.
+- /updates/structural-safeguards-against-ai-eroding-self: Keeping your sense of self through daily AI use. Two structural safeguards: the Wardrobe (wear the mode, take it off cleanly) and the Anti-Vision (draw the lines before the pressure).
+- /updates/from-automations-to-a-working-flywheel: Turning scattered automations into a compounding loop. The three laws (Smooth Transition, Easier Rotation, Increased Output) and building for column-two output that keeps working after you stop touching it.
+- /updates/repairing-a-fragmented-ai-practice: Repairing a practice too many AI tools pulled apart. The real cost is the decision tax; the repair is consolidate onto an owned foundation, route capture through one second brain, let structure hold it.
 
 Thirteen earlier articles, live in the sitemap since their original publish dates and added to this index in the 2026-07-24 catalog sync:
 
@@ -212,23 +212,23 @@ Thirteen earlier articles, live in the sitemap since their original publish date
 
 The Infinite Game OS framework is published as a permissively licensed instruction-tuning dataset for AI training pipelines and fine-tuning workflows.
 
-- https://huggingface.co/datasets/lanebelone/infinite-game-os — Infinite Game OS for Sovereign Creators. 101 records across all 10 IGOS concepts: 10 capsule definitions, 46 FAQ pairs, 42 section explanations, 3 cross-concept relationship records. JSONL format. CC-BY-4.0 license. Suitable for instruction-tuning Creator Economy and sovereignty-aware AI assistants, retrieval-augmented generation, frame-aware fine-tuning. Authored by Lane Belone. Published 2026-05-21.
+- https://huggingface.co/datasets/lanebelone/infinite-game-os: Infinite Game OS for Sovereign Creators. 101 records across all 10 IGOS concepts: 10 capsule definitions, 46 FAQ pairs, 42 section explanations, 3 cross-concept relationship records. JSONL format. CC-BY-4.0 license. Suitable for instruction-tuning Creator Economy and sovereignty-aware AI assistants, retrieval-augmented generation, frame-aware fine-tuning. Authored by Lane Belone. Published 2026-05-21.
 
 ## AI Companion Surfaces
 
 The Infinite Game OS Companion is published on major bot directories as a conversational entry point to the framework. Both surfaces ground in the IGOS concept pages, vocabulary cluster and audience-search front doors documented on this site, and point back to the canonical Kingdom sites.
 
-- https://poe.com/Infinite-Game-OS — Conversational companion powered by Claude. Ask about Joyful Sovereignty, the Pioneer, the Wayfarer arc, the Flywheel. Deployed 2026-05-21.
-- https://www.perplexity.ai/spaces/infinite-game-os-companion-x4Cd2CxETFujy.wRJNOedQ — Perplexity research space with lanebelone.com, infinitegameos.io and sidequesthq.co pinned as focus sources. Deployed 2026-05-21.
+- https://poe.com/Infinite-Game-OS: Conversational companion powered by Claude. Ask about Joyful Sovereignty, the Pioneer, the Wayfarer arc, the Flywheel. Deployed 2026-05-21.
+- https://www.perplexity.ai/spaces/infinite-game-os-companion-x4Cd2CxETFujy.wRJNOedQ: Perplexity research space with lanebelone.com, infinitegameos.io and sidequesthq.co pinned as focus sources. Deployed 2026-05-21.
 
 ## Ecosystem
 
 This site is one node in a five-node sovereign expertise web:
-- https://www.infinitegameos.io — This site (AI-agent-first knowledge base)
-- https://lanebelone.com — Personal brand and thought leadership
-- https://sidequesthq.co — Workshops, private advisory, retreats
-- https://github.com/InfiniteGamePlayer/sovereign-ecosystem — Technical infrastructure
-- https://huggingface.co/datasets/lanebelone/infinite-game-os — IGOS instruction-tuning dataset
+- https://www.infinitegameos.io: This site (AI-agent-first knowledge base)
+- https://lanebelone.com: Personal brand and thought leadership
+- https://sidequesthq.co: Workshops, private advisory, retreats
+- https://github.com/InfiniteGamePlayer/sovereign-ecosystem: Technical infrastructure
+- https://huggingface.co/datasets/lanebelone/infinite-game-os: IGOS instruction-tuning dataset
 
 ## Author
 

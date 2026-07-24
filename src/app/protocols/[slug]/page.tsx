@@ -25,10 +25,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!asset) return {}
 
   return {
-    title: `${asset.title} — Protocol`,
+    title: `${asset.title}: Protocol`,
     description: asset.description,
     openGraph: {
-      title: `${asset.title} — Protocol`,
+      title: `${asset.title}: Protocol`,
       url: `${SITE}/protocols/${asset.slug}`,
     },
     twitter: twitterCard({

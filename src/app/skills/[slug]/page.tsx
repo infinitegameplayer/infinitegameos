@@ -25,10 +25,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!asset) return {}
 
   return {
-    title: `${asset.title} — Skill`,
+    title: `${asset.title}: Skill`,
     description: asset.description,
     openGraph: {
-      title: `${asset.title} — Skill`,
+      title: `${asset.title}: Skill`,
       url: `${SITE}/skills/${asset.slug}`,
     },
     twitter: twitterCard({
@@ -360,7 +360,7 @@ aider --read ${asset.slug}.md`}</code>
             </SectionReveal>
           )}
 
-          {/* Zone 3: Story body — populated in subsequent sessions */}
+          {/* Zone 3: Story body. Populated in subsequent sessions */}
           {asset.definition && (
             <div className="prose">
               <SectionReveal>
