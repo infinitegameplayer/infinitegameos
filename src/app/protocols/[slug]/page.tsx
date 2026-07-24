@@ -7,6 +7,7 @@ import {
   getAssetBySlug,
   getAssetsByType,
 } from '@/data/library'
+import { twitterCard } from '@/lib/metadata'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -30,6 +31,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: `${asset.title} — Protocol`,
       url: `${SITE}/protocols/${asset.slug}`,
     },
+    twitter: twitterCard({
+      title: `${asset.title}: Protocol`,
+      description: asset.description,
+      imageUrl: `${SITE}/protocols/${asset.slug}/opengraph-image`,
+    }),
     alternates: {
       canonical: `${SITE}/protocols/${asset.slug}`,
       types: {

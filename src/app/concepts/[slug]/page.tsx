@@ -4,10 +4,13 @@ import { notFound } from 'next/navigation'
 import SectionReveal from '@/components/SectionReveal'
 import { concepts, getConceptBySlug, getAllConceptSlugs } from '@/data/concepts'
 import { getAllUpdates } from '@/lib/updates'
+import { twitterCard } from '@/lib/metadata'
 
 interface PageProps {
   params: Promise<{ slug: string }>
 }
+
+const SITE = 'https://www.infinitegameos.io'
 
 export async function generateStaticParams() {
   return getAllConceptSlugs().map(slug => ({ slug }))
@@ -23,10 +26,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: concept.capsule,
     openGraph: {
       title: concept.title,
-      url: `https://www.infinitegameos.io/concepts/${concept.slug}`,
+      url: `${SITE}/concepts/${concept.slug}`,
     },
+    twitter: twitterCard({
+      title: concept.title,
+      description: concept.capsule,
+      imageUrl: `${SITE}/concepts/${concept.slug}/opengraph-image`,
+    }),
     alternates: {
-      canonical: `https://www.infinitegameos.io/concepts/${concept.slug}`,
+      canonical: `${SITE}/concepts/${concept.slug}`,
+      types: {
+        'text/markdown': `${SITE}/markdown/concepts/${concept.slug}`,
+      },
     },
   }
 }

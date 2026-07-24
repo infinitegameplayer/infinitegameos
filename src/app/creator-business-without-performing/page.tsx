@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://www.infinitegameos.io/creator-business-without-performing',
+    types: {
+      'text/markdown': 'https://www.infinitegameos.io/markdown/creator-business-without-performing',
+    },
   },
 }
 

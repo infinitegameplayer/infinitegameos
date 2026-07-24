@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://www.infinitegameos.io/about',
+    types: {
+      'text/markdown': 'https://www.infinitegameos.io/markdown/about',
+    },
   },
 }
 

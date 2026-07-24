@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://www.infinitegameos.io/play-your-own-game',
+    types: {
+      'text/markdown': 'https://www.infinitegameos.io/markdown/play-your-own-game',
+    },
   },
 }
 

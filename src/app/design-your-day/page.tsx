@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://www.infinitegameos.io/design-your-day',
+    types: {
+      'text/markdown': 'https://www.infinitegameos.io/markdown/design-your-day',
+    },
   },
 }
 

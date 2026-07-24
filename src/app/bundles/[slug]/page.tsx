@@ -8,6 +8,7 @@ import {
   getAssetsByType,
 } from '@/data/library'
 import { formatProse, stripBackticks } from '@/lib/format-prose'
+import { twitterCard } from '@/lib/metadata'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -31,6 +32,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: `${asset.title} — Bundle`,
       url: `${SITE}/bundles/${asset.slug}`,
     },
+    twitter: twitterCard({
+      title: `${asset.title}: Bundle`,
+      description: asset.description,
+      imageUrl: `${SITE}/bundles/${asset.slug}/opengraph-image`,
+    }),
     alternates: {
       canonical: `${SITE}/bundles/${asset.slug}`,
       types: {

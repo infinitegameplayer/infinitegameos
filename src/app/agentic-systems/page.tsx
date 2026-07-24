@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://www.infinitegameos.io/agentic-systems',
+    types: {
+      'text/markdown': 'https://www.infinitegameos.io/markdown/agentic-systems',
+    },
   },
 }
 

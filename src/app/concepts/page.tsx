@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     'Core concepts from the Infinite Game OS: frameworks, archetypes, practices and distinctions for sovereign life design and playing the Infinite Game.',
   alternates: {
     canonical: 'https://www.infinitegameos.io/concepts',
+    types: {
+      'text/markdown': 'https://www.infinitegameos.io/markdown/concepts',
+    },
   },
 }
 

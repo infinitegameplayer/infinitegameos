@@ -5,6 +5,9 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import SectionReveal from '@/components/SectionReveal'
 import SubscribeForm from '@/components/SubscribeForm'
 import { getAllUpdates, getUpdate } from '@/lib/updates'
+import { twitterCard } from '@/lib/metadata'
+
+const SITE = 'https://www.infinitegameos.io'
 
 export function generateStaticParams() {
   return getAllUpdates().map(u => ({ slug: u.slug }))
@@ -23,10 +26,15 @@ export async function generateMetadata({
     description: update.summary,
     openGraph: {
       title: update.seoTitle ?? update.title,
-      url: `https://www.infinitegameos.io/updates/${slug}`,
+      url: `${SITE}/updates/${slug}`,
     },
+    twitter: twitterCard({
+      title: update.seoTitle ?? update.title,
+      description: update.summary,
+      imageUrl: `${SITE}/updates/${slug}/opengraph-image`,
+    }),
     alternates: {
-      canonical: `https://www.infinitegameos.io/updates/${slug}`,
+      canonical: `${SITE}/updates/${slug}`,
     },
   }
 }

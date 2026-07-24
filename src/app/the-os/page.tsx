@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://www.infinitegameos.io/the-os',
+    types: {
+      'text/markdown': 'https://www.infinitegameos.io/markdown/the-os',
+    },
   },
 }
 
