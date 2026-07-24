@@ -232,7 +232,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'joyful-sovereignty',
-    updated: '2026-06-04',
+    updated: '2026-07-24',
     title: 'Joyful Sovereignty',
     label: 'Philosophy',
     capsule:
@@ -281,7 +281,7 @@ export const concepts: Concept[] = [
         a: 'The philosophy without the system is inspiring but fragile. The system without the philosophy is productive but hollow. Together they compound over a lifetime. Joyful Sovereignty names the philosophy. The Infinite Game OS is the structural layer of systems, frameworks and tools that makes it durable.',
       },
     ],
-    relatedSlugs: ['the-pioneer', 'conditioned-vs-authentic-identity', 'ideal-month'],
+    relatedSlugs: ['the-pioneer', 'conditioned-vs-authentic-identity', 'ideal-month', 'puzzles-not-problems'],
     relatedUpdateSlugs: [
       'what-is-joyful-sovereignty',
       'how-to-design-a-day-around-what-you-actually-want',
@@ -443,7 +443,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'playgrounds-of-exploration',
-    updated: '2026-06-04',
+    updated: '2026-07-24',
     title: 'Playgrounds of Exploration',
     label: 'Framework',
     capsule:
@@ -505,7 +505,7 @@ export const concepts: Concept[] = [
         a: 'The invitation in Playgrounds of Exploration is to look at the felt thematic chunks of the day, where one kind of energy ends and another begins, and give each chunk a name that carries its actual energy. The Playground of Open Air, the Playground of Creation, the Playground of Nourishment: these are demonstrations, not a list to adopt. The Pioneer\'s own vocabulary is the right vocabulary.',
       },
     ],
-    relatedSlugs: ['infinite-playlist', 'joyful-sovereignty', 'the-pioneer'],
+    relatedSlugs: ['infinite-playlist', 'joyful-sovereignty', 'the-pioneer', 'the-emergence', 'puzzles-not-problems'],
     relatedUpdateSlugs: [
       'what-are-playgrounds-of-exploration',
       'how-to-design-a-day-around-what-you-actually-want',
@@ -1023,7 +1023,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'ai-first-vs-ai-complemented',
-    updated: '2026-06-24',
+    updated: '2026-07-24',
     title: 'AI-First vs AI-Complemented',
     label: 'Core Distinction',
     capsule:
@@ -1094,7 +1094,7 @@ export const concepts: Concept[] = [
         a: 'It depends on where you put AI. Build with AI at the center and the business inherits a dependency that runs through everything. Build with AI as a complement and you keep the foundation in your own creativity, your relationships and your structured work, with AI amplifying from that base. The second stays portable as the field changes.',
       },
     ],
-    relatedSlugs: ['data-sovereignty', 'artful-intelligence', 'creator-flywheel', 'ai-second-brain'],
+    relatedSlugs: ['data-sovereignty', 'artful-intelligence', 'creator-flywheel', 'ai-second-brain', 'the-emergence'],
     ctaLinks: [
       { href: '/concepts/data-sovereignty', label: 'Data Sovereignty', variant: 'accent' },
       { href: '/concepts/artful-intelligence', label: 'Artful Intelligence', variant: 'outline' },
@@ -1113,7 +1113,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'artful-intelligence',
-    updated: '2026-07-09',
+    updated: '2026-07-24',
     title: 'Artful Intelligence',
     label: 'Philosophy',
     capsule:
@@ -1183,7 +1183,7 @@ export const concepts: Concept[] = [
         a: 'Artful Intelligence is the philosophy: relating to AI as a creative collaborator so the creativity stays yours. AI Is the Apprentice, You Are the Artist is the named working stance inside that philosophy, where you hold the vision and the apprentice serves it, asking harder questions and challenging the first easy choice. The first is the orientation. The second is how the orientation runs day to day.',
       },
     ],
-    relatedSlugs: ['ai-is-the-apprentice-you-are-the-artist', 'conditioned-vs-authentic-identity', 'ai-first-vs-ai-complemented', 'creator-flywheel', 'sovereign-capture', 'ai-second-brain'],
+    relatedSlugs: ['ai-is-the-apprentice-you-are-the-artist', 'conditioned-vs-authentic-identity', 'ai-first-vs-ai-complemented', 'creator-flywheel', 'sovereign-capture', 'ai-second-brain', 'technology-is-nature-organized'],
     ctaLinks: [
       { href: '/concepts/ai-is-the-apprentice-you-are-the-artist', label: 'AI Is the Apprentice, You Are the Artist', variant: 'accent' },
       { href: '/concepts/conditioned-vs-authentic-identity', label: 'Conditioned vs Authentic Identity', variant: 'outline' },
@@ -1280,7 +1280,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'ai-is-a-mirror-not-an-engine',
-    updated: '2026-07-09',
+    updated: '2026-07-24',
     title: 'AI Is a Mirror, Not an Engine',
     label: 'Core Distinction',
     capsule:
@@ -1343,7 +1343,7 @@ export const concepts: Concept[] = [
         a: 'Bring real material, ask for patterns rather than answers and let the reflection surprise you. Then read what comes back against what the body already knows before accepting any of it. The practice keeps the two roles clean: the mirror shows, you decide. Held that way, AI is safer for personal questions than either blind trust or total refusal.',
       },
     ],
-    relatedSlugs: ['artful-intelligence', 'voice-is-the-moat', 'contemplative-question-practice', 'ai-second-brain', 'conditioned-vs-authentic-identity'],
+    relatedSlugs: ['artful-intelligence', 'voice-is-the-moat', 'contemplative-question-practice', 'ai-second-brain', 'conditioned-vs-authentic-identity', 'technology-is-nature-organized'],
     relatedUpdateSlugs: ['can-ai-actually-know-you'],
     ctaLinks: [
       { href: '/concepts/artful-intelligence', label: 'Artful Intelligence', variant: 'accent' },
