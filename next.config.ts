@@ -2,7 +2,7 @@ import type { NextConfig } from 'next'
 
 // Content negotiation: when an AI agent requests text/markdown or text/plain,
 // rewrite to the /markdown handler which returns clean markdown instead of HTML.
-// Pattern: Vercel Feb 2026 — https://vercel.com/blog/making-agent-friendly-pages-with-content-negotiation
+// Pattern: Vercel Feb 2026, https://vercel.com/blog/making-agent-friendly-pages-with-content-negotiation
 const markdownAcceptRegex =
   '(?=.*(?:text/plain|text/markdown))(?!.*text/html.*(?:text/plain|text/markdown)).*'
 
@@ -32,7 +32,7 @@ const nextConfig: NextConfig = {
   async rewrites() {
     // The catch-all content-negotiation rewrite must NOT match paths that look
     // like static files. The path-to-regexp negative lookahead below excludes
-    // any path containing a dot (file extension) anywhere — page slugs are
+    // any path containing a dot (file extension) anywhere. Page slugs are
     // always extension-free (kebab-case alphanumeric), so this is safe.
     // Without this exclusion, marketplace.json, llms.txt, robots.txt,
     // sitemap.xml, AGENTS.md, igos-index.json, llms-full.txt and all SVG/PNG/
@@ -85,7 +85,7 @@ const nextConfig: NextConfig = {
               "form-action 'self'",
             ].join('; '),
           },
-          // RFC 8288 Link headers — point AI agents to structured resources
+          // RFC 8288 Link headers: point AI agents to structured resources
           {
             key: 'Link',
             value:
@@ -102,7 +102,7 @@ const nextConfig: NextConfig = {
             key: 'Content-Usage',
             value: 'train-ai=y, search=y',
           },
-          // Vary: Accept — required because /markdown rewrite is content-negotiated.
+          // Vary: Accept. Required because /markdown rewrite is content-negotiated.
           // Prevents CDN cache poisoning between text/html and text/markdown responses.
           { key: 'Vary', value: 'Accept' },
         ],

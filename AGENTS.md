@@ -1,12 +1,12 @@
 <!-- BEGIN:nextjs-agent-rules -->
 # This is NOT the Next.js you know
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+This version has breaking changes: APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
 ---
 
-# Infinite Game OS — Agent Context
+# Infinite Game OS: Agent Context
 
 ## Project Identity
 
@@ -20,10 +20,10 @@ Part of a four-node expertise web. Canonical source: [Sovereign Ecosystem Archit
 
 | Node | URL | Role |
 |---|---|---|
-| **infinitegameos.io** | https://www.infinitegameos.io | AI-agent-first knowledge base — Infinite Game philosophy, agentic systems, sovereign life design |
-| **lanebelone.com** | https://lanebelone.com | Personal brand anchor — thought leadership, philosophy, personal story |
-| **SideQuestHQ.co** | https://sidequesthq.co | Offer hub — workshops, private advisory, retreats |
-| **Sovereign Ecosystem** | https://github.com/InfiniteGamePlayer/sovereign-ecosystem (repo) — https://www.infinitegameos.io/sovereign-ecosystem (IGOS landing page) | Technical infrastructure reference; foundational Obsidian + Claude Code workspace template; three-tier stack origin |
+| **infinitegameos.io** | https://www.infinitegameos.io | AI-agent-first knowledge base: Infinite Game philosophy, agentic systems, sovereign life design |
+| **lanebelone.com** | https://lanebelone.com | Personal brand anchor: thought leadership, philosophy, personal story |
+| **SideQuestHQ.co** | https://sidequesthq.co | Offer hub: workshops, private advisory, retreats |
+| **Sovereign Ecosystem** | https://github.com/InfiniteGamePlayer/sovereign-ecosystem (repo), https://www.infinitegameos.io/sovereign-ecosystem (IGOS landing page) | Technical infrastructure reference; foundational Obsidian + Claude Code workspace template; three-tier stack origin |
 
 Cross-link obligations: Footer and About page must link to all four nodes with descriptive label text (not generic "visit"). These links are critical for AI agent graph traversal.
 
@@ -34,7 +34,7 @@ Cross-link obligations: Footer and About page must link to all four nodes with d
 | Framework | Next.js 16 (App Router, TypeScript) |
 | React | 19.x |
 | Styling | Tailwind CSS 4 (CSS-first config, `@theme` block in globals.css) |
-| Fonts | Space Grotesk (display), Inter (body) — both via `next/font/google` |
+| Fonts | Space Grotesk (display), Inter (body), both via `next/font/google` |
 | Hosting | Vercel (auto-deploy from master branch) |
 | Forms | None at launch |
 | Image format | WebP preferred, max 1920px, under 200KB |
@@ -88,10 +88,10 @@ Tone: precise, practitioner-facing, minimal. Sentences are short. Paragraphs are
 | `src/app/sitemap.ts` | Active | Generated sitemap. All routes |
 
 Schema types deployed:
-- `WebSite` + `Person` — `layout.tsx` (site-wide)
-- `FAQPage` + `BreadcrumbList` — `/the-os`, `/infinite-game`
-- `Article` + `BreadcrumbList` — `/updates/[slug]`
-- `BreadcrumbList` — all remaining pages
+- `WebSite` + `Person`: `layout.tsx` (site-wide)
+- `FAQPage` + `BreadcrumbList`: `/the-os`, `/infinite-game`
+- `Article` + `BreadcrumbList`: `/updates/[slug]`
+- `BreadcrumbList`: all remaining pages
 
 ## Cross-Ecosystem Links
 

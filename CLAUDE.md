@@ -1,31 +1,31 @@
 @AGENTS.md
 
-# Infinite Game OS — Claude Code Context
+# Infinite Game OS: Claude Code Context
 
 ## File Architecture
 
 ```
 src/app/
-  layout.tsx                  Root layout — JSON-LD WebSite + Person schema, fonts, Nav, Footer
-  globals.css                 Tailwind 4 design system — @theme tokens, custom utilities
-  page.tsx                    Homepage — OS orientation frame
-  the-os/page.tsx             Philosophy anchor — FAQPage schema, "What is Infinite Game OS?"
+  layout.tsx                  Root layout: JSON-LD WebSite + Person schema, fonts, Nav, Footer
+  globals.css                 Tailwind 4 design system: @theme tokens, custom utilities
+  page.tsx                    Homepage: OS orientation frame
+  the-os/page.tsx             Philosophy anchor: FAQPage schema, "What is Infinite Game OS?"
   infinite-game/page.tsx      Core Infinite Game philosophy
   agentic-systems/page.tsx    Post Web synthesis, GEO definition inline
   sovereignty/page.tsx        Sovereign life design (public layer of Kingdom model)
-  playbooks/page.tsx          Frameworks index — brief descriptions, individual pages added as content builds
+  playbooks/page.tsx          Frameworks index: brief descriptions, individual pages added as content builds
   updates/page.tsx            Dynamic content index (bi-monthly steady-state cadence)
-  updates/[slug]/page.tsx     Individual update posts — Article + BreadcrumbList schema
-  concepts/page.tsx            Concepts index — DefinedTermSet schema, card grid
-  concepts/[slug]/page.tsx     Individual concept — DefinedTerm + Article + BreadcrumbList schema
-  about/page.tsx              Lane as practitioner — Person schema anchor
+  updates/[slug]/page.tsx     Individual update posts: Article + BreadcrumbList schema
+  concepts/page.tsx            Concepts index: DefinedTermSet schema, card grid
+  concepts/[slug]/page.tsx     Individual concept: DefinedTerm + Article + BreadcrumbList schema
+  about/page.tsx              Lane as practitioner: Person schema anchor
   not-found.tsx               Branded 404
 
 src/data/
-  concepts.ts                 Concept page data — all content for /concepts/[slug] lives here
+  concepts.ts                 Concept page data: all content for /concepts/[slug] lives here
 
 src/components/
-  Nav.tsx                     Navigation ('use client' — scroll detection)
+  Nav.tsx                     Navigation ('use client': scroll detection)
   Footer.tsx                  Four-node ecosystem links (critical for agent traversal)
   SectionReveal.tsx           Scroll reveals (vanilla IntersectionObserver, no Framer Motion)
 
@@ -44,7 +44,7 @@ Content-driven pages at `/concepts/[slug]`. All concept data lives in `src/data/
 
 ## Critical Rules
 
-**Do NOT add `'use client'` to page files unless they use client-side hooks directly.** `SectionReveal`, `Nav`, and other client components already carry their own `'use client'` — server component pages can import them without the directive. Adding `'use client'` to a page prevents JSON-LD `<script>` tags from rendering into static HTML (Google and AI agents can't read them). Pages that genuinely need `'use client'` (direct useState/useEffect): none currently. Client components cannot export `metadata` — all pages rely on root layout defaults.
+**Do NOT add `'use client'` to page files unless they use client-side hooks directly.** `SectionReveal`, `Nav`, and other client components already carry their own `'use client'`. Server component pages can import them without the directive. Adding `'use client'` to a page prevents JSON-LD `<script>` tags from rendering into static HTML (Google and AI agents can't read them). Pages that genuinely need `'use client'` (direct useState/useEffect): none currently. Client components cannot export `metadata`. All pages rely on root layout defaults.
 
 **No em dashes.** Kingdom-wide rule. Replace with a period and new sentence, or a comma. Applies to all site copy and markdown content served via content negotiation.
 
@@ -62,13 +62,13 @@ Content-driven pages at `/concepts/[slug]`. All concept data lives in `src/data/
 ## Design Tokens (Tailwind 4)
 
 All tokens defined in `@theme {}` in `globals.css`. Reference via CSS vars or Tailwind utilities:
-- `--color-bg` / `bg-bg` — page background (#06090e)
-- `--color-surface` / `bg-surface` — card/section background (#0e1420)
-- `--color-accent` / `bg-accent`, `text-accent` — electric cyan (#22d3ee)
-- `--color-text` / `text-text` — primary text (#e2e8f0)
-- `--color-muted` / `text-muted` — muted text (#64748b)
-- `--font-display` — Space Grotesk (headings)
-- `--font-body` — Inter (body)
+- `--color-bg` / `bg-bg`: page background (#06090e)
+- `--color-surface` / `bg-surface`: card/section background (#0e1420)
+- `--color-accent` / `bg-accent`, `text-accent`: electric cyan (#22d3ee)
+- `--color-text` / `text-text`: primary text (#e2e8f0)
+- `--color-muted` / `text-muted`: muted text (#64748b)
+- `--font-display`: Space Grotesk (headings)
+- `--font-body`: Inter (body)
 
 ## Session Maintenance
 
@@ -113,4 +113,4 @@ The script verifies the article, calls the API route, and returns the broadcast 
 
 ## Refinements
 
-**2026-04-10** — Site initialized. Next.js 16 + Tailwind 4 (first in the Kingdom ecosystem to use these versions). Key difference from other sites: Tailwind 4 uses CSS-first config via `@theme {}` in globals.css, not tailwind.config.ts. No @fontsource packages needed; fonts loaded via next/font/google. auto-generated AGENTS.md and CLAUDE.md from create-next-app were replaced with Kingdom-standard versions.
+**2026-04-10.** Site initialized. Next.js 16 + Tailwind 4 (first in the Kingdom ecosystem to use these versions). Key difference from other sites: Tailwind 4 uses CSS-first config via `@theme {}` in globals.css, not tailwind.config.ts. No @fontsource packages needed; fonts loaded via next/font/google. auto-generated AGENTS.md and CLAUDE.md from create-next-app were replaced with Kingdom-standard versions.

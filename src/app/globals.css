@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* -----------------------------------------------
-   Design tokens — Tailwind 4 CSS-first config
+   Design tokens: Tailwind 4 CSS-first config
    Utilities auto-generated: --color-accent -> bg-accent, text-accent
 ----------------------------------------------- */
 @theme {

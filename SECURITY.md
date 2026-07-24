@@ -1,4 +1,4 @@
-# Security — Infinite Game OS
+# Security: Infinite Game OS
 
 Last checked: 2026-04-10
 
@@ -10,11 +10,11 @@ Last checked: 2026-04-10
   - `Referrer-Policy: strict-origin-when-cross-origin`
   - `Permissions-Policy: camera=(), microphone=(), geolocation=()`
   - `Strict-Transport-Security: max-age=63072000; includeSubDomains; preload`
-  - `Content-Security-Policy` — strict from day one (no third-party scripts at launch)
+  - `Content-Security-Policy`: strict from day one (no third-party scripts at launch)
 
 ## CSP Configuration
 
-Current CSP (strict at launch — no third-party embeds):
+Current CSP (strict at launch, no third-party embeds):
 
 ```
 default-src 'self';
