@@ -18,3 +18,11 @@ import igosIndex from '../../public/igos-index.json'
 export const upstreamVersion: string = igosIndex.upstream_version
 export const upstreamRepo: string = igosIndex.upstream_repo
 export const upstreamUpdatedAt: string = igosIndex.updated_at
+
+// Skills that ship inside the template AND install from this site as standalone
+// plugins. The site cannot compute this set on its own, because it cannot see
+// what the template bundles, so the release records it and the page reads it.
+// The page previously stated the number in prose and was two behind.
+export const dualDistributionSkills: string[] =
+  igosIndex.template_dual_distribution ?? []
+export const dualDistributionCount: number = dualDistributionSkills.length

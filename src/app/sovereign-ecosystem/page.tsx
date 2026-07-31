@@ -2,7 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import { sovereignEcosystemFaqs } from '@/lib/page-data'
-import { upstreamVersion, upstreamUpdatedAt } from '@/lib/upstream'
+import {
+  upstreamVersion,
+  upstreamUpdatedAt,
+  dualDistributionCount,
+} from '@/lib/upstream'
 
 export const metadata: Metadata = {
   title: {
@@ -311,9 +315,10 @@ export default function SovereignEcosystemPage() {
               </ul>
               <p>
                 The repo trimmed to foundational scope at v2.4.0 and has been
-                hardening ever since. Seven skills now ship inside the template
-                and also install from this site as standalone plugins.
-                Everything that grew past template scope lives here instead.
+                hardening ever since. {dualDistributionCount} skills now ship
+                inside the template and also install from this site as
+                standalone plugins. Everything that grew past template scope
+                lives here instead.
               </p>
               <p>
                 Current release: <strong>{upstreamVersion}</strong>. Each

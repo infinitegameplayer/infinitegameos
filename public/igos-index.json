@@ -5,9 +5,20 @@
   "description": "Installable skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
   "url": "https://www.infinitegameos.io",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "updated_at": "2026-07-22",
-  "upstream_version": "3.6.0",
+  "updated_at": "2026-07-31",
+  "upstream_version": "3.7.0",
   "upstream_repo": "https://github.com/infinitegameplayer/sovereign-ecosystem",
+  "template_dual_distribution": [
+    "Source Harvest",
+    "Self-Healing",
+    "Session Closeout",
+    "Playwright",
+    "Manuscript Anti-AI Edit Pass",
+    "Systematic Debugging",
+    "PR Code Review",
+    "Autonomous Improvement Session",
+    "Batch Archival"
+  ],
   "pages": [
     {
       "id": "sovereign-ecosystem",
