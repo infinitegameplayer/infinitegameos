@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Plugin tooling, not app code. CommonJS by design, so the TypeScript
+    // no-require-imports rule reads it as a violation of a convention it was
+    // never written to follow.
+    "plugins/**",
   ]),
 ]);
 

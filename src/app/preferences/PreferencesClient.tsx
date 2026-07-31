@@ -1,6 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useSyncExternalStore } from 'react'
+
+// Stable identity so useSyncExternalStore never resubscribes on re-render.
+const NO_SUBSCRIBE = () => () => {}
 
 export type ListView = {
   key: string
@@ -64,7 +67,17 @@ function PreferenceManager({ email, token, maskedEmail, lists, currentSite, paus
   const [confirmLeave, setConfirmLeave] = useState(false)
   const [leftAll, setLeftAll] = useState(false)
   const [pausedUntil, setPausedUntil] = useState<string | null>(initialPaused ?? null)
-  const isPausedNow = !!pausedUntil && Date.parse(pausedUntil) > Date.now()
+  // Reading the clock during render is impure, and it makes the server HTML and
+  // the client hydration disagree whenever the pause boundary falls between the
+  // two. useSyncExternalStore is React's own answer for a value that differs by
+  // environment: the server snapshot is false, the client reads the real clock
+  // once it is the one rendering. The subscribe callback is a no-op because the
+  // value only has to be right at mount and after a pause is set.
+  const isPausedNow = useSyncExternalStore(
+    NO_SUBSCRIBE,
+    () => !!pausedUntil && Date.parse(pausedUntil) > Date.now(),
+    () => false
+  )
   const [newEmailInput, setNewEmailInput] = useState('')
   const [changeState, setChangeState] = useState<
     'idle' | 'sending' | 'sent' | 'error' | 'same' | 'invalid' | 'rate'
