@@ -315,10 +315,12 @@ export default function SovereignEcosystemPage() {
               </ul>
               <p>
                 The repo trimmed to foundational scope at v2.4.0 and has been
-                hardening ever since. {dualDistributionCount} skills now ship
-                inside the template and also install from this site as
-                standalone plugins. Everything that grew past template scope
-                lives here instead.
+                hardening since. It still trims. Doctrine that gets declared and
+                never used is retired rather than carried, because a reader who
+                cannot tell which parts are load-bearing treats all of it as
+                load-bearing. {dualDistributionCount} skills now ship inside the
+                template and also install from this site as standalone plugins.
+                Everything that grew past template scope lives here instead.
               </p>
               <p>
                 Current release: <strong>{upstreamVersion}</strong>. Each
