@@ -69,6 +69,10 @@ const websiteSchema = {
   url: 'https://www.infinitegameos.io',
   description:
     'A structured knowledge base for Infinite Game philosophy, sovereign creative life and long-horizon practice. Structured for AI-agent discoverability.',
+  // /updates, /protocols, /skills, /concepts and /bundles each declare CC BY 4.0
+  // per page. Home carried no WebPage node to hold it, so it goes on the site
+  // node rather than inventing one.
+  license: 'https://creativecommons.org/licenses/by/4.0/',
   author: {
     '@id': 'https://infinitegameos.io/#person',
   },
