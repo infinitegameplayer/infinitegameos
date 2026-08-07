@@ -434,9 +434,9 @@ aider --read ${asset.slug}.md`}</code>
                   borderTop: '1px solid var(--color-border)',
                 }}
               >
-                <p className="label" style={{ marginBottom: '1.25rem' }}>
+                <h2 className="label" style={{ marginBottom: '1.25rem' }}>
                   Related
-                </p>
+                </h2>
                 <div
                   style={{
                     display: 'grid',

@@ -368,12 +368,12 @@ export default async function ConceptPage({ params }: PageProps) {
                   borderTop: '1px solid var(--color-border)',
                 }}
               >
-                <p
+                <h2
                   className="label"
                   style={{ marginBottom: '1.25rem' }}
                 >
                   Related concepts
-                </p>
+                </h2>
                 <div
                   style={{
                     display: 'grid',
@@ -438,12 +438,12 @@ export default async function ConceptPage({ params }: PageProps) {
                   borderTop: '1px solid var(--color-border)',
                 }}
               >
-                <p
+                <h2
                   className="label"
                   style={{ marginBottom: '1.25rem' }}
                 >
                   Related articles
-                </p>
+                </h2>
                 <div
                   style={{
                     display: 'grid',
