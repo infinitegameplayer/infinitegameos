@@ -5,8 +5,8 @@
   "description": "Installable skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
   "url": "https://www.infinitegameos.io",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "updated_at": "2026-08-06",
-  "upstream_version": "3.10.0",
+  "updated_at": "2026-08-07",
+  "upstream_version": "3.11.0",
   "upstream_repo": "https://github.com/infinitegameplayer/sovereign-ecosystem",
   "template_dual_distribution": [
     "Source Harvest",

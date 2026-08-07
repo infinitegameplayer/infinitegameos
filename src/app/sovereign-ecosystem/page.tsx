@@ -369,7 +369,10 @@ export default function SovereignEcosystemPage() {
                 section has an exit condition before you move on.
               </p>
               <p>
-                The Build Sequence is the session-by-session guide. Ten
+                The Build Sequence is the session-by-session guide. It opens
+                with how to run a session, which is the same loop every time:
+                one session per tab, read the explainer, do the work, run
+                closeout. Then ten
                 sessions, each one adding a layer. Session 0 confirms your
                 environment and locates your starting point. Session 1 builds
                 the first working bridge between you, your files and your AI.
