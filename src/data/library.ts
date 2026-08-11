@@ -415,8 +415,8 @@ export const igosAssets: IGOSAsset[] = [
       ctaLabel: 'See the Sovereign Life Playbook',
     },
     seOrigin: {
-      kind: 'graduated',
-      note: 'This skill began inside the Sovereign Ecosystem Foundation and graduated to the public library in April 2026.',
+      kind: 'dual',
+      note: 'This skill ships in both homes, the Sovereign Ecosystem Foundation and this library.',
     },
   },
   {
@@ -488,8 +488,8 @@ export const igosAssets: IGOSAsset[] = [
       ctaLabel: 'See the Sovereign Life Playbook',
     },
     seOrigin: {
-      kind: 'graduated',
-      note: 'This skill began inside the Sovereign Ecosystem Foundation and graduated to the public library in April 2026.',
+      kind: 'dual',
+      note: 'This skill ships in both homes, the Sovereign Ecosystem Foundation and this library.',
     },
   },
   {
@@ -559,10 +559,6 @@ export const igosAssets: IGOSAsset[] = [
         'Plan Harvest and Retire closes the loop that Plan Challenger and Pending Plan Implementation open. If you want the design frame for which plans are worth running (and worth retiring) in the first place, the Sovereign Life Playbook is the upstream architecture.',
       ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
-    },
-    seOrigin: {
-      kind: 'graduated',
-      note: 'This skill began as an internal planning-hygiene process and graduated to the public library in July 2026.',
     },
   },
   {
@@ -634,8 +630,8 @@ export const igosAssets: IGOSAsset[] = [
       ctaLabel: 'See the Sovereign Life Playbook',
     },
     seOrigin: {
-      kind: 'graduated',
-      note: 'This skill began as an internal merge gate and graduated to the public library in July 2026.',
+      kind: 'dual',
+      note: 'This skill ships in both homes, the Sovereign Ecosystem Foundation and this library.',
     },
   },
   {
@@ -780,8 +776,8 @@ export const igosAssets: IGOSAsset[] = [
       ctaLabel: 'See the Sovereign Life Playbook',
     },
     seOrigin: {
-      kind: 'graduated',
-      note: 'This skill began inside the Sovereign Ecosystem Foundation and graduated to the public library in April 2026.',
+      kind: 'dual',
+      note: 'This skill ships in both homes, the Sovereign Ecosystem Foundation and this library.',
     },
   },
   {
@@ -3320,10 +3316,6 @@ export const igosAssets: IGOSAsset[] = [
       ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
       ctaLabel: 'See The Alive Business',
     },
-    seOrigin: {
-      kind: 'graduated',
-      note: 'This skill graduated from internal operating practice into the public library.',
-    },
   },
   {
     slug: 'jacket-meeting',
@@ -3404,10 +3396,6 @@ export const igosAssets: IGOSAsset[] = [
         'The Jacket Meeting is one practice from The Alive Business, the framework it lives inside. The Alive Business gives you the design frame: eleven systems for building a business that is actually yours, with the jacket system as one of them.',
       ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
       ctaLabel: 'See The Alive Business',
-    },
-    seOrigin: {
-      kind: 'graduated',
-      note: 'This skill graduated from internal operating practice into the public library.',
     },
   },
   {

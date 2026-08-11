@@ -295,11 +295,13 @@ export default function SovereignEcosystemPage() {
                   capture surface for the small stuff.
                 </li>
                 <li>
-                  <strong>Initial skill set.</strong> The governance skills
-                  needed to get the vault operational. The cool extras have
-                  graduated. They live on this site as installable skills and
-                  bundles, built out to a level no foundational template needs
-                  to carry.
+                  <strong>A working skill set, not a starter one.</strong>{' '}
+                  Governance, plan execution, parallel research, session
+                  closeout, archival and backup. A skill that every build needs
+                  ships in the box, because a Foundation that sends you
+                  shopping mid-onboarding is not a foundation. Skills built past
+                  template scope live on this site as installable plugins and
+                  bundles instead.
                 </li>
                 <li>
                   <strong>Guards that ship with their proof.</strong> Hooks that
