@@ -2,15 +2,23 @@
 
 import Script from 'next/script'
 import { usePathname } from 'next/navigation'
-import { isNoTrackPath } from '@/lib/no-track'
+import { useEffect, useState } from 'react'
+import { isNoTrackPath, isNonPublicHost } from '@/lib/no-track'
 
-// Umami pageview script, gated off privacy routes. The preference center entry
-// URL carries the subscriber email and a live token, so the script never loads
-// there. Everywhere else it behaves exactly as the inline layout tag did.
+// Umami pageview script, gated off privacy routes and off non-public hosts. The
+// preference center entry URL carries the subscriber email and a live token, so
+// the script never loads there. Development servers and Vercel deployment URLs
+// were counting as audience in the canonical traffic baseline, so they are gated
+// too. The host check runs after mount because the server render has no window,
+// and a server-client disagreement here would be a hydration error.
 export function UmamiAnalytics() {
   const pathname = usePathname()
+  const [publicHost, setPublicHost] = useState(false)
+  useEffect(() => {
+    setPublicHost(!isNonPublicHost(window.location.hostname))
+  }, [])
   const websiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID
-  if (!websiteId || isNoTrackPath(pathname)) return null
+  if (!websiteId || !publicHost || isNoTrackPath(pathname)) return null
   return (
     <Script
       defer

@@ -4,15 +4,7 @@ import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { usePostHog } from 'posthog-js/react'
 import { isNoTrackPath } from '@/lib/no-track'
-
-declare global {
-  interface Window {
-    umami?: {
-      track: (event: string, data?: Record<string, unknown>) => void
-      identify: (data: Record<string, unknown>) => void
-    }
-  }
-}
+import { umamiTrack } from '@/lib/umami'
 
 // Hosts whose outbound clicks we record (Kingdom + the social/code surfaces we publish to).
 const KINGDOM_HOSTS = new Set([
@@ -79,7 +71,7 @@ export function CrossSiteLinkTracker() {
       }
       try {
         posthog?.capture('cross_site_arrival', arrival)
-        window.umami?.track('cross_site_arrival', arrival)
+        umamiTrack('cross_site_arrival', arrival)
         sessionStorage.setItem('kingdom_attribution', JSON.stringify({ ...arrival, ts: Date.now() }))
       } catch {
         // analytics persistence must never break the page
@@ -148,7 +140,7 @@ export function CrossSiteLinkTracker() {
 
       try {
         posthog?.capture('outbound_link_click', payload)
-        window.umami?.track('outbound_link_click', payload)
+        umamiTrack('outbound_link_click', payload)
       } catch {
         // analytics failure must not affect navigation
       }

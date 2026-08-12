@@ -2,15 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { usePostHog } from 'posthog-js/react'
-
-declare global {
-  interface Window {
-    umami?: {
-      track: (event: string, data?: Record<string, unknown>) => void
-      identify: (data: Record<string, unknown>) => void
-    }
-  }
-}
+import { umamiTrack, umamiIdentify } from '@/lib/umami'
 
 const inputStyle: React.CSSProperties = {
   width: '100%',
@@ -109,8 +101,8 @@ export default function SubscribeForm() {
         }
         posthog?.identify(normalizedEmail, { email: normalizedEmail })
         posthog?.capture('igos_subscribe', subscribePayload)
-        window.umami?.identify({ email: normalizedEmail })
-        window.umami?.track('igos_subscribe', subscribePayload)
+        umamiIdentify({ email: normalizedEmail })
+        umamiTrack('igos_subscribe', subscribePayload)
       } catch {
         /* analytics unavailable */
       }
