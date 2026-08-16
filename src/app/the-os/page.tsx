@@ -6,14 +6,14 @@ import { theOsFaqs } from '@/lib/page-data'
 export const metadata: Metadata = {
   title: 'What is Infinite Game OS?',
   description:
-    'Infinite Game OS is a structured operating system for practitioners of long-term thinking, sovereign life design and agentic systems. Explore the philosophy.',
+    'Infinite Game OS is a structured operating system for entrepreneurs, solopreneurs and practitioners of long-term thinking, sovereign life design and agentic systems.',
   openGraph: {
     type: 'website',
     siteName: 'Infinite Game OS',
     locale: 'en_US',
     title: 'What is Infinite Game OS?',
     description:
-      'Infinite Game OS is a structured operating system for practitioners of long-term thinking, sovereign life design and agentic systems. Explore the philosophy.',
+      'Infinite Game OS is a structured operating system for entrepreneurs, solopreneurs and practitioners of long-term thinking, sovereign life design and agentic systems.',
     url: 'https://www.infinitegameos.io/the-os',
   },
   alternates: {
@@ -39,7 +39,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'What is Infinite Game OS?',
   description:
-    'Infinite Game OS is a structured operating system for practitioners of long-term thinking, sovereign life design and agentic systems. Explore the philosophy.',
+    'Infinite Game OS is a structured operating system for entrepreneurs, solopreneurs and practitioners of long-term thinking, sovereign life design and agentic systems.',
   author: { '@id': 'https://infinitegameos.io/#person' },
   publisher: { '@id': 'https://www.infinitegameos.io/#website' },
   url: 'https://www.infinitegameos.io/the-os',

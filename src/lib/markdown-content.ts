@@ -36,7 +36,7 @@ function generateHomeMarkdown(): string {
 
   return `# Infinite Game OS
 
-> A structured knowledge base for practitioners of Infinite Game philosophy, agentic systems, and sovereign life design. Built AI-agent-first.
+> A structured knowledge base for entrepreneurs, solopreneurs and practitioners of Infinite Game philosophy, agentic systems and sovereign life design. Built AI-agent-first.
 
 ## Play a longer game.
 
@@ -72,7 +72,7 @@ function generateTheOsMarkdown(): string {
 
   return `# What is Infinite Game OS?
 
-> Infinite Game OS is a structured operating system for practitioners of long-term thinking, sovereign life design and agentic systems.
+> Infinite Game OS is a structured operating system for entrepreneurs, solopreneurs and practitioners of long-term thinking, sovereign life design and agentic systems.
 
 A structured operating system for practitioners who have chosen the Infinite Game.
 
@@ -674,7 +674,7 @@ function generatePlayYourOwnGameMarkdown(): string {
 
 > Playing your own game begins with identifying which game you are currently playing. A forensic game-audit approach for the already-accomplished person who senses the script is wrong.
 
-Playing your own game begins with identifying which game you are currently playing. Most accomplished people are running a game they inherited rather than designed. The Infinite Game framework offers a different starting point: instead of optimizing for a finish line, it asks what game is worth playing for its own sake.
+Playing your own game begins with identifying which game you are currently playing. Most accomplished people, entrepreneurs and solopreneurs among them, are running a game they inherited rather than designed. The Infinite Game framework offers a different starting point: instead of optimizing for a finish line, it asks what game is worth playing for its own sake.
 
 ## The game audit
 

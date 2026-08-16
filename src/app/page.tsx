@@ -12,14 +12,14 @@ import { getAllUpdates } from '@/lib/updates'
 export const metadata: Metadata = {
   title: 'Infinite Game OS | Play a longer game.',
   description:
-    'A practitioner-first knowledge base and library for the Infinite Game. Concepts, installable skills, avatar bundles and the philosophy underneath. Built for the long arc.',
+    'A practitioner-first knowledge base and library for the Infinite Game, built for entrepreneurs, solopreneurs and creators on a long arc. Concepts, installable skills and avatar bundles.',
   openGraph: {
     type: 'website',
     siteName: 'Infinite Game OS',
     locale: 'en_US',
     title: 'Infinite Game OS | Play a longer game.',
     description:
-      'A practitioner-first knowledge base and library for the Infinite Game. Concepts, installable skills, avatar bundles and the philosophy underneath. Built for the long arc.',
+      'A practitioner-first knowledge base and library for the Infinite Game, built for entrepreneurs, solopreneurs and creators on a long arc. Concepts, installable skills and avatar bundles.',
     url: 'https://www.infinitegameos.io',
   },
   alternates: {
@@ -109,7 +109,7 @@ export default function HomePage() {
               lineHeight: 1.7,
             }}
           >
-            A practitioner-first knowledge base and library for the Infinite Game. Concepts to think with, skills to install, bundles to run.
+            A practitioner-first knowledge base and library for the Infinite Game. Concepts to think with, skills to install, bundles to run. Built for entrepreneurs, solopreneurs and creators on a long arc.
           </p>
           <div
             className="hero-line hero-line-4"

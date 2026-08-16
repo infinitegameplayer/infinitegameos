@@ -104,7 +104,7 @@ export default function PlayYourOwnGamePage() {
               }}
             >
               Playing your own game begins with identifying which game you are currently
-              playing. Most accomplished people are running a game they inherited rather
+              playing. Most accomplished people, entrepreneurs and solopreneurs among them, are running a game they inherited rather
               than designed. The Infinite Game framework offers a different starting
               point: instead of optimizing for a finish line, it asks what game is worth
               playing for its own sake.
