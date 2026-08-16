@@ -26,6 +26,8 @@ const PAGE_DATES: Record<string, string> = {
   '/design-your-day':    '2026-07-01',
   '/creator-business-without-performing': '2026-07-01',
   '/infinite-game-os':   '2026-07-01',
+  // 2026-08-16: shipped with the game theory surface (Gate 1).
+  '/game-theory':        '2026-08-16',
 }
 
 function pageDate(path: string): Date {
@@ -165,6 +167,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://www.infinitegameos.io/creator-business-without-performing',
       lastModified: pageDate('/creator-business-without-performing'),
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: 'https://www.infinitegameos.io/game-theory',
+      lastModified: pageDate('/game-theory'),
       changeFrequency: 'monthly',
       priority: 0.85,
     },

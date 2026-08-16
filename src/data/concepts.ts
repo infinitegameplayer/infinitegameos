@@ -2050,6 +2050,344 @@ export const concepts: Concept[] = [
       { href: '/concepts/playgrounds-of-exploration', label: 'Playgrounds of Exploration', variant: 'outline' },
     ],
   },
+  {
+    slug: 'the-rules-are-in-play',
+    updated: '2026-08-16',
+    title: 'The Rules Are in Play',
+    label: 'Core Distinction',
+    capsule:
+      'Game theory can model a game with no ending. It has no way to model a game where the rules change, because a fixed payoff structure is what makes the mathematics work at all. That is the seam between an infinitely repeated game and the Infinite Game. One runs forever on a frozen board. The other rewrites the board as a condition of continuing.',
+    subtitle:
+      'The distinction most long-game advice skips, and the reason a business can play forever and still be playing a finite game.',
+    pathBridge: {
+      label: 'Where this leads',
+      links: [
+        {
+          href: '/game-theory',
+          label: 'Game theory and the Infinite Game',
+          note: 'the full argument in four moves',
+        },
+        { href: '/infinite-game', label: 'The Infinite Game', note: 'the frame this sits inside' },
+        {
+          href: '/concepts/the-shadow-of-the-future',
+          label: 'The Shadow of the Future',
+          note: 'what the horizon decides',
+        },
+      ],
+    },
+    sections: [
+      {
+        heading: 'Two things called infinite',
+        paragraphs: [
+          'Game theory has a precise object called an infinitely repeated game. The same players, the same available moves, the same payoffs, repeated with no known final round.',
+          'Carse\'s infinite game is a different object. Players enter and leave. The rules change during play. What counts as a move is itself in play, and so is who the player is.',
+          'Both get called infinite. Only one of them is.',
+          'The first has an open horizon on a frozen board. The second changes the board as a condition of continuing. Collapsing them is the most common error in business writing on this subject, and it stays invisible because the vocabulary is identical on both sides.',
+        ],
+      },
+      {
+        heading: 'Where the mathematics stops',
+        paragraphs: [
+          'Formal game theory needs fixed players, a fixed set of available actions and a payoff structure that is known or learnable. Those assumptions are what make a solution computable in the first place.',
+          'Change the rules mid-play and there is no longer a game to solve. There is a sequence of different games, with no principled way to say the same one continued.',
+          'Xabier Barandiaran makes this argument directly. Classical game theory and evolutionary game theory are both structurally aligned with finite games, because both assume static agents, fixed payoffs and closed boundaries. An infinite game theory would be the conjugate of the existing one rather than an extension of it.',
+          'None of this is a complaint about the tool. It is a description of what the tool is for. A hammer holds no opinion about screws.',
+        ],
+      },
+      {
+        heading: 'The test that separates them',
+        paragraphs: [
+          'Ask what would have to change for you to still be playing.',
+          'If the answer is nothing, the horizon is open and the game is finite. You are running the same play forever, which is a fine thing to do and a different thing from this.',
+          'If the answer includes the rules, the roles, the definition of a good move or who you are while making it, you are standing somewhere the mathematics does not reach.',
+          'Most businesses describing themselves as playing the long game are describing the first one. The long game and the Infinite Game are not synonyms, and the gap between them is where nearly all of the interesting work lives.',
+        ],
+      },
+      {
+        heading: 'What changes when the rules are in play',
+        paragraphs: [
+          'Strategy stops being the top layer. If the rules can change, then choosing which rules to play under is itself a move, and a larger one than any move available inside them.',
+          'Identity becomes a variable rather than a constant. A finite player protects who they are, because the identity is what the winning accrues to. An infinite player lets the play change them, because being changed is one of the ways the game continues.',
+          'Winning loses its meaning rather than its appeal. There is no arrangement of the board that ends it, so the question shifts from how to arrive to what is worth continuing.',
+          'This is the structural reason for an operating system rather than a strategy. A strategy assumes the rules hold. An operating system is what runs while they change.',
+        ],
+      },
+      {
+        heading: 'Running it',
+        paragraphs: [
+          'Name the rules you are currently playing under, out loud and in specifics. Most of them were inherited rather than chosen, which is exactly what makes them feel like facts about the world.',
+          'Sort that list into the ones you picked and the ones that arrived with the room.',
+          'Then change one on purpose and watch what happens. Pick a small one. The point is to feel the difference between a move inside the rules and a move on them, and a small change teaches that as well as a large one.',
+          'The distinction stays useful for years afterward, because it turns a whole class of stuck situations into a different question. Not how do I win this, but who decided this was the game.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'Is an infinitely repeated game the same as an infinite game?',
+        a: 'No, and the difference is the whole point. An infinitely repeated game keeps the same players, the same available moves and the same payoffs, with no known final round. Only the horizon is open. Carse\'s infinite game changes the rules, the roles and the identity of the player as a condition of continuing. One runs forever on a frozen board. The other rewrites the board.',
+      },
+      {
+        q: 'What stops game theory from modeling changing rules?',
+        a: 'A fixed payoff structure is what makes a game solvable. Formal game theory needs fixed players, a fixed action set and payoffs that are known or learnable, because those assumptions are what a solution is computed against. Once the rules change mid-play there is no single game left to solve, only a sequence of different games with no principled way to say the same one continued.',
+      },
+      {
+        q: 'Is playing the long game the same as playing the Infinite Game?',
+        a: 'Usually not. Playing the long game normally means running the same play on a longer horizon, which is a finite game with the ending pushed out of view. The Infinite Game puts the rules themselves in play. A useful test: ask what would have to change for you to still be playing. If the answer is nothing, the horizon is long and the game is finite.',
+      },
+      {
+        q: 'Does this mean game theory is wrong?',
+        a: 'Game theory is exact about what it models. It is a mathematics of winning, and it is the most rigorous one ever built. The point of the distinction is scope rather than error. Its results hold inside fixed rules, and a life or a body of work is not played entirely inside fixed rules.',
+      },
+      {
+        q: 'What does it look like to change the rules on purpose?',
+        a: 'It looks like changing what counts as a good move rather than making a better one. Deciding that a piece of work is measured by whether it is still useful in ten years rather than by how it performed in its first week is a rule change. So is deciding that a collaborator is a long-term relationship rather than a transaction. The move is small and the game afterward is different.',
+      },
+    ],
+    relatedSlugs: [
+      'the-shadow-of-the-future',
+      'puzzles-not-problems',
+      'joyful-sovereignty',
+      'the-pioneer',
+    ],
+    relatedUpdateSlugs: [
+      'is-finite-and-infinite-games-the-same-as-game-theory',
+      'why-finite-games-sit-inside-the-infinite-game',
+      'what-is-the-infinite-game',
+    ],
+    ctaLinks: [
+      { href: '/game-theory', label: 'Game theory and the Infinite Game', variant: 'accent' },
+      { href: '/infinite-game', label: 'The Infinite Game', variant: 'outline' },
+    ],
+  },
+  {
+    slug: 'the-shadow-of-the-future',
+    updated: '2026-08-16',
+    title: 'The Shadow of the Future',
+    label: 'Core Distinction',
+    capsule:
+      'A named result from game theory. Cooperation becomes rational the moment the final round disappears. The reverse is the sharper half. When a player can see the ending, taking on the last round makes taking rational on the one before it, and the logic runs backward until it reaches the first move. Most working relationships are damaged by a visible finish line rather than by bad character.',
+    subtitle:
+      'Why the length of the horizon decides the behavior, and why naming it is a design decision rather than a mood.',
+    pathBridge: {
+      label: 'Where this leads',
+      links: [
+        {
+          href: '/game-theory',
+          label: 'Game theory and the Infinite Game',
+          note: 'where this result sits in the argument',
+        },
+        {
+          href: '/concepts/the-rules-are-in-play',
+          label: 'The Rules Are in Play',
+          note: 'where the mathematics stops',
+        },
+        {
+          href: '/concepts/positive-sum-by-design',
+          label: 'Positive-Sum by Design',
+          note: 'the shape of the arrangement itself',
+        },
+      ],
+    },
+    sections: [
+      {
+        heading: 'The unraveling',
+        paragraphs: [
+          'Two people, repeated dealings, a known final exchange. On that last one there is no future left to protect, so the self-interested move is to take. Both of them know it.',
+          'Which makes the second to last exchange the last one carrying a future, so the same reasoning applies there. And to the one before that.',
+          'The logic runs all the way back and reaches the first move. This is backward induction, and in the standard model it produces a single answer: take from the very beginning. A known ending is enough to destroy cooperation before it starts.',
+          'Nobody in that story is a bad person. The structure produced the behavior, and the people are incidental to it.',
+        ],
+      },
+      {
+        heading: 'Remove the ending and the answer inverts',
+        paragraphs: [
+          'Take away the known final round and the mathematics reverses. Cooperation becomes sustainable as a stable outcome, and the result carries the name Folk Theorem.',
+          'The mechanism is plain enough. When the remaining future is long enough, and the players weigh it heavily enough, what gets lost by taking exceeds what gets gained.',
+          'Economists call that weight the shadow of the future. It is the length of what remains multiplied by how much the player cares about it.',
+          'Nothing about the people changed between the two stories. The horizon changed, and the horizon was doing the work the whole time.',
+        ],
+      },
+      {
+        heading: 'What the lab found',
+        paragraphs: [
+          'Pedro Dal Bo ran this with real subjects, using a random continuation rule to build a game that was genuinely open-ended rather than merely long. Higher continuation probability produced more cooperation, and the behavior tracked the theory closely.',
+          'Closely rather than exactly, and the gap is the most human part of the finding.',
+          'In finite games with a known ending, real people fail to fully unravel. They keep cooperating well past the round where the theorem says they should have stopped, and they do it reliably enough that it shows up across studies.',
+          'People behave as though the horizon is longer than they were told it was. That is worth knowing about the species, and it is worth knowing before deciding how much structure an arrangement needs.',
+        ],
+      },
+      {
+        heading: 'Where this shows up in a working life',
+        paragraphs: [
+          'Every arrangement carries a horizon, whether or not anyone said it out loud. A one-off project. A season. A collaboration with no ending named and none assumed.',
+          'Behavior follows that horizon more reliably than it follows anyone\'s intentions, including good ones.',
+          'A collaborator who knows this is the last project behaves differently from one who does not, and the difference is structural rather than moral. Reading it as character is the mistake that turns a fixable arrangement into a grievance.',
+          'Which makes the horizon something to design rather than something to discover afterward.',
+        ],
+      },
+      {
+        heading: 'Running it',
+        paragraphs: [
+          'Before an arrangement begins, name what happens after it. Not the terms. The horizon.',
+          'Sort your working relationships by whether the ending is visible. The visible ones want more explicit structure, because the shadow is doing less of the work and something has to.',
+          'When a thing is genuinely a one-off, say so, and build the trust some other way instead of hoping the arrangement supplies it on its own.',
+          'When a thing could continue, say that too. Saying it is part of what makes it true, because a horizon nobody has named is a horizon both parties are guessing at separately.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'What is the shadow of the future?',
+        a: 'It is the weight the remaining future carries in a present decision, measured by how much is left and how much the player cares about it. When that weight is high, cooperation becomes the rational move, because what gets lost by defecting exceeds what gets gained. The term comes from the study of repeated games and it is the mechanism behind the Folk Theorem.',
+      },
+      {
+        q: 'What is backward induction?',
+        a: 'It is reasoning from the end of a game to its beginning. In a repeated exchange with a known final round, there is no future left to protect on that round, so the self-interested move is to defect. That makes the round before it the effective last one, and the same logic applies. The reasoning runs backward to the first move, so in the standard model a known ending produces defection from the start.',
+      },
+      {
+        q: 'Does a longer time horizon actually change behavior?',
+        a: 'Yes, and it has been tested. Pedro Dal Bo ran repeated games with real subjects using a random continuation rule, and higher continuation probability produced significantly more cooperation, tracking the theoretical prediction closely. The interesting deviation runs the other way: in finite games, people keep cooperating past the point the theory says they should stop.',
+      },
+      {
+        q: 'Is the Folk Theorem the same as the Infinite Game?',
+        a: 'No. The Folk Theorem describes an infinitely repeated game, which keeps the same players, moves and payoffs and only removes the ending. The Infinite Game puts the rules themselves in play. The Folk Theorem is the strongest thing formal game theory says in this direction, and it still stops one layer short.',
+      },
+      {
+        q: 'How do you apply this to a business?',
+        a: 'Treat the horizon as something you design. Name what happens after an arrangement before it starts, sort your relationships by whether the ending is visible, and give the visible ones more explicit structure since the shadow is doing less work there. When something is genuinely one-off, say so and build trust another way rather than expecting the arrangement to supply it.',
+      },
+    ],
+    relatedSlugs: [
+      'the-rules-are-in-play',
+      'positive-sum-by-design',
+      'puzzles-not-problems',
+      'joyful-sovereignty',
+    ],
+    relatedUpdateSlugs: [
+      'is-finite-and-infinite-games-the-same-as-game-theory',
+      'what-does-game-theory-offer-a-one-person-business',
+      'why-finite-games-sit-inside-the-infinite-game',
+    ],
+    ctaLinks: [
+      { href: '/game-theory', label: 'Game theory and the Infinite Game', variant: 'accent' },
+      { href: '/concepts/the-rules-are-in-play', label: 'The Rules Are in Play', variant: 'outline' },
+    ],
+  },
+  {
+    slug: 'positive-sum-by-design',
+    updated: '2026-08-16',
+    title: 'Positive-Sum by Design',
+    label: 'Core Distinction',
+    capsule:
+      'Zero-sum and positive-sum are properties of an arrangement rather than personality types. A revenue split, a collaboration, a launch, an audience relationship: each is drawn as one or the other when it is built, before anyone behaves well or badly inside it. The design sits upstream of the ethics, which is why good people keep finding themselves inside extractive structures.',
+    subtitle:
+      'The question is not how generous you are. The question is what the arrangement does when nobody is watching it.',
+    pathBridge: {
+      label: 'Where this leads',
+      links: [
+        {
+          href: '/game-theory',
+          label: 'Game theory and the Infinite Game',
+          note: 'where this sits in the argument',
+        },
+        {
+          href: '/concepts/the-shadow-of-the-future',
+          label: 'The Shadow of the Future',
+          note: 'what the horizon decides',
+        },
+        {
+          href: '/creator-business-without-performing',
+          label: 'A creator business without performing',
+          note: 'the architecture this supports',
+        },
+      ],
+    },
+    sections: [
+      {
+        heading: 'Three shapes, and you are always in one',
+        paragraphs: [
+          'A zero-sum arrangement holds a fixed total, so a gain on one side is a loss on the other. Dividing a pie is the standard picture and it is accurate.',
+          'A negative-sum arrangement destroys value in the interacting. Both sides finish holding less than they started with, which happens more often than anyone plans for.',
+          'A positive-sum arrangement creates something that did not exist before the two parties met. The total grows, and both sides can end ahead without anyone being taken from.',
+          'Which one you are standing in was mostly decided before the first conversation, by how the arrangement was drawn rather than by how the people inside it behave.',
+        ],
+      },
+      {
+        heading: 'Design sits upstream of character',
+        paragraphs: [
+          'A generous person inside a zero-sum arrangement is a person losing slowly. The generosity is real and the structure eats it.',
+          'An ordinary person inside a positive-sum arrangement produces good outcomes without effort or virtue, because the arrangement is doing the work that would otherwise require both.',
+          'This is why the standing advice to be more collaborative underperforms so consistently. It asks behavior to overcome structure, and over a long enough run structure wins.',
+          'So the leverage sits in the drawing rather than in the conduct. An hour spent on the shape of an arrangement outperforms a year of good faith inside a bad one.',
+        ],
+      },
+      {
+        heading: 'How to tell which one you are in',
+        paragraphs: [
+          'Ask what happens to the other side when you do well. If the honest answer is that they do worse, the arrangement is zero-sum regardless of the language wrapped around it.',
+          'Ask whether the arrangement produces anything that did not exist before you entered it. A great many arrangements simply move an existing thing from one party to another, and most of those describe themselves as partnerships.',
+          'Then ask who captures the new thing, because positive-sum creation with zero-sum capture is a common shape and a well-disguised one. Value gets made by both and held by one.',
+          'Platform relationships repay this test specifically. The attention math underneath is usually fixed while the language on the surface usually says otherwise.',
+        ],
+      },
+      {
+        heading: 'Positive-sum at creator scale',
+        paragraphs: [
+          'Most writing on this subject is about trade agreements and large firms, so it stays abstract for anyone running a one-person business.',
+          'At creator scale the arrangements are concrete and small enough to hold in one hand. A revenue split. A joint launch. A referral. A guest appearance. A membership. A shared audience.',
+          'The test stays the same each time. Does this make something new, and does the making show up on both sides of the table.',
+          'A collaboration where one party supplies the audience and the other supplies the work is often positive-sum in creation and zero-sum in capture. That is worth naming out loud before it runs rather than discovering in month four.',
+        ],
+      },
+      {
+        heading: 'Running it',
+        paragraphs: [
+          'Draw the shape before agreeing to it. One sentence naming what gets created and who ends up holding it is usually enough to surface the problem.',
+          'When the shape is zero-sum and the work is worth doing anyway, do it with the shape named and priced accordingly. Plenty of good work is zero-sum. The failure is doing it while believing otherwise.',
+          'Favor the arrangements where your win is someone else\'s win by construction rather than by goodwill. Those are the ones that survive a bad month, a busy season and a change of circumstance on either side.',
+          'Revisit the ones that have been running a while. Shapes drift, and they drift toward whichever party holds more leverage, quietly and without anyone deciding to do it.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'What is a positive-sum business model?',
+        a: 'One where the arrangement creates value that did not exist before the parties met, so both sides can end ahead without either being taken from. The test is concrete: does this produce something new, and does the making show up on both sides. A model that only moves existing value from one party to another is zero-sum, whatever it is called.',
+      },
+      {
+        q: 'Is positive-sum the same as win-win?',
+        a: 'Win-win describes an outcome. Positive-sum describes the structure that produced it. The distinction is useful because outcomes can be win-win by luck or goodwill inside a structure that will stop producing them, while a positive-sum structure keeps producing them without anyone trying. The structure is the durable half.',
+      },
+      {
+        q: 'How do you know if a collaboration is zero-sum?',
+        a: 'Ask what happens to the other side when you do well. If they do worse, it is zero-sum however it is described. Then check separately for the disguised version: an arrangement can create real new value and still hand all of it to one party. Positive-sum creation with zero-sum capture is the most common shape at creator scale.',
+      },
+      {
+        q: 'Does positive-sum mean giving things away?',
+        a: 'No. It means the arrangement is built so that value gets created rather than transferred, and so that both parties hold some of what was made. Pricing, terms and boundaries all stay intact. Giving things away inside a zero-sum structure is generosity subsidizing a bad design, which is a slower version of the same loss.',
+      },
+      {
+        q: 'What is the difference between positive-sum creation and positive-sum capture?',
+        a: 'Creation is whether the arrangement makes something new. Capture is who ends up holding it. The two come apart constantly. A joint project can generate real value that flows entirely to the party with the audience, the platform or the contract, which reads as a partnership and behaves as an extraction. Both questions have to be asked separately.',
+      },
+    ],
+    relatedSlugs: [
+      'the-shadow-of-the-future',
+      'the-rules-are-in-play',
+      'creator-flywheel',
+      'voice-is-the-moat',
+    ],
+    relatedUpdateSlugs: [
+      'what-is-a-positive-sum-business-model',
+      'what-does-game-theory-offer-a-one-person-business',
+      'what-is-the-creator-flywheel',
+    ],
+    ctaLinks: [
+      { href: '/game-theory', label: 'Game theory and the Infinite Game', variant: 'accent' },
+      { href: '/concepts/the-shadow-of-the-future', label: 'The Shadow of the Future', variant: 'outline' },
+    ],
+  },
 ]
 
 // Future concept candidates (King decides which to build):

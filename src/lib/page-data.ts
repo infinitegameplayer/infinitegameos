@@ -471,3 +471,36 @@ export const sovereignEcosystemFaqs: FaqItem[] = [
     a: 'Source Harvest is built to harvest any external repo at source level. The Sovereign Ecosystem repo is a natural first target. After installing the repo, run a Source Harvest over it. The skill classifies each governance file, protocol, codex and skill against your existing setup. Adopt what fills a gap, enrich what improves on what you have, defer what does not yet apply, ignore what is already covered. The harvest turns the template into your template.',
   },
 ]
+
+// --- Game Theory ---
+
+export const gameTheoryFaqs: FaqItem[] = [
+  {
+    q: 'Is Finite and Infinite Games the same as game theory?',
+    a: 'No. James Carse wrote philosophy, and he distanced the book from game theory directly. Game theory is a mathematics of winning conflicts and minimizing losses. Carse was writing about play that sees no value in winning. The two get conflated constantly because they share the word game, and the conflation is why most business writing on the subject describes a long finite game while calling it an infinite one.',
+  },
+  {
+    q: 'What is the difference between a finite game and an infinite game?',
+    a: 'A finite game has known players, fixed rules and an agreed ending. Someone wins and the game stops. An infinite game has known and unknown players, rules that change during play and no ending, because the point is to keep playing. Finite games are real and useful. Side quests, launches and projects are all finite games nested inside the Infinite Game.',
+  },
+  {
+    q: 'What does game theory say about playing a long game?',
+    a: 'It says the ending is the problem. In a repeated exchange with a known final round, backward induction shows that self-interest produces defection on that round, which makes the round before it the effective last one, and the reasoning runs back to the first move. Remove the known ending and cooperation becomes sustainable instead. That result is the Folk Theorem, and the weight the remaining future carries is called the shadow of the future.',
+  },
+  {
+    q: 'What is an infinitely repeated game?',
+    a: 'A game theory object with the same players, the same available moves and the same payoffs, repeated with no known final round. Only the horizon is open. It is not the same as Carse\'s infinite game, which puts the rules, the roles and the identity of the player in play. An infinitely repeated game is a finite game running forever on a frozen board.',
+  },
+  {
+    q: 'How does game theory apply to entrepreneurship?',
+    a: 'Most usefully through repeated games and reputation. Formal models of entrepreneurial finance and multi-round contracting show reputation behaving as an asset precisely when the interaction extends across rounds, which is the rigorous version of the practitioner claim that reputation compounds. For a solopreneur or a one-person creator business, the practical form is simpler: the horizon of an arrangement predicts behavior inside it better than anyone\'s stated intentions do.',
+  },
+  {
+    q: 'Is business a zero-sum game?',
+    a: 'It depends on the arrangement rather than on business as a category. Zero-sum and positive-sum are properties of how a specific arrangement is drawn. A revenue split, a collaboration or a platform relationship is one or the other before anyone inside it behaves well or badly. The disguised case is worth watching for: an arrangement can create genuinely new value and hand all of it to one party.',
+  },
+  {
+    q: 'Do entrepreneurs actually cooperate the way game theory predicts?',
+    a: 'Closely, and not perfectly. Pedro Dal Bo tested this in the lab with a random continuation rule, and higher continuation probability produced significantly more cooperation as the theory predicts. The deviation runs in a generous direction. In finite games with a known ending, real people keep cooperating well past the round where the theorem says they should stop.',
+  },
+]

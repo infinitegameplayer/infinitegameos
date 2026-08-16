@@ -19,6 +19,7 @@ import {
   designYourDayFaqs,
   creatorBusinessWithoutPerformingFaqs,
   infiniteGameOsFaqs,
+  gameTheoryFaqs,
 } from './page-data'
 
 const SITE = 'https://www.infinitegameos.io'
@@ -929,6 +930,84 @@ ${faqText}
 `
 }
 
+function generateGameTheoryMarkdown(): string {
+  const faqText = gameTheoryFaqs
+    .map(f => `**${f.q}**\n${f.a}`)
+    .join('\n\n')
+
+  return `# Game Theory and the Infinite Game
+
+> Game theory is a mathematics of winning. The Infinite Game is not. They are not the same body of thought, James Carse said so himself, and most business writing merges them anyway.
+
+The merge is worth undoing, because game theory turns out to prove something useful about long horizons right up to the point where it stops being able to follow. Four moves. The first two are game theory doing its own work. The third is where it reaches its edge. The fourth is what lies past it.
+
+## One. The ending is what destroys cooperation
+
+Take two people with repeated dealings and a known final exchange. On that last one there is no future left to protect, so the self-interested move is to take. Both of them know it.
+
+Which makes the second to last exchange the last one carrying a future. The same reasoning applies there, and to the one before that, and the logic runs backward until it reaches the first move. This is called backward induction, and in the standard model it produces a single answer: take from the beginning.
+
+A visible finish line is sufficient, on its own, to destroy cooperation before it starts. No bad character required. The structure does it.
+
+## Two. Remove the ending and the answer inverts
+
+Take away the known final round and the mathematics reverses. Cooperation becomes sustainable as a stable outcome, and the family of results proving it carries the name Folk Theorem.
+
+The mechanism is plain. When the remaining future is long enough, and the players weigh it heavily enough, what gets lost by taking exceeds what gets gained. Economists call that weight the shadow of the future.
+
+Pedro Dal Bo tested it in a laboratory using a random continuation rule, so the games were genuinely open-ended rather than merely long. Higher continuation probability produced significantly more cooperation, tracking the theory closely. Closely rather than exactly, and the deviation runs in a generous direction: in finite games, real people keep cooperating well past the round where the theorem says they should have stopped.
+
+## Three. And the rules never moved
+
+An infinitely repeated game keeps the same players, the same available moves and the same payoffs. Only the clock is open. That is a finite game running forever on a frozen board.
+
+It has to be. Formal game theory needs fixed players, a fixed action set and a payoff structure that is known or learnable, because those assumptions are what a solution gets computed against. Change the rules mid-play and there is no longer one game to solve, only a sequence of different games with no principled way to say the same one continued.
+
+Xabier Barandiaran makes the argument directly: classical and evolutionary game theory are both structurally aligned with finite games, because both assume static agents, fixed payoffs and closed boundaries. This is a description of what the tool is for rather than a complaint about it.
+
+## Four. The Infinite Game is the one where the rules change
+
+Carse's infinite game is a different object entirely. Players enter and leave. The rules change during play. What counts as a move is itself in play, and so is who the player is. Being changed by the playing is one of the ways the game continues.
+
+That layer is the one the mathematics has no way to hold, and it is where this operating system runs.
+
+The practical consequence is a demotion of strategy. If the rules can change, then choosing which rules to play under is itself a move, and a larger one than any move available inside them. Strategy assumes the rules hold. An operating system is what runs while they do not.
+
+The test worth carrying: ask what would have to change for you to still be playing. If the answer is nothing, the horizon is long and the game is finite. If the answer includes the rules, the roles or who you are while playing, you have left the map.
+
+## The three, side by side
+
+| | A finite game | An infinitely repeated game | The Infinite Game |
+|---|---|---|---|
+| The horizon | Known ending. Everyone can see it. | Open. No known final round. | Open, and continuing is the point rather than a condition. |
+| The rules | Fixed for the duration. | Fixed. This is what makes the mathematics work. | In play. They change so that play can continue. |
+| Who is playing | Known, fixed roster. | Known, fixed roster. | Known and unknown. Players enter, leave and are changed by playing. |
+| What winning means | Ends the game. That is the goal. | Accumulating more over an endless run. | Nothing. There is no board state that ends it. |
+
+The middle column is the one that goes missing. Collapse it into the third and you get the popular version of this idea, where playing the long game and playing the Infinite Game sound like the same instruction. They are not, and the row that separates them is the last one.
+
+## What this changes for a business
+
+For an entrepreneur, a solopreneur or anyone running a creator business, the first two moves are immediately usable. Every arrangement carries a horizon whether or not anyone said it out loud, and behavior follows that horizon more reliably than it follows anyone's intentions. A collaborator who knows this is the last project behaves differently from one who does not. Reading that as character is the mistake. It is structure, and structure can be redesigned.
+
+The third and fourth moves change something larger. Most business advice that claims the infinite frame is quietly describing an infinitely repeated game: the same play, run forever, on rules nobody examined. The work of actually playing an infinite game starts with noticing which rules you inherited and which ones you chose.
+
+## Common Questions
+
+${faqText}
+
+## Related
+
+- [The Rules Are in Play](${SITE}/concepts/the-rules-are-in-play) · Where the mathematics stops
+- [The Shadow of the Future](${SITE}/concepts/the-shadow-of-the-future) · What the horizon decides
+- [Positive-Sum by Design](${SITE}/concepts/positive-sum-by-design) · The shape of the arrangement
+- [Infinite Game Philosophy](${SITE}/infinite-game) · The frame this sits inside
+
+---
+*[Infinite Game OS](${SITE}) · [Game theory and the Infinite Game](${SITE}/game-theory)*
+`
+}
+
 export function getMarkdownForPath(path: string): string | null {
   switch (path) {
     case '': return generateHomeMarkdown()
@@ -944,6 +1023,7 @@ export function getMarkdownForPath(path: string): string | null {
     case 'design-your-day': return generateDesignYourDayMarkdown()
     case 'creator-business-without-performing': return generateCreatorBusinessWithoutPerformingMarkdown()
     case 'infinite-game-os': return generateInfiniteGameOsMarkdown()
+    case 'game-theory': return generateGameTheoryMarkdown()
   }
 
   if (path.startsWith('concepts/')) {
@@ -987,6 +1067,7 @@ export function getAvailablePaths(): string[] {
     'play-your-own-game',
     'design-your-day',
     'creator-business-without-performing',
+    'game-theory',
     ...concepts.map(c => `concepts/${c.slug}`),
     ...igosAssets.map(a => `${a.type}s/${a.slug}`),
   ]
