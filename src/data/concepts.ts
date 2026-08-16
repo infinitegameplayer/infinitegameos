@@ -1976,7 +1976,7 @@ export const concepts: Concept[] = [
         ],
       },
       {
-        heading: 'Why the word is load-bearing',
+        heading: 'Why the word does real work',
         paragraphs: [
           'Perception selects the world it gets. A mind that reads problems inhabits a universe that is broken and needs repair, and it will find abundant evidence, because the reading generates the evidence.',
           'The same holds in the other direction, and testing it costs nothing. A week of calling them puzzles is enough to feel the difference in the body before the argument for it lands.',
@@ -2211,7 +2211,7 @@ export const concepts: Concept[] = [
       {
         heading: 'What the lab found',
         paragraphs: [
-          'Pedro Dal Bo ran this with real subjects, using a random continuation rule to build a game that was genuinely open-ended rather than merely long. Higher continuation probability produced more cooperation, and the behavior tracked the theory closely.',
+          'Pedro Dal Bó ran this with real subjects, using a random continuation rule to build a game that was genuinely open-ended rather than merely long. Higher continuation probability produced more cooperation, and the behavior tracked the theory closely.',
           'Closely rather than exactly, and the gap is the most human part of the finding.',
           'In finite games with a known ending, real people fail to fully unravel. They keep cooperating well past the round where the theorem says they should have stopped, and they do it reliably enough that it shows up across studies.',
           'People behave as though the horizon is longer than they were told it was. That is worth knowing about the species, and it is worth knowing before deciding how much structure an arrangement needs.',
@@ -2247,7 +2247,7 @@ export const concepts: Concept[] = [
       },
       {
         q: 'Does a longer time horizon actually change behavior?',
-        a: 'Yes, and it has been tested. Pedro Dal Bo ran repeated games with real subjects using a random continuation rule, and higher continuation probability produced significantly more cooperation, tracking the theoretical prediction closely. The interesting deviation runs the other way: in finite games, people keep cooperating past the point the theory says they should stop.',
+        a: 'Yes, and it has been tested. Pedro Dal Bó ran repeated games with real subjects using a random continuation rule, and higher continuation probability produced significantly more cooperation, tracking the theoretical prediction closely. The interesting deviation runs the other way: in finite games, people keep cooperating past the point the theory says they should stop.',
       },
       {
         q: 'Is the Folk Theorem the same as the Infinite Game?',

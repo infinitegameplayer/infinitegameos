@@ -318,9 +318,9 @@ export default function SovereignEcosystemPage() {
               <p>
                 The repo trimmed to foundational scope at v2.4.0 and has been
                 hardening since. It still trims. Doctrine that gets declared and
-                never used is retired rather than carried, because a reader who
-                cannot tell which parts are load-bearing treats all of it as
-                load-bearing. {dualDistributionCount} skills now ship inside the
+                never used is retired rather than carried, because a reader with
+                no way to tell which parts carry weight ends up treating all of
+                it as though it does. {dualDistributionCount} skills now ship inside the
                 template and also install from this site as standalone plugins.
                 Everything that grew past template scope lives here instead.
               </p>

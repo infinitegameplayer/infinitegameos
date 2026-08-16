@@ -501,6 +501,6 @@ export const gameTheoryFaqs: FaqItem[] = [
   },
   {
     q: 'Do entrepreneurs actually cooperate the way game theory predicts?',
-    a: 'Closely, and not perfectly. Pedro Dal Bo tested this in the lab with a random continuation rule, and higher continuation probability produced significantly more cooperation as the theory predicts. The deviation runs in a generous direction. In finite games with a known ending, real people keep cooperating well past the round where the theorem says they should stop.',
+    a: 'Closely, and not perfectly. Pedro Dal Bó tested this in the lab with a random continuation rule, and higher continuation probability produced significantly more cooperation as the theory predicts. The deviation runs in a generous direction. In finite games with a known ending, real people keep cooperating well past the round where the theorem says they should stop.',
   },
 ]

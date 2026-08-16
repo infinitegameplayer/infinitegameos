@@ -955,7 +955,7 @@ Take away the known final round and the mathematics reverses. Cooperation become
 
 The mechanism is plain. When the remaining future is long enough, and the players weigh it heavily enough, what gets lost by taking exceeds what gets gained. Economists call that weight the shadow of the future.
 
-Pedro Dal Bo tested it in a laboratory using a random continuation rule, so the games were genuinely open-ended rather than merely long. Higher continuation probability produced significantly more cooperation, tracking the theory closely. Closely rather than exactly, and the deviation runs in a generous direction: in finite games, real people keep cooperating well past the round where the theorem says they should have stopped.
+Pedro Dal Bó tested it in a laboratory using a random continuation rule, so the games were genuinely open-ended rather than merely long. Higher continuation probability produced significantly more cooperation, tracking the theory closely. Closely rather than exactly, and the deviation runs in a generous direction: in finite games, real people keep cooperating well past the round where the theorem says they should have stopped.
 
 ## Three. And the rules never moved
 
