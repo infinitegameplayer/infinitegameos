@@ -14,7 +14,7 @@
     "@supabase/supabase-js": "^2.111.0",
     "geist": "^1.7.0",
     "gray-matter": "^4.0.3",
-    "next": "^16.2.3",
+    "next": "^16.3.3",
     "next-mdx-remote": "^6.0.0",
     "posthog-js": "^1.409.4",
     "react": "19.2.8",
@@ -27,7 +27,7 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.2.12",
+    "eslint-config-next": "^16.3.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   },

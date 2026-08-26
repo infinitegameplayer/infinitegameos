@@ -1,0 +1,63 @@
+name: Live Nets
+
+# The live surface is the only witness. These nets fetch the deployed origin
+# and assert what a human and a crawler actually get. They run on a schedule
+# so drift is caught while nobody is at the desk, and a failure opens one
+# GitHub issue (deduplicated on the live-net label) so the alarm reaches a phone.
+#
+# Born 2026-08-26 from the Site Update pass before a five-week absence.
+# Manual run: gh workflow run live-nets.yml
+
+on:
+  schedule:
+    # Monday and Thursday 13:00 UTC (07:00 Mountain)
+    - cron: '0 13 * * 1,4'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Discoverability baseline against www.infinitegameos.io
+        shell: bash
+        run: |
+          set -o pipefail
+          node scripts/verify-discoverability-baseline.mjs 2>&1 | tee -a nets.log
+
+      - name: Open or update the alarm issue
+        if: failure()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TITLE="Live net failed on www.infinitegameos.io"
+          BODY_FILE=body.md
+          {
+            echo "A scheduled live net failed against www.infinitegameos.io on $(date -u +%Y-%m-%dT%H:%MZ)."
+            echo
+            echo "Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo
+            echo '```'
+            tail -n 80 nets.log
+            echo '```'
+          } > "$BODY_FILE"
+          gh label create live-net --color B60205 --description "A scheduled live net failed" --force >/dev/null 2>&1 || true
+          EXISTING=$(gh issue list --label live-net --state open --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body-file "$BODY_FILE"
+          else
+            gh issue create --title "$TITLE" --label live-net --body-file "$BODY_FILE"
+          fi

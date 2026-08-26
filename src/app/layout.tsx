@@ -147,6 +147,7 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${GeistSans.variable} ${inter.variable}`}
     >
       <head>
+        <link rel="describedby" href="https://www.infinitegameos.io/llms.txt" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
