@@ -182,7 +182,7 @@ export default function InfiniteGamePage() {
               </p>
               <p>
                 Nested within the Infinite Game are finite games: workshops, advisory
-                engagements, publishing deadlines, retreats. SideQuestHQ is the container.
+                engagements, publishing deadlines, Side Quests. SideQuestHQ is the container.
                 Side quests are intentional and bounded. They fund and support the
                 Infinite Game practice.
               </p>

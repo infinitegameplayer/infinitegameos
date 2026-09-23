@@ -310,7 +310,7 @@ export const IGOS_ECOSYSTEM_LANE: IgosEcosystemLink = {
 export const IGOS_ECOSYSTEM_SQHQ: IgosEcosystemLink = {
   label: 'SideQuestHQ',
   description:
-    'Workshops, private advisory, digital products and retreats. The finite games nested in the infinite.',
+    'Workshops, private advisory, digital products and Side Quests. The finite games nested in the infinite.',
   href: 'https://www.sidequesthq.co',
 }
 
