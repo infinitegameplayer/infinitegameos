@@ -385,14 +385,14 @@ export default function AgenticSystemsPage() {
               </p>
               <p>
                 That clarity, before any technical work, is the foundation of everything
-                else. See the{' '}
+                else. The{' '}
                 <Link
-                  href="/playbooks"
+                  href="/concepts"
                   style={{ color: 'var(--color-accent)', textDecoration: 'underline', textDecorationColor: 'rgba(34, 211, 238, 0.3)' }}
                 >
-                  Playbooks
+                  Concepts
                 </Link>{' '}
-                section for concrete frameworks on building that shared vocabulary.
+                hold the shared vocabulary this OS is built on.
               </p>
               <hr />
               <p style={{ fontSize: '0.85rem', color: 'var(--color-muted)', fontStyle: 'italic' }}>

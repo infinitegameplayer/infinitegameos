@@ -10,8 +10,8 @@ const ecosystemLinks = [
     external: true,
   },
   {
-    label: 'SideQuestHQ',
-    sublabel: 'Workshops, advisory and digital products',
+    label: 'Side Quest HQ',
+    sublabel: 'Playbooks, advisory and Side Quests',
     href: 'https://www.sidequesthq.co',
     external: true,
   },
@@ -41,7 +41,6 @@ const siteLinks = [
   { href: '/agentic-systems', label: 'Agentic Systems' },
   { href: '/sovereignty', label: 'Sovereignty' },
   { href: '/accord', label: 'Accord' },
-  { href: '/playbooks', label: 'Playbooks' },
   { href: '/concepts', label: 'Concepts' },
   { href: '/skills', label: 'Skills' },
   { href: '/protocols', label: 'Protocols' },

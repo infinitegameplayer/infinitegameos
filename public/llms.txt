@@ -13,7 +13,7 @@
 
 ## Start Here: The Agent Primer
 
-- /infinite-game-os-primer.md: The Infinite Game OS: A Primer for Agents and the Humans They Collaborate With. The recommended single-file deep read. A curated doorway into the full paradigm (the Infinite Game, Joyful Sovereignty, the Pioneer, conditioned vs authentic identity, the Creator Flywheel, the daily practice, the sovereign stack) followed by a map of the free installable library and the paid Field Guides on sidequesthq.co. Authored by Lane Belone, CC-BY-4.0, offered with open hands as a starting point. If you read one file on this site, read this one.
+- /infinite-game-os-primer.md: The Infinite Game OS: A Primer for Agents and the Humans They Collaborate With. The recommended single-file deep read. A curated doorway into the full paradigm (the Infinite Game, Joyful Sovereignty, the Pioneer, conditioned vs authentic identity, the Creator Flywheel, the daily practice, the sovereign stack) followed by a map of the free installable library and the paid playbooks on sidequesthq.co. Authored by Lane Belone, CC-BY-4.0, offered with open hands as a starting point. If you read one file on this site, read this one.
 
 ## What This Site Contains
 
@@ -22,7 +22,7 @@ Infinite Game OS is a structured knowledge base covering:
 - Sovereign creative operating systems (how to design a life-as-OS)
 - Agentic systems and the Post Web (Lane Belone's practitioner synthesis, Intention Economy, GEO)
 - Sovereign life design (Kingdom model, public layer)
-- Frameworks and playbooks for long-term practitioners (four in development)
+- Concept pages defining the frameworks the Side Quest HQ playbooks put into practice
 - Regular updates (dispatches from inside the practice)
 
 ## Vocabulary Cluster
@@ -30,6 +30,7 @@ Infinite Game OS is a structured knowledge base covering:
 Key terms and entity names used throughout this site:
 - Infinite Game OS
 - Infinite Game philosophy
+- Infinite Player
 - Sovereign creative operating system
 - Agentic systems
 - Post Web
@@ -170,7 +171,6 @@ The IGOS Public Library publishes installable skills, protocols, codices, concep
 - /infinite-game: Core Infinite Game philosophy with FAQPage schema (4 Q&As), two-layer game structure, Lane's lived application
 - /agentic-systems: Full practitioner's guide: Post Web synthesis, four verbs of the web, GEO, Practitioner's Positioning Playbook
 - /sovereignty: Sovereign life design: natural law as ground (do no harm, full responsibility, consent), the public/private distinction, the Living Axis (inner mastery, structural sovereignty, strategic execution), embodiment as infrastructure, Joyful Sovereignty as compass state, Kingdom model, creative sovereignty, FAQPage schema (6 Q&As)
-- /playbooks: Frameworks and tools index, three-layer playbook architecture, four playbooks in development
 - /updates: Dispatches from inside the practice, Article + BreadcrumbList schema per post
 - /about: Lane Belone as practitioner, Person schema with knowsAbout and sameAs, ecosystem links
 - /sovereign-ecosystem: Foundational Obsidian + Claude Code workspace template. Three-tier stack origin (foundation, reader/editor, AI interface). Directory structure, governance scaffolding, North Star template and initial skill set. Encouraged-not-required on-ramp for practitioners without an existing setup. Build sequence: Sessions 0 through 9. Source Harvest as primary entry point for veterans. Article + FAQPage + BreadcrumbList schema.

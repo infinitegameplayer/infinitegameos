@@ -13,7 +13,6 @@ src/app/
   infinite-game/page.tsx      Core Infinite Game philosophy
   agentic-systems/page.tsx    Post Web synthesis, GEO definition inline
   sovereignty/page.tsx        Sovereign life design (public layer of Kingdom model)
-  playbooks/page.tsx          Frameworks index: brief descriptions, individual pages added as content builds
   updates/page.tsx            Dynamic content index (bi-monthly steady-state cadence)
   updates/[slug]/page.tsx     Individual update posts: Article + BreadcrumbList schema
   concepts/page.tsx            Concepts index: DefinedTermSet schema, card grid

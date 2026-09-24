@@ -45,7 +45,7 @@ const articleSchema = {
   url: 'https://www.infinitegameos.io/infinite-game',
   mainEntityOfPage: 'https://www.infinitegameos.io/infinite-game',
   datePublished: '2026-04-14',
-  dateModified: '2026-04-21',
+  dateModified: '2026-09-24',
 }
 
 const breadcrumbSchema = {
@@ -156,6 +156,27 @@ export default function InfiniteGamePage() {
               </p>
             </SectionReveal>
 
+            <SectionReveal delay={110}>
+              <h2>The Infinite Player</h2>
+              <p>
+                The one who plays the Infinite Game is the Infinite Player. A role, a
+                title or a skill set is a character worn for a season, the way a jacket
+                is worn. The player wearing it is the constant, and the player remains
+                when a defining game ends.
+              </p>
+              <p>
+                The Infinite Player notices that every game was designed by someone, on
+                purpose or by inheritance, and takes up the design of the next one. Under
+                every outer game, the deliverable, the metric, the quarter, runs a game
+                within the game. The Infinite Player keeps that inner game alive through
+                practice, so the outer one stays worth playing.
+              </p>
+              <p>
+                This is the shift the whole OS serves: from being played by an inherited
+                game to authoring your own.
+              </p>
+            </SectionReveal>
+
             <SectionReveal delay={140}>
               <h2>How Lane applies it</h2>
               <p>
@@ -182,7 +203,7 @@ export default function InfiniteGamePage() {
               </p>
               <p>
                 Nested within the Infinite Game are finite games: workshops, advisory
-                engagements, publishing deadlines, Side Quests. SideQuestHQ is the container.
+                engagements, publishing deadlines, Side Quests. Side Quest HQ is the container.
                 Side quests are intentional and bounded. They fund and support the
                 Infinite Game practice.
               </p>
@@ -258,8 +279,8 @@ export default function InfiniteGamePage() {
               <Link href="/sovereignty" className="btn-soft-accent">
                 Sovereignty
               </Link>
-              <Link href="/playbooks" className="btn-outline">
-                Playbooks
+              <Link href="/concepts" className="btn-outline">
+                Concepts
               </Link>
             </div>
           </SectionReveal>

@@ -118,6 +118,13 @@ a side quest are all finite games. They have fixed rules, agreed-upon players, a
 defined endpoint. Life, creative practice, relationships and meaningful work are all
 expressions of the Infinite Game. No endpoint, no final score, no single winner.
 
+The Infinite Player is the one who plays the Infinite Game. A role, a title or a
+skill set is a character worn for a season. The player wearing it is the constant
+and remains when a defining game ends. The Infinite Player notices that every game
+was designed by someone, on purpose or by inheritance, and takes up the design of
+the next one. Under every outer game runs a game within the game, kept alive through
+practice.
+
 Lane's application runs through three movements of embodiment (thinking, acting,
 embodying), the musician's arc where scales become invisible leaving only the play.
 Joyful Sovereignty is the orientation: the sovereign choice to welcome alive energy
@@ -126,7 +133,7 @@ Following Aliveness is how the Infinite Game keeps playing. Following the condit
 script is finite-game strategy mistaken for living.
 
 The Kingdom (Lane's digital sovereign operating system) is one wing of a three-plane
-life: subconscious, digital, physical. SideQuestHQ houses the finite games (workshops,
+life: subconscious, digital, physical. Side Quest HQ houses the finite games (workshops,
 advisory, side quests) nested within the Infinite Game.
 
 The Post Web connection: the Attention Economy ran on finite-game logic (maximize
@@ -206,24 +213,6 @@ Creative sovereignty: making creative work from genuine authority rather than
 compliance. Practitioners most findable in the Post Web era have built this kind of
 creative sovereignty, consistent vocabulary because thinking is integrated, connected
 frameworks because they come from a coherent philosophical center.
-
----
-
-## Playbooks (/playbooks)
-
-Frameworks and tools index. BreadcrumbList schema.
-
-Design philosophy draws from three traditions: sports mastery (quarterback studies
-playbook until he can call audibles), jazz (lead sheet skeleton, player improvises),
-game design (the meta is a living playbook shaped by community).
-
-Three-layer architecture: initiatory (shared foundation), role (make it yours),
-living compendium (built over time through experimentation).
-
-These frameworks are concrete tools built from inside the practice. Each one will
-have its own page with the full rationale and usage guide as the OS builds out.
-Playbooks ship as they are built. The Updates section documents what is being
-developed and released.
 
 ---
 
@@ -481,7 +470,7 @@ Sovereign Capture is the practice of holding what wants to arrive without losing
 
 ## The Contemplative Question Practice (/concepts/contemplative-question-practice)
 
-The Contemplative Question Practice is the move productivity AI cannot make. You hold one precise question before you open the prompt window and let it work on you across a week of sessions rather than rushing to resolve it. The Tuesday-morning interior names the condition: three hours of competent AI output and a quiet pocket of off-ness behind the sternum, the sense of being competent at something you did not decide to want. Productivity AI cannot hold the question of whose game you are playing because its value proposition assumes you already know. The practice points AI at reflection rather than output. A mirror prompt asks the AI to show you your own thinking instead of replacing it, with the limits honored. Paired with a personal manifesto the AI can reference, decisions that used to bounce around resolve in seconds because the question and the manifesto already answered. Aliveness is the compass the practice keeps returning to. When a session produces simplicity, spaciousness and calm authority, it is on the path. The practitioner artifact is the Whose Game Are You Playing with AI? Field Guide on Side Quest HQ, which installs the practice as seven Moves. Related: Conditioned vs Authentic Identity, The North Star, Joyful Sovereignty, The Infinite Playlist.
+The Contemplative Question Practice is the move productivity AI cannot make. You hold one precise question before you open the prompt window and let it work on you across a week of sessions rather than rushing to resolve it. The Tuesday-morning interior names the condition: three hours of competent AI output and a quiet pocket of off-ness behind the sternum, the sense of being competent at something you did not decide to want. Productivity AI cannot hold the question of whose game you are playing because its value proposition assumes you already know. The practice points AI at reflection rather than output. A mirror prompt asks the AI to show you your own thinking instead of replacing it, with the limits honored. Paired with a personal manifesto the AI can reference, decisions that used to bounce around resolve in seconds because the question and the manifesto already answered. Aliveness is the compass the practice keeps returning to. When a session produces simplicity, spaciousness and calm authority, it is on the path. The practitioner artifact is the Sovereign Life Playbook on Side Quest HQ, which starts from the same question: whether this is the right game at all. Related: Conditioned vs Authentic Identity, The North Star, Joyful Sovereignty, The Infinite Playlist.
 
 ---
 
@@ -749,7 +738,7 @@ Twenty concept-connector reference-register articles shipped 2026-05-19 as one w
 
 ### /updates/what-is-the-infinite-game
 
-Founding article. The Infinite Game is the way of playing life where the goal is to keep the game going, not to win it. Carse philosophy (1986), Sinek corporate frame (2019), Infinite Game OS lived practice. Finite games nested as Side Quests inside the larger Infinite Game. Joyful Sovereignty as orientation, Aliveness as compass, Three Movements of Embodiment as practice, the Pioneer as archetype, play and Side Quests as daily texture.
+Founding article. The Infinite Game is the way of playing life where the goal is to keep the game going, not to win it. Carse philosophy (1986), Sinek corporate frame (2019), Infinite Game OS lived practice. Finite games nested as Side Quests inside the larger Infinite Game. Joyful Sovereignty as orientation, Aliveness as compass, Three Movements of Embodiment as practice, the Infinite Player as the one who plays it, the Pioneer as archetype, play and Side Quests as daily texture.
 
 ### /updates/infinite-game-os-architecture
 

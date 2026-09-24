@@ -313,11 +313,17 @@ export default async function ConceptPage({ params }: PageProps) {
           {concept.productCard && (
             <SectionReveal delay={concept.sections.length * 80}>
               <div
-                className="shimmer-card"
-                style={{
-                  marginTop: '3rem',
-                  padding: '2rem',
-                }}
+                className={concept.productCard.quiet ? undefined : 'shimmer-card'}
+                style={
+                  concept.productCard.quiet
+                    ? {
+                        marginTop: '1.5rem',
+                        padding: '1.75rem 2rem',
+                        border: '1px solid var(--color-border)',
+                        borderRadius: '12px',
+                      }
+                    : { marginTop: '3rem', padding: '2rem' }
+                }
               >
                 <p
                   style={{
@@ -331,7 +337,10 @@ export default async function ConceptPage({ params }: PageProps) {
                 >
                   {concept.productCard.body}
                 </p>
-                <a href={concept.productCard.ctaHref} className="btn-accent">
+                <a
+                  href={concept.productCard.ctaHref}
+                  className={concept.productCard.quiet ? 'btn-outline' : 'btn-accent'}
+                >
                   {concept.productCard.ctaLabel}
                 </a>
               </div>

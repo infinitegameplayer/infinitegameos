@@ -292,18 +292,17 @@ export default function PlayYourOwnGamePage() {
                   marginBottom: '1.5rem',
                 }}
               >
-                AI for the Business You Actually Want is the operator-side companion
-                to Playing Your Own Game. The Pioneer audits the game. The Field Guide
-                installs the protection that keeps the work from drifting back into
-                someone else&apos;s voice. Seven Moves. Voice protection, pace-layer
-                awareness and decision discipline for the owner using AI without
-                losing themselves to it.
+                The Sovereign Life Playbook is the full practice behind this audit. It
+                is written for the person who built a real life and senses the script
+                is wrong. Chapter 1 maps the identity you inherited. Chapter 2 finds the one
+                that is yours, and the chapters after it design the day, the month and
+                the domains of a life built from it.
               </p>
               <a
-                href="https://www.sidequesthq.co/products/ai-for-the-business-you-actually-want"
+                href="https://www.sidequesthq.co/products/sovereign-life-playbook"
                 className="btn-accent"
               >
-                AI for the Business You Actually Want · $9
+                Sovereign Life Playbook · $37
               </a>
             </div>
           </SectionReveal>

@@ -77,7 +77,8 @@ export default function HomePage() {
             top: '30%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            width: '600px',
+            // Capped at the section width so the glow never widens a phone screen.
+            width: 'min(600px, 100%)',
             height: '400px',
             borderRadius: '50%',
             background: 'radial-gradient(ellipse, rgba(34, 211, 238, 0.06) 0%, transparent 70%)',

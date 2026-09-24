@@ -66,14 +66,6 @@ export const IGOS_MOD_SOVEREIGNTY: IgosMod = {
     'Building a life as an operating system. Kingdom model, creative sovereignty and long-horizon architecture.',
 }
 
-export const IGOS_MOD_PLAYBOOKS: IgosMod = {
-  href: '/playbooks',
-  label: 'Playbooks',
-  title: 'Frameworks and tools',
-  description:
-    'Practical frameworks for long-term thinking, sovereign systems and agentic life design.',
-}
-
 export const IGOS_MOD_SKILLS: IgosMod = {
   href: '/skills',
   label: 'Skills',
@@ -111,7 +103,6 @@ export const igosMods: IgosMod[] = [
   IGOS_MOD_INFINITE_GAME,
   IGOS_MOD_AGENTIC_SYSTEMS,
   IGOS_MOD_SOVEREIGNTY,
-  IGOS_MOD_PLAYBOOKS,
   IGOS_MOD_SKILLS,
   IGOS_MOD_BUNDLES,
   IGOS_MOD_SOVEREIGN_ECOSYSTEM,
@@ -308,9 +299,9 @@ export const IGOS_ECOSYSTEM_LANE: IgosEcosystemLink = {
 }
 
 export const IGOS_ECOSYSTEM_SQHQ: IgosEcosystemLink = {
-  label: 'SideQuestHQ',
+  label: 'Side Quest HQ',
   description:
-    'Workshops, private advisory, digital products and Side Quests. The finite games nested in the infinite.',
+    'Playbooks, advisory and Side Quests. The finite games nested in the infinite.',
   href: 'https://www.sidequesthq.co',
 }
 

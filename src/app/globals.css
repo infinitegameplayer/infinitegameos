@@ -308,7 +308,9 @@ code {
   color: var(--color-accent);
   padding: 0.1em 0.4em;
   border-radius: 4px;
-  white-space: nowrap;
+  /* Short tokens stay whole. A long path or URL breaks rather than pushing
+     the page wider than a phone. pre code restores pre below. */
+  overflow-wrap: anywhere;
 }
 pre code {
   background: transparent;

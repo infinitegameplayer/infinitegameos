@@ -517,8 +517,8 @@ export default function SovereigntyPage() {
               <Link href="/concepts/joyful-sovereignty" className="btn-outline">
                 Joyful Sovereignty
               </Link>
-              <Link href="/playbooks" className="btn-outline">
-                Playbooks
+              <Link href="/concepts" className="btn-outline">
+                Concepts
               </Link>
             </div>
           </SectionReveal>

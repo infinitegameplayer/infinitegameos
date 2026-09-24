@@ -27,6 +27,13 @@ const nextConfig: NextConfig = {
         destination: '/concepts',
         permanent: true,
       },
+      // The Playbooks stub retired 2026-09-24 (ruling 9). The Playbooks are sold
+      // on Side Quest HQ, so the word lands where they live.
+      {
+        source: '/playbooks',
+        destination: 'https://www.sidequesthq.co/products',
+        permanent: true,
+      },
     ]
   },
   async rewrites() {

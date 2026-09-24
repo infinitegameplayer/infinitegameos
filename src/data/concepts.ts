@@ -7,6 +7,9 @@ export interface ConceptProductCard {
   body: string
   ctaHref: string
   ctaLabel: string
+  // quiet: a tertiary pairing (a Field Guide kept where it is the only exact
+  // home). Renders below the free door as a plain card with an outline button.
+  quiet?: boolean
 }
 
 // pathBridge: an above-the-fold onward path rendered directly under the header,
@@ -51,9 +54,9 @@ export interface Concept {
   relatedUpdateSlugs?: string[]
   ctaLinks: { href: string; label: string; variant: 'accent' | 'outline' }[]
   productCard?: ConceptProductCard
-  // Cross-property connective callout to the free Creator Flywheel Starter Kit
-  // (SQHQ lead magnet). Rendered as a visible accent-anchored block, distinct
-  // from productCard so a concept can carry both a paid pairing and the free on-ramp.
+  // Cross-property connective callout to One Alive Thing, the free door on
+  // Side Quest HQ. Rendered as a visible accent-anchored block above productCard,
+  // so a concept can carry both the free on-ramp and a paid pairing.
   kitCallout?: ConceptProductCard
   // pathBridge: opt-in above-the-fold onward path. See ConceptPathBridge.
   pathBridge?: ConceptPathBridge
@@ -148,15 +151,15 @@ export const concepts: Concept[] = [
     ],
     // Paid pairing swapped to the Creator Flywheel Playbook at its launch
     // (2026-06-11). The flywheel concept now has its own install layer.
-    productCard: {
-      body: 'The Creator Flywheel Playbook is the install layer for this concept. The flywheel describes the engine. The Playbook builds it: the anatomy every working flywheel shares, the install sequence, the Three Laws that make each rotation smoother and more generative than the last, the maintenance layer that reads a stall before the numbers drop and your AI running the whole system with you. Nine files including the AI Companion File and The Flywheel Codices.',
-      ctaHref: 'https://www.sidequesthq.co/products/creator-flywheel-playbook',
-      ctaLabel: 'Creator Flywheel Playbook · $77',
-    },
     kitCallout: {
       body: 'Want to feel one rotation before you read the architecture? One Alive Thing is a free guided hour. You make one small real thing from what\'s alive in you, and feel the loop turn once.',
       ctaHref: 'https://www.sidequesthq.co/one-alive-thing',
       ctaLabel: 'Try One Alive Thing · free',
+    },
+    productCard: {
+      body: 'The Creator Flywheel Playbook is the install layer for this concept. The flywheel describes the engine. The Playbook builds it: the anatomy every working flywheel shares, the install sequence, the Three Laws that make each rotation smoother and more generative than the last, the maintenance layer that reads a stall before the numbers drop and your AI running the whole system with you.',
+      ctaHref: 'https://www.sidequesthq.co/products/creator-flywheel-playbook',
+      ctaLabel: 'Creator Flywheel Playbook · $77',
     },
   },
   {
@@ -225,9 +228,9 @@ export const concepts: Concept[] = [
       { href: '/play-your-own-game', label: 'Play Your Own Game', variant: 'outline' },
     ],
     productCard: {
-      body: 'Yours to Make is the Field Guide for the Pioneer building their own path with AI in the room. The voice-drift texture named. Curiosity as the invisible thread. The collaborator brief that re-roles AI from generator to co-player. The work stays undeniably yours because a clearer self walks into the room where AI operates.',
-      ctaHref: 'https://www.sidequesthq.co/products/yours-to-make',
-      ctaLabel: 'Yours to Make · $9',
+      body: 'The Sovereign Life Playbook is written for the Pioneer: the person who built a real life and feels something still off. Chapters 1 and 2 separate the identity you inherited from the one that is yours. The chapters after them design the day, the month and the domains of a life built from the second one.',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'Sovereign Life Playbook · $37',
     },
   },
   {
@@ -291,6 +294,11 @@ export const concepts: Concept[] = [
       { href: '/infinite-game', label: 'Infinite Game', variant: 'outline' },
       { href: '/play-your-own-game', label: 'Play Your Own Game', variant: 'outline' },
     ],
+    kitCallout: {
+      body: 'Want to feel the compass state once? One Alive Thing is a free guided hour. You find where you are already alive, follow what pulls and make one small real thing from it before the hour is up.',
+      ctaHref: 'https://www.sidequesthq.co/one-alive-thing',
+      ctaLabel: 'Try One Alive Thing · free',
+    },
   },
   {
     slug: 'conditioned-vs-authentic-identity',
@@ -359,9 +367,9 @@ export const concepts: Concept[] = [
       { href: '/concepts/joyful-sovereignty', label: 'Joyful Sovereignty', variant: 'outline' },
     ],
     productCard: {
-      body: 'Whose Game Are You Playing with AI? is the practice companion to this distinction. The conditioned identity runs the prompts on autopilot and takes the averaged answer. The authentic one asks whose game the output serves. The Field Guide installs AI as a mirror with limits. The mirror prompt. The reframe that returns you to your own knowing instead of the conditioned default.',
-      ctaHref: 'https://www.sidequesthq.co/products/whose-game-are-you-playing-with-ai',
-      ctaLabel: 'Whose Game Are You Playing with AI? · $9',
+      body: 'The Sovereign Life Playbook opens on this distinction. Chapter 1 maps the identity you inherited. Chapter 2 finds the one underneath it. The exercises that follow carry the seeing into how you design your day, your month and your domains.',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'Sovereign Life Playbook · $37',
     },
   },
   {
@@ -430,15 +438,15 @@ export const concepts: Concept[] = [
       { href: '/sovereignty', label: 'Sovereignty', variant: 'outline' },
       { href: '/design-your-day', label: 'Design Your Day', variant: 'outline' },
     ],
-    productCard: {
-      body: 'Stack Calm is the tool-layer companion to the Ideal Month. The month sets the structure. The Field Guide installs the aliveness filter that decides which tools belong inside it. Personal stack ledger. Quarterly review. New-tool test before any subscription joins. The Ideal Month becomes the architecture. Stack Calm keeps the architecture clear.',
-      ctaHref: 'https://www.sidequesthq.co/products/stack-calm',
-      ctaLabel: 'Stack Calm · $9',
-    },
     kitCallout: {
       body: 'Want to feel what an alive month is built from? One Alive Thing is a free guided hour. You find what\'s pulling at you, make one small real thing from it, and feel the shift on the far side of starting.',
       ctaHref: 'https://www.sidequesthq.co/one-alive-thing',
       ctaLabel: 'Try One Alive Thing · free',
+    },
+    productCard: {
+      body: 'The Sovereign Life Playbook gives the Ideal Month its own chapter, the sixth, and ships the Ideal Month Calendar to build it on. The chapters before it work at the scale of a single day, so the month arrives as the same design drawn larger.',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'Sovereign Life Playbook · $37',
     },
   },
   {
@@ -517,7 +525,7 @@ export const concepts: Concept[] = [
     productCard: {
       body: 'The Sovereign Life Playbook is where the Playgrounds of Exploration become the architecture of your day. Chapter 4 is dedicated to this practice: mapping your current Playgrounds, designing intentional ones, building the day from aliveness rather than obligation.',
       ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'Explore the Playbook',
+      ctaLabel: 'Sovereign Life Playbook · $37',
     },
   },
   {
@@ -595,7 +603,7 @@ export const concepts: Concept[] = [
     productCard: {
       body: 'The Sovereign Life Playbook is where the Infinite Playlist becomes a daily posture. Chapter 5 is dedicated to this practice: how to hold your Playgrounds loosely enough that life can play through them, how to maintain the opening that lets the unexpected arrive.',
       ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'Explore the Playbook',
+      ctaLabel: 'Sovereign Life Playbook · $37',
     },
   },
   {
@@ -682,9 +690,9 @@ export const concepts: Concept[] = [
       { href: '/sovereignty', label: 'Sovereign Life Design', variant: 'outline' },
     ],
     productCard: {
-      body: 'Sovereign Capture is the practice that operationalizes data sovereignty day to day. Files local and yours. A five-step capture flow that keeps the loop on your machine. The Field Guide installs the practice so the foundation you own gets used, not just admired.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-capture',
-      ctaLabel: 'Sovereign Capture · $7',
+      body: 'The Sovereign Ecosystem is the free workspace template that puts this into practice: your files on your own machine from the first day, with AI reading and writing them on your terms.',
+      ctaHref: '/sovereign-ecosystem',
+      ctaLabel: 'The Sovereign Ecosystem · free',
     },
   },
   {
@@ -771,6 +779,11 @@ export const concepts: Concept[] = [
       ctaHref: 'https://www.sidequesthq.co/one-alive-thing',
       ctaLabel: 'Try One Alive Thing · free',
     },
+    productCard: {
+      body: 'The Alive Business builds the North Star into a working document the business consults. System 5 holds it across three horizons, from the daily creative work out to the decade, beside the Anti-Vision that names what the business refuses to become.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'The Alive Business · $197',
+    },
   },
   {
     slug: 'ai-second-brain',
@@ -786,7 +799,7 @@ export const concepts: Concept[] = [
       links: [
         { href: '/concepts/data-sovereignty', label: 'Data Sovereignty', note: 'the foundation underneath it' },
         { href: '/updates/how-to-build-an-ai-second-brain', label: 'How to build an AI Second Brain', note: 'the step-by-step' },
-        { href: 'https://www.sidequesthq.co/products/sovereign-capture', label: 'Sovereign Capture', note: 'the Field Guide that installs the practice' },
+        { href: '/sovereign-ecosystem', label: 'The Sovereign Ecosystem', note: 'the free workspace the loop runs in' },
       ],
     },
     sections: [
@@ -867,9 +880,9 @@ export const concepts: Concept[] = [
       { href: '/sovereign-ecosystem', label: 'The Sovereign Ecosystem', variant: 'outline' },
     ],
     productCard: {
-      body: 'Sovereign Capture is the practice companion to the AI Second Brain. The framework names the loop. The Field Guide installs the part most operators skip: presence as the practice. The five-step capture flow. Capture, tag, surface, release, trust. The release is where most stall. The trust is the move that compounds. Your week stops happening to you because the architecture is holding it.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-capture',
-      ctaLabel: 'Sovereign Capture · $7',
+      body: 'The Sovereign Ecosystem is the free workspace template this loop runs in: Obsidian holding your files on your own machine, with AI working over them on your terms.',
+      ctaHref: '/sovereign-ecosystem',
+      ctaLabel: 'The Sovereign Ecosystem · free',
     },
   },
   {
@@ -884,9 +897,9 @@ export const concepts: Concept[] = [
     pathBridge: {
       label: 'Where this leads',
       links: [
-        { href: 'https://www.sidequesthq.co/products/sovereign-capture', label: 'Sovereign Capture', note: 'the $7 Field Guide that installs the practice' },
         { href: '/concepts/ai-second-brain', label: 'The AI Second Brain', note: 'the framework it serves' },
         { href: '/concepts/data-sovereignty', label: 'Data Sovereignty', note: 'the foundation underneath it' },
+        { href: 'https://www.sidequesthq.co/products/sovereign-capture', label: 'Sovereign Capture', note: 'the $7 Field Guide that installs the practice' },
       ],
     },
     sections: [
@@ -947,10 +960,16 @@ export const concepts: Concept[] = [
       { href: '/concepts/ai-second-brain', label: 'The AI Second Brain', variant: 'accent' },
       { href: '/concepts/data-sovereignty', label: 'Data Sovereignty', variant: 'outline' },
     ],
+    kitCallout: {
+      body: 'Want to hold one idea all the way through? One Alive Thing is a free guided hour. You notice what is pulling at you, choose one small piece of it and make it real before the hour is up.',
+      ctaHref: 'https://www.sidequesthq.co/one-alive-thing',
+      ctaLabel: 'Try One Alive Thing · free',
+    },
     productCard: {
-      body: 'Sovereign Capture the Field Guide installs this practice as seven Moves you drop into your week. Body as the first container. The five-step flow in your tool of choice. The weekly sift your AI walks you through. The capture stays in your hands so presence stays the practice.',
+      body: 'Sovereign Capture the Field Guide installs this practice as Moves you drop into your week. Body as the first container. The five-step flow in your tool of choice. The weekly sift your AI walks you through. The capture stays in your hands so presence stays the practice.',
       ctaHref: 'https://www.sidequesthq.co/products/sovereign-capture',
-      ctaLabel: 'Start With Sovereign Capture · $7',
+      ctaLabel: 'Sovereign Capture · $7',
+      quiet: true,
     },
   },
   {
@@ -1016,9 +1035,9 @@ export const concepts: Concept[] = [
       { href: '/concepts/the-north-star', label: 'The North Star', variant: 'outline' },
     ],
     productCard: {
-      body: 'Whose Game Are You Playing with AI? is the Field Guide that installs this practice as seven Moves. The paradigm question productivity AI cannot ask. The three-paragraph manifesto template. AI as mirror with the mirror prompt. The contemplative question practice as a returning rhythm. The reading is the on-ramp. The Move is the point.',
-      ctaHref: 'https://www.sidequesthq.co/products/whose-game-are-you-playing-with-ai',
-      ctaLabel: 'The P1 Field Guide · $9',
+      body: 'The Sovereign Life Playbook starts from the same question. Most material optimizes the game you are already playing. This one asks whether it is the right game, then carries the answer through your identity, your day and your month.',
+      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
+      ctaLabel: 'Sovereign Life Playbook · $37',
     },
   },
   {
@@ -1100,15 +1119,15 @@ export const concepts: Concept[] = [
       { href: '/concepts/artful-intelligence', label: 'Artful Intelligence', variant: 'outline' },
       { href: '/concepts/creator-flywheel', label: 'The Creator Flywheel', variant: 'outline' },
     ],
-    productCard: {
-      body: 'The Alive Business is the operating system for exactly this posture: AI as the engine, the human at the center. Eleven systems across three turns, the governance your AI holds and the instruments that keep it running lean. It is the structure you build while access is generous and run light on the far side. Ten files including the AI Companion File, the Governance Scaffold and the Foundation Audit.',
-      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
-      ctaLabel: 'The Alive Business · $197',
-    },
     kitCallout: {
       body: 'Want to feel the complemented way of working before you read the strategy? One Alive Thing is a free guided hour. You make one small real thing from what is alive in you, with AI holding the draining parts.',
       ctaHref: 'https://www.sidequesthq.co/one-alive-thing',
       ctaLabel: 'Try One Alive Thing · free',
+    },
+    productCard: {
+      body: 'The Alive Business is the operating system for exactly this posture: AI as the engine, the human at the center. The governance your AI holds and the instruments that keep it running lean. It is the structure you build while access is generous and run light on the far side.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'The Alive Business · $197',
     },
   },
   {
@@ -1189,15 +1208,15 @@ export const concepts: Concept[] = [
       { href: '/concepts/conditioned-vs-authentic-identity', label: 'Conditioned vs Authentic Identity', variant: 'outline' },
       { href: '/concepts/ai-first-vs-ai-complemented', label: 'AI-First vs AI-Complemented', variant: 'outline' },
     ],
-    productCard: {
-      body: 'The Alive Business carries this idea as one of its eleven systems, the Artist-Entrepreneur. The artist inside the operator, the creating you do for its own sake and the AI that holds the draining work so your creative force stays free. It is the operating system for a business with the human at the center and AI as the engine. Ten files including the AI Companion File.',
-      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
-      ctaLabel: 'The Alive Business · $197',
-    },
     kitCallout: {
       body: 'Want to feel the collaboration once before you read about it? One Alive Thing is a free guided hour. You make one small real thing from what is alive in you, and let AI hold the draining parts while you stay the source.',
       ctaHref: 'https://www.sidequesthq.co/one-alive-thing',
       ctaLabel: 'Try One Alive Thing · free',
+    },
+    productCard: {
+      body: 'The Alive Business carries this idea as a whole system, the Artist-Entrepreneur. The artist inside the operator, the creating you do for its own sake and the AI that holds the draining work so your creative force stays free. It is the operating system for a business with the human at the center and AI as the engine.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'The Alive Business · $197',
     },
   },
   {
@@ -1272,10 +1291,16 @@ export const concepts: Concept[] = [
       { href: '/concepts/ai-is-a-mirror-not-an-engine', label: 'AI Is a Mirror, Not an Engine', variant: 'outline' },
       { href: '/concepts/ai-first-vs-ai-complemented', label: 'AI-First vs AI-Complemented', variant: 'outline' },
     ],
+    kitCallout: {
+      body: 'Want to hear your own voice before you protect it? One Alive Thing is a free guided hour. You make one small real thing from what is alive in you, pen and paper, in your own words before any model weighs in.',
+      ctaHref: 'https://www.sidequesthq.co/one-alive-thing',
+      ctaLabel: 'Try One Alive Thing · free',
+    },
     productCard: {
-      body: 'AI for the Business You Actually Want is the Field Guide that turns this into practice as seven Moves, including the voice brief: naming what you sound like precisely enough to hold every AI collaboration to it. The reading is the on-ramp. The Move is the point.',
+      body: 'AI for the Business You Actually Want is the Field Guide that turns this into practice, including the voice brief: naming what you sound like precisely enough to hold every AI collaboration to it. The reading is the on-ramp. The Move is the point.',
       ctaHref: 'https://www.sidequesthq.co/products/ai-for-the-business-you-actually-want',
-      ctaLabel: 'The B1 Field Guide · $9',
+      ctaLabel: 'AI for the Business You Actually Want · $9',
+      quiet: true,
     },
   },
   {
@@ -1350,10 +1375,16 @@ export const concepts: Concept[] = [
       { href: '/concepts/voice-is-the-moat', label: 'Voice Is the Moat', variant: 'outline' },
       { href: '/concepts/contemplative-question-practice', label: 'The Contemplative Question Practice', variant: 'outline' },
     ],
+    kitCallout: {
+      body: 'Want to feel where the light comes from? One Alive Thing is a free guided hour. You notice what is alive in you, follow what pulls and make one small real thing from it, pen and paper, before any reflection comes back.',
+      ctaHref: 'https://www.sidequesthq.co/one-alive-thing',
+      ctaLabel: 'Try One Alive Thing · free',
+    },
     productCard: {
-      body: 'Whose Game Are You Playing with AI? is the Field Guide that installs this stance as seven Moves, including the mirror prompt and the custom instruction that holds the reflection posture across every session. The reading is the on-ramp. The Move is the point.',
+      body: 'Whose Game Are You Playing with AI? is the Field Guide that installs this stance, including the mirror prompt and the custom instruction that holds the reflection posture across every session. The reading is the on-ramp. The Move is the point.',
       ctaHref: 'https://www.sidequesthq.co/products/whose-game-are-you-playing-with-ai',
-      ctaLabel: 'The P1 Field Guide · $9',
+      ctaLabel: 'Whose Game Are You Playing with AI? · $9',
+      quiet: true,
     },
   },
   {
@@ -1429,9 +1460,9 @@ export const concepts: Concept[] = [
       { href: '/concepts/voice-is-the-moat', label: 'Voice Is the Moat', variant: 'outline' },
     ],
     productCard: {
-      body: 'Yours to Make is the Field Guide for the maker who feels the voice drifting toward generic. It installs this stance as seven Moves, including the apprentice brief that holds AI in the supporting seat across every session. The reading is the on-ramp. The Move is the point.',
-      ctaHref: 'https://www.sidequesthq.co/products/yours-to-make',
-      ctaLabel: 'The P2 Field Guide · $9',
+      body: 'The Alive Business gives this stance a whole system, the Artist-Entrepreneur. The artist stays the source and AI holds the draining work, so the creative force stays free. It is the operating system for a business with the human at the center and AI as the engine.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'The Alive Business · $197',
     },
   },
   {
@@ -1507,9 +1538,9 @@ export const concepts: Concept[] = [
       { href: '/concepts/data-sovereignty', label: 'Data Sovereignty', variant: 'outline' },
     ],
     productCard: {
-      body: 'The Foundation Collection is all six Field Guides as one system, the business axis and the personal axis. Structure is the mechanism running under every one of them: each guide turns a philosophy into Moves you install once and keep. The reading is the on-ramp. The Move is the point.',
-      ctaHref: 'https://www.sidequesthq.co/products/foundation-bundle',
-      ctaLabel: 'The Foundation Collection · $27',
+      body: 'The Alive Business builds this mechanism into the business itself. System 5 writes the refusals down as structure, so the answer holds at the exact moment willpower is least available. The governance your AI holds keeps it running that way when you are not looking.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'The Alive Business · $197',
     },
   },
   {
@@ -1585,9 +1616,9 @@ export const concepts: Concept[] = [
       { href: '/concepts/ideal-month', label: 'The Ideal Month', variant: 'outline' },
     ],
     productCard: {
-      body: 'Earn the Right to Automate is the Field Guide for the operator whose automations kept breaking. It runs on this exact rhythm: prove the move by hand until the reps show it is ready, and only then let a machine hold it. Seven Moves. The reading is the on-ramp. The Move is the point.',
-      ctaHref: 'https://www.sidequesthq.co/products/earn-the-right-to-automate',
-      ctaLabel: 'The B3 Field Guide · $9',
+      body: 'The Creator Flywheel Playbook runs on this rhythm. Chapter 3 sets the rule: no flywheel goes live before one deliberate, observed rotation. You run the loop once at full attention and let what actually happened decide whether the machine runs as designed.',
+      ctaHref: 'https://www.sidequesthq.co/products/creator-flywheel-playbook',
+      ctaLabel: 'Creator Flywheel Playbook · $77',
     },
   },
   {
@@ -1713,6 +1744,11 @@ export const concepts: Concept[] = [
       { href: '/agentic-systems', label: 'Agentic Systems', variant: 'accent' },
       { href: '/sovereign-ecosystem', label: 'The Sovereign Ecosystem', variant: 'outline' },
     ],
+    productCard: {
+      body: 'The Alive Business holds this discipline for the whole business. System 8 checks every claim where it lands rather than at the instrument that reported it: the email, the page, the link, the shipment.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'The Alive Business · $197',
+    },
   },
   // Technology wave, authored 2026-07-24. Three concepts and six paired
   // updates built on W. Brian Arthur's The Nature of Technology (2009).
@@ -2049,6 +2085,11 @@ export const concepts: Concept[] = [
       { href: '/infinite-game', label: 'The Infinite Game', variant: 'accent' },
       { href: '/concepts/playgrounds-of-exploration', label: 'Playgrounds of Exploration', variant: 'outline' },
     ],
+    productCard: {
+      body: 'The Side Quest Playbook is the practice of playing these. A quest is a finite game chosen from curiosity and lived inside the Infinite Game. The chapters walk its whole arc: the doorway, the middle, the clean close and the pause after.',
+      ctaHref: 'https://www.sidequesthq.co/products/side-quest-playbook',
+      ctaLabel: 'Side Quest Playbook · $37',
+    },
   },
   {
     slug: 'the-rules-are-in-play',

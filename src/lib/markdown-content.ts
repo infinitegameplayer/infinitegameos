@@ -23,7 +23,6 @@ import {
 } from './page-data'
 
 const SITE = 'https://www.infinitegameos.io'
-const SLP_HREF = 'https://sidequesthq.co/products/sovereign-life-playbook'
 
 function generateHomeMarkdown(): string {
   const modList = igosMods
@@ -210,6 +209,14 @@ function generateInfiniteGameMarkdown(): string {
 
 > The Infinite Game is any endeavor played to keep playing, not to win. Explore the philosophy, why it matters, and how Lane Belone applies it to sovereign creative life.
 
+## The Infinite Player
+
+The one who plays the Infinite Game is the Infinite Player. A role, a title or a skill set is a character worn for a season, the way a jacket is worn. The player wearing it is the constant, and the player remains when a defining game ends.
+
+The Infinite Player notices that every game was designed by someone, on purpose or by inheritance, and takes up the design of the next one. Under every outer game, the deliverable, the metric, the quarter, runs a game within the game. The Infinite Player keeps that inner game alive through practice, so the outer one stays worth playing.
+
+This is the shift the whole OS serves: from being played by an inherited game to authoring your own.
+
 ## Common Questions
 
 ${faqText}
@@ -246,7 +253,7 @@ For practitioners of the Infinite Game, this is structural advantage. Bodies of 
 
 - [The OS](${SITE}/the-os) · What is Infinite Game OS?
 - [Sovereignty](${SITE}/sovereignty) · Sovereign life design
-- [Playbooks](${SITE}/playbooks) · Practical frameworks
+- [Concepts](${SITE}/concepts) · The shared vocabulary
 
 ---
 *[Infinite Game OS](${SITE}) · [Agentic Systems](${SITE}/agentic-systems)*
@@ -277,27 +284,6 @@ Sovereign life design starts from one premise: you can architect a life with the
 
 ---
 *[Infinite Game OS](${SITE}) · [Sovereignty](${SITE}/sovereignty)*
-`
-}
-
-function generatePlaybooksMarkdown(): string {
-  return `# Playbooks and Frameworks
-
-> Infinite Game playbooks give you enough structure to improvise freely. Practical frameworks for sovereign life design, long-term thinking and agentic systems.
-
-A playbook in this context is structure for improvisation. Enough of a foundation to play from. You learn it to move beyond it.
-
-## Available
-
-- **[Sovereign Life Playbook](${SLP_HREF})** · A framework for peeling away the inherited game and designing what's actually yours. Available now.
-
-## Related
-
-- [The OS](${SITE}/the-os) · What is Infinite Game OS?
-- [Side Quest HQ Products](https://sidequesthq.co/products) · Digital products
-
----
-*[Infinite Game OS](${SITE}) · [Playbooks](${SITE}/playbooks)*
 `
 }
 
@@ -367,6 +353,15 @@ function generateConceptMarkdown(slug: string): string | null {
     .filter(Boolean)
     .join('\n')
 
+  // The bridge: the same free door and product the HTML page carries, each
+  // with its stated reason, so an agent reading the twin sees why it leads there.
+  const abs = (href: string) => (href.startsWith('/') ? `${SITE}${href}` : href)
+  const bridge = [concept.kitCallout, concept.productCard]
+    .filter((c): c is NonNullable<typeof c> => Boolean(c))
+    .map(c => `${c.body}\n\n[${c.ctaLabel}](${abs(c.ctaHref)})`)
+    .join('\n\n')
+  const bridgeBlock = bridge ? `## Where this leads\n\n${bridge}\n\n` : ''
+
   return `# ${concept.title}
 
 > ${concept.capsule.split('.').slice(0, 2).join('.')}.
@@ -377,7 +372,7 @@ ${concept.capsule}
 
 ${sections}
 
-## Related concepts
+${bridgeBlock}## Related concepts
 
 ${related}
 
@@ -1016,7 +1011,6 @@ export function getMarkdownForPath(path: string): string | null {
     case 'infinite-game': return generateInfiniteGameMarkdown()
     case 'agentic-systems': return generateAgenticSystemsMarkdown()
     case 'sovereignty': return generateSovereigntyMarkdown()
-    case 'playbooks': return generatePlaybooksMarkdown()
     case 'about': return generateAboutMarkdown()
     case 'concepts': return generateConceptsIndexMarkdown()
     case 'play-your-own-game': return generatePlayYourOwnGameMarkdown()
@@ -1061,7 +1055,6 @@ export function getAvailablePaths(): string[] {
     'infinite-game-os',
     'agentic-systems',
     'sovereignty',
-    'playbooks',
     'about',
     'concepts',
     'play-your-own-game',
