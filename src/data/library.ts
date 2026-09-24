@@ -169,7 +169,7 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['pattern-harvest', 'plan-challenger', 'systematic-debugging', 'pending-plan-implementation', 'skill-creator', 'researcher', 'website-builder'],
     softHook: {
       body:
-        'Source Harvest is one entry point. The full system it lives inside is The Sovereign Life Playbook. The Playbook gives you the design frame for which patterns are worth extracting in the first place.',
+        'Source Harvest is one entry point. The full system it lives inside is the Sovereign Life Playbook. The Playbook gives you the design frame for which patterns are worth extracting in the first place.',
       ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },
@@ -265,7 +265,7 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['source-harvest', 'plan-challenger', 'skill-creator', 'systematic-debugging'],
     softHook: {
       body:
-        'Pattern Harvest is one entry point. The full system it lives inside is The Sovereign Life Playbook. The Playbook gives you the design frame for which patterns are worth catching in the first place.',
+        'Pattern Harvest is one entry point. The full system it lives inside is the Sovereign Life Playbook. The Playbook gives you the design frame for which patterns are worth catching in the first place.',
       ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'See the Sovereign Life Playbook',
     },

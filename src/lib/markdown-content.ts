@@ -289,7 +289,7 @@ A playbook in this context is structure for improvisation. Enough of a foundatio
 
 ## Available
 
-- **[The Sovereign Life Playbook](${SLP_HREF})** · A framework for peeling away the inherited game and designing what's actually yours. Available now.
+- **[Sovereign Life Playbook](${SLP_HREF})** · A framework for peeling away the inherited game and designing what's actually yours. Available now.
 
 ## Related
 
