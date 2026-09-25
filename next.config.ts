@@ -17,6 +17,19 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // The project's own vercel.app host served the whole site as a duplicate
+      // (Brand Audit Sitting A, 2026-09-25). Exact host only, so preview
+      // deployment URLs still answer. 308, path kept.
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'infinitegameos.vercel.app' }],
+        destination: 'https://www.infinitegameos.io/:path*',
+        permanent: true,
+      },
+      // Two pages answered "what is Infinite Game OS" two ways. Merged into
+      // /the-os (Brand Audit Sitting B, 2026-09-25). Search Console showed no
+      // query for "infinite game os" in three months, so the ruled direction held.
+      { source: '/infinite-game-os', destination: '/the-os', permanent: true },
       {
         source: '/concepts/contribution-flywheel',
         destination: '/concepts/creator-flywheel',

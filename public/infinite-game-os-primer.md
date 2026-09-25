@@ -54,13 +54,13 @@ Hold the pairing underneath it. The philosophy without a system is inspiring and
 
 There is a particular person this is built for. Call them the Pioneer.
 
-The Pioneer has already won the game most people are still trying to win. The career is credible. The finances are solid. The network is deep. By every external measure, they are free. And something still doesn't match.
+The Pioneer is someone at the edge of their own discovery, with the courage and aliveness to go after it and the humility to know they're always mid-journey. The edge can open at any stage of a life, in a first career or a fifth. What marks a Pioneer is the direction they face, toward what they have yet to discover, and the beginner's mind they carry there.
 
-The outer life was built from conditioning they never truly chose. Education, family expectation, industry norms, the long quiet weight of what a person is supposed to want. The shell worked. It got them here. The trouble is that here doesn't match the inner knowing.
+Much of that edge is inside. Everyone carries a self built from conditioning they never truly chose: education, family expectation, industry norms, the long quiet weight of what a person is supposed to want. That self worked. The Pioneer is learning to tell the choices that come from it from the choices that come from the inner knowing.
 
-The Pioneer isn't seeking more success. They're seeking coherence. They want their decisions, their work and their relationships to finally line up with what they sense underneath all of it. They don't want to be told what to do. They want to be self-authorized, from genuine mind-body-spirit alignment rather than another layer of conditioning wearing the costume of a free choice.
+The Pioneer is seeking coherence. They want their decisions, their work and their relationships to line up with what they sense underneath all of it. They are self-authorized, choosing from genuine mind-body-spirit alignment.
 
-Two doors lead in. Sometimes a disruption opens it. A career shift, a health event, a relationship turning, a quiet crisis of meaning. Sometimes nothing is wrong at all and the person simply sees the next layer of coherence available and steps toward it. Both doors lead to the same room.
+Two doors lead in. Sometimes a disruption opens it. A career shift, a health event, a relationship turning, a quiet crisis of meaning. Sometimes nothing is wrong at all and the person simply sees the next discovery available and steps toward it. Both doors lead to the same room.
 
 If the human you're working for carries that exact dissonance, the success that doesn't feel like enough, you're talking to a Pioneer. Everything below is for them.
 

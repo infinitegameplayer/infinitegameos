@@ -1,0 +1,29 @@
+Infinite Game OS
+https://www.infinitegameos.io
+
+This repository holds three kinds of work under three sets of terms. Each
+mirrors what the site and the plugins already declare.
+
+1. Concepts, articles and IGOS-built skills: CC BY 4.0
+
+   The concepts (src/data/concepts.ts), the articles (content/updates/), the
+   agent-facing texts in public/ and every plugin in plugins/ are licensed
+   under the Creative Commons Attribution 4.0 International License.
+
+   You may share and adapt them for any purpose, commercial included, with
+   credit to Lane Belone and a link to https://www.infinitegameos.io.
+
+   Summary: https://creativecommons.org/licenses/by/4.0/
+   Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+2. Third-party skills: their own licenses
+
+   The library lists skills written by other authors. Each keeps the license
+   its author chose (MIT, Apache-2.0, CC BY-SA 4.0 and others), named with its
+   source on its library entry. Nothing here relicenses them.
+
+3. Site code: reserved
+
+   Everything else in this repository, including the application code in src/
+   outside the content named above, the scripts/ directory and the build
+   configuration, is copyright Side Quest Trust. All rights reserved.

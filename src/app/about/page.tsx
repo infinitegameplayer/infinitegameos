@@ -5,14 +5,14 @@ import { igosExpertise, igosEcosystemLinks } from '@/lib/page-data'
 export const metadata: Metadata = {
   title: 'About Lane Belone',
   description:
-    'Lane Belone is an Infinite Game practitioner, sovereign life designer and systems builder. He builds from inside the practice and documents it publicly for practitioners who want to do the same.',
+    'Lane Belone is a writer on the Infinite Game, a former Green Beret and co-author of Unleash Your Humble Alpha. He builds Infinite Game OS in the open: concepts, skills and bundles from inside his own practice, free to use with credit.',
   openGraph: {
     type: 'website',
     siteName: 'Infinite Game OS',
     locale: 'en_US',
     title: 'About Lane Belone',
     description:
-      'Lane Belone is an Infinite Game practitioner, sovereign life designer and systems builder. He builds from inside the practice and documents it publicly for practitioners who want to do the same.',
+      'Lane Belone is a writer on the Infinite Game, a former Green Beret and co-author of Unleash Your Humble Alpha. He builds Infinite Game OS in the open: concepts, skills and bundles from inside his own practice, free to use with credit.',
     url: 'https://www.infinitegameos.io/about',
   },
   alternates: {
@@ -30,7 +30,7 @@ const profilePageSchema = {
   url: 'https://www.infinitegameos.io/about',
   name: 'About Lane Belone',
   description:
-    'Lane Belone is an Infinite Game practitioner, sovereign life designer and systems builder. He builds from inside the practice and documents it publicly for practitioners who want to do the same.',
+    'Lane Belone is a writer on the Infinite Game, a former Green Beret and co-author of Unleash Your Humble Alpha. He builds Infinite Game OS in the open: concepts, skills and bundles from inside his own practice, free to use with credit.',
 }
 
 const breadcrumbSchema = {
@@ -84,7 +84,7 @@ export default function AboutPage() {
                 lineHeight: 1.7,
               }}
             >
-              Practitioner. Builder. The person behind this OS.
+              Writer on the Infinite Game. The person behind this OS.
             </p>
           </SectionReveal>
         </header>
@@ -102,11 +102,15 @@ export default function AboutPage() {
               <div className="prose">
                 <h2>The practitioner</h2>
                 <p>
-                  Lane Belone works at the intersection of Infinite Game philosophy,
-                  sovereign creative operating systems and agentic architecture. He
-                  writes from inside the practice, documenting what it looks like to
-                  build sovereign presence in a Post Web environment rather than
-                  observing it from the outside.
+                  Lane Belone is a writer on the Infinite Game, a former Green Beret
+                  and co-author of <em>Unleash Your Humble Alpha</em>. He builds
+                  Infinite Game OS in the open: concepts, skills and bundles from
+                  inside his own practice, free to use with credit.
+                </p>
+                <p>
+                  He works at the intersection of Infinite Game philosophy, sovereign
+                  creative operating systems and agentic architecture, and writes from
+                  inside the practice.
                 </p>
                 <p>
                   The Kingdom (Lane&apos;s personal operating system) is the lived

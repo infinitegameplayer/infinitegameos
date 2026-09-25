@@ -219,7 +219,7 @@ export default function Footer() {
               color: 'var(--color-muted)',
             }}
           >
-            &copy; 2026 Infinite Game OS. Built by{' '}
+            &copy; 2026 Infinite Game OS, the open library of{' '}
             <a
               href="https://www.lanebelone.com"
               style={{ color: 'rgba(226, 232, 240, 0.5)' }}

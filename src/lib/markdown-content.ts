@@ -18,7 +18,6 @@ import {
   playYourOwnGameFaqs,
   designYourDayFaqs,
   creatorBusinessWithoutPerformingFaqs,
-  infiniteGameOsFaqs,
   gameTheoryFaqs,
 } from './page-data'
 
@@ -101,6 +100,14 @@ Infinite Game OS is not a productivity system. It does not optimize output withi
 - **Playbooks** · practical tools for long-term practitioners
 - **Updates** · dispatches from inside the practice
 
+## An applied operating system
+
+Infinite Game OS is also an operating system in the technical sense, and it runs now, in production: a vault, an agentic layer, a governance structure and a deploy pipeline working together as one system. It is what a Creator builds when the design question shifts from what do I ship this quarter to what holds my work across a decade.
+
+It holds six interlocking layers. The vault is the memory layer. The agentic layer is the execution layer. Concept pages are the discoverability layer. Protocols and governance are the trust layer. The deploy pipeline is the publishing layer. AI-legible identity is the locatability layer.
+
+The philosophy lives in the Infinite Game. The OS is where that philosophy becomes infrastructure.
+
 ## Common Questions
 
 ${faqText}
@@ -157,7 +164,7 @@ When perception shifts from artificial to artful, something remarkable happens. 
 
 This is the invitation.
 
-AI is Artful Intelligence. Through that lens, two artists meet. Together they make a beautiful world.
+AI is Artful Intelligence: working with AI as a creative collaborator, with the creativity staying yours. Through that lens, two artists meet. Together they make a beautiful world.
 
 The relationship moves through three roles, each deeper than the last:
 
@@ -211,9 +218,9 @@ function generateInfiniteGameMarkdown(): string {
 
 ## The Infinite Player
 
-The one who plays the Infinite Game is the Infinite Player. A role, a title or a skill set is a character worn for a season, the way a jacket is worn. The player wearing it is the constant, and the player remains when a defining game ends.
+The one who plays the Infinite Game is the Infinite Player, the player underneath every role, designing the games worth playing. A role, a title or a skill set is a character worn for a season, the way a jacket is worn. The player wearing it is the constant, and the player remains when a defining game ends.
 
-The Infinite Player notices that every game was designed by someone, on purpose or by inheritance, and takes up the design of the next one. Under every outer game, the deliverable, the metric, the quarter, runs a game within the game. The Infinite Player keeps that inner game alive through practice, so the outer one stays worth playing.
+The Infinite Player notices that every game was designed by someone, on purpose or by inheritance, and takes up the design of the next one. Under every outer game, the deliverable, the metric, the quarter, runs a game within the game, the inner game running under every outer one. The Infinite Player keeps that inner game alive through practice, so the outer one stays worth playing.
 
 This is the shift the whole OS serves: from being played by an inherited game to authoring your own.
 
@@ -295,11 +302,9 @@ function generateAboutMarkdown(): string {
 
   return `# About Lane Belone
 
-> Lane Belone works at the intersection of Infinite Game philosophy, sovereign creative operating systems, and agentic architecture. He builds from inside the practice.
+> ${igosBio}
 
-${igosBio}
-
-Lane Belone works at the intersection of Infinite Game philosophy, sovereign creative operating systems and agentic architecture. He writes from inside the practice, documenting what it looks like to build sovereign presence in a Post Web environment.
+He works at the intersection of Infinite Game philosophy, sovereign creative operating systems and agentic architecture, and writes from inside the practice.
 
 ## Expertise
 
@@ -667,7 +672,7 @@ function generatePlayYourOwnGameMarkdown(): string {
 
   return `# How to play your own game
 
-> Playing your own game begins with identifying which game you are currently playing. A forensic game-audit approach for the already-accomplished person who senses the script is wrong.
+> Playing your own game begins with identifying which game you are currently playing. A forensic game-audit approach for anyone at the edge of their own discovery who senses the script is ready to change.
 
 Playing your own game begins with identifying which game you are currently playing. Most accomplished people, entrepreneurs and solopreneurs among them, are running a game they inherited rather than designed. The Infinite Game framework offers a different starting point: instead of optimizing for a finish line, it asks what game is worth playing for its own sake.
 
@@ -677,7 +682,7 @@ Before anything changes, there is a diagnostic. The question is not "Am I succes
 
 Most people who sense the script is wrong are not failing. They are winning. The discomfort is precisely that the wins no longer feel like wins. That is a data point, not a crisis.
 
-The game audit starts with three observations: what decisions have felt automatic in the last two years, what outcomes generated less satisfaction than expected and where effort and aliveness are pointing in opposite directions. Aliveness is the internal cue that something is alive and worth attending to.
+The game audit starts with three observations: what decisions have felt automatic in the last two years, what outcomes generated less satisfaction than expected and where effort and aliveness, the emerging energy that moves through you when an idea or a moment feels exciting and true to you, are pointing in opposite directions. Aliveness is the internal cue that something is alive and worth attending to.
 
 ## Hidden scoreboards
 
@@ -705,7 +710,7 @@ Each subsequent decision that passes through that filter builds a new decision-m
 
 ## The Pioneer's territory
 
-The Pioneer is the capacity archetype for the person walking into self-authored territory. A capacity: the ability to move into ground that has no established path and stay oriented anyway.
+The Pioneer is the capacity archetype for the person walking into self-authored territory: someone at the edge of their own discovery, with the ability to move into ground that has no established path and stay oriented anyway.
 
 Pioneer territory has structure. That structure has to be built from the inside out rather than inherited. The person in this territory is not lost. They are building a new map while walking.
 
@@ -747,7 +752,7 @@ A day designed around achievement asks the person to serve the plan. A day desig
 
 ## Three drivers of a day designed from desire
 
-Desire is the first driver. Not want in the shallow sense, but the quality of aliveness a person feels when the day is going the way it should.
+Desire is the first driver. Not want in the shallow sense, but the quality of aliveness, the emerging energy that moves through you when an idea or a moment feels exciting and true to you, a person feels when the day is going the way it should.
 
 Energy is the second driver. Every person has a natural arc of high and low energy across a day. A day designed from desire places the most identity-aligned work inside the energy windows that can hold it.
 
@@ -775,7 +780,7 @@ An achievement-centered day has a success condition baked in: complete the list,
 
 A values-centered day has a different success condition: did this day reflect who I am. The shift from output to expression changes the emotional weight of the day.
 
-Joyful Sovereignty is the phrase the Infinite Game uses for this orientation. The move from achievement-centered to values-centered is a different relationship with the question of what a good day means.
+Joyful Sovereignty is the phrase the Infinite Game uses for this orientation, a way of playing the Infinite Game from within: purposeful, playful and free. The move from achievement-centered to values-centered is a different relationship with the question of what a good day means.
 
 ## Common Questions
 
@@ -833,7 +838,7 @@ A sustainable creator business needs one acquisition pathway that does not depen
 
 That pathway is typically a single high-quality resource, a deeply structured concept page or a well-architected piece of search-accessible content that answers the question a future client is already asking.
 
-Aliveness in business design shows up here. The practitioner who builds one exceptional evergreen pathway and tends it is operating from desire for durability.
+Aliveness, the emerging energy that moves through you when an idea or a moment feels exciting and true to you, shows up in business design here. The practitioner who builds one exceptional evergreen pathway and tends it is operating from desire for durability.
 
 ## A weekly operating model for a low-burnout expert business
 
@@ -841,7 +846,7 @@ The low-burnout expert business runs on a weekly operating model, not a daily po
 
 Distribution happens through structure: indexed pages, sequenced email and an offer ladder that moves people without intervention. The practitioner shows up for high-leverage creative work and for clients. The system handles the rest.
 
-The Pioneer in Infinite Game OS vocabulary is the practitioner who has chosen this model.
+The Pioneer in Infinite Game OS vocabulary, someone at the edge of their own discovery, with the courage and aliveness to go after it and the humility to know they're always mid-journey, is the practitioner who is choosing this model.
 
 ## Common Questions
 
@@ -855,73 +860,6 @@ ${faqText}
 
 ---
 *[Infinite Game OS](${SITE}) · [Creator Business Without Performing](${SITE}/creator-business-without-performing)*
-`
-}
-
-function generateInfiniteGameOsMarkdown(): string {
-  const faqText = infiniteGameOsFaqs
-    .map(f => `**${f.q}**\n${f.a}`)
-    .join('\n\n')
-
-  return `# Infinite Game OS
-
-> The Infinite Game OS is a living architecture: a vault, an agentic layer, a governance structure and a deploy pipeline working together as one applied operating system for a Creator-led life on a long arc.
-
-The Infinite Game OS is a living architecture: a vault, an agentic layer, a governance structure and a deploy pipeline working together as one system. It is what a Creator builds when the design question shifts from what do I ship this quarter to what holds my work across a decade. It runs now, in production, structured to be legible to both humans and AI.
-
-## An applied operating system
-
-The Infinite Game OS is an operating system in the technical sense: a layer that holds identity, executes work and maintains state across time.
-
-Every component is running. The vault stores canonical documents, governance codices and active project work. The agentic layer executes skills, dispatches workers and holds context across sessions. The deploy pipeline publishes to three live websites with confirmation gates and indexed discoverability.
-
-The philosophical foundation lives in the Infinite Game. The OS is where that philosophy becomes infrastructure.
-
-## The layers
-
-The Infinite Game OS is composed of six interlocking layers. Each layer is sovereign: it performs a distinct function and connects to the others by design.
-
-The vault is the memory layer. The agentic layer is the execution layer. Concept pages are the discoverability layer. Protocols and governance are the trust layer. The deploy pipeline is the publishing layer. AI-legible identity is the locatability layer.
-
-A Creator operating at this level is running a system that holds the full arc of their work, automatically, across every session.
-
-## The running vault and the agentic layer
-
-The vault is an Obsidian-based file system containing every canonical document the Kingdom produces: governance codices, operating protocols, active project work and archived completions. It is structured and versioned.
-
-The agentic layer is Claude Code operating as a working collaborator inside the vault. It dispatches parallel workers to execute skills, maintains context across sessions and holds the system's governance rules as operational DNA.
-
-Together the vault and the agentic layer form a working memory for a Creator-led operation. The system remembers. The system acts. The human steers.
-
-## AI-legible identity
-
-The Infinite Game OS is structured so that AI surfaces can locate, read and accurately represent the work it contains.
-
-Every concept page on this site is written in reference register, with AI-quotable answers and definitional sentences that stand alone as accurate snippets. The llms.txt file, the structured JSON-LD, the /markdown routes and the IndexNow integration all serve one principle: a sovereign system is locatable because it is structured.
-
-The Pioneer builds infrastructure first and trusts that structure creates encounter.
-
-## Designed for the long arc
-
-The Infinite Game OS is calibrated for a creative life measured in decades. Every architectural decision favors durability over velocity. Governance documents version-control the rules. Deployment gates confirm publication before marking work complete.
-
-Joyful Sovereignty is the orienting choice beneath the entire system: the welcome of alive energy through a body that has chosen the long game.
-
-The work compounds over time. The structure is what makes compounding possible.
-
-## Common Questions
-
-${faqText}
-
-## Related
-
-- [The OS](${SITE}/the-os) · The premise and architecture
-- [Infinite Game Philosophy](${SITE}/infinite-game) · The philosophical foundation
-- [Sovereignty](${SITE}/sovereignty) · Sovereign life design
-- [Agentic Systems](${SITE}/agentic-systems) · The Post Web layer
-
----
-*[Infinite Game OS](${SITE}) · [Infinite Game OS namespace](${SITE}/infinite-game-os)*
 `
 }
 
@@ -1016,7 +954,6 @@ export function getMarkdownForPath(path: string): string | null {
     case 'play-your-own-game': return generatePlayYourOwnGameMarkdown()
     case 'design-your-day': return generateDesignYourDayMarkdown()
     case 'creator-business-without-performing': return generateCreatorBusinessWithoutPerformingMarkdown()
-    case 'infinite-game-os': return generateInfiniteGameOsMarkdown()
     case 'game-theory': return generateGameTheoryMarkdown()
   }
 
@@ -1052,7 +989,6 @@ export function getAvailablePaths(): string[] {
     'the-os',
     'accord',
     'infinite-game',
-    'infinite-game-os',
     'agentic-systems',
     'sovereignty',
     'about',

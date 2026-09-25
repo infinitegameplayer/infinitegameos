@@ -1,6 +1,6 @@
 # Infinite Game OS: Full Content Index
 # Deep LLM reference for comprehensive site content
-# Updated: 2026-07-10. Library expansion: three new skills (plan-harvest-and-retire, pr-code-review, batch-archival) and the second protocol external-worker-routing shipped as installable plugins, bringing the library to twenty-seven skills, seven bundles and two protocols. Prior: IGOS Article Wave 2026 shipped: 20 concept-connector reference-register articles live at /updates/[slug] in one wave. Concept-page back-link block live via new Concept.relatedUpdateSlugs schema. Four new top-level audience-search front-door routes shipped previously: /play-your-own-game, /design-your-day, /creator-business-without-performing, /infinite-game-os. New page: /sovereign-ecosystem (foundational Obsidian + Claude Code workspace template, three-tier stack origin, Article + FAQPage + BreadcrumbList schema, 6 Q&As). Discovery stack v1 published: /AGENTS.md (cross-tool harvest instructions), /igos-index.json (machine-readable asset registry), /marketplace.json (Claude Code marketplace manifest). First protocol-shape asset live at /protocols/ambassador-doctrine: governing posture for any agent that operates outside its home system, three duties (represent, protect, advance) and six modes (Alliance, Boundary, Expansion, Stillness, Multiplicity, Fortification). Protocols install as reference text via direct markdown URL or Cursor .mdc rules file (no plugin install path). Public Library now ships twenty-seven installable skills at /skills/<slug>: source-harvest, pattern-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher, social-batch-drafting, social-batch-queue, grant-researcher, grant-manager, email-triage, quote-builder, invoice-payment-tracker, customer-follow-up, daily-admin-orchestrator, website-builder, self-healing, session-closeout, playwright, anti-ai-edit-pass, jacket-session, jacket-meeting, autonomous-improvement-session, plan-harvest-and-retire, pr-code-review, batch-archival. Seven installable bundles now live at /bundles/<slug>: foundational-creator (substrate), the-builder, the-writer, the-performer, the-teacher, the-curator, the-strategist. Solopreneur Admin Toolkit added: five-skill set for service-business solopreneurs. Four primitives (Email Triage, Quote Builder, Invoice and Payment Tracker, Customer Follow-Up) plus Daily Admin Orchestrator as the integration layer that sequences all four. VS Code one-click install verified via vscode://anthropic.claude-code/install-plugin URI handler.
+# Updated: 2026-09-25. Identity spine: Lane Belone is a writer on the Infinite Game (one jobTitle, Writer, on the shared Person), Infinite Game OS is the open library of Lane Belone, the Pioneer is redefined as someone at the edge of their own discovery, and /infinite-game-os merged into /the-os. Earlier, 2026-07-10. Library expansion: three new skills (plan-harvest-and-retire, pr-code-review, batch-archival) and the second protocol external-worker-routing shipped as installable plugins, bringing the library to twenty-seven skills, seven bundles and two protocols. Prior: IGOS Article Wave 2026 shipped: 20 concept-connector reference-register articles live at /updates/[slug] in one wave. Concept-page back-link block live via new Concept.relatedUpdateSlugs schema. Four new top-level audience-search front-door routes shipped previously: /play-your-own-game, /design-your-day, /creator-business-without-performing, /infinite-game-os. New page: /sovereign-ecosystem (foundational Obsidian + Claude Code workspace template, three-tier stack origin, Article + FAQPage + BreadcrumbList schema, 6 Q&As). Discovery stack v1 published: /AGENTS.md (cross-tool harvest instructions), /igos-index.json (machine-readable asset registry), /marketplace.json (Claude Code marketplace manifest). First protocol-shape asset live at /protocols/ambassador-doctrine: governing posture for any agent that operates outside its home system, three duties (represent, protect, advance) and six modes (Alliance, Boundary, Expansion, Stillness, Multiplicity, Fortification). Protocols install as reference text via direct markdown URL or Cursor .mdc rules file (no plugin install path). Public Library now ships twenty-seven installable skills at /skills/<slug>: source-harvest, pattern-harvest, plan-challenger, systematic-debugging, pending-plan-implementation, skill-creator, researcher, social-batch-drafting, social-batch-queue, grant-researcher, grant-manager, email-triage, quote-builder, invoice-payment-tracker, customer-follow-up, daily-admin-orchestrator, website-builder, self-healing, session-closeout, playwright, anti-ai-edit-pass, jacket-session, jacket-meeting, autonomous-improvement-session, plan-harvest-and-retire, pr-code-review, batch-archival. Seven installable bundles now live at /bundles/<slug>: foundational-creator (substrate), the-builder, the-writer, the-performer, the-teacher, the-curator, the-strategist. Solopreneur Admin Toolkit added: five-skill set for service-business solopreneurs. Four primitives (Email Triage, Quote Builder, Invoice and Payment Tracker, Customer Follow-Up) plus Daily Admin Orchestrator as the integration layer that sequences all four. VS Code one-click install verified via vscode://anthropic.claude-code/install-plugin URI handler.
 # https://www.infinitegameos.io
 
 This file contains structured summaries of each page for AI systems that require
@@ -44,10 +44,10 @@ behalf." Links into /concepts/creator-flywheel for the named treatment.
 Section 6 (Recent dispatches): The most recent /updates entries surfaced as
 cards. Links to /updates index.
 
-Section 7 (The practitioner): Bio plus About link. Lane Belone is a former
-Green Beret, strategic advisor and sovereign systems builder operating from
-inside the practice. Infinite Game OS is not theory. It is architecture running
-live, documented in real time.
+Section 7 (The practitioner): Bio plus About link. Lane Belone is a writer on
+the Infinite Game, a former Green Beret and co-author of Unleash Your Humble
+Alpha. He builds Infinite Game OS in the open: concepts, skills and bundles from
+inside his own practice, free to use with credit.
 
 ---
 
@@ -273,26 +273,23 @@ North Star (the direction the Way runs along).
 
 ## The Pioneer (/concepts/the-pioneer)
 
-Someone who has already won the game most people are still trying to win. Accomplished,
-well-resourced, free by every external measure. Yet something does not match. Their
-outer life was built on conditioning they never chose. They want their decisions, work
-and relationships to finally match their inner knowing. Not seeking success. Seeking
-coherence.
+The Pioneer is someone at the edge of their own discovery, with the courage and
+aliveness to go after it and the humility to know they're always mid-journey. They
+carry a beginner's mind into every stage of the game. What they go after is coherence:
+decisions, work and relationships that match their inner knowing.
 
 Two entry points: challenge-triggered (disruption) or opportunity-triggered (seeing the
-transformation available). The distinction between a choice from authentic core
-alignment versus one from old programming masquerading as a sovereign decision is the
-work. Related: Conditioned vs Authentic Identity, Four-Container Journey, Joyful
+next discovery available). Feeling the difference between a choice from authentic
+core alignment and one from old programming is the work. Related: Conditioned vs Authentic Identity, Four-Container Journey, Joyful
 Sovereignty.
 
 ---
 
 ## Joyful Sovereignty (/concepts/joyful-sovereignty)
 
-An approach to playing the Infinite Game through joy, sovereignty and embodied play
-rather than strategy and corporate optimization. When your choices come from genuine
-alignment rather than conditioned obligation, there is a felt quality: power without
-performance, aliveness without effort. The philosophy. The compass state.
+Joyful Sovereignty is a way of playing the Infinite Game from within: purposeful,
+playful and free. It begins as an inner orientation and is expressed outward, a
+playful freedom that feels like optionality. The philosophy. The compass state.
 
 The Infinite Game OS is what you build when you decide to live Joyful Sovereignty. The
 philosophy without the system is inspiring but fragile. The system without the
@@ -464,7 +461,7 @@ Sovereignty, The North Star, The Ideal Month.
 
 ## Sovereign Capture (/concepts/sovereign-capture)
 
-Sovereign Capture is the practice of holding what wants to arrive without losing your presence to the work. Ideas land all day. Most capture systems optimize for retrieval and quietly make you the manager of your own inbox. The sovereign version asks a different question: how do you honor the ideas and stay present to the life they arrive inside. Body is the first container. Three breaths and a felt note tell the nervous system the idea was received, which removes the low fear of forgetting. Then the five-step flow runs: capture into a file you own, tag lightly by theme, surface in a weekly sift, release the grip that says you must act now, trust that the structure brings it back when it matters. The release and the trust are the sovereign half, and the step most operators skip. This is where the AI Second Brain stops being a framework and becomes a daily practice you can feel. The files live on your machine. The structure does the remembering so your nervous system can let go. The practitioner artifact is the Sovereign Capture Field Guide on Side Quest HQ, which installs the practice as seven Moves. Related: AI Second Brain, Data Sovereignty, The North Star, The Ideal Month.
+Sovereign Capture is catching the ideas that arrive all day while staying present to the work in front of you. It honors the ideas and keeps you present to the life they arrive inside. Body is the first container. Three breaths and a felt note tell the nervous system the idea was received, which removes the low fear of forgetting. Then the five-step flow runs: capture into a file you own, tag lightly by theme, surface in a weekly sift, release the grip that says you must act now, trust that the structure brings it back when it matters. The release and the trust are the sovereign half, and the step most operators skip. This is where the AI Second Brain stops being a framework and becomes a daily practice you can feel. The files live on your machine. The structure does the remembering so your nervous system can let go. The practitioner artifact is the Sovereign Capture Field Guide on Side Quest HQ, which installs the practice as seven Moves. Related: AI Second Brain, Data Sovereignty, The North Star, The Ideal Month.
 
 ---
 
@@ -712,15 +709,11 @@ Why this bundle exists for the Writer. Voice consistency over thousands of piece
 
 ## Audience-Search Front Doors (Top-Level Routes)
 
-Four landing pages built around audience-search vocabulary that bridge curious readers into Kingdom proper-noun depth. Each ships Article + FAQPage + BreadcrumbList JSON-LD, visible FAQ section and reference-register voice matching the existing concept-page layer.
-
-### /infinite-game-os
-
-Positive-definition namespace landing for the Infinite Game OS phrase. Names what this operating system is, what it does and who it is built for, in audience-search vocabulary that reaches curious readers before they encounter the Kingdom proper nouns. Counter-positioning frame against generic productivity AI: this is architecture for sovereign individual life, not corporate strategy and not consumer self-help. Routes into /the-os for the eight-layer architecture and into concept pages for depth.
+Landing pages built around audience-search vocabulary that bridge curious readers into Kingdom proper-noun depth. Each ships Article + FAQPage + BreadcrumbList JSON-LD, visible FAQ section and reference-register voice matching the existing concept-page layer.
 
 ### /play-your-own-game
 
-Forensic game-audit framing. Diagnostic for the inherited scoreboard that runs most people's lives, identification sequence for which criteria were inherited rather than chosen, redesign sequence for self-authorized criteria. Already-Pioneer entry point. The Pioneer who has won the conventional game and arrived at the unexpected experience of the win not closing the gap they were playing toward. Routes into /concepts/the-pioneer and /concepts/joyful-sovereignty.
+Forensic game-audit framing. Diagnostic for the inherited scoreboard that runs most people's lives, identification sequence for which criteria were inherited rather than chosen, redesign sequence for self-authorized criteria. Already-Pioneer entry point. The Pioneer at the edge of their own discovery who senses the inherited scoreboard is ready to change. Routes into /concepts/the-pioneer and /concepts/joyful-sovereignty.
 
 ### /design-your-day
 
@@ -750,7 +743,7 @@ The five-stage operating engine: live the life, share the breadcrumbs, activate 
 
 ### /updates/what-is-the-pioneer
 
-The archetype of the person who has built something real by every external measure and still feels the gap between outer life and inner knowing. Four stages of engagement (Already, Curious, Becoming, Practitioner) describing position rather than worth. Two entry points (challenge-triggered, opportunity-triggered) leading to the same threshold. Coherence as the work, not more achievement.
+The archetype of someone at the edge of their own discovery, with the courage and aliveness to go after it and the humility to know they're always mid-journey. Four stages of engagement (Already, Curious, Becoming, Practitioner) describing position rather than worth. Two entry points (challenge-triggered, opportunity-triggered) leading to the same threshold. Coherence as the work.
 
 ### /updates/what-is-joyful-sovereignty
 

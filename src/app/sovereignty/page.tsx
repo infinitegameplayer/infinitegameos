@@ -325,7 +325,7 @@ export default function SovereigntyPage() {
                 stepping out of line. The fear of what it actually means to own
                 your own choices.
               </p>
-              <p>Joyful Sovereignty is what arrives when that fear transforms into clarity.</p>
+              <p>Joyful Sovereignty, a way of playing the Infinite Game from within: purposeful, playful and free, is what arrives when that fear transforms into clarity.</p>
               <p>
                 It&apos;s not the absence of seriousness. It&apos;s the
                 lightness that comes when the distinction becomes visible,
@@ -386,8 +386,10 @@ export default function SovereigntyPage() {
                 world from a position of sovereignty rather than anxiety.
               </p>
               <p>
-                The practitioners who are most findable in the Post Web era are
-                the ones who have built this kind of creative sovereignty. Their
+                The practitioners who are most findable in the Post Web era, the
+                web of the fourth verb, where you hold the intent and delegate
+                the execution to agents, are the ones who have built this kind
+                of creative sovereignty. Their
                 vocabulary is consistent because their thinking is integrated.
                 Their frameworks connect because they come from a coherent
                 philosophical center, not from trend chasing.

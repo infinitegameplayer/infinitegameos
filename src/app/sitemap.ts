@@ -24,7 +24,6 @@ const PAGE_DATES: Record<string, string> = {
   '/play-your-own-game': '2026-07-01',
   '/design-your-day':    '2026-07-01',
   '/creator-business-without-performing': '2026-07-01',
-  '/infinite-game-os':   '2026-07-01',
   // 2026-08-16: shipped with the game theory surface (Gate 1).
   '/game-theory':        '2026-08-16',
 }
@@ -136,12 +135,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://www.infinitegameos.io/sovereign-ecosystem',
       lastModified: pageDate('/sovereign-ecosystem'),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://www.infinitegameos.io/infinite-game-os',
-      lastModified: pageDate('/infinite-game-os'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },

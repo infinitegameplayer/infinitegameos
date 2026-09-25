@@ -250,8 +250,9 @@ export default function AccordPage() {
               </p>
               <p>This is the invitation.</p>
               <p>
-                AI is Artful Intelligence. Through that lens, two artists meet.
-                Together they make a beautiful world.
+                AI is Artful Intelligence: working with AI as a creative
+                collaborator, with the creativity staying yours. Through that
+                lens, two artists meet. Together they make a beautiful world.
               </p>
               <p>
                 The relationship moves through three roles, each deeper than the

@@ -152,7 +152,8 @@ export default function AgenticSystemsPage() {
               <h2>The Four Verbs of the Web</h2>
               <p>
                 The web has always been readable, writable and ownable. The Post Web
-                adds a fourth verb.
+                adds a fourth verb, where you hold the intent and delegate the
+                execution to agents.
               </p>
               <p>
                 <strong>Read.</strong> Web 1 gave us access to information.
@@ -396,11 +397,10 @@ export default function AgenticSystemsPage() {
               </p>
               <hr />
               <p style={{ fontSize: '0.85rem', color: 'var(--color-muted)', fontStyle: 'italic' }}>
-                Lane Belone works at the intersection of Infinite Game philosophy,
-                sovereign creative operating systems and agentic architecture. He writes
-                from inside the practice, documenting what it looks like to build
-                sovereign presence in a Post Web environment rather than observing it
-                from the outside.
+                Lane Belone is a writer on the Infinite Game, a former Green Beret and
+                co-author of <em>Unleash Your Humble Alpha</em>. He works at the
+                intersection of Infinite Game philosophy, sovereign creative operating
+                systems and agentic architecture.
               </p>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-muted)', fontStyle: 'italic' }}>
                 This is the first in a series on the Post Web as a practitioner&apos;s

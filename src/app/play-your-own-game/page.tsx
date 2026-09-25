@@ -6,14 +6,14 @@ import { playYourOwnGameFaqs } from '@/lib/page-data'
 export const metadata: Metadata = {
   title: 'How to play your own game',
   description:
-    'Playing your own game begins with identifying which game you are currently playing. A forensic game-audit approach for the already-accomplished person who senses the script is wrong.',
+    'Playing your own game begins with identifying which game you are currently playing. A forensic game-audit approach for anyone at the edge of their own discovery who senses the script is ready to change.',
   openGraph: {
     type: 'website',
     siteName: 'Infinite Game OS',
     locale: 'en_US',
     title: 'How to play your own game',
     description:
-      'Playing your own game begins with identifying which game you are currently playing. A forensic game-audit approach for the already-accomplished person who senses the script is wrong.',
+      'Playing your own game begins with identifying which game you are currently playing. A forensic game-audit approach for anyone at the edge of their own discovery who senses the script is ready to change.',
     url: 'https://www.infinitegameos.io/play-your-own-game',
   },
   alternates: {
@@ -39,7 +39,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'How to play your own game',
   description:
-    'Playing your own game begins with identifying which game you are currently playing. A forensic game-audit approach for the already-accomplished person who senses the script is wrong.',
+    'Playing your own game begins with identifying which game you are currently playing. A forensic game-audit approach for anyone at the edge of their own discovery who senses the script is ready to change.',
   author: { '@id': 'https://infinitegameos.io/#person' },
   publisher: { '@id': 'https://www.infinitegameos.io/#website' },
   url: 'https://www.infinitegameos.io/play-your-own-game',
@@ -129,9 +129,11 @@ export default function PlayYourOwnGamePage() {
               <p>
                 The game audit starts with three observations: what decisions have felt
                 automatic in the last two years, what outcomes generated less satisfaction
-                than expected and where effort and aliveness are pointing in opposite
-                directions. Aliveness is the internal cue that something is alive and
-                worth attending to. The audit is listening for where it went quiet.
+                than expected and where effort and aliveness, the emerging energy that
+                moves through you when an idea or a moment feels exciting and true to
+                you, are pointing in opposite directions. Aliveness is the internal cue
+                that something is alive and worth attending to. The audit is listening
+                for where it went quiet.
               </p>
             </SectionReveal>
 
@@ -198,8 +200,9 @@ export default function PlayYourOwnGamePage() {
                 Each subsequent decision that passes through that filter builds a new
                 decision-making pattern. Joyful Sovereignty is the description of this
                 orientation at full expression: the chosen welcome of alive energy through
-                the body, not the performance of freedom but its practice. The first move
-                is the entry point.
+                the body, not the performance of freedom but its practice, a way of
+                playing the Infinite Game from within: purposeful, playful and free. The
+                first move is the entry point.
               </p>
             </SectionReveal>
 
@@ -207,12 +210,12 @@ export default function PlayYourOwnGamePage() {
               <h2>The Pioneer&apos;s territory</h2>
               <p>
                 The Pioneer is the capacity archetype for the person walking into
-                self-authored territory. Not a personality type. Not an identity. A
-                capacity: the ability to move into ground that has no established path
-                and stay oriented anyway.
+                self-authored territory: someone at the edge of their own discovery,
+                with the ability to move into ground that has no established path and
+                stay oriented anyway.
               </p>
               <p>
-                Pioneer territory is not wilderness. It has structure. That structure
+                Pioneer territory has structure. That structure
                 just has to be built from the inside out rather than inherited. The
                 person in this territory is not lost. They are building a new map while
                 walking.

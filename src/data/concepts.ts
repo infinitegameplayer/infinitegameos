@@ -89,7 +89,7 @@ export const concepts: Concept[] = [
         heading: 'Universal, not fixed',
         paragraphs: [
           'The Creator Flywheel does not prescribe a single creative form. Some creators write. Some build. Some speak, advise, teach, perform, design. The flywheel is form-agnostic. What matters is that the output comes from genuine creative expression, not from copying what worked for someone else.',
-          'This is the distinction the creator economy keeps missing. Most advice tells you to optimize the form: post this format, follow this cadence, use this hook. The flywheel inverts that. Start with what is actually alive in you. Let the form emerge from that. The form that comes from aliveness has a quality manufacturing never produces.',
+          'This is the distinction the creator economy keeps missing. Most advice tells you to optimize the form: post this format, follow this cadence, use this hook. The flywheel inverts that. Start with what is actually alive in you. Let the form emerge from that. The form that comes from aliveness, the emerging energy that moves through you when an idea or a moment feels exciting and true to you, has a quality manufacturing never produces.',
         ],
       },
       {
@@ -164,27 +164,34 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'the-pioneer',
-    updated: '2026-06-04',
+    updated: '2026-09-25',
     title: 'The Pioneer',
     label: 'Archetype',
     capsule:
-      'Someone who has already won the game most people are still trying to win. Accomplished, well-resourced, free by every external measure. Yet something does not match. Their outer life was built on conditioning they never chose. They want their decisions, work and relationships to finally match their inner knowing. Not seeking success. Seeking coherence.',
+      'The Pioneer is someone at the edge of their own discovery, with the courage and aliveness to go after it and the humility to know they\'re always mid-journey. They carry a beginner\'s mind into every stage of the game. What they go after is coherence: decisions, work and relationships that match their inner knowing.',
     subtitle:
-      'The person who has everything except the one thing that matters: alignment between their outer life and their inner knowing.',
+      'Someone at the edge of their own discovery, always mid-journey, with the courage to go after what feels alive.',
     sections: [
       {
-        heading: 'Who the Pioneer appears to be',
+        heading: 'At the edge of their own discovery',
         paragraphs: [
-          'The Pioneer has already built something real. Their career is credible. Their finances are solid. Their network is deep. By every external measure, they are free.',
-          'Their shell identity is polished. It works. It got them here. But "here" is the problem. The shell was built from conditioning: education, family expectations, industry norms, cultural "shoulds." It was never truly chosen.',
+          'The Pioneer stands where the known part of their life meets the part still unfolding. Something there feels alive, and they move toward it.',
+          'The edge is personal. It can open in a first career or a fifth, at twenty-five or at sixty. What marks a Pioneer is the direction they face: toward what they have yet to discover.',
         ],
       },
       {
-        heading: 'What the Pioneer actually wants',
+        heading: 'Courage and aliveness',
         paragraphs: [
-          'They want authentic aliveness. Not whimsical, not performative, but unmistakable. A glimmer in the eye. A newfound energy that can\'t be faked.',
-          'They want to stop doing things because they were conditioned to or feel obligated to, and start doing only what feels coherent, alive, curiosity-driven and genuinely theirs. The distinction between a choice that comes from authentic core alignment versus one that comes from old programming masquerading as a sovereign decision. That nuance is the work.',
-          'They do not want to be told what to do. They want to be self-authorized, from a place of genuine mind-body-spirit coherence rather than another layer of conditioning dressed up as sovereignty.',
+          'Aliveness is the pull and courage is the step. The Pioneer feels the emerging energy of an idea or a moment that is exciting and true to them, and goes after it.',
+          'They want their decisions, work and relationships to match their inner knowing. Each choice made from genuine alignment makes the next one clearer, and the choices still running on old conditioning grow easier to see. That sensitivity is the work.',
+          'They are self-authorized. The permission to go comes from inside, from a coherence of mind, body and spirit.',
+        ],
+      },
+      {
+        heading: 'Always mid-journey',
+        paragraphs: [
+          'The Pioneer holds every discovery with humility. A beginner\'s mind stays open at each stage, because each arrival opens onto a further edge.',
+          'This is what keeps the Pioneer in the Infinite Game. The journey is the point, and the Pioneer is always in the middle of it.',
         ],
       },
       {
@@ -198,11 +205,11 @@ export const concepts: Concept[] = [
     faq: [
       {
         q: 'What does it mean to stop following the script everyone else set for you?',
-        a: 'The Pioneer is someone who has already built something real by external measures and has arrived at a gap: the outer life was built from conditioning that was never truly chosen. The work is not blowing up what was built. It is developing enough awareness to see which decisions come from authentic alignment and which come from old programming still running in the background.',
+        a: 'It means noticing which choices are yours. The Pioneer is someone at the edge of their own discovery, with the courage and aliveness to go after it. The work keeps what was built and develops enough awareness to see which decisions come from authentic alignment and which come from old programming still running in the background.',
       },
       {
         q: 'I have accomplished everything I set out to accomplish but something still feels off. What is that?',
-        a: 'That is the Pioneer condition. The shell identity worked. It got you here. The problem is that "here" does not match the inner knowing. The Pioneer has already won the game most people are still trying to win, and the dissonance is not a sign of ingratitude. It is a sign that the game was never truly chosen.',
+        a: 'Often it is the edge of the next discovery. An accomplished life can still open onto ground that feels more alive and more true. The Pioneer meets that feeling with curiosity, as a sign that a further part of the journey is ready, and goes after it with a beginner\'s mind.',
       },
       {
         q: 'How do I start making decisions from a genuinely sovereign place rather than from what I was conditioned to want?',
@@ -210,11 +217,11 @@ export const concepts: Concept[] = [
       },
       {
         q: 'Do I need a crisis or a big life disruption to do this kind of identity work?',
-        a: 'No. There are two entry points. Challenge-triggered: something disrupted the world and the motivation is to navigate the transition. Opportunity-triggered: nothing is wrong. The Pioneer simply sees the next layer of coherence available and wants to step into it. Both paths lead to the same place, coherence between the inner knowing and the outer life.',
+        a: 'No. There are two entry points. Challenge-triggered: something disrupted the world and the motivation is to navigate the transition. Opportunity-triggered: nothing is wrong. The Pioneer simply sees the next discovery available and wants to step into it. Both paths lead to the same place, coherence between the inner knowing and the outer life.',
       },
       {
         q: 'What does the Pioneer actually want that they have not found in another productivity system or coaching program?',
-        a: 'The Pioneer does not want to be told what to do or handed another optimization framework. They want to be self-authorized, from a place of genuine mind-body-spirit coherence rather than another layer of conditioning dressed up as sovereignty. The Infinite Game OS is built for exactly that: not prescribing a path, but giving the Pioneer the operating system to design their own.',
+        a: 'The Pioneer wants to be self-authorized, choosing from a coherence of mind, body and spirit. The Infinite Game OS is built for exactly that: an operating system the Pioneer uses to design their own path.',
       },
     ],
     relatedSlugs: ['conditioned-vs-authentic-identity', 'joyful-sovereignty'],
@@ -228,25 +235,25 @@ export const concepts: Concept[] = [
       { href: '/play-your-own-game', label: 'Play Your Own Game', variant: 'outline' },
     ],
     productCard: {
-      body: 'The Sovereign Life Playbook is written for the Pioneer: the person who built a real life and feels something still off. Chapters 1 and 2 separate the identity you inherited from the one that is yours. The chapters after them design the day, the month and the domains of a life built from the second one.',
+      body: 'The Sovereign Life Playbook is written for the Pioneer at the edge of their own discovery. Chapters 1 and 2 separate the identity you inherited from the one that is yours. The chapters after them design the day, the month and the domains of a life built from the second one.',
       ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
       ctaLabel: 'Sovereign Life Playbook · $37',
     },
   },
   {
     slug: 'joyful-sovereignty',
-    updated: '2026-07-24',
+    updated: '2026-09-25',
     title: 'Joyful Sovereignty',
     label: 'Philosophy',
     capsule:
-      'An approach to playing the Infinite Game through joy, sovereignty and embodied play rather than strategy and corporate optimization. When your choices come from genuine alignment rather than conditioned obligation, there is a felt quality: power without performance, aliveness without effort. The philosophy. The compass state.',
+      'Joyful Sovereignty is a way of playing the Infinite Game from within: purposeful, playful and free. It begins as an inner orientation and is expressed outward, a playful freedom that feels like optionality. The philosophy. The compass state.',
     subtitle:
-      'Playing the Infinite Game through joy and sovereignty rather than strategy and optimization.',
+      'A way of playing the Infinite Game from within: purposeful, playful and free.',
     sections: [
       {
         heading: 'What Joyful Sovereignty is',
         paragraphs: [
-          'Joyful Sovereignty is Lane Belone\'s named approach to playing the Infinite Game. It is a philosophy and a practice, not a concept to understand but a way of operating.',
+          'Joyful Sovereignty is Lane Belone\'s named way of playing the Infinite Game from within: purposeful, playful and free. It is a philosophy and a practice, a way of operating.',
           'The Infinite Game, in James Carse\'s original framing, is the game played for the purpose of continuing play. Most interpretations of this idea land in corporate strategy or competitive positioning. Joyful Sovereignty brings it home. It asks: what does it look like to play the Infinite Game with your own life, from a place of joy and sovereignty rather than obligation and optimization?',
         ],
       },
@@ -254,7 +261,7 @@ export const concepts: Concept[] = [
         heading: 'The felt state',
         paragraphs: [
           'There is a quality that emerges when someone operates in full alignment. It is not performance. It is not hustle dressed in spiritual language. It is power without performance. Aliveness without effort.',
-          'The Pioneer recognizes this quality immediately because they have tasted it in flashes. The work of Joyful Sovereignty is making that state the baseline rather than the exception.',
+          'The Pioneer, someone at the edge of their own discovery, with the courage and aliveness to go after it and the humility to know they\'re always mid-journey, recognizes this quality immediately because they have tasted it in flashes. The work of Joyful Sovereignty is making that state the baseline.',
           'This is the compass state for Lane and for every Pioneer. When a decision, a project, a relationship, or a morning routine produces this felt quality, it is on the path. When it does not, something needs to change.',
         ],
       },
@@ -269,15 +276,15 @@ export const concepts: Concept[] = [
     faq: [
       {
         q: 'What does it mean to stop optimizing your life and start actually living it?',
-        a: 'Joyful Sovereignty is the practice of making choices from genuine alignment rather than conditioned obligation. When decisions come from that place, a felt quality emerges: power without performance, aliveness without effort. That felt quality is the compass state, not a destination to arrive at once.',
+        a: 'Joyful Sovereignty is a way of playing the Infinite Game from within: purposeful, playful and free. When decisions come from genuine alignment, a felt quality emerges, and that felt quality is the compass state, a way of moving you return to again and again.',
       },
       {
         q: 'What is the difference between playing the Infinite Game and just having a philosophy about it?',
-        a: 'Joyful Sovereignty is Lane Belone\'s named approach to playing the Infinite Game with your own life, not as corporate strategy but as a daily operating posture. The philosophy asks what it looks like to play for the purpose of continuing to play, from joy and sovereignty rather than from obligation and optimization. The Infinite Game OS is the structural layer that makes the philosophy operational.',
+        a: 'Joyful Sovereignty is Lane Belone\'s named way of playing the Infinite Game with your own life, as a daily operating posture: purposeful, playful and free. The philosophy asks what it looks like to play for the purpose of continuing to play, from joy and sovereignty. The Infinite Game OS is the structural layer that makes the philosophy operational.',
       },
       {
         q: 'How do you know when you are living from real alignment versus performing it?',
-        a: 'The felt state of Joyful Sovereignty is not hustle dressed in spiritual language. It is recognizable because it produces power without performance and aliveness without effort. Pioneers who have tasted this quality in flashes describe it as unmistakable. The work is making that state the baseline rather than the exception.',
+        a: 'The felt state of Joyful Sovereignty is recognizable: power that arrives with ease and aliveness that moves on its own. Pioneers who have tasted this quality in flashes describe it as unmistakable. The work is making that state the baseline.',
       },
       {
         q: 'What is the relationship between having a life philosophy and building systems to support it?',
@@ -322,7 +329,7 @@ export const concepts: Concept[] = [
         heading: 'What authentic identity feels like',
         paragraphs: [
           'Authentic identity is not a fixed destination. It is the quality of choice-making that emerges when the conditioned programming is seen for what it is. Choices start coming from a different place: quieter, clearer, more coherent.',
-          'The Pioneer does not need to destroy their conditioned identity. They need to see it clearly enough that it becomes a tool rather than a cage. The shell identity can be worn and released like a jacket. Archetypes and attributes can be welcomed without declaring fixed identity.',
+          'The Pioneer, someone at the edge of their own discovery, with the courage and aliveness to go after it and the humility to know they\'re always mid-journey, does not need to destroy their conditioned identity. They need to see it clearly enough that it becomes a tool rather than a cage. The shell identity can be worn and released like a jacket. Archetypes and attributes can be welcomed without declaring fixed identity.',
           'The distinction between a choice from authentic core alignment versus one from old programming masquerading as a sovereign decision. That nuance is the entire practice.',
         ],
       },
@@ -345,7 +352,7 @@ export const concepts: Concept[] = [
       },
       {
         q: 'What does it mean to live authentically?',
-        a: 'Authentic identity is not a fixed destination or a personality type to perform. It is the quality of choice-making that emerges when conditioned programming is seen clearly enough that it stops running the show. When choices start coming from a quieter, more coherent place, that is the movement toward Joyful Sovereignty.',
+        a: 'Authentic identity is not a fixed destination or a personality type to perform. It is the quality of choice-making that emerges when conditioned programming is seen clearly enough that it stops running the show. When choices start coming from a quieter, more coherent place, that is the movement toward Joyful Sovereignty: a way of playing the Infinite Game from within: purposeful, playful and free.',
       },
       {
         q: 'How do I stop living on autopilot?',
@@ -421,7 +428,7 @@ export const concepts: Concept[] = [
       },
       {
         q: 'What is the Ideal Month and why is it different from a vision board or goal-setting exercise?',
-        a: 'The Ideal Month is a structural experiment, not an aspiration. It architects what the Pioneer believes is the best structure for their life: fun, play, nourishment, creativity and the practical, all woven together. Then it gets lived. Experience teaches what works and what needs adjusting. The congruence test is what separates it from a vision board.',
+        a: 'The Ideal Month is a structural experiment, not an aspiration. It architects what the Pioneer believes is the best structure for their life: fun, play, nourishment, creativity and the practical, all woven together. The Pioneer is someone at the edge of their own discovery, with the courage and aliveness to go after it and the humility to know they\'re always mid-journey. Then it gets lived. Experience teaches what works and what needs adjusting. The congruence test is what separates it from a vision board.',
       },
       {
         q: 'How do I design my day so it reflects the kind of person I want to become, not just the tasks I need to finish?',
@@ -451,11 +458,11 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'playgrounds-of-exploration',
-    updated: '2026-07-24',
+    updated: '2026-09-25',
     title: 'Playgrounds of Exploration',
     label: 'Framework',
     capsule:
-      'A Playground of Exploration is a domain of life entered with curiosity and explored with the courage to discover what it holds. It is a place the Pioneer plays rather than a task they complete. Each Playground carries its own sensory texture and its own song, released when it has served its purpose. A day becomes a sequence of Playgrounds to curiously explore.',
+      'A Playground of Exploration is a domain of life entered with curiosity and explored with the courage to discover what it holds. It is a place the Pioneer plays. Each Playground carries its own sensory texture and its own song, released when it has served its purpose. A day becomes a sequence of Playgrounds to curiously explore.',
     subtitle:
       'A day as a sequence of places to play, each with its own aliveness, its own song, its own invitation.',
     sections: [
@@ -530,7 +537,7 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'infinite-playlist',
-    updated: '2026-06-04',
+    updated: '2026-09-25',
     title: 'The Infinite Playlist',
     label: 'Framework',
     capsule:
@@ -541,8 +548,8 @@ export const concepts: Concept[] = [
       {
         heading: 'What it is',
         paragraphs: [
-          'The Infinite Playlist is not a concept to adopt. It is a posture toward life. A willingness to move through the day as if dancing to music that is already playing. Some songs the Pioneer chose. Some songs the universe delivered. Both belong to the same playlist.',
-          'Where Playgrounds of Exploration live in touch, taste and sight (the physical act, the domain entered through the senses), the Infinite Playlist lives in sound. An encompassing, ethereal wrapping around every Playground. The Pioneer\'s daily architecture sits inside the Playlist, not outside of it. The Playlist is what gives the architecture its aliveness.',
+          'The Infinite Playlist is a posture toward life. A willingness to move through the day as if dancing to music that is already playing. Some songs the Pioneer chose. Some songs the universe delivered. Both belong to the same playlist. The Pioneer is someone at the edge of their own discovery, with the courage and aliveness to go after it and the humility to know they\'re always mid-journey.',
+          'Where Playgrounds of Exploration, a domain of life entered with curiosity and explored with the courage to discover what it holds, live in touch, taste and sight (the physical act, the domain entered through the senses), the Infinite Playlist lives in sound. An encompassing, ethereal wrapping around every Playground. The Pioneer\'s daily architecture sits inside the Playlist, not outside of it. The Playlist is what gives the architecture its aliveness: the emerging energy that moves through you when an idea or a moment feels exciting and true to you.',
         ],
       },
       {
@@ -582,7 +589,7 @@ export const concepts: Concept[] = [
       },
       {
         q: 'How do I stop grinding through my day and start actually enjoying it?',
-        a: 'The shift is from moving through a task list to moving through a living soundtrack. The Infinite Playlist names the felt quality already present in every activity and asks you to move with it rather than over it. When you follow the energy of the moment instead of forcing completion, the day stops feeling like work and starts feeling like a dance.',
+        a: 'The shift is from moving through a task list to moving through a living soundtrack. The Infinite Playlist names the felt quality already present in every activity and invites you to move with it. When you follow the energy of the moment instead of forcing completion, the day stops feeling like work and starts feeling like a dance.',
       },
       {
         q: 'What does it mean to lead your life and also let life happen to you at the same time?',
@@ -741,7 +748,7 @@ export const concepts: Concept[] = [
       {
         heading: 'Follow Aliveness, not script',
         paragraphs: [
-          'The Pioneer\'s central practice is following authentic aliveness instead of the conditioned script that built the outer life. The North Star is where that practice lives in writing.',
+          'The central practice of the Pioneer, someone at the edge of their own discovery, with the courage and aliveness to go after it and the humility to know they\'re always mid-journey, is following authentic aliveness, the emerging energy that moves through you when an idea or a moment feels exciting and true to you, instead of the conditioned script that built the outer life. The North Star is where that practice lives in writing.',
           'You wrote the trajectory down because it was alive when you wrote it. You keep returning to it because it stays alive as you change. When a quest stops feeling alive, the system rewires around the update. No replanning two months of work by hand. No carrying a stale plan as if it were still true.',
           'The Ideal Month sits inside the North Star horizon. The Pending Plans you carry sit alongside it. The skills you build serve it. Without a North Star, the AI organizes your day-to-day work around whatever is in front of you. With one, it can hold a longer arc.',
         ],
@@ -887,11 +894,11 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'sovereign-capture',
-    updated: '2026-07-01',
+    updated: '2026-09-25',
     title: 'Sovereign Capture',
     label: 'Practice',
     capsule:
-      'The practice of holding what wants to arrive without losing your presence to the work. Ideas land all day. Most capture systems make you the manager of your own inbox. Sovereign Capture asks a different question: how do you honor the ideas and stay present to the life they arrive inside. Body as the first container. Capture, tag, surface, release, trust.',
+      'Sovereign Capture is catching the ideas that arrive all day while staying present to the work in front of you. It honors the ideas and keeps you present to the life they arrive inside. Body as the first container. Capture, tag, surface, release, trust.',
     subtitle:
       'The capture practice that keeps you present to the work while honoring the ideas that want to arrive.',
     pathBridge: {
@@ -1007,7 +1014,7 @@ export const concepts: Concept[] = [
         heading: 'Aliveness as compass',
         paragraphs: [
           'The felt difference after the practice is installed is simplicity, spaciousness and calm authority. The work feels yours. You are not performing the productive version of yourself. You are being the version that is alive.',
-          'Aliveness is the compass the practice keeps pointing back to. When a session produces that felt quality, it is on the path. When it does not, the question surfaces again and does its work.',
+          'Aliveness, the emerging energy that moves through you when an idea or a moment feels exciting and true to you, is the compass the practice keeps pointing back to. When a session produces that felt quality, it is on the path. When it does not, the question surfaces again and does its work.',
         ],
       },
     ],
@@ -1132,11 +1139,11 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'artful-intelligence',
-    updated: '2026-07-24',
+    updated: '2026-09-25',
     title: 'Artful Intelligence',
     label: 'Philosophy',
     capsule:
-      'Artful Intelligence is a way of relating to AI as a creative collaborator rather than a machine that hands you answers. The creativity is yours. AI ignites and amplifies it. Hold that orientation and AI extends your expression. Lose it and you drift into the model\'s average. The difference is who stays the conductor.',
+      'Artful Intelligence is working with AI as a creative collaborator, with the creativity staying yours. AI ignites and amplifies it. Hold that orientation and AI extends your expression while you stay the conductor.',
     subtitle:
       'A way of working with AI that keeps you the creative source and lets the collaboration amplify what is already yours.',
     sections: [
@@ -1467,13 +1474,13 @@ export const concepts: Concept[] = [
   },
   {
     slug: 'held-by-structure',
-    updated: '2026-07-09',
+    updated: '2026-09-25',
     title: 'Held by Structure',
     label: 'Practice',
     capsule:
-      'Held by Structure names the quiet mechanism under every practice that actually lasts. Discipline held by willpower fails at the exact moment willpower is lowest, which is usually the moment it matters. Discipline held by structure keeps working while you are tired, distracted or uninspired, because the system carries the load instead of your resolve. Build the structure once, on a good day, and it holds the line on the bad ones. The goal is not more willpower. It is needing less of it.',
+      'Held by Structure is letting a structure carry a practice on the days willpower runs low. The system carries the load, so the practice keeps working while you are tired, distracted or uninspired. Build it once, on a good day, and it holds the line on the bad ones.',
     subtitle:
-      'The system holds the discipline so willpower does not have to. Build it once and it carries the practice on the days your resolve runs low.',
+      'The system holds the discipline and carries the practice on the days your resolve runs low.',
     sections: [
       {
         heading: 'Willpower is the wrong foundation',

@@ -191,7 +191,9 @@ export default function CreatorBusinessWithoutPerformingPage() {
                 that require active distribution.
               </p>
               <p>
-                Aliveness in business design shows up here. The practitioner who builds
+                Aliveness, the emerging energy that moves through you when an idea or a
+                moment feels exciting and true to you, shows up in business design here.
+                The practitioner who builds
                 one exceptional evergreen pathway and tends it is operating from desire
                 for durability. The business reflects that orientation.
               </p>
@@ -212,11 +214,14 @@ export default function CreatorBusinessWithoutPerformingPage() {
                 The system handles the rest.
               </p>
               <p>
-                The Pioneer in Infinite Game OS vocabulary is the practitioner who has
-                chosen this model. They recognized that Joyful Sovereignty in a Creator
-                business means designing around what is alive in them, around the
-                durability of the work rather than the visibility demands of a platform
-                cadence.
+                The Pioneer in Infinite Game OS vocabulary, someone at the edge of
+                their own discovery, with the courage and aliveness to go after it and
+                the humility to know they&apos;re always mid-journey, is the
+                practitioner who is choosing this model. They recognized that Joyful
+                Sovereignty, a way of playing the Infinite Game from within:
+                purposeful, playful and free, in a Creator business means designing
+                around what is alive in them, around the durability of the work
+                rather than the visibility demands of a platform cadence.
               </p>
             </SectionReveal>
 

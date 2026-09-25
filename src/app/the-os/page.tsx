@@ -45,7 +45,25 @@ const articleSchema = {
   url: 'https://www.infinitegameos.io/the-os',
   mainEntityOfPage: 'https://www.infinitegameos.io/the-os',
   datePublished: '2026-04-14',
-  dateModified: '2026-04-19',
+  dateModified: '2026-09-25',
+  // Carried over when /infinite-game-os merged into this page (Brand Audit
+  // Sitting B, 2026-09-25).
+  subjectOf: {
+    '@type': 'ScholarlyArticle',
+    '@id': 'https://www.lanebelone.com/cite#ssrn-igos-paper',
+    name: 'The Infinite Game OS. A Framework for Sovereign Creator Practice in the AI Era',
+    url: 'https://ssrn.com/abstract=6810541',
+    sameAs: [
+      'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6810541',
+      'https://doi.org/10.2139/ssrn.6810541',
+      'https://www.wikidata.org/wiki/Q140235934',
+    ],
+    identifier: { '@type': 'PropertyValue', propertyID: 'DOI', value: '10.2139/ssrn.6810541' },
+    author: { '@id': 'https://infinitegameos.io/#person' },
+    publisher: { '@type': 'Organization', name: 'SSRN', url: 'https://www.ssrn.com' },
+    datePublished: '2026-06-15',
+    isAccessibleForFree: true,
+  },
 }
 
 const breadcrumbSchema = {
@@ -185,6 +203,28 @@ export default function TheOsPage() {
                   <strong>Updates</strong>. Dispatches from inside the practice
                 </li>
               </ul>
+            </SectionReveal>
+
+            <SectionReveal delay={160}>
+              <h2>An applied operating system</h2>
+              <p>
+                Infinite Game OS is also an operating system in the technical sense,
+                and it runs now, in production: a vault, an agentic layer, a governance
+                structure and a deploy pipeline working together as one system. It is
+                what a Creator builds when the design question shifts from what do I
+                ship this quarter to what holds my work across a decade.
+              </p>
+              <p>
+                It holds six interlocking layers. The vault is the memory layer. The
+                agentic layer is the execution layer. Concept pages are the
+                discoverability layer. Protocols and governance are the trust layer.
+                The deploy pipeline is the publishing layer. AI-legible identity is the
+                locatability layer.
+              </p>
+              <p>
+                The philosophy lives in the Infinite Game. The OS is where that
+                philosophy becomes infrastructure.
+              </p>
             </SectionReveal>
           </div>
 

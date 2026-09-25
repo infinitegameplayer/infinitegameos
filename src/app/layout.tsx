@@ -9,6 +9,7 @@ import { PostHogProvider } from './providers'
 import { PostHogPageView } from './PostHogPageView'
 import { CrossSiteLinkTracker } from '@/components/CrossSiteLinkTracker'
 import { UmamiAnalytics } from '@/components/UmamiAnalytics'
+import { ENDORSEMENT, personJsonLd, personRef } from '@/lib/identity'
 
 const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
@@ -77,50 +78,13 @@ const websiteSchema = {
     '@id': 'https://infinitegameos.io/#person',
   },
   sameAs: [
-    'https://lanebelone.com',
-    'https://sidequesthq.co',
+    'https://www.lanebelone.com',
+    'https://www.sidequesthq.co',
     'https://github.com/InfiniteGamePlayer',
   ],
 }
 
-const personSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  '@id': 'https://infinitegameos.io/#person',
-  name: 'Lane Belone',
-  url: 'https://lanebelone.com',
-  image: 'https://www.lanebelone.com/images/lane-machu-picchu-square.webp',
-  jobTitle: 'Infinite Game practitioner, sovereign life design coach, agentic systems architect',
-  knowsAbout: [
-    'Infinite Game philosophy',
-    'Sovereign creative operating systems',
-    'Agentic systems and architecture',
-    'Post Web and Generative Engine Optimization',
-    'Sovereign life design',
-    'Long-term thinking frameworks',
-    'Creative leadership',
-  ],
-  alumniOf: {
-    '@type': 'Organization',
-    name: 'U.S. Army Special Forces',
-    sameAs: 'https://en.wikipedia.org/wiki/United_States_Army_Special_Forces',
-  },
-  hasCredential: {
-    '@type': 'EducationalOccupationalCredential',
-    name: 'Special Forces Qualification (Green Beret)',
-    credentialCategory: 'military qualification',
-  },
-  sameAs: [
-    'https://www.wikidata.org/wiki/Q139889543',
-    'https://lanebelone.com',
-    'https://sidequesthq.co',
-    'https://www.linkedin.com/in/lanebelone/',
-    'https://www.instagram.com/increasefreedom/',
-    'https://lanebelone.substack.com/',
-    'https://github.com/InfiniteGamePlayer',
-    'https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=11686488',
-  ],
-}
+const personSchema = personJsonLd
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -128,11 +92,12 @@ const organizationSchema = {
   '@id': 'https://www.infinitegameos.io/#organization',
   name: 'Infinite Game OS',
   url: 'https://www.infinitegameos.io',
-  founder: { '@id': 'https://infinitegameos.io/#person' },
+  description: `${ENDORSEMENT.infinitegameos}. Concepts, skills and bundles for playing the Infinite Game, free to use with credit.`,
+  founder: personRef,
   sameAs: [
     'https://www.wikidata.org/wiki/Q139936059',
     'https://www.lanebelone.com',
-    'https://sidequesthq.co',
+    'https://www.sidequesthq.co',
   ],
 }
 

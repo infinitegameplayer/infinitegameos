@@ -159,17 +159,19 @@ export default function InfiniteGamePage() {
             <SectionReveal delay={110}>
               <h2>The Infinite Player</h2>
               <p>
-                The one who plays the Infinite Game is the Infinite Player. A role, a
-                title or a skill set is a character worn for a season, the way a jacket
-                is worn. The player wearing it is the constant, and the player remains
-                when a defining game ends.
+                The one who plays the Infinite Game is the Infinite Player, the
+                player underneath every role, designing the games worth playing. A
+                role, a title or a skill set is a character worn for a season, the
+                way a jacket is worn. The player wearing it is the constant, and the
+                player remains when a defining game ends.
               </p>
               <p>
                 The Infinite Player notices that every game was designed by someone, on
                 purpose or by inheritance, and takes up the design of the next one. Under
                 every outer game, the deliverable, the metric, the quarter, runs a game
-                within the game. The Infinite Player keeps that inner game alive through
-                practice, so the outer one stays worth playing.
+                within the game, the inner game running under every outer one. The
+                Infinite Player keeps that inner game alive through practice, so the
+                outer one stays worth playing.
               </p>
               <p>
                 This is the shift the whole OS serves: from being played by an inherited
@@ -187,13 +189,16 @@ export default function InfiniteGamePage() {
                 Simultaneously, the old conditioned self unravels.
               </p>
               <p>
-                The orientation is Joyful Sovereignty: the sovereign choice to welcome
-                alive energy through the body. The whole game played from the inside,
-                with spaciousness, playfulness and genuine peace. Aliveness is always
-                present. The variable is what the human follows. Following Aliveness is
-                how the Infinite Game keeps playing. Following the conditioned script,
-                the inherited &ldquo;this is how it&apos;s supposed to be done,&rdquo; is
-                finite-game strategy mistaken for living.
+                The orientation is Joyful Sovereignty, a way of playing the Infinite
+                Game from within: purposeful, playful and free. It is the sovereign
+                choice to welcome alive energy through the body. The whole game played
+                from the inside, with spaciousness, playfulness and genuine peace.
+                Aliveness, the emerging energy that moves through you when an idea or a
+                moment feels exciting and true to you, is always present. The variable is what the
+                human follows. Following Aliveness is how the Infinite Game keeps
+                playing. Following the conditioned script, the inherited &ldquo;this is
+                how it&apos;s supposed to be done,&rdquo; is finite-game strategy
+                mistaken for living.
               </p>
               <p>
                 His digital sovereign operating system (the Kingdom) is one wing of a
@@ -203,8 +208,9 @@ export default function InfiniteGamePage() {
               </p>
               <p>
                 Nested within the Infinite Game are finite games: workshops, advisory
-                engagements, publishing deadlines, Side Quests. Side Quest HQ is the container.
-                Side quests are intentional and bounded. They fund and support the
+                engagements, publishing deadlines, Side Quests. Side Quest HQ is the
+                container. Side quests, finite adventures you choose inside the
+                Infinite Game, are intentional and bounded. They fund and support the
                 Infinite Game practice.
               </p>
               <p>
@@ -213,7 +219,11 @@ export default function InfiniteGamePage() {
                 finite one. Designing the two-layer structure is itself an act of
                 sovereignty. Playing this way in the current era asks something new: a
                 sovereign life architected in the Post Web, the AI moment, the sovereign
-                moment itself. This is the Pioneer&apos;s territory.
+                moment itself. The Post Web is the web of the fourth verb, where you
+                hold the intent and delegate the execution to agents. This is the
+                Pioneer&apos;s territory. The Pioneer is someone at the edge of their
+                own discovery, with the courage and aliveness to go after it and the
+                humility to know they&apos;re always mid-journey.
               </p>
             </SectionReveal>
 

@@ -140,8 +140,10 @@ export default function DesignYourDayPage() {
               <h2>Three drivers of a day designed from desire</h2>
               <p>
                 Desire is the first driver. Not want in the shallow sense, but the
-                quality of aliveness a person feels when the day is going the way it
-                should. Desire points toward the activities, rhythms and environments
+                quality of aliveness, the emerging energy that moves through you when
+                an idea or a moment feels exciting and true to you, a person feels
+                when the day is going the way it should. Desire points toward the
+                activities, rhythms and environments
                 that create that quality. It is a navigation tool.
               </p>
               <p>
@@ -197,8 +199,10 @@ export default function DesignYourDayPage() {
                 Reducing structure does not mean removing intention. It means leaving
                 room inside the intention. A half-day with no appointments is not
                 wasted. It is a container in which Aliveness can move. Playgrounds of
-                Exploration, a concept in the Infinite Game, names the practice of
-                building these open containers deliberately, as features of the design.
+                Exploration, a domain of life entered with curiosity and explored with
+                the courage to discover what it holds, a concept in the Infinite Game,
+                names the practice of building these open containers deliberately, as
+                features of the design.
               </p>
               <p>
                 A practical move is to identify one block per day that belongs entirely
@@ -225,7 +229,9 @@ export default function DesignYourDayPage() {
               </p>
               <p>
                 Joyful Sovereignty is the phrase the Infinite Game uses for this
-                orientation. It names the choice to let alive energy move through the
+                orientation, a way of playing the Infinite Game from within:
+                purposeful, playful and free. It names the choice to let alive energy
+                move through the
                 day rather than suppress it in service of a scorecard. The move from
                 achievement-centered to values-centered is a different relationship
                 with the question of what a good day means.

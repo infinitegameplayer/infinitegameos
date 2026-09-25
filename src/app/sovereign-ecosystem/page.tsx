@@ -7,6 +7,7 @@ import {
   upstreamUpdatedAt,
   dualDistributionCount,
 } from '@/lib/upstream'
+import { sqhqOrgRef } from '@/lib/identity'
 
 export const metadata: Metadata = {
   title: {
@@ -71,15 +72,11 @@ const offerSchema = {
   '@type': 'Offer',
   name: 'Sovereign Ecosystem Install Session',
   description: 'Two 1-hour sessions with Lane to set up your Sovereign Ecosystem.',
-  url: 'https://sidequesthq.co/sovereign-ecosystem-install',
+  url: 'https://www.sidequesthq.co/sovereign-ecosystem-install',
   price: '247',
   priceCurrency: 'USD',
   availability: 'https://schema.org/InStock',
-  seller: {
-    '@type': 'Organization',
-    name: 'Side Quest HQ',
-    url: 'https://sidequesthq.co',
-  },
+  seller: sqhqOrgRef,
 }
 
 export default function SovereignEcosystemPage() {

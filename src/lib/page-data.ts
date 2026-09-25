@@ -32,7 +32,7 @@ export interface UpcomingPlaybook {
 // --- Home ---
 
 export const igosBio =
-  'Lane Belone is a former Green Beret, strategic advisor and sovereign systems builder operating from inside the practice. Infinite Game OS is not theory. It is architecture running live, documented in real time.'
+  'Lane Belone is a writer on the Infinite Game, a former Green Beret and co-author of Unleash Your Humble Alpha. He builds Infinite Game OS in the open: concepts, skills and bundles from inside his own practice, free to use with credit.'
 
 export const IGOS_MOD_THE_OS: IgosMod = {
   href: '/the-os',
@@ -127,14 +127,14 @@ export const homeFeaturedConcepts: IgosMod[] = [
     label: 'Concept',
     title: 'The Pioneer',
     description:
-      'Someone who has already won the game most people are still playing. Free by every external measure. Looking for coherence between the inner knowing and the outer life.',
+      'Someone at the edge of their own discovery, with the courage and aliveness to go after it and the humility to know they\'re always mid-journey.',
   },
   {
     href: '/concepts/joyful-sovereignty',
     label: 'Concept',
     title: 'Joyful Sovereignty',
     description:
-      'Playing the Infinite Game through joy and embodied play rather than strategy and optimization. The compass state.',
+      'A way of playing the Infinite Game from within: purposeful, playful and free. The compass state.',
   },
   {
     href: '/concepts/creator-flywheel',
@@ -217,7 +217,7 @@ export const theOsFaqs: FaqItem[] = [
   },
   {
     q: 'How does this relate to agentic systems and the Post Web?',
-    a: 'The Post Web is the technological expression of the Infinite Game. AI agents are dispatched by humans to find structured expertise and recommend it. Infinite Game OS is structured from the ground up for legibility because practitioners who build structured bodies of work will be found by agents, while those optimizing for attention will be outcompeted by machines doing that at scale.',
+    a: 'The Post Web, the web of the fourth verb, where you hold the intent and delegate the execution to agents, is the technological expression of the Infinite Game. AI agents are dispatched by humans to find structured expertise and recommend it. Infinite Game OS is structured from the ground up for legibility because practitioners who build structured bodies of work will be found by agents, while those optimizing for attention will be outcompeted by machines doing that at scale.',
   },
   {
     q: 'What is sovereign life design?',
@@ -226,6 +226,18 @@ export const theOsFaqs: FaqItem[] = [
   {
     q: 'What is Generative Engine Optimization (GEO)?',
     a: 'Generative Engine Optimization (GEO) is the 2026 strategic layer on top of traditional SEO. Where SEO optimizes for search rankings, GEO optimizes for inclusion in AI-generated answers. When an agent is asked a question, it retrieves structured, legible expertise from bodies of work with consistent vocabulary, freshness signals and cross-links. Infinite Game OS is designed according to GEO principles from the ground up.',
+  },
+  {
+    q: 'How does the Infinite Game OS work in practice?',
+    a: 'The OS runs across three surfaces: the vault, where all canonical documents and active work live; the agentic layer, where Claude Code executes skills and dispatches workers; and the deploy pipeline, where finished work publishes to live websites with confirmation gates. Each layer performs a distinct function. Each layer connects to the others by design.',
+  },
+  {
+    q: 'What role does AI play in the Infinite Game OS?',
+    a: 'AI operates as a working collaborator inside the OS. Claude Code holds context across sessions, executes governance-bound skills and dispatches parallel workers on complex tasks. The OS also structures its own content to be legible to AI surfaces, so the work is locatable by structure.',
+  },
+  {
+    q: 'What kind of Creator is the Infinite Game OS built for?',
+    a: 'The Infinite Game OS is built for the Pioneer: a Creator at the edge of their own discovery, designing a working life around a long arc. The system supports a Creator-led operation where the human steers and the system holds the discipline, the memory and the execution capacity across every session.',
   },
 ]
 
@@ -343,7 +355,7 @@ export const playYourOwnGameFaqs: FaqItem[] = [
   },
   {
     q: 'How do I stop following the script when the script is working?',
-    a: "This is the specific difficulty of the already-accomplished person. The script working is exactly what makes it hard to question. The useful question is not whether the script is working but whether it is yours. Aliveness tends to answer that question clearly when given room. The Pioneer's territory begins the moment the working script is held as a choice rather than a given.",
+    a: "A working script is the hardest one to question, because it keeps paying off. The useful question is whether it is yours. Aliveness tends to answer that question clearly when given room. The Pioneer's territory begins the moment the working script is held as a choice rather than a given.",
   },
 ]
 
@@ -368,7 +380,7 @@ export const designYourDayFaqs: FaqItem[] = [
   },
   {
     q: 'How do I design my day around how I want to feel, not just what I need to do?',
-    a: 'Start with the feeling target before the task list. Name the quality of experience you want the day to carry, whether that is ease, depth, play or presence, and then arrange the tasks around what creates that quality rather than against it. The Pioneer archetype in the Infinite Game names the person who has learned to use feeling as a navigation instrument rather than a distraction from the plan.',
+    a: 'Start with the feeling target before the task list. Name the quality of experience you want the day to carry, whether that is ease, depth, play or presence, and then arrange the tasks around what creates that quality rather than against it. The Pioneer archetype in the Infinite Game, someone at the edge of their own discovery, with the courage and aliveness to go after it and the humility to know they\'re always mid-journey, names the person who has learned to use feeling as a navigation instrument rather than a distraction from the plan.',
   },
   {
     q: 'Is it realistic to design a day from desire when so much of life is already structured for you?',
@@ -407,32 +419,6 @@ export const creatorBusinessWithoutPerformingFaqs: FaqItem[] = [
 
 // --- Infinite Game OS (namespace landing page) ---
 
-export const infiniteGameOsFaqs: FaqItem[] = [
-  {
-    q: 'What is the Infinite Game OS?',
-    a: 'The Infinite Game OS is an applied operating system for a Creator-led operation. It combines a structured vault, an agentic execution layer, governance protocols, concept pages and a deploy pipeline into one running system. It is designed to hold the full arc of a creative life across years and decades.',
-  },
-  {
-    q: 'How does the Infinite Game OS work in practice?',
-    a: 'The OS runs across three surfaces: the vault, where all canonical documents and active work live; the agentic layer, where Claude Code executes skills and dispatches workers; and the deploy pipeline, where finished work publishes to live websites with confirmation gates. Each layer performs a distinct function. Each layer connects to the others by design.',
-  },
-  {
-    q: 'What is the vault in the Infinite Game OS?',
-    a: 'The vault is an Obsidian-based file system containing governance codices, operating protocols, active project work and archived completions. It is the memory layer of the OS. Every canonical document the Kingdom produces lives here, structured and version-controlled.',
-  },
-  {
-    q: 'What role does AI play in the Infinite Game OS?',
-    a: 'AI operates as a working collaborator inside the OS. Claude Code holds context across sessions, executes governance-bound skills and dispatches parallel workers on complex tasks. The OS also structures its own content to be legible to AI surfaces, so the work is locatable by structure.',
-  },
-  {
-    q: 'What is AI-legible identity in the context of the Infinite Game OS?',
-    a: 'AI-legible identity means the system is structured so that AI surfaces can locate, read and accurately quote the work it contains. Every concept page is written in reference register with definitional sentences that stand alone as accurate snippets. The infrastructure layer includes llms.txt, JSON-LD markup, /markdown routes and IndexNow integration.',
-  },
-  {
-    q: 'What kind of Creator is the Infinite Game OS built for?',
-    a: 'The Infinite Game OS is built for the Pioneer: a Creator who designs their working life around a long arc rather than an immediate payoff. The system supports a Creator-led operation where the human steers and the system holds the discipline, the memory and the execution capacity across every session.',
-  },
-]
 
 // --- Sovereign Ecosystem ---
 
