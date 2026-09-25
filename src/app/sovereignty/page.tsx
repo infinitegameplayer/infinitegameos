@@ -490,8 +490,10 @@ export default function SovereigntyPage() {
                   marginBottom: '1.25rem',
                 }}
               >
-                The Sovereign Life Playbook renders this philosophy as a
-                protocol you can run.
+                The Sovereign Life Playbook carries this philosophy into a
+                life you can run. Chapter 7, Domains of Sovereign Stewardship,
+                is the wholeness check: it finds the realms going untended
+                while the month still looks full.
               </p>
               <a
                 href="https://www.sidequesthq.co/products/sovereign-life-playbook"

@@ -295,7 +295,7 @@ export const IGOS_ECOSYSTEM_LANE: IgosEcosystemLink = {
   label: 'Lane Belone',
   description:
     'The practitioner behind this OS. Philosophy, essays and the personal body of work.',
-  href: 'https://lanebelone.com',
+  href: 'https://www.lanebelone.com',
 }
 
 export const IGOS_ECOSYSTEM_SQHQ: IgosEcosystemLink = {

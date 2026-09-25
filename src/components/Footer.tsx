@@ -6,7 +6,7 @@ const ecosystemLinks = [
   {
     label: 'Lane Belone',
     sublabel: 'Philosophy and thought leadership',
-    href: 'https://lanebelone.com',
+    href: 'https://www.lanebelone.com',
     external: true,
   },
   {
@@ -221,7 +221,7 @@ export default function Footer() {
           >
             &copy; 2026 Infinite Game OS. Built by{' '}
             <a
-              href="https://lanebelone.com"
+              href="https://www.lanebelone.com"
               style={{ color: 'rgba(226, 232, 240, 0.5)' }}
             >
               Lane Belone

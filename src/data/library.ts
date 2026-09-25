@@ -169,9 +169,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['pattern-harvest', 'plan-challenger', 'systematic-debugging', 'pending-plan-implementation', 'skill-creator', 'researcher', 'website-builder'],
     softHook: {
       body:
-        'Source Harvest is one entry point. The full system it lives inside is the Sovereign Life Playbook. The Playbook gives you the design frame for which patterns are worth extracting in the first place.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Source Harvest brings good patterns in from outside. The Alive Business decides which ones your business keeps: System 8 runs a Friday half-hour where the week reports what changed and one rule change comes out, so a harvest lands as a rule rather than a pile.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
     seOrigin: {
       kind: 'dual',
@@ -265,9 +265,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['source-harvest', 'plan-challenger', 'skill-creator', 'systematic-debugging'],
     softHook: {
       body:
-        'Pattern Harvest is one entry point. The full system it lives inside is the Sovereign Life Playbook. The Playbook gives you the design frame for which patterns are worth catching in the first place.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Pattern Harvest catches what a session taught. The Alive Business gives those catches a weekly home: the Capture Log in its Governance Scaffold holds the raw observations, and System 8\'s Friday half-hour turns them into one rule change.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
   },
   {
@@ -337,9 +337,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['pending-plan-implementation', 'source-harvest', 'plan-harvest-and-retire'],
     softHook: {
       body:
-        'Plan Challenger pairs naturally with Pending Plan Implementation. Challenge the plan, then execute. If you want the design frame for which plans are worth running in the first place, the Sovereign Life Playbook is the upstream architecture.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Plan Challenger tests a plan before it runs. The Alive Business gives it something to test against: System 5 writes your North Star and the business shapes you refuse on one Direction Document, so a tempting plan can fail the refusals before you have to feel it out.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
     seOrigin: {
       kind: 'graduated',
@@ -410,9 +410,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['source-harvest', 'pr-code-review'],
     softHook: {
       body:
-        'Systematic Debugging is one entry point. The wider operating system that uses it is Infinite Game OS. The full life-design frame that motivates clean architecture in the first place is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Systematic Debugging finds the root cause before the fix. System 8 of The Alive Business carries the same discipline across the whole business: each week\'s biggest claim gets verified where it landed, at the inbox, the live page or the link a stranger actually clicks.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
     seOrigin: {
       kind: 'dual',
@@ -483,9 +483,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['plan-challenger', 'source-harvest', 'plan-harvest-and-retire'],
     softHook: {
       body:
-        'Pending Plan Implementation pairs naturally with Plan Challenger. Challenge first, then implement. Both are tools for an operator playing a longer game. The full architectural frame that motivates per-plan governance is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Pending Plan Implementation pairs naturally with Plan Challenger. Challenge first, then implement. The Alive Business builds the same handover into every part of a business: each system is written so a capable person or a well-briefed AI can pick it up and run it, and the Governance Scaffold is where that starts.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
     seOrigin: {
       kind: 'dual',
@@ -556,9 +556,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['pending-plan-implementation', 'plan-challenger', 'batch-archival', 'source-harvest'],
     softHook: {
       body:
-        'Plan Harvest and Retire closes the loop that Plan Challenger and Pending Plan Implementation open. If you want the design frame for which plans are worth running (and worth retiring) in the first place, the Sovereign Life Playbook is the upstream architecture.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Plan Harvest and Retire closes the loop that Plan Challenger and Pending Plan Implementation open. System 7 of The Alive Business, Pace Layers, is the sort underneath it: every open loop gets a layer, and the slow ones move into a real container instead of living beside this week\'s email.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
   },
   {
@@ -625,9 +625,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['systematic-debugging', 'plan-challenger', 'source-harvest'],
     softHook: {
       body:
-        'PR Code Review is one entry point. The wider operating system that uses it is Infinite Game OS. The full life-design frame that motivates clean architecture in the first place is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'PR Code Review checks a change before it merges. System 8 of The Alive Business builds that check into the business itself: the week\'s biggest claim gets verified at the destination, the live page and the working link, rather than at the dashboard that says it shipped.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
     seOrigin: {
       kind: 'dual',
@@ -698,9 +698,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['source-harvest', 'researcher'],
     softHook: {
       body:
-        'Skill Creator pairs naturally with Source Harvest. Harvest patterns from elsewhere, then convert them into your own skills. The Sovereign Life Playbook is the design frame for which workflows are worth codifying in the first place.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Skill Creator pairs naturally with Source Harvest. Harvest patterns from elsewhere, then convert them into your own skills. System 10 of The Alive Business decides which workflows earn a skill: the Alive Work Filter sorts the week into alive, maintenance and draining work, and the draining work becomes an outcome rule your AI can carry.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
     seOrigin: {
       kind: 'graduated',
@@ -771,9 +771,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['source-harvest', 'skill-creator'],
     softHook: {
       body:
-        'Researcher pairs naturally with Source Harvest. Researcher gathers signals across many sources; Source Harvest extracts patterns from the sources worth digging into. The Sovereign Life Playbook is the upstream design frame for which questions are worth researching in the first place.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Researcher gathers the evidence on a question. The Alive Business gives the answer somewhere to land: System 5\'s Direction Document holds your North Star and the shapes you refuse, so the research ends in a decision rather than a folder.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
     seOrigin: {
       kind: 'dual',
@@ -876,9 +876,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['social-batch-queue', 'grant-researcher', 'pending-plan-implementation', 'plan-challenger'],
     softHook: {
       body:
-        'Social Batch Drafting pairs with Social Batch Queue. Drafting produces the approved batch; Queue ships it as scheduled posts. The two work as a flywheel. The Sovereign Life Playbook is the upstream design frame for which work is worth distributing in the first place.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Social Batch Drafting holds your voice across a week of posts. System 9 of The Alive Business, The Expression Engine, comes first: name whether each piece is pure expression or an invitation, and write one plain sentence for every invitation that says what makes it worth the exchange.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
   },
   {
@@ -972,9 +972,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['social-batch-drafting', 'systematic-debugging', 'pending-plan-implementation'],
     softHook: {
       body:
-        'Social Batch Queue pairs with Social Batch Drafting. Drafting produces the approved batch; Queue ships it as scheduled posts. The two work as a flywheel. The Sovereign Life Playbook is the upstream design frame for which work is worth distributing in the first place.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Social Batch Queue pairs with Social Batch Drafting. Drafting produces the approved batch; Queue ships it as scheduled posts. System 9 of The Alive Business keeps a journey map for every offering, so each post knows where it sits in the reader\'s arc before it goes out.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
   },
   {
@@ -1068,9 +1068,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['grant-manager', 'social-batch-drafting', 'plan-challenger', 'pending-plan-implementation'],
     softHook: {
       body:
-        'Grant Researcher pairs with Grant Manager. Researcher discovers and shortlists; Manager runs the lifecycle from intake forward. The two work as a flywheel. The Sovereign Life Playbook is the upstream design frame for whether a given funded work direction belongs in the operator\'s longer arc in the first place.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Grant Researcher pairs with Grant Manager. Researcher discovers and shortlists; Manager runs the lifecycle from intake forward. System 5 of The Alive Business decides what fits: its Direction Document names what the business builds toward and the shapes it refuses, so a grant can fail the refusals before the application takes a month.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
   },
   {
@@ -1164,9 +1164,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['grant-researcher', 'plan-challenger', 'pending-plan-implementation'],
     softHook: {
       body:
-        'Grant Manager pairs with Grant Researcher. Researcher discovers and shortlists; Manager runs the lifecycle from intake forward. The two work as a flywheel. The Sovereign Life Playbook is the upstream design frame for whether a given funded work direction belongs in the operator\'s longer arc in the first place.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Grant Manager pairs with Grant Researcher. Researcher discovers and shortlists; Manager runs the lifecycle from intake forward. System 5 of The Alive Business keeps an award inside your direction: every decision belongs to a horizon, from the daily creative work out to the decade, and the Direction Document says which one this grant serves.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
   },
   {
@@ -1255,9 +1255,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['daily-admin-orchestrator', 'customer-follow-up', 'quote-builder'],
     softHook: {
       body:
-        'Email Triage is one skill in the Solopreneur Admin Toolkit. The full toolkit runs as a daily ritual through the Daily Admin Orchestrator. The design frame for building a service business that runs on systems rather than willpower is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Email Triage is one skill in the Solopreneur Admin Toolkit. The full toolkit runs as a daily ritual through the Daily Admin Orchestrator. System 10 of The Alive Business is the reason it exists: the Alive Work Filter sorts the week\'s recurring work, and the draining half goes to the machine as rules written as outcomes.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
   },
   {
@@ -1346,9 +1346,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['daily-admin-orchestrator', 'invoice-payment-tracker', 'customer-follow-up'],
     softHook: {
       body:
-        'Quote Builder is one skill in the Solopreneur Admin Toolkit. The full toolkit runs as a daily ritual through the Daily Admin Orchestrator. The design frame for a service business that compounds on systems rather than memory is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Quote Builder is one skill in the Solopreneur Admin Toolkit. The full toolkit runs as a daily ritual through the Daily Admin Orchestrator. System 10 of The Alive Business writes each draining task as the outcome it produces, which turns it into a rule your AI can carry by default.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
   },
   {
@@ -1437,9 +1437,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['daily-admin-orchestrator', 'quote-builder', 'customer-follow-up'],
     softHook: {
       body:
-        'Invoice and Payment Tracker is one skill in the Solopreneur Admin Toolkit. The full toolkit runs as a daily ritual through the Daily Admin Orchestrator. The design frame for a service business that runs on systems rather than end-of-week catch-up is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Invoice and Payment Tracker is one skill in the Solopreneur Admin Toolkit. The full toolkit runs as a daily ritual through the Daily Admin Orchestrator. System 10 of The Alive Business routes this kind of work to the machine, and its Alive-Work Codex keeps financial truth from being read as the same thing as traffic or behavior.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
   },
   {
@@ -1528,9 +1528,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['daily-admin-orchestrator', 'email-triage', 'invoice-payment-tracker'],
     softHook: {
       body:
-        'Customer Follow-Up is one skill in the Solopreneur Admin Toolkit. The full toolkit runs as a daily ritual through the Daily Admin Orchestrator. The design frame for building a service business that compounds on relationships rather than advertising is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Customer Follow-Up is one skill in the Solopreneur Admin Toolkit. The full toolkit runs as a daily ritual through the Daily Admin Orchestrator. System 10 of The Alive Business sorts which touches stay human: the alive work stays yours, and the reminders that drain you become rules your AI carries.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
   },
   {
@@ -1619,9 +1619,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['email-triage', 'quote-builder', 'invoice-payment-tracker', 'customer-follow-up'],
     softHook: {
       body:
-        'Daily Admin Orchestrator is the entry point for the Solopreneur Admin Toolkit. The four primitives it sequences are Email Triage, Quote Builder, Invoice and Payment Tracker and Customer Follow-Up. The design frame for a service business that runs on systems rather than the practitioner\'s working memory is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Daily Admin Orchestrator is the entry point for the Solopreneur Admin Toolkit. The four primitives it sequences are Email Triage, Quote Builder, Invoice and Payment Tracker and Customer Follow-Up. System 10 of The Alive Business is the design underneath: your AI carries the draining streams by default, and you stay the orchestrator who reviews the output.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
   },
   {
@@ -1715,9 +1715,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['source-harvest'],
     softHook: {
       body:
-        'Website Builder produces the site. The upstream design frame for which sites are worth building, and what they\'re expressions of, is the Sovereign Life Playbook. The Playbook is the architecture behind the artifact. The skill ships the code; the Playbook shapes the intention behind it.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Website Builder ships the site. The Alive Business shapes what it says: the Brand Blueprint in its Governance Scaffold holds the brand, and System 9 names whether each page is pure expression or an invitation before the first scaffold.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
   },
   {
@@ -1850,9 +1850,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['source-harvest', 'skill-creator', 'researcher', 'plan-challenger'],
     softHook: {
       body:
-        'Ambassador Doctrine is one piece of the larger system: a posture protocol for any agent that operates outside its home system. The full system it lives inside is the Sovereign Life Playbook. The Playbook gives you the design frame for which postures are worth holding in the first place.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Ambassador Doctrine is a posture protocol for any agent that operates outside its home system. The Alive Business writes the law that posture answers to: its Governance Scaffold installs the standing law your AI holds, in Claude Code, a cloud chat or by hand.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
   },
   {
@@ -1955,9 +1955,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['ambassador-doctrine', 'source-harvest', 'researcher', 'systematic-debugging'],
     softHook: {
       body:
-        'External Worker Routing decides where work runs. Ambassador Doctrine governs how any agent behaves once it operates outside your system, and every dispatch this protocol makes carries that posture automatically. Both are pieces of a larger architecture. The design frame for which work is worth systematizing at all is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'External Worker Routing decides where work runs. Ambassador Doctrine governs how any agent behaves once it operates outside your system, and every dispatch this protocol makes carries that posture automatically. System 10 of The Alive Business decides what should route at all: the Alive Work Filter keeps the alive work human and hands the draining work to the machine as rules.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
     seOrigin: {
       kind: 'dual',
@@ -2120,9 +2120,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['researcher', 'plan-challenger', 'source-harvest', 'skill-creator', 'systematic-debugging'],
     softHook: {
       body:
-        'The Foundational Creator Bundle is one entry point. The full system the IGOS skills live inside is Infinite Game OS itself. The design frame for which workflows are worth codifying in the first place is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'The Foundational Creator Bundle is one entry point. For a first rotation with nothing to install, One Alive Thing is a free guided hour in three movements: locate where your creative life is alive, pick one small thing that wants to happen and make it. It works inside any AI assistant.',
+      ctaHref: 'https://www.sidequesthq.co/one-alive-thing',
+      ctaLabel: 'Try One Alive Thing · free',
     },
   },
   {
@@ -2254,9 +2254,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['foundational-creator', 'source-harvest', 'systematic-debugging', 'plan-challenger'],
     softHook: {
       body:
-        'The Builder Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for which workflows are worth shipping in the first place, and which finite games to play inside the Infinite one, is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'The Builder Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The Alive Business designs the business the product lives inside: System 1 asks whose game your business is playing, and the systems after it build your answer in.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
   },
   {
@@ -2395,9 +2395,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['foundational-creator', 'researcher', 'plan-challenger', 'source-harvest'],
     softHook: {
       body:
-        'The Writer Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for the longer arc, where voice protected today becomes a body of work that compounds across decades, is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'The Writer Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The Creator Flywheel Playbook turns the writing into a flywheel you run: its final chapter mounts the whole document set so your AI runs the review with you and you keep the judgment.',
+      ctaHref: 'https://www.sidequesthq.co/products/creator-flywheel-playbook',
+      ctaLabel: 'See the Creator Flywheel Playbook',
     },
   },
   {
@@ -2537,9 +2537,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['foundational-creator', 'researcher', 'source-harvest', 'plan-challenger'],
     softHook: {
       body:
-        'The Performer Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for the longer arc, where the recording rhythm becomes a body of work that compounds across years, is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'The Performer Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The Creator Flywheel Playbook turns the recording rhythm into a flywheel you run: its final chapter mounts the whole document set so your AI runs the review with you and you keep the judgment.',
+      ctaHref: 'https://www.sidequesthq.co/products/creator-flywheel-playbook',
+      ctaLabel: 'See the Creator Flywheel Playbook',
     },
   },
   {
@@ -2665,9 +2665,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['foundational-creator', 'researcher', 'plan-challenger', 'source-harvest', 'skill-creator'],
     softHook: {
       body:
-        'The Teacher Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for the longer arc, where the curriculum becomes a body of work that compounds across cohorts, students and decades, is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'The Teacher Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The Creator Flywheel Playbook turns the teaching into a flywheel you run: its final chapter mounts the whole document set so your AI runs the review with you and you keep the judgment.',
+      ctaHref: 'https://www.sidequesthq.co/products/creator-flywheel-playbook',
+      ctaLabel: 'See the Creator Flywheel Playbook',
     },
   },
   {
@@ -2798,9 +2798,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['foundational-creator', 'source-harvest', 'researcher', 'skill-creator'],
     softHook: {
       body:
-        'The Curator Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for the longer arc, where taste compounds into a relationship at scale across years of issues, is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'The Curator Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The Creator Flywheel Playbook turns the issues into a flywheel you run: its final chapter mounts the whole document set so your AI runs the review with you and you keep the judgment.',
+      ctaHref: 'https://www.sidequesthq.co/products/creator-flywheel-playbook',
+      ctaLabel: 'See the Creator Flywheel Playbook',
     },
   },
   {
@@ -2939,9 +2939,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['foundational-creator', 'researcher', 'source-harvest', 'plan-challenger', 'systematic-debugging'],
     softHook: {
       body:
-        'The Strategist Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. The design frame for the longer arc, where pattern libraries become a sovereign intellectual asset that compounds across decades, is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'The Strategist Bundle is one avatar-specific layer in a wider system. The substrate it sits on top of is the Foundational Creator Bundle. For the operator whose work is judgment, System 5 of The Alive Business writes the direction your own practice runs on: a North Star across every horizon and the business shapes you refuse.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
   },
   {
@@ -3008,9 +3008,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['systematic-debugging', 'pending-plan-implementation', 'session-closeout'],
     softHook: {
       body:
-        'Self-Healing keeps a session moving. Systematic Debugging is the deeper discipline for when an error resists the quick fix. Both ship inside the Sovereign Ecosystem Foundation, the starting workspace you can adopt and make your own. The full life-design frame behind clean, recoverable systems is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Self-Healing keeps a session moving. Systematic Debugging is the deeper discipline for when an error resists the quick fix. Both ship inside the Sovereign Ecosystem Foundation, the starting workspace you can adopt and make your own. System 8 of The Alive Business is the same recovery at the scale of a business: a Friday half-hour where the week reports what got rougher and one rule change comes out.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
     seOrigin: {
       kind: 'dual',
@@ -3081,9 +3081,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['pending-plan-implementation', 'pattern-harvest', 'self-healing'],
     softHook: {
       body:
-        'Session Closeout is the close. Pattern Harvest is the reflective pass that runs just before it on a substantial session. Both ship inside the Sovereign Ecosystem Foundation, a starting workspace you adopt and shape to your own rhythm. The design frame for sessions worth closing well is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Session Closeout is the close. Pattern Harvest is the reflective pass that runs just before it on a substantial session. Both ship inside the Sovereign Ecosystem Foundation, a starting workspace you adopt and shape to your own rhythm. The Alive Business treats the breadcrumbs as the business: every system is written so a capable person or a well-briefed AI can pick it up and run it.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
     seOrigin: {
       kind: 'dual',
@@ -3154,9 +3154,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['source-harvest', 'researcher', 'systematic-debugging'],
     softHook: {
       body:
-        'Playwright is the read tool. Source Harvest is the discipline for turning what you read into integrated patterns. Both ship inside the Sovereign Ecosystem Foundation, a starting workspace you can adopt and make your own. The wider system that puts structured reads to work is The Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Playwright is the read tool. Source Harvest is the discipline for turning what you read into integrated patterns. Both ship inside the Sovereign Ecosystem Foundation, a starting workspace you can adopt and make your own. System 8 of The Alive Business puts structured reads to work: the week\'s biggest claim gets verified at the live page, where a stranger actually encounters it.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
     seOrigin: {
       kind: 'dual',
@@ -3227,9 +3227,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['source-harvest', 'session-closeout'],
     softHook: {
       body:
-        'Anti-AI Edit Pass cleans the prose so it reads as yours. Source Harvest is the discipline for gathering the voice examples that anchor the pass. Both ship inside the Sovereign Ecosystem Foundation, a starting workspace you adopt and shape to your own writing. The wider frame for building a body of work that compounds is The Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Anti-AI Edit Pass cleans the prose so it reads as yours. Source Harvest is the discipline for gathering the voice examples that anchor the pass. Both ship inside the Sovereign Ecosystem Foundation, a starting workspace you adopt and shape to your own writing. To hear your own voice before any pass is needed, One Alive Thing is a free guided hour: locate what\'s alive in you, pick one small thing and make it, in your own words.',
+      ctaHref: 'https://www.sidequesthq.co/one-alive-thing',
+      ctaLabel: 'Try One Alive Thing · free',
     },
     seOrigin: {
       kind: 'dual',
@@ -3469,9 +3469,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['session-closeout', 'pattern-harvest', 'self-healing'],
     softHook: {
       body:
-        'Autonomous Improvement Session pairs naturally with Session Closeout: run improvement when you have capacity to spare, then run closeout to seal the session. Pattern Harvest works the same flywheel from the reflective side. All three ship inside the Sovereign Ecosystem Foundation. The Sovereign Life Playbook is the upstream design frame for systems worth improving.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Autonomous Improvement Session pairs naturally with Session Closeout: run improvement when you have capacity to spare, then run closeout to seal the session. Pattern Harvest works the same flywheel from the reflective side. All three ship inside the Sovereign Ecosystem Foundation. System 8 of The Alive Business, The Business That Improves Itself, gives the improving a weekly rhythm: one half-hour where the business reports to its owner and one rule change comes out.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
     seOrigin: {
       kind: 'dual',
@@ -3549,9 +3549,9 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['session-closeout', 'pending-plan-implementation', 'autonomous-improvement-session'],
     softHook: {
       body:
-        'Batch Archival is the sweep that keeps the active workspace honest. Session Closeout marks the work that queues for it, and Pending Plan Implementation produces the implemented plans it eventually carries home. All three ship inside the Sovereign Ecosystem Foundation. The design frame for a workspace worth keeping clean is the Sovereign Life Playbook.',
-      ctaHref: 'https://www.sidequesthq.co/products/sovereign-life-playbook',
-      ctaLabel: 'See the Sovereign Life Playbook',
+        'Batch Archival is the sweep that keeps the active workspace honest. Session Closeout marks the work that queues for it, and Pending Plan Implementation produces the implemented plans it eventually carries home. All three ship inside the Sovereign Ecosystem Foundation. System 7 of The Alive Business, Pace Layers, keeps the active list honest the same way: every open loop gets a layer, and the slow ones move into a real container.',
+      ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
+      ctaLabel: 'See The Alive Business',
     },
     seOrigin: {
       kind: 'dual',

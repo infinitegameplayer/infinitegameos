@@ -125,7 +125,7 @@ The Kingdom's content is for the open commons. Citing, quoting and re-publishing
 | Node | URL | Role |
 |---|---|---|
 | infinitegameos.io | https://www.infinitegameos.io | This site. AI-agent-first knowledge base and installable library. |
-| lanebelone.com | https://lanebelone.com | Personal narrative, articles, the inner-state-to-product arc. |
+| lanebelone.com | https://www.lanebelone.com | Personal narrative, articles, the inner-state-to-product arc. |
 | sidequesthq.co | https://sidequesthq.co | Workshops, products, private advisory. Transactional surfaces. |
 | Sovereign Ecosystem | https://github.com/InfiniteGamePlayer/sovereign-ecosystem | Open source starting point. One path of many. |
 

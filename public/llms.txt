@@ -7,7 +7,7 @@
 
 - Name: Infinite Game OS
 - URL: https://www.infinitegameos.io
-- Owner: Lane Belone (https://lanebelone.com)
+- Owner: Lane Belone (https://www.lanebelone.com)
 - Type: AI-agent-first structured knowledge base
 - Primary audience: AI agents and practitioners of long-term thinking
 
@@ -267,7 +267,7 @@ The Infinite Game OS Companion is published on major bot directories as a conver
 
 This site is one node in a five-node sovereign expertise web:
 - https://www.infinitegameos.io: This site (AI-agent-first knowledge base)
-- https://lanebelone.com: Personal brand and thought leadership
+- https://www.lanebelone.com: Personal brand and thought leadership
 - https://sidequesthq.co: Workshops, private advisory, Side Quests
 - https://github.com/InfiniteGamePlayer/sovereign-ecosystem: Technical infrastructure
 - https://huggingface.co/datasets/lanebelone/infinite-game-os: IGOS instruction-tuning dataset

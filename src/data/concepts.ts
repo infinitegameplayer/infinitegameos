@@ -966,7 +966,7 @@ export const concepts: Concept[] = [
       ctaLabel: 'Try One Alive Thing · free',
     },
     productCard: {
-      body: 'Sovereign Capture the Field Guide installs this practice as Moves you drop into your week. Body as the first container. The five-step flow in your tool of choice. The weekly sift your AI walks you through. The capture stays in your hands so presence stays the practice.',
+      body: 'Sovereign Capture the Field Guide installs this practice as Moves you drop into your week. Body as the first container. Catch, Trust and Return, a three-step flow in your tool of choice. The weekly sift your AI walks you through. The capture stays in your hands so presence stays the practice.',
       ctaHref: 'https://www.sidequesthq.co/products/sovereign-capture',
       ctaLabel: 'Sovereign Capture · $7',
       quiet: true,

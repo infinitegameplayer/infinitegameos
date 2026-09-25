@@ -232,7 +232,7 @@ export default function AboutPage() {
                 Work with Lane
               </a>
               <a
-                href="https://lanebelone.com"
+                href="https://www.lanebelone.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline"
