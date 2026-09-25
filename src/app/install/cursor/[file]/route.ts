@@ -1,5 +1,5 @@
 import { igosAssets } from '@/data/library'
-import { generateCursorMdc } from '@/lib/markdown-content'
+import { generateCursorMdc } from '@/lib/cursor-mdc'
 
 export const dynamic = 'force-static'
 

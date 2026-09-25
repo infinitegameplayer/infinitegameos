@@ -1,6 +1,6 @@
 // IGOS Public Library asset registry.
-// Source of truth for: src/app/[type]/[slug] pages, src/lib/markdown-content.ts
-// markdown variants, /public/igos-index.json, /public/marketplace.json.
+// Source of truth for: src/app/[type]/[slug] pages (and their markdown twins, generated
+// from the page), src/lib/cursor-mdc.ts, /public/igos-index.json, /public/marketplace.json.
 //
 // Adding a new asset: append a new IGOSAsset entry below. The page route, the
 // markdown route, the registry JSON and the marketplace JSON pick it up.

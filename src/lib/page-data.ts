@@ -1,7 +1,6 @@
 // Canonical data for infinitegameos.io pages.
-// Single source of truth imported by both markdown-content.ts generate functions
-// and page.tsx components. Eliminates drift between the React surface and AI-facing
-// /markdown/ routes.
+// Single source of truth imported by page.tsx components. The /markdown/ twins
+// are generated from the rendered page (src/lib/twin.ts), so they follow it.
 
 // --- Shared types ---
 
