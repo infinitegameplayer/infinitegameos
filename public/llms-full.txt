@@ -123,7 +123,8 @@ skill set is a character worn for a season. The player wearing it is the constan
 and remains when a defining game ends. The Infinite Player notices that every game
 was designed by someone, on purpose or by inheritance, and takes up the design of
 the next one. Under every outer game runs a game within the game, kept alive through
-practice.
+practice. Side Quest HQ keeps the Infinite Player's full page, with the three moves
+and a free hour to start: https://www.sidequesthq.co/infinite-player
 
 Lane's application runs through three movements of embodiment (thinking, acting,
 embodying), the musician's arc where scales become invisible leaving only the play.

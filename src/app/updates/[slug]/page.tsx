@@ -144,6 +144,11 @@ export default async function UpdatePage({
                   <div key={i}>
                     <h3>{item.q}</h3>
                     <p>{item.a}</p>
+                    {item.link && (
+                      <p>
+                        <a href={item.link.href}>{item.link.label} &rarr;</a>
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>

@@ -7,6 +7,9 @@ const updatesDir = path.join(process.cwd(), 'content', 'updates')
 export type FaqItem = {
   q: string
   a: string
+  // Optional onward link, rendered under the answer. The FAQPage schema keeps
+  // the answer text alone.
+  link?: { href: string; label: string }
 }
 
 export type UpdateMeta = {

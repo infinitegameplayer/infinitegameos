@@ -177,6 +177,15 @@ export default function InfiniteGamePage() {
                 This is the shift the whole OS serves: from being played by an inherited
                 game to authoring your own.
               </p>
+              <p>
+                Side Quest HQ keeps the Infinite Player&apos;s full page, with the three
+                moves and a free hour to start.
+              </p>
+              <p>
+                <a href="https://www.sidequesthq.co/infinite-player" className="btn-outline">
+                  The Infinite Player at Side Quest HQ
+                </a>
+              </p>
             </SectionReveal>
 
             <SectionReveal delay={140}>

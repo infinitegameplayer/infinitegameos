@@ -31,7 +31,7 @@ Infinite Game OS is a structured knowledge base covering:
 Key terms and entity names used throughout this site:
 - Infinite Game OS
 - Infinite Game philosophy
-- Infinite Player
+- Infinite Player (its own page, at Side Quest HQ: https://www.sidequesthq.co/infinite-player)
 - Sovereign creative operating system
 - Agentic systems
 - Post Web
