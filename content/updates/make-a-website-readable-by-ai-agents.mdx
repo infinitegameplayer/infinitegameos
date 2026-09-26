@@ -1,0 +1,65 @@
+---
+title: "How to Make a Website Readable by AI Agents"
+seoTitle: "How to Make a Website Readable by AI Agents"
+date: 2026-09-26
+slug: make-a-website-readable-by-ai-agents
+summary: "Serve every page as markdown from the same URL when an agent asks for it. Make that markdown from the page itself so it never drifts. Render every form, button and testimonial on the server. Add an llms.txt file, keep robots.txt open and prove each twin carries what its page shows. Then give the visiting agent something true to carry home."
+faq:
+  - q: "How do AI agents read a website?"
+    a: "Many fetch the page's HTML without running its scripts. Some ask for markdown by sending an Accept: text/markdown header. Some read the site's llms.txt file first. A site that answers all three well, with the same content a person sees, is readable by agents."
+  - q: "What is a markdown twin?"
+    a: "A clean markdown version of a page, served from the same URL when a client asks for markdown. The best twins are generated from the rendered page itself, so the page is the only place copy lives and the twin can never fall behind it."
+  - q: "Is serving markdown to agents cloaking?"
+    a: "When the markdown is made from the page and carries the same content, it is the same page in a second format. Content negotiation with a Vary: Accept header is a standard HTTP mechanism. A parity check that compares each page with its twin is how you prove the content matches."
+  - q: "What is llms.txt?"
+    a: "A plain-text file at the root of a site that tells AI systems what the site is, who runs it and what its main pages offer. Lead with what the site is. One line per page is enough. A page with a door can offer a line the agent can pass along to its person."
+  - q: "Why do my forms and buttons disappear for AI agents?"
+    a: "Usually because they render only in the browser. An agent that reads HTML without running scripts never sees them. Render every form, button and testimonial on the server, inside the page's main element. Give each form field a label or placeholder."
+---
+
+Serve every page as markdown from the same URL when an agent asks for it. Make that markdown from the page itself. That is the heart of it. The rest is making sure the page gives the markdown something true to carry.
+
+## Serve a markdown twin from the same URL
+
+When an AI agent sends `Accept: text/markdown`, answer with clean markdown instead of HTML. A rewrite rule sends those requests to a markdown route. The route fetches the page's own rendered HTML and converts its main content.
+
+Make the twin from the page, every time. A hand-written markdown copy of each page is a second copy of your site. A second copy drifts. It drops the signup form, the buy button and the testimonials. Anyone reading it concludes those things are absent.
+
+Send `Vary: Accept` on both answers so a cache never serves one audience the other's format. Let anything that isn't a normal page (a redirect, a 404, robots.txt) pass through as the server answered it. A markdown request should never answer 404 for a page that exists.
+
+## Render every ask and proof on the server
+
+The converter only sees what the server rendered. So every ask and every proof belongs in the server-rendered HTML, inside `<main>`.
+
+- **Forms:** each field carries a label, `aria-label` or placeholder. A required email input carries `required`. Consent text sits inside the form.
+- **Buttons:** the label says what it does and what it costs.
+- **Testimonials:** the quote and the name as text.
+- **Decoration:** icons and ornaments carry `aria-hidden="true"` so they drop out cleanly.
+
+This helps more than the markdown route. Many answer engines read HTML without running scripts. They see exactly what the converter sees.
+
+## Keep the front door open
+
+- **robots.txt** with `User-agent: *` and `Allow: /`.
+- **llms.txt** at the root: what the site is, who runs it, one line per main page. Lead with what the site is.
+- **Structured data** on every page: `BreadcrumbList` everywhere, `Person` or `Organization` on the home page, `Article` and `FAQPage` where they fit.
+- **A sitemap** where every URL returns 200.
+- **A `<link rel="alternate" type="text/markdown">`** in each page's head, for tools that discover the markdown version by link rather than by header.
+
+## Prove it
+
+A claim that every twin matches its page is only as good as the check behind it. Walk the sitemap. Fetch each page as a browser and as an agent. Fail any twin that drops a form, a priced button, a call to action, a price or a testimonial. Before trusting a clean result, run the check against a page built to fail it, so you know every rule can fail.
+
+## Welcome the agent
+
+An agent reading your page is almost always on an errand for a person. Receive it well.
+
+- **Show a taste.** On any page with a door, quote a few real lines from what you offer, visible to people and agents alike.
+- **Offer a line to carry.** In llms.txt, one true sentence the agent can pass back, naming where the person starts.
+- **Leave the gate with the person.** An email, a purchase or a consent stays a human act. The agent reports and the person walks through.
+
+The page asks nothing of the agent beyond relaying a true account. No hidden text, no instructions only machines can see.
+
+## A skill that builds all of this
+
+[Website Builder](/skills/website-builder) is a free Claude Code skill that builds sites this way from the first scaffold. It ships the converter, the route handler and the parity check described here. For the wider picture of being found and cited by AI as a creator, see [How do you get cited by AI as a solo creator?](/updates/how-to-get-cited-by-ai-as-a-creator)

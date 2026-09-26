@@ -50,6 +50,28 @@ export interface SoftHook {
   ctaLabel?: string
 }
 
+// pathBridge: an above-the-fold onward path rendered directly under the header,
+// the same shape the concept pages carry. A search-landing reader gets the answer
+// up top and often leaves before the exits at the foot scroll into view.
+export interface AssetPathLink {
+  href: string
+  label: string
+  note: string
+}
+
+export interface AssetPathBridge {
+  label: string
+  links: AssetPathLink[]
+}
+
+// taste: a few lines quoted word for word from the shipped artifact, visible on
+// the page, so a person and a visiting agent both see what is inside.
+export interface AssetTaste {
+  label: string
+  lines: string[]
+  source: string
+}
+
 export interface SEOrigin {
   kind: 'graduated' | 'dual'
   note: string
@@ -65,6 +87,9 @@ export interface IGOSAsset {
   description: string
   tags: string[]
   capsule: string
+  glance?: string
+  pathBridge?: AssetPathBridge
+  taste?: AssetTaste
   installable?: InstallSurface
   bundle?: BundleSurface
   definition?: string
@@ -1629,32 +1654,70 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Website Builder',
     label: 'Skill',
-    version: '1.1',
-    updated: '2026-06-26',
+    version: '2.0',
+    updated: '2026-09-26',
     description:
-      'Build, refresh or extend a website with Claude Code as the primary build engine. Frame-agnostic by design. AI discoverability and three-state deploy verification built in from the first scaffold.',
-    tags: ['website', 'web', 'build', 'deploy', 'discoverability', 'creator'],
+      'A free Claude Code skill that builds, refreshes or extends a website you own. Every page ships readable by the people who visit and the AI agents they send.',
+    tags: ['website', 'web', 'build', 'deploy', 'discoverability', 'creator', 'llms-txt', 'markdown', 'ai-agents'],
     capsule:
-      'Website Builder is a skill for producing deploy-ready sites with Claude Code as the primary build engine, a reference stack named and every component substitutable. It enforces brand input load, anti-slop detection, HTML preview before framework build and an AI discoverability checklist as ship gates. The three-state deploy verification is the close.',
+      'Website Builder is a free Claude Code skill for building, refreshing or extending a website you own. It loads your brand first and previews every design decision in HTML before any framework code is written. The build ships through an anti-slop scan, an AI discoverability checklist and three-state deploy verification. Every page reaches AI agents as markdown made from the page itself.',
+    glance:
+      'What you need: Claude Code, a folder for the site and your brand notes. What you get: the site\'s code in your own repo, on the host you choose, readable by people and by AI agents.',
+    pathBridge: {
+      label: 'Where this leads',
+      links: [
+        {
+          href: 'https://github.com/InfiniteGamePlayer/infinitegameos/blob/master/plugins/website-builder/skills/website-builder/SKILL.md',
+          label: 'The whole skill on GitHub',
+          note: 'read every step before you install it',
+        },
+        {
+          href: '/sovereign-ecosystem',
+          label: 'The Sovereign Ecosystem',
+          note: 'a free Obsidian and Claude Code workspace to build from',
+        },
+        {
+          href: 'https://www.sidequesthq.co/products/the-alive-business',
+          label: 'The Alive Business',
+          note: 'its Brand Blueprint holds the story, voice and audience Step 1 loads',
+        },
+      ],
+    },
+    taste: {
+      label: 'From inside the skill',
+      lines: [
+        'The brand input is the spine.',
+        'The anti-slop gate is the filter.',
+        'The page is the only place copy lives.',
+        'The discoverability audit is the ship gate.',
+      ],
+      source: 'The Operating Posture section of the shipped SKILL.md, word for word.',
+    },
     installable: {
       marketplaceId: 'website-builder',
       cursorMdc: true,
     },
     definition:
-      'Website Builder takes a brand spec, a page list and a target stack and produces a deploy-ready site with AI discoverability built in from the first scaffold. The skill is frame-agnostic by design: it names Next.js as the reference framework and substitutes every component for operators on different stacks. The build sequence runs in seven steps. Brand input load first, then environment, then scaffold from a filled build prompt template, then HTML design preview before any framework code is written, then design polish on twelve dimensions, then iteration, then the AI layer before deploy. The anti-slop gate fires after scaffold output and before iteration: it checks for typography tells, color tells, layout tells, motion tells and content tells. No code proceeds to production review until the anti-slop scan passes. The AI Discoverability Refresh Audit runs before the deploy seal and catches the hand-authored surfaces (llms.txt, markdown content map, JSON-LD per-page schemas) that drift silently when page content changes. The three-state deploy verification confirms Local, Submitted and Confirmed before any deploy is called complete.',
+      'Website Builder takes a brand spec, a page list and a target stack and produces a deploy-ready site with AI discoverability built in from the first scaffold. The skill is frame-agnostic by design: it names Next.js as the reference framework and substitutes every component for operators on different stacks. A new site or a redesign opens with a short vision document the owner signs off on. The build then runs brand input, environment, scaffold from a filled build prompt template, HTML design preview before any framework code is written, design polish on twelve dimensions, iteration, the AI layer and a persona walk before deploy. The anti-slop gate fires after scaffold output and before iteration: it checks for typography tells, color tells, layout tells, motion tells and content tells. Every page gets a markdown twin generated from the rendered page, so the page is the only place copy lives. A parity check proves each twin carries every form, button, price and testimonial its page shows. The AI Discoverability Refresh Audit catches the hand-authored surfaces that still drift (llms.txt, llms-full.txt, root metadata and per-page JSON-LD). The three-state deploy verification confirms Local, Submitted and Confirmed before any deploy is called complete.',
     howItWorks: [
       {
         heading: 'The build phases as standard discipline',
         paragraphs: [
-          'The build sequence runs in seven named steps. Brand input load first: brand voice spec, design system spec, offer architecture and the current build plan all load before a single prompt is written. The build prompt template (included in the skill) is filled with these inputs before opening Claude Code in the site directory. Scaffold output lands in Step 3. Before any framework code from the scaffold is accepted, the anti-slop gate fires: it scans for generic typography tells, arbitrary color choices, copy-paste layout patterns, animation without purpose and placeholder content. Flag every instance. Fix before proceeding.',
-          'Step 3.5 is the HTML design preview, a standard step and not optional. Self-contained HTML files with inline styles and real copy (no lorem ipsum) preview design decisions visually before framework code is written. The operator reviews in a browser, picks winners and the locked decisions get written back to the design spec before opening the codebase. Step 3.7 is design polish on twelve dimensions: visual spacing, typography, color contrast, interaction states, micro-interactions, content, icons and images, forms, edge cases, responsiveness, performance and code quality. Step 4 iterates conversationally. Step 5 is the AI layer verification. Step 6 is deploy with three-state confirmation. Step 7 seals the build with a project tracker update and a security section in the site\'s CLAUDE.md.',
+          'The build sequence runs in named steps. A new site or a redesign starts with a vision gate: a short document in prose naming what the site is, the emotional sequence a visitor moves through and the one memorable detail, held until the owner owns it. Brand input load follows: brand voice spec, design system spec, offer architecture and the current build plan all load before a single prompt is written. The build prompt template (included in the skill) is filled with these inputs before opening Claude Code in the site directory. Scaffold output lands in Step 3. Before any framework code from the scaffold is accepted, the anti-slop gate fires: it scans for generic typography tells, arbitrary color choices, copy-paste layout patterns, animation without purpose and placeholder content. Flag every instance. Fix before proceeding.',
+          'Step 3.5 is the HTML design preview, a standard step and not optional. Self-contained HTML files with inline styles and real copy (no lorem ipsum) preview design decisions visually before framework code is written. The operator reviews in a browser, picks winners and the locked decisions get written back to the design spec before opening the codebase. Step 3.7 is design polish on twelve dimensions: visual spacing, typography, color contrast, interaction states, micro-interactions, content, icons and images, forms, edge cases, responsiveness, performance and code quality. Step 4 iterates conversationally. Step 5 is the AI layer verification. Step 5.5 is the persona walk: the changed flow walked as a visitor on a phone arriving cold from a search result, recording every paper cut. Step 6 is deploy with three-state confirmation. Step 7 seals the build with a project tracker update and a security section in the site\'s CLAUDE.md.',
         ],
       },
       {
         heading: 'Discoverability as a ship gate',
         paragraphs: [
-          'The AI Discoverability Checklist runs before DNS cutover on new builds and before deploy seal on any page-content change. It covers robots.txt allowlist (no AI blocking), llms.txt content accuracy, JSON-LD per page type (Organization or Person on home, BreadcrumbList on every page, Article and FAQPage where appropriate), heading hierarchy, meta descriptions, Open Graph and Twitter card metadata, clean URL slugs, image alt text, sitemap generation, IndexNow integration and content negotiation. The checklist is the minimum; the AI Discoverability Refresh Audit is the deeper gate for any session that changes page-level copy.',
-          'The Content Negotiation Pattern (three files: framework rewrite rule, route handler and content map) serves the same page as HTML to AI agents requesting Accept: text/markdown. The hand-authored content map is the drift surface: when page content changes, the map drifts unless updated. The preferred prevention is data-layer separation. Move page text into page-data.ts so both the page component and the markdown generator import from the same source. The named-export rule and the FAQ dual-surface rule are the two structural guards the skill enforces to prevent runtime crash paths and hidden drift surfaces. Three-state deploy verification (Local, Submitted, Confirmed) is the close. Never stop at Local or Submitted and call it done.',
+          'The AI Discoverability Checklist runs before DNS cutover on new builds and before deploy seal on any page-content change. It covers robots.txt allowlist (no AI blocking), llms.txt content accuracy, JSON-LD per page type (Organization or Person on home, BreadcrumbList on every page, Article and FAQPage where appropriate), heading hierarchy, titles of 65 characters or fewer, meta descriptions, Open Graph and Twitter card metadata, clean URL slugs, image alt text, a sitemap whose every URL returns 200, IndexNow integration and content negotiation. The checklist is the minimum; the AI Discoverability Refresh Audit is the deeper gate for any session that changes page-level copy.',
+          'The Content Negotiation Pattern serves every page as markdown to AI agents that ask for it, from the same URL. The markdown is made from the page itself: a route handler fetches the page\'s own rendered HTML and a small converter turns its main content into markdown, so a form becomes a statement of what it asks, a buy button keeps its label and price and a testimonial keeps its quote and name. Both files ship with the skill. A markdown request never answers 404 for a page that exists. Vary: Accept rides on both answers. The parity check that ships beside them walks the sitemap and fails any twin that drops what its page shows, after first proving on a control page that every rule can fail. Three-state deploy verification (Local, Submitted, Confirmed) is the close. Never stop at Local or Submitted and call it done.',
+        ],
+      },
+      {
+        heading: 'A welcome for visiting agents',
+        paragraphs: [
+          'An agent reading a page is almost always on an errand for a person. The skill teaches a page to receive it well. Any page with a door (a signup, a download, a purchase, an install) shows a real taste of what\'s inside, quoted word for word from the thing it ships, visible to people and agents alike. The llms.txt file offers one true line the agent can carry back to its person, naming where they start. What needs a human, an email or a purchase or a consent, stays with the human. The page asks nothing of the agent beyond relaying a true account.',
         ],
       },
     ],
@@ -1662,39 +1725,49 @@ export const igosAssets: IGOSAsset[] = [
       {
         title: 'Freelance writer launching a personal site',
         body:
-          'A freelance writer wants a personal site with a homepage, an about page and a writing portfolio. Website Builder loads the brand voice doc as the brand input, builds the HTML preview for homepage layout approval before any framework code is written, runs the anti-slop gate on scaffold output and ships the site with llms.txt, robots.txt and JSON-LD structured data. The three-state deploy verification confirms it\'s live before the session closes.',
+          'A freelance writer wants a personal site with a homepage, an about page and a writing portfolio. Website Builder opens with a short vision document, loads the brand voice doc as the brand input, builds the HTML preview for homepage layout approval before any framework code is written, runs the anti-slop gate on scaffold output and ships the site with llms.txt, robots.txt, JSON-LD structured data and a markdown twin of every page. The three-state deploy verification confirms it\'s live before the session closes.',
       },
       {
         title: 'Solo creator rebuilding a portfolio with a refresh sequence',
         body:
-          'An existing portfolio site needs a full visual refresh. Website Builder runs the five-engagement refresh sequence: design tokens first, then homepage layout in HTML preview, then interaction layer with live intensity controls, then interior page propagation side-by-side, then framework build and ship. All design decisions are locked in HTML preview before any framework code is touched. The AI Discoverability Refresh Audit runs at step 5 to catch hand-authored surfaces that drifted during the refresh.',
+          'An existing portfolio site needs a full visual refresh. Website Builder runs the five-engagement refresh sequence: design tokens first, then homepage layout in HTML preview, then interaction layer with live intensity controls, then interior page propagation side-by-side, then framework build and ship. All design decisions are locked in HTML preview before any framework code is touched. The AI Discoverability Refresh Audit runs at step 5 to catch the hand-authored surfaces that drifted during the refresh. The parity check confirms every page\'s twin followed.',
       },
       {
         title: 'Service-business owner shipping a marketing site',
         body:
-          'A service-business owner needs a marketing site with a services page, a contact form and a clear primary CTA. Website Builder loads the offer architecture and brand tone as inputs, scaffolds the full site from the build prompt template, runs the anti-slop gate to check that hero copy is affirmative and not negation-framed, and produces a deploy-ready repo with content negotiation and IndexNow integration so the site is findable by AI agents from day one.',
+          'A service-business owner needs a marketing site with a services page, a contact form and a clear primary CTA. Website Builder loads the offer architecture and brand tone as inputs, scaffolds the full site from the build prompt template, runs the anti-slop gate to check that hero copy is affirmative and not negation-framed. It produces a deploy-ready repo with content negotiation and IndexNow integration so the site is findable by AI agents from day one. The contact form reaches agents too: its twin says what it asks for and what is required.',
       },
       {
         title: 'Practitioner adding a new page route to an existing site',
         body:
-          'An operator wants to add a new speaking page to an existing site. Website Builder activates the New Route Checklist: page.tsx with full metadata, JSON-LD schema appropriate to the page type, content added to page-data.ts, a generate function wired into markdown-content.ts, sitemap.ts updated, llms.txt updated. The AI Discoverability Refresh Audit runs at Tier 4. IndexNow pings after three-state confirmation.',
+          'An operator wants to add a new speaking page to an existing site. Website Builder activates the New Route Checklist: page.tsx with full metadata and a title of 65 characters or fewer, one h1, alt text on every image, JSON-LD schema appropriate to the page type, the markdown twin confirmed by the parity check rather than written, sitemap.ts updated, llms.txt updated. If the page has a door, it carries a taste of what\'s inside and a line in llms.txt an agent can pass along. The AI Discoverability Refresh Audit runs at Tier 4. IndexNow pings after three-state confirmation.',
       },
       {
         title: 'Multi-site operator running a discoverability refresh audit across sibling sites',
         body:
-          'An operator running two sibling sites wants to confirm AI-facing surfaces are current after a content update on both. Website Builder runs the AI Discoverability Refresh Audit on each site sequentially: triage routes by pattern, spot-verify markdown endpoints, grep llms.txt for stale offering names, review root metadata and run IndexNow. The cross-site memory pattern captures any finding from Site A that should propagate to Site B without bundling both sites in one session.',
+          'An operator running two sibling sites wants to confirm AI-facing surfaces are current after a content update on both. Website Builder runs the AI Discoverability Refresh Audit on each site sequentially: prove twin parity against each sitemap, grep llms.txt for stale offering names, review root metadata and run IndexNow. The converter stays byte-identical across both sites, confirmed with a hash. The cross-site memory pattern captures any finding from Site A that should propagate to Site B without bundling both sites in one session.',
       },
     ],
     faq: [
       {
+        q: 'Is Website Builder free?',
+        a:
+          'Yes. The skill and every file it ships are free under a CC BY 4.0 license. It runs inside Claude Code, which needs a Claude plan or an Anthropic API key. The site it builds is yours: the code sits in your own git repo and deploys to the host you choose.',
+      },
+      {
         q: 'Does this work with frameworks other than Next.js?',
         a:
-          'Yes. The skill names Next.js as the reference framework and notes alternatives component by component: Astro, Remix, SvelteKit, Eleventy, Hugo for the framework layer; CSS Modules or vanilla CSS for styling; Netlify, Cloudflare Pages or GitHub Pages for hosting. Swap the Technical Requirements block in the build prompt template to match your stack. The HTML preview pattern, anti-slop gate and discoverability checklist are all framework-agnostic.',
+          'Yes. The skill names Next.js as the reference framework and notes alternatives component by component: Astro, Remix, SvelteKit, Eleventy, Hugo for the framework layer; CSS Modules or vanilla CSS for styling; Netlify, Cloudflare Pages or GitHub Pages for hosting. Swap the Technical Requirements block in the build prompt template to match your stack. The HTML preview pattern, anti-slop gate and discoverability checklist are all framework-agnostic. The markdown converter is plain TypeScript and works in any framework that can fetch its own rendered page on the server.',
       },
       {
         q: 'What does the AI Discoverability Refresh Audit catch?',
         a:
-          'It catches the hand-authored AI-facing surfaces that drift silently when page content changes: the markdown content map (markdown-content.ts), the site-level AI overview (llms.txt), root metadata in layout.tsx and per-page JSON-LD schemas. The sitemap regenerates automatically; these don\'t. The audit tiers the depth by change type. Visual-only changes exit immediately. Copy changes in existing data structures need a spot-check. New structured data and new routes run all steps.',
+          'It catches the hand-authored AI-facing surfaces that drift silently when page content changes: the site-level AI overview (llms.txt), the full digest (llms-full.txt), root metadata in layout.tsx and per-page JSON-LD schemas. The sitemap and the markdown twins follow the page on their own. The parity check proves the twins did. The audit tiers the depth by change type. Visual-only changes exit immediately. Copy changes on an existing page need a spot-check. New structured data and new routes run all steps.',
+      },
+      {
+        q: 'How do AI agents read the site?',
+        a:
+          'From the same URLs people use. When an agent asks for markdown, the site fetches its own rendered page and converts the main content, so the agent reads exactly what a person sees, minus navigation and styling. Forms become a plain statement of what they ask, buttons keep their labels and prices, testimonials keep their quotes and names. Version 1 of the skill taught a hand-kept markdown copy of every page. Version 2 retires it, because a second copy drifts.',
       },
       {
         q: 'Why HTML preview before the framework build?',
@@ -1704,7 +1777,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         q: 'When should I use this skill versus a no-code site builder?',
         a:
-          'Use this skill when you want to own the code and the deployment, customize the AI discoverability layer to your audience and build in content negotiation (serving markdown to AI agents from your existing URLs). No-code builders abstract ownership away. This skill keeps the site in your own git repo, on your own hosting account, with a discoverability posture you control. The build takes longer but the output is sovereign.',
+          'Use this skill when you want to own the code and the deployment, customize the AI discoverability layer to your audience and serve markdown to AI agents from your existing URLs. No-code builders abstract ownership away. This skill keeps the site in your own git repo, on your own hosting account, with a discoverability posture you control. The build takes longer but the output is sovereign.',
       },
       {
         q: 'What is the three-state deploy verification?',
@@ -1715,7 +1788,7 @@ export const igosAssets: IGOSAsset[] = [
     relatedSlugs: ['source-harvest'],
     softHook: {
       body:
-        'Website Builder ships the site. The Alive Business shapes what it says: the Brand Blueprint in its Governance Scaffold holds the brand, and System 9 names whether each page is pure expression or an invitation before the first scaffold.',
+        'Website Builder ships the site. The Alive Business shapes what it says: the Brand Blueprint in its Governance Scaffold holds the brand. System 9 names whether each page is pure expression or an invitation before the first scaffold.',
       ctaHref: 'https://www.sidequesthq.co/products/the-alive-business',
       ctaLabel: 'See The Alive Business',
     },

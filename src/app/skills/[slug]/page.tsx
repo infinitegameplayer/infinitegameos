@@ -146,8 +146,96 @@ export default async function SkillPage({ params }: PageProps) {
             >
               {asset.capsule}
             </p>
+            {asset.glance && (
+              <p
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '1rem',
+                  color: 'var(--color-muted)',
+                  maxWidth: '60ch',
+                  lineHeight: 1.75,
+                  marginTop: '1.25rem',
+                  marginBottom: '0',
+                }}
+              >
+                {asset.glance}
+              </p>
+            )}
           </SectionReveal>
         </header>
+
+        {/* Zone 1.5: Above-the-fold onward path */}
+        {asset.pathBridge && (
+          <div className="section" style={{ paddingTop: 0, paddingBottom: '1rem' }}>
+            <SectionReveal>
+              <div
+                style={{
+                  padding: '1.5rem 1.75rem',
+                  border: '1px solid var(--color-border)',
+                  borderLeft: '3px solid var(--color-accent)',
+                  borderRadius: '12px',
+                  background: 'var(--color-card, rgba(255, 255, 255, 0.02))',
+                }}
+              >
+                <p className="label" style={{ marginBottom: '1rem' }}>
+                  {asset.pathBridge.label}
+                </p>
+                <ul
+                  style={{
+                    listStyle: 'none',
+                    margin: 0,
+                    padding: 0,
+                    display: 'grid',
+                    gap: '0.85rem',
+                  }}
+                >
+                  {asset.pathBridge.links.map(link => {
+                    const external = link.href.startsWith('http')
+                    const inner = (
+                      <>
+                        <span aria-hidden style={{ color: 'var(--color-accent)', marginRight: '0.5rem' }}>
+                          {'→'}
+                        </span>
+                        <span
+                          style={{
+                            fontFamily: 'var(--font-display)',
+                            fontWeight: 500,
+                            color: 'var(--color-accent)',
+                          }}
+                        >
+                          {link.label}
+                        </span>
+                        <span style={{ color: 'var(--color-muted)', marginLeft: '0.4rem' }}>
+                          {link.note}
+                        </span>
+                      </>
+                    )
+                    return (
+                      <li
+                        key={link.href}
+                        style={{
+                          fontFamily: 'var(--font-body)',
+                          fontSize: '1rem',
+                          lineHeight: 1.6,
+                        }}
+                      >
+                        {external ? (
+                          <a href={link.href} style={{ textDecoration: 'none' }}>
+                            {inner}
+                          </a>
+                        ) : (
+                          <Link href={link.href} style={{ textDecoration: 'none' }}>
+                            {inner}
+                          </Link>
+                        )}
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
+            </SectionReveal>
+          </div>
+        )}
 
         {/* Zone 2: Install block */}
         <div className="section" style={{ paddingTop: '0' }}>
@@ -357,6 +445,50 @@ aider --read ${asset.slug}.md`}</code>
                   : <>This skill ships in both homes, the <Link href="/sovereign-ecosystem" style={{ color: 'var(--color-muted)' }}>Sovereign Ecosystem</Link> Foundation and this library.</>
                 }
               </p>
+            </SectionReveal>
+          )}
+
+          {/* Zone 2.5: A taste, quoted word for word from the shipped artifact */}
+          {asset.taste && (
+            <SectionReveal>
+              <section style={{ maxWidth: '62ch', margin: '0 auto 3rem' }}>
+                <h2 className="label" style={{ marginBottom: '1rem' }}>
+                  {asset.taste.label}
+                </h2>
+                <blockquote
+                  style={{
+                    margin: 0,
+                    padding: '0.25rem 0 0.25rem 1.25rem',
+                    borderLeft: '2px solid var(--color-accent)',
+                  }}
+                >
+                  {asset.taste.lines.map(line => (
+                    <p
+                      key={line}
+                      style={{
+                        fontFamily: 'var(--font-display)',
+                        fontSize: '1.2rem',
+                        lineHeight: 1.6,
+                        color: 'var(--color-text)',
+                        margin: '0 0 0.35rem',
+                      }}
+                    >
+                      {line}
+                    </p>
+                  ))}
+                </blockquote>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '0.85rem',
+                    color: 'var(--color-muted)',
+                    marginTop: '0.85rem',
+                    marginBottom: 0,
+                  }}
+                >
+                  {asset.taste.source}
+                </p>
+              </section>
             </SectionReveal>
           )}
 

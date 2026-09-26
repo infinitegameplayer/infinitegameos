@@ -1,0 +1,64 @@
+---
+title: "What Is a Website Builder Skill for Claude Code?"
+seoTitle: "What Is a Website Builder Skill for Claude Code?"
+date: 2026-09-26
+slug: what-is-a-website-builder-skill
+summary: "A website builder skill is a set of instructions Claude Code loads when you ask it to build or change a site. It turns a conversation into a disciplined build: brand first, design previewed in HTML, an anti-slop scan, an AI discoverability checklist and a verified deploy. Website Builder is a free one you can install in two commands."
+faq:
+  - q: "What is a skill in Claude Code?"
+    a: "A skill is a folder holding a SKILL.md instruction file, sometimes with templates or scripts beside it. Claude Code reads the skill's description and loads the full instructions when your task matches, such as building or updating a website. The skill shapes how the work runs without you pasting the instructions each time."
+  - q: "What does the Website Builder skill do?"
+    a: "It builds, refreshes or extends a website with Claude Code as the build engine. It loads your brand first, previews design decisions in HTML before any framework code, runs an anti-slop scan on the scaffold, checks every page against an AI discoverability checklist and verifies the deploy at the live URL. Every page ships with a markdown twin made from the page, so AI agents can read it."
+  - q: "How do I install it?"
+    a: "Two commands in Claude Code: add the Infinite Game OS marketplace, then install website-builder from it. Both are on the skill page, ready to copy. VS Code users get a one-click install button on the same page. The skill is free under a CC BY 4.0 license."
+  - q: "Can I change the skill?"
+    a: "Yes. You're meant to. The skill is a starting point. Swap the reference stack for yours, tune the checklist to your audience and add your own constraints. Edit the SKILL.md directly."
+  - q: "Does it only work with Next.js?"
+    a: "No. Next.js is the reference framework and every component has named alternatives: Astro, Remix, SvelteKit, Eleventy or Hugo; Tailwind, CSS Modules or vanilla CSS; Vercel, Netlify, Cloudflare Pages or GitHub Pages. The markdown converter is plain TypeScript and works in any framework that can fetch its own rendered page on the server."
+---
+
+A website builder skill is a set of instructions Claude Code loads when you ask it to build or change a site. [Website Builder](/skills/website-builder) is a free one. It turns a conversation into a build with a shape: brand first, design previewed before code, a scan for generic output, an AI discoverability checklist and a deploy verified at the live URL.
+
+## What a skill is
+
+A skill is a folder. Inside it is a SKILL.md file with instructions, sometimes with templates or scripts beside it. Claude Code reads each skill's short description. When your task matches, it loads the full instructions and works by them.
+
+So you say "add a speaking page to the site" and the work runs the same careful way every time. The discipline lives in the skill rather than in your memory.
+
+## What this one does
+
+Website Builder builds, refreshes or extends a website with Claude Code as the build engine. The steps run in order.
+
+- **A vision gate** for a new site or a redesign: a short prose document naming what the site is and the one detail a visitor will remember.
+- **Brand input.** Your voice, design direction, offers and the one action a visitor should take load before a single prompt is written.
+- **Scaffold** from a filled build prompt template.
+- **HTML design preview.** Decisions are made in plain HTML files you open in a browser, pick from and lock, before any framework code.
+- **Design polish** on twelve dimensions, from spacing and contrast to forms and edge cases.
+- **The AI layer.** robots.txt, llms.txt, structured data, clean titles and a markdown twin of every page.
+- **A persona walk.** The changed flow walked as a visitor on a phone, arriving cold, with every paper cut noted.
+- **Deploy**, called done only when the live URL is verified.
+
+## What ships with it
+
+Four files. The SKILL.md itself. A converter that turns any rendered page into clean markdown for AI agents. A route handler that serves that markdown from the same URL as the page. A parity check that walks your sitemap and fails any page whose twin drops a form, a button, a price or a testimonial.
+
+The four lines at the heart of it, from the skill's Operating Posture:
+
+> The brand input is the spine. The anti-slop gate is the filter. The page is the only place copy lives. The discoverability audit is the ship gate.
+
+## How to install it
+
+In Claude Code:
+
+```
+/plugin marketplace add https://www.infinitegameos.io/marketplace.json
+/plugin install website-builder@igos-library
+```
+
+In VS Code, the [skill page](/skills/website-builder) has a one-click install. The [whole skill is on GitHub](https://github.com/InfiniteGamePlayer/infinitegameos/blob/master/plugins/website-builder/skills/website-builder/SKILL.md) to read first.
+
+## Make it yours
+
+The skill is a starting point. Swap the reference stack for yours, tune the checklist to your audience and add your own rules. Your experience is what makes it fit.
+
+The first step loads your brand. [The Alive Business](https://www.sidequesthq.co/products/the-alive-business) carries a Brand Blueprint template that holds your story, voice and audience, ready for that step.

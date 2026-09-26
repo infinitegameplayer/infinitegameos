@@ -1,0 +1,56 @@
+---
+title: "Is There a Free AI Website Builder That Gives You the Code?"
+seoTitle: "Is There a Free AI Website Builder That Gives You the Code?"
+date: 2026-09-26
+slug: free-ai-website-builder-you-own
+summary: "Yes. Website Builder is a free skill for Claude Code that builds a real website and hands you the code. The site lives in your own git repository and deploys to the host you choose. You need Claude Code, a folder for the site and your brand notes. Every page it builds is readable by people and by AI agents."
+faq:
+  - q: "Is there a free AI website builder that gives you the code?"
+    a: "Yes. Website Builder is a free skill for Claude Code, released under a CC BY 4.0 license. It generates the full site as code in a folder on your machine. You commit it to your own git repository and deploy it to the host you choose. The code is yours from the first file."
+  - q: "What do I need to use it?"
+    a: "Claude Code, a folder for the site and your brand notes. Claude Code needs a Claude plan or an Anthropic API key. The skill itself costs nothing. Several hosts start free, such as Cloudflare Pages, Netlify and Vercel's Hobby plan for personal projects."
+  - q: "Do I own the website it builds?"
+    a: "Yes. The code sits in your own git repository and deploys to your own hosting account. You can move hosts, change frameworks or hand the repo to a developer at any time. Nothing about the site lives inside a builder's platform."
+  - q: "Will AI search tools be able to read the site?"
+    a: "Yes. The skill builds every page with a markdown twin generated from the page itself and served from the same URL to any AI agent that asks for it. It also ships robots.txt with no AI blocking, an llms.txt file, structured data on every page and a check that proves each twin carries what its page shows."
+  - q: "How is this different from a hosted no-code builder?"
+    a: "A hosted builder keeps the site inside its platform and hands you an editor. This skill hands you the code and a disciplined build sequence: your brand loads first, design decisions are previewed in HTML before any framework code and nothing ships until the discoverability checklist passes. The build takes longer. The site is yours."
+---
+
+Yes. [Website Builder](/skills/website-builder) is a free skill for Claude Code that builds a real website and hands you the code. The site lives in your own git repository. It deploys to the host you choose. Nothing about it lives inside a builder's platform.
+
+## What free means here
+
+The skill is free under a CC BY 4.0 license. So is every file it ships: the instructions, the build prompt template, the markdown converter and the parity check.
+
+It runs inside Claude Code, which needs a Claude plan or an Anthropic API key. Hosting can start free too. Cloudflare Pages, Netlify and Vercel's Hobby plan for personal projects all have a free tier.
+
+## What you need
+
+Three things.
+
+- **Claude Code**, in a terminal or in VS Code.
+- **A folder for the site** on your machine, with git initialized.
+- **Your brand notes.** Who the site is for, how it sounds, what you offer and the one action you want a visitor to take. A page of notes is enough to start. The skill's HTML preview step turns your early decisions into a written design spec as you go.
+
+## What you walk away with
+
+The site's code, in your own repository. Page routes and components, a sitemap, robots.txt, an llms.txt file for AI agents, structured data on every page and a markdown twin of every page generated from the page itself.
+
+You can move hosts, change frameworks or hand the repo to a developer at any time. The code was yours from the first file.
+
+## How the build runs
+
+A new site opens with a short vision document: what the site is, the feeling a visitor moves through and the one detail they'll remember. Once that feels right, your brand notes load and Claude Code scaffolds the site from a filled build prompt.
+
+Before any framework code is accepted, an anti-slop scan checks for generic headlines, arbitrary colors, copy-paste layouts and placeholder text. Design decisions are made in plain HTML previews you open in a browser, pick from and lock. Then the framework build, a pass through the AI discoverability checklist, a walk through the site as a visitor on a phone and a deploy that isn't called done until the live URL is verified.
+
+## Readable by AI agents too
+
+Some people meet a website through an AI assistant first. The skill builds for that from the start. When an agent asks a page for markdown, the site fetches its own rendered page and converts the main content, so the agent reads what a person sees: the headline, the offer, the form and what it asks for, the price on the button. A parity check that ships with the skill proves every page's twin carries what the page shows.
+
+## Where to start
+
+The [Website Builder skill page](/skills/website-builder) has the install commands for Claude Code and a one-click install for VS Code. The [whole skill is on GitHub](https://github.com/InfiniteGamePlayer/infinitegameos/blob/master/plugins/website-builder/skills/website-builder/SKILL.md) if you'd like to read every step first.
+
+If your brand notes are thin, [The Alive Business](https://www.sidequesthq.co/products/the-alive-business) carries a Brand Blueprint template that holds your story, voice and audience, the brand input the skill's first step loads.
