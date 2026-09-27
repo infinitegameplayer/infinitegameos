@@ -46,7 +46,7 @@
       "name": "Source Harvest",
       "type": "skill",
       "version": "1.1",
-      "description": "Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate.",
+      "description": "Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate what serves your system.",
       "tags": [
         "harvest",
         "extraction",
@@ -256,7 +256,7 @@
       "name": "Social Batch Drafting",
       "type": "skill",
       "version": "1.1",
-      "description": "Draft a 9-post social batch (3 days × 3 platforms) from any source. Voice rules enforced before drafting begins. Pairs with Social Batch Queue.",
+      "description": "Draft a 9-post social batch (3 days × 3 platforms) from any source. Voice rules enforced before drafting begins. Approved batch becomes the durable handoff to the queue skill.",
       "tags": [
         "social",
         "drafting",
@@ -285,7 +285,7 @@
       "name": "Social Batch Queue",
       "type": "skill",
       "version": "1.1",
-      "description": "Execute an approved 9-post social batch. Image generation, asset staging, scheduler integration, post-publish handoff. Pairs with Social Batch Drafting.",
+      "description": "Execute an approved 9-post social batch. Image rendering (local self-hosted or any compatible pipeline), asset staging, scheduler integration with channel discovery and channel-health check, and post-publish handoff. Pairs with Social Batch Drafting.",
       "tags": [
         "social",
         "scheduling",
@@ -313,8 +313,8 @@
       "id": "grant-researcher",
       "name": "Grant Researcher",
       "type": "skill",
-      "version": "1.0",
-      "description": "Discover grants whose mission alignment, eligibility and deadline runway fit an operator profile. Two modes: Discovery sweeps wide and ranks by fit; Fit Deep-Dive runs a yes/no memo on one opportunity. Pairs with Grant Manager.",
+      "version": "1.1",
+      "description": "Discover grants whose mission alignment, eligibility and deadline runway fit an operator profile. Two modes: Discovery for cold-start sweeps, Fit Deep-Dive for one-opportunity yes/no memos. Pairs with Grant Manager.",
       "tags": [
         "grants",
         "research",
@@ -343,7 +343,7 @@
       "id": "grant-manager",
       "name": "Grant Manager",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Manage the full grant lifecycle on a chosen opportunity. LOI drafting, full proposal authoring, budget assistance, submission portal handling, post-award reporting and funder stewardship. Pairs with Grant Researcher.",
       "tags": [
         "grants",
@@ -373,7 +373,7 @@
       "id": "email-triage",
       "name": "Email Triage",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Sort a service-business inbox into seven named buckets, draft replies for repeating scenarios and surface every action item so nothing gets missed.",
       "tags": [
         "email",
@@ -404,7 +404,7 @@
       "id": "quote-builder",
       "name": "Quote Builder",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Turn a service-business inquiry into a complete quote in email, SMS or markdown-PDF format, with a 48-72h follow-up trigger built in on every run.",
       "tags": [
         "quotes",
@@ -435,7 +435,7 @@
       "id": "invoice-payment-tracker",
       "name": "Invoice & Payment Tracker",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Generate invoices and maintain a paid/unpaid ledger for every job. Same-day invoicing on job close is the essential discipline. Pairs with Quote Builder and Daily Admin Orchestrator.",
       "tags": [
         "invoicing",
@@ -467,8 +467,8 @@
       "id": "customer-follow-up",
       "name": "Customer Follow-Up",
       "type": "skill",
-      "version": "1.0",
-      "description": "Run a four-touchpoint post-job relationship cadence: thank-you at 24-48h, referral ask at 14d, maintenance check-in at 90d, re-engagement at 180d. CRM-lite for solo service businesses up to 50 customers.",
+      "version": "1.1",
+      "description": "Run a four-touchpoint post-job relationship cadence: thank-you at 24-48h, referral ask at 14d, maintenance check-in at 90d, re-engagement at 180d. CRM-lite for solo service businesses.",
       "tags": [
         "follow-up",
         "crm",
@@ -499,7 +499,7 @@
       "id": "daily-admin-orchestrator",
       "name": "Daily Admin Orchestrator",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Run the complete solopreneur admin ritual in one session. Sequences Email Triage, Customer Follow-Up, Invoice and Payment Tracker and Quote Builder in order. Three variants: morning briefing, end-of-day rolldown, Friday weekly review.",
       "tags": [
         "orchestrator",
@@ -531,8 +531,8 @@
       "id": "website-builder",
       "name": "Website Builder",
       "type": "skill",
-      "version": "1.1",
-      "description": "Build, refresh or extend a website with Claude Code as the primary build engine. Frame-agnostic by design. AI discoverability and three-state deploy verification built in from the first scaffold.",
+      "version": "2.1",
+      "description": "Build, refresh or extend a website with Claude Code as the primary build engine. Frame-agnostic. Every page ships with a markdown twin generated from the page, a parity check and three-state deploy verification.",
       "tags": [
         "website",
         "web",
@@ -974,7 +974,7 @@
       "name": "External Worker Routing",
       "type": "protocol",
       "version": "1.0",
-      "description": "Routing discipline for deterministic, no-judgment work to secondary AI providers. Four providers, one dispatch script and a five-condition test that decides what qualifies.",
+      "description": "Routing discipline for deterministic, no-judgment work to secondary AI providers. Provider catalog, five-condition eligibility test and the dispatch script.",
       "tags": [
         "protocol",
         "routing",
@@ -1007,7 +1007,7 @@
       "name": "Self-Healing",
       "type": "skill",
       "version": "1.1",
-      "description": "Autonomous error recovery during implementation sessions. Diagnose the root cause, apply a fix, continue without stalling on recoverable mistakes. Also ships inside the Sovereign Ecosystem Foundation.",
+      "description": "Autonomous error recovery during implementation sessions. Diagnose root cause, apply fix, continue without stopping for every recoverable mistake.",
       "tags": [
         "recovery",
         "errors",
@@ -1040,7 +1040,7 @@
       "name": "Session Closeout",
       "type": "skill",
       "version": "1.2",
-      "description": "A fast three-action close for a git-tracked workspace. Breadcrumbs as you work, a refreshed primer, a readable commit as the session summary. Also ships inside the Sovereign Ecosystem Foundation.",
+      "description": "Fast three-action session close: breadcrumb what you touched, refresh your handoff note, commit with a readable body.",
       "tags": [
         "session",
         "closeout",
@@ -1073,7 +1073,7 @@
       "name": "Playwright",
       "type": "skill",
       "version": "1.1",
-      "description": "Headless browser automation that returns structured data. Scrape pages, extract content, interact with web interfaces. Clean JSON over screenshots. Also ships inside the Sovereign Ecosystem Foundation.",
+      "description": "Browser automation via headless Chromium. Scrape pages, extract structured data, interact with web interfaces. Returns clean JSON not screenshots.",
       "tags": [
         "automation",
         "browser",
@@ -1106,7 +1106,7 @@
       "name": "Anti-AI Edit Pass",
       "type": "skill",
       "version": "1.2",
-      "description": "An editing pass for long-form manuscripts that finds and removes the writing tells of AI authorship. The result reads as your own voice. Also ships inside the Sovereign Ecosystem Foundation.",
+      "description": "Structured editing pass that finds and removes AI writing tells from long-form manuscripts. Eight sweep categories, Sovereign review gate, verified application.",
       "tags": [
         "editing",
         "manuscript",
@@ -1196,7 +1196,7 @@
       "name": "Autonomous Improvement Session",
       "type": "skill",
       "version": "1.1",
-      "description": "Run a set-and-forget session that improves your system without active attention. Operator-invoked only. Safe, additive hygiene work executes directly; judgment forks and floor-class items surface for your review. Also ships inside the Sovereign Ecosystem Foundation.",
+      "description": "Set your system improving on its own when you have spare capacity. Safe, additive, self-contained work runs under a threshold model with a permanent floor of actions it never takes on its own.",
       "tags": [
         "autonomy",
         "improvement",
@@ -1290,7 +1290,7 @@
       "name": "Batch Archival",
       "type": "skill",
       "version": "1.0",
-      "description": "Archive several finished artifacts at once without losing anything. Scan, classify, audit readiness, then move nothing without explicit approval.",
+      "description": "Archive several workspace artifacts at once under per-artifact approval gates. Scan, classify, audit readiness, then move nothing without explicit approval.",
       "tags": [
         "archival",
         "lifecycle",

@@ -12,7 +12,8 @@
 //
 // Semantic parity, not visual parity: a form becomes a statement of what it
 // asks and what is required, a button keeps its label and price, a star row
-// becomes "Testimonial, rated N of 5." Navigation, styling and icons drop.
+// becomes "Testimonial, rated N of 5." Navigation, styling and icons drop, and
+// an icon-only link keeps its aria-label so the twin still names where it goes.
 // Proven by verify-twin-parity.mjs, which compares every page with its twin.
 //
 // From the Website Builder skill, https://www.infinitegameos.io/skills/website-builder (CC BY 4.0)
@@ -34,8 +35,9 @@ export function pageToTwin(html: string, pageUrl: string): string | null {
   main.querySelectorAll('script, style, noscript, template, svg, iframe, [hidden], [aria-hidden="true"]').forEach((n) => n.remove())
   for (const a of main.querySelectorAll('a[href]')) {
     // A link's label is read as one line with its pieces spaced, so two stacked
-    // spans ("save $12)." and "See the Collection") never run together.
-    if (!a.querySelector('img')) a.set_content(esc(clean(parse(a.innerHTML.replace(/</g, ' <')).text)))
+    // spans ("save $12)." and "See the Collection") never run together. A link
+    // with no visible text (an icon) falls back to its aria-label.
+    if (!a.querySelector('img')) a.set_content(esc(clean(parse(a.innerHTML.replace(/</g, ' <')).text) || clean(a.getAttribute('aria-label') ?? '')))
     const href = a.getAttribute('href') ?? ''
     if (href.startsWith('#')) continue
     try { a.setAttribute('href', new URL(href, pageUrl).href) } catch {}

@@ -5,6 +5,12 @@
 // installable.marketplaceId. The codex-required `category` field is the
 // asset's registry type.
 //
+// It also keeps public/igos-index.json honest about each plugin. The index is
+// hand-kept for everything else, but an entry's version and description follow
+// the plugin's own plugin.json, the same ground truth the marketplace uses. A
+// restated version drifts: in September 2026 the index listed Website Builder
+// at 1.1 while 2.1 installed, and eight entries advertised an older version.
+//
 // Requires Node >= 22.6 (uses --experimental-strip-types to import the
 // TypeScript registry directly; the registry is types-only TS, fully
 // strippable).
@@ -22,6 +28,7 @@ import { spawnSync } from 'child_process'
 
 const ROOT = resolve(fileURLToPath(new URL('..', import.meta.url)))
 const OUT = resolve(ROOT, 'public', 'marketplace.json')
+const INDEX = resolve(ROOT, 'public', 'igos-index.json')
 
 // Re-exec with strip-types when the flag is absent (lets `node scripts/...` just work).
 if (!process.execArgv.some(a => a.includes('strip-types'))) {
@@ -77,22 +84,43 @@ for (const a of igosAssets) {
 
 const manifest = {
   name: 'igos-library',
-  description: 'Installable skills, protocols, codices and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.',
+  description: 'Installable skills and protocols for practitioners of long-term thinking, sovereign life design and agentic systems.',
   owner: OWNER,
   plugins,
 }
 
 const next = JSON.stringify(manifest, null, 2) + '\n'
 
+// The index writes versions short ("2.1"), so a patch-zero plugin version drops its ".0".
+const index = JSON.parse(await readFile(INDEX, 'utf8'))
+const indexDrift = []
+for (const entry of index.assets ?? []) {
+  const pj = await pluginJson(entry.id)
+  if (!pj) continue
+  const version = pj.version.replace(/\.0$/, '')
+  if (entry.version !== version || entry.description !== pj.description) indexDrift.push(`${entry.id} (${entry.version} -> ${version})`)
+  entry.version = version
+  entry.description = pj.description
+}
+const nextIndex = JSON.stringify(index, null, 2) + '\n'
+
 if (process.argv.includes('--check')) {
-  const current = await readFile(OUT, 'utf8').catch(() => '')
-  if (current === next) {
-    console.log(`marketplace.json in sync (${plugins.length} plugins).`)
-    process.exit(0)
+  const current = (await readFile(OUT, 'utf8').catch(() => '')).replace(/\r\n/g, '\n')
+  let ok = true
+  if (current === next) console.log(`marketplace.json in sync (${plugins.length} plugins).`)
+  else {
+    ok = false
+    console.error(`marketplace.json DRIFTS from the registry (${plugins.length} plugins expected). Run: node scripts/generate-marketplace.mjs`)
   }
-  console.error(`marketplace.json DRIFTS from the registry (${plugins.length} plugins expected). Run: node scripts/generate-marketplace.mjs`)
-  process.exit(1)
+  if (indexDrift.length === 0) console.log('igos-index.json plugin entries in sync with their plugin.json.')
+  else {
+    ok = false
+    console.error(`igos-index.json DRIFTS on ${indexDrift.length} plugin entries: ${indexDrift.join(', ')}. Run: node scripts/generate-marketplace.mjs`)
+  }
+  process.exit(ok ? 0 : 1)
 }
 
 await writeFile(OUT, next, 'utf8')
+await writeFile(INDEX, nextIndex, 'utf8')
 console.log(`Wrote ${OUT} (${plugins.length} plugins).`)
+console.log(`Wrote ${INDEX} (${indexDrift.length} plugin entries brought in line with plugin.json).`)

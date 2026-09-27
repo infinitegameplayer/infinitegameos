@@ -1,7 +1,7 @@
 {
   "name": "website-builder",
   "description": "Build, refresh or extend a website with Claude Code as the primary build engine. Frame-agnostic. Every page ships with a markdown twin generated from the page, a parity check and three-state deploy verification.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": {
     "name": "Lane Belone",
     "email": "howdy@lanebelone.com"

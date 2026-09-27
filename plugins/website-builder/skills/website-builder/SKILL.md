@@ -1,6 +1,6 @@
 ---
 description: Use when building, refreshing or extending a website with Claude Code as the primary build engine. Frame-agnostic by design. Triggered by "build the site," a redesign brief, a new page route or any project where the site needs to change.
-version: 2.0
+version: 2.1
 ---
 
 # Website Builder
@@ -33,6 +33,11 @@ Outputs:
 - Deploy-ready repo with `README` covering local run and deploy steps
 
 This skill exists because sites built without structural enforcement drift on every iteration. AI discoverability surfaces get written once and never updated. Design decisions live only in conversation context where a later executor can't see the reasoning. The anti-slop gate, the HTML preview protocol, the discoverability checklist and the three-state deploy verification are structurally impossible to skip when they live as skill steps rather than a memory.
+
+## What's New in 2.1
+
+- **The welcome reaches the agent files.** An `AGENTS.md` names the person the agent works for before its manifest, an llms file opens on what the site is with its changelog at the end, and a signup says what arrives rather than how often. Learned from running the envoy's welcome across three live sites.
+- **The converter names icon-only links.** `templates/twin.ts` falls back to a link's `aria-label` when it has no visible text, so a row of social icons reaches the twin as named links rather than empty ones. Replace your copy and confirm the hash matches.
 
 ## What's New in 2.0
 
@@ -284,6 +289,9 @@ LLMS.TXT CONTENT
 
 ## Last Updated
 [YYYY-MM-DD]
+
+## Changelog
+[Optional. Dated entries, newest first. Always the last section, never the opening lines.]
 ```
 
 ---
@@ -298,6 +306,14 @@ An agent reading your page is almost always on an errand for a person. Receive i
 4. **The gate belongs to the person.** What needs a human (an email, a purchase, a consent) stays with the human. The agent reports and the person walks through.
 
 The courtesy runs both ways. A page keeps a visiting agent free to do its errand: its text is visible to everyone, it addresses the agent openly and it asks nothing of the agent beyond relaying a true account. No hidden instructions, no text only machines can see. Match the voice to your site's own register. A kind, plain welcome is enough.
+
+**Where the welcome also lives.** The four moves are about a page. Three smaller habits carry them into the files and the forms around it:
+
+- **An agent file names its person first.** If you publish an `AGENTS.md`, open it with one line saying it's written for AI agents and the people they work for, and a short welcome, before the manifest. The same goes for any line that ranks audiences: the person comes through the agent, never after it.
+- **The opening lines say what the site is.** An llms file, an `AGENTS.md` and any agent-facing file start with the site's identity and a single date. A changelog, if you keep one, sits at the end. An agent reads the top first and may read nothing else.
+- **A signup says what arrives, not how often.** "New essays as they're published" is a promise the page keeps every day. "Weekly" is a promise that breaks the first quiet week, and every agent that read it passes the broken promise along.
+
+The twin names things by what a person can read. Give every form field a visible label or an `aria-label` (otherwise a placeholder like "you@example.com" becomes the field's name), and every icon-only link an `aria-label`.
 
 ---
 
@@ -360,7 +376,7 @@ When refreshing an existing site (not building from scratch), use this 5-engagem
 - `generateStaticParams` updated if the route is dynamic
 - `src/app/sitemap.ts` covers the new route. Every URL in the sitemap returns 200
 - `public/llms.txt` updated if the page is a meaningful new offering or section
-- The envoy's welcome on any page with a door: a taste quoted from the shipped thing, visible on the page. One line in `llms.txt` an agent can pass back. The gate stays with the person
+- The envoy's welcome on any page with a door: a taste quoted from the shipped thing, visible on the page. One line in `llms.txt` an agent can pass back. The gate stays with the person. A signup on the page says what arrives, not how often
 - Run AI Discoverability Refresh Audit at Tier 4 (full audit, IndexNow ping required)
 
 ---
@@ -387,8 +403,10 @@ The build steps hold across every combination. The HTML preview pattern, the ant
 
 Run this before DNS cutover on new builds and before deploy seal on any page-content change. Check each item manually.
 
-- [ ] `/llms.txt` exists at site root, content is descriptive and accurate
+- [ ] `/llms.txt` exists at site root, content is descriptive and accurate, and its opening lines are the site's identity and one date (any changelog at the end)
+- [ ] If the site publishes `/AGENTS.md`, it opens on the person the agent works for, before the manifest
 - [ ] `/robots.txt` exists, `User-agent: *` with `Allow: /` (no AI blocking)
+- [ ] Every form field has a visible label or `aria-label`, and every icon-only link an `aria-label`, so the twin names them
 - [ ] JSON-LD structured data present on home page (`Organization` or `Person` schema as appropriate)
 - [ ] Every page includes `BreadcrumbList` JSON-LD at minimum (Home > Page Name)
 - [ ] `<h1>` present and unique on every page

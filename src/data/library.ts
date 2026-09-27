@@ -1654,8 +1654,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Website Builder',
     label: 'Skill',
-    version: '2.0',
-    updated: '2026-09-26',
+    version: '2.1',
+    updated: '2026-09-27',
     description:
       'A free Claude Code skill that builds, refreshes or extends a website you own. Every page ships readable by the people who visit and the AI agents they send.',
     tags: ['website', 'web', 'build', 'deploy', 'discoverability', 'creator', 'llms-txt', 'markdown', 'ai-agents'],
