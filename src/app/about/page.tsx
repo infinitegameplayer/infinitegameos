@@ -120,7 +120,7 @@ export default function AboutPage() {
                   publicly.
                 </p>
                 <p>
-                  This site is one node in a four-node expertise web. It is built to hold a consistent body of work across years and to be legible to anyone who arrives looking for long-term thinking and sovereign creative systems. Every structural decision here reflects that design.
+                  This site is one node in a wider expertise web. It is built to hold a consistent body of work across years and to be legible to anyone who arrives looking for long-term thinking and sovereign creative systems. Every structural decision here reflects that design.
                 </p>
                 <p>
                   Based in Colorado Springs, CO. Operating globally.

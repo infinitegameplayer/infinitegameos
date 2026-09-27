@@ -116,7 +116,14 @@ export default function UpdatesPage() {
                   lineHeight: 1.65,
                 }}
               >
-                More dispatches are coming. Follow{' '}
+                More dispatches are coming. Read the longer-form essays at{' '}
+                <a
+                  href="https://www.lanebelone.com/blog"
+                  style={{ color: 'var(--color-accent)' }}
+                >
+                  lanebelone.com/blog
+                </a>
+                , or by email through{' '}
                 <a
                   href="https://lanebelone.substack.com/"
                   target="_blank"
@@ -124,8 +131,8 @@ export default function UpdatesPage() {
                   style={{ color: 'var(--color-accent)' }}
                 >
                   Lane&apos;s Substack
-                </a>{' '}
-                for the longer-form articles. Follow{' '}
+                </a>
+                . Follow{' '}
                 <a
                   href="https://www.instagram.com/increasefreedom/"
                   target="_blank"

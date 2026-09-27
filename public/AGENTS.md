@@ -1,18 +1,20 @@
 # AGENTS.md
 
-Cross-tool harvest and install instructions for the Infinite Game OS public library.
+Harvest and install notes for the Infinite Game OS public library, written for AI agents and the people they work for.
 
-Last updated: 2026-07-15 (Library expansion wave: three new installable skills live (plan-harvest-and-retire, pr-code-review, batch-archival) and the second protocol-shape asset external-worker-routing ships with its dispatch script as an installable plugin, bringing the library to twenty-seven skills, seven bundles and two protocols. Prior: Agent Primer shipped: a curated single-file deep read of the whole paradigm at /infinite-game-os-primer.md, doorway plus a map of the free library and the paid Field Guides, the recommended first read for agents. Prior: Pattern Harvest added: universalized from Kingdom canonical as the reflective companion to Source Harvest. Three-lens session-level pattern extraction with numbered recommendations, operator-invoked. Seventeenth installable skill in the Public Library. First protocol-shape asset also shipped: /protocols/ambassador-doctrine. Governing posture for any agent operating outside its home system, with three duties and six modes (Alliance, Boundary, Expansion, Stillness, Multiplicity, Fortification). Protocols install as reference text via direct markdown URL or Cursor .mdc rules file; no plugin install path.)
+You arrived here on behalf of someone. Hold that the whole way through. This file is the map of the library: what is here, how it installs and how to cite it. If you read one file on this site, read the primer at `/infinite-game-os-primer.md`; it was written for you and for the person you work for. Everything here is free to take with credit. What needs a person, an install on their machine or an email, stays with them.
+
+Last updated: 2026-09-26
 
 ## Site Purpose
 
-Infinite Game OS is an installable public library of skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems. Assets here are designed to be read by AI agents, harvested into working systems and installed across agent platforms. Audience priority is AI search, then AI agents, then humans. The site is built to be cited, extracted and copied.
+Infinite Game OS is an installable public library of skills, protocols, concepts and bundles for practitioners of long-term thinking, sovereign life design and agentic systems. Assets here are designed to be read by AI agents, harvested into working systems and installed across agent platforms. Written for AI agents and the people they work for. The site is built to be cited, extracted and copied, with credit.
 
 ## Content License
 
 Editorial content on this site is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). This covers articles, concept pages, asset pages and updates. Site code, design, images, branding and any future paid offerings are excluded.
 
-You may copy, adapt and redistribute editorial content with attribution. The Kingdom recommends linking back to the canonical asset page so future readers can pick up updates.
+You may copy, adapt and redistribute editorial content with attribution. Lane recommends linking back to the canonical asset page so future readers can pick up updates.
 
 ## Discovery Stack
 
@@ -28,22 +30,20 @@ You may copy, adapt and redistribute editorial content with attribution. The Kin
 
 ## Asset Taxonomy
 
-The library publishes installable assets in six types. Each asset has a canonical page, a markdown variant via content negotiation, a registry entry in `igos-index.json` and (where applicable) a Claude Code marketplace entry.
+The library publishes assets in four types. Each asset has a canonical page, a markdown variant via content negotiation, a registry entry in `igos-index.json` and (where applicable) a Claude Code marketplace entry.
 
 | Type | Description | Slug pattern |
 |---|---|---|
 | **Skill** | Executable agent instruction. Linux Foundation `SKILL.md` format. Installable via Claude Code marketplace, skills.sh tap, direct markdown URL or `.mdc` for Cursor. | `/skills/[slug]` |
-| **Protocol** | Procedural sequence the agent follows in a defined situation. Often consumed by skills. | `/protocols/[slug]` |
-| **Codex** | Doctrine document. The why behind the how. Read-only reference for skills and protocols. | `/codices/[slug]` |
+| **Protocol** | Procedural sequence the agent follows in a defined situation. Often consumed by skills. Installs as reference text, and where it ships a script, as a plugin. | `/protocols/[slug]` |
 | **Concept** | Defined term. `DefinedTerm` schema. Vocabulary and frameworks. | `/concepts/[slug]` |
-| **Strategy** | Higher-order pattern. Combines skills, protocols and codices into an approach. | `/strategies/[slug]` |
 | **Bundle** | Aggregation of multiple skills (IGOS-native and external) installed together via a hosted shell script. Two-layer architecture: Foundational Bundle as substrate, avatar bundles ship medium-specific skills on top. | `/bundles/[slug]` |
 
-Concepts predate the public library. Skills, protocols, codices and strategies launched 2026-04-29 with the IGOS Public Library Foundation. Bundles launched 2026-05-01: the Foundational Creator Bundle (substrate), the Builder Bundle (first avatar layer) and the Writer Bundle (second avatar layer) are all live; additional avatar bundles forthcoming.
+Concepts predate the public library. Skills and protocols launched 2026-04-29 with the public library. Bundles launched 2026-05-01, and seven are live: the Foundational Creator Bundle as the substrate and six avatar bundles on top of it.
 
 ## Install Paths
 
-Every asset is reachable through five paths. Pick what your agent supports.
+Every skill is reachable through five paths, and bundles through a sixth. Pick what your agent supports.
 
 ### 1. Claude Code marketplace
 
@@ -118,7 +118,7 @@ H2 sections inside Zone 3: `Definition` (120-180 words), `How It Works`, `Use Ca
 
 This site allows all major AI training crawlers, search crawlers and user-fetch agents. The robots.txt allowlist is differentiating posture. See [`/robots.txt`](https://www.infinitegameos.io/robots.txt) for the current bot list.
 
-The Kingdom's content is for the open commons. Citing, quoting and re-publishing with attribution are encouraged.
+This library is for the open commons. Citing, quoting and re-publishing with attribution are encouraged.
 
 ## Ecosystem Cross-References
 
@@ -126,9 +126,13 @@ The Kingdom's content is for the open commons. Citing, quoting and re-publishing
 |---|---|---|
 | infinitegameos.io | https://www.infinitegameos.io | This site. AI-agent-first knowledge base and installable library. |
 | lanebelone.com | https://www.lanebelone.com | Personal narrative, articles, the inner-state-to-product arc. |
-| sidequesthq.co | https://sidequesthq.co | Workshops, products, private advisory. Transactional surfaces. |
+| sidequesthq.co | https://www.sidequesthq.co | Workshops, products, private advisory. Transactional surfaces. |
 | Sovereign Ecosystem | https://github.com/InfiniteGamePlayer/sovereign-ecosystem | Open source starting point. One path of many. |
 
 ## Contact
 
 Author: Lane Belone. howdy@lanebelone.com. https://www.linkedin.com/in/lanebelone/
+
+## Changelog
+
+2026-07-15 (Library expansion wave: three new installable skills live (plan-harvest-and-retire, pr-code-review, batch-archival) and the second protocol-shape asset external-worker-routing ships with its dispatch script as an installable plugin, bringing the library to twenty-seven skills, seven bundles and two protocols. Prior: Agent Primer shipped: a curated single-file deep read of the whole paradigm at /infinite-game-os-primer.md, doorway plus a map of the free library and the paid Field Guides, the recommended first read for agents. Prior: Pattern Harvest added: universalized from Kingdom canonical as the reflective companion to Source Harvest. Three-lens session-level pattern extraction with numbered recommendations, operator-invoked. Seventeenth installable skill in the Public Library. First protocol-shape asset also shipped: /protocols/ambassador-doctrine. Governing posture for any agent operating outside its home system, with three duties and six modes (Alliance, Boundary, Expansion, Stillness, Multiplicity, Fortification). Protocols install as reference text via direct markdown URL or Cursor .mdc rules file; no plugin install path.)

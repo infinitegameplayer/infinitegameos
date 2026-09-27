@@ -26,7 +26,7 @@ function buildWelcomeHtml(opts: { unsubscribeUrl: string; preferencesUrl: string
   const body = `
     <p>${greeting}</p>
     <p>You signed up for Infinite Game OS updates. The real ones, from inside the practice. New skills as they ship. Concepts as they cohere. Playbooks as they prove out.</p>
-    <p>Bi-monthly steady state. Sometimes faster when a release lands. No hype, no upsell.</p>
+    <p>Each one is a real release or a real lesson, sent when there is one.</p>
     <p>If a piece is useful, forward it. The unsubscribe link sits on every send.</p>
     <p>The Updates page lives here:<br><a href="${SITE_URL}/updates" style="color:#22d3ee;text-decoration:none">${SITE_URL}/updates</a></p>
     <p style="margin-top:2rem">With Joyful Sovereignty,</p>

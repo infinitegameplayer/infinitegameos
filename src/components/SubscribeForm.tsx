@@ -164,7 +164,7 @@ export default function SubscribeForm() {
           marginBottom: '1.25rem',
         }}
       >
-        Receive new updates as they ship. Bi-monthly steady state. No hype, no upsell.
+        New dispatches as they ship, from inside the practice.
       </p>
       <form onSubmit={handleSubmit} noValidate>
         <input
@@ -179,6 +179,7 @@ export default function SubscribeForm() {
         <input
           className="igos-subscribe-input"
           type="email"
+          aria-label="Email"
           required
           autoComplete="email"
           placeholder="you@example.com"

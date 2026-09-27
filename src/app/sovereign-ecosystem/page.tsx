@@ -245,6 +245,54 @@ export default function SovereignEcosystemPage() {
             </div>
           </SectionReveal>
 
+          {/* A taste, quoted word for word from the README that ships in the repo
+              (Web Strategy Codex V.16). Same shape as the skill-page taste. */}
+          <SectionReveal>
+            <section style={{ marginBottom: '3rem', maxWidth: '56ch' }}>
+              <h2 className="label" style={{ marginBottom: '1rem' }}>
+                From inside the README
+              </h2>
+              <blockquote
+                style={{
+                  margin: 0,
+                  padding: '0.25rem 0 0.25rem 1.25rem',
+                  borderLeft: '2px solid var(--color-accent)',
+                }}
+              >
+                {[
+                  'your files are yours, your structure is yours and your AI should work inside your world rather than pulling you into someone else\'s.',
+                  'This is meant to become lived infrastructure, not admired architecture.',
+                  'The Foundation is meant to be edited. The Constitution is yours. The codices are yours. The governance layer is yours.',
+                  'Build now. Iterate toward the horizon.',
+                ].map(line => (
+                  <p
+                    key={line}
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: '1.2rem',
+                      lineHeight: 1.6,
+                      color: 'var(--color-text)',
+                      margin: '0 0 0.5rem',
+                    }}
+                  >
+                    {line}
+                  </p>
+                ))}
+              </blockquote>
+              <p
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '0.85rem',
+                  color: 'var(--color-muted)',
+                  marginTop: '0.85rem',
+                  marginBottom: 0,
+                }}
+              >
+                From the README that ships in the repo, release 3.12.0, word for word.
+              </p>
+            </section>
+          </SectionReveal>
+
           <div className="prose">
             <SectionReveal delay={60}>
               <h2>What it is</h2>
