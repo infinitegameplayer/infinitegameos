@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/check-title-lengths.mjs",
+    "prebuild": "node scripts/check-title-lengths.mjs && node scripts/generate-llms-updates.mjs",
+    "check:llms": "node scripts/generate-llms-updates.mjs --check",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",

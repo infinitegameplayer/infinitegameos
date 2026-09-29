@@ -128,7 +128,9 @@ const nextConfig: NextConfig = {
           // train-ai and search are the two standardized tokens. ai-input has no standard equivalent yet.
           {
             key: 'Content-Usage',
-            value: 'train-ai=y, search=y',
+            // ai-use (draft-ietf-aipref-vocab-08) covers use in AI answers, the same
+            // permission Content-Signal states as ai-input=yes. King-ruled 2026-09-28.
+            value: 'train-ai=y, ai-use=y, search=y',
           },
           // Vary: Accept. Required because /markdown rewrite is content-negotiated.
           // Prevents CDN cache poisoning between text/html and text/markdown responses.

@@ -248,6 +248,26 @@ async function checkHomepage(base) {
 
 // Proves the redirect detector can see a redirect that is present, before any
 // absence of redirects is believed. The apex origin is known to redirect to www.
+// llms-full.txt promises "structured summaries of each page". Until 2026-09-28
+// its update sections named 28 of the 57 posts in the sitemap, because both
+// were written by hand. The section is now generated from content/updates at
+// build (scripts/generate-llms-updates.mjs); this check holds it to the
+// sitemap, the list a crawler actually walks.
+async function checkLlmsFullCoversUpdates(base) {
+  const name = 'llms-full.txt covers every sitemap update'
+  try {
+    const sm = await fetchResource(`${base}/sitemap.xml`, '*/*')
+    const lf = await fetchResource(`${base}/llms-full.txt`, '*/*')
+    if (sm.status !== 200 || lf.status !== 200) return { name, violations: [`HTTP sitemap ${sm.status}, llms-full ${lf.status}`] }
+    const slugs = [...new Set([...sm.body.matchAll(/\/updates\/([a-z0-9-]+)/g)].map((m) => m[1]))]
+    if (!slugs.length) return { name, violations: ['no /updates/ URLs found in the sitemap, so the check proved nothing'] }
+    const missing = slugs.filter((slug) => !lf.body.includes(`/updates/${slug}`))
+    return { name: `${name} (${slugs.length - missing.length} of ${slugs.length})`, violations: missing.map((slug) => `missing /updates/${slug}`) }
+  } catch (err) {
+    return { name, violations: [`fetch error: ${err.message}`] }
+  }
+}
+
 async function redirectDetectorControl() {
   try {
     const res = await fetch(`${APEX_ORIGIN}/`, {
@@ -323,6 +343,7 @@ async function main() {
   results.push(await checkRobotsSitemapDirective(base))
   results.push(await checkStaticFile(base, '/llms.txt', sanityLlms))
   results.push(await checkStaticFile(base, '/llms-full.txt', sanityLlmsFull))
+  results.push(await checkLlmsFullCoversUpdates(base))
   results.push(await checkStaticFile(base, '/sitemap.xml', sanitySitemap))
   results.push(await checkStaticFile(base, '/rss.xml', sanityRss))
   results.push(...(await checkHomepage(base)))
