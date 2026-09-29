@@ -2,32 +2,10 @@
 
 import posthog from 'posthog-js'
 import { PostHogProvider as PHProvider } from 'posthog-js/react'
-import { useEffect } from 'react'
-import { isNoTrackPath, isNonPublicHost } from '@/lib/no-track'
 
+// PostHog initializes in src/instrumentation-client.ts, before hydration, so a
+// component that captures on mount finds a live client. Initializing here in a
+// useEffect ran after every child effect and dropped their events.
 export function PostHogProvider({ children }: { children: React.ReactNode }) {
-  useEffect(() => {
-    // Privacy surfaces (the preference center) never initialize analytics. The
-    // entry URL carries a live token, so PostHog must not start here at all.
-    if (isNoTrackPath(window.location.pathname)) return
-    // Development servers and Vercel deployment URLs were writing pageviews into
-    // the production project, so a local session counted as a visitor.
-    if (isNonPublicHost(window.location.hostname)) return
-    posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
-      api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com',
-      person_profiles: 'identified_only',
-      capture_pageview: false,
-      capture_pageleave: true,
-      capture_heatmaps: true,
-      capture_dead_clicks: true,
-      capture_performance: true,
-      disable_session_recording: false,
-      session_recording: {
-        maskAllInputs: true,
-        maskTextSelector: '[data-private]',
-      },
-    })
-  }, [])
-
   return <PHProvider client={posthog}>{children}</PHProvider>
 }

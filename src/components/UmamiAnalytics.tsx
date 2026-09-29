@@ -3,7 +3,7 @@
 import Script from 'next/script'
 import { usePathname } from 'next/navigation'
 import { useSyncExternalStore } from 'react'
-import { isNoTrackPath, isNonPublicHost } from '@/lib/no-track'
+import { isAutomatedBrowser, isNoTrackPath, isNonPublicHost } from '@/lib/no-track'
 
 // Umami pageview script, gated off privacy routes and off non-public hosts. The
 // preference center entry URL carries the subscriber email and a live token, so
@@ -12,9 +12,10 @@ import { isNoTrackPath, isNonPublicHost } from '@/lib/no-track'
 // too. The host check reads window through useSyncExternalStore with a server
 // snapshot of false, so the server render and the first client render agree
 // and the real host is read once hydration completes. This replaces the
-// setState-in-effect form, which react-hooks 7 flags.
+// setState-in-effect form, which react-hooks 7 flags. Automated browsers are
+// gated the same way, so Umami counts the readers PostHog counts.
 const subscribeToNothing = () => () => {}
-const readPublicHost = () => !isNonPublicHost(window.location.hostname)
+const readPublicHost = () => !isNonPublicHost(window.location.hostname) && !isAutomatedBrowser()
 const serverPublicHost = () => false
 
 export function UmamiAnalytics() {

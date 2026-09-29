@@ -9,7 +9,13 @@ const markdownAcceptRegex =
 // Analytics hosts allowed by CSP. Read at build time so changing the env var
 // updates CSP automatically. Empty values are filtered out of the CSP source list.
 const UMAMI_URL = process.env.NEXT_PUBLIC_UMAMI_URL || ''
-const POSTHOG_HOST = process.env.NEXT_PUBLIC_POSTHOG_HOST || ''
+const POSTHOG_HOST = process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com'
+// PostHog lazy-loads its remote config, web vitals, dead-click capture, surveys
+// and session recorder from the assets host. Until 2026-09-28 this policy listed
+// neither PostHog origin under script-src, so every one of those was refused on
+// this site: 6 web vitals events against 836 pageviews from June to September,
+// where the sibling sites ran about one in two. Mirrors the lanebelone policy.
+const POSTHOG_ASSETS = 'https://us-assets.i.posthog.com'
 
 const nextConfig: NextConfig = {
   images: {
@@ -95,11 +101,13 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              `script-src ${["'self'", "'unsafe-inline'", UMAMI_URL].filter(Boolean).join(' ')}`,
+              `script-src ${["'self'", "'unsafe-inline'", POSTHOG_HOST, POSTHOG_ASSETS, UMAMI_URL].filter(Boolean).join(' ')}`,
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: https:",
               "font-src 'self' data: https://fonts.gstatic.com",
-              `connect-src ${["'self'", UMAMI_URL, POSTHOG_HOST].filter(Boolean).join(' ')}`,
+              `connect-src ${["'self'", POSTHOG_HOST, POSTHOG_ASSETS, UMAMI_URL].filter(Boolean).join(' ')}`,
+              // PostHog session recording compresses in a blob worker.
+              "worker-src 'self' blob:",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",

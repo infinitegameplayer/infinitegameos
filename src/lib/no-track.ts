@@ -26,3 +26,18 @@ export function isNonPublicHost(hostname: string | null | undefined): boolean {
     host.endsWith('.vercel.app')
   )
 }
+
+// Browsers driven by automation. A headless crawler that runs JavaScript loads
+// the Umami script like a reader, and Umami's own bot check reads only the
+// user-agent string, which crawlers replace. PostHog also reads
+// navigator.webdriver and the HeadlessChrome brand, so from September 2026 the
+// two tools disagreed by up to three to one on sidequesthq: sessions that
+// opened nine product pages in sixteen seconds at 1280x720 counted in Umami and
+// not in PostHog. This applies PostHog's test to Umami, so both count readers.
+export function isAutomatedBrowser(): boolean {
+  if (typeof navigator === 'undefined') return false
+  if (navigator.webdriver) return true
+  if (/HeadlessChrome/i.test(navigator.userAgent)) return true
+  const brands = (navigator as Navigator & { userAgentData?: { brands?: { brand: string }[] } }).userAgentData?.brands
+  return !!brands?.some((b) => /HeadlessChrome/i.test(b.brand))
+}
