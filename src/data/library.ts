@@ -107,13 +107,45 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Source Harvest',
     label: 'Skill',
-    version: '1.1',
-    updated: '2026-06-26',
+    version: '1.2',
+    updated: '2026-09-28',
     description:
       'Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate.',
     tags: ['harvest', 'extraction', 'governance', 'kingdom-skill'],
     capsule:
       'Source Harvest is a skill for extracting patterns from external repositories at source level rather than description level. It reads the actual implementation, classifies each component as Adopt, Enrich, Defer or Ignore, and executes approved integrations under governance. The README is not the nuance.',
+    glance:
+      'What you need: Claude Code and a repo, plugin or tool worth learning from. What you get: every component read at the source and given one of four dispositions, with nothing integrated until you approve it.',
+    pathBridge: {
+      label: 'Where this leads',
+      links: [
+        {
+          href: 'https://github.com/InfiniteGamePlayer/infinitegameos/blob/master/plugins/source-harvest/skills/source-harvest/SKILL.md',
+          label: 'The whole skill on GitHub',
+          note: 'read every step and the dated lessons before you install it',
+        },
+        {
+          href: '/sovereign-ecosystem',
+          label: 'The Sovereign Ecosystem',
+          note: 'a free workspace template, and a good first thing to harvest',
+        },
+        {
+          href: 'https://www.sidequesthq.co/products/the-alive-business',
+          label: 'The Alive Business',
+          note: 'its Friday review is where a harvest becomes one rule change',
+        },
+      ],
+    },
+    taste: {
+      label: 'From inside the skill',
+      lines: [
+        'The README is not the nuance.',
+        'The scarcity was in the reading, not the access.',
+        'Check the license file, never the license claim.',
+        'Name the road not taken.',
+      ],
+      source: 'The Classification Framework and Refinements sections of the shipped SKILL.md, word for word.',
+    },
     installable: {
       marketplaceId: 'source-harvest',
       cursorMdc: true,

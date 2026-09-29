@@ -45,7 +45,7 @@
       "id": "source-harvest",
       "name": "Source Harvest",
       "type": "skill",
-      "version": "1.1",
+      "version": "1.2",
       "description": "Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate what serves your system.",
       "tags": [
         "harvest",
@@ -71,7 +71,7 @@
       "article_url": "https://www.infinitegameos.io/skills/source-harvest",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
-      "updated_at": "2026-06-10",
+      "updated_at": "2026-09-28",
       "se_origin": "dual",
       "changelog_url": null
     },

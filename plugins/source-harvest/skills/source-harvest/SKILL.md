@@ -37,6 +37,8 @@ Identify the source and confirm it is publicly accessible. Common paths:
 - Docs or protocol site: use a web fetch tool
 - SaaS platform, API documentation or capability inventory: use web fetch and search to extract feature sets and technical documentation. When source code is unavailable, the harvest operates at the capability and pattern level. The classification framework still applies.
 
+Check the license at the artifact before anything else: `gh api repos/[owner]/[repo] --jq .license` for a repo, the terms page for a product. A README sentence is a claim, not a license. Read it now, while it can still change where the harvest looks (see Refinements, 2026-07-29 and 2026-08-19).
+
 If authentication is required or the source is private, halt: "Source requires authentication or is private. The operator must provide access or assess via available documentation."
 
 Do not proceed using only the README or description as primary evidence. For non-repo sources where no code exists, capability documentation and API references serve as the evidence base.
@@ -59,12 +61,19 @@ Read each component file. Do not classify from filenames or descriptions alone. 
 
 For large repos (20+ components), group by category and read the most relevant ones first. Flag anything skipped and why.
 
+When a source names a primary source (a canon, an archive, a dataset, a scripture), fetch the primary source before classifying. The harvest's real value often sits one citation upstream (see Refinements, 2026-08-19).
+
 ### Step 4. Classify Each Component
 
 For each component, assign a disposition (Adopt / Enrich / Defer / Ignore) and write one to three lines of rationale:
 - What does this component actually do at the source level?
 - Which existing skill or protocol is the comparison point?
 - What specifically is novel, and what is already covered?
+
+Three checks before a disposition stands (see Refinements, 2026-07-29 and 2026-08-19):
+- Is the source's problem statement true? Verify the diagnosis as well as the solution. A harvest that accepts a source's premises imports them.
+- If a finding implies a weakness in your system, open the file and confirm the weakness exists before classifying.
+- If a pattern arrives with a blocker attached, search your system for how it already solves that problem before accepting the blocker.
 
 ### Step 5. Draft Harvest Report
 
@@ -83,6 +92,8 @@ Ignore:  [count]
 
 For each Enrich: specify the exact change to the target file (what to add, where, why).
 For each Adopt: draft the adapted version in outline or propose a follow-up plan if scope requires more than one session.
+For each Enrich that seeds one pattern into several files: list every file. They are one unit of work, and a later fix to one is incomplete until all are swept (see Refinements, 2026-07-13).
+For each Ignore: mark it covered (already solved here) or contrast (your system chose differently). Record a contrast with one line on the road not taken (see Refinements, 2026-07-29).
 
 ### Step 6. Approval Gate
 
@@ -213,3 +224,39 @@ Dispatch the cheapest model that does the job well. Before each delegated step, 
 | 12. Summary Report | Sonnet | Final structured summary across all dispositions |
 
 Set the model explicitly on every subagent dispatch. Never silently inherit the top tier.
+
+---
+
+## Refinements
+
+Dated lessons from real harvests, newest first. Each one changed how the next harvest ran. The sources are described rather than named: the lesson travels, the source stays its author's.
+
+**2026-09-28:** the lessons moved into the steps
+
+**A lesson that says "add this to Step 1" is not applied until Step 1 carries it.** Two entries below ended on exactly that instruction, and the steps they named never changed. They now live in Steps 1, 3, 4 and 5, each pointing back to the entry that earned it. When an entry here ends on an instruction, apply it to the step in the same pass.
+
+**2026-08-19:** a closed product built on a family archive (all rights reserved, no source code)
+
+**When a source names a primary source, go get the primary source before classifying anything.** This product's entire differentiator was privileged access to a family association's published volumes from the early twentieth century, passed down through the author's family. True, and two of the three volumes had been free full text on the Internet Archive for years, and all three were full view at HathiTrust under a public-domain rights code. Fetching them cost four tool calls and produced more than the product would have. **The scarcity was in the reading, not the access.** Generalize it past repos. Any product standing on a canon, an archive, a dataset or a scripture is standing on something you can reach directly, and a harvest's real value often sits one citation upstream of the thing being harvested.
+
+**A restrictive license is a routing instruction, not only a wall.** The product's terms prohibited using its materials to create or train any competing product, curriculum or platform, and prohibited compiling its content into a knowledge base. That closed the option of borrowing its frameworks, which is what pushed the harvest to the public-domain source and the independently published work behind it. Both were better material. **Read the license early enough that it can change where you look, rather than late enough that it only tells you what to delete.**
+
+**Verify the problem statement, not only the solution.** This source defined its market with four statistics, and the headline one was already discredited: a researcher traced the 70 percent wealth-transfer claim in 2022 and found it inverts a business-continuity rate, applied to data never measured for it. The harvesting system's own research notes were carrying the same number, cited from the same downstream literature. **A harvest that checks a source's mechanics while accepting its premises imports the premises.** The diagnosis is a claim, and it gets verified at the moment it is made. Add the problem statement to what gets verified.
+
+**2026-07-29:** a public skill repo (license ambiguous, 11 skills)
+
+**Check the license file, never the license claim.** The README said MIT. There was no LICENSE file, the GitHub API reported none and a hardcoded vendor path inside one skill showed part of the repo had come from a commercial plugin belonging to a third party. A README sentence is a claim about provenance, and Step 1 verifies it the same way any other claim gets verified: at the artifact, not at the description. Add `gh api repos/OWNER/REPO --jq .license` to the access check.
+
+**A harvest can find the gap it was looking for already open in your own system, and should go look.** The strongest finding here was a verification-gate pattern. Rather than classify it against the harvesting system's rules in the abstract, the classification pass opened the actual ledgers and found five past-dated reminders with no check for whether they were done. That evidence is what turned a plausible Enrich into an obviously correct one, and it took one file read. **When a harvest finding implies a weakness in your system, go verify the weakness exists before classifying.** A finding with a live example behind it survives the approval gate on its own merit. A finding argued from theory competes with every other good idea.
+
+**A harvest imports the source's constraints along with its patterns, and the constraints travel invisibly.** An adopted illustration pipeline shipped as a draft, held on a blocker that turned out to belong to the source rather than to the harvesting system. The source asked one image model to draw the panels and the lettering together, so it depended on a model that renders legible text inside an image. That dependency came across intact and produced a decision about wiring new image providers. One question dissolved it: the harvesting system already generated textless images and set real type on top of them, in two working scripts, the whole time.
+
+The asymmetry is the lesson. **A pattern gets examined on adoption, because the pattern is the thing being adopted. The limitation the pattern was designed around gets carried in silently**, still shaped by the original author's tooling, budget and platform. So before accepting any blocker that arrives attached to a harvested pattern, search your own system for how it already solves that problem. Checking your own canon first applies to constraints, not only to content. A harvest that imports a blocker your system already answered has adopted the source's limits as though they were laws.
+
+**Name the road not taken.** This source's identity doctrine held that the agent's self-authored identity is its own to evolve, and that requests to change it are suggestions. The harvesting system holds the inverse: no agent modifies its own rules. That is an Ignore in the disposition table and a genuinely valuable artifact in the report, because it is a coherent system answering the same question the other way. **When an Ignore is an Ignore because you chose differently rather than because you already cover it, record it as contrast rather than filing it under covered.** Those two look identical in a count and carry completely different information.
+
+**2026-07-13:** a large open-source engineering plugin (MIT, 26 skills)
+
+**A harvest can seed a defect, and the harvest log will record it as a success.** An earlier harvest's log states, in its own words, an 80-plus confidence threshold for posting review comments. That threshold was set against an anchored 0, 25, 50, 75, 100 scale, so the review skill silently discarded its entire 75 tier on every run for three months while reporting clean. The same harvest had propagated the same rubric into two more instruments. All three were repaired together. **An Enrich propagates whatever it carries, including the flaw. When a harvest seeds one pattern into N places, the N places are one unit of work, and a later correction to one of them is incomplete until the other N-1 are swept.**
+
+**The gap between a source's writing and its source is the whole reason this skill exists.** The operator had followed the authors' newsletter for months. The practice in the repo runs substantially deeper than the writing about it: the confidence anchors, the quote-the-line gate and the validator pass appear nowhere in the public prose. Reading source is non-negotiable, and this harvest is the strongest evidence for it yet.
