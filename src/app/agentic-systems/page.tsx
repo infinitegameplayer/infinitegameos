@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
+import CharterCallout from '@/components/CharterCallout'
 
 export const metadata: Metadata = {
   title: 'Agentic Systems and the Post Web',
@@ -395,6 +396,7 @@ export default function AgenticSystemsPage() {
                 </Link>{' '}
                 hold the shared vocabulary this OS is built on.
               </p>
+              <CharterCallout marginTop="2rem" body="When your own AI starts acting for you, give it a charter first. Your AI’s Charter is a free CLAUDE.md for how Claude works with you: what it runs on its own, what it asks you first and how it acts in your name." />
               <hr />
               <p style={{ fontSize: '0.85rem', color: 'var(--color-muted)', fontStyle: 'italic' }}>
                 Lane Belone is a writer on the Infinite Game, a former Green Beret and

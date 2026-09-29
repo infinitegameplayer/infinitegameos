@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import SectionReveal from '@/components/SectionReveal'
+import CharterCallout from '@/components/CharterCallout'
 import {
   igosAssets,
   getAssetBySlug,
@@ -619,6 +620,11 @@ aider --read ${asset.slug}.md`}</code>
               </div>
             </SectionReveal>
           )}
+
+          {/* Zone 3b: the free Charter door, before the paid soft hook. King-approved 2026-09-29. */}
+          <SectionReveal>
+            <CharterCallout body="Before you install a skill, give your AI a charter. Your AI’s Charter is a free CLAUDE.md for how Claude works with you: what it runs on its own, what it asks you first and how it acts in your name." />
+          </SectionReveal>
 
           {/* Zone 4: Soft hook */}
           <SectionReveal>

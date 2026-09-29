@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import SectionReveal from '@/components/SectionReveal'
+import CharterCallout from '@/components/CharterCallout'
 import {
   igosAssets,
   getAssetBySlug,
@@ -369,6 +370,17 @@ aider --read ${asset.slug}.md`}</code>
               </div>
             </SectionReveal>
           )}
+
+          {/* Zone 3b: the free Charter door, before the paid soft hook. King-approved 2026-09-29. */}
+          <SectionReveal>
+            <CharterCallout
+              body={
+                asset.slug === 'ambassador-doctrine'
+                  ? 'Your AI’s Charter carries this doctrine in plain words for one person’s AI: represent you, protect you, advance your work, and exactly what it does when it replies to email, posts, spends, shares a client’s data or accepts terms in your name.'
+                  : undefined
+              }
+            />
+          </SectionReveal>
 
           {/* Zone 4: Soft hook */}
           <SectionReveal>

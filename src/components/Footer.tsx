@@ -22,6 +22,12 @@ const ecosystemLinks = [
     external: true,
   },
   {
+    label: "Your AI's Charter",
+    sublabel: 'A free CLAUDE.md for how Claude works with you',
+    href: '/charter',
+    external: false,
+  },
+  {
     label: 'Resources',
     sublabel: 'Free guides, tools and the flagship',
     href: 'https://www.sidequesthq.co/resources',
@@ -52,7 +58,6 @@ const siteLinks = [
   { href: '/protocols', label: 'Protocols' },
   { href: '/bundles', label: 'Bundles' },
   { href: '/sovereign-ecosystem', label: 'Sovereign Ecosystem' },
-  { href: '/charter', label: "Your AI's Charter" },
   { href: '/updates', label: 'Updates' },
   { href: '/about', label: 'About' },
 ]
@@ -168,7 +173,7 @@ export default function Footer() {
                 <a
                   key={link.href}
                   href={link.href}
-                  target="_blank"
+                  target={link.external === false ? undefined : '_blank'}
                   rel={/(?:lanebelone\.com|sidequesthq\.co|infinitegameos\.io)/.test(link.href) ? 'noopener' : 'noopener noreferrer'}
                   style={{
                     display: 'block',

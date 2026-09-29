@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
+import CharterCallout from '@/components/CharterCallout'
 import {
   igosBio,
   homeFeaturedConcepts,
@@ -219,6 +220,13 @@ export default function HomePage() {
                 Browse all bundles →
               </Link>
             </div>
+          </div>
+        </SectionReveal>
+
+        {/* The free Charter door, before the skills. King-approved 2026-09-29. */}
+        <SectionReveal>
+          <div style={{ marginBottom: '3rem' }}>
+            <CharterCallout marginTop="0" body="Start before the first skill. Your AI’s Charter is a free CLAUDE.md for how Claude works with you: what it runs on its own, what it asks you first and how it acts in your name." />
           </div>
         </SectionReveal>
 

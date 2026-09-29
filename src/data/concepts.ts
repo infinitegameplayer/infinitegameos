@@ -886,6 +886,13 @@ export const concepts: Concept[] = [
       { href: '/concepts/data-sovereignty', label: 'Data Sovereignty', variant: 'accent' },
       { href: '/sovereign-ecosystem', label: 'The Sovereign Ecosystem', variant: 'outline' },
     ],
+    // The free door for this concept is Your AI's Charter, since the reader here
+    // is setting up an AI to work with. King-approved 2026-09-29.
+    kitCallout: {
+      body: 'Before your second brain gets an AI working inside it, give that AI a charter. Your AI\x27s Charter is a free CLAUDE.md for how Claude works with you: what it runs on its own, what it asks you first and how it acts in your name.',
+      ctaHref: '/charter',
+      ctaLabel: 'Get the Charter · free',
+    },
     productCard: {
       body: 'The Sovereign Ecosystem is the free workspace template this loop runs in: Obsidian holding your files on your own machine, with AI working over them on your terms.',
       ctaHref: '/sovereign-ecosystem',
