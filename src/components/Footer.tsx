@@ -22,6 +22,12 @@ const ecosystemLinks = [
     external: true,
   },
   {
+    label: 'Resources',
+    sublabel: 'Free guides, tools and the flagship',
+    href: 'https://www.sidequesthq.co/resources',
+    external: true,
+  },
+  {
     label: 'Sovereign Ecosystem',
     sublabel: 'Technical infrastructure',
     href: 'https://github.com/InfiniteGamePlayer/sovereign-ecosystem',
