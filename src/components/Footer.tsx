@@ -52,6 +52,7 @@ const siteLinks = [
   { href: '/protocols', label: 'Protocols' },
   { href: '/bundles', label: 'Bundles' },
   { href: '/sovereign-ecosystem', label: 'Sovereign Ecosystem' },
+  { href: '/charter', label: "Your AI's Charter" },
   { href: '/updates', label: 'Updates' },
   { href: '/about', label: 'About' },
 ]
@@ -240,6 +241,13 @@ export default function Footer() {
               style={{ color: 'rgba(226, 232, 240, 0.5)', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}
             >
               CC BY 4.0
+            </a>
+            .{' '}
+            <a
+              href="/privacy"
+              style={{ color: 'rgba(226, 232, 240, 0.5)', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}
+            >
+              Privacy
             </a>
             .
           </p>

@@ -26,6 +26,9 @@ const PAGE_DATES: Record<string, string> = {
   '/creator-business-without-performing': '2026-07-01',
   // 2026-08-16: shipped with the game theory surface (Gate 1).
   '/game-theory':        '2026-08-16',
+  // 2026-09-29: Your AI's Charter and the privacy page shipped.
+  '/charter':            '2026-09-29',
+  '/privacy':            '2026-09-29',
 }
 
 function pageDate(path: string): Date {
@@ -137,6 +140,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: pageDate('/sovereign-ecosystem'),
       changeFrequency: 'monthly',
       priority: 0.9,
+    },
+    {
+      url: 'https://www.infinitegameos.io/charter',
+      lastModified: pageDate('/charter'),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: 'https://www.infinitegameos.io/privacy',
+      lastModified: pageDate('/privacy'),
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
     {
       url: 'https://www.infinitegameos.io/play-your-own-game',
