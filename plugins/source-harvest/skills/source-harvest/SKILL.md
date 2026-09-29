@@ -37,7 +37,7 @@ Identify the source and confirm it is publicly accessible. Common paths:
 - Docs or protocol site: use a web fetch tool
 - SaaS platform, API documentation or capability inventory: use web fetch and search to extract feature sets and technical documentation. When source code is unavailable, the harvest operates at the capability and pattern level. The classification framework still applies.
 
-Check the license at the artifact before anything else: `gh api repos/[owner]/[repo] --jq .license` for a repo, the terms page for a product. A README sentence is a claim, not a license. Read it now, while it can still change where the harvest looks (see Refinements, 2026-07-29 and 2026-08-19).
+Read the license at the artifact before anything else: the LICENSE file or files themselves for a repo, the terms page for a product. A README sentence is a claim, and so is GitHub's license field. `gh api repos/[owner]/[repo] --jq .license` is a first look only: it reports `NOASSERTION` when a repo carries more than one license file, and a permissive label can hide an added clause. Read the license now, while it can still change where the harvest looks (see Refinements, 2026-07-29, 2026-08-19 and 2026-09-28).
 
 If authentication is required or the source is private, halt: "Source requires authentication or is private. The operator must provide access or assess via available documentation."
 
@@ -233,7 +233,7 @@ Dated lessons from real harvests, newest first. Each one changed how the next ha
 
 **2026-09-28:** the lessons moved into the steps
 
-**A lesson that says "add this to Step 1" is not applied until Step 1 carries it.** Two entries below ended on exactly that instruction, and the steps they named never changed. They now live in Steps 1, 3, 4 and 5, each pointing back to the entry that earned it. When an entry here ends on an instruction, apply it to the step in the same pass.
+**A lesson that says "add this to Step 1" is not applied until Step 1 carries it.** Two entries below ended on exactly that instruction, and the steps they named never changed. They now live in Steps 1, 3, 4 and 5, each pointing back to the entry that earned it. When an entry here ends on an instruction, apply it to the step in the same pass. One instruction was corrected on the way in. The 2026-07-29 entry says to add GitHub's license field to the access check, and later harvests found that field wrong or empty on seven public repos: two license files at the root read as `NOASSERTION`, and a plain BSD-3 label hid a branding clause. **An API field is a claim too.** Step 1 now names it a first look and the file the artifact.
 
 **2026-08-19:** a closed product built on a family archive (all rights reserved, no source code)
 
