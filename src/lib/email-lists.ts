@@ -79,8 +79,8 @@ export const LISTS: ListDef[] = [
   {
     key: 'sqhq',
     tag: 'sqhq',
-    label: 'Side Quest HQ',
-    description: 'Started with One Alive Thing. Practical letters on building in the Creator Economy without performing.',
+    label: 'Side Quest Letter',
+    description: "Welcome, whichever door you came in through. What I'm building, what I'm learning, stories from the road and the occasional thing worth passing on.",
     audienceName: 'Side Quest HQ',
     audienceEnv: 'RESEND_AUDIENCE_SQHQ_ID',
     fromAddress: 'Lane Belone <lane@sidequesthq.co>',
