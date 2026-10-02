@@ -5,7 +5,7 @@
   "description": "Installable skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
   "url": "https://www.infinitegameos.io",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "updated_at": "2026-08-11",
+  "updated_at": "2026-10-02",
   "upstream_version": "3.12.0",
   "upstream_repo": "https://github.com/infinitegameplayer/sovereign-ecosystem",
   "template_dual_distribution": [
@@ -38,6 +38,17 @@
         "sovereign-ecosystem"
       ],
       "updated_at": "2026-07-10"
+    },
+    {
+      "id": "your-ais-charter",
+      "url": "https://www.infinitegameos.io/charter",
+      "title": "Your AI's Charter: a CLAUDE.md for how Claude works with you",
+      "description": "A free, open CLAUDE.md for how Claude works with you, not just your code. What your AI runs on its own, what it asks you first and how it acts in your name. Tested against a control, with an optional Claude Code hook that enforces it.",
+      "repo": "https://github.com/infinitegameplayer/your-ais-charter",
+      "download_zip": "https://github.com/infinitegameplayer/your-ais-charter/archive/refs/heads/main.zip",
+      "raw_file": "https://www.infinitegameos.io/charter/CLAUDE.md",
+      "tags": [],
+      "updated_at": "2026-09-29"
     }
   ],
   "assets": [
