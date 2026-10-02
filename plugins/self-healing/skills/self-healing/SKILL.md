@@ -2,7 +2,7 @@
 name: self-healing
 description: Use when an AI interface hits an error mid-task and should diagnose, fix and continue autonomously without stopping for every recoverable mistake.
 status: active
-version: 1.1
+version: 1.2
 ---
 
 # Self-Healing
@@ -24,8 +24,11 @@ Activate explicitly if you notice your AI stopping unnecessarily on routine erro
 1. Read the full error message. Do not guess or skip it.
 2. Identify the root cause (missing dependency, wrong path, syntax error, permission issue, etc.)
 3. Apply the most direct fix.
-4. Continue the task without surfacing to you unless the error is governance-class (see Constraints).
-5. If the same error recurs after one fix attempt, surface it. Do not loop silently.
+4. Confirm the fix worked: re-run the failed command or check the specific symptom directly. A fix applied is not a fix verified.
+5. Continue the task without surfacing to you unless the error is governance-class (see Constraints).
+6. If the same error recurs after verification, surface it. Do not loop silently.
+
+**Durable record.** A recurring error (one that fails verification and needs a second attempt) or a governance block is worth keeping. In a code repo, write it to that repo's `docs/solutions/` folder, one learning per file. Outside a code repo, name it in the session's commit message. Said once in chat, it is gone: the next session should find it without hitting the same wall first.
 
 **Error triage:**
 
@@ -71,4 +74,4 @@ If Pending Plan Implementation isn't installed yet: [Install Pending Plan Implem
 
 ## Refinements
 
-*(Empty. Populated when execution mistakes occur during sessions.)*
+- [2026-10-02] A fix was applied and the task moved on with no check that the symptom was gone. Version 1.2 adds the verification beat between apply and continue, and the durable-record rule so a recurring error lives somewhere other than the transcript.

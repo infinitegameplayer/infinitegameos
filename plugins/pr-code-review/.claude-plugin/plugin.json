@@ -1,7 +1,7 @@
 {
   "name": "pr-code-review",
   "description": "Automated pull request review for your repos. Five parallel agents, confidence scoring, convention-file compliance, and GitHub comment posting.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Lane Belone",
     "email": "howdy@lanebelone.com"

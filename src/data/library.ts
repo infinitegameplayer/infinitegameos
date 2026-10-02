@@ -408,8 +408,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Systematic Debugging',
     label: 'Skill',
-    version: '1.1',
-    updated: '2026-06-26',
+    version: '1.2',
+    updated: '2026-10-02',
     description:
       'Root-cause investigation discipline. Use before proposing fixes. The Iron Law: no fixes without Phase 1 complete.',
     tags: ['debugging', 'diagnostics', 'root-cause', 'discipline'],
@@ -420,7 +420,7 @@ export const igosAssets: IGOSAsset[] = [
       cursorMdc: true,
     },
     definition:
-      'Systematic Debugging is a root-cause investigation discipline applied to any technical issue: code bugs, integration failures, hook script errors, build failures, system malfunctions. Four phases run in sequence. Phase 1 identifies the root cause through error reading, reproduction, change tracking and evidence gathering. Phase 2 finds the pattern by comparing against working examples. Phase 3 forms a single hypothesis and tests it minimally. Phase 4 implements one targeted fix and verifies. The Iron Law applies: no fixes without Phase 1 complete. Three failed fix attempts indicates an architectural problem, not a fourth fix.',
+      'Systematic Debugging is a root-cause investigation discipline applied to any technical issue: code bugs, integration failures, hook script errors, build failures, system malfunctions. Four phases run in sequence. Phase 1 identifies the root cause through error reading, reproduction, change tracking and evidence gathering. Phase 2 finds the pattern by comparing against working examples. Phase 3 forms a single hypothesis and tests it minimally. Phase 4 implements one targeted fix and verifies. The Iron Law applies: no fixes without Phase 1 complete. Three failed fix attempts indicates an architectural problem, not a fourth fix. Version 1.2 adds a bug-class checklist, an assumption audit, a causal chain gate that blocks any fix until the chain from trigger to symptom has no gaps, predictions for uncertain links, explicit invalidation of a failed hypothesis, a Smart Escalation table for repeated failures, a four-layer Defense in Depth model and a set of named anti-patterns.',
     howItWorks: [
       {
         heading: 'The Iron Law and the four phases',
@@ -623,25 +623,25 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'PR Code Review',
     label: 'Skill',
-    version: '1.0',
-    updated: '2026-07-10',
+    version: '1.1',
+    updated: '2026-10-02',
     description:
       'Automated pull request review for your repos. Five parallel agents, confidence scoring, convention-file compliance, and GitHub comment posting.',
     tags: ['code-review', 'github', 'pull-request', 'quality'],
     capsule:
-      'PR Code Review is a skill for catching real issues before a pull request merges, without adding a human reviewer to the critical path. Five agents read the diff from five independent angles (convention compliance, bugs, git history, prior PR comments, code comments), every finding gets a 0-100 confidence score, and only scores of 80 or above post as a GitHub comment. Quiet on clean PRs. Precise on the ones that need a second look.',
+      'PR Code Review is a skill for catching real issues before a pull request merges, without adding a human reviewer to the critical path. Five agents read the diff from five independent angles (convention compliance, bugs, git history, prior PR comments, code comments), every finding is anchored to one of five confidence values, merged and gated, then checked by its own independent validator, and only findings at anchor 75 or above that survive validation post as a GitHub comment. Quiet on clean PRs. Precise on the ones that need a second look.',
     installable: {
       marketplaceId: 'pr-code-review',
       cursorMdc: true,
     },
     definition:
-      'PR Code Review runs an automated review on any open pull request before it merges. Five specialized agents analyze the diff from independent angles: convention-file compliance (your CLAUDE.md, README or equivalent), a shallow bug scan scoped to the diff, git history and blame context, prior PR comments on the same files, and inline code comment compliance. Each finding from those five agents is scored for confidence against an explicit 0-100 rubric by a dedicated scoring pass, and only findings at 80 or above survive the filter. Surviving issues post as a single GitHub PR comment with exact file links and full commit SHAs, using the gh CLI end to end. A false positive taxonomy of eleven categories (pre-existing issues, linter-catchable issues, pedantic nitpicks and more) rides along with every scoring pass to keep the signal-to-noise ratio high on a public surface.',
+      'PR Code Review runs an automated review on any open pull request before it merges. Five specialized agents analyze the diff from independent angles: convention-file compliance (your CLAUDE.md, README or equivalent), a shallow bug scan scoped to the diff, git history and blame context, prior PR comments on the same files, and inline code comment compliance. Each finding from those five agents is anchored to exactly one of five confidence values (0, 25, 50, 75, 100) by a dedicated pass, and any claim at 75 or above must quote the verbatim line that proves it or it steps down to 50. Findings flagged by two independent lenses are promoted one anchor step, and each survivor then gets its own fresh validator that is told to reject if in doubt. Only findings at anchor 75 or above that survive validation post. Version 1.1 added the anchors, the merge gate and the validator pass. Surviving issues post as a single GitHub PR comment with exact file links and full commit SHAs, using the gh CLI end to end. A false positive taxonomy of eleven categories (pre-existing issues, linter-catchable issues, pedantic nitpicks and more) rides along with every scoring pass to keep the signal-to-noise ratio high on a public surface.',
     howItWorks: [
       {
         heading: 'Five lenses, one confidence gate',
         paragraphs: [
           'An eligibility check runs first and last: skip draft PRs, closed PRs, automated PRs and anything already reviewed. In between, five agents work the diff in parallel, each blind to the others: what does the convention file require, what looks like an outright bug, what does the git history say about intentional patterns, what did earlier PR comments on these files already resolve, and what do the code comments themselves promise.',
-          'Every issue those five agents surface gets its own confidence-scoring pass against a verbatim rubric, no exceptions. Below 80 the issue is a note that never leaves the session. At or above 80 it earns a spot in the single comment that posts to GitHub, complete with the full SHA and a direct line link. One comment per run, or a clean no-issues confirmation. Nothing in between.',
+          'Every issue those five agents surface gets its own confidence-anchoring pass against a verbatim rubric, no exceptions, and anything claimed at 75 or above has to quote the line that proves it. Each survivor then meets a fresh validator with no commitment to the finding. Below anchor 75, or rejected by the validator, the issue is a note that never leaves the session. At anchor 75 or above and validated it earns a spot in the single comment that posts to GitHub, complete with the full SHA and a direct line link. One comment per run, or a clean no-issues confirmation. Nothing in between.',
         ],
       },
     ],
@@ -669,9 +669,9 @@ export const igosAssets: IGOSAsset[] = [
           'No. It is a merge gate, not a reviewer. It catches convention violations and obvious bugs scoped to the diff, at a high confidence threshold, so a human reviewer spends their attention on judgment calls rather than mechanical compliance checks.',
       },
       {
-        q: 'Why the 80 confidence threshold specifically?',
+        q: 'Why the 75 anchor floor specifically?',
         a:
-          'A false positive on a public PR costs credibility, not just review time. The threshold defaults high on purpose, and the skill treats lowering it as a deliberate operator decision rather than a tuning knob to reach for casually.',
+          'A false positive on a public PR costs credibility, not just review time. The floor defaults high on purpose, and the skill treats lowering it as a deliberate operator decision rather than a tuning knob to reach for casually.',
       },
       {
         q: 'What if my repo does not have a CLAUDE.md?',
@@ -3054,8 +3054,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Self-Healing',
     label: 'Skill',
-    version: '1.1',
-    updated: '2026-06-26',
+    version: '1.2',
+    updated: '2026-10-02',
     description:
       'Autonomous error recovery during implementation sessions. Diagnose the root cause, apply a fix, continue without stalling on recoverable mistakes.',
     tags: ['recovery', 'errors', 'autonomy', 'implementation', 'kingdom-skill'],

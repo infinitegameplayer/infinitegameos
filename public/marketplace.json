@@ -83,7 +83,7 @@
     {
       "name": "systematic-debugging",
       "description": "Root-cause investigation discipline. Use before proposing fixes. The Iron Law: no fixes without Phase 1 complete.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -155,7 +155,7 @@
     {
       "name": "pr-code-review",
       "description": "Automated pull request review for your repos. Five parallel agents, confidence scoring, convention-file compliance, and GitHub comment posting.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -516,7 +516,7 @@
     {
       "name": "self-healing",
       "description": "Autonomous error recovery during implementation sessions. Diagnose root cause, apply fix, continue without stopping for every recoverable mistake.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",

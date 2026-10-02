@@ -2,12 +2,12 @@
 name: pr-code-review
 description: Automated pull request review for your repos. Five parallel agents, confidence scoring, convention-file compliance, and GitHub comment posting.
 status: active
-version: 1.0
+version: 1.1
 ---
 
 # PR Code Review Skill
 
-Purpose: Run an automated code review on any open PR in one of your repos before it merges. Five specialized agents analyze the diff from independent angles. Each finding is scored for confidence. Only high-confidence issues post to GitHub as a review comment.
+Purpose: Run an automated code review on any open PR in one of your repos before it merges. Five specialized agents analyze the diff from independent angles. Each finding is anchored for confidence, merged, gated and checked by an independent validator. Only high-confidence issues post to GitHub as a review comment.
 Trigger: The operator invokes "PR Code Review" (or `/pr-review`) on a PR branch in a repo with open PRs.
 Inputs: PR number or current branch (defaults to current branch if not specified).
 Outputs: GitHub PR comment with numbered issues and full SHA links, or a no-issues confirmation.
@@ -19,7 +19,7 @@ This skill assumes a convention file at the repo root, typically CLAUDE.md, but 
 
 If your team has mandatory standards that live in a separate document (a design system reference, an API style guide, a security checklist), name that document explicitly in Agent 1's brief so the lens checks against it too. If your convention file defines markup or content hygiene rules (title length limits, alt text requirements, heading structure), spot-check changed pages against those rules directly rather than relying on a general read.
 
-The five-agent structure and the confidence-scoring gate transfer to any repo. The specific lenses in Step 4 are a starting set, not a fixed list. Add or swap a lens for what your codebase actually needs: accessibility, i18n, a specific framework's anti-patterns, a compliance requirement unique to your domain.
+The five-agent structure and the confidence anchoring, gate and validator pass transfer to any repo. The specific lenses in Step 4 are a starting set, not a fixed list. Add or swap a lens for what your codebase actually needs: accessibility, i18n, a specific framework's anti-patterns, a compliance requirement unique to your domain.
 
 ## Relationship to a Deeper Codebase Audit
 
@@ -89,29 +89,67 @@ Read previous PRs that touched the same files. Check for comments on those PRs t
 **Agent 5: Code Comment Compliance**
 Read code comments in the modified files. Check whether the changes comply with any guidance or constraints described in those comments.
 
-### Step 5: Confidence Scoring (Haiku, one per issue)
+### Step 5: Confidence Anchoring (Haiku, one per issue)
 
 For each issue found in Step 4, launch a parallel Haiku agent. Give each agent the PR, the issue description, and the convention file list from Step 2.
 
+Confidence is an **anchor**, not a score. Exactly one of five values. Each anchor carries a behavioral criterion the agent must honestly self-apply. A continuous 0-to-100 score invites false precision: "confidence 87" cannot be audited, reproduced or defended. Five anchors can be.
+
 **Pass this rubric to each scoring agent verbatim:**
 
-> Score this issue on a scale from 0-100 indicating confidence that it is a real issue and not a false positive.
+> Anchor this issue's confidence. Use **exactly one of 0, 25, 50, 75, 100**. No other value is valid.
 >
-> 0: Not confident at all. This is a false positive that does not stand up to light scrutiny, or is a pre-existing issue.
+> 0: Not confident. This is a false positive that does not stand up to light scrutiny, or a pre-existing issue this PR did not introduce.
 >
-> 25: Somewhat confident. This might be a real issue but may also be a false positive. The agent was not able to verify it is real. If the issue is stylistic, it is one not explicitly called out in the relevant convention file.
+> 25: Somewhat confident. Might be a real issue, might be a false positive. You could not verify it from the diff and the surrounding code alone.
 >
-> 50: Moderately confident. The agent was able to verify this is a real issue but it might be a nitpick or not happen often in practice. Relative to the rest of the PR, it is not very important.
+> 50: Moderately confident. You verified this is a real issue, and it may be a nitpick, a narrow edge case or of minimal practical impact. Style preferences and subjective improvements land here.
 >
-> 75: Highly confident. The agent double-checked the issue and verified it is very likely real and will be hit in practice. The existing approach in the PR is insufficient. The issue is very important and will directly impact the code's functionality, or it is an issue directly mentioned in the relevant convention file.
+> 75: Highly confident. You double-checked the diff and confirmed the issue will affect users, downstream callers or runtime behavior in normal usage. The bug, vulnerability or contract violation is clearly present and actionable.
 >
-> 100: Absolutely certain. The agent double-checked the issue and confirmed it is definitely real, will happen frequently in practice, and the evidence directly confirms this.
+> 100: Absolutely certain. The issue is verifiable from the code itself: a compile error, a type mismatch, a definitive logic bug, or an explicit convention file violation with a quotable rule. No interpretation required.
 >
-> For issues flagged due to convention file instructions: double-check that the convention file actually calls out that issue specifically. If it does not, score lower.
+> **The quote-the-line gate.** Before you anchor at 75 or 100, quote the verbatim line that makes the issue true, with `file:line`, as your first evidence item. **If you cannot quote the motivating line, you may not claim 75 or above. Step down to 50.** This kills the most common false-positive class: asserting a bug exists without pointing at the code that proves it.
+>
+> For an issue flagged under a convention file instruction: quote the rule verbatim. If the convention file does not call out that issue specifically, anchor lower.
+>
+> Return the anchor value, the `file:line` quote (or an explicit statement that you could not produce one) and one sentence of reasoning.
+
+### Step 5b: Merge and Gate
+
+1. **Enforce the quote gate mechanically.** Any issue arriving at anchor 75 or 100 without a verbatim `file:line` quote is demoted to 50. The reviewer's self-report does not override the missing evidence.
+2. **Corroboration promotion.** When two independent Step 4 lenses flag the same issue, promote it one anchor step (50 becomes 75, 75 becomes 100). Two carve-outs:
+   - Promotion never bypasses the quote gate. Two un-quoted findings must not combine into a quote-free 75. Agreement corroborates that an issue is real; the quoted line is what licenses high confidence.
+   - Agreement between lenses that share a model tier is weaker evidence than it looks. Note it, and do not treat same-model agreement as independent verification. Self-agreement dressed as consensus is not evidence.
+
+### Step 5c: Validator Pass (Sonnet, one per surviving issue)
+
+Every issue that survives Step 5b gets its own fresh validator subagent. **One per issue, never batched.** A single validator looking at all issues together pattern-matches across them and recreates the reviewer bias this pass exists to remove.
+
+**Pass this to each validator verbatim:**
+
+> You have no commitment to the original finding. If it is wrong, say so. False positives are common. Do not feel pressure to confirm.
+>
+> Answer three questions against the actual code:
+> 1. **Is the issue real in the code as written?** Check for an existing guard, null check or validation the reviewer missed. Check for a misread type or signature. Check whether the pattern is intentional (comments, parallel handlers, project convention).
+> 2. **Did THIS diff introduce it?** Use git blame against the reviewed tree. A pre-existing, undisturbed line fails validation regardless of whether the underlying claim is true.
+> 3. **Is it not already handled elsewhere?** Check callers, middleware, framework defaults and parallel handlers.
+>
+> Conservative bias is preferred. When in doubt, reject.
+>
+> Return exactly: `{"validated": true|false, "reason": "<one sentence>"}`
+
+A `validated: false` verdict drops the issue. **Record the reason in the run summary so the loss is auditable rather than silent.**
+
+If the validator dispatch itself fails (timeout, malformed return), that is infrastructure failure, not a rejection. Keep anchor-100 issues and mark them degraded; drop the rest conservatively.
 
 ### Step 6: Filter
 
-Drop any issue with a confidence score below 80.
+Post issues at **anchor 75 or 100** that survived the validator pass.
+
+One exception: an issue that would be critical if real (security, data loss, credential exposure, a hard-boundary violation your governance treats as non-negotiable) surfaces at anchor 50, flagged as unverified. A critical-but-uncertain issue is worse to lose than to over-report.
+
+Suppress everything else.
 
 If no issues remain after filtering, proceed to Step 7. Do not post a comment yet.
 
@@ -168,7 +206,7 @@ No issues found. Checked for bugs and convention file compliance.
 
 ## False Positive Taxonomy
 
-Do not flag any of the following categories. Pass this list to scoring agents to reduce noise:
+Do not flag any of the following categories. Pass this list to anchoring agents to reduce noise:
 
 1. Pre-existing issues not introduced by this PR
 2. Something that looks like a bug but is not actually a bug
@@ -194,7 +232,9 @@ Do not flag any of the following categories. Pass this list to scoring agents to
 | 2 | Haiku | File path listing only |
 | 3 | Haiku | PR summary |
 | 4 (x5) | Sonnet | Deep parallel analysis |
-| 5 (x N issues) | Haiku | Scoring with rubric |
+| 5 (x N issues) | Haiku | Anchoring against a fixed rubric |
+| 5b | Orchestrator | Mechanical gate and merge, no dispatch |
+| 5c (x N survivors) | Sonnet | Adversarial verification needs a real read of the code, not a rubric application. Haiku is too cheap for this step. A validator that rubber-stamps is worse than no validator. |
 | 8 | Direct (gh CLI) | Comment posting |
 
 ---
@@ -204,7 +244,10 @@ Do not flag any of the following categories. Pass this list to scoring agents to
 - Do not build, run tests, or typecheck the app. CI handles these. Do not attempt them.
 - Use `gh` CLI for all GitHub operations. Do not use WebFetch for GitHub data.
 - Always get the full SHA via `gh pr view --json headRefOid`, never via shell variable expansion in the comment.
-- The 80 confidence threshold is the default. Do not lower it without operator approval.
+- Confidence is anchored to exactly one of 0, 25, 50, 75, 100. Any other value is invalid and gets re-anchored, never rounded.
+- The actionable floor is anchor 75. Do not lower it without operator approval. The one carve-out is the critical-at-50 exception in Step 6.
+- No finding posts at 75 or above without a verbatim `file:line` quote. This gate is not waivable.
+- Every posted finding survived an independent validator pass.
 - Post at most one review comment per PR run.
 - If a technical error surfaces during the review run (MCP failure, gh CLI error, agent failure), run root-cause investigation before retrying. Do not layer workarounds on top of undiagnosed errors.
 
@@ -218,7 +261,7 @@ Status is active. Execution is authorized on operator invocation. No pre-approva
 
 ## External Orientation
 
-This skill operates under an ambassador posture: it posts comments to public repositories on your behalf. Primary: hold the quality bar. Only high-confidence findings post. A false positive on a public PR costs credibility, not just review time. Secondary: every comment is a logged, citable artifact. The posted review is the trace, and it needs to be accurate. The 80 confidence threshold and the false positive taxonomy are both expressions of that boundary. They are not optional.
+This skill operates under an ambassador posture: it posts comments to public repositories on your behalf. Primary: hold the quality bar. Only high-confidence findings post. A false positive on a public PR costs credibility, not just review time. Secondary: every comment is a logged, citable artifact. The posted review is the trace, and it needs to be accurate. The anchor floor, the quote-the-line gate, the validator pass and the false positive taxonomy are all expressions of that boundary. None of them is optional.
 
 ---
 
@@ -233,4 +276,10 @@ If Systematic Debugging isn't installed yet: [Install Systematic Debugging via I
 
 ## Refinements
 
-*(Empty. Populated when execution mistakes occur during sessions.)*
+**2026-10-02. Version 1.1.** Adds anchored confidence, the quote-the-line gate and the validator pass.
+
+An earlier rubric already produced anchored values (0, 25, 50, 75, 100), but the filter step thresholded at 80. Every anchor-75 finding, defined in the rubric itself as "highly confident, double-checked, will be hit in practice", was silently dropped. The skill had been quietly discarding its best-calibrated tier and reporting clean runs.
+
+Three changes close it. Step 5 now anchors confidence to exactly one of five values, each with a behavioral criterion, and the floor moves to anchor 75. Step 5b merges and gates: any 75 or 100 without a verbatim `file:line` quote is demoted to 50, and two independent lenses flagging the same issue promote it one anchor step without ever bypassing the quote gate. Step 5c gives every surviving finding its own fresh Sonnet validator, told it has no commitment to the finding, answering three questions: is it real, did this diff introduce it, is it not handled elsewhere. Every rejection's reason is recorded so the loss is auditable. The Constraints now state the anchor rules.
+
+The general lesson is false precision. A threshold set against a continuous scale, applied to output from an anchored scale, drops a whole tier and looks like it is working.
