@@ -141,7 +141,9 @@ a { color: inherit; text-decoration: none; }
 
 /* Teal shimmer frame for the one primary conversion card per page. A slow
    rotating conic rim, masked to a thin border so it reads as a tasteful
-   attention draw, not a slot machine. Site-wide standard: one per page. */
+   attention draw, not a slot machine. Site-wide standard: one per page.
+   The Gleam level (King-ruled 2026-10-08, the same on all three sites): 95% at
+   the bright point, one lap every 6s, a 2px rim. */
 .shimmer-card {
   position: relative;
   border-radius: 12px;
@@ -155,20 +157,20 @@ a { color: inherit; text-decoration: none; }
   background: conic-gradient(
     from 0deg,
     transparent 0deg,
-    rgba(34, 211, 238, 0.55) 40deg,
-    rgba(103, 232, 249, 0.7) 70deg,
-    rgba(34, 211, 238, 0.55) 100deg,
+    rgba(34, 211, 238, 0.74) 40deg,
+    rgba(103, 232, 249, 0.95) 70deg,
+    rgba(34, 211, 238, 0.74) 100deg,
     transparent 150deg,
     transparent 360deg
   );
-  animation: shimmerRotate 9s linear infinite;
+  animation: shimmerRotate 6s linear infinite;
   z-index: 0;
 }
 .shimmer-card::after {
   content: '';
   position: absolute;
-  inset: 1.5px;
-  border-radius: 10.5px;
+  inset: 2px;
+  border-radius: 10px;
   background: var(--color-bg);
   z-index: 1;
 }
