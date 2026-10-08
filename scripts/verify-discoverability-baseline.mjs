@@ -327,6 +327,24 @@ async function checkSitemapUrls(base) {
   return results
 }
 
+// The redirect control accepts any 3xx because it only proves the detector can
+// see a redirect. Codex V.9 is stricter: the apex answers 308 to the www host,
+// and a 307 is a fail. Nothing checked that on the wire until 2026-10-08.
+async function checkApexRedirect() {
+  const name = 'apex redirect 308 to www'
+  const www = APEX_ORIGIN.replace('https://', 'https://www.')
+  try {
+    const res = await fetch(`${APEX_ORIGIN}/`, { method: 'HEAD', redirect: 'manual', headers: { 'User-Agent': UA } })
+    const loc = res.headers.get('location') || ''
+    const violations = []
+    if (res.status !== 308) violations.push(`HTTP ${res.status} from ${APEX_ORIGIN} (expected 308)`)
+    if (loc !== www && !loc.startsWith(`${www}/`)) violations.push(`Location ${loc || '(none)'} (expected ${www}/)`)
+    return { name, violations }
+  } catch (err) {
+    return { name, violations: [`fetch error: ${err.message}`] }
+  }
+}
+
 async function main() {
   const args = parseArgs(process.argv.slice(2))
   if (args.help) {
@@ -341,6 +359,7 @@ async function main() {
   const results = []
   results.push(await checkStaticFile(base, '/robots.txt', sanityRobots))
   results.push(await checkRobotsSitemapDirective(base))
+  results.push(await checkApexRedirect())
   results.push(await checkStaticFile(base, '/llms.txt', sanityLlms))
   results.push(await checkStaticFile(base, '/llms-full.txt', sanityLlmsFull))
   results.push(await checkLlmsFullCoversUpdates(base))

@@ -31,6 +31,12 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: URL,
   },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/twitter-image'],
+    title: "Your AI's Charter",
+    description: DESCRIPTION,
+  },
   alternates: {
     canonical: URL,
     types: { 'text/markdown': 'https://www.infinitegameos.io/markdown/charter' },

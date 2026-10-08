@@ -16,6 +16,12 @@ export const metadata: Metadata = {
       'Designing a day around what you actually want starts with a different question than most planning methods ask. Build a day from desire, energy and identity rather than goals and output.',
     url: 'https://www.infinitegameos.io/design-your-day',
   },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/twitter-image'],
+    title: 'How to design a day around what you actually want',
+    description: 'Designing a day around what you actually want starts with a different question than most planning methods ask. Build a day from desire, energy and identity rather than goals and output.',
+  },
   alternates: {
     canonical: 'https://www.infinitegameos.io/design-your-day',
     types: {

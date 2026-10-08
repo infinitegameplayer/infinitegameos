@@ -16,6 +16,12 @@ export const metadata: Metadata = {
       'A Creator business built on structure does not require daily visibility to grow. Stop treating performance as the price of growth. Treat it as a cost to be designed down.',
     url: 'https://www.infinitegameos.io/creator-business-without-performing',
   },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/twitter-image'],
+    title: 'How to build a creator business without performing constantly',
+    description: 'A Creator business built on structure does not require daily visibility to grow. Stop treating performance as the price of growth. Treat it as a cost to be designed down.',
+  },
   alternates: {
     canonical: 'https://www.infinitegameos.io/creator-business-without-performing',
     types: {

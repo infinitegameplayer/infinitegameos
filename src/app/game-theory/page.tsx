@@ -17,6 +17,12 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: 'https://www.infinitegameos.io/game-theory',
   },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/twitter-image'],
+    title: 'Game Theory and the Infinite Game',
+    description: DESCRIPTION,
+  },
   alternates: {
     canonical: 'https://www.infinitegameos.io/game-theory',
     types: {

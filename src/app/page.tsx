@@ -23,6 +23,11 @@ export const metadata: Metadata = {
       'A practitioner-first knowledge base and library for the Infinite Game, built for entrepreneurs, solopreneurs and creators on a long arc. Concepts, installable skills and avatar bundles.',
     url: 'https://www.infinitegameos.io',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Infinite Game OS | Play a longer game.',
+    description: 'A practitioner-first knowledge base and library for the Infinite Game, built for entrepreneurs, solopreneurs and creators on a long arc. Concepts, installable skills and avatar bundles.',
+  },
   alternates: {
     canonical: 'https://www.infinitegameos.io',
     types: {

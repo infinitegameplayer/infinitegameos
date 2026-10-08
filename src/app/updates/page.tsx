@@ -17,6 +17,12 @@ export const metadata: Metadata = {
       'Regular dispatches from Lane Belone as the Infinite Game OS evolves. What is being built, learned and applied.',
     url: 'https://www.infinitegameos.io/updates',
   },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/twitter-image'],
+    title: 'Updates: From Inside the Practice',
+    description: 'Regular dispatches from Lane Belone as the Infinite Game OS evolves. What is being built, learned and applied.',
+  },
   alternates: {
     canonical: 'https://www.infinitegameos.io/updates',
   },

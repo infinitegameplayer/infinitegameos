@@ -16,6 +16,12 @@ export const metadata: Metadata = {
       'Playing your own game begins with identifying which game you are currently playing. A forensic game-audit approach for anyone at the edge of their own discovery who senses the script is ready to change.',
     url: 'https://www.infinitegameos.io/play-your-own-game',
   },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/twitter-image'],
+    title: 'How to play your own game',
+    description: 'Playing your own game begins with identifying which game you are currently playing. A forensic game-audit approach for anyone at the edge of their own discovery who senses the script is ready to change.',
+  },
   alternates: {
     canonical: 'https://www.infinitegameos.io/play-your-own-game',
     types: {
