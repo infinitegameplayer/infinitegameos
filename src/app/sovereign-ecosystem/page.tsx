@@ -342,7 +342,7 @@ export default function SovereignEcosystemPage() {
                   here before it gets organized. The daily funnel.
                 </li>
                 <li>
-                  <strong>Sovereign Command and To-Do Dock.</strong> The live
+                  <strong>Sovereign Command and Capture.</strong> The live
                   signal surface for what is active right now and the daily
                   capture surface for the small stuff.
                 </li>

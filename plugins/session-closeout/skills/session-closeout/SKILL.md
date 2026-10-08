@@ -1,8 +1,8 @@
 ---
 name: session-closeout
-description: "Use when wrapping up a session that made commits or governance changes. A fast three-action close: breadcrumb what you touched, refresh your handoff note, commit with a readable body."
+description: "Use when wrapping up a session that made commits or governance changes, including when the work continues in a new session and needs a continuation prompt."
 status: active
-version: 1.2
+version: 1.3
 ---
 
 # Session Closeout
@@ -17,11 +17,25 @@ Operators name their handoff surfaces their own way. "Primer" and "command surfa
 
 Trigger: a session that made commits or governance-level changes.
 Inputs: what shipped, what got touched, what comes next.
-Outputs: breadcrumbs in the artifacts touched, a refreshed handoff note, a light-touch update to your command surface, a commit with a readable body.
+Outputs: breadcrumbs in the artifacts touched, a refreshed handoff note, a light-touch update to your command surface, a commit with a readable body, and a paste-ready continuation prompt when the work continues.
 
 ## The Close
 
-Three actions. Target under 3 minutes. Every session runs this. There is no heavier tier.
+Three actions. Target under 3 minutes. Every session runs this. There is no heavier tier. Action 0 gates it and action 4 follows it when the work continues.
+
+### 0. The gate before the close: decisions are ruled first
+
+The close does not start while a decision this session raised is still open. The order of a session's end is fixed:
+
+1. The work finishes.
+2. The report goes to you: what was done, then the decisions, then what only your hands can do.
+3. The session stops and waits for your rulings.
+4. The rulings are executed and verified in this session.
+5. Then this close runs, and then the continuation prompt.
+
+Decisions are brought when the work is done, before the close, never after it. A report that ends in decisions and closes out in the same turn doubles the end: every ruling reopens a closed session and forces a second closeout.
+
+What cannot be ruled in the session is breadcrumbed instead, each item with a one-line done-check (where to look, and what state means done), in the artifact where the next reader looks and in the handoff note's parked list. A decision that waits on something outside the session (a reply, a date, missing evidence) is a breadcrumb. A decision you could make now is not.
 
 ### 1. Breadcrumbs wherever they belong
 
@@ -51,6 +65,22 @@ Update your primer or handoff note. This is the canonical forward handoff, the f
 **The commit body carries 2-3 human-readable sentences:** what shipped (SHA or URL if relevant), the key decision, what comes next. This body is the always-on, searchable backward record. The commit plus the handoff note plus the breadcrumbs are the record for an ordinary session. Weave a light touch of humor or a meta-awareness beat into the body when it fits.
 
 No per-session narrative log is written. Git is the log. The commit body is the session record, and the handoff note is the forward handoff.
+
+### 4. The continuation prompt, when the work continues
+
+When the work visibly continues in a new session, the session ends without being asked in this order: finish the work, run this close, then hand over a paste-ready prompt for the fresh window. The handoff note carries state to every session. The prompt carries surgical direction to the one session that picks this work up, so it opens already aimed.
+
+**It fires when** a plan names its next sitting, a build stops mid-sequence, or you say you will continue in a fresh window. **It stays quiet when** the session closed its own loop and nothing specific follows. Then the closing line offers one in a single sentence rather than drafting it. When the next move is genuinely undetermined, the prompt is the opener plus the two or three live options, stated plainly.
+
+**The shape:**
+
+1. **The opener line.** Your session-start activation, if you use one, then the work named precisely (plan, sitting, project) and the model if you named one.
+2. **Context to load, and only this.** Exact paths, and the section or heading inside each file that matters. Name the section rather than the whole file whenever one exists.
+3. **Already decided.** The rulings the next session inherits, one line each, so nothing gets re-litigated.
+4. **Work, in dependency order.** Step 0 is ground truth before a word is written. Each step names what it waits on.
+5. **Rules.** Only the constraints this work carries: lessons from the prior sitting, instruments to run, concurrency, model routing. Standing law your AI already loads is not restated.
+
+Written for a reader with zero context. Paste-ready in a fenced block in the chat, after the closing line. A copy may also live in the plan, but the chat block is the delivery.
 
 ## Auto-commit (mandatory, concurrency-aware)
 

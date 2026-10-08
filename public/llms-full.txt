@@ -445,8 +445,8 @@ the next move: an active intelligence layer over the same files. The CODE loop r
 (capture, organize, distill, express) with one upgrade. The AI handles a lot of the
 organize, distill and express work; you stay focused on capture and creative judgment.
 
-The To-Do Dock is the daily capture surface for the small stuff. Pending Plans are the
-longer-horizon capture surface for ideas you want to act on later. Claude Code is the
+Capture is the daily surface for the small stuff, named for the first move of the loop.
+Pending Plans are the longer-horizon capture surface for ideas you want to act on later. Claude Code is the
 engine that organizes and distills. Skills like article drafting, social batch drafting
 and the express layer of any creative bundle handle the output side. The same files
 flow through every layer. Recognition moment from the workshop, mid-demo, attendee said
@@ -504,7 +504,7 @@ The Sovereign Ecosystem is a foundational Obsidian and Claude Code workspace tem
 
 Download options: ZIP download at github.com/InfiniteGamePlayer/sovereign-ecosystem/archive/refs/heads/master.zip; git clone via HTTPS; GitHub web interface. Free and open.
 
-What the repo ships: Council Chamber (governance, codices, skills, protocols), Library (North Star template, transcripts, references), Inbox (capture surface), Sovereign Command and To-Do Dock (live signal surface and daily capture surface). Source Harvest stays as a dual-distribution surface alongside the IGOS library page.
+What the repo ships: Council Chamber (governance, codices, skills, protocols), Library (North Star template, transcripts, references), Inbox (capture surface), Sovereign Command and Capture (live signal surface and daily capture surface). Source Harvest stays as a dual-distribution surface alongside the IGOS library page.
 
 The three-tier stack: named live at the May 2 AI for Livin' Workshop by an attendee mid-demo. Three layers, each swappable. Sovereign Ecosystem is layer one (file structure and templates). Obsidian is layer two (reader and editor). Claude Code or Codex or any future agentic interface is layer three (AI that reads, edits and restructures files on instruction). Swap any layer and the others survive. Full architectural case at /concepts/data-sovereignty.
 
@@ -608,7 +608,7 @@ Self-Healing is an always-on posture for implementation sessions rather than a s
 
 ### Session Closeout (/skills/session-closeout)
 
-Session Closeout is a fast close for any session that made commits or governance-level changes, three actions under three minutes. First, breadcrumb what you touched: a one-line note dropped into each artifact this session affected, in its own location, so the next reader finds it where they look. Second, refresh the forward primer, the rolling handoff your AI reads at the start of the next session; stale blockers get purged first and completed-this-session history does not carry forward, because the commit body already holds it. Third, commit with a readable body of two or three sentences: what shipped, the key decision, what comes next. The commit body is the backward record. The primer is the forward handoff. No separate narrative log gets written. Git is the log. Also ships inside the Sovereign Ecosystem Foundation, where git is wired into the workspace from the start. Pairs with Pending Plan Implementation and Source Harvest.
+Session Closeout is a fast close for any session that made commits or governance-level changes, three actions under three minutes. First, breadcrumb what you touched: a one-line note dropped into each artifact this session affected, in its own location, so the next reader finds it where they look. Second, refresh the forward primer, the rolling handoff your AI reads at the start of the next session; stale blockers get purged first and completed-this-session history does not carry forward, because the commit body already holds it. Third, commit with a readable body of two or three sentences: what shipped, the key decision, what comes next. The commit body is the backward record. The primer is the forward handoff. No separate narrative log gets written. Git is the log. Two rules frame the three actions. Any decision the session raised is ruled before the close begins, because a ruling after the close reopens it and the end gets done twice. And when the work continues in a new session, the close ends with a paste-ready continuation prompt, unasked: the opener, the exact files and sections to load, what is already decided, the work in dependency order and the rules this work carries. Also ships inside the Sovereign Ecosystem Foundation, where git is wired into the workspace from the start. Pairs with Pending Plan Implementation and Source Harvest.
 
 ### Playwright (/skills/playwright)
 
