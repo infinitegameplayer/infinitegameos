@@ -17,7 +17,7 @@ Operators name their handoff surfaces their own way. "Primer" and "command surfa
 
 Trigger: a session that made commits or governance-level changes.
 Inputs: what shipped, what got touched, what comes next.
-Outputs: breadcrumbs in the artifacts touched, a refreshed handoff note, a light-touch update to your command surface, a commit with a readable body, and a paste-ready continuation prompt when the work continues.
+Outputs: breadcrumbs in the artifacts touched, a refreshed handoff note, a light-touch update to your command surface, a commit with a readable body and a paste-ready continuation prompt when the work continues.
 
 ## The Close
 

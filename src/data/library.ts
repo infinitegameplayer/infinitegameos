@@ -3130,7 +3130,7 @@ export const igosAssets: IGOSAsset[] = [
     version: '1.3',
     updated: '2026-10-08',
     description:
-      'A fast three-action close for a git-tracked workspace. Breadcrumbs as you work, a refreshed primer, a readable commit as the session summary, and a paste-ready prompt when the work continues.',
+      'A fast three-action close for a git-tracked workspace. Breadcrumbs as you work, a refreshed primer, a readable commit as the session summary and a paste-ready prompt when the work continues.',
     tags: ['session', 'closeout', 'git', 'breadcrumbs', 'kingdom-skill'],
     capsule:
       'Session Closeout ends a working session in three actions and under three minutes. Breadcrumb what you touched, refresh the forward primer, commit with a readable body that doubles as the session record. No separate narrative log. Git is the log. Any decision the session raised is ruled before the close, so the end happens once. When the work continues, it hands you a paste-ready prompt that opens the next session already aimed.',

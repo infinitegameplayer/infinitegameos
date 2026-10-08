@@ -1,6 +1,6 @@
 {
   "name": "session-closeout",
-  "description": "Fast session close: decisions ruled first, breadcrumb what you touched, refresh your handoff note, commit with a readable body, and a paste-ready prompt when the work continues.",
+  "description": "Fast session close: decisions ruled first, breadcrumb what you touched, refresh your handoff note, commit with a readable body and a paste-ready prompt when the work continues.",
   "version": "1.3.0",
   "author": {
     "name": "Lane Belone",
