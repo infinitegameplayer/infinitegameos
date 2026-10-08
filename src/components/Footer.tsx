@@ -114,6 +114,30 @@ export default function Footer() {
               A structured knowledge base for practitioners of Infinite Game
               philosophy and sovereign life design.
             </p>
+            {/* The one door for the stranger (Frontier Audit P11, King-ruled
+                2026-10-08). One line, never a product grid. ?from=igos lets the
+                One Alive Thing form record that the signup arrived from here. */}
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '0.85rem',
+                color: 'var(--color-muted)',
+                lineHeight: 1.6,
+                maxWidth: '220px',
+                marginTop: '1rem',
+              }}
+            >
+              The writer of this library writes{' '}
+              <a
+                href="https://www.sidequesthq.co/one-alive-thing?from=igos"
+                target="_blank"
+                rel="noopener"
+                style={{ color: 'var(--color-text)', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}
+              >
+                the Side Quest Letter
+              </a>
+              . It comes with One Alive Thing, a free hour.
+            </p>
           </div>
 
           {/* Site links */}
