@@ -34,6 +34,7 @@ const profilePageSchema = {
   '@type': 'ProfilePage',
   mainEntity: { '@id': 'https://infinitegameos.io/#person' },
   url: 'https://www.infinitegameos.io/about',
+  license: 'https://creativecommons.org/licenses/by/4.0/',
   name: 'About Lane Belone',
   description:
     'Lane Belone is a writer on the Infinite Game, a former Green Beret and co-author of Unleash Your Humble Alpha. He builds Infinite Game OS in the open: concepts, skills and bundles from inside his own practice, free to use with credit.',

@@ -40,6 +40,7 @@ const articleSchema = {
   publisher: { '@id': 'https://www.infinitegameos.io/#website' },
   url: 'https://www.infinitegameos.io/agentic-systems',
   mainEntityOfPage: 'https://www.infinitegameos.io/agentic-systems',
+  license: 'https://creativecommons.org/licenses/by/4.0/',
   datePublished: '2026-04-14',
   dateModified: '2026-04-19',
 }

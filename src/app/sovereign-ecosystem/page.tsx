@@ -56,6 +56,7 @@ const articleSchema = {
   publisher: { '@id': 'https://www.infinitegameos.io/#website' },
   url: 'https://www.infinitegameos.io/sovereign-ecosystem',
   mainEntityOfPage: 'https://www.infinitegameos.io/sovereign-ecosystem',
+  license: 'https://creativecommons.org/licenses/by/4.0/',
   datePublished: '2026-05-05',
   dateModified: upstreamUpdatedAt,
 }

@@ -50,6 +50,7 @@ const articleSchema = {
   publisher: { '@id': 'https://www.infinitegameos.io/#website' },
   url: 'https://www.infinitegameos.io/accord',
   mainEntityOfPage: 'https://www.infinitegameos.io/accord',
+  license: 'https://creativecommons.org/licenses/by/4.0/',
   datePublished: '2025-09-01',
   dateModified: '2026-04-28',
 }

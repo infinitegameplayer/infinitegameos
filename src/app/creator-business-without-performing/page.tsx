@@ -50,6 +50,7 @@ const articleSchema = {
   publisher: { '@id': 'https://www.infinitegameos.io/#website' },
   url: 'https://www.infinitegameos.io/creator-business-without-performing',
   mainEntityOfPage: 'https://www.infinitegameos.io/creator-business-without-performing',
+  license: 'https://creativecommons.org/licenses/by/4.0/',
   datePublished: '2026-05-19',
   dateModified: '2026-05-19',
 }
