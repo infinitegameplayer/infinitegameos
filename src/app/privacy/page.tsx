@@ -47,8 +47,30 @@ const sections = [
   },
 ]
 
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Privacy',
+  description: metadata.description,
+  url: URL,
+  isPartOf: { '@id': 'https://www.infinitegameos.io/#website' },
+  publisher: { '@id': 'https://www.infinitegameos.io/#website' },
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.infinitegameos.io' },
+    { '@type': 'ListItem', position: 2, name: 'Privacy', item: URL },
+  ],
+}
+
 export default function PrivacyPage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <article style={{ paddingTop: '7rem' }}>
       <div className="section">
         <div className="prose">
@@ -73,5 +95,6 @@ export default function PrivacyPage() {
         </div>
       </div>
     </article>
+    </>
   )
 }

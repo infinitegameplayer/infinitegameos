@@ -50,6 +50,7 @@ const articleSchema = {
   publisher: { '@id': 'https://www.infinitegameos.io/#website' },
   url: 'https://www.infinitegameos.io/game-theory',
   mainEntityOfPage: 'https://www.infinitegameos.io/game-theory',
+  license: 'https://creativecommons.org/licenses/by/4.0/',
   datePublished: '2026-08-16',
   dateModified: '2026-08-16',
 }

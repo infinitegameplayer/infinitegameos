@@ -50,6 +50,7 @@ const articleSchema = {
   publisher: { '@id': 'https://www.infinitegameos.io/#website' },
   url: 'https://www.infinitegameos.io/infinite-game',
   mainEntityOfPage: 'https://www.infinitegameos.io/infinite-game',
+  license: 'https://creativecommons.org/licenses/by/4.0/',
   datePublished: '2026-04-14',
   dateModified: '2026-09-24',
 }

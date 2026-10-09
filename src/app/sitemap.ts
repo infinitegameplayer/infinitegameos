@@ -38,6 +38,8 @@ function pageDate(path: string): Date {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const updates = getAllUpdates()
+  // getAllUpdates sorts newest first; same date source as the entries below.
+  const latestUpdateDate = updates.length ? new Date(updates[0].date + 'T00:00:00.000Z') : pageDate('/updates')
   const updateEntries: MetadataRoute.Sitemap = updates.map(u => ({
     url: `https://www.infinitegameos.io/updates/${u.slug}`,
     lastModified: new Date(u.date + 'T00:00:00.000Z'),
@@ -113,7 +115,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.infinitegameos.io/updates',
-      lastModified: new Date(),
+      lastModified: latestUpdateDate,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
