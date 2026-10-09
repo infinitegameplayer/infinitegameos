@@ -1,6 +1,6 @@
 # Infinite Game OS: Full Content Index
 # Deep LLM reference for comprehensive site content
-# Updated: 2026-09-28
+# Updated: 2026-10-09
 # https://www.infinitegameos.io
 
 This file contains structured summaries of each page for AI systems that require
@@ -517,6 +517,14 @@ North Star: the repo ships Library/North Star.md as the practical scaffold. Full
 FAQPage schema: 6 Q&As covering what the Sovereign Ecosystem is, who it is for, whether it is required, what the three-tier stack is, what it costs and how Source Harvest fits in.
 
 Related: /concepts/data-sovereignty, /concepts/the-north-star, /concepts/ai-second-brain, /skills/source-harvest.
+
+---
+
+## Your AI's Charter (/charter)
+
+A free, open CLAUDE.md for how Claude works with you, not just your code. What your AI runs on its own, what it asks you first and how it acts in your name. Tested against a control, with an optional Claude Code hook that enforces it.
+
+Raw file at /charter/CLAUDE.md.
 
 ---
 
