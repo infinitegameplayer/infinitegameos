@@ -22,7 +22,7 @@ const WELCOME_PREVIEW =
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 function buildWelcomeHtml(opts: { unsubscribeUrl: string; preferencesUrl: string; firstName?: string }) {
-  const greeting = opts.firstName ? `Hi ${opts.firstName}.` : 'Hi.'
+  const greeting = opts.firstName ? `Hey ${opts.firstName},` : 'Hey there,'
   const body = `
     <p>${greeting}</p>
     <p>You signed up for Infinite Game OS updates. The real ones, from inside the practice. New skills as they ship. Concepts as they cohere. Playbooks as they prove out.</p>
