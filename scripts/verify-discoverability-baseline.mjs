@@ -67,6 +67,13 @@ const APEX_RE = /https:\/\/infinitegameos\.io/g
 const UA =
   'InfiniteGameOS-DiscoverabilityBaseline/1.0 (+https://www.infinitegameos.io; Kingdom discoverability self-audit)'
 
+// Every request gives up after 30 seconds. On 2026-10-05 two scheduled runs sat
+// until the 15-minute job timeout, GitHub cancelled them, and a cancelled job
+// opened no alarm. A request that hangs now fails its own check by name.
+const FETCH_TIMEOUT_MS = Number(process.env.NET_FETCH_TIMEOUT_MS) || 30_000
+const fetch = (url, opts = {}) =>
+  globalThis.fetch(url, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS), ...opts })
+
 // robots.txt names these deliberately. IGOS invites AI crawlers rather than
 // tolerating them, and the invitation is the thing worth guarding.
 const EXPECTED_AI_AGENTS = ['GPTBot', 'ClaudeBot', 'anthropic-ai', 'Google-Extended', 'Applebot']

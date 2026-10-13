@@ -7,6 +7,12 @@ name: Live Nets
 #
 # Born 2026-08-26 from the Site Update pass before a five-week absence.
 # Manual run: gh workflow run live-nets.yml
+#
+# 2026-10-13: on 2026-10-05 this workflow on sidequesthq and lanebelone sat
+# until the 15-minute job timeout and GitHub cancelled it, and the alarm step
+# ran only on failure(), so no issue opened. This copy carries the same fix:
+# each net step has its own timeout, every request in the script gives up
+# after 30 seconds, and the alarm also fires on cancelled().
 
 on:
   schedule:
@@ -32,13 +38,14 @@ jobs:
           node-version: '22'
 
       - name: Discoverability baseline against www.infinitegameos.io
+        timeout-minutes: 10
         shell: bash
         run: |
           set -o pipefail
           node scripts/verify-discoverability-baseline.mjs 2>&1 | tee -a nets.log
 
       - name: Open or update the alarm issue
-        if: failure()
+        if: failure() || cancelled()
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

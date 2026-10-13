@@ -12,17 +12,17 @@
     "check:titles": "node scripts/check-title-lengths.mjs"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.117.2",
+    "@supabase/supabase-js": "^2.117.3",
     "geist": "^1.7.0",
     "gray-matter": "^4.0.3",
-    "next": "^16.3.8",
+    "next": "^16.4.0",
     "next-mdx-remote": "^6.0.0",
     "node-html-markdown": "^2.0.0",
     "node-html-parser": "^6.1.13",
-    "posthog-js": "^1.434.17",
+    "posthog-js": "^1.438.9",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "resend": "^6.30.0"
+    "resend": "^6.32.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -30,7 +30,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.3.8",
+    "eslint-config-next": "^16.4.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
