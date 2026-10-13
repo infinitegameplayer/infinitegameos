@@ -140,7 +140,7 @@ export default function InfiniteGamePage() {
                 games are useful. They create clear targets and measurable progress.
               </p>
               <p>
-                The <strong>Infinite Game</strong> has known and unknown players, rules
+                The <Link href="/updates/what-is-the-infinite-game"><strong>Infinite Game</strong></Link> has known and unknown players, rules
                 that can change and no defined endpoint. The goal is not to win. The
                 goal is to keep playing, to grow the cause and to outlast the
                 finite-game players who mistake the whole endeavor for a competition.
@@ -150,7 +150,7 @@ export default function InfiniteGamePage() {
             <SectionReveal delay={80}>
               <h2>The cost of confusion</h2>
               <p>
-                The confusion between finite games and the Infinite Game is everywhere.
+                <Link href="/updates/is-finite-and-infinite-games-the-same-as-game-theory">The confusion between finite games and the Infinite Game</Link> is everywhere.
                 Companies optimize for quarterly earnings at the cost of decade-long
                 competitive advantage. Creators optimize for viral content at the cost
                 of the deep body of work only they can build. Practitioners optimize for
@@ -223,7 +223,7 @@ export default function InfiniteGamePage() {
                 patterns. It complements sovereign trust. Sovereignty stays the source.
               </p>
               <p>
-                Nested within the Infinite Game are finite games: workshops, advisory
+                <Link href="/updates/why-finite-games-sit-inside-the-infinite-game">Nested within the Infinite Game are finite games</Link>: workshops, advisory
                 engagements, publishing deadlines, Side Quests. Side Quest HQ is the
                 container. Side quests, finite adventures you choose inside the
                 Infinite Game, are intentional and bounded. They fund and support the
