@@ -53,6 +53,7 @@ const webPageSchema = {
   name: 'Privacy',
   description: metadata.description,
   url: URL,
+  license: 'https://creativecommons.org/licenses/by/4.0/',
   isPartOf: { '@id': 'https://www.infinitegameos.io/#website' },
   publisher: { '@id': 'https://www.infinitegameos.io/#website' },
 }

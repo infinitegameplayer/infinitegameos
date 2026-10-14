@@ -14,7 +14,7 @@ const PAGE_DATES: Record<string, string> = {
   '/':                   '2026-07-01',
   '/the-os':             '2026-07-01',
   '/accord':             '2026-07-01',
-  '/infinite-game':      '2026-09-24',
+  '/infinite-game':      '2026-10-13',
   '/agentic-systems':    '2026-07-01',
   '/sovereignty':        '2026-07-01',
   '/about':              '2026-07-01',

@@ -2944,9 +2944,9 @@ export const igosAssets: IGOSAsset[] = [
           title: 'MBB Management Consultant',
           description:
             'Calibrated to the McKinsey/Bain/BCG frame-structure-analyze-synthesize-deliver methodology. Covers executive communication (Pyramid Principle), case interview rigor (market sizing, profitability trees) and sector-specific strategy across nine industries (healthcare, fintech, energy, retail and more). All frameworks derive from public sources, no proprietary firm material. Pairs with Management Consulting above for expanded framework coverage; the sector-depth angles are the primary differentiator.',
-          source: 'github.com/charlie989898/-mbb-management-consultant-claude-skill',
+          source: 'github.com/charlie989898',
           license: 'MIT',
-          externalUrl: 'https://github.com/charlie989898/-mbb-management-consultant-claude-skill',
+          externalUrl: 'https://github.com/charlie989898',
         },
       ],
     },
