@@ -901,7 +901,7 @@
       "name": "The Strategist Bundle",
       "type": "bundle",
       "version": "1.0",
-      "description": "Three avatar-specific Claude Code skills for independent management consultants, fractional executives, frameworks writers, growth strategists, decision-systems authors and applied operators in 2026. Management Consulting (42 frameworks, three output modes), Decision Toolkit and MBB Management Consultant install on top of the Foundational Creator Bundle substrate.",
+      "description": "Two avatar-specific Claude Code skills for independent management consultants, fractional executives, frameworks writers, growth strategists, decision-systems authors and applied operators in 2026. Management Consulting (42 frameworks, three output modes) and Decision Toolkit install on top of the Foundational Creator Bundle substrate.",
       "tags": [
         "bundle",
         "strategist",
@@ -930,12 +930,6 @@
           "source": "glebis/claude-skills",
           "license": "MIT",
           "url": "https://github.com/glebis/claude-skills"
-        },
-        {
-          "title": "MBB Management Consultant (Pyramid Principle executive communication, market sizing, profitability trees, sector-specific strategy across nine industries)",
-          "source": "charlie989898/-mbb-management-consultant-claude-skill",
-          "license": "MIT",
-          "url": "https://github.com/charlie989898/-mbb-management-consultant-claude-skill"
         }
       ],
       "related": [

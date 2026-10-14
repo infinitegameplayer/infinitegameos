@@ -2914,12 +2914,12 @@ export const igosAssets: IGOSAsset[] = [
     title: 'The Strategist Bundle',
     label: 'Bundle',
     version: '1.0',
-    updated: '2026-05-02',
+    updated: '2026-10-14',
     description:
-      'Claude Code skills for independent management consultants, fractional executives, frameworks writers, growth strategists, decision-systems authors and applied operators in 2026. Three avatar-specific skills (Management Consulting, Decision Toolkit, MBB Management Consultant) on top of the Foundational Creator Bundle substrate.',
+      'Claude Code skills for independent management consultants, fractional executives, frameworks writers, growth strategists, decision-systems authors and applied operators in 2026. Two avatar-specific skills (Management Consulting, Decision Toolkit) on top of the Foundational Creator Bundle substrate.',
     tags: ['bundle', 'strategist', 'consultant', 'fractional', 'frameworks', 'advisory', 'claude-code', 'creator-os', '2026'],
     capsule:
-      'The Strategist Bundle is the avatar-specific layer for structured-thinking creators: independent management consultants, fractional executives (CMO, COO, CFO, CTO), frameworks writers, growth strategists, decision-systems authors and applied operators. The intellectual product is the leverage. Skills compress the synthesis-to-delivery gap and turn accumulated patterns into a portable, reusable body of advisory knowledge. Management Consulting carries 42 frameworks across strategy, problem-solving, decision-making, financial and operations work in three output modes. Decision Toolkit runs structured decision frameworks and bias checkers. MBB Management Consultant adds executive communication discipline (Pyramid Principle) and sector-specific framing across nine industries. Sits on top of the Foundational Creator Bundle.',
+      'The Strategist Bundle is the avatar-specific layer for structured-thinking creators: independent management consultants, fractional executives (CMO, COO, CFO, CTO), frameworks writers, growth strategists, decision-systems authors and applied operators. The intellectual product is the leverage. Skills compress the synthesis-to-delivery gap and turn accumulated patterns into a portable, reusable body of advisory knowledge. Management Consulting carries 42 frameworks across strategy, problem-solving, decision-making, financial and operations work in three output modes. Decision Toolkit runs structured decision frameworks and bias checkers. Sits on top of the Foundational Creator Bundle.',
     bundle: {
       installUrl: 'https://www.infinitegameos.io/bundles/the-strategist/install.sh',
       command: 'curl -sSL https://www.infinitegameos.io/bundles/the-strategist/install.sh | bash',
@@ -2940,18 +2940,10 @@ export const igosAssets: IGOSAsset[] = [
           license: 'MIT',
           externalUrl: 'https://github.com/glebis/claude-skills',
         },
-        {
-          title: 'MBB Management Consultant',
-          description:
-            'Calibrated to the McKinsey/Bain/BCG frame-structure-analyze-synthesize-deliver methodology. Covers executive communication (Pyramid Principle), case interview rigor (market sizing, profitability trees) and sector-specific strategy across nine industries (healthcare, fintech, energy, retail and more). All frameworks derive from public sources, no proprietary firm material. Pairs with Management Consulting above for expanded framework coverage; the sector-depth angles are the primary differentiator.',
-          source: 'github.com/charlie989898',
-          license: 'MIT',
-          externalUrl: 'https://github.com/charlie989898',
-        },
       ],
     },
     definition:
-      'The Strategist Bundle is the avatar-specific stack for structured-thinking creators working with Claude Code in 2026. The Foundational Creator Bundle (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging plus Content Strategy and AI SEO) is the assumed pre-install. The Strategist layer adds three installable skills. Management Consulting (gcamilo, MIT) is the category-anchor skill: 42 frameworks at practitioner depth across strategy, problem-solving, decision-making, financial, operations and innovation domains, with three output modes that match response depth to engagement stakes. Decision Toolkit (Gleb Kalinin, MIT) installs as a Claude Code marketplace plugin and provides structured decision frameworks plus cognitive bias checkers as a dedicated layer. MBB Management Consultant (charlie989898, MIT) adds executive communication discipline (Pyramid Principle), case interview rigor and sector-specific strategy across nine industries. For the Strategist, Researcher from the Foundational substrate is the engagement intake engine and Source Harvest is the proprietary pattern-library builder. Systematic Debugging transfers directly into operational and strategic root-cause analysis. The intellectual product is the leverage. Frameworks outlive any individual engagement.',
+      'The Strategist Bundle is the avatar-specific stack for structured-thinking creators working with Claude Code in 2026. The Foundational Creator Bundle (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging plus Content Strategy and AI SEO) is the assumed pre-install. The Strategist layer adds two installable skills. Management Consulting (gcamilo, MIT) is the category-anchor skill: 42 frameworks at practitioner depth across strategy, problem-solving, decision-making, financial, operations and innovation domains, with three output modes that match response depth to engagement stakes. Decision Toolkit (Gleb Kalinin, MIT) installs as a Claude Code marketplace plugin and provides structured decision frameworks plus cognitive bias checkers as a dedicated layer. For the Strategist, Researcher from the Foundational substrate is the engagement intake engine and Source Harvest is the proprietary pattern-library builder. Systematic Debugging transfers directly into operational and strategic root-cause analysis. The intellectual product is the leverage. Frameworks outlive any individual engagement.',
     howItWorks: [
       {
         heading: 'Pre-install: the Foundational Creator Bundle',
@@ -2963,17 +2955,16 @@ export const igosAssets: IGOSAsset[] = [
       {
         heading: 'What the install brings',
         paragraphs: [
-          'The install script does three things. First, it clones the gcamilo/management-consulting repository into the Claude Code skills directory at ~/.claude/skills/management-consulting/. Second, it registers the glebis-skills marketplace and enables the Decision Toolkit plugin via a jq merge into settings.json. Third, it clones the charlie989898 MBB Management Consultant repository and copies the skill contents into ~/.claude/skills/mbb-consultant/. All three halves are idempotent. Re-running is safe. The script writes a timestamped backup of any existing settings.json and skills directories before any change.',
-          'After install, restart Claude Code. Management Consulting activates on any strategy question, market analysis or structured recommendation request. Decision Toolkit activates with `/decision` commands or naturally when Claude reaches for structured decision frameworks. MBB Management Consultant activates when executive communication structure or sector-specific strategy framing is in scope.',
+          'The install script does two things. First, it clones the gcamilo/management-consulting repository into the Claude Code skills directory at ~/.claude/skills/management-consulting/. Second, it registers the glebis-skills marketplace and enables the Decision Toolkit plugin via a jq merge into settings.json. Both halves are idempotent. Re-running is safe. The script writes a timestamped backup of any existing settings.json and skills directories before any change.',
+          'After install, restart Claude Code. Management Consulting activates on any strategy question, market analysis or structured recommendation request. Decision Toolkit activates with `/decision` commands or naturally when Claude reaches for structured decision frameworks.',
         ],
       },
       {
-        heading: 'How the three skills compose',
+        heading: 'How the two skills compose',
         paragraphs: [
           'Management Consulting runs as the working horse. Three modes match the stakes. Quick Structure for an inline framework hit during a working session. Full Case for a complete diagnostic across an engagement. Client Deliverable for a polished output ready to present. The 42 frameworks span strategy (Porter\'s Five Forces, Blue Ocean, Wardley Mapping), problem-solving (MECE, Issue Trees, Pyramid Principle), decision-making (RAPID, Pre-Mortem, Second-Order Thinking), financial work (TAM/SAM/SOM, Unit Economics), operations and innovation (Jobs to Be Done, Business Model Canvas). Most strategy work in any week reaches for one of these.',
           'Decision Toolkit runs at the decision-point itself. Strategy work is decision work. The skill carries cognitive bias checkers, opportunity cost analysis and scenario matrices as a dedicated layer separate from the broader consulting framework suite. The Strategist uses it personally for their own practice decisions (which client to take, which framework to publish, which engagement to defer) and deploys it with clients running structured decision sessions. The pairing with Management Consulting matters: gcamilo for client-facing deliverables, Decision Toolkit for structured reasoning under uncertainty.',
-          'MBB Management Consultant runs when executive communication discipline matters or sector depth is required. Pyramid Principle structuring for board-ready memos. Market sizing and profitability tree rigor for sector-specific engagements. Nine industries with their own framing layers (healthcare, fintech, energy, retail and others). For the Strategist working in a specific vertical, the sector depth here fills the gap that a generalist framework library leaves open.',
-          'The Foundational layer surrounds the three. Researcher dispatches parallel sub-agents on the engagement intake research that used to take a half-day. Source Harvest extracts patterns from across engagements into the Strategist\'s pattern library, the long-term sovereign asset that compounds across years of advisory work. Plan Challenger runs the adversarial pre-delivery review before any client-facing recommendation goes out. Skill Creator codifies the Strategist\'s own recurring patterns into custom skills (the discovery-call template, the diagnostic structure for a specific engagement type, the recommendation format for a specific client profile). Systematic Debugging applies when a strategy hits unexpected resistance in implementation, which is the moment the Strategist\'s value proposition is tested. Content Strategy and AI SEO handle the publishing layer when frameworks become content. Together with the Strategist layer, the practice covers research, structuring, decision-rigor, sector-depth, framework application, pattern-harvest, plan-review, custom-tool authoring, root-cause and publishing under one roof.',
+          'The Foundational layer surrounds the two. Researcher dispatches parallel sub-agents on the engagement intake research that used to take a half-day. Source Harvest extracts patterns from across engagements into the Strategist\'s pattern library, the long-term sovereign asset that compounds across years of advisory work. Plan Challenger runs the adversarial pre-delivery review before any client-facing recommendation goes out. Skill Creator codifies the Strategist\'s own recurring patterns into custom skills (the discovery-call template, the diagnostic structure for a specific engagement type, the recommendation format for a specific client profile). Systematic Debugging applies when a strategy hits unexpected resistance in implementation, which is the moment the Strategist\'s value proposition is tested. Content Strategy and AI SEO handle the publishing layer when frameworks become content. Together with the Strategist layer, the practice covers research, structuring, decision-rigor, framework application, pattern-harvest, plan-review, custom-tool authoring, root-cause and publishing under one roof.',
         ],
       },
     ],
@@ -2981,7 +2972,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         title: 'Independent management consultant running 3-5 concurrent engagements',
         body:
-          'An independent consultant with four active engagements opens the working session. Researcher dispatches parallel workers on this morning\'s engagement intake. Management Consulting structures the diagnostic in Full Case mode. Plan Challenger reviews the recommendation outline before drafting. MBB Management Consultant applies Pyramid Principle to the executive summary. The deliverable that used to consume a full day of synthesis-to-delivery work ships in two hours with the structural rigor intact and the Strategist\'s judgment as the essential layer.',
+          'An independent consultant with four active engagements opens the working session. Researcher dispatches parallel workers on this morning\'s engagement intake. Management Consulting structures the diagnostic in Full Case mode. Plan Challenger reviews the recommendation outline before drafting. Management Consulting applies Pyramid Principle to the executive summary. The deliverable that used to consume a full day of synthesis-to-delivery work ships in two hours with the structural rigor intact and the Strategist\'s judgment as the essential layer.',
       },
       {
         title: 'Fractional executive embedded across multiple clients',
@@ -2996,7 +2987,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         title: 'Growth strategist designing GTM systems for early-stage companies',
         body:
-          'A growth strategist running advisory engagements for early-stage companies runs Management Consulting in Full Case mode for the GTM diagnostic. Decision Toolkit handles the channel-prioritization decision. MBB Management Consultant provides the sector framing for the specific industry vertical. Source Harvest builds a portable playbook library across the engagements that compounds the advisory value over time. The early-stage advisory engagement that depends on senior judgment under time pressure becomes structurally repeatable.',
+          'A growth strategist running advisory engagements for early-stage companies runs Management Consulting in Full Case mode for the GTM diagnostic. Decision Toolkit handles the channel-prioritization decision. Source Harvest builds a portable playbook library across the engagements that compounds the advisory value over time. The early-stage advisory engagement that depends on senior judgment under time pressure becomes structurally repeatable.',
       },
       {
         title: 'Decision-systems author writing for knowledge workers and leaders',
@@ -3008,12 +2999,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         q: 'Does the Strategist Bundle include the Foundational Creator Bundle?',
         a:
-          'No. The Strategist Bundle assumes the Foundational Bundle is already installed. Install /bundles/foundational-creator first if you have not already. The two-layer architecture means the medium-specific skills (Management Consulting, Decision Toolkit, MBB Management Consultant) install once on top of the universal substrate.',
-      },
-      {
-        q: 'Why two consulting framework skills (gcamilo and MBB) instead of one?',
-        a:
-          'Both cover different territory. Management Consulting (gcamilo) is the category-anchor with 42 frameworks at practitioner depth and three output modes matched to engagement stakes. MBB Management Consultant focuses on executive communication discipline (Pyramid Principle) and sector-specific framing across nine industries. They overlap meaningfully on common frameworks (Porter\'s Five Forces, Jobs to Be Done) but diverge on output style and sector depth. For Strategists working in a specific vertical, the MBB sector-depth fills the gap. For Strategists working broad-spectrum advisory, the gcamilo three-mode model is the daily driver.',
+          'No. The Strategist Bundle assumes the Foundational Bundle is already installed. Install /bundles/foundational-creator first if you have not already. The two-layer architecture means the medium-specific skills (Management Consulting, Decision Toolkit) install once on top of the universal substrate.',
       },
       {
         q: 'How does Decision Toolkit differ from the decision-making frameworks already in Management Consulting?',
@@ -3023,17 +3009,17 @@ export const igosAssets: IGOSAsset[] = [
       {
         q: 'I work in a specific industry vertical (healthcare, fintech, energy). Is this bundle still useful?',
         a:
-          'Yes. MBB Management Consultant carries sector-specific framing across nine industries explicitly. Management Consulting is sector-agnostic but its 42 frameworks apply across verticals. The combination gives you generalist depth plus sector-specific framing in the same install. For verticals not covered by the MBB sector list, the Plan Challenger and Source Harvest skills from the Foundational substrate let you build sector-specific advisory patterns over time.',
+          'Yes. Management Consulting is sector-agnostic, and its 42 frameworks apply across verticals. The Plan Challenger and Source Harvest skills from the Foundational substrate let you build sector-specific advisory patterns over time.',
       },
       {
         q: 'What does the install script actually change on my system?',
         a:
-          'It clones github.com/gcamilo/management-consulting into a temp directory and copies the contents to ~/.claude/skills/management-consulting/. It registers the glebis-skills marketplace in ~/.claude/settings.json under extraKnownMarketplaces and enables the decision-toolkit plugin under enabledPlugins via a jq merge. It clones github.com/charlie989898/-mbb-management-consultant-claude-skill into a temp directory and copies the skill contents to ~/.claude/skills/mbb-consultant/. It writes a timestamped backup of settings.json and any existing skills directories before any change. No system-level changes happen outside ~/.claude.',
+          'It clones github.com/gcamilo/management-consulting into a temp directory and copies the contents to ~/.claude/skills/management-consulting/. It registers the glebis-skills marketplace in ~/.claude/settings.json under extraKnownMarketplaces and enables the decision-toolkit plugin under enabledPlugins via a jq merge. It writes a timestamped backup of settings.json and any existing skills directories before any change. No system-level changes happen outside ~/.claude.',
       },
       {
         q: 'Is the install reversible?',
         a:
-          'Yes. To remove Management Consulting, delete ~/.claude/skills/management-consulting. To remove Decision Toolkit, restore the settings.json backup the script wrote or delete the marketplace entry by hand. To remove MBB Management Consultant, delete ~/.claude/skills/mbb-consultant. The Foundational Bundle is unaffected by any rollback.',
+          'Yes. To remove Management Consulting, delete ~/.claude/skills/management-consulting. To remove Decision Toolkit, restore the settings.json backup the script wrote or delete the marketplace entry by hand. The Foundational Bundle is unaffected by any rollback.',
       },
       {
         q: 'How does the Strategist Bundle relate to the other avatar bundles?',

@@ -680,7 +680,7 @@ Install method: one-line `curl -sSL https://www.infinitegameos.io/bundles/founda
 
 Use cases: new creator setting up first AI-augmented workflow (one-command starting line replaces months of stack assembly); established creator integrating Claude Code on top of existing tools (substrate slots underneath without disruption); creator preparing to add an avatar bundle (Foundational Bundle removes dedup confusion since avatar bundles assume the substrate is present); team or studio standardizing on a creator OS (single baseline install per team member).
 
-Pairs with avatar bundles: the Builder (live: gstack ship-trio, Context7, Impeccable), the Writer (Voice Ghostwriter, Humanizer, Multi-Format Content Writer), the Performer (YouTube Channel Manager, Video Watcher, Content Repurposing), the Teacher (companion link to GarethManning claude-education-skills), the Curator (Tech Digest, Newsletter Creation), the Strategist (Management Consulting, Decision Toolkit, MBB Management Consultant).
+Pairs with avatar bundles: the Builder (live: gstack ship-trio, Context7, Impeccable), the Writer (Voice Ghostwriter, Humanizer, Multi-Format Content Writer), the Performer (YouTube Channel Manager, Video Watcher, Content Repurposing), the Teacher (companion link to GarethManning claude-education-skills), the Curator (Tech Digest, Newsletter Creation), the Strategist (Management Consulting, Decision Toolkit).
 
 ### The Builder Bundle (/bundles/the-builder)
 
