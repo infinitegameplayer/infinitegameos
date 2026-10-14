@@ -18,14 +18,9 @@
 #   - decision-toolkit@glebis-skills marketplace (registered in settings.json)
 #       - Structured decision frameworks plus cognitive bias checkers as a
 #         dedicated layer.
-#   - $CONFIG_DIR/skills/mbb-consultant/  (copied from
-#         charlie989898/-mbb-management-consultant-claude-skill)
-#       - Pyramid Principle executive communication, market sizing,
-#         profitability trees and sector-specific strategy across nine
-#         industries.
 #
 # Source: https://www.infinitegameos.io/bundles/the-strategist
-# Licenses: MIT (management-consulting, claude-skills, mbb-management-consultant);
+# Licenses: MIT (management-consulting, claude-skills);
 #           CC BY 4.0 (this script)
 
 set -euo pipefail
@@ -56,10 +51,9 @@ cat <<EOF
 ${C_BOLD}${BUNDLE_NAME}${C_RESET} (v${BUNDLE_VERSION})
 ${C_DIM}${BUNDLE_URL}${C_RESET}
 
-Three avatar-specific Claude Code skills for structured-thinking creators:
-Management Consulting (42 frameworks, three output modes), Decision Toolkit
-(decision rigor and bias checkers) and MBB Management Consultant (executive
-communication and sector-specific strategy across nine industries).
+Two avatar-specific Claude Code skills for structured-thinking creators:
+Management Consulting (42 frameworks, three output modes) and Decision Toolkit
+(decision rigor and bias checkers).
 
 Assumes the Foundational Creator Bundle is already installed. If not, run
 ${C_DIM}https://www.infinitegameos.io/bundles/foundational-creator${C_RESET} first.
@@ -113,14 +107,9 @@ if ! command -v jq >/dev/null 2>&1; then
 }
 SNIPPET
   echo
-  echo "Then clone the two skill repositories manually:"
-  echo "  TMP=\$(mktemp -d)"
+  echo "Then clone the Management Consulting repository manually:"
   echo "  git clone --depth 1 https://github.com/gcamilo/management-consulting.git \\"
   echo "    \"\$HOME/.claude/skills/management-consulting\""
-  echo "  git clone --depth 1 https://github.com/charlie989898/-mbb-management-consultant-claude-skill.git \"\$TMP/mbb\""
-  echo "  mkdir -p \"\$HOME/.claude/skills/mbb-consultant\""
-  echo "  cp -R \"\$TMP/mbb/skill/.\" \"\$HOME/.claude/skills/mbb-consultant/\""
-  echo "  rm -rf \"\$TMP\""
   exit 1
 fi
 
@@ -147,11 +136,7 @@ BACKUP_FILE="${SETTINGS_FILE}.the-strategist-bundle.bak.$(date +%Y%m%d-%H%M%S)"
 cp "$SETTINGS_FILE" "$BACKUP_FILE"
 ok "Backup written: $BACKUP_FILE"
 
-# 6. Set up shared temp dir with cleanup trap.
-TMP_DIR="$(mktemp -d)"
-trap 'rm -rf "$TMP_DIR"' EXIT
-
-# 7. Install Management Consulting via clone-to-skills-dir.
+# 6. Install Management Consulting via clone-to-skills-dir.
 MC_DIR="$SKILLS_DIR/management-consulting"
 step "Installing Management Consulting to $MC_DIR"
 
@@ -169,7 +154,7 @@ else
   exit 1
 fi
 
-# 8. Register glebis-skills marketplace and enable decision-toolkit plugin.
+# 7. Register glebis-skills marketplace and enable decision-toolkit plugin.
 step "Registering glebis-skills marketplace and enabling decision-toolkit"
 
 MERGED="$(jq '
@@ -186,37 +171,6 @@ printf '%s\n' "$MERGED" > "$SETTINGS_FILE"
 ok "glebis-skills marketplace registered"
 ok "decision-toolkit@glebis-skills enabled"
 
-# 9. Install MBB Management Consultant via clone-to-temp + copy.
-MBB_DIR="$SKILLS_DIR/mbb-consultant"
-step "Installing MBB Management Consultant to $MBB_DIR"
-
-if [ -e "$MBB_DIR" ]; then
-  BACKUP_MBB="${MBB_DIR}.the-strategist-bundle.bak.$(date +%Y%m%d-%H%M%S)"
-  mv "$MBB_DIR" "$BACKUP_MBB"
-  ok "Existing $MBB_DIR moved to $BACKUP_MBB"
-fi
-
-mkdir -p "$MBB_DIR"
-
-if git clone --single-branch --depth 1 --quiet \
-    https://github.com/charlie989898/-mbb-management-consultant-claude-skill.git \
-    "$TMP_DIR/mbb"; then
-  ok "mbb-management-consultant repository fetched"
-else
-  err "mbb-management-consultant clone failed. Check network and re-run."
-  exit 1
-fi
-
-if [ -d "$TMP_DIR/mbb/skill" ]; then
-  cp -R "$TMP_DIR/mbb/skill/." "$MBB_DIR/"
-  ok "MBB Management Consultant installed"
-else
-  err "Expected skill directory not found in upstream repo."
-  echo "Repository layout may have changed. Inspect:"
-  echo "  $TMP_DIR/mbb"
-  exit 1
-fi
-
 cat <<EOF
 
 ${C_BOLD}Done.${C_RESET}
@@ -228,8 +182,6 @@ ${C_BOLD}Next step:${C_RESET} restart Claude Code to load the new plugin and ski
 ${C_BOLD}Verify:${C_RESET}
   From inside Claude Code, run \`/plugin\` to see decision-toolkit enabled.
   Try a strategy question and watch Management Consulting offer a framework.
-  Ask for an executive summary structured by Pyramid Principle to confirm
-  MBB Management Consultant is wired up.
 
 ${C_BOLD}Three modes for Management Consulting:${C_RESET}
   Quick Structure for an inline framework hit during a working session.
@@ -239,7 +191,6 @@ ${C_BOLD}Three modes for Management Consulting:${C_RESET}
 ${C_BOLD}Rollback:${C_RESET}
   - decision-toolkit plugin: cp "$BACKUP_FILE" "$SETTINGS_FILE"
   - Management Consulting: rm -rf "$MC_DIR"
-  - MBB Management Consultant: rm -rf "$MBB_DIR"
 
 ${C_BOLD}Read more:${C_RESET} ${BUNDLE_URL}
 
