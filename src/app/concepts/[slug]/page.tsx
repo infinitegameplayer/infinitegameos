@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: concept.title,
       url: `${SITE}/concepts/${concept.slug}`,
+      type: 'article',
     },
     twitter: twitterCard({
       title: concept.title,
