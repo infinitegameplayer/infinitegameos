@@ -663,8 +663,8 @@
     },
     {
       "name": "autonomous-improvement-session",
-      "description": "Set your system improving on its own when you have spare capacity. Safe, additive, self-contained work runs under a threshold model with a permanent floor of actions it never takes on its own.",
-      "version": "1.2.0",
+      "description": "Set your system improving on its own when you have spare capacity. Every menu item carries one verb (Acts, Reports or Proposes), two bundles run per run and the decision board arrives inline, with a permanent floor of actions it never takes on its own.",
+      "version": "2.0.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",

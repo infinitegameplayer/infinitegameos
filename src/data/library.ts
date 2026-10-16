@@ -3494,8 +3494,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Autonomous Improvement Session',
     label: 'Skill',
-    version: '1.2',
-    updated: '2026-10-15',
+    version: '2.0',
+    updated: '2026-10-16',
     description:
       'Run a set-and-forget session that improves your system without active attention. Operator-invoked only. Safe, additive hygiene work executes directly; judgment forks and floor-class items surface for your review.',
     tags: ['autonomy', 'improvement', 'hygiene', 'session', 'flywheel', 'kingdom-skill'],
@@ -3506,20 +3506,20 @@ export const igosAssets: IGOSAsset[] = [
       cursorMdc: true,
     },
     definition:
-      'Autonomous Improvement Session is an operator-invoked hygiene and improvement engine. When you have extra capacity, you fire it and it runs a menu of safe, additive, system-internal work: broken references repaired in place, index entries added for active files, anti-AI sweeps applied to draft articles, slug normalization across memory files. Tier 1 items land edits directly. Tier 2 items are read-only scans that write findings to a decision board for your review. A threshold model governs execution authority: every action carries an autonomy level, and the threshold starts at the lowest level so every starter item runs without asking. The threshold climbs only through ratified decisions you make after reviewing a run. Menu growth is fast and wide; execution authority is slow and earned. The decision board is the single review surface: four buckets (completed this run for review, approvals and questions, new menu candidates, proposed plans) regenerated fresh each run. No report files land in your inbox. The run log entry and version control commit are the durable trail. It also ships inside the Sovereign Ecosystem Foundation, the starting workspace where these disciplines live together.',
+      'Autonomous Improvement Session is an operator-invoked hygiene and improvement engine. When you have extra capacity, you fire it and it runs a menu of safe, additive, system-internal work: broken references repaired in place, index entries added for active files, superseded files archived, inbox items routed. Every menu item carries one verb. Acts items land their edits. Reports items are read-only scans whose findings fold into the decision board. Proposes items wait for your yes and do not run. A verb moves only through a decision you ratify after reviewing a run. The menu is grouped into bundles that read the same surface, and two bundles run each time. Menu growth is fast and wide; execution authority is slow and earned. The decision board arrives in full as the run\'s closing message, in four buckets (Done, Your decisions, Your hands, Plans to approve), and the run log entry is its only stored copy. No report files land in your inbox. The run log entry and version control commit are the durable trail. It also ships inside the Sovereign Ecosystem Foundation, the starting workspace where these disciplines live together.',
     howItWorks: [
       {
         heading: 'Two speeds on purpose',
         paragraphs: [
-          'The skill runs at two speeds simultaneously. Menu growth is fast and wide: a research rotation casts a wide net for categories and mechanisms of improvement, and the menu of things the skill knows how to do grows every cycle. Execution authority is slow and earned: the threshold starts at the lowest level and climbs only through ratified decisions you make after reviewing the board. A wide net for ideas. A narrow gate for action. The gate widens with proof, never with time.',
-          'Tier 1 items execute and log. Tier 2 items scan and report. The default verb is DO, not propose. If an action is additive, reversible, system-internal and touches no deletion, no canonical governance file and no outward surface, the skill does it and records it. Safe work is act-then-show. The Permanent Floor is the hard ceiling that holds regardless of how high the threshold climbs: no deletions, no voice or copy changes on live surfaces, no outward broadcasts, no direct push to main, no self-modification.',
+          'The skill runs at two speeds simultaneously. Menu growth is fast and wide: a research rotation casts a wide net for categories and mechanisms of improvement, and the menu of things the skill knows how to do grows every cycle. Execution authority is slow and earned: each item carries a verb, and a verb moves only through a decision you ratify after reviewing the board. A wide net for ideas. A narrow gate for action. The gate widens with proof, never with time.',
+          'Acts items execute and log. Reports items scan and report. Proposes items wait for you. The default verb is DO, not propose. If an action is additive, reversible, system-internal and touches no deletion, no canonical governance file and no outward surface, the skill does it and records it. Safe work is act-then-show. The Permanent Floor is the hard ceiling that holds whatever verbs you ratify: no deletions, no voice or copy changes on live surfaces, no outward broadcasts, no direct push to main, no self-modification.',
         ],
       },
       {
         heading: 'The decision board and the return session',
         paragraphs: [
-          'Every run closes with a four-bucket decision board regenerated fresh, replacing the prior run\'s open decisions. Bucket one is a skim record: what ran, each item reversible. Bucket two is approvals and questions: genuine judgment forks the skill surfaced rather than acted on. Bucket three is new menu candidates from the research rotation. Bucket four is proposed plans for anything bigger than one session. A clean run leaves bucket two near empty, because safe work is already done.',
-          'The return session is how the flywheel learns. You answer decisions, encode forward rules, accept or decline menu candidates and ratify any autonomy-level moves. An accepted candidate adds a new menu item. A ratified climb raises the threshold by one proven step. The skill never edits its own menu or threshold autonomously. Every move is explicit and operator-triggered.',
+          'Every run closes with a four-bucket decision board, delivered in full in the closing message so you can answer it without opening a file. Done is a skim record: what ran, each item reversible. Your decisions holds the genuine judgment forks, anything near the Permanent Floor and the menu candidates the skill recommends. Your hands holds only what you alone can physically do. Plans to approve holds anything bigger than one session. Every decision carries the live check its claim passed. A clean run leaves Your decisions near empty, because safe work is already done.',
+          'The return session is how the flywheel learns. You answer decisions, encode forward rules, accept or decline menu candidates and ratify any verb moves. An accepted candidate adds a new menu item. A ratified move gives one item a new verb, one proven step at a time. The skill never edits its own menu or verbs autonomously, and every edit to its own files shows you the diff first. Every move is explicit and operator-triggered.',
         ],
       },
     ],
@@ -3532,29 +3532,29 @@ export const igosAssets: IGOSAsset[] = [
       {
         title: 'Heading out with a messy system',
         body:
-          'You\'re leaving for a few hours and your system has accumulated drift: references that moved, index entries not added, draft articles with known anti-AI patterns. You fire Autonomous Improvement with a full-sweep hint. The skill works the Tier 1 menu completely, runs two Tier 2 research scans and writes the board. You come back to a cleaner system and a decision board to skim, not a to-do list to build from scratch.',
+          'You\'re leaving for a few hours and your system has accumulated drift: references that moved, index entries not added, inbox notes nobody routed. You fire Autonomous Improvement with a full-sweep hint. The skill works every due item, runs its read-only scans and renders the board in its closing message. You come back to a cleaner system and a decision board to skim, not a to-do list to build from scratch.',
       },
       {
         title: 'Growing the menu through the research rotation',
         body:
-          'After five runs the starter menu starts feeling thin relative to what the system actually accumulates. The research rotation surfaces a new candidate: broken wikilink detection across a notes directory. You review it in bucket three, accept it and encode the execution spec in the return session. The next run includes the new item. The skill\'s reach grew through proven operation, not by assumption.',
+          'After five runs the starter menu starts feeling thin relative to what the system actually accumulates. The research rotation surfaces a new candidate: broken wikilink detection across a notes directory. You review it in Your decisions, accept it and the return session adds it to a bundle with its verb. The next run includes the new item. The skill\'s reach grew through proven operation, not by assumption.',
       },
     ],
     faq: [
       {
         q: 'Why operator-invoked only and never scheduled?',
         a:
-          'Scheduling is a future direction gated on a track record of clean review-and-climb cycles, not a date. Autonomous improvement on a cron job with an unproven threshold is a liability. Operator invocation keeps you in the loop until the threshold has earned the right to run without you watching. The machinery for scheduling already exists in the threshold model; the cadence comes after the proof.',
+          'Scheduling is a future direction gated on a track record of clean review-and-climb cycles, not a date. Autonomous improvement on a cron job with unproven verbs is a liability. Operator invocation keeps you in the loop until the track record has earned the right to run without you watching. The cadence comes after the proof.',
       },
       {
         q: 'What is the Permanent Floor and why does it never move?',
         a:
-          'The floor is the hard ceiling on what the skill does regardless of how high the autonomy threshold climbs: no deletions, no voice or copy changes on live surfaces, no outward broadcasts, no direct push to main, no self-modification. The floor is drawn by action type, not location. A ratified climb, an accepted candidate and a forward rule can never breach it. The safety guard is in the floor, not in the threshold mechanics.',
+          'The floor is the hard ceiling on what the skill does whatever verbs you ratify: no deletions, no voice or copy changes on live surfaces, no outward broadcasts, no direct push to main, no self-modification. The floor is drawn by action type, not location. A ratified climb, an accepted candidate and a forward rule can never breach it. The safety guard is in the floor, not in the verb moves.',
       },
       {
         q: 'How is this different from just asking my AI to clean things up?',
         a:
-          'An ad-hoc cleanup request has no memory, no eligibility tracking, no threshold model and no decision board. It does the work once and forgets it happened. Autonomous Improvement Session carries state across runs in the log frontmatter, tracks what ran and when, grows a menu with each cycle and escalates execution authority only through ratified decisions. The difference is a flywheel versus a one-shot.',
+          'An ad-hoc cleanup request has no memory, no eligibility tracking, no verbs and no decision board. It does the work once and forgets it happened. Autonomous Improvement Session carries state across runs in the log frontmatter, tracks what ran and when, grows a menu with each cycle and escalates execution authority only through ratified decisions. The difference is a flywheel versus a one-shot.',
       },
     ],
     relatedSlugs: ['session-closeout', 'pattern-harvest', 'self-healing'],

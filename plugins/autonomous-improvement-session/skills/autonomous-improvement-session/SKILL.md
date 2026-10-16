@@ -1,23 +1,21 @@
 ---
 name: autonomous-improvement-session
-description: Use when you have spare capacity and want to set your system improving without active attention. Operator-invoked only, never scheduled. Safe, additive, reversible hygiene work runs under a threshold model with a permanent floor of actions the agent never takes on its own.
+description: Use when you have spare capacity and want to set your system improving without active attention. Operator-invoked only, never scheduled. Every menu item carries one verb (Acts, Reports or Proposes), the menu runs two bundles per run and the decision board arrives inline in the closing message, with a permanent floor of actions the agent never takes on its own.
 status: active
-version: 1.2
+version: 2.0
 ---
 
 # Autonomous Improvement Session
 
 > This skill also ships inside the Sovereign Ecosystem template.
 
-**Purpose:** Run a set-and-forget session that improves your system without your active attention. Burns extra capacity on low-stakes, additive, internal hygiene and improvement work. Tier 1 items land edits directly. Tier 2 items produce findings for your review. The skill is a recursive flywheel: a research rotation grows its own menu of improvement types every cycle, a threshold model lets execution authority climb one earned step at a time, and a decision board lets you ratify that climb on your own schedule. Menu growth is fast and wide. Execution authority is slow and earned.
+**Purpose:** Run a set-and-forget session that improves your system without your active attention. It burns extra capacity on low-stakes, additive, internal hygiene and improvement work. Every menu item carries one verb. **Acts** items land their edits. **Reports** items fold their findings into the decision board. **Proposes** items surface for your yes and do not run. The skill is a recursive flywheel: the research rotation grows the menu every cycle, fast and wide, and execution authority moves slowly, one ratified verb at a time. Wide net for ideas. Narrow gate for action.
 
-**Trigger:** Operator-invoked when extra capacity exists. Examples: heading out, end of week with capacity to burn, end of session with remaining budget. Never scheduled, never auto-fired.
+**Trigger:** Operator-invoked when extra capacity exists: heading out, end of week with capacity to burn, end of session with budget left. Never scheduled, never auto-fired.
 
-**Inputs:** A run-log file (path of your choosing, defaults to `Logs/Autonomous Improvement Log.md`) where state lives in frontmatter. Optional invocation hint: number of items to run, a tier preference, or a "full sweep" override.
+**Inputs:** A run log (path of your choosing, defaults to `Logs/Autonomous Improvement Log.md`) whose frontmatter holds state. Optional hint: an item count, an item name or "full sweep".
 
-**Outputs:** One appended entry at the top of the log body and a regenerated decision board (a file adjacent to the log, such as `autonomous-improvement-decision-board.md`). Tier 1 items leave evidence as edits in their target files. Tier 2 items fold their findings into the decision board.
-
-**Output doctrine.** The decision board is the single decision surface. No skill-generated report files land in your inbox. Your inbox is a routing queue for genuine inbound notes, not a place for this skill's output. The run-log entry plus your version control commit is the durable breadcrumb, lightweight by design.
+**Outputs:** One run entry at the top of the log body, and the decision board rendered inline in the closing message. The board is stored once: inline, and in the run entry. There is no backing board file. Acts items leave their edits in their target files. No report file lands in your inbox, which is a routing queue for genuine inbound notes. Write a standalone report only when a specific run genuinely warrants one.
 
 ---
 
@@ -27,281 +25,284 @@ This is an autonomous improvement and hygiene engine. The default verb is DO, no
 
 If an action is additive, reversible, system-internal and touches no deletion, no canonical-governance ratification, no voice and no outward surface, execute it and record it in the run log. Do not ask. Routing an inbox item to its container, archiving an implemented plan, fixing a reference to a retired artifact, adding a missing index entry, normalizing a slug: these are the work, not proposals. If something is broken or missing and the clean fix is obvious and safe, make the fix.
 
-Surface to the operator only two things. First, a genuine judgment fork: the routing heuristics conflict or none clearly applies, the situation is materially novel, intent is ambiguous and the choice would set a pattern, or the action is reversible but high-impact (touches many files at once or a high-inbound-reference artifact). Second, anything that touches the Permanent Floor. These two reflexes are opposite and must not blur: safe work is act-then-show, floor-class work is surface-then-wait. "Do not ask" governs the safe domain. It's never license to act on a floor item, and the floor's existence is never license to ask about safe work near it. A clean run leaves the Approvals bucket near empty, because the safe work is already done and sits in the Completed bucket for review.
+Surface to the operator only two things. First, a genuine judgment fork: the routing heuristics conflict or none clearly applies, the situation is materially novel, intent is ambiguous and the choice would set a pattern, or the action is reversible but high-impact (many files at once, or a high-inbound-reference artifact). Second, anything that touches the Permanent Floor. The two reflexes never blur: safe work is act-then-show, floor-class work is surface-then-wait. "Do not ask" is never license to act on a floor item, and the floor's existence is never license to ask about safe work near it. A clean run leaves Your decisions near empty, because the safe work is already done and sits in Done.
 
 ---
 
 ## When to Use
 
-- You say any of: "run autonomous improvement," "set and forget," "burn the rest of my capacity on improvement work," "I'm heading out, run improvement."
-- You have reviewed a prior run's decision board and want to weave accepted candidates into the menu.
-- You want the skill to run a single specific menu item by name.
+- You say any of: "run autonomous improvement", "set and forget", "burn the rest of my capacity on improvement work", "I'm heading out, run improvement".
+- You have answered a prior run's board and want the answers landed (the return session).
+- You want a single menu item run by name.
 
 ---
 
-## The Two Speeds
+## Make It Yours
 
-The flywheel runs at two speeds on purpose. Menu growth is fast and wide: the research rotation casts a wide net for categories and mechanisms of improvement, and the menu of things the skill knows how to do grows every cycle. Execution authority is slow and earned: v1 keeps today's line, and the line climbs item by item only through ratified decisions. Wide net for ideas. Narrow gate for action. The gate widens only with proof.
+The engine transfers to any system. The paths and the menu are yours.
 
----
-
-## The Threshold Model
-
-Every menu item and every discovered action carries an `autonomy` level. The level governs execution authority. It's distinct from the tier, which governs output shape: Tier 1 lands edits, Tier 2 writes findings.
-
-- **Level 1, fully autonomous.** Additive, reversible, system-internal, zero judgment. The agent does it and logs it. Every starter menu item is Level 1.
-- **Level 2, autonomous with parked questions.** The agent acts on the safe part and parks any genuine judgment fork as a question on the decision board.
-- **Level 3, operator-judgment-required.** Structural, voice-bound, outward-facing or approval-gated. Always parked. Never auto-executed.
-
-A skill-level `auto_execute_threshold` lives in the log frontmatter and defines the line. It starts at `1`. At or below the line the agent executes. Above the line it parks to the decision board. The threshold and per-item levels move only through ratified decisions logged in the run history. Nothing raises its own autonomy.
-
-**v1 posture:** threshold `1`, every starter item Level 1. The autonomy field becomes important as the menu grows and new items arrive carrying judgment forks or structural reach.
+- **The log.** Any path you choose. State lives in its frontmatter; the seed shape is under Log Structure below.
+- **The inbox, the archive and the plans directory.** T2-1, T1-6 and T1-2 name them generically. Point them at your own folders once and the specs follow.
+- **The menu.** The starter items below are portable hygiene. Add items your system needs, give each a verb and a bundle and retire the ones that never find anything.
+- **The bundles.** Group items by the surface they read, so one worker loads one surface. Four starter bundles ship; split or merge them as your menu grows.
+- **The research categories.** Nine ship. Rename or replace them to match what your system actually holds.
+- **A style guide.** T2-9 checks durable content against one if your system has it, and skips itself if not.
+- **External repos.** The external-surface triage and the site lane stay off until you run repos with their own main branches.
 
 ---
 
-## The Decision Board
+## The Menu and the Verbs
 
-One review surface. The closing output is the board, and a durable backing file holds the same content for continuity across sessions. The board is regenerated each run with the current run's open decisions. Resolved decisions log to the run log, not the board.
+- **Acts.** The agent lands the edit, one item at a time, and logs it. The default for Tier 1, and for T2-1 (inbox routing), which moves files rather than reporting on them.
+- **Reports.** A read-only scan whose findings fold into the board. The default for Tier 2.
+- **Proposes.** The item does not run; it surfaces on the board for your yes. The entry verb for anything voice-bound, structural or outward-facing.
 
-Four buckets:
+An item's verb sits in its `Verb:` line. Where the line is absent the tier default holds: Tier 1 Acts, Tier 2 Reports. A verb moves only through a ratified board answer, never by the skill's own hand (the return session, below). A verb line that does not read as one of the three words does not run: it lands in Your decisions until it is fixed.
 
-1. **Completed this run (for review).** What the skill did autonomously this run, each line reversible via version control or trivially undone. Routed inbox items, archived plans, applied hygiene fixes. This is a record to skim, not a decision. As autonomy widens, this bucket grows and the next one shrinks. That's the flywheel working.
-2. **Approvals and questions.** Genuine judgment forks the agent was unsure of, anything that needed intent before acting. You answer with a decision plus a forward rule. A clean run leaves this bucket near empty. Scale the form of each question to context. When the matter is nuanced, give the full Three Solutions: the situation, three real options, the one recommended and its tradeoff. When it's simple, give one recommended move. Never a bare open question.
-3. **New menu candidates and autonomy moves.** Improvement types the research rotation surfaced, plus any proposed autonomy-level move. You accept, decline or reshape each. Accepted candidates get woven into the menu in the return session.
-4. **Proposed plans.** Anything bigger than one session of work, or any governance, memory or configuration class change. The agent drafts a cliff-note summary, not a vague question. The board entry is "approve plan creation?" Only surface plans you'd recommend creating. Every item in this bucket carries a positive recommendation and the reason for it.
+An Acts item still parks its judgment forks. It does the safe part, puts the fork in Your decisions with what you need to rule and carries on with the rest.
 
-**Size each entry by what the change can break.** Do not guess what you already know. Size to the diff.
+**The site lane keeps its own three words: propose, auto-PR, auto-merge.** It applies only when your system maintains external repos. Every site-fix class enters at propose. The build-verified pull request is the floor of every rung; only the merge click climbs away. The class registry starts empty.
 
-- Routine and reversible (an index line, a slug, a routed note, a dead reference): one line, batched. Over-explaining safe work teaches skimming, and skimming waves through the one entry that mattered.
-- Judgment (a pattern-setting choice, a nuanced routing call, an adoption): one paragraph. The situation, what happens if nothing is done, the recommendation.
-- Consequential (a credential, an outward send path, the Permanent Floor, a governance or configuration class change or this skill's own steps): full ceremony. The stake in your terms. Three real options with doing nothing costed at its true price. The recommendation and what it gives up. The tell: how you would know it was wrong and what to watch. Reversibility: whether it can be undone and how fast.
+### Bundles
 
-If you say you do not understand, the decision waits and the agent explains it first in plain terms. A gate you cannot operate is not a gate.
-
-**A menu is not judgment.** A decision entry earns its line only if it is yours or touches the Floor. A call the agent was competent to make is already done, in one line, past tense, in the Completed bucket. Work lands in the session that found it. A run that ends in a queue of homework has moved the drift rather than met it.
-
-**Your hands.** Before an item goes to a hands list, ask whether the agent can do it on your word. If so it is a decision, not a hands item. The hands list holds only what you alone can physically do. Keeping the merge click on external pull requests is an optional posture, not a default.
-
-**Deliver the whole board in the closing message.** Every decision and plan entry ends with `Verified: <live check>, <result>`. The test is answerability: a reader who opens no file can answer every entry from the message alone.
+The menu is grouped into bundles, each a set of items that read the same surface. Two bundles run per run: any bundle that has never run first, then the bundle with the oldest date in `bundle_state`. Each comes round every other run with four bundles. A bundle's items run when their bundle runs and carry no window of their own. Each bundle's Reports items go to one read-only worker with the bundle as its brief; its Acts items run on the orchestrator. Standalone items keep their own eligibility and sit outside every bundle.
 
 ---
 
 ## Starter Menu
 
-The menu grows every cycle through the research rotation. These starter items ship with the skill. They cover the most portable, universal hygiene that applies regardless of what your system contains.
+These items ship with the skill and cover hygiene that applies whatever your system contains. Where your system lacks the surface an item reads, the item skips itself and says so in the run entry.
 
-**Tier 1 (autonomous, edits land directly):** All Tier 1 items are additive, reversible, system-internal and Level 1 at v1.
+### Standalone (own eligibility)
 
-**T1-1: Reference integrity re-sweep.**
-Walk your active system containers and check internal references (wikilinks, file paths, imports). For each broken reference, if the target exists at a slightly different path (renamed, moved, suffix added), fix the reference in place. Skip references where the target genuinely does not exist anywhere. Surface those counts to you in the run entry.
+**T1-1: Reference integrity re-sweep.** Verb: Acts.
+Walk your active containers and check internal references (wikilinks, file paths, imports). For each broken reference whose target exists at a slightly different path (renamed, moved, suffix added), fix the reference in place. Skip references whose target exists nowhere. Surface those counts in the run entry.
 Eligibility: not run in 7+ days.
 
-**T1-2: Index regeneration.**
-Run any index-generation scripts present in your scripts directory. Confirm the regenerated index shows the correct total count. Sweep index frontmatter fields for references pointing at paths that no longer exist and update each to the current path. Scope to frontmatter fields only, never prose mentions (prose is intentional history).
+**T1-2: Index regeneration.** Verb: Acts.
+Run any index-generation scripts present in your scripts directory. Confirm the regenerated index shows the correct total count. Sweep index frontmatter fields for references pointing at paths that no longer exist and update each to the current path. Frontmatter fields only, never prose mentions (prose is intentional history).
 Eligibility: condition-based. Eligible whenever an artifact was added, archived or had its status change since the last index build.
 
-**T1-3: Anti-AI sweep on draft articles.**
-Glob all draft markdown files in your drafts directory with a draft or ideas status marker. For each, run your writing style codex sweep against the file body. Apply approved find-and-replace transforms in place. Leave judgment-required findings as inline comments for your review. Skip files already swept since they were last edited.
-Eligibility: not run in 7+ days. Skip entirely if your system does not ship an Anti-AI Writing Patterns document.
-
-**T1-4: Memory file slug normalization.**
-Walk all files in your AI interface's project memory directory. Grep for link variants using hyphens where the slug exists on disk with underscores (or vice versa). Verify the canonical variant exists. If yes, replace the non-canonical form. Surface any links where neither variant exists.
-Eligibility: not run in 14+ days.
-
-**T1-5: Index completeness sweep.**
-Glob your codices or reference files. For each with an active status marker, check whether it appears in the master index. For each active file absent from the index, add an entry in the correct category section. Skip files intentionally held out of the index. Surface any ambiguous category placements as judgment forks; add the unambiguous ones.
+**T1-5: Index completeness sweep.** Verb: Acts.
+Glob your codices or reference files. For each with an active status marker, check whether it appears in the master index. Add each absent one to the correct category section. Skip files intentionally held out of the index. Park an ambiguous placement as a fork; add the unambiguous ones.
 Eligibility: condition-based. Eligible whenever an active reference file is absent from the index.
 
-**T1-6: Superseded-artifact sweep.**
-Grep active containers for files with a `status: superseded` or `status: retired` marker that still sit outside your archive location. For each with an explicit superseded-by pointer or clear archival destination, archive it, run the reference-repoint sweep (grep for the old path and repoint active references to the canonical superseder, not the archive), regenerate any affected index. Surface only: a superseded file with no destination pointer. Act on the clear cases.
+**T1-6: Superseded-artifact sweep.** Verb: Acts.
+Grep active containers for files marked `status: superseded` or `status: retired` that still sit outside your archive. For each with an explicit superseded-by pointer or clear archival destination, archive it, run the reference-repoint sweep (grep for the old path and repoint active references to the canonical superseder, not the archive) and regenerate any affected index. Park only a superseded file with no destination pointer.
 Eligibility: condition-based. Eligible whenever a superseded or retired file sits in an active container.
 
-**T1-7: Runtime log rotation.**
-For each operational log that exceeds its line cap (default: 2000 lines), truncate to the last N lines. This is operational maintenance of a transient append log, not content deletion. List stale operational files (30+ days old, not active state files) as operator-approved removal candidates. Do not delete them. File deletion is the Permanent Floor. List literal filenames, never ranges or shorthand, in the purge-surfaced list.
+**T1-7: Runtime log rotation.** Verb: Acts.
+For each operational log over its line cap (default 2000 lines), truncate to the last N lines. This is maintenance of a transient append log, not content deletion. List stale operational files (30+ days old, not active state files) as removal candidates in Your decisions. Never delete them: file deletion is the Permanent Floor. Name literal filenames, never ranges or shorthand.
 Eligibility: condition-based. Eligible whenever a named operational log exceeds its line cap.
 
-**T1-8: Skill mandatory-sections completeness sweep.**
-Glob all skill files. For each, check for the sections the system calls mandatory: Purpose or Trigger, When to Use, Steps or Behavior, Constraints, Refinements. For each skill missing only a Refinements section, append an empty stub (additive and reversible). Surface as read-only findings (do not auto-edit): any skill missing Constraints, When to Use or Steps. Composing those sections is authoring, not a stub.
-Eligibility: condition-based. Eligible whenever a skill file lacks a Refinements section.
-
-**Tier 2 (autonomous, read-only scans, findings to the decision board):** All Tier 2 items are Level 1 at v1. Producing a read-only finding is fully autonomous.
-
-**T2-1: Inbox triage sweep.**
-Walk your inbox. For each unrouted item, classify it against your routing heuristics and act: safely routable items route via file move. After any move, run the reference-repoint sweep for the old path. Hold-for-operator items (conflicting heuristics, real judgment, durable-role decisions) surface on the decision board. The hold-for-operator set stays narrow by design.
+**T2-1: Inbox triage sweep.** Verb: Acts.
+Walk your inbox. For each unrouted item, classify it against your routing heuristics: route a safely routable item with a file move, then run the reference-repoint sweep for the old path. A hold item (conflicting heuristics, real judgment, a durable-role decision) goes to Your decisions. The hold set stays narrow by design.
 Eligibility: condition-based. Eligible whenever the inbox holds unrouted items.
 
-**T2-2: Stale draft surface.**
-Walk your drafts directory. For each draft older than 30 days, classify: ready-to-publish, event-gated or abandoned. Produce a report per content type.
-Eligibility: not run in 30+ days.
-
-**T2-3: External link rot scan.**
-Sweep outbound URLs in published articles or published notes. Fetch each (HEAD or short GET), flag any 4xx or 5xx response. Skip URLs requiring auth, payment walls or known anti-bot surfaces.
-Eligibility: not run in 30+ days.
-
-**T2-4: Memory file cross-reference health.**
-Walk all files in your AI interface's project memory directory. Extract every internal link. Check each target against the directory. Build a structured list of broken cross-refs plus a candidate-target inventory. Suggest the likely correct target from the inventory. Verify suggestions against live state before reporting.
-Eligibility: not run in 30+ days.
-
-**T2-5: Reference orphan and inbound-density report.**
-For each codex or reference file in your active governance layer, count inbound references across the system. Flag every file with fewer than 5 inbound references as a low-pollination candidate. Sort ascending and write the report.
-Eligibility: not run in 60+ days.
-
-**T2-6: Skill cross-reference health.**
-Walk all skill files. Extract every internal link. Check each target against the system. Build a structured list of broken cross-refs plus a candidate-target inventory. Suggest the likely correct target from the inventory.
-Eligibility: not run in 30+ days.
-
-**T2-7: Memory compression candidate report.**
-Read your AI interface's memory index and walk each linked memory file body. Identify candidates for compression: entries that are stale, redundant or superseded by later refinements. Surface a prioritized list.
-Eligibility: not run in 60+ days, or when memory index exceeds your defined line cap.
-
-**T2-8: Breadcrumb propagation and stale-reference sweep.**
-Gather changed governance artifacts from recent version control history (last 14 days). For each, grep the system for inbound references and documents that enumerate the same subject. For each with candidate parallel docs, check whether those docs reflect the change or carry a now-stale claim. Read-only. Propose the reconciliation; do not apply it. Check version history before calling any mismatch drift: mismatches often have intentional history.
+**T2-8: Breadcrumb propagation and stale-reference sweep.** Verb: Reports.
+Gather changed governance artifacts from recent version history (last 14 days). For each, grep the system for inbound references and documents that enumerate the same subject, and check whether they reflect the change or carry a now-stale claim. Check version history before calling a mismatch drift: mismatches often have intentional history. Propose each reconciliation; do not apply it.
 Eligibility: not run in 14+ days.
 
-**T2-9: Style-guide conformance sweep.**
-Scope to durable canonical content only: reference docs, protocols, product pages and other content meant to stand indefinitely. Skip in-progress drafts and already-shipped ephemera; expression quality on live drafts belongs at drafting time, not a background sweep. If your system ships a style guide or an anti-AI writing-patterns document, check conformance against its stated rules (banned phrases, capitalization conventions, punctuation rules). Skip entirely if no such document exists. Read-only; every finding surfaces for review.
-Eligibility: not run in 30+ days.
+### B1: Skills
 
-**T2-10: YAML frontmatter validity scan.**
-Walk all files that carry YAML frontmatter. Parse each block. An unquoted colon inside a value (commonly a title or description field) can silently break the whole properties block, defeating every frontmatter-based check for that file with no visible error. Flag every file that fails to parse cleanly, with the specific line at fault.
-Eligibility: not run in 30+ days.
+**T1-8: Skill mandatory-sections completeness sweep.** Verb: Acts.
+Glob all skill files. Check each for the sections your system calls mandatory: Purpose or Trigger, When to Use, Steps or Behavior, Constraints, Refinements. Append an empty Refinements stub where only that section is missing. A skill missing Constraints, When to Use or Steps goes to Your decisions: composing those sections is authoring, not a stub.
 
-**T2-11: MCP tool-description integrity sweep.**
-Hash the descriptions of your active MCP tool schemas each run and diff against the prior hash. A tool description that changes without a corresponding version bump is the signature of a supply-chain rug-pull on a trust boundary you rely on. Flag any drift for review.
-Eligibility: not run in 14+ days.
+**T2-6: Skill cross-reference health.** Verb: Reports.
+Walk all skill files. Extract every internal link, check each target and suggest the likely correct target for each broken one from an inventory of existing paths.
+
+### B2: Memory
+
+**T2-4: Memory file cross-reference health.** Verb: Reports.
+Walk your AI interface's project memory directory. Check every internal link against the directory, resolving by each memory's own name or slug as well as its filename. Suggest the likely correct target for each broken one, verified against live state before reporting.
+
+**T2-7: Memory compression candidate report.** Verb: Reports.
+Read your memory index and walk each linked memory body. List compression candidates: entries stale, redundant or superseded by later refinements, prioritized.
+
+### B3: Integrity
+
+**T2-5: Reference orphan and inbound-density report.** Verb: Reports.
+For each codex or reference file in your governance layer, count inbound references across the system. Flag every file under 5 inbound references as a low-pollination candidate, sorted ascending.
+
+**T2-10: YAML frontmatter validity scan.** Verb: Reports.
+Walk every file carrying YAML frontmatter and parse each block. An unquoted colon inside a value (commonly a title or description) silently breaks the whole properties block and defeats every frontmatter-based check for that file. Report each file that fails, with the line at fault.
+
+**T2-11: MCP tool-description integrity sweep.** Verb: Reports.
+Hash the descriptions of your active MCP tool schemas and diff against the prior hash. A description that changes without a version bump is the signature of a supply-chain rug-pull on a trust boundary you rely on. Report any drift.
+
+### B4: Drafts and links
+
+**T2-2: Stale draft surface.** Verb: Reports.
+Walk your drafts directory. Classify each draft older than 30 days as ready-to-publish, event-gated or abandoned, per content type.
+
+**T2-3: External link rot scan.** Verb: Reports.
+Sweep outbound URLs in published articles or notes. Fetch each (HEAD or short GET) and flag any 4xx or 5xx. Skip URLs behind auth, payment walls or known anti-bot surfaces.
+
+**T2-9: Style-guide conformance sweep.** Verb: Reports.
+Durable canonical content only: reference docs, protocols, product pages. Skip in-progress drafts and shipped ephemera; expression quality on live drafts belongs at drafting time. Check against your style guide's stated rules. Skip entirely if no style guide exists.
+
+### Retired
+
+- **T1-3: Anti-AI sweep on draft articles.** Retired in 2.0. The edit pass belongs at drafting time, run while a piece is being written. A background sweep over sitting or published drafts spends capacity on finished work and touches your in-progress drafts without your hand on them.
+- **T1-4: Memory file slug normalization.** Retired in 2.0. Its premise was inverted for current memory systems: filenames may use underscores while the canonical link form is the memory's own kebab-case name. Running it rewrites correct links into ones that match nothing. T2-4 owns memory-link health, read-only.
+
+A retired ID stays listed so every ID in your run history resolves. Nothing retired runs.
+
+---
+
+## The Decision Board
+
+The board is delivered inline, in full, as the run's closing message. The conversation is the surface and the run entry is the record. There is no third copy. Resolved decisions log to the run entry.
+
+Four buckets, numbered the same on the board and in the run entry. Every heading renders, in order, even when empty ("None this run.").
+
+1. **Done.** What the run did on its own, each line reversible through version control. A record to skim, not a decision. As autonomy widens this bucket grows and Your decisions shrinks.
+2. **Your decisions.** Genuine judgment forks, anything touching the Floor, Proposes items that came due and the menu candidates, skill refinements and verb moves the agent recommends. You accept, decline or reshape each. Near empty on a clean run.
+3. **Your hands.** Only what you alone can physically do: a connector toggle, a payment, a credential, a sign-in. Before an item lands here, ask whether the agent can do it on your word. If so, it is a decision in bucket 2 ("say go and I will do it"). A pull request merge is a decision too: you approve it in bucket 2 and the agent merges it.
+4. **Plans to approve.** Anything bigger than one session, or any governance, memory or configuration class change, as a cliff-note asking "approve plan creation?". Only plans the agent recommends, each with the reason.
+
+Patterns Noticed lives in the run entry only, never on the board.
+
+**A menu is not judgment.** A Your-decisions entry earns its line by being genuinely yours, or by touching the Floor. A technical call the agent was competent to make belongs in Done, already made, in one line, past tense. Work lands in the session that found it. A run that ends in a queue of homework has moved the drift rather than met it.
+
+**Every Your-decisions and Plans entry carries its proof.** At least the situation, the recommended move and the main alternative weighed, and one line `Verified: <check>, <result>` naming the live check its claim passed. A claim the session cannot check says so and names the instrument that could. Done lines and Your-hands items carry none.
+
+**Size each entry by what the change can break.** That is a property of the diff, not a guess about what you already know.
+
+- Routine and reversible (an index line, a slug, a routed note, a dead reference): one line, batched. Over-explaining safe work teaches skimming, and skimming waves through the one entry that mattered.
+- Judgment (a pattern-setting choice, a nuanced routing call, an adoption): one paragraph. The situation, what doing nothing costs, the recommendation.
+- Consequential (a credential, an outward send path, the Permanent Floor, a governance or configuration class change, this skill's own steps): the full ceremony. The stake in your terms. Three real options with doing nothing costed at its true price. The recommendation and what it gives up. The tell: how you would know it was wrong and what to watch. Reversibility: whether it can be undone and how fast.
+
+If you say you do not understand, the decision waits and the agent explains it first in plain terms. A gate you cannot operate is not a gate.
 
 ---
 
 ## Steps
 
+### Step 0: Due scan (every run, before the menu, outside the budget)
+
+Read each due-dated client your system registers and surface only what is due, with the date and the recommended action. Two ship as defaults: a security audit whose last run was 25 or more days ago, and any active file whose `next_review` date has passed. This step never runs the maintenance it surfaces. A new client is one line here, no new machinery.
+
 ### Step 1: Load state
 
-Read the run-log file. Parse the frontmatter: `menu_state` map (item ID to last-run date), `run_counter` integer, `auto_execute_threshold` integer, `research_state` map (category ID to last-researched date) and `priority_flags` list. If the log does not exist, halt and surface: "Log file missing. Create the seed log per the SKILL.md and retry."
+Read the run log. Parse the frontmatter: `run_counter`, `last_run`, `research_state`, `bundle_state`, `priority_flags`, the `menu_state` scorecards, `fix_checks` and `rulings`. If the log does not exist, halt and say: "Log file missing. Create the seed log per the SKILL.md and retry." A malformed log halts the run too: state integrity is foundational. When the log body passes about 1200 lines, apply the retention rule now, before the run writes. Then re-check the fix checks the last three runs recorded (the Learning Loop) and mark each fix held, regressed, reverted or unverifiable; the result goes in the run entry's Fix re-check line.
 
-### Step 2: Compute eligibility
+### Step 2: Select and announce
 
-For each menu item (T1-* and T2-*), apply its eligibility rule against the state. Build an eligible-items list. If the operator passed an item name, narrow to that item only.
+Build the due list from the menu and the log:
 
-**Three-tier eligibility (resolves the cooldown problem):**
-- **Condition-based, no window.** Cheap hygiene and routing that runs whenever there is something to do: T2-1 inbox triage, T2-8 breadcrumb sweep, T1-2 index regeneration, T1-5 index completeness, T1-6 superseded sweep. Eligible when the target is non-empty or the condition fires, regardless of last-run date.
-- **Short window, 7 to 14 days.** Cheap scans with moderate drift: T1-1 reference integrity, T1-3 anti-AI, T1-4 memory slug.
-- **Long window, 30 to 90 days.** Expensive scans with slow drift: T2-2, T2-3, T2-4, T2-5, T2-6, T2-7. The window matches the cost and the drift speed.
+- **Condition-based items** run whenever their target is non-empty, never by timer.
+- **Windowed items** run once their window has passed since `last_run`.
+- **Flagged items.** Anything in `priority_flags` is due regardless of window, and lifts to the top.
+- **The two bundles** are the never-run ones first, then the oldest in `bundle_state`.
 
-Any item listed in the log frontmatter `priority_flags` is eligible this run regardless of its day-window or last-run date. Consume the flag when the item runs and delivers.
+Rank the standalone items (flagged first, then furthest past their window) and take them up to a budget of 8, plus the two bundles. An item name from you is the plan. A count honors the ranked list. "Full sweep" runs every due item and every bundle. A Proposes item does not run: it goes to Your decisions as "run it?".
 
-### Step 3: Select items by priority
+Announce in one paragraph: "Running N items. Acts: [list]. Reports: [list]. Bundles: [ids]." It is the only message until close.
 
-No single run executes everything. Rank eligible items by priority, then select up to a budget of 8 per run. Priority, highest first: operator-flagged items lift to the top, research-surfaced high-value items lift next, staleness lifts an item the further it has sat past its window.
+### Step 3: Acts items, in sequence
 
-If the operator passed an item count, honor it against the ranked list. If they passed "full sweep," run every eligible item with no cap. Selection respects the threshold: only items at or below `auto_execute_threshold` execute. Eligible items above the line surface on the decision board instead.
+Run each Acts item one at a time on the orchestrator, so no two edits collide. A bundle's Acts items run here too. An editor worker, when one is warranted, runs alone with `model` set. When a genuine judgment fork appears, do the safe part, park the fork to Your decisions and continue. For each edit, note the cheapest check that would fail if the fix were undone (the broken text is absent, or the corrected text is present), so the next run can re-check it.
 
-### Step 4: Announce the plan
+### Step 4: Reports items, in parallel
 
-Output a one-paragraph plan: "Running N items this session. Tier 1: [list]. Tier 2: [list]. Estimated wall time: [rough estimate]." This is the only announcement until close.
+Dispatch one read-only worker per due bundle and one per standalone Reports item or small group. A read-only worker holds no write tools. Every worker prompt says: run single-context, do not spawn subagents. A worker that fans out returns narration about its children instead of findings, and per-item results get lost in the hop.
 
-### Step 5: Execute Tier 1 items
-
-For each Tier 1 item, first check its autonomy level against `auto_execute_threshold`:
-- At or below the line: dispatch execution. Tier 1 items run sequentially to avoid file-edit conflicts.
-- Level 2: execute the safe part. When a genuine judgment fork appears, park it to decision board bucket 2 with the context needed to rule, then continue.
-- Above the line: do not execute. Park the whole item to bucket 2.
-
-After each item completes, do a layer-1 opportunistic capture (Step 6), then move to the next item.
-
-### Step 6: Layer 1 opportunistic capture (per item)
-
-Immediately after each Tier 1 item completes, ask: "Did running this item surface any other opportunity types worth adding to the menu?" Capture findings as draft candidate entries. Findings flow into Step 9 synthesis.
-
-### Step 7: Execute Tier 2 items
-
-Dispatch all Tier 2 items in parallel as Sonnet subagents (read-only scans are safely parallel). Each returns a structured finding. When a finding needs a ruling the return session should act on, mirror it as a board bucket-2 entry.
-
-**Single-context workers.** Every worker prompt states: run single-context, do not spawn subagents. A worker that fans out returns narration about its own children instead of findings, and per-item results get lost in the hop. This rule applies to every dispatched worker, Tier 1 editors included, not just Tier 2 scans.
-
-**Every scan returns, per item, a count, the instrument used and a reason if it did not run.** A quiet monitor is a claim of health. Read its run log for skipped checks and treat a skipped check as a finding.
+**Every scan returns, per item, a count, the instrument used and a reason if it did not run.** A quiet monitor is a claim of health. A worker that stops at its turn limit before returning every item is resumed once; an item still missing after that is logged as not run. Every finding carries its path, its class and the offending line verbatim, so it can be matched against your ledger of rulings. A finding that needs your ruling becomes a Your-decisions entry, never a decision buried in a report.
 
 **Databases and send tools.** A run reads databases through a read-only connection only. It never applies migrations and never calls any scheduler or send tool that publishes.
 
-**Circuit Breaker for monitor-filed issues.** Close a monitor-filed issue only when the condition that filed it has cleared, and put the evidence in the closing comment. A finding that is still true stays open, and the monitor comments on it rather than filing again.
+### Step 5: Research rotation
 
-### Step 8: Research rotation (every run)
-
-The research rotation is the engine of menu growth. It rotates through the research categories below. Research one category per run. Rank what the worker returns with live defects first, duplicates second and new items last. Fix safe defects now rather than parking them. Read `research_state`, pick the least-recently-researched category and dispatch one Sonnet worker for it. It returns a self-ranked top-5 candidate list with a one-line "why this beat the rest." Candidates flow into Step 9 and surface on the decision board's bucket 3.
+One category per run, the least recently researched in `research_state`. One worker returns a self-ranked top 5, pointed in order at a live defect in the category (with the file and the check that shows it), a duplicate between existing menu items and only then a new item, which has to beat both. Fix each Acts-safe live defect now, in this run, and log it in Done. The rest go to Your decisions. The run entry records the yield and the fix rate. Set `research_state` for the category to today.
 
 **Research categories:**
+
 1. **R1: External practices and tooling.** What the broader agentic and AI field is doing that your system could adopt. Force external sources with URLs.
 2. **R2: Vault hygiene and integrity.** References, orphans, frontmatter, naming conventions.
 3. **R3: Infrastructure and scripts.** Script health, hooks, MCP loadout, automation gaps.
 4. **R4: Discoverability and content.** AI discoverability, content freshness, manifest accuracy.
-5. **R5: Skill library health.** Cross-references, redundancy, progressive disclosure, routing matrices.
-6. **R6: Governance coherence.** Codex consistency, protocol drift, status vocabulary, structural alignment.
-7. **R7: Expression and voice integrity.** Anti-AI patterns and writing-style adherence across artifacts.
-8. **R8: Memory and knowledge architecture.** Memory health, codex inbound density, knowledge map currency.
+5. **R5: Skill library health.** Cross-references, redundancy, progressive disclosure, routing.
+6. **R6: Governance coherence.** Consistency, protocol drift, status vocabulary, structural alignment.
+7. **R7: Expression and voice integrity.** Writing-style adherence across artifacts.
+8. **R8: Memory and knowledge architecture.** Memory health, inbound density, knowledge map currency.
 9. **R9: Cost and routing efficiency.** Model routing adherence, token efficiency, routing discipline.
 
-**Ground-truth gate on state-claims.** Any candidate that asserts a claim about the current state of an existing artifact gets verified against live state before it reaches the board. Run the cheapest live check (an `ls`, a grep, a scoped read) at the moment of surfacing. A candidate whose premise fails verification never reaches the operator. A forward proposal to build something absent needs no artifact check.
+### Step 6: End-of-run reflection
 
-### Step 8b: Post-run skill self-refinement
+One pass after Steps 3 to 5. Ask two questions of everything the run touched. Did running these items surface an improvement type worth adding to the menu? Did running the skill surface a defect, friction or gap in the skill itself (a worker timed out, an item was missed, the run entry wanted a field)? Sort the answers into menu candidates, each with a proposed verb and bundle, and skill refinements, each naming the friction and the proposed change. Both go to Your decisions, and only the ones the agent recommends.
 
-After execution completes, ask: "Did running this skill surface any defects, friction or improvements in the skill itself?" Capture as Layer 4 candidates. These propose modifications to this SKILL.md, distinct from menu-item candidates. Findings flow into Step 9 under their own category.
+### Step 7: Synthesize the board
 
-### Step 9: Synthesize the decision board
+Aggregate the due scan, the parked forks, the Reports findings, the research candidates and the reflection into buckets 2 to 4; Done comes from the run's own work. A finding you already ruled on is dropped and counted in the run entry, never raised again. Apply the recommendation bar: a candidate the agent would not recommend goes to Patterns Noticed as one line, or nowhere. Zero new candidates is a clean run, not a failure. An obvious placement gets one line (`Candidate: [name]. Recommended: [verb], [bundle]. Rationale: [one sentence]. Accept?`); an uncertain one gets three options, the recommendation and the tradeoff. A Plans cliff-note carries the problem, the scope, the rough phase shape and "approve plan creation?".
 
-Aggregate the opportunistic capture, the research rotation, the self-refinement findings and every fork parked during execution into the four-bucket board. Apply the recommendation bar: if you wouldn't recommend a candidate, route it to Patterns Noticed as a one-liner rather than a decision. Every recommended candidate carries a proposed tier and a proposed autonomy level.
+**The ground-truth gate runs here, on every entry.** A claim about the current state of an existing artifact is checked live with the cheapest definitive instrument (an `ls`, a grep, a scoped read) before it reaches the board, and the entry shows the check in its Verified line. The check belongs to the orchestrator, because a worker cannot ground-truth its own assertion. A forward proposal to build something absent needs no artifact check. A recommendation is also checked against work already underway (the owning skill, plan or project) and framed as layering onto it, superseding it or filling a gap in it. A Plans cliff-note gets the same check, because you approve plan creation on its premise.
 
-When a decision is nuanced, present Three Solutions: the situation, three real options, the one you recommend and its tradeoff. When it's simple, one recommendation. Never a bare open question.
+### Step 8: Write the log entry
 
-**Ground-truth gate on proposed plans.** The operator approves plan creation from the premise stated in the cliff-note. If the cliff-note's operative claim is a state-claim about an existing artifact, verify it against live state before writing it to the board. A false premise spends a real approval and an entire later session on work that didn't need doing.
+Append the run entry at the top of the log body: run number, items attempted and completed, bundles run, the research yield, the count dropped by the ledger, then the board in full under the same four headings, then Patterns Noticed, the reports with no findings and any errors. Update the frontmatter. For every item that ran, write its scorecard: `last_run` today, `runs` plus one, `findings` plus what it surfaced, `empty_streak` reset to 0 on a finding or plus one on none. Record this run's fix checks. Set `bundle_state` to today for each bundle run, add one to `run_counter`, set `last_run` and remove consumed `priority_flags`. An item with three empty runs in a row, or whose rulings run more than half noise, goes to Your decisions as a retire or merge proposal.
 
-### Step 10: Write log entry and decision board, then close
+### Step 9: Commit, then present the board
 
-Append a run entry at the top of the log body. Update the frontmatter: set new last-run dates in `menu_state` for items that ran, set new last-run dates in `research_state` for each category researched, increment `run_counter`, set `last_run`. Leave `auto_execute_threshold` unchanged unless a return-session ratified climb moved it.
+The tool calls come first, so the board is the last thing you see.
 
-Write the four-bucket board to the decision board file, replacing the prior run's open decisions. Present the same board as the closing output, whole, in the closing message. Every decision and plan entry ends with `Verified: <live check>, <result>`.
-
-Closing line: "Autonomous Improvement Session complete. [N] items ran. Decision board: [A] approvals and questions, [B] menu candidates, [C] proposed plans. Log and board updated."
+1. **Commit by path, twice when Acts items edited files.** Stage each file the run touched by name, new files included, and commit those paths: the edited files first, then write that commit into this run's fix checks and commit the log. A fix check left with no commit reads unverifiable at the next re-check. Never add everything: sibling sessions may hold uncommitted work in the same tree. A run never edits its own skill files; that is the return session's work.
+2. **Check the board before sending it.** Four headings in order (Done, Your decisions, Your hands, Plans to approve), an empty one saying "None this run.", and a Verified line on every Your-decisions and Plans entry. If your interface runs hooks, a stop hook can hold this shape for you. Each Your-decisions and Plans entry is a numbered line, its options sit under it as bullets and never as numbers, and it carries one Verified line. A Done line reads `[Item ID]: [outcome]`. A Your-hands item names the action, why only those hands can do it and the fastest route.
+3. **Render the whole board as the closing message.** Every entry in full with its recommendation and its Verified line, never a count, a digest or a link. The test: a reader who opens no file can read and answer the whole board from the message alone. Pointing you at a file in place of the board is the failure this step exists to prevent. A run that halted before its board says "No board this run".
+4. **End the message** with one line: "Log updated. Answer any item inline and I will run the return session."
 
 ---
 
-## The Climb and Return-Session Flow (operator-triggered)
+## The Return Session and the Verb Moves (operator-triggered)
 
-The operator's board answers encode forward. This is the learning loop. The skill never modifies its own SKILL.md, menu or autonomy posture autonomously. Every move below is an explicit, operator-triggered edit cycle.
+Your board answers encode forward. This is the learning loop. The skill never modifies its own SKILL.md, menu, verbs or posture on its own. Every move below is an explicit, operator-triggered edit cycle.
 
-**Bucket 2: Approvals and questions.** Apply the decision to the parked work. If the answer carries a forward rule, encode it. A rule that turns a recurring judgment fork into a deterministic step is the recursion working: it can move an item from Level 3 to Level 2, or Level 2 to Level 1.
+**The self-edit rule.** An edit to this skill's own files follows three rules, every time. Show the diff inline before committing it. Commit the skill's files in a commit of their own, named as a self-edit. Never run a procedure from a section marked proposed: your yes moves the verb first, and the procedure runs from its ratified place after that.
 
-**Bucket 3: Accepted menu candidate.** Add the new menu item with execution spec, eligibility rule, output artifact and its assigned autonomy level, under the correct tier. Seed `menu_state` with today's date. Document the promotion in the run entry.
+**Scorecards first.** For each finding you answered, update its item's scorecard: `accepted` plus one when you took it, `declined` plus one when you turned it down on its merits, `noise` plus one when you called it not worth surfacing. Then add each finding you did not take to `rulings` in the log frontmatter, so it never returns: its path, item, the offending line, where it was ruled and one disposition. `accepted-as-is` (right as it stands) and `false-positive` (noise) suppress for good. `rule-needs-fixing` suppresses the finding and returns as a skill refinement on the board until the item's rule changes. `deferred` carries an `until` date and returns after it, so "not now" never silences a defect for good.
 
-**Accepted skill self-refinement.** Edit this SKILL.md to apply it. Document it in the Refinements section with date and source-run reference.
+**A ruled fork (implemented now).** Apply the decision to the parked work. A "say go" entry you answer with go is done now. If the answer carries a forward rule, encode it in the item it governs. A rule that turns a recurring fork into a deterministic step is the recursion working. Record the decision in the run entry where the fork was parked.
 
-**Bucket 4: Approved plan.** On an "approve plan creation?", draft the full plan using the board cliff-note as the seed. The plan starts at `status: proposed`. Plan creation is authorized; execution of the drafted plan is not, and runs in its own dedicated session later.
+**An accepted menu candidate (woven in).** Add the item to its bundle with execution spec, eligibility rule, output and a `Verb:` line. Seed it in `menu_state` as `null`, meaning never run, so a weave date never reads as a run. Record the promotion in the run entry where it surfaced.
 
-### Autonomy-Level Move (the climb)
+**An accepted skill refinement.** Edit the skill under the self-edit rule and note it in Refinements with the date and source run.
 
-An item's autonomy level lowers, or the skill-level `auto_execute_threshold` rises, only through a ratified decision. The threshold widens from proven workflows, never from projection.
+**Your hands.** When you say you did it, verify it landed with the instrument that can see it. "You said so" is not the check. When you say go instead, the agent does it. An item still open at the session's end gets one line under the run entry, `Still open: [item]`, so the next session resurfaces it.
 
-The safety guard sits in the Permanent Floor, not in the climb mechanics. A move that would touch an outward surface, delete, move a canonical file or self-edit breaches the floor and fails regardless of how high the threshold has climbed.
+**An approved plan (drafted, run later).** Draft the full plan from the cliff-note at `status: proposed`. Creation is authorized; execution runs in its own session. Ground-truth the premise at drafting time: days may have passed, and this is the last gate before the plan calcifies. A premise that fails here kills the candidate, and the agent tells you so rather than drafting around a false claim. Note the spawned plan in the run entry and link it.
 
+### A verb move
+
+An item moves from Proposes to Reports or Acts, or a site-lane class from propose to auto-PR to auto-merge, only through a ratified decision. Authority widens from proven workflows, never from projection. To execute a move, edit the item's `Verb:` line and record the item, the old and new verb, the forward rule and the Flywheel check result in the run entry.
+
+Every move passes the **Flywheel Three Laws** check: does it smooth a handoff, ease the next rotation and raise real output? The safety guard sits in the Permanent Floor, not here. A move that would touch an outward surface, delete, move a canonical file or self-edit fails regardless. Governance, memory and configuration changes never move into execution by this route: they go to Plans to approve.
 
 ### The Learning Loop
 
 - Keep a ledger of rulings in the run log. A finding already ruled on never returns to the board.
 - A scan that cannot be shown to catch a planted defect reports "unverified", not "clean".
 - At each run start, re-check the previous run's fixes. Mark each held, regressed, reverted or unverifiable.
-- A regressed fix is re-landed. A reverted fix goes to you, because a revert is a ruling.
+- A regressed fix is re-landed. A reverted fix goes to you, because a revert is a ruling. An unverifiable one goes to Your decisions with its reason (a vacuous check, a file moved or gone, a commit no longer in history).
 
 ---
 
-## Future Direction: Scheduling (not v1)
+## Coming from 1.x
 
-v1 is operator-invoked only. Scheduling is a future direction, gated on a track record of clean review-and-climb cycles, never a date. The likely shape, when it arrives, is several runs per week with different priority weightings and different subsets of research categories. The threshold model and the priority score already carry the machinery; scheduling just sets the cadence.
+If you installed any 1.x version, your log and board still work. Here is what each piece means now.
+
+- **`auto_execute_threshold` and the autonomy levels.** Retired. The verb is the authority now. Map each item once, in a return session, by what it did under your threshold. An item at or below the threshold ran: it takes its tier default (Tier 1 Acts, Tier 2 Reports), and a Level 2 item's habit of parking its forks is now what every Acts item does. An item above the threshold was parked whole: it becomes Proposes. With the starting threshold of 1, Level 1 items keep running and Level 2 and Level 3 items become Proposes until you ratify a move. Write the mapping in a run entry. The skill ignores the threshold line if it stays, so removing it is housekeeping rather than a requirement.
+- **The board file.** Nothing writes to it any more. Carry its open decisions into your next return session or answer them there. Keep the file as history or archive it yourself. The skill never removes it, because deletion is the Permanent Floor.
+- **The bucket names.** Completed this run is now Done. Approvals and questions is now Your decisions. New menu candidates and autonomy moves fold into Your decisions. Proposed plans is now Plans to approve. The hands list is now its own heading, Your hands. Old run entries keep their old names: they are history.
+- **`menu_state`.** A bare date still reads as `last_run`. Scorecards fill in from the next run. Add an empty `bundle_state` map; every bundle reads as never run and the first two go first.
+- **T1-3 and T1-4.** Both retired. If you ran T1-4 on a memory directory whose links use kebab-case names, run T2-4 once to check for links it rewrote.
 
 ---
 
 ## Log Structure
 
-Single file at a path you choose (for example `Logs/Autonomous Improvement Log.md`).
+Single file at a path you choose.
 
-**Retention rule.** At session open, when the log body exceeds roughly 1200 lines, compress the oldest full run entries into one-line summaries (run number, date, items executed, board outcome) until the body sits under 1000 lines, keeping the newest 8 runs in full. Frontmatter state is never compressed. The compression runs as part of the session; it needs no separate approval. The log that watches other logs' rotation carries its own window.
+**Retention rule.** When the log body exceeds about 1200 lines, compress the oldest full run entries into one-line summaries (run number, date, items executed, board outcome) until the body sits under 1000 lines, keeping the newest 8 runs in full. Frontmatter state is never compressed. The compression runs as part of the session; it needs no separate approval.
 
 **Frontmatter:**
 
@@ -310,8 +311,7 @@ Single file at a path you choose (for example `Logs/Autonomous Improvement Log.m
 status: active
 run_counter: 0
 last_run:
-auto_execute_threshold: 1
-research_state:
+research_state:      # category ID to last-researched date; the least recent goes next
   R1:
   R2:
   R3:
@@ -321,60 +321,65 @@ research_state:
   R7:
   R8:
   R9:
-priority_flags: []
-menu_state: {}
+bundle_state:        # bundle ID to last-run date; never-run bundles go first, then the oldest
+  B1:
+  B2:
+  B3:
+  B4:
+priority_flags: []   # item IDs you flagged to lift in Step 2
+menu_state: {}       # one scorecard per item: {last_run, runs, findings, accepted, declined, noise, empty_streak}; null means never run
+fix_checks: []       # one {run, item, file, commit, absent | present} per Acts edit, the last three runs only
+rulings: []          # one {path, item, line, disposition, ruled, until} per finding you ruled on
 ---
 ```
 
-**Body:** Reverse-chronological run entries. Newest at the top.
+**Body:** Reverse-chronological run entries, newest at the top. Each entry records the board in full, so the log is the board's only durable home.
 
 ---
 
 ## Constraints (the Hard Ceiling)
 
-This section is the Hard Ceiling. It holds regardless of how high `auto_execute_threshold` climbs. No ratified climb, accepted candidate or forward rule may breach the permanent floor.
-
-The ceiling is drawn by action type, not location. Destructive, voice-bound and outward-broadcast actions stay forbidden forever. Additive, reversible, build-verified correction opens as a gated lane that earns its way toward gateless operation one proven class at a time.
+The ceiling is drawn by action type, not location. Destructive, voice-bound and outward-broadcast actions stay forbidden forever. Additive, reversible, build-verified correction opens as a gated lane that earns its way one proven class at a time.
 
 ### The Permanent Floor (never climbs)
 
-No threshold, climb, candidate or forward rule breaches these. Ever.
+No verb move, accepted candidate or forward rule breaches these. Ever.
 
 - No change to copy, voice or content prose on any live surface. Outward words are voice-bound.
 - No deletions of anything, anywhere in the system.
-- No moves of canonical governance files: codices, your constitution or charter, protocols, canonical content. Those require operator approval. This does NOT cover implemented plan archival. Moving a `status: implemented` plan from the active directory to the archive is operational lifecycle closure, not a governance move: it stays inside the system, it's reversible, it deletes nothing and it changes no governance.
+- No moves of canonical governance files: codices, your constitution or charter, protocols, canonical content. Those require your approval. Moving a `status: implemented` plan from the active directory to the archive is operational lifecycle closure, not a governance move: it stays inside the system, it is reversible, it deletes nothing and it changes no governance.
 - No outward broadcasts. Email sends, social posts, anything that speaks to the world.
 - No direct push to any main branch. Every external change goes through a build-verified pull request.
-- No self-modification. The skill never edits its own menu, threshold, autonomy levels, this SKILL.md, your auto-memory file or your settings file autonomously. Those move only after you ratify a decision-board entry.
+- No self-modification. The skill never edits its own menu, its verbs, this SKILL.md, your auto-memory file or your settings file on its own. Those move only after you ratify a board entry, in a return session that shows the diff first.
 
-**Scope of the self-modification ban.** It covers this SKILL.md, its CLAUDE.md, every reference and catalog file and any script that applies its rules. The deletion and write bans bind shell commands and every file type, not only the editor tool.
+**Scope of the self-modification ban.** It covers this SKILL.md, any CLAUDE.md, reference or catalog file you keep beside it and any script that applies its rules. The deletion and write bans bind shell commands and every file type, not only the editor tool.
 
 ### The Graduated Lane (opens, earns its climb)
 
 Two classes of action, both additive or corrective, never voice-bound, always reversible.
 
 - **Read and route.** Reading reports and routing them into lanes. Fully safe.
-- **Additive or corrective technical fixes to external repos**, executed as build-verified pull requests. Opens one proven class at a time, only after you authorize it.
-
-A fix enters at Level 3, propose-only. When you authorize a class, the form is a branch plus a pull request with a green build. You merge. A narrow class with a clean track record climbs to auto-open PR, then to auto-merge on green build, one ratified step at a time. The part that climbs away is the merge click, never the build gate.
+- **Additive or corrective technical fixes to external repos**, executed as build-verified pull requests. Opens one proven class at a time, only after you authorize it, through propose, auto-PR and auto-merge.
 
 Read a repo's default branch before opening a pull request. Never assume it is called main.
+
+**Optional extension: external-surface triage.** If your system maintains external repos with issue tracking, add a triage to Step 0 that queries open monitor-filed issues, clusters them by type and priority and routes each into safe-now, fix-via-PR and judgment lanes. Close a monitor-filed issue only when the condition that filed it has cleared, with the evidence in the closing comment. A finding still true stays open, and the monitor comments on it rather than filing again. This extension stays off until you run external repos.
 
 ### Operational Constraints
 
 - Operator-invoked only. The skill never auto-fires and never schedules itself.
-- All Tier 1 items are additive edits or in-place corrections traceable via version control. All Tier 2 items are read-only scans.
-- Discovery candidates that would breach the permanent floor stay in Patterns Noticed. They're never surfaced as menu candidates.
-- If any Tier 1 item errors, log the error, skip the item, continue. Do not halt the whole session for one failure.
-- If the log file is missing or malformed at Step 1, halt. State integrity is foundational.
-- Stage and commit only the paths this run touched. Never add everything, because sibling sessions may hold uncommitted work.
+- Acts items are additive edits or in-place corrections traceable through version control. Reports items are read-only.
+- A candidate that would breach the Floor stays in Patterns Noticed and never reaches the board.
+- An item that errors is logged in the run entry and skipped; the run continues.
+- A missing or malformed log halts the run at Step 1.
+- Stage and commit only the paths this run touched.
 
 ---
 
 ## External Orientation
 
 > **Ambassador posture.** Primary strategy: fortify the system. Every action is reversible, every artifact is logged, every outward surface is gated. The log is the durable ledger of the skill's behavior over time.
-> Secondary: observe before acting. Tier 2 scans and the research rotation are intelligence-gathering posture. Observe fully before recommending. Findings return to you. The skill never acts on its own observations beyond menu-bounded execution.
+> Secondary: observe before acting. Reports items and the research rotation are intelligence-gathering posture. Observe fully before recommending. Findings return to you. The skill never acts on its own observations beyond menu-bounded execution.
 > External surfaces touched (read-only by default): outbound URLs for link-rot scans (HEAD or short GET only, no auth bypass) and, under the graduated lane, external repos as a write-via-PR surface (additive or corrective fixes only, never a direct push to a main branch, never a copy or voice change).
 
 Two external write forms are gated:
@@ -386,9 +391,8 @@ Two external write forms are gated:
 
 ## Model Routing
 
-The orchestrator runs at the tier you opened the session with. Set `model` explicitly on every subagent dispatch. Never silently inherit.
-
-- Scan, research and editor workers run on Sonnet.
+- The orchestrator runs at the tier you opened the session with. It owns the due scan, every ground-truth gate, synthesis, the board and every commit.
+- Scan, research and editor workers run on Sonnet, with `model` set explicitly on every dispatch. Never silently inherit.
 - Mechanical lookups and deterministic commands run on Haiku.
 - No worker runs above the orchestrator's tier.
 
@@ -407,4 +411,5 @@ If Pattern Harvest isn't installed yet: [Install Pattern Harvest via Infinite Ga
 
 ## Refinements
 
+- v2.0: The execution-authority model rewritten. Three verbs (Acts, Reports, Proposes) replace the autonomy levels and the threshold, and a verb moves only through a ratified board answer. The board renders inline in the closing message under four headings (Done, Your decisions, Your hands, Plans to approve) with no backing file, and the run entry is its record. The menu runs two bundles per run. Per-item scorecards, retire proposals, the self-edit rule, the research yield and a pre-send board check added. T1-3 and T1-4 retired. A Make It Yours section and a Coming from 1.x section added.
 - v1.2: Added sizing of board entries by blast radius, the menu-is-not-judgment test, the hands-list test and the answerable-without-opening-a-file closing board with a Verified line. Added literal filenames in the purge list, per-scan counts and instruments, the quiet-monitor rule, the Circuit Breaker for monitor-filed issues, read-only database access, the Learning Loop, the self-modification scope statement, path-scoped commits, default-branch reads before pull requests, one research category per run, corrected model routing and an External Orientation section.
