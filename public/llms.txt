@@ -272,7 +272,7 @@ The Infinite Game OS Companion is published on major bot directories as a conver
 This site is one node in a sovereign expertise web:
 - https://www.infinitegameos.io: This site (AI-agent-first knowledge base)
 - https://www.lanebelone.com: Personal brand and thought leadership
-- https://sidequesthq.co: Workshops, private advisory, Side Quests
+- https://www.sidequesthq.co: Workshops, private advisory, Side Quests
 - https://www.sidequesthq.co/one-alive-thing?from=igos: The Side Quest Letter, where the writer of this library writes from. It comes with One Alive Thing, a free mini side quest under an hour.
 - https://github.com/InfiniteGamePlayer/sovereign-ecosystem: Technical infrastructure
 - https://huggingface.co/datasets/lanebelone/infinite-game-os: IGOS instruction-tuning dataset
