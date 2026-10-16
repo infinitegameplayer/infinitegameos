@@ -1,13 +1,13 @@
 ---
 name: pr-code-review
-description: Automated pull request review for your repos. Five parallel agents, confidence scoring, convention-file compliance, and GitHub comment posting.
+description: Automated pull request review for your repos. Six parallel lenses (the sixth, plan alignment, runs when a governing plan is found), anchored confidence, convention-file compliance and GitHub comment posting.
 status: active
-version: 1.1
+version: 1.2
 ---
 
 # PR Code Review Skill
 
-Purpose: Run an automated code review on any open PR in one of your repos before it merges. Five specialized agents analyze the diff from independent angles. Each finding is anchored for confidence, merged, gated and checked by an independent validator. Only high-confidence issues post to GitHub as a review comment.
+Purpose: Run an automated code review on any open PR in one of your repos before it merges. Five specialized agents analyze the diff from independent angles, and a sixth checks it against the plan that authorized it whenever one can be found. Each finding is anchored for confidence, merged, gated and checked by an independent validator. Only high-confidence issues post to GitHub as a review comment.
 Trigger: The operator invokes "PR Code Review" (or `/pr-review`) on a PR branch in a repo with open PRs.
 Inputs: PR number or current branch (defaults to current branch if not specified).
 Outputs: GitHub PR comment with numbered issues and full SHA links, or a no-issues confirmation.
@@ -19,7 +19,7 @@ This skill assumes a convention file at the repo root, typically CLAUDE.md, but 
 
 If your team has mandatory standards that live in a separate document (a design system reference, an API style guide, a security checklist), name that document explicitly in Agent 1's brief so the lens checks against it too. If your convention file defines markup or content hygiene rules (title length limits, alt text requirements, heading structure), spot-check changed pages against those rules directly rather than relying on a general read.
 
-The five-agent structure and the confidence anchoring, gate and validator pass transfer to any repo. The specific lenses in Step 4 are a starting set, not a fixed list. Add or swap a lens for what your codebase actually needs: accessibility, i18n, a specific framework's anti-patterns, a compliance requirement unique to your domain.
+The parallel-agent structure and the confidence anchoring, gate and validator pass transfer to any repo. The specific lenses in Step 4 are a starting set, not a fixed list. Add or swap a lens for what your codebase actually needs: accessibility, i18n, a specific framework's anti-patterns, a compliance requirement unique to your domain.
 
 ## Relationship to a Deeper Codebase Audit
 
@@ -70,9 +70,19 @@ Launch a Haiku agent to view the PR and return:
 - A one-paragraph summary of what the change does
 - The list of files modified
 
-### Step 4: Five-Lens Parallel Review (Sonnet x5)
+### Step 3b: Plan Discovery (Haiku)
 
-Launch five Sonnet agents simultaneously. Each agent reads the PR diff and returns a list of issues with the reason each was flagged.
+Launch a Haiku agent to find the plan that authorized this PR. Look, in order, at:
+
+- The PR body and commit messages, for a plan or spec name, a plan or spec file in the repo (`docs/plans/`, `docs/specs/` or similar) or a named phase
+- Linked or referenced issues (`closes #N`, `refs #N`) via `gh issue view`, where the issue states a scope
+- A PR body that itself states intended scope in checkable terms, such as a list of what the change will do
+
+Return the plan's location plus the scope this PR claims to deliver, or exactly `no-plan-found`. A PR titled "fix typo" with an empty body is `no-plan-found`, never a guess. **This is the dilution guard.** Without a plan, Lens 6 has nothing to compare against, so it does not dispatch.
+
+### Step 4: Six-Lens Parallel Review (Sonnet x5, x6 when Step 3b found a plan)
+
+Launch the Sonnet agents simultaneously: Agents 1 to 5 always, Agent 6 only when Step 3b returned a plan. Each agent reads the PR diff and returns a list of issues with the reason each was flagged.
 
 **Agent 1: Convention Compliance**
 Read the convention files identified in Step 2. Check whether the changes comply. Note: a convention file is guidance for the coding agent as it writes code, so not all instructions apply during review. Focus on instructions that clearly govern the kind of change being made. If your convention file names mandatory per-page or per-module standards, spot-check changed files against those standards explicitly.
@@ -89,9 +99,27 @@ Read previous PRs that touched the same files. Check for comments on those PRs t
 **Agent 5: Code Comment Compliance**
 Read code comments in the modified files. Check whether the changes comply with any guidance or constraints described in those comments.
 
+**Agent 6: Plan Alignment (conditional on Step 3b)**
+When Step 3b returned `no-plan-found`, do not dispatch. Record `Lens 6: no-plan-found` in the run summary and move on.
+
+Otherwise, read the governing plan and the PR diff, and answer one question: **does this implementation match the plan that authorized it, and where it deviates, is the deviation a justified improvement or a quiet departure?**
+
+Judge against the scope this PR claims to deliver (from Step 3b), never the whole plan. Plans span phases and several PRs, and a phase left for a later PR is not missing.
+
+Every finding carries exactly one verdict. A deviation with no verdict is noise, so do not return one. One deviation is one finding: when a single change both contradicts a plan line and leaves it unbuilt, report it once under the verdict that fits best. Return only the findings you stand behind, never a finding followed by its retraction.
+
+- **Problematic departure.** The diff does something other than what the plan specifies, and nothing in the PR acknowledges or justifies the change.
+- **Unimplemented scope.** Something the claimed scope specifies is absent from the diff. Absence cannot be shown by reading a diff, only by searching for the thing, so name what you searched for and where.
+- **Unplanned addition.** The diff changes behavior the claimed scope never mentions, and the change carries risk: a new dependency, a new data flow, a new outward surface or changed public behavior.
+- **Justified improvement.** The diff departs from the plan and is better for it. This is not an issue. Record it in the run summary as a plan-update recommendation.
+
+A deviation the PR body names and explains is not quiet. Flag it only when the stated reason is wrong. The lens never edits the plan: where the plan was wrong and the code is right, it says so and recommends the update.
+
+Return for each issue: the verdict, the plan line quoted verbatim with its location, and the diff line with `file:line`. For unimplemented scope, return the search that came back empty in place of the diff line.
+
 ### Step 5: Confidence Anchoring (Haiku, one per issue)
 
-For each issue found in Step 4, launch a parallel Haiku agent. Give each agent the PR, the issue description, and the convention file list from Step 2.
+For each issue found in Step 4, launch a parallel Haiku agent. Give each agent the PR, the issue description, and the convention file list from Step 2. For a Lens 6 issue, also give it the plan location and claimed scope from Step 3b.
 
 Confidence is an **anchor**, not a score. Exactly one of five values. Each anchor carries a behavioral criterion the agent must honestly self-apply. A continuous 0-to-100 score invites false precision: "confidence 87" cannot be audited, reproduced or defended. Five anchors can be.
 
@@ -112,6 +140,8 @@ Confidence is an **anchor**, not a score. Exactly one of five values. Each ancho
 > **The quote-the-line gate.** Before you anchor at 75 or 100, quote the verbatim line that makes the issue true, with `file:line`, as your first evidence item. **If you cannot quote the motivating line, you may not claim 75 or above. Step down to 50.** This kills the most common false-positive class: asserting a bug exists without pointing at the code that proves it.
 >
 > For an issue flagged under a convention file instruction: quote the rule verbatim. If the convention file does not call out that issue specifically, anchor lower.
+>
+> For an issue flagged by Lens 6 (plan alignment): the gate takes two quotes, the plan line and the diff line, each verbatim with its location. One quote proves the code exists. Only the pair proves the code disagrees with the plan. For unimplemented scope, the second quote is replaced by the search that came back empty (what was searched, and where). Missing either half caps the issue at 50.
 >
 > Return the anchor value, the `file:line` quote (or an explicit statement that you could not produce one) and one sentence of reasoning.
 
@@ -134,6 +164,8 @@ Every issue that survives Step 5b gets its own fresh validator subagent. **One p
 > 1. **Is the issue real in the code as written?** Check for an existing guard, null check or validation the reviewer missed. Check for a misread type or signature. Check whether the pattern is intentional (comments, parallel handlers, project convention).
 > 2. **Did THIS diff introduce it?** Use git blame against the reviewed tree. A pre-existing, undisturbed line fails validation regardless of whether the underlying claim is true.
 > 3. **Is it not already handled elsewhere?** Check callers, middleware, framework defaults and parallel handlers.
+>
+> For a Lens 6 (plan alignment) finding, question 2 becomes: **is the quoted plan line inside the scope this PR claims?** A plan line that belongs to a later phase or a different PR fails validation. For unimplemented scope, repeat the search yourself before you accept the absence.
 >
 > Conservative bias is preferred. When in doubt, reject.
 >
@@ -190,6 +222,8 @@ No issues found. Checked for bugs and convention file compliance.
 
 ---
 
+When Lens 6 ran, the no-issues line reads "Checked for bugs, convention file compliance and alignment with the governing plan." When it returned `no-plan-found`, the line stays as above. The comment never claims a plan check that did not happen.
+
 **Link format rules:**
 - Full SHA required, not abbreviated
 - Use `gh pr view --json headRefOid` to get the full SHA. Do not construct it from shell expansion
@@ -214,11 +248,14 @@ Do not flag any of the following categories. Pass this list to anchoring agents 
 4. Issues a linter, typechecker, or compiler would catch (missing imports, type errors, formatting). CI handles these separately.
 5. General code quality issues (test coverage, documentation, general security hygiene) unless explicitly required in the convention file
 6. Issues called out in the convention file but explicitly silenced in the code via a lint ignore comment
-7. Changes in functionality that are likely intentional or directly related to the broader change
+7. Changes in functionality that are likely intentional or directly related to the broader change. **Lens 6 carve-out:** a change that contradicts a quoted line of the governing plan is judged by Lens 6's verdict, never suppressed as intentional. Intent is exactly what that lens tests.
 8. Real issues on lines the PR did not modify
 9. Style issues not explicitly mentioned in the convention file
 10. Issues already discussed and resolved in previous PR comments
 11. Issues that are only relevant if an unlikely edge case occurs with no supporting evidence it will
+12. Plan deviations the PR body names and justifies, unless the stated reason is wrong
+13. Planned scope that belongs to a later phase or a different PR than the one this PR claims to deliver
+14. Justified improvements over the plan. They go to the run summary as plan-update recommendations, never to the PR comment.
 
 ---
 
@@ -231,7 +268,8 @@ Do not flag any of the following categories. Pass this list to anchoring agents 
 | 1, 7 | Haiku | Lightweight eligibility gate |
 | 2 | Haiku | File path listing only |
 | 3 | Haiku | PR summary |
-| 4 (x5) | Sonnet | Deep parallel analysis |
+| 3b | Haiku | Plan discovery. Mechanical lookup, and the cheap gate that keeps Lens 6 from dispatching on a PR with no plan |
+| 4 (x5, x6 when 3b found a plan) | Sonnet | Deep parallel analysis. Lens 6 is judgment-bound comparison, the same tier as the other five |
 | 5 (x N issues) | Haiku | Anchoring against a fixed rubric |
 | 5b | Orchestrator | Mechanical gate and merge, no dispatch |
 | 5c (x N survivors) | Sonnet | Adversarial verification needs a real read of the code, not a rubric application. Haiku is too cheap for this step. A validator that rubber-stamps is worse than no validator. |
@@ -283,3 +321,7 @@ An earlier rubric already produced anchored values (0, 25, 50, 75, 100), but the
 Three changes close it. Step 5 now anchors confidence to exactly one of five values, each with a behavioral criterion, and the floor moves to anchor 75. Step 5b merges and gates: any 75 or 100 without a verbatim `file:line` quote is demoted to 50, and two independent lenses flagging the same issue promote it one anchor step without ever bypassing the quote gate. Step 5c gives every surviving finding its own fresh Sonnet validator, told it has no commitment to the finding, answering three questions: is it real, did this diff introduce it, is it not handled elsewhere. Every rejection's reason is recorded so the loss is auditable. The Constraints now state the anchor rules.
 
 The general lesson is false precision. A threshold set against a continuous scale, applied to output from an anchored scale, drops a whole tier and looks like it is working.
+
+**2026-10-15. Version 1.2.** Adds Lens 6, plan alignment, and Step 3b, plan discovery.
+
+The five lenses ask whether the code is right. None asked whether it is the code the plan authorized. The new lens adds four things: a four-way verdict (a bare "differs" is noise), the unplanned-addition class, two-sided quoting (plan line plus diff line) and the absence rule for unimplemented scope (name the search). Step 3b's `no-plan-found` keeps the lens from costing a Sonnet dispatch on a PR with nothing to compare against. Prove it can fail before trusting it: run it on a fixture with planted departures and confirm it catches them, and rerun that fixture after any edit to the Lens 6 text.

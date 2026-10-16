@@ -1,7 +1,7 @@
 ---
 name: jacket-meeting
 description: Run a full multi-lens team meeting across all active jackets. Twelve-step flow from convene through close. The operator chairs, the knowledge-design lens synthesizes, each jacket prepares its perspective independently, and the session closes with a structured decision record.
-version: 1.1
+version: 1.2
 ---
 
 # Jacket Meeting
@@ -48,14 +48,20 @@ Each jacket gives a short read on its agenda items. What it owns. What it needs 
 
 **Pin the shared facts before the lenses go out.** Before each lens prepares its perspective, confirm the facts the whole room agrees on: what shipped, what the live numbers are, what's already approved and running. Pin these once and hand them to every lens. Divergence in perspective is the point of this step. Divergence in the starting facts is just noise.
 
+Every line in the pinned pack that says something is open or pending is read at its own record, never a commit message or summary, and the source is named beside it. A closing line beside a body that still states the old truth counts as closed.
+
+Pin four separate boxes: facts, assumptions, unknowns and your values. Facts are verified. Assumptions are named as such. Unknowns stay open. Your value judgments belong to you, and no lens settles them for you.
+
 **Have each lens prepare its perspective independently.** Each jacket develops its view in isolation from the others, on whatever that lens judges most pressing for the room. Not a shared question. Jacket-chosen focus, jacket-chosen angle.
 
 Independent preparation is what makes the meeting worth running. When one mind considers five angles in one pass, the angles average toward each other and blur. Separate preparation keeps each lens uncontaminated. Five genuinely independent views produce a real meeting with real differences. The value of the meeting is proportional to how separate the perspectives were before they arrived.
 
-**Two guardrails for every lens's preparation (mandatory):**
+**Three guardrails for every lens's preparation (mandatory):**
 
 1. **Pin the design, not just the recent activity.** Each lens's view should include the standing approved specs for its domain, not only what happened this week. A lens looking at a live system should have that system's approved design in hand before it forms an opinion.
 2. **State is not design.** Live data shows what has happened, never what was intended. Before naming a gap or proposing a build, confirm no approved spec already schedules that thing for a later step. An empty table at low usage is usually an early sequence, not a void.
+
+3. **End every lens with a decision check.** What would move this lens, and where its blind spot could shape the read.
 
 When a meeting has an obvious shared object, all lenses may point at it. That's the topic at work, not a deviation.
 
@@ -72,6 +78,8 @@ Your knowledge-design lens holds the synthesizer seat. It's an integrator, not a
 It names alignments, tensions and trade-offs in plain language, using the room's own words. It describes what the room actually said before it recommends anything. It preserves visible dissent and tags what's still contested. It doesn't flatten real disagreement into a bland compromise.
 
 Any jacket can record a minority report: principled disagreement carried into the meeting note without blocking the decision.
+
+Name the core tension in one line before the options. Where all lenses agree, say it is one model's read through several lenses, not independent confirmation, and offer an outside view from a different model.
 
 ### Step 8: Options and Decision Points
 
@@ -96,13 +104,15 @@ Do-now items execute before the meeting closes. Rapid, checklist-style. Plan-for
 
 The meeting doesn't turn into a build session. Scoped work sessions handle the actual build.
 
+**Catch-up (maintenance-mode) meetings.** When the meeting exists to clear accumulated work, found work runs inside the meeting. Route out only multi-session work, and do it at an explicit decision point where you pick the vehicle. Your review of what the lenses did comes before closeout.
+
 ### Step 11: Meeting Note
 
 Written at close. A structured artifact in a dated folder for this meeting.
 
 Mandatory sections: Decision Question, Decisions Made, Options Considered, Key Arguments, Dissenting Views (minority report), Action Items with owner and lane.
 
-The meeting note cross-links all five lens perspectives prepared in Step 5. This note is the input your weekly synthesis reads.
+The meeting note cross-links all five lens perspectives prepared in Step 5. This note is an input to the closing synthesis.
 
 Meeting note frontmatter for those using a file-based system:
 
@@ -119,14 +129,9 @@ decision_mode: [consult | joint | tell]
 
 Energy beat. Next-meeting pointer set. The meeting is alive, not procedural.
 
-**Week-close synthesis gate.** Before closing, assess whether this meeting closes your review cycle.
+**Synthesis closes every meeting.** Every meeting closes with the synthesis, covering the stretch since the last one, run back to back with closeout. It is a distinct act after the meeting note is sealed. It reads the 1:1 captures and meeting notes since the previous synthesis. It serves the pattern, not the decision.
 
-- **Is this your week-closing meeting?** Yes when it's the last meeting before your weekly review. The test is whether the week's material is complete enough to read as a pattern, not the calendar day alone.
-- **If yes:** produce your weekly synthesis now, as a distinct act after the meeting note is sealed. It reads the week's 1:1 captures and the meeting note just written. This synthesis serves the pattern, not the decision. It goes to your weekly review.
-- **If yes but the session has run out of room:** do not drop the synthesis silently. Set an explicit named obligation on the meeting note and at session closeout. The obligation names the expected deliverable and where it lands. The next session loads it. Example: "Produce weekly synthesis before Friday's review."
-- **If no, an early-week meeting with the week still running:** defer by design. The week is incomplete. Name the meeting that owns the synthesis and carry it forward explicitly.
-
-The gate never lets the synthesis evaporate. It's produced, or it's an explicit named obligation.
+If the session is out of room, do not drop the synthesis silently. Set a named carry-forward obligation on the meeting note and at session closeout. The obligation names the expected deliverable and where it lands. The next session loads it.
 
 ## Perspective Dispatch
 
@@ -147,9 +152,9 @@ Saving the perspectives makes the synthesis auditable. It can be traced back to 
 The skill keeps two synthesis acts distinct. They never collapse into one.
 
 - **In-meeting synthesis** is Step 7. The knowledge-design lens harmonizes in real time, in the room, for your decision. It serves the decision.
-- **Weekly synthesis** is a separate artifact. Your knowledge-design lens reads the week's 1:1 captures and the meeting note, then produces a pattern read with Three Laws flags, cross-lens connections and recommendations. It serves the pattern and goes to your weekly review.
+- **Closing synthesis** is a separate artifact. Your knowledge-design lens reads the 1:1 captures and meeting notes since the last synthesis, then produces a pattern read with Three Laws flags, cross-lens connections and recommendations. It serves the pattern.
 
-The weekly synthesis reads the meeting's output. It can't be the same act.
+The closing synthesis reads the meeting's output. It can't be the same act.
 
 **Two sensitivity reads worth tracking across meetings:** Where did the Challenge and Illumination reflex fire this week, and where didn't it? Where did a community or customer read move from a named person to an aggregate frame? Both as sensitivity reads, not scored metrics.
 
@@ -174,8 +179,8 @@ Set the model explicitly on every dispatch. Never silently inherit the top tier.
 - The meeting topic stays wide. No hardcoded recurring theme.
 - You chair. The knowledge-design lens synthesizes. It integrates, it doesn't decide.
 - Independent preparation keeps lenses uncontaminated. Perspectives develop before they meet.
-- Every lens carries the two Step 5 guardrails: pin the approved design for the lens, and read live state as what has happened rather than what was designed.
-- The two synthesis acts stay distinct. In-meeting synthesis serves the decision. Weekly synthesis serves the pattern.
+- Every lens carries the Step 5 guardrails: pin the approved design for the lens, read live state as what has happened rather than what was designed and end with a decision check.
+- The two synthesis acts stay distinct. In-meeting synthesis serves the decision. Closing synthesis serves the pattern.
 - The meeting is a decision room. Plan-for-later work routes out to scoped sessions.
 - Energy beat at open and close. The meeting is alive, not procedural.
 

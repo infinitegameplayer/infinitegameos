@@ -1,7 +1,7 @@
 ---
 name: jacket-session
 description: Run a 1:1 (or two-lens) advisory session with a named AI advisor jacket. Loads jacket context, runs the universal session flow with the Three Solutions Rule and Challenge and Illumination active, and closes with a structured capture.
-version: 1.1
+version: 1.2
 ---
 
 # Jacket Session
@@ -94,6 +94,8 @@ Write a session capture in a dated session log folder for this jacket.
 
 Capture sections (mandatory): Since Last Session, Flywheels Touched, Decisions and Approvals, Experiments Running, Smooth Transition Notes, Easier Rotation Notes, Increased Output Notes, Open Threads.
 
+**Surfaces.** A dashboard section generated from another source takes its decisions at that source, so a decision lands where the generated block reads from. Every other dashboard section, and each running-note section headed with an "as of" date, is the jacket's judgment. Date each judgment section "as of". Rewrite what changed, advance the date of every section you reviewed even if unchanged, and leave unreviewed sections at their old date, so an old date means "not reviewed since."
+
 Next-session pointer set. Session ends.
 
 ## External Research Consults
@@ -124,7 +126,7 @@ A third jacket brought in as a filter step loads only its context file, only at 
 
 **Voice discipline.** Jacket-rotating, never blended. Sentences belong to one jacket or the other. Don't let the voices merge into a third character.
 
-**Three Solutions Rule in two-lens mode.** Each jacket presents three options from its own lens. If both lenses converge on the same recommendation, name the convergence explicitly. That's the test of genuine cross-jacket alignment. If lenses diverge, both options surface separately and you decide which to weight.
+**Three Solutions Rule in two-lens mode.** Each jacket presents three options from its own lens. If both lenses converge on the same recommendation, name the convergence explicitly. Convergence here is a hypothesis, not corroboration: both lenses are held by one AI in one context. Note it, then check against live data or a second model. A full team meeting with isolated workers earns real corroboration. If lenses diverge, both options surface separately and you decide which to weight.
 
 **Capture.** A single capture in a dated session log named for both jackets. Both running notes update at close. Both dashboards refresh.
 

@@ -9,7 +9,7 @@
     {
       "name": "source-harvest",
       "description": "Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate what serves your system.",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -33,7 +33,7 @@
     {
       "name": "pattern-harvest",
       "description": "Reflective session-level pattern extraction. Three parallel lenses produce a numbered recommendation list the operator selects from. Run before session closeout on substantial sessions.",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -59,7 +59,7 @@
     {
       "name": "plan-challenger",
       "description": "Adversarial pre-build pass that challenges a plan before execution begins. Five angles, one verdict.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -107,7 +107,7 @@
     {
       "name": "pending-plan-implementation",
       "description": "Execute approved plans with checkpoint gates, breadcrumb logging and outcome summaries.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -131,7 +131,7 @@
     {
       "name": "plan-harvest-and-retire",
       "description": "Retire a stalled or indefinitely-deferred plan without losing its value. Candidate scan, harvest, distribute, sweep, archive and codify.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -154,8 +154,8 @@
     },
     {
       "name": "pr-code-review",
-      "description": "Automated pull request review for your repos. Five parallel agents, confidence scoring, convention-file compliance, and GitHub comment posting.",
-      "version": "1.1.0",
+      "description": "Automated pull request review for your repos. Six parallel lenses (the sixth, plan alignment, runs when a governing plan is found), anchored confidence, convention-file compliance and GitHub comment posting.",
+      "version": "1.2.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -179,7 +179,7 @@
     {
       "name": "skill-creator",
       "description": "Build new skills autonomously. Interview, research, write a complete SKILL.md, propose the install path.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -203,7 +203,7 @@
     {
       "name": "researcher",
       "description": "Parallel sub-agent research on a topic, aggregated into a structured report. Up to 4 independent workers, synthesized output.",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -227,7 +227,7 @@
     {
       "name": "social-batch-drafting",
       "description": "Draft a 9-post social batch (3 days × 3 platforms) from any source. Voice rules enforced before drafting begins. Approved batch becomes the durable handoff to the queue skill.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -252,7 +252,7 @@
     {
       "name": "social-batch-queue",
       "description": "Execute an approved 9-post social batch. Image rendering (local self-hosted or any compatible pipeline), asset staging, scheduler integration with channel discovery and channel-health check, and post-publish handoff. Pairs with Social Batch Drafting.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -516,7 +516,7 @@
     {
       "name": "self-healing",
       "description": "Autonomous error recovery during implementation sessions. Diagnose root cause, apply fix, continue without stopping for every recoverable mistake.",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -541,7 +541,7 @@
     {
       "name": "session-closeout",
       "description": "Fast session close: decisions ruled first, breadcrumb what you touched, refresh your handoff note, commit with a readable body and a paste-ready prompt when the work continues.",
-      "version": "1.3.0",
+      "version": "1.4.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -566,7 +566,7 @@
     {
       "name": "playwright",
       "description": "Browser automation via headless Chromium. Scrape pages, extract structured data, interact with web interfaces. Returns clean JSON not screenshots.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -591,7 +591,7 @@
     {
       "name": "anti-ai-edit-pass",
       "description": "Structured editing pass that finds and removes AI writing tells from long-form manuscripts. Eight sweep categories, Sovereign review gate, verified application.",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -616,7 +616,7 @@
     {
       "name": "jacket-session",
       "description": "Run a focused 1:1 advisory session with a named AI lens. The universal session flow with the Three Solutions Rule and Challenge and Illumination active, closing in a structured capture.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -640,7 +640,7 @@
     {
       "name": "jacket-meeting",
       "description": "Run a multi-lens team meeting across all your AI advisory jackets. A twelve-step flow from convene to close. Each lens prepares independently, one seat synthesizes, you decide.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",
@@ -664,7 +664,7 @@
     {
       "name": "autonomous-improvement-session",
       "description": "Set your system improving on its own when you have spare capacity. Safe, additive, self-contained work runs under a threshold model with a permanent floor of actions it never takes on its own.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",

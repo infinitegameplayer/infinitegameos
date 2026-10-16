@@ -2,7 +2,7 @@
 name: autonomous-improvement-session
 description: Use when you have spare capacity and want to set your system improving without active attention. Operator-invoked only, never scheduled. Safe, additive, reversible hygiene work runs under a threshold model with a permanent floor of actions the agent never takes on its own.
 status: active
-version: 1.1
+version: 1.2
 ---
 
 # Autonomous Improvement Session
@@ -70,6 +70,20 @@ Four buckets:
 3. **New menu candidates and autonomy moves.** Improvement types the research rotation surfaced, plus any proposed autonomy-level move. You accept, decline or reshape each. Accepted candidates get woven into the menu in the return session.
 4. **Proposed plans.** Anything bigger than one session of work, or any governance, memory or configuration class change. The agent drafts a cliff-note summary, not a vague question. The board entry is "approve plan creation?" Only surface plans you'd recommend creating. Every item in this bucket carries a positive recommendation and the reason for it.
 
+**Size each entry by what the change can break.** Do not guess what you already know. Size to the diff.
+
+- Routine and reversible (an index line, a slug, a routed note, a dead reference): one line, batched. Over-explaining safe work teaches skimming, and skimming waves through the one entry that mattered.
+- Judgment (a pattern-setting choice, a nuanced routing call, an adoption): one paragraph. The situation, what happens if nothing is done, the recommendation.
+- Consequential (a credential, an outward send path, the Permanent Floor, a governance or configuration class change or this skill's own steps): full ceremony. The stake in your terms. Three real options with doing nothing costed at its true price. The recommendation and what it gives up. The tell: how you would know it was wrong and what to watch. Reversibility: whether it can be undone and how fast.
+
+If you say you do not understand, the decision waits and the agent explains it first in plain terms. A gate you cannot operate is not a gate.
+
+**A menu is not judgment.** A decision entry earns its line only if it is yours or touches the Floor. A call the agent was competent to make is already done, in one line, past tense, in the Completed bucket. Work lands in the session that found it. A run that ends in a queue of homework has moved the drift rather than met it.
+
+**Your hands.** Before an item goes to a hands list, ask whether the agent can do it on your word. If so it is a decision, not a hands item. The hands list holds only what you alone can physically do. Keeping the merge click on external pull requests is an optional posture, not a default.
+
+**Deliver the whole board in the closing message.** Every decision and plan entry ends with `Verified: <live check>, <result>`. The test is answerability: a reader who opens no file can answer every entry from the message alone.
+
 ---
 
 ## Starter Menu
@@ -103,7 +117,7 @@ Grep active containers for files with a `status: superseded` or `status: retired
 Eligibility: condition-based. Eligible whenever a superseded or retired file sits in an active container.
 
 **T1-7: Runtime log rotation.**
-For each operational log that exceeds its line cap (default: 2000 lines), truncate to the last N lines. This is operational maintenance of a transient append log, not content deletion. List stale operational files (30+ days old, not active state files) as operator-approved removal candidates. Do not delete them. File deletion is the Permanent Floor.
+For each operational log that exceeds its line cap (default: 2000 lines), truncate to the last N lines. This is operational maintenance of a transient append log, not content deletion. List stale operational files (30+ days old, not active state files) as operator-approved removal candidates. Do not delete them. File deletion is the Permanent Floor. List literal filenames, never ranges or shorthand, in the purge-surfaced list.
 Eligibility: condition-based. Eligible whenever a named operational log exceeds its line cap.
 
 **T1-8: Skill mandatory-sections completeness sweep.**
@@ -204,9 +218,15 @@ Dispatch all Tier 2 items in parallel as Sonnet subagents (read-only scans are s
 
 **Single-context workers.** Every worker prompt states: run single-context, do not spawn subagents. A worker that fans out returns narration about its own children instead of findings, and per-item results get lost in the hop. This rule applies to every dispatched worker, Tier 1 editors included, not just Tier 2 scans.
 
+**Every scan returns, per item, a count, the instrument used and a reason if it did not run.** A quiet monitor is a claim of health. Read its run log for skipped checks and treat a skipped check as a finding.
+
+**Databases and send tools.** A run reads databases through a read-only connection only. It never applies migrations and never calls any scheduler or send tool that publishes.
+
+**Circuit Breaker for monitor-filed issues.** Close a monitor-filed issue only when the condition that filed it has cleared, and put the evidence in the closing comment. A finding that is still true stays open, and the monitor comments on it rather than filing again.
+
 ### Step 8: Research rotation (every run)
 
-The research rotation is the engine of menu growth. It rotates through the research categories below. Keys how many it runs to how many categories exist: six or fewer categories means one per session, more than six means two per session. Read `research_state`, pick the least-recently-researched categories, dispatch one Sonnet worker per selected category. Each returns a self-ranked top-5 candidate list with a one-line "why this beat the rest." Candidates flow into Step 9 and surface on the decision board's bucket 3.
+The research rotation is the engine of menu growth. It rotates through the research categories below. Research one category per run. Rank what the worker returns with live defects first, duplicates second and new items last. Fix safe defects now rather than parking them. Read `research_state`, pick the least-recently-researched category and dispatch one Sonnet worker for it. It returns a self-ranked top-5 candidate list with a one-line "why this beat the rest." Candidates flow into Step 9 and surface on the decision board's bucket 3.
 
 **Research categories:**
 1. **R1: External practices and tooling.** What the broader agentic and AI field is doing that your system could adopt. Force external sources with URLs.
@@ -237,7 +257,7 @@ When a decision is nuanced, present Three Solutions: the situation, three real o
 
 Append a run entry at the top of the log body. Update the frontmatter: set new last-run dates in `menu_state` for items that ran, set new last-run dates in `research_state` for each category researched, increment `run_counter`, set `last_run`. Leave `auto_execute_threshold` unchanged unless a return-session ratified climb moved it.
 
-Write the four-bucket board to the decision board file, replacing the prior run's open decisions. Present the same board as the closing output.
+Write the four-bucket board to the decision board file, replacing the prior run's open decisions. Present the same board as the closing output, whole, in the closing message. Every decision and plan entry ends with `Verified: <live check>, <result>`.
 
 Closing line: "Autonomous Improvement Session complete. [N] items ran. Decision board: [A] approvals and questions, [B] menu candidates, [C] proposed plans. Log and board updated."
 
@@ -260,6 +280,14 @@ The operator's board answers encode forward. This is the learning loop. The skil
 An item's autonomy level lowers, or the skill-level `auto_execute_threshold` rises, only through a ratified decision. The threshold widens from proven workflows, never from projection.
 
 The safety guard sits in the Permanent Floor, not in the climb mechanics. A move that would touch an outward surface, delete, move a canonical file or self-edit breaches the floor and fails regardless of how high the threshold has climbed.
+
+
+### The Learning Loop
+
+- Keep a ledger of rulings in the run log. A finding already ruled on never returns to the board.
+- A scan that cannot be shown to catch a planted defect reports "unverified", not "clean".
+- At each run start, re-check the previous run's fixes. Mark each held, regressed, reverted or unverifiable.
+- A regressed fix is re-landed. A reverted fix goes to you, because a revert is a ruling.
 
 ---
 
@@ -319,6 +347,8 @@ No threshold, climb, candidate or forward rule breaches these. Ever.
 - No direct push to any main branch. Every external change goes through a build-verified pull request.
 - No self-modification. The skill never edits its own menu, threshold, autonomy levels, this SKILL.md, your auto-memory file or your settings file autonomously. Those move only after you ratify a decision-board entry.
 
+**Scope of the self-modification ban.** It covers this SKILL.md, its CLAUDE.md, every reference and catalog file and any script that applies its rules. The deletion and write bans bind shell commands and every file type, not only the editor tool.
+
 ### The Graduated Lane (opens, earns its climb)
 
 Two classes of action, both additive or corrective, never voice-bound, always reversible.
@@ -328,6 +358,8 @@ Two classes of action, both additive or corrective, never voice-bound, always re
 
 A fix enters at Level 3, propose-only. When you authorize a class, the form is a branch plus a pull request with a green build. You merge. A narrow class with a clean track record climbs to auto-open PR, then to auto-merge on green build, one ratified step at a time. The part that climbs away is the merge click, never the build gate.
 
+Read a repo's default branch before opening a pull request. Never assume it is called main.
+
 ### Operational Constraints
 
 - Operator-invoked only. The skill never auto-fires and never schedules itself.
@@ -335,36 +367,30 @@ A fix enters at Level 3, propose-only. When you authorize a class, the form is a
 - Discovery candidates that would breach the permanent floor stay in Patterns Noticed. They're never surfaced as menu candidates.
 - If any Tier 1 item errors, log the error, skip the item, continue. Do not halt the whole session for one failure.
 - If the log file is missing or malformed at Step 1, halt. State integrity is foundational.
+- Stage and commit only the paths this run touched. Never add everything, because sibling sessions may hold uncommitted work.
+
+---
+
+## External Orientation
+
+> **Ambassador posture.** Primary strategy: fortify the system. Every action is reversible, every artifact is logged, every outward surface is gated. The log is the durable ledger of the skill's behavior over time.
+> Secondary: observe before acting. Tier 2 scans and the research rotation are intelligence-gathering posture. Observe fully before recommending. Findings return to you. The skill never acts on its own observations beyond menu-bounded execution.
+> External surfaces touched (read-only by default): outbound URLs for link-rot scans (HEAD or short GET only, no auth bypass) and, under the graduated lane, external repos as a write-via-PR surface (additive or corrective fixes only, never a direct push to a main branch, never a copy or voice change).
+
+Two external write forms are gated:
+
+- A pull request only. Read the repo's default branch first. Never push to it directly.
+- An issue close only when the condition that filed the issue has cleared, with evidence in the closing comment.
 
 ---
 
 ## Model Routing
 
-Dispatch the cheapest model that does the job well. Before each delegated step, ask whether a smaller model would produce equivalent output.
+The orchestrator runs at the tier you opened the session with. Set `model` explicitly on every subagent dispatch. Never silently inherit.
 
-| Work type | Model |
-|---|---|
-| Mechanical lookups, deterministic commands, structured extraction against a spec | Haiku |
-| Multi-step synthesis, drafting, diagnosis, most worker dispatch | Sonnet |
-| Architectural judgment, plan design, judgment-dense synthesis | Opus |
-
-Set the model explicitly on every subagent dispatch. Never silently inherit the top tier.
-
-**Specific step routing:**
-
-| Step | Default model | Rationale |
-|---|---|---|
-| Step 1: Load state | Haiku | Mechanical YAML read with known schema. |
-| Step 2: Compute eligibility | Haiku | Deterministic date math, no judgment. |
-| Step 3: Select items by priority | Sonnet | Light prioritization across heterogeneous items. |
-| Step 4: Announce plan | Sonnet | Operator-facing prose with capacity framing. |
-| Tier 1 mechanical items (T1-1, T1-2, T1-4) | Haiku | Mechanical path and slug corrections. |
-| Tier 1 judgment items (T1-3 anti-AI sweep) | Sonnet | Pattern-match with light inline-versus-fix judgment. |
-| Step 7: Tier 2 worker dispatch | Sonnet | Read-only scans with structured synthesis. |
-| Steps 6 and 8b: opportunistic capture and self-refinement | Opus | Reflection on what was just observed; judgment-dense. |
-| Step 8: Research rotation workers | Sonnet | Parallel research workers per category. |
-| Step 9: Synthesize the decision board | Opus | Classification, tier and autonomy judgment. |
-| Step 10: Write log entry and board | Sonnet | Structured prose with state update. |
+- Scan, research and editor workers run on Sonnet.
+- Mechanical lookups and deterministic commands run on Haiku.
+- No worker runs above the orchestrator's tier.
 
 ---
 
@@ -381,4 +407,4 @@ If Pattern Harvest isn't installed yet: [Install Pattern Harvest via Infinite Ga
 
 ## Refinements
 
-*(Empty. Populated when execution mistakes occur during sessions.)*
+- v1.2: Added sizing of board entries by blast radius, the menu-is-not-judgment test, the hands-list test and the answerable-without-opening-a-file closing board with a Verified line. Added literal filenames in the purge list, per-scan counts and instruments, the quiet-monitor rule, the Circuit Breaker for monitor-filed issues, read-only database access, the Learning Loop, the self-modification scope statement, path-scoped commits, default-branch reads before pull requests, one research category per run, corrected model routing and an External Orientation section.

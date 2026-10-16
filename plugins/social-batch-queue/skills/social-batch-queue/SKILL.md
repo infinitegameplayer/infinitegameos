@@ -22,7 +22,7 @@ This skill is a starting point, not a finished tool. The reference stack (fal.ai
 
 The structural discipline is the portable part: Desktop review pause before queuing, self-validation on every render, heading overflow detection from the actual render rather than character count alone, channel IDs discovered at run-time rather than hardcoded, native-isolation test as the first failure-protocol move. That discipline holds across every stack combination below.
 
-**Image pipeline substitutions.** Background generation works with any tool that produces a 16:9 PNG at your size target. Midjourney, DALL-E, Adobe Firefly, a Stable Diffusion endpoint or a manual export all land in the same slot. Card rendering works with any tool that supports programmatic text and image replacement, whether a local headless browser running an HTML/CSS template, Canva via MCP, or a manual design-tool pass. The Refinements section is where you'll log your template's specific character budgets and any stack-specific offsets as you discover them.
+**Image pipeline substitutions.** Background generation works with any tool that produces a PNG in your card's aspect ratio at your size target. Midjourney, DALL-E, Adobe Firefly, a Stable Diffusion endpoint or a manual export all land in the same slot. Card rendering works with any tool that supports programmatic text and image replacement, whether a local headless browser running an HTML/CSS template, Canva via MCP, or a manual design-tool pass. The Refinements section is where you'll log your template's specific character budgets and any stack-specific offsets as you discover them.
 
 **Scheduler substitutions.** Buffer is the reference. Hypefury, Typefully, Later, Publer, native platform scheduling or any scheduler with an API and channel discovery all work in the same slot. The key rule stays regardless of tool: discover channel IDs at run-time. Don't hardcode. A disconnect rotates the ID on most platforms.
 
@@ -49,7 +49,7 @@ This skill names a specific stack as the reference implementation, then frames e
 
 **Step 0. Verify infrastructure.** Confirm scheduler auth (e.g. Buffer MCP `get_account`, or your scheduler's equivalent). Confirm credentials present for your image-generation pipeline. On any auth failure, halt and surface the fix before proceeding.
 
-**Step 0.5. Archive sweep.** Before processing the target batch, sweep your active social drafts directory and move fully-posted batches to your archive folder. Eligibility: batch filename pattern + `status` is `scheduled` or `executed` + last scheduled date has passed. Skip organic posts, recurring queues and reference docs. This keeps the active folder clean while the Drafting skill's look-back reads from both the active and archive directories. The sweep runs before Step 1 so the active folder reflects current state before you read.
+**Step 0.5. Archive sweep.** Before processing the target batch, sweep your active social drafts directory and move fully-posted batches to your archive folder. Eligibility: batch filename pattern + `status` is `scheduled` or `executed` + last scheduled date has passed. Organic posts archive once submitted, stamped with `archived: true` and a posting-confirmed flag. When no posted URL was logged, set confirmed to false and add a note saying so. Any asset made by a separate script archives with the cards. Confirm the working image folder holds nothing from this batch. Skip recurring queues and reference docs. This keeps the active folder clean while the Drafting skill's look-back reads from both the active and archive directories. The sweep runs before Step 1 so the active folder reflects current state before you read.
 
 **Step 1. Read the approved batch draft.** Parse the batch file's frontmatter. Read the `batch_state` field first. If `batch_state` is past `draft` (e.g. `images-generated`, `desktop-reviewed`, `uploaded`), resume from the corresponding step below; do not repeat completed steps. Then parse target page, scheduled dates, campaign, source and body sections (Day 1 Hook, Day 2 Carousel slides, Day 3 Action, image brief, headlines, per-platform body copy, hashtags, CTA closes).
 
@@ -60,7 +60,7 @@ Resume entry points by `batch_state`:
 - `uploaded`: begin at Step 6 (Channel resolution).
 - `scheduled`: verify Step 9 log completeness; proceed to Step 10 if not done.
 
-**Step 2. Generate the Day 3 background image.** Day 3 typically uses a generated cinematic background per the brief in the batch file. Run your image-generation pipeline. Output to your image source directory using a slug-stable naming convention (`YYYY-MM-DD-batch-slug.png`). Save a copy to the Desktop review folder as `fal-preview-day3-background.png` (or equivalent for your pipeline).
+**Step 2. Generate the Day 3 background image.** Day 3 typically uses a generated cinematic background per the brief in the batch file. Run your image-generation pipeline. Request the background in the card's own aspect ratio. Output to your image source directory using a slug-stable naming convention (`YYYY-MM-DD-batch-slug.png`). Save a copy to the Desktop review folder as `fal-preview-day3-background.png` (or equivalent for your pipeline).
 
 **Step 3. Render the three template designs.** Run your image rendering pipeline against the batch draft. The reference pipeline is a local self-hosted renderer that accepts the batch's copy and image brief as input and outputs all three days in a single command.
 
@@ -70,7 +70,7 @@ Per template:
 - **Day 2 Carousel (8 slides):** all 8 slides rendered with headings and body text in a single pass. Export 8 separate PNG pages (1080×1080 each) for Instagram and Facebook, plus a single PDF for LinkedIn. The LinkedIn PDF includes a clickable link annotation on the close slide.
 - **Day 3 Action:** headline replacement plus background image swap. If using a local renderer, the background is read from a local path directly; no CDN pre-staging required before render. If using a hosted design tool, pre-stage the background to your asset host before the template can ingest it. Single-page PNG, 1080×1080.
 
-**Self-validation (local renderer).** A well-configured local renderer exits nonzero on any card under 5KB or any slide heading that renders more than 2 lines. Treat a nonzero exit as a hard halt: fix the offending copy or template before proceeding. Heading overflow detection from the actual render is more reliable than character-count estimates alone.
+**Self-validation (local renderer).** A well-configured local renderer exits nonzero on any card under 5KB or any slide heading that renders more than 2 lines. Treat a nonzero exit as a hard halt: fix the offending copy or template before proceeding. A font that never loaded is a failed render, so treat it the same way. Periodically prove each render gate fails on a planted bad card. Heading overflow detection from the actual render is more reliable than character-count estimates alone.
 
 **Download and validation (hosted design-tool stack).** After each export call returns URLs, download to the Desktop review folder. Sequential or batches of 3 to 4 maximum. Parallel batches above 5 can hit signed-URL race conditions on hosted CDNs. After every download, validate each file by size: PNGs must be greater than 5KB, PDFs greater than 500KB. Any file under threshold is an error response disguised as HTTP 200. Re-export and re-download sequentially for any failed file before proceeding to Step 4.
 
@@ -99,7 +99,8 @@ Capture each post's scheduler permalink as it queues.
 
 **Step 10. Surface manual post-publish steps.** Final report names the operations the scheduler can't do and the operator handles natively:
 
-- Platform-native operations the scheduler doesn't support (collab tags, first-comment hashtags, Instagram broadcast features, LinkedIn document re-pinning).
+- Platform-native operations the scheduler doesn't support (first-comment hashtags, Instagram broadcast features, LinkedIn document re-pinning).
+- Collaborator tags. Queue these posts normally and edit the tag in after publish. A collaborator is never a reason to hold a post for hand-posting. Name each post to edit after publish in the report.
 - Failure flags: any post that hit a scheduler error during Step 8 surfaced separately with a directive to run a native-isolation test (post directly on the platform first; that's the cheapest diagnostic).
 
 ## Image Generation Reference
@@ -119,7 +120,7 @@ Capture each post's scheduler permalink as it queues.
 
 ### Day 3 Action (background-swap template)
 
-- Generated background image: cinematic, 16:9 (1792×1024), no figures, photographic realism.
+- Generated background image: cinematic, in the card's own aspect ratio, no figures, photographic realism. A 16:9 image under a portrait card loses most of its width.
 - One headline replacement plus one background image replacement.
 - Single-page export, PNG only, 1080×1080.
 

@@ -2,7 +2,7 @@
 name: self-healing
 description: Use when an AI interface hits an error mid-task and should diagnose, fix and continue autonomously without stopping for every recoverable mistake.
 status: active
-version: 1.2
+version: 1.3
 ---
 
 # Self-Healing
@@ -26,7 +26,7 @@ Activate explicitly if you notice your AI stopping unnecessarily on routine erro
 3. Apply the most direct fix.
 4. Confirm the fix worked: re-run the failed command or check the specific symptom directly. A fix applied is not a fix verified.
 5. Continue the task without surfacing to you unless the error is governance-class (see Constraints).
-6. If the same error recurs after verification, surface it. Do not loop silently.
+6. If the fix does not hold, return to step 2 with what the failure taught. Up to three fixes, each from a fresh root-cause read and never a repeat of the last one. After the third fails, stop and surface it. Do not loop silently.
 
 **Durable record.** A recurring error (one that fails verification and needs a second attempt) or a governance block is worth keeping. In a code repo, write it to that repo's `docs/solutions/` folder, one learning per file. Outside a code repo, name it in the session's commit message. Said once in chat, it is gone: the next session should find it without hitting the same wall first.
 
@@ -38,7 +38,7 @@ Activate explicitly if you notice your AI stopping unnecessarily on routine erro
 | Missing file or directory | Create if clearly intentional, continue |
 | Wrong path | Correct path, continue |
 | Missing dependency (npm, etc.) | Propose install before running. Cost and side-effect gate applies. |
-| Test failure | Diagnose, fix, re-run once. Surface if still failing. |
+| Test failure | Diagnose, fix, re-run. Up to three fixes, then surface. |
 | Permission or governance block | Surface immediately. Do not attempt to bypass. |
 | External API error | Surface immediately. Do not retry without operator awareness. |
 
@@ -46,8 +46,16 @@ Activate explicitly if you notice your AI stopping unnecessarily on routine erro
 
 - Never attempt to auto-fix errors blocked by governance hooks or operator approval gates. Surface those immediately. Name the specific hook or gate that blocked the operation so the operator can make an informed decision, not just "permission error."
 - Never auto-retry external API calls (image generation, transcription, CRM tools, etc.). Each call has cost or side effects.
-- Never silently loop on a fix that is not working. One attempt, then surface.
+- Never silently loop on a fix that is not working. Up to three fixes, each from a fresh diagnosis, then surface. This ceiling covers recoverable errors only. Governance blocks and external API errors still surface immediately.
 - Structural file operations (move, rename, delete) on important or registered files that produce errors must always surface. Approval gates apply to the operation itself, not just the error. Do not retry a failed structural operation without operator awareness.
+
+## External Orientation
+
+This skill makes no outward call of its own. Recovery stays inside your project's structure.
+
+When the failure is external (an API, a service, a hosted tool), stop and return it to the operator. Never auto-retry an external call.
+
+A missing dependency is proposed before it installs. The operator decides what enters the project.
 
 ## Model Routing
 
@@ -75,3 +83,4 @@ If Pending Plan Implementation isn't installed yet: [Install Pending Plan Implem
 ## Refinements
 
 - [2026-10-02] A fix was applied and the task moved on with no check that the symptom was gone. Version 1.2 adds the verification beat between apply and continue, and the durable-record rule so a recurring error lives somewhere other than the transcript.
+- [2026-10-15] A fix that did not hold ended the loop after a single retry, so a second honest diagnosis never happened. Version 1.3 allows up to three fixes, each from a fresh root-cause read, and adds the External Orientation block.

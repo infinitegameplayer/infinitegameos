@@ -2,7 +2,7 @@
 name: session-closeout
 description: "Use when wrapping up a session that made commits or governance changes, including when the work continues in a new session and needs a continuation prompt."
 status: active
-version: 1.3
+version: 1.4
 ---
 
 # Session Closeout
@@ -58,7 +58,7 @@ Update your primer or handoff note. This is the canonical forward handoff, the f
 - End with a **Session Opener** line. Content: the intended starting point for next session, written as a one-line action or question ("Continue Chapter 6 voice pass," "Decide on pricing tier before building the paywall"). If the next move is genuinely unknown, write "Intent to be determined at session start." This is the line that carries energy forward. It is not a summary of what happened.
 - **Under a concurrent sibling, read before write.** If another session is active, re-read your handoff note immediately before editing so you build on the sibling's latest write rather than overwriting it.
 
-**Then give your command surface its light touch.** Your command surface is the minimal live-signal glance, not the handoff. The handoff note carries the detail. The command surface stays short. Two touches only: drop anything this session resolved, and shift the headline (Most Alive Next Move) if the lead moved. If neither changed, leave it.
+**Then give your command surface its light touch.** Your command surface is the minimal live-signal glance, not the handoff. The handoff note carries the detail. The command surface stays short. Two touches only: drop anything this session resolved, and shift the headline (Most Alive Next Move) if the lead moved. If neither changed, leave it. Removal means the words leave. Do not restate a finished item in the past tense; this surface orients attention, it does not record progress.
 
 ### 3. Commit with a readable body
 
@@ -70,7 +70,9 @@ No per-session narrative log is written. Git is the log. The commit body is the 
 
 When the work visibly continues in a new session, the session ends without being asked in this order: finish the work, run this close, then hand over a paste-ready prompt for the fresh window. The handoff note carries state to every session. The prompt carries surgical direction to the one session that picks this work up, so it opens already aimed.
 
-**It fires when** a plan names its next sitting, a build stops mid-sequence, or you say you will continue in a fresh window. **It stays quiet when** the session closed its own loop and nothing specific follows. Then the closing line offers one in a single sentence rather than drafting it. When the next move is genuinely undetermined, the prompt is the opener plus the two or three live options, stated plainly.
+**It fires when** a plan names its next sitting, a build stops mid-sequence, or you say you will continue in a fresh window, and you can pick it up in your next working session. **It stays quiet when** the session closed its own loop and nothing specific follows. Then the closing line offers one in a single sentence rather than drafting it. When the next move is genuinely undetermined, the prompt is the opener plus the two or three live options, stated plainly.
+
+**Timing test.** Before drafting, ask when the next sitting can open. If it waits on a date or something not yet done, skip the prompt and put a one-line "Next sitting" note in the plan or project note naming what it waits on and what to load. Name that note in the closing line. A prompt written for a sitting that cannot open yet goes stale.
 
 **The shape:**
 
@@ -165,4 +167,4 @@ If Source Harvest isn't installed yet: [Install Source Harvest via Infinite Game
 
 ## Refinements
 
-*(Empty. Populated when execution mistakes occur during sessions.)*
+- [v1.4] Added a timing test before the continuation prompt and a removal rule for the command-surface touch.

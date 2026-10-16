@@ -2,7 +2,7 @@
 name: skill-creator
 description: Build new skills autonomously. Interview the operator about the skill's intent, research relevant patterns and protocols, write a complete SKILL.md to the canonical location.
 status: active
-version: 1.1
+version: 1.2
 ---
 
 # Skill Creator
@@ -40,12 +40,21 @@ Ask these questions before drafting:
 3. What are the inputs and outputs?
 4. Are there any approval gates, external calls with cost or governance constraints that apply?
 5. Are there existing protocols, codices or tools this skill should reference?
+6. Has this workflow happened at least twice? A first occurrence is a candidate. A second earns the skill.
 
-Do not begin writing SKILL.md until the operator has answered all five.
+Do not begin writing SKILL.md until the operator has answered all six.
 
 **Phase 2: Research**
 
-Before writing, check:
+**Coverage verdict first.** Before any other research, search your skills index or folder for what this skill would do, in your own words, and reach one verdict:
+
+- **Reuse:** an existing skill already covers it. Name the skill and stop. The answer may be a line added to that skill.
+- **Compose:** two existing skills run in sequence cover it. Write a handover line in the first skill, or a short note, rather than a new skill.
+- **New:** nothing covers it. Proceed.
+
+State the verdict and the skills it was checked against before Phase 3. A skill that overlaps a sibling competes with it for selection on every invocation.
+
+Then check:
 - Relevant existing protocols
 - Related reference docs and codices
 - Similar existing skills for structural patterns
@@ -67,6 +76,16 @@ Conventions:
 - Positive framing. Define behaviors by what they are, not what they avoid
 - Constraints section is required. Capture every governance gate explicitly
 - Refinements section is mandatory. Add it empty, leave it to accumulate organically
+
+**Skill Prose Admission Rules.** Keep a line in a skill only if it does one of three things: states a falsifiable constraint, counters a documented default tendency or an observed shortcut or supplies domain knowledge that changes a decision.
+
+Banned as standalone instructions: vague quality language such as "be thorough", "produce high-quality work" or "use good judgment". Replace the line with an observable rule, or delete it.
+
+Banned: motivational rationale appended to a directive that already stands on its own. If the directive works without the reason attached, drop the reason.
+
+Repeat an instruction in a second location only at a demonstrated drift point. Never repeat it for emphasis alone.
+
+**Applying review feedback to a skill.** Classify each item the reviewer raises as Change, Verify or Consider. Only Change items get edits. Identify the owning layer (which section, which mechanism) before writing, and fix at the smallest mechanism that holds the fix. Reviewer wording is a hypothesis about mechanism, not authority over it.
 
 **Description field rule.** The `description` frontmatter field controls whether an AI assistant loads a skill for a given task. Write it as triggering conditions only. Never summarize the skill's workflow or steps in the description.
 
@@ -100,8 +119,11 @@ After writing SKILL.md, propose the appropriate install or registration step for
 
 Windows (PowerShell):
 ```powershell
-New-Item -ItemType Junction -Path '.claude/skills/[Name]' -Target 'path/to/Skills/[Name]'
+$t = 'C:\path\to\Skills\[Name]'
+New-Item -ItemType Junction -Path '.claude/skills/[Name]' -Target $t
 ```
+
+PowerShell junctions require an absolute target path. A relative `-Target` fails with "Creating a junction requires an absolute path for the target". The `-Path` may stay relative.
 
 Mac/Linux (Terminal, run from your project root):
 ```bash
@@ -169,3 +191,5 @@ If Source Harvest isn't installed yet: [Install Source Harvest via IGOS](https:/
 ## Refinements
 
 *(Empty. Populated when execution mistakes occur during sessions.)*
+
+- **v1.2.** Added the Skill Prose Admission Rules and the Change, Verify or Consider classification for review feedback to Phase 3. Added a repetition question to Phase 1 and a Reuse, Compose or New coverage verdict to Phase 2. Corrected the Windows junction command to an absolute target. A command stored in a skill is a claim that it runs.

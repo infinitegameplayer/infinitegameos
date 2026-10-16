@@ -296,7 +296,7 @@ export default function SovereignEcosystemPage() {
                   marginBottom: 0,
                 }}
               >
-                From the README that ships in the repo, release 3.12.0, word for word.
+                From the README that ships in the repo, release {upstreamVersion}, word for word.
               </p>
             </section>
           </SectionReveal>

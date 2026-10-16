@@ -2,7 +2,7 @@
 name: plan-challenger
 description: Adversarial pre-build pass that challenges a plan before execution begins. Five angles, one verdict.
 status: active
-version: 1.1
+version: 1.2
 ---
 
 # Plan Challenger Skill
@@ -10,7 +10,7 @@ version: 1.1
 Purpose: Surface the hard questions before a plan goes into execution. Not a veto. A mirror. Five structured angles against the plan, with a one-line verdict at the end.
 Trigger: The operator invokes "Plan Challenger" with a plan name or plan content. Also surfaces as a one-line opt-in inside Pending Plan Implementation after the Pre-Execution Checklist.
 Inputs: Plan content (name to locate, or paste directly).
-Outputs: Five-angle challenge report, taste-decision flags for near-call questions, one-line verdict.
+Outputs: Five-angle challenge report, taste-decision flags for near-call questions, one-line verdict and the same report appended to the plan's own note as a dated section.
 Status: active
 
 ## Steps
@@ -22,6 +22,8 @@ Read the target plan. If a name was given, locate it in your plans directory. If
 Confirm the plan title and intent back to the operator in one sentence before proceeding.
 
 ### Step 2: Five-Angle Challenge
+
+Before the angles, state the plan at its strongest in two lines. The challenge lands only against the best version of the plan.
 
 Run each angle in sequence. Each angle produces one to three sharp observations or questions, not a list of everything that could go wrong. Surface what matters most.
 
@@ -56,13 +58,19 @@ One line. No hedging.
 - **Revise [specific element]:** One thing to change before execution. Name it.
 - **Pause [specific reason]:** An assumption or risk needs resolution first. Name it.
 
+After the verdict, add one line: **What would change this verdict.**
+
 The verdict is a recommendation, not a gate. The operator decides.
 
-## Confidence Scoring (Optional)
+### Step 5: Write to the Plan
 
-For high-stakes plans, assign a confidence score (0-100) to each finding from the five angles. This converts the challenge from a list of objections to a weighted list where severity is explicit.
+Append the five-angle report, flags and verdict to the plan's own note as a dated section, including the strongest-version lines and the "What would change this verdict" line. This step is mandatory. A Pause verdict must outlive the session.
 
-Use this rubric (pass verbatim to any sub-agent doing the scoring):
+## Confidence Anchoring
+
+Give each finding from the five angles exactly one anchor: 0, 25, 50, 75 or 100. Any other value is re-anchored to the nearest anchor the evidence supports. This turns a list of objections into a weighted list where severity is explicit. Anchoring is required on high-stakes plans and optional on straightforward ones.
+
+Use this rubric (pass verbatim to any sub-agent doing the anchoring):
 
 > 0: Not confident at all. This concern does not hold up to scrutiny or is already addressed in the plan.
 >
@@ -74,9 +82,9 @@ Use this rubric (pass verbatim to any sub-agent doing the scoring):
 >
 > 100: Absolutely certain. This concern is definitely real, confirmed by evidence in the plan, and will block or break execution if unresolved.
 
-Filter: any finding scored below 50 is a note, not a challenge. Any finding scored 75 or above warrants a named action in the verdict.
+Quote-the-line gate: before anchoring a finding at 75 or 100, quote the verbatim plan text that makes the objection true. If you cannot quote it, step down to 50.
 
-This scoring layer is optional. Use it when the five angles produce many findings and the operator needs a ranked view before deciding. On straightforward plans, qualitative assessment is sufficient.
+Anchors 0 and 25 are notes, not challenges. Anchors 75 and 100 warrant a named action in the verdict.
 
 ## Model Routing
 
@@ -88,14 +96,15 @@ Dispatch the cheapest model that does the job well.
 | Step 2: Five-angle challenge | Opus | Adversarial architectural judgment across five distinct lenses; depth over breadth demands the strongest model |
 | Step 3: Taste-decision surfacing | Opus | Identifying genuine near-calls requires nuanced judgment; false certainty here harms decision quality |
 | Step 4: Verdict | Opus | One-line verdict is an operator-facing judgment call; precision and accountability make Opus the right tier |
-| Confidence scoring (optional) | Sonnet | Applying a rubric to score existing findings is structured evaluation, not fresh architectural judgment |
+| Confidence anchoring | Sonnet | Applying a rubric to anchor existing findings is structured evaluation, not fresh architectural judgment |
+| Step 5: Write to the plan | Haiku | Appending the finished report to the plan note is a mechanical file write |
 
 Set the model explicitly on every subagent dispatch. Never silently inherit the top tier.
 
 ## Constraints
 
 - Does not implement anything.
-- Does not edit the plan or propose rewrites.
+- Does not rewrite the plan or propose rewrites. It appends its own dated section and changes nothing else.
 - Does not replace the operator's judgment.
 - Does not run in plan mode (this skill IS the challenge layer; it does not spawn another one).
 - Depth over breadth. Three sharp observations beat ten generic ones.
@@ -113,4 +122,4 @@ If Pending Plan Implementation isn't installed yet: [Install Pending Plan Implem
 
 ## Refinements
 
-*(Empty. Populated when execution mistakes occur during sessions.)*
+- [v1.2] Added a steelman before the angles, a "What would change this verdict" line, a mandatory write-back to the plan's note and anchored confidence with a quote-the-line gate.

@@ -1,6 +1,6 @@
 ---
 description: Use when drafting a 9-post social batch (3 days × 3 platforms) from any source. Triggered by content-strategy plans, article breakdown protocols, workshop or product-launch campaigns, freeform sequence batches or any plan whose handover map names this skill at a social-batch phase.
-version: 1.1
+version: 1.2
 ---
 
 # Social Batch Drafting
@@ -23,13 +23,15 @@ This skill pairs with **Social Batch Queue**. Drafting produces the approved bat
 
 This skill is a starting point, not a finished tool. It ships with a 9-post structure (3 days × 3 platforms), Instagram, Facebook and LinkedIn as the default surface mix and a voice-rules set built from the author's real failure modes. Your setup is different.
 
-Three seams worth editing before first use.
+Four seams worth editing before first use.
 
 **Seam 1: Platform mix.** The 3-day arc holds for any combination of platforms. If you publish on Twitter/X, Threads, Substack Notes or a text-first surface instead of one of the three defaults, swap the platform name in the Batch Format table and update the corresponding mechanics block. The Day 1 / Day 2 / Day 3 structure doesn't change. The platform mechanics do.
 
 **Seam 2: Post count.** The 9-post default fits a 3-platform, every-other-day publishing cadence. A 5-post batch (1 platform × 5 days, or 1 day × multiple platforms) fits a different rhythm. Edit the Steps to reflect your cadence. The engagement gate, prior-batch look-back and voice sweep logic are cadence-agnostic. Keep them.
 
 **Seam 3: Voice rules.** The Voice Rules section is the author's enforcement layer, extracted from live production runs. Some rules are structural ("no em dashes," "no Oxford commas") and worth keeping regardless of whose voice is running. Others are contextual ("LinkedIn Subtle Professional Register," contraction list). If your brand voice runs more formal, expand the LinkedIn register to all platforms. If your brand voice is looser, adjust the contraction enforcement list. The `voice_addenda` input is the clean entry point for layering your rules without touching the defaults. If your rules diverge enough, replace the section directly.
+
+**Seam 4: The door.** The One Door Per Batch shape assumes a funnel with a single destination and a Day 3 post that makes one offer. If your channel runs differently, edit the One Door section and the link rules under it. Keep the single-door discipline. Change the door.
 
 Run a brainstorm pass before first use. Edit the SKILL.md directly. The skill is a substrate. You are the operator. Make it yours.
 
@@ -38,6 +40,8 @@ Run a brainstorm pass before first use. Edit the SKILL.md directly. The skill is
 **Step 1. Engagement gate.** One engagement, two questions on direction. Confirm (a) which concept has the most energy in the source for the operator right now and (b) who the batch is primarily speaking to. This confirms direction. It does not substitute for structural anchoring.
 
 **Step 2. Read source content.** Open the source named in the entry contract. Not skim. Read. Extract the thesis, key sensory moments, the anchor seed phrasing if any and any line in the source that would land verbatim in social copy.
+
+When the source passed an edit pass, derive only from the published file. If a pre-edit draft is in context, diff it first and treat each removal as a decision that carries forward. A cut word stays cut.
 
 **Step 3. Read prior batches (always-on look-back).** Always scan both your active social drafts directory and your archive directory (wherever completed batches land after the queue runs). Most recent installments typically live in the archive, not the active folder. Build a combined date-sorted view across both and take the top 3 to 5 by date. Two outcomes:
 
@@ -50,9 +54,11 @@ Run a brainstorm pass before first use. Edit the SKILL.md directly. The skill is
 
 **Step 6. Voice sweep pre-flight.** Before writing the first word of copy, confirm the Voice Rules section gates are active in current context. Non-negotiable.
 
-**Step 7. Draft the 9-post batch.** Three days × three platforms × the canonical structure. Reference the Batch Format section for the table, platform mechanics, headline rules, carousel character budgets, 8-slide carousel architecture and image brief format.
+**Step 7. Draft the 9-post batch.** Before drafting, name each day's post type: philosophy, practice prompt, story, question, result or invitation. Over a month, include one story-led post and one real-question post. Results posts wait for real results. Then draft. Three days × three platforms × the canonical structure. Reference the Batch Format section for the table, platform mechanics, headline rules, carousel character budgets, 8-slide carousel architecture and image brief format.
 
 **Step 8. Voice sweep post-draft.** Re-run the Voice Rules against the produced copy before presenting to the operator. If any rule is violated, return to Step 7 for the affected post and re-draft. Do not present a draft with violations.
+
+Before saving, check every quoted phrase in the Source Reference Map against the shipped source. Label any line that is the drafter's own invention as such in the map.
 
 **Step 9. Output and approval gate.** Save to your social drafts directory using the canonical frontmatter format (see Output Format). Initial `status: draft`. Wait for operator approval, then update to `status: approved-pending-scheduling`. Do NOT save with `status: approved` without explicit operator consent.
 
@@ -65,6 +71,24 @@ Three days. Three posts per day. Three platforms per post (Instagram, Facebook, 
 | 1 | Hook | Opens a tension or scene. Retroactive callback where warranted. |
 | 2 | Carousel (8 slides) | Full arc. Foundation, framework, application, parent-concept connection, close threading prior installments. |
 | 3 | Action | Direct invitation. Anchor seed. References prior installments. Standalone-capable. |
+
+### One Door Per Batch
+
+A batch points at one door. This is the default shape. Edit it under Seam 4.
+
+- **Days 1 and 2** provoke thought and ask a question. They do not sell.
+- **Day 3 is the Door Post.** It carries, in order: a permission line, the cost of the default, the alternative, one honest concession, the mirrored upside and one door. It has no invitational question. This overrides the LinkedIn question in the mechanics below.
+- **The carousel close** names the same door.
+- **Links.** Day 1 links the source piece. Days 2 and 3 link the door.
+- A batch whose subject is a product may use that product's page as its door.
+
+### What shows before the fold (as of 2026-10)
+
+Readers decide inside the first lines. Put the post in the opening line.
+
+- Instagram: roughly 125 characters.
+- Facebook: about three lines.
+- LinkedIn: roughly 210 characters.
 
 ### Platform mechanics (identical every batch)
 
@@ -108,7 +132,7 @@ Two slots. Calibrate the specific ceilings to your actual render output; these a
 
 ### Image brief (Day 3 Action background)
 
-When Day 3 uses a generated background image, the brief format is: cinematic, specific lighting, landscape and sensory detail, no figures (keeps the central archetype elusive), color palette that bridges your card template's text color, pull cinematic language from a cinematography reference (depth, framing, angle, light) so the background carries story not only atmosphere, photographic realism, 16:9 (1792×1024) for social-friendly framing. Include a one-sentence rationale explaining the visual metaphor and why it carries the batch's concept. The brief lives in the batch draft file. Generation execution belongs to the downstream queue skill.
+When Day 3 uses a generated background image, the brief format is: cinematic, specific lighting, landscape and sensory detail, no figures (keeps the central archetype elusive), color palette that bridges your card template's text color, pull cinematic language from a cinematography reference (depth, framing, angle, light) so the background carries story not only atmosphere, photographic realism. Generate the background in the card's own aspect ratio. A 16:9 image under a portrait card loses most of its width. Include a one-sentence rationale explaining the visual metaphor and why it carries the batch's concept. The brief lives in the batch draft file. Generation execution belongs to the downstream queue skill.
 
 ## Threading Protocol
 

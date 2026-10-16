@@ -2,7 +2,7 @@
 name: playwright
 description: Use when you need to scrape pages, extract structured data or interact with web interfaces via headless browser automation without using screenshots.
 status: active
-version: 1.1
+version: 1.2
 ---
 
 # Playwright
@@ -11,7 +11,7 @@ version: 1.1
 
 **Purpose:** Browser automation via headless Chromium. Scrape pages, extract structured data, and interact with web interfaces. Returns clean JSON, not screenshots.
 
-**Token efficiency:** approximately 200-500 tokens per page vs 20,000-30,000 for screenshot-based approaches.
+**Token efficiency:** `run.js` returns body text capped at 8000 characters plus up to 50 links, far less than a screenshot-based read.
 
 ## When to Use
 
@@ -62,7 +62,8 @@ Chromium binary installs to the `node_modules/` directory inside `scripts/`. Add
 - **Empty text:** If a page returns empty text, switch `waitUntil` to `networkidle` and retry.
 - **Browser binary not found:** Run `npx playwright install chromium` from the scripts directory.
 - **Cloudflare blocking:** Add `playwright-extra` and `puppeteer-extra-plugin-stealth` if a site blocks the script.
-- **Timeout:** Increase all timeouts to 15 seconds and switch to `networkidle` for slow pages.
+- **Timeout:** `run.js` already navigates with a 15000 ms timeout and `waitUntil: "domcontentloaded"`. For slow pages, raise the timeout and switch to `networkidle`.
+- **Social post URLs:** A direct social-post URL may bounce to a login wall. Check the landed URL, and try the platform's share or mobile URL.
 - Always close the browser in a `finally` block. This is already handled in run.js.
 
 ## Invocation
@@ -101,4 +102,17 @@ Set the model explicitly on every subagent dispatch. Never silently inherit the 
 
 ## Refinements
 
-*(Empty. Populated when execution mistakes occur during sessions.)*
+**`Execution context was destroyed` means a bot challenge, and it is not an empty page.**
+
+A scrape failed with `page.evaluate: Execution context was destroyed, most likely because of a navigation`. **Root cause:** the shared script waits only for `domcontentloaded`, and the site redirected to a bot-challenge page before the evaluation ran. A plain fetch of the same URL returned empty content for the same reason.
+
+**Two things to hold.**
+
+- **Neither failure is evidence about the page.** Reporting an empty scrape as "the page has no content" is a false claim of absence. Name the observation: the fetch failed, and the cause was a challenge redirect. Check `location.href` in the result to see where you actually landed.
+- **`networkidle` alone does not clear a challenge.** A second attempt reached the challenge screen and reported it honestly, a short page titled as a robot check.
+
+**What worked** was a scratchpad variant rather than a change to the shared script: launch args `--disable-blink-features=AutomationControlled`, a current Chrome user agent, a real viewport, locale and timezone, an init script clearing `navigator.webdriver`, then a 12-second wait before evaluating.
+
+**Not folded into `run.js` on purpose.** The shared script stays simple. Copy the variant into the scratchpad when a site challenges, and leave the default alone.
+
+- [v1.2] Added the bot-challenge refinement, corrected the token and timeout figures and added the social-post URL tip.

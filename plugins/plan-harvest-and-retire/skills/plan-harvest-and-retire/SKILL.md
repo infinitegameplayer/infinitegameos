@@ -2,7 +2,7 @@
 name: plan-harvest-and-retire
 description: Retire a stalled or indefinitely-deferred plan without losing its value. Candidate scan, harvest, distribute, sweep, archive and codify.
 status: active
-version: 1.0
+version: 1.1
 ---
 
 # Plan Harvest and Retire Skill
@@ -105,12 +105,26 @@ When the retire surfaces a rule worth keeping, land it canonically. Not every re
 
 ---
 
+## Variant: Retire Into a Successor Plan
+
+Use this when a larger plan now owns the work and the operator names that plan. The operator approves the merge before anything moves.
+
+- **Step 1 is skipped.** The operator has already named the plan.
+- **Step 2 collapses to one pile.** Carry the old plan's content verbatim into the successor as a named workstream. Counts, prices and positions keep the date they were recorded, written as "as of" that date.
+- **Step 3 writes no tracker entry.** The successor's workstream is the durable home. Set `superseded-by` to point at it.
+- **Steps 4 and 5 run unchanged.**
+
+Sweep the carried text against your writing standards before calling the retire complete. The successor inherits whatever drift the old plan held.
+
+---
+
 ## Approval Gates
 
 - **Scan output is read-only.** Present candidates and stop. No archival without per-plan consent.
 - **Per-plan consent** before any single archival.
 - **Reference sweep** is mandatory before the retirement is called complete.
 - **Operator sign-off** for any standing rule codified in Step 6.
+- **Carried text is swept** against your writing standards before a successor-plan retire is called complete.
 - **No deletion.** This skill distributes value then archives. It never deletes a plan outright.
 
 ---
@@ -167,4 +181,4 @@ If Plan Challenger isn't installed yet: [Install Plan Challenger via IGOS](https
 
 ## Refinements
 
-*(Empty. Populated when execution mistakes occur during sessions.)*
+- [2026-10-15] Version 1.1 adds the successor-plan variant. When a larger plan absorbs the work, the old plan carries over as one named workstream with its figures dated, the successor becomes the durable home, and the carried text is swept before the retire closes.

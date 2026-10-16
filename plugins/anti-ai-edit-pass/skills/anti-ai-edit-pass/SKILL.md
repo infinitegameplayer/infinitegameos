@@ -2,7 +2,7 @@
 name: anti-ai-edit-pass
 description: Use when a long-form manuscript (book chapter, ebook, multi-chapter playbook, long-form digital product) needs an editing pass to identify and remove AI writing tells. Sweeps across 8 pattern categories, assembles a structured edit packet for operator review, and applies approved edits.
 status: active
-version: 1.2
+version: 1.3
 ---
 
 # Anti-AI Edit Pass Skill
@@ -23,7 +23,7 @@ Status: active
 
 ## The 8 Pattern Categories (Built-In Reference)
 
-This skill is self-contained. The pattern reference below replaces the external codex dependency. The library is extensible: when new patterns surface during a sweep, surface them as proposals for operator ratification, then add them to this section. Current entry count: 112 across 8 categories.
+This skill is self-contained. The pattern reference below replaces the external codex dependency. The library is extensible: when new patterns surface during a sweep, surface them as proposals for operator ratification, then add them to this section. Current entry count: 114 across 8 categories.
 
 ### Category I: Lexical Blacklist
 
@@ -137,6 +137,7 @@ Personality-level tells. Above structure, in the felt register the reader picks 
 63b. **Earn-it framing**: Telling the reader something must be earned before it lands: "you have to earn this," "the ending earns its weight," "an earned insight." Replace: do the earning invisibly; the verdict word belongs to critics, not the page.
 63c. **Constant reader validation**: Narrating the reader's experience back as affirmation: "if you've ever felt this way," "you're not alone." Replace: write from your own experience precisely; the reader finds themselves in the specificity.
 63d. **Sycophantic closer**: "I hope this helps!" "Let me know if you have questions!" bleeding from chat mode into prose. Replace: end on substance, image or forward pull.
+63e. **Could-be-anywhere sentence**: A sentence with no sensory ground and no phrasing that belongs to one writer. It could sit in any manuscript on any subject. Replace: draw the replacement from the manuscript's own story material or the author's verbatim source.
 
 ### Category VII: Structural Tics
 
@@ -169,6 +170,7 @@ Visual fingerprints. Especially damaging in book-form prose.
 77. **Key-takeaways box**: Visually demarcated block labeled "Key Takeaways." Replace: prose carried the point; trust that.
 78. **Markdown-in-book pattern**: Asterisks, hashes, backticks in prose meant to be read as a book. Replace: strip every markdown convention.
 79. **Uniform paragraph weight**: Every paragraph approximately the same length and density. Replace: vary weight deliberately.
+79a. **Uniform sentence cadence**: Four or more consecutive sentences in the 12-to-18-word band that share the same subject-first shape. Replace: vary length and entry point; let one sentence run long or stop short.
 80. **Significance tail**: Sentence ends with a present-participle phrase claiming significance: "highlighting the importance of," "underscoring the need for." Replace: two sentences; no tail.
 81. **Em dash as drama**: An em dash used to create a pause or reveal effect. Replace: a period. Then the reveal.
 82. **Nested-bullet explosion**: A three-level nested bullet list for information that could be one sentence. Replace: one sentence.
@@ -218,6 +220,8 @@ If `sample_first` is set or this is the first invocation against this manuscript
 If `vocab_overrides` is provided, surface the proposed operator-vocab exceptions for approval before sweep begins. This approval gate prevents the blacklist from drifting without explicit operator update.
 
 Note any words the operator has previously marked as reconciled (permitted in embodied use, flagged in mechanical use). Apply the embodied-vs-mechanical heuristic at Step 3.
+
+**Grain protection.** If the operator keeps a ledger of sanctioned stylistic habits (fragments, conjunction openers, run-ons), constructions that match a ledger entry pass every sweep. They are protected voice, never findings. The same shape without a ledger entry stays flaggable. Ambiguous cases go to the operator.
 
 ---
 
@@ -269,7 +273,7 @@ Output: rhetorical findings array.
 
 This step requires the most senior model available. The failure modes are tonal, not pattern-matchable. Read each chapter holistically. Before judging, load the operator's voice anchor: read the operator's Governing Essence (from their Writing Style Codex or equivalent), and the most recent published piece on file. Voice judgment without anchoring produces false flags.
 
-Flag wisdom-broker register, performed warmth, false intimacy, coach voice, TED-talk cadence, vague-attribution authority, wholesome-uplift drift, uniform register, corporate warmth, teacher-explaining-to-the-class register, sage tone, navigating-complexities we-voice and manufactured stakes.
+Flag wisdom-broker register, performed warmth, false intimacy, coach voice, TED-talk cadence, vague-attribution authority, wholesome-uplift drift, uniform register, corporate warmth, teacher-explaining-to-the-class register, sage tone, navigating-complexities we-voice and manufactured stakes. Also flag the could-be-anywhere sentence (63e): sentences with no sensory ground and no phrasing that belongs to one writer. Replacements come from the manuscript's own story material or the author's verbatim source.
 
 Output: voice findings array with chapter-level register notes.
 
@@ -293,6 +297,8 @@ Special check: Elegant Variation Spiral. Flag any chapter where the subject is r
 
 Special check: Uniform Paragraph Weight. Flag chapters where every paragraph runs at roughly the same sentence count.
 
+Special check: Uniform Sentence Cadence (79a). Measure sentence length per passage. Flag any run of four or more consecutive sentences in the 12-to-18-word band that share the same subject-first shape. The scan only nominates candidates. The voice pass judges them.
+
 Output: formatting findings array with quantitative measures where applicable.
 
 ---
@@ -313,7 +319,7 @@ Assemble all findings into a single structured edit packet for operator review. 
 # Anti-AI Edit Pass: Edit Packet
 ## Manuscript: [name]
 ## Date: [YYYY-MM-DD]
-## Pattern Reference: Built-in (112 entries across 8 categories; extensible)
+## Pattern Reference: Built-in (114 entries across 8 categories; extensible)
 
 ### Summary
 - Total findings: [count]
@@ -420,3 +426,5 @@ If Session Closeout isn't installed yet: [Install Session Closeout via IGOS](htt
 ## Refinements
 
 *(Empty. Populated when execution mistakes occur during sessions.)*
+
+- **v1.3.** Added two library entries: 63e could-be-anywhere sentence (Category VI) and 79a uniform sentence cadence (Category VIII, with a Step 10 special check). Entry count is now 114. Added grain protection to Step 2: constructions matching an author's ledger of sanctioned habits pass every sweep.

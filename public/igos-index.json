@@ -5,8 +5,8 @@
   "description": "Installable skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
   "url": "https://www.infinitegameos.io",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "updated_at": "2026-10-08",
-  "upstream_version": "3.15.0",
+  "updated_at": "2026-10-15",
+  "upstream_version": "3.16.0",
   "upstream_repo": "https://github.com/infinitegameplayer/sovereign-ecosystem",
   "template_dual_distribution": [
     "Source Harvest",
@@ -56,7 +56,7 @@
       "id": "source-harvest",
       "name": "Source Harvest",
       "type": "skill",
-      "version": "1.2",
+      "version": "1.3",
       "description": "Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate what serves your system.",
       "tags": [
         "harvest",
@@ -90,7 +90,7 @@
       "id": "pattern-harvest",
       "name": "Pattern Harvest",
       "type": "skill",
-      "version": "1.2",
+      "version": "1.3",
       "description": "Reflective session-level pattern extraction. Three parallel lenses produce a numbered recommendation list the operator selects from. Run before session closeout on substantial sessions.",
       "tags": [
         "harvest",
@@ -122,7 +122,7 @@
       "id": "plan-challenger",
       "name": "Plan Challenger",
       "type": "skill",
-      "version": "1.1",
+      "version": "1.2",
       "description": "Adversarial pre-build pass that challenges a plan before execution begins. Five angles, one verdict.",
       "tags": [
         "planning",
@@ -179,7 +179,7 @@
       "id": "pending-plan-implementation",
       "name": "Pending Plan Implementation",
       "type": "skill",
-      "version": "1.1",
+      "version": "1.2",
       "description": "Execute approved plans with checkpoint gates, breadcrumb logging and outcome summaries.",
       "tags": [
         "planning",
@@ -208,7 +208,7 @@
       "id": "skill-creator",
       "name": "Skill Creator",
       "type": "skill",
-      "version": "1.1",
+      "version": "1.2",
       "description": "Build new skills autonomously. Interview, research, write a complete SKILL.md, propose the install path.",
       "tags": [
         "meta",
@@ -237,7 +237,7 @@
       "id": "researcher",
       "name": "Researcher",
       "type": "skill",
-      "version": "1.2",
+      "version": "1.3",
       "description": "Parallel sub-agent research on a topic, aggregated into a structured report. Up to 4 independent workers, synthesized output.",
       "tags": [
         "research",
@@ -266,7 +266,7 @@
       "id": "social-batch-drafting",
       "name": "Social Batch Drafting",
       "type": "skill",
-      "version": "1.1",
+      "version": "1.2",
       "description": "Draft a 9-post social batch (3 days × 3 platforms) from any source. Voice rules enforced before drafting begins. Approved batch becomes the durable handoff to the queue skill.",
       "tags": [
         "social",
@@ -295,7 +295,7 @@
       "id": "social-batch-queue",
       "name": "Social Batch Queue",
       "type": "skill",
-      "version": "1.1",
+      "version": "1.2",
       "description": "Execute an approved 9-post social batch. Image rendering (local self-hosted or any compatible pipeline), asset staging, scheduler integration with channel discovery and channel-health check, and post-publish handoff. Pairs with Social Batch Drafting.",
       "tags": [
         "social",
@@ -1011,7 +1011,7 @@
       "id": "self-healing",
       "name": "Self-Healing",
       "type": "skill",
-      "version": "1.2",
+      "version": "1.3",
       "description": "Autonomous error recovery during implementation sessions. Diagnose root cause, apply fix, continue without stopping for every recoverable mistake.",
       "tags": [
         "recovery",
@@ -1044,7 +1044,7 @@
       "id": "session-closeout",
       "name": "Session Closeout",
       "type": "skill",
-      "version": "1.3",
+      "version": "1.4",
       "description": "Fast session close: decisions ruled first, breadcrumb what you touched, refresh your handoff note, commit with a readable body and a paste-ready prompt when the work continues.",
       "tags": [
         "session",
@@ -1077,7 +1077,7 @@
       "id": "playwright",
       "name": "Playwright",
       "type": "skill",
-      "version": "1.1",
+      "version": "1.2",
       "description": "Browser automation via headless Chromium. Scrape pages, extract structured data, interact with web interfaces. Returns clean JSON not screenshots.",
       "tags": [
         "automation",
@@ -1110,7 +1110,7 @@
       "id": "anti-ai-edit-pass",
       "name": "Anti-AI Edit Pass",
       "type": "skill",
-      "version": "1.2",
+      "version": "1.3",
       "description": "Structured editing pass that finds and removes AI writing tells from long-form manuscripts. Eight sweep categories, Sovereign review gate, verified application.",
       "tags": [
         "editing",
@@ -1142,7 +1142,7 @@
       "id": "jacket-session",
       "name": "Jacket Session",
       "type": "skill",
-      "version": "1.1",
+      "version": "1.2",
       "description": "Run a focused 1:1 advisory session with a named AI lens. The universal session flow with the Three Solutions Rule and Challenge and Illumination active, closing in a structured capture.",
       "tags": [
         "advisory",
@@ -1171,7 +1171,7 @@
       "id": "jacket-meeting",
       "name": "Jacket Meeting",
       "type": "skill",
-      "version": "1.1",
+      "version": "1.2",
       "description": "Run a multi-lens team meeting across all your AI advisory jackets. A twelve-step flow from convene to close. Each lens prepares independently, one seat synthesizes, you decide.",
       "tags": [
         "advisory",
@@ -1200,7 +1200,7 @@
       "id": "autonomous-improvement-session",
       "name": "Autonomous Improvement Session",
       "type": "skill",
-      "version": "1.1",
+      "version": "1.2",
       "description": "Set your system improving on its own when you have spare capacity. Safe, additive, self-contained work runs under a threshold model with a permanent floor of actions it never takes on its own.",
       "tags": [
         "autonomy",
@@ -1233,7 +1233,7 @@
       "id": "plan-harvest-and-retire",
       "name": "Plan Harvest and Retire",
       "type": "skill",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Retire a stalled or indefinitely-deferred plan without losing its value. Candidate scan, harvest, distribute, sweep, archive and codify.",
       "tags": [
         "planning",
@@ -1264,8 +1264,8 @@
       "id": "pr-code-review",
       "name": "PR Code Review",
       "type": "skill",
-      "version": "1.1",
-      "description": "Automated pull request review for your repos. Five parallel agents, confidence scoring, convention-file compliance, and GitHub comment posting.",
+      "version": "1.2",
+      "description": "Automated pull request review for your repos. Six parallel lenses (the sixth, plan alignment, runs when a governing plan is found), anchored confidence, convention-file compliance and GitHub comment posting.",
       "tags": [
         "code-review",
         "github",
