@@ -251,6 +251,10 @@ export default function AboutPage() {
                 lanebelone.com
               </a>
             </div>
+            <p style={{ marginTop: '2.5rem', fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--color-muted)' }}>
+              Search visibility for this site is checked with the{' '}
+              <a href="https://brave.com/search/api/" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '4px' }} target="_blank" rel="noopener noreferrer">Brave Search API</a>.
+            </p>
           </SectionReveal>
         </div>
       </article>
