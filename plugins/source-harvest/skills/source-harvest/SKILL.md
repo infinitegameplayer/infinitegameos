@@ -53,6 +53,8 @@ Fetch and list all components. Typical targets:
 - Protocol or governance documents
 - Supporting scripts
 
+Record the commit read for each repo, its SHA and date, in the inventory and in the report. A quote checked against a branch can fail against next week's text with nothing to say why, and a pinned commit lets anyone re-read the same bytes. Size each repo from its tree, never from its README: a description's counts are a claim.
+
 Present the inventory to the operator: "Found [N] components: [brief list by category]." Confirm before proceeding to classification.
 
 ### Step 3. Read Every Component

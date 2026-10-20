@@ -107,8 +107,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Source Harvest',
     label: 'Skill',
-    version: '1.3',
-    updated: '2026-10-15',
+    version: '1.4',
+    updated: '2026-10-20',
     description:
       'Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate.',
     tags: ['harvest', 'extraction', 'governance', 'kingdom-skill'],
@@ -623,8 +623,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'PR Code Review',
     label: 'Skill',
-    version: '1.2',
-    updated: '2026-10-15',
+    version: '1.3',
+    updated: '2026-10-20',
     description:
       'Automated pull request review for your repos. Five parallel agents, a sixth when the PR cites a plan, confidence scoring, convention-file compliance and GitHub comment posting.',
     tags: ['code-review', 'github', 'pull-request', 'quality'],

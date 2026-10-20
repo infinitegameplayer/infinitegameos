@@ -5,8 +5,8 @@
   "description": "Installable skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
   "url": "https://www.infinitegameos.io",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "updated_at": "2026-10-16",
-  "upstream_version": "3.17.0",
+  "updated_at": "2026-10-20",
+  "upstream_version": "3.18.0",
   "upstream_repo": "https://github.com/infinitegameplayer/sovereign-ecosystem",
   "template_dual_distribution": [
     "Source Harvest",
@@ -26,7 +26,7 @@
       "id": "sovereign-ecosystem",
       "url": "https://www.infinitegameos.io/sovereign-ecosystem",
       "title": "Sovereign Ecosystem",
-      "description": "Foundational Obsidian + Claude Code workspace template. Three-tier stack origin (foundation, reader/editor, AI interface). Directory structure, governance scaffolding, North Star template and initial skill set. Encouraged-not-required on-ramp. Article + FAQPage + BreadcrumbList schema.",
+      "description": "Foundational Obsidian + Claude Code workspace template. Three-tier stack origin (foundation, reader/editor, AI interface). Directory structure, governance scaffolding, North Star template, a working skill set and safety checks that come with tests that prove they work. Encouraged-not-required on-ramp. Article + FAQPage + BreadcrumbList schema.",
       "repo": "https://github.com/InfiniteGamePlayer/sovereign-ecosystem",
       "download_zip": "https://github.com/InfiniteGamePlayer/sovereign-ecosystem/archive/refs/heads/master.zip",
       "tags": [
@@ -37,7 +37,7 @@
         "three-tier-stack",
         "sovereign-ecosystem"
       ],
-      "updated_at": "2026-07-10"
+      "updated_at": "2026-10-20"
     },
     {
       "id": "your-ais-charter",
@@ -56,7 +56,7 @@
       "id": "source-harvest",
       "name": "Source Harvest",
       "type": "skill",
-      "version": "1.3",
+      "version": "1.4",
       "description": "Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate what serves your system.",
       "tags": [
         "harvest",
@@ -1264,7 +1264,7 @@
       "id": "pr-code-review",
       "name": "PR Code Review",
       "type": "skill",
-      "version": "1.2",
+      "version": "1.3",
       "description": "Automated pull request review for your repos. Six parallel lenses (the sixth, plan alignment, runs when a governing plan is found), anchored confidence, convention-file compliance and GitHub comment posting.",
       "tags": [
         "code-review",

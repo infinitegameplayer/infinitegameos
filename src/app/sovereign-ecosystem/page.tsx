@@ -15,21 +15,21 @@ export const metadata: Metadata = {
     absolute: 'Sovereign Ecosystem. Obsidian + Claude Code Workspace Template',
   },
   description:
-    'The Sovereign Ecosystem is a foundational Obsidian + Claude Code workspace template. Directory structure, governance scaffolding, North Star template and an initial skill set. The three-tier stack origin for sovereign-first AI practitioners.',
+    'The Sovereign Ecosystem is a foundational Obsidian + Claude Code workspace template. Directory structure, governance scaffolding, North Star template, a working skill set and safety checks that come with tests that prove they work. The three-tier stack origin for sovereign-first AI practitioners.',
   openGraph: {
     type: 'website',
     siteName: 'Infinite Game OS',
     locale: 'en_US',
     title: 'Sovereign Ecosystem. Obsidian + Claude Code Workspace Template',
     description:
-      'The Sovereign Ecosystem is a foundational Obsidian + Claude Code workspace template. Directory structure, governance scaffolding, North Star template and an initial skill set. The three-tier stack origin for sovereign-first AI practitioners.',
+      'The Sovereign Ecosystem is a foundational Obsidian + Claude Code workspace template. Directory structure, governance scaffolding, North Star template, a working skill set and safety checks that come with tests that prove they work. The three-tier stack origin for sovereign-first AI practitioners.',
     url: 'https://www.infinitegameos.io/sovereign-ecosystem',
   },
   twitter: {
     card: 'summary_large_image',
     images: ['/twitter-image'],
     title: 'Sovereign Ecosystem. Obsidian + Claude Code Workspace Template',
-    description: 'The Sovereign Ecosystem is a foundational Obsidian + Claude Code workspace template. Directory structure, governance scaffolding, North Star template and an initial skill set. The three-tier stack origin for sovereign-first AI practitioners.',
+    description: 'The Sovereign Ecosystem is a foundational Obsidian + Claude Code workspace template. Directory structure, governance scaffolding, North Star template, a working skill set and safety checks that come with tests that prove they work. The three-tier stack origin for sovereign-first AI practitioners.',
   },
   alternates: {
     canonical: 'https://www.infinitegameos.io/sovereign-ecosystem',
@@ -51,7 +51,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Sovereign Ecosystem. Foundational Obsidian + Claude Code Template',
   description:
-    'The Sovereign Ecosystem is a foundational Obsidian + Claude Code workspace template. Directory structure, governance scaffolding, North Star template and an initial skill set. The three-tier stack origin for sovereign-first AI practitioners.',
+    'The Sovereign Ecosystem is a foundational Obsidian + Claude Code workspace template. Directory structure, governance scaffolding, North Star template, a working skill set and safety checks that come with tests that prove they work. The three-tier stack origin for sovereign-first AI practitioners.',
   author: { '@id': 'https://infinitegameos.io/#person' },
   publisher: { '@id': 'https://www.infinitegameos.io/#website' },
   url: 'https://www.infinitegameos.io/sovereign-ecosystem',
@@ -132,8 +132,8 @@ export default function SovereignEcosystemPage() {
               }}
             >
               A starting point for your sovereign Obsidian and Claude Code
-              workspace. Directory structure, governance scaffolding and an
-              initial skill set. Encouraged, not required.
+              workspace. Directory structure, governance scaffolding and a
+              working skill set. Encouraged, not required.
             </p>
           </SectionReveal>
         </header>
@@ -308,7 +308,7 @@ export default function SovereignEcosystemPage() {
                 The Sovereign Ecosystem is a foundational template for an
                 Obsidian and Claude Code workspace. It gives your sovereign
                 setup its initial shape: the directory structure, the governance
-                scaffolding, a North Star template and the initial skill set
+                scaffolding, a North Star template and the working skill set
                 needed to get a vault running.
               </p>
               <p>
@@ -358,8 +358,9 @@ export default function SovereignEcosystemPage() {
                 </li>
                 <li>
                   <strong>Guards that ship with their proof.</strong> Hooks that
-                  refuse an unapproved deletion, catch encoding corruption and
-                  flag links left dangling after a move. Every one travels with
+                  refuse an unapproved deletion, ask before a connected service
+                  acts outside your vault, catch encoding corruption and flag
+                  links left dangling after a move. Every one travels with
                   a control that fires it, because a guard you have read is not
                   a guard you have fired. Continuous integration runs those
                   controls on every change, and runs a negative control that

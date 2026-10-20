@@ -86,7 +86,7 @@ export const IGOS_MOD_SOVEREIGN_ECOSYSTEM: IgosMod = {
   label: 'Sovereign Ecosystem',
   title: 'The foundational workspace template',
   description:
-    'A foundational Obsidian and Claude Code workspace template. Directory structure, governance scaffolding and an initial skill set. The three-tier stack origin.',
+    'A foundational Obsidian and Claude Code workspace template. Directory structure, governance scaffolding and a working skill set. The three-tier stack origin.',
 }
 
 export const IGOS_MOD_UPDATES: IgosMod = {
@@ -424,7 +424,7 @@ export const creatorBusinessWithoutPerformingFaqs: FaqItem[] = [
 export const sovereignEcosystemFaqs: FaqItem[] = [
   {
     q: 'What is the Sovereign Ecosystem?',
-    a: 'The Sovereign Ecosystem is a foundational Obsidian and Claude Code workspace template. It ships the directory structure, governance scaffolding, a North Star template and an initial skill set needed to get a sovereign vault running. It is the starting conditions, not the finished system. Every practitioner who uses it ends up somewhere different.',
+    a: 'The Sovereign Ecosystem is a foundational Obsidian and Claude Code workspace template. It ships the directory structure, governance scaffolding, a North Star template and the working skill set needed to get a sovereign vault running. It is the starting conditions, not the finished system. Every practitioner who uses it ends up somewhere different.',
   },
   {
     q: 'Who is it for?',

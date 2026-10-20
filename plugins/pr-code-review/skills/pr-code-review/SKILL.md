@@ -82,7 +82,7 @@ Return the plan's location plus the scope this PR claims to deliver, or exactly 
 
 ### Step 4: Six-Lens Parallel Review (Sonnet x5, x6 when Step 3b found a plan)
 
-Launch the Sonnet agents simultaneously: Agents 1 to 5 always, Agent 6 only when Step 3b returned a plan. Each agent reads the PR diff and returns a list of issues with the reason each was flagged.
+Launch the Sonnet agents simultaneously: Agents 1 to 5 always, Agent 6 only when Step 3b returned a plan. Each agent reads the PR diff and returns a list of issues with the reason each was flagged. A lens that finds nothing returns "No findings" as a complete output. Padding a clean read with weak issues only feeds the later steps noise.
 
 **Agent 1: Convention Compliance**
 Read the convention files identified in Step 2. Check whether the changes comply. Note: a convention file is guidance for the coding agent as it writes code, so not all instructions apply during review. Focus on instructions that clearly govern the kind of change being made. If your convention file names mandatory per-page or per-module standards, spot-check changed files against those standards explicitly.
@@ -160,10 +160,11 @@ Every issue that survives Step 5b gets its own fresh validator subagent. **One p
 
 > You have no commitment to the original finding. If it is wrong, say so. False positives are common. Do not feel pressure to confirm.
 >
-> Answer three questions against the actual code:
+> Answer four questions against the actual code:
 > 1. **Is the issue real in the code as written?** Check for an existing guard, null check or validation the reviewer missed. Check for a misread type or signature. Check whether the pattern is intentional (comments, parallel handlers, project convention).
 > 2. **Did THIS diff introduce it?** Use git blame against the reviewed tree. A pre-existing, undisturbed line fails validation regardless of whether the underlying claim is true.
 > 3. **Is it not already handled elsewhere?** Check callers, middleware, framework defaults and parallel handlers.
+> 4. **What artifact confirms it?** Validated needs a quoted line at its location, a command output or a reproduced failure. A reading with no artifact returns `validated: false`, never true.
 >
 > For a Lens 6 (plan alignment) finding, question 2 becomes: **is the quoted plan line inside the scope this PR claims?** A plan line that belongs to a later phase or a different PR fails validation. For unimplemented scope, repeat the search yourself before you accept the absence.
 >
@@ -325,3 +326,7 @@ The general lesson is false precision. A threshold set against a continuous scal
 **2026-10-15. Version 1.2.** Adds Lens 6, plan alignment, and Step 3b, plan discovery.
 
 The five lenses ask whether the code is right. None asked whether it is the code the plan authorized. The new lens adds four things: a four-way verdict (a bare "differs" is noise), the unplanned-addition class, two-sided quoting (plan line plus diff line) and the absence rule for unimplemented scope (name the search). Step 3b's `no-plan-found` keeps the lens from costing a Sonnet dispatch on a PR with nothing to compare against. Prove it can fail before trusting it: run it on a fixture with planted departures and confirm it catches them, and rerun that fixture after any edit to the Lens 6 text.
+
+**2026-10-20. Version 1.3.** Validated needs an artifact, and a lens may return nothing.
+
+A fresh-context validator still shares the finder's priors, so it can agree with a finding for the same wrong reason the finder raised it. A validation should rest on something deterministic wherever one can exist: a quoted line at its location, a command output or a reproduced failure. Step 5c's validator brief therefore gains question 4, and a reading that produces no artifact returns `validated: false`. The same logic frees the lenses: a lens that finds nothing returns "No findings" as a complete output, because a lens pushed to produce something produces false positives. Treat the rule as a cautious default and adjust it against your own run summaries.
