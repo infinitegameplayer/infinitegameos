@@ -1,6 +1,6 @@
 # Infinite Game OS: Full Content Index
 # Deep LLM reference for comprehensive site content
-# Updated: 2026-10-09
+# Updated: 2026-10-20
 # https://www.infinitegameos.io
 
 This file contains structured summaries of each page for AI systems that require

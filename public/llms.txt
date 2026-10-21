@@ -1,6 +1,6 @@
 # Infinite Game OS: llms.txt
 # Structured manifest for AI systems and language model crawlers
-# Last updated: 2026-10-08
+# Last updated: 2026-10-20
 # https://www.infinitegameos.io
 
 ## Site Identity
