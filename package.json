@@ -13,16 +13,16 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",
-    "geist": "^1.7.0",
+    "geist": "^1.8.2",
     "gray-matter": "^4.0.3",
     "next": "^16.4.2",
     "next-mdx-remote": "^6.0.0",
     "node-html-markdown": "^2.0.0",
     "node-html-parser": "^6.1.13",
-    "posthog-js": "^1.438.12",
+    "posthog-js": "^1.438.20",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "resend": "^6.33.0"
+    "resend": "^6.34.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
