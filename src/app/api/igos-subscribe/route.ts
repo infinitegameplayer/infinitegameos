@@ -54,6 +54,32 @@ function buildWelcomeHtml(opts: { unsubscribeUrl: string; preferencesUrl: string
   })
 }
 
+const WELCOME_BACK_SUBJECT = 'Want back in?'
+const WELCOME_BACK_PREVIEW = 'One click and you are back.'
+
+// Sent instead of a silent re-add when an address that unsubscribed signs up
+// again through this public form, which cannot prove the person asked. The
+// link opens their own preferences, where one click restores any list
+// (Site Defensibility Read 2026-10-25).
+function buildWelcomeBackHtml(opts: { unsubscribeUrl: string; preferencesUrl: string; firstName?: string }) {
+  const name = cleanName(opts.firstName)
+  const greeting = name ? `Hey ${name},` : 'Hey there,'
+  const body = `
+    <p>${greeting}</p>
+    <p>This address just asked to join the list again. You unsubscribed a while back, so I wanted to hear it from you before adding you back.</p>
+    <p>If that was you, <a href="${opts.preferencesUrl}" style="color:#22d3ee;text-decoration:none">pick what you want to receive</a>.</p>
+    <p>If it wasn't you, ignore this and nothing changes.</p>
+    <p style="margin-top:2rem">With Joyful Sovereignty,</p>
+    <p style="margin-top:0">Lane</p>
+  `
+  return renderEmailShell({
+    body,
+    unsubscribeUrl: opts.unsubscribeUrl,
+    preferencesUrl: opts.preferencesUrl,
+    preview: WELCOME_BACK_PREVIEW,
+  })
+}
+
 function pathToSource(source: unknown): string {
   if (typeof source !== 'string' || !source) return 'form:updates'
   if (source === '/updates') return 'form:updates-index'
@@ -135,6 +161,37 @@ export async function POST(req: NextRequest) {
     const normalizedEmail = email.trim().toLowerCase()
     const normalizedFirstName = cleanName(firstName)
     const sourceForm = pathToSource(source)
+
+    // An address that unsubscribed is not re-added from this form. It gets one
+    // welcome-back email and the response stays the same, so the form never
+    // reveals who opted out. A lookup failure falls through to the ordinary
+    // path, as the mirror below already tolerates its own failure.
+    try {
+      const { data: prior } = await getSupabaseAdmin()
+        .from('contacts')
+        .select('unsubscribed, first_name')
+        .eq('email', normalizedEmail)
+        .maybeSingle()
+      if (prior?.unsubscribed === true) {
+        const unsubscribeUrl = `${SITE_URL}/unsubscribe?email=${encodeURIComponent(normalizedEmail)}&token=${signEmailToken(normalizedEmail)}`
+        const preferencesUrl = `${SITE_URL}/preferences?email=${encodeURIComponent(normalizedEmail)}&token=${signExpiringToken(normalizedEmail)}`
+        await new Resend(RESEND_API_KEY).emails.send({
+          from: FROM,
+          replyTo: REPLY_TO,
+          to: normalizedEmail,
+          subject: WELCOME_BACK_SUBJECT,
+          html: buildWelcomeBackHtml({
+            unsubscribeUrl,
+            preferencesUrl,
+            firstName: normalizedFirstName ?? prior.first_name ?? undefined,
+          }),
+        })
+        return NextResponse.json({ ok: true }, { status: 200 })
+      }
+    } catch (err) {
+      const m = err instanceof Error ? err.message : 'Unknown error'
+      console.error('igos-subscribe opt-out check error:', m)
+    }
 
     try {
       await applySupabaseMirror({ email: normalizedEmail, firstName: normalizedFirstName, source: sourceForm })
