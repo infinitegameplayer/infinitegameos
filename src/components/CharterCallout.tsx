@@ -51,7 +51,7 @@ export default function CharterCallout({ body = DEFAULT_BODY, marginTop = '3.5re
       line="Your AI’s Charter · free"
       button="Get the Charter"
       placeholder="you@example.com"
-      thanks="You’re in. The file and the guide are on their way from Side Quest HQ."
+      thanks="You are in. The file and the guide are on their way from Side Quest HQ."
       fallbackUrl="https://www.sidequesthq.co/charter"
     />
     </>
