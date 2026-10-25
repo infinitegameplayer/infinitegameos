@@ -131,7 +131,7 @@ export default function CharterForm() {
   if (status === 'submitted') {
     return (
       <p style={{ fontFamily: 'var(--font-body), Inter, system-ui, sans-serif', fontSize: '0.95rem', color: 'var(--color-text)', lineHeight: 1.65, margin: 0 }}>
-        You&rsquo;re in. The file and the guide are on their way from Side Quest HQ. The guide is also here:{' '}
+        You are in. The file and the guide are on their way from Side Quest HQ. The guide is also here:{' '}
         <a href={GUIDE_URL} style={{ color: 'var(--color-accent)' }}>
           fitting your AI&rsquo;s Charter to your work
         </a>
