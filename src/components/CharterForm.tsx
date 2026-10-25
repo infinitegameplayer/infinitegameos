@@ -9,6 +9,7 @@
 import { useEffect, useState } from 'react'
 import { usePostHog } from 'posthog-js/react'
 import { umamiTrack, umamiIdentify } from '@/lib/umami'
+import { markSubscribed } from '@/lib/bottom-bar'
 
 const GUIDE_URL = 'https://www.sidequesthq.co/charter/guide'
 const FALLBACK_URL = 'https://www.sidequesthq.co/charter'
@@ -111,6 +112,7 @@ export default function CharterForm() {
         throw new Error(body?.error || `Submission failed (${res.status})`)
       }
       setStatus('submitted')
+      markSubscribed(window.localStorage, 'igos-charter')
       try {
         const normalizedEmail = email.trim().toLowerCase()
         posthog?.identify(normalizedEmail, { email: normalizedEmail })
@@ -151,7 +153,7 @@ export default function CharterForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate>
+    <form onSubmit={handleSubmit} noValidate data-bar-anchor="">
       <input
         className="igos-subscribe-input"
         type="text"

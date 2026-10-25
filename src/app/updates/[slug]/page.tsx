@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import SectionReveal from '@/components/SectionReveal'
 import SubscribeForm from '@/components/SubscribeForm'
+import MobileBottomBar from '@/components/MobileBottomBar'
 import { getAllUpdates, getUpdate } from '@/lib/updates'
 import { twitterCard } from '@/lib/metadata'
 
@@ -158,6 +159,17 @@ export default async function UpdatePage({
           <SectionReveal delay={80}>
             <SubscribeForm />
           </SectionReveal>
+          <MobileBottomBar
+            kind="signup"
+            list="igos-subscribe"
+            endpoint="/api/igos-subscribe"
+            event="igos_subscribe"
+            sendSource
+            line="New dispatches as they ship"
+            button="Subscribe"
+            placeholder="you@example.com"
+            thanks="You are in. The welcome note is landing now."
+          />
 
           <SectionReveal delay={140}>
             <div

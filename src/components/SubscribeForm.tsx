@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { usePostHog } from 'posthog-js/react'
 import { umamiTrack, umamiIdentify } from '@/lib/umami'
+import { markSubscribed } from '@/lib/bottom-bar'
 
 const inputStyle: React.CSSProperties = {
   width: '100%',
@@ -94,6 +95,7 @@ export default function SubscribeForm() {
         throw new Error(body?.error || `Submission failed (${res.status})`)
       }
       setStatus('submitted')
+      markSubscribed(window.localStorage, 'igos-subscribe')
       try {
         const normalizedEmail = email.trim().toLowerCase()
         const subscribePayload = {
@@ -166,7 +168,7 @@ export default function SubscribeForm() {
       >
         New dispatches as they ship, from inside the practice.
       </p>
-      <form onSubmit={handleSubmit} noValidate>
+      <form onSubmit={handleSubmit} noValidate data-bar-anchor="">
         <input
           className="igos-subscribe-input"
           type="text"

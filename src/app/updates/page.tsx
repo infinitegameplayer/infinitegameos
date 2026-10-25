@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import SubscribeForm from '@/components/SubscribeForm'
+import MobileBottomBar from '@/components/MobileBottomBar'
 import { getAllUpdates } from '@/lib/updates'
 
 export const metadata: Metadata = {
@@ -155,6 +156,17 @@ export default function UpdatesPage() {
           <SectionReveal delay={120}>
             <SubscribeForm />
           </SectionReveal>
+          <MobileBottomBar
+            kind="signup"
+            list="igos-subscribe"
+            endpoint="/api/igos-subscribe"
+            event="igos_subscribe"
+            sendSource
+            line="New dispatches as they ship"
+            button="Subscribe"
+            placeholder="you@example.com"
+            thanks="You are in. The welcome note is landing now."
+          />
 
           <SectionReveal delay={160}>
             <div

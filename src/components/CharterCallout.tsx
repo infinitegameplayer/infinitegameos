@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import MobileBottomBar from '@/components/MobileBottomBar'
 
 // The Your AI's Charter door, for pages where builders already are: every
 // skill page, the Sovereign Ecosystem, Agentic Systems and the Ambassador
@@ -11,7 +12,9 @@ const DEFAULT_BODY =
 
 export default function CharterCallout({ body = DEFAULT_BODY, marginTop = '3.5rem' }: { body?: string; marginTop?: string }) {
   return (
+    <>
     <div
+      data-bar-anchor=""
       style={{
         marginTop,
         padding: '2rem',
@@ -39,5 +42,18 @@ export default function CharterCallout({ body = DEFAULT_BODY, marginTop = '3.5re
         Get the Charter · free
       </Link>
     </div>
+    {/* Every page carrying the Charter door also carries the mobile bottom bar for it. */}
+    <MobileBottomBar
+      kind="signup"
+      list="igos-charter"
+      endpoint="/api/charter-signup"
+      event="charter_signup"
+      line="Your AI’s Charter · free"
+      button="Get the Charter"
+      placeholder="you@example.com"
+      thanks="You’re in. The file and the guide are on their way from Side Quest HQ."
+      fallbackUrl="https://www.sidequesthq.co/charter"
+    />
+    </>
   )
 }

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import SectionReveal from '@/components/SectionReveal'
+import MobileBottomBar from '@/components/MobileBottomBar'
 import { concepts, getConceptBySlug, getAllConceptSlugs } from '@/data/concepts'
 import { getAllUpdates } from '@/lib/updates'
 import { twitterCard } from '@/lib/metadata'
@@ -283,6 +284,7 @@ export default async function ConceptPage({ params }: PageProps) {
           {concept.kitCallout && (
             <SectionReveal delay={concept.sections.length * 80}>
               <div
+                data-bar-anchor=""
                 style={{
                   marginTop: '3rem',
                   padding: '1.75rem 2rem',
@@ -309,6 +311,15 @@ export default async function ConceptPage({ params }: PageProps) {
                 </a>
               </div>
             </SectionReveal>
+          )}
+          {concept.kitCallout?.ctaHref.includes('sidequesthq.co/one-alive-thing') && (
+            <MobileBottomBar
+              kind="link"
+              barId="one-alive-thing"
+              line="One Alive Thing · a free guided hour"
+              button="Try it"
+              href={concept.kitCallout.ctaHref}
+            />
           )}
 
           {concept.productCard && (
