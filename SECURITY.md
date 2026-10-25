@@ -14,7 +14,7 @@ Last checked: 2026-04-10
 
 ## CSP Configuration
 
-The live policy is built in `next.config.ts` and applies to every path:
+The policy is built in `src/lib/csp.ts`. `next.config.ts` sends this static form on every path:
 
 ```
 default-src 'self';
@@ -28,6 +28,12 @@ frame-ancestors 'none';
 base-uri 'self';
 form-action 'self'
 ```
+
+### Nonce routes (option A, 2026-10-25)
+
+`src/proxy.ts` replaces the policy on four exact paths, all `force-dynamic` already: `/preferences`, `/preferences/cancel-email-change`, `/preferences/confirm-email-change` and `/unsubscribe`. On those, `script-src` swaps `'unsafe-inline'` for `'nonce-<value>'`, a fresh 16-byte value per request. Every other directive stays the same. No `'strict-dynamic'`, so the host list still governs external scripts. Next.js reads the nonce from the request header and stamps it on every executable inline script and every chunk during the render.
+
+The matcher lists exact paths, not `/preferences/:path*`. An unknown `/preferences/<slug>` is answered with the prerendered 404 page, which carries no nonce, so it keeps the static policy. The proxy also checks the pathname against `NONCE_ROUTES` before acting, and `contentSecurityPolicy()` throws on a malformed nonce. A route joins `NONCE_ROUTES` only once its page renders per request. `src/lib/csp.test.ts` holds both the static policy and the matcher in step.
 
 ### Inline script inventory (2026-10-25, Next.js 16.4.2, Turbopack build)
 
@@ -50,7 +56,7 @@ The flight payload is the blocker. Two routes away from `'unsafe-inline'` exist,
 - **Nonces.** Next.js only attaches a nonce during a request render. All static and SSG pages would turn dynamic, losing CDN caching. The Next.js CSP guide states this directly.
 - **Hashes.** Next.js has no supported inline-script hashing (`experimental.sri` covers external chunks only). Per-route headers in `next.config.ts` are fixed before prerendering, so the per-page payload hashes are unknown when the headers are built. A hash policy would need a post-build step patching `.next/routes-manifest.json` or a proxy reading a post-build hash file, both outside supported Next.js behavior and unverifiable outside Vercel. On-demand 404 renders (for example `/concepts/<unknown-slug>`) produce payloads no build-time hash covers.
 
-Ledger item 2026-10-21 (Low) stays open pending a ruling between those costs. The already dynamic routes (`/preferences`, `/preferences/*`, `/unsubscribe`) could take a nonce policy through `src/proxy.ts` with no rendering change.
+Ledger item 2026-10-21 (Low) stays open for the static and SSG pages pending a ruling between those costs. The already dynamic routes carry the nonce policy (see "Nonce routes" above).
 
 **If HubSpot, analytics, or any third-party script is added:** Update CSP before deploying.
 The `connect-src`, `script-src`, and possibly `frame-src` directives must be expanded.
@@ -59,7 +65,7 @@ The `connect-src`, `script-src`, and possibly `frame-src` directives must be exp
 
 | Item | Status | Notes |
 |---|---|---|
-| CSP nonce or hash hardening | Open, awaiting ruling | See "Why `'unsafe-inline'` remains" above. Nonces turn static pages dynamic. Hashes need an unsupported post-build step |
+| CSP nonce or hash hardening | Partly done | Nonce policy live on the four dynamic preference and unsubscribe routes (2026-10-25). Static and SSG pages await a ruling: nonces turn them dynamic, hashes need an unsupported post-build step |
 | Subresource Integrity (SRI) | Deferred | For any CDN-loaded assets added in future |
 
 ## No Third-Party Scripts at Launch
