@@ -21,8 +21,22 @@ const WELCOME_PREVIEW =
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
+// A visitor's name is set into the welcome email's HTML, so it is cleaned
+// first: letters, marks, spaces, hyphens and apostrophes only, at most 40
+// characters. Tags, links and domains cannot ride a name into a real email
+// from this address (Site Defensibility Read 2026-10-25). Built at runtime
+// because the ES2017 target rejects a Unicode property escape in a literal.
+const NAME_STRIP = new RegExp("[^\\p{L}\\p{M}\\s'\\u2019-]", 'gu')
+
+function cleanName(raw?: unknown): string | undefined {
+  if (typeof raw !== 'string') return undefined
+  const name = raw.normalize('NFC').replace(NAME_STRIP, '').replace(/\s+/g, ' ').trim().slice(0, 40).trim()
+  return name.length > 0 ? name : undefined
+}
+
 function buildWelcomeHtml(opts: { unsubscribeUrl: string; preferencesUrl: string; firstName?: string }) {
-  const greeting = opts.firstName ? `Hey ${opts.firstName},` : 'Hey there,'
+  const name = cleanName(opts.firstName)
+  const greeting = name ? `Hey ${name},` : 'Hey there,'
   const body = `
     <p>${greeting}</p>
     <p>You signed up for Infinite Game OS updates. The real ones, from inside the practice. New skills as they ship. Concepts as they cohere. Playbooks as they prove out.</p>
@@ -119,8 +133,7 @@ export async function POST(req: NextRequest) {
     }
 
     const normalizedEmail = email.trim().toLowerCase()
-    const normalizedFirstName =
-      typeof firstName === 'string' && firstName.trim() ? firstName.trim() : undefined
+    const normalizedFirstName = cleanName(firstName)
     const sourceForm = pathToSource(source)
 
     try {

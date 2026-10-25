@@ -7,7 +7,9 @@ const ENDPOINT = 'https://api.indexnow.org/indexnow'
 
 export async function POST(req: NextRequest) {
   const auth = req.headers.get('authorization')
-  if (auth !== `Bearer ${process.env.INDEXNOW_SECRET}`) {
+  // An unset secret would make the expected header "Bearer undefined", so the
+  // gate refuses outright when the secret is missing.
+  if (!process.env.INDEXNOW_SECRET || auth !== `Bearer ${process.env.INDEXNOW_SECRET}`) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 

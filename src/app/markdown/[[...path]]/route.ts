@@ -13,7 +13,15 @@ export async function GET(
 ) {
   const { path } = await params
   const joined = path?.join('/') ?? ''
-  const page = await fetch(new URL('/' + joined, request.url), {
+  // A first segment that decodes to a leading slash turns '/' + joined into
+  // '//host', which the URL parser reads as another site. The twin only ever
+  // reads its own site (Site Defensibility Read 2026-10-25).
+  const self = new URL(request.url)
+  const target = new URL('/' + joined, self)
+  if (target.origin !== self.origin) {
+    return new Response('Not found', { status: 404 })
+  }
+  const page = await fetch(target, {
     headers: { accept: 'text/html' },
     redirect: 'manual',
   })
