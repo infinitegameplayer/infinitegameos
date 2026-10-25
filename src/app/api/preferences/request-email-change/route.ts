@@ -4,11 +4,14 @@
 // address and the notice plus cancel link to the old address. The change applies
 // only when the new-address link is confirmed. Mirror across lanebelone and IGOS,
 // with this site's send shell and SITE_URL.
+// Expiring token only. The page is entered with one, and the permanent
+// unsubscribe token in every email footer must not be able to aim confirm mail
+// at any address (Site Defensibility Read 2026-10-25).
 
 import { NextRequest, NextResponse } from 'next/server'
 import { refuseBots } from '@/lib/bot-guard'
 import { Resend } from 'resend'
-import { verifyAnyToken, signEmailToken } from '@/lib/unsubscribe-token'
+import { verifyExpiringToken, signEmailToken } from '@/lib/unsubscribe-token'
 import { requestEmailChange } from '@/lib/email-lists'
 import { renderEmailShell } from '@/lib/email-shell'
 
@@ -33,7 +36,7 @@ export async function POST(req: NextRequest) {
   if (!email || !token || !newEmail) {
     return NextResponse.json({ error: 'Missing field' }, { status: 400 })
   }
-  if (!verifyAnyToken(email, token)) {
+  if (verifyExpiringToken(email, token) !== 'valid') {
     return NextResponse.json({ error: 'Invalid token' }, { status: 403 })
   }
 
