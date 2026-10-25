@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { refuseBots } from '@/lib/bot-guard'
 
 // Your AI's Charter signup. The form on /charter posts here, same origin, and
 // this route forwards server to server to Side Quest HQ's form intake, which
@@ -19,6 +20,8 @@ const TIMEOUT_MS = 10000
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function POST(req: NextRequest) {
+  const blocked = await refuseBots()
+  if (blocked) return blocked
   let body: { email?: unknown; firstName?: unknown; honeypot?: unknown; openedAt?: unknown }
   try {
     body = await req.json()
@@ -42,7 +45,14 @@ export async function POST(req: NextRequest) {
   try {
     const res = await fetch(FORWARD_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', Origin: ORIGIN },
+      // This call carries no browser signal, so Side Quest HQ's bot check
+      // accepts it on the shared relay secret (Site Defensibility Read
+      // 2026-10-25). The browser's own request was checked above.
+      headers: {
+        'Content-Type': 'application/json',
+        Origin: ORIGIN,
+        ...(process.env.FORM_RELAY_SECRET ? { 'x-kingdom-relay': process.env.FORM_RELAY_SECRET } : {}),
+      },
       body: JSON.stringify(payload),
       signal: AbortSignal.timeout(TIMEOUT_MS),
       cache: 'no-store',

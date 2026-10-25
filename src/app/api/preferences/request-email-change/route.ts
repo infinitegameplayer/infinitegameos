@@ -6,6 +6,7 @@
 // with this site's send shell and SITE_URL.
 
 import { NextRequest, NextResponse } from 'next/server'
+import { refuseBots } from '@/lib/bot-guard'
 import { Resend } from 'resend'
 import { verifyAnyToken, signEmailToken } from '@/lib/unsubscribe-token'
 import { requestEmailChange } from '@/lib/email-lists'
@@ -16,6 +17,8 @@ const FROM = 'Lane Belone <play@infinitegameos.io>'
 const REPLY_TO = 'play@infinitegameos.io'
 
 export async function POST(req: NextRequest) {
+  const blocked = await refuseBots()
+  if (blocked) return blocked
   let body: { email?: string; token?: string; newEmail?: string }
   try {
     body = (await req.json()) as { email?: string; token?: string; newEmail?: string }

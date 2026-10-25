@@ -16,7 +16,16 @@
 // fail against production before this landed.
 
 import posthog from 'posthog-js'
+import { initBotId } from 'botid/client/core'
 import { isNoTrackPath, isNonPublicHost } from '@/lib/no-track'
+import { BOTID_PROTECTED } from '@/lib/botid-routes'
+
+// Vercel BotID attaches its browser signal to this site's form, checkout and
+// preference routes (each site's list lives in src/lib/botid-routes.ts, so
+// this file stays byte-identical). It runs on every page, the preference
+// center included, because those routes are posted from there, and it is
+// not analytics (Site Defensibility Read 2026-10-25).
+initBotId({ protect: BOTID_PROTECTED })
 
 // Privacy surfaces (the preference center) never initialize analytics. The
 // entry URL carries a live signed token, so PostHog must not start here.

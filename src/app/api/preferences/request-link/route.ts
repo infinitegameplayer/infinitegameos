@@ -6,6 +6,7 @@
 // contact exists, and only that case writes an audit row.
 
 import { NextRequest, NextResponse } from 'next/server'
+import { refuseBots } from '@/lib/bot-guard'
 import { Resend } from 'resend'
 import {
   signExpiringToken,
@@ -22,6 +23,8 @@ const REPLY_TO = 'play@infinitegameos.io'
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function POST(req: NextRequest) {
+  const blocked = await refuseBots()
+  if (blocked) return blocked
   let body: { email?: string }
   try {
     body = (await req.json()) as { email?: string }

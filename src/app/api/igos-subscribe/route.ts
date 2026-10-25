@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { refuseBots } from '@/lib/bot-guard'
 import { Resend } from 'resend'
 import { getSupabaseAdmin } from '@/lib/supabase'
 import { signEmailToken, signExpiringToken } from '@/lib/unsubscribe-token'
@@ -130,6 +131,8 @@ async function applySupabaseMirror(opts: {
 }
 
 export async function POST(req: NextRequest) {
+  const blocked = await refuseBots()
+  if (blocked) return blocked
   try {
     const { email, firstName, honeypot, openedAt, source } = await req.json()
 
