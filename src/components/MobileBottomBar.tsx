@@ -281,7 +281,7 @@ export default function MobileBottomBar(props: MobileBottomBarProps) {
   return createPortal(
     <div
       ref={barRef}
-      className="md:hidden kingdom-bottom-bar"
+      className="md:hidden kingdom-bottom-bar kbar-frame"
       role="region"
       aria-label={props.line}
       onFocusCapture={onFocusCapture}
@@ -314,6 +314,12 @@ export default function MobileBottomBar(props: MobileBottomBarProps) {
       <style>{`
         .kingdom-bottom-bar input::placeholder { color: rgba(226, 232, 240, 0.45); }
         .kingdom-bottom-bar input:focus { border-color: rgba(34, 211, 238, 0.5) !important; }
+        /* the static free-action frame (globals.css .action-card): defined and still, no rotating shimmer */
+        .kingdom-bottom-bar.kbar-frame {
+          border: 1px solid rgba(34, 211, 238, 0.3) !important;
+          border-left: 2px solid #22d3ee !important;
+          background: linear-gradient(rgba(34, 211, 238, 0.05), rgba(34, 211, 238, 0.05)), rgba(10, 10, 24, 0.95) !important;
+        }
       `}</style>
       <button
         type="button"
