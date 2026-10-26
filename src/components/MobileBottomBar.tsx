@@ -96,6 +96,7 @@ export default function MobileBottomBar(props: MobileBottomBarProps) {
         focused: focusedRef.current,
         dismissed: false,
         subscribed: false,
+        wide: window.matchMedia('(min-width: 48rem)').matches, // Tailwind's md, where the class hides it too
       })
       lastY = y
       if (next.shown !== shownRef.current) {
@@ -281,7 +282,8 @@ export default function MobileBottomBar(props: MobileBottomBarProps) {
   return createPortal(
     <div
       ref={barRef}
-      className="md:hidden kingdom-bottom-bar kbar-frame"
+      // display lives in the class, not the style: an inline display outranks md:hidden
+      className="flex md:hidden kingdom-bottom-bar kbar-frame"
       role="region"
       aria-label={props.line}
       onFocusCapture={onFocusCapture}
@@ -294,7 +296,6 @@ export default function MobileBottomBar(props: MobileBottomBarProps) {
         zIndex: 40,
         minHeight: 92,
         padding: '12px 16px 13px',
-        display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         gap: 6,

@@ -23,9 +23,20 @@ const base: BarInput = {
   focused: false,
   dismissed: false,
   subscribed: false,
+  wide: false,
 }
 
 describe('nextBarState', () => {
+  it('never shows on a wide screen, even scrolling down past the trigger (phones only)', () => {
+    const r = nextBarState(false, { ...base, viewportBottom: 2300, delta: 40, wide: true })
+    expect(r.shown).toBe(false)
+    expect(r.reason).toBe('wide')
+  })
+
+  it('leaves when the window widens while it shows, focus or not', () => {
+    expect(nextBarState(true, { ...base, viewportBottom: 2300, delta: 0, focused: true, wide: true }).shown).toBe(false)
+  })
+
   it('stays hidden before the trigger', () => {
     expect(nextBarState(false, { ...base, viewportBottom: 1500, delta: 40 }).shown).toBe(false)
   })
