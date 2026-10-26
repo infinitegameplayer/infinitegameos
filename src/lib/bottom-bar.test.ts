@@ -27,14 +27,22 @@ const base: BarInput = {
 }
 
 describe('nextBarState', () => {
-  it('never shows on a wide screen, even scrolling down past the trigger (phones only)', () => {
+  it('shows on a wide screen scrolling down past the trigger (the dock)', () => {
     const r = nextBarState(false, { ...base, viewportBottom: 2300, delta: 40, wide: true })
-    expect(r.shown).toBe(false)
-    expect(r.reason).toBe('wide')
+    expect(r.shown).toBe(true)
+    expect(r.reason).toBe('scrolling-down')
   })
 
-  it('leaves when the window widens while it shows, focus or not', () => {
-    expect(nextBarState(true, { ...base, viewportBottom: 2300, delta: 0, focused: true, wide: true }).shown).toBe(false)
+  it('hides on a wide screen scrolling up, as on a phone', () => {
+    expect(nextBarState(true, { ...base, viewportBottom: 2300, delta: -40, wide: true }).shown).toBe(false)
+  })
+
+  it('keeps every other rule on a wide screen', () => {
+    const wide = { ...base, viewportBottom: 2300, wide: true }
+    expect(nextBarState(false, { ...wide, viewportBottom: 1500, delta: 40 }).shown).toBe(false)
+    expect(nextBarState(true, { ...wide, avoiding: true, delta: 40 }).shown).toBe(false)
+    expect(nextBarState(true, { ...wide, delta: -40, focused: true }).shown).toBe(true)
+    expect(nextBarState(true, { ...wide, delta: 40, dismissed: true }).shown).toBe(false)
   })
 
   it('stays hidden before the trigger', () => {

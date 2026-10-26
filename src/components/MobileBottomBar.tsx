@@ -8,7 +8,8 @@ import { umamiTrack } from '@/lib/umami'
 // The mobile bottom bar: a thin floating bar that fades in once the page's own
 // form or callout has scrolled away (or after one screen when it sits lower),
 // leaves on any scroll up, gives way whenever a page form, callout or the footer
-// is on screen, and stays away 30 days after the x. Phones only.
+// is on screen, and stays away 30 days after the x. From 768px it is the dock:
+// one row centered on the reading column, under the same rules.
 // Two kinds: signup (email only, the same route and body the page's form sends)
 // and link (a door to a page elsewhere, used for One Alive Thing on concepts).
 // Anchors are any element marked data-bar-anchor outside the bar.
@@ -38,16 +39,44 @@ const COLORS = {
   fieldBorder: 'rgba(226, 232, 240, 0.14)',
 }
 
-const compactButton: React.CSSProperties = {
-  height: 38,
-  padding: '0 14px',
-  fontSize: 12,
-  whiteSpace: 'nowrap',
-  display: 'inline-flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  flex: 'none',
-}
+const BAR_HEIGHT = 92
+const DOCK_HEIGHT = 64
+// Tailwind's md. The stylesheet below switches to the dock at the same width.
+const DOCK = '(min-width: 48rem)'
+const layoutNow = (): 'phone' | 'dock' => (window.matchMedia(DOCK).matches ? 'dock' : 'phone')
+
+// Geometry lives here, never in the style prop: an inline style outranks a media
+// query, the fault that once put the phone bar on desktop. Only opacity,
+// visibility and the transition stay inline on the bar.
+const SHEET = `
+  .kingdom-bottom-bar { position: fixed; left: 10px; right: 10px; bottom: calc(10px + env(safe-area-inset-bottom, 0px)); z-index: 40; min-height: ${BAR_HEIGHT}px; padding: 12px 16px 13px; display: flex; flex-direction: column; justify-content: center; gap: 6px; border-radius: 14px; background: ${COLORS.surface}; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid ${COLORS.hairline}; box-shadow: 0 10px 34px rgba(0, 0, 0, 0.55); color: ${COLORS.text}; font-family: var(--font-body); }
+  .kingdom-bottom-bar .kbar-x { position: absolute; top: 4px; right: 4px; width: 28px; height: 28px; display: grid; place-items: center; background: none; border: 0; padding: 0; color: ${COLORS.muted}; font-size: 17px; line-height: 1; cursor: pointer; }
+  .kingdom-bottom-bar .kbar-body { display: flex; flex-direction: column; gap: 6px; }
+  .kingdom-bottom-bar .kbar-line { font-size: 13.5px; font-weight: 500; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-right: 26px; }
+  .kingdom-bottom-bar .kbar-note { font-size: 13.5px; line-height: 1.45; padding-right: 24px; }
+  .kingdom-bottom-bar .kbar-thanks { font-size: 14px; color: #67e8f9; }
+  .kingdom-bottom-bar .kbar-row { display: flex; justify-content: flex-end; }
+  .kingdom-bottom-bar .kbar-form { display: flex; gap: 8px; align-items: center; }
+  .kingdom-bottom-bar .kbar-field { flex: 1; min-width: 0; height: 38px; padding: 0 12px; border-radius: 8px; background: ${COLORS.field}; border: 1px solid ${COLORS.fieldBorder}; color: ${COLORS.text}; font-family: var(--font-body); font-size: 16px; outline: none; }
+  .kingdom-bottom-bar .kbar-cta { height: 38px; padding: 0 14px; font-size: 12px; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+  .kingdom-bottom-bar input::placeholder { color: rgba(226, 232, 240, 0.45); }
+  .kingdom-bottom-bar input:focus { border-color: rgba(34, 211, 238, 0.5) !important; }
+  /* the static free-action frame (globals.css .action-card): defined and still, no rotating shimmer */
+  .kingdom-bottom-bar.kbar-frame {
+    border: 1px solid rgba(34, 211, 238, 0.3) !important;
+    border-left: 2px solid #22d3ee !important;
+    background: linear-gradient(rgba(34, 211, 238, 0.05), rgba(34, 211, 238, 0.05)), rgba(10, 10, 24, 0.95) !important;
+  }
+  @media ${DOCK} {
+    .kingdom-bottom-bar { left: 0; right: 0; margin-inline: auto; width: min(720px, 100vw - 40px); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); min-height: ${DOCK_HEIGHT}px; padding: 12px 44px 12px 20px; flex-direction: row; align-items: center; gap: 12px; }
+    .kingdom-bottom-bar .kbar-x { top: 50%; margin-top: -14px; right: 8px; }
+    .kingdom-bottom-bar .kbar-body { flex: 1; min-width: 0; flex-direction: row; align-items: center; gap: 12px; }
+    .kingdom-bottom-bar .kbar-line { flex: 1; min-width: 0; font-size: 14.5px; padding-right: 0; }
+    .kingdom-bottom-bar .kbar-note { flex: 1; padding-right: 0; }
+    .kingdom-bottom-bar .kbar-row, .kingdom-bottom-bar .kbar-form { flex: none; }
+    .kingdom-bottom-bar .kbar-field { flex: none; width: 250px; }
+  }
+`
 
 export default function MobileBottomBar(props: MobileBottomBarProps) {
   const barKey = props.kind === 'signup' ? `signup:${props.list}` : `link:${props.barId}`
@@ -96,7 +125,7 @@ export default function MobileBottomBar(props: MobileBottomBarProps) {
         focused: focusedRef.current,
         dismissed: false,
         subscribed: false,
-        wide: window.matchMedia('(min-width: 48rem)').matches, // Tailwind's md, where the class hides it too
+        wide: layoutNow() === 'dock',
       })
       lastY = y
       if (next.shown !== shownRef.current) {
@@ -104,7 +133,7 @@ export default function MobileBottomBar(props: MobileBottomBarProps) {
         setShown(next.shown)
         if (next.shown && !trackedRef.current) {
           trackedRef.current = true
-          umamiTrack('bottom_bar_shown', { kind: barKey, path: window.location.pathname })
+          umamiTrack('bottom_bar_shown', { kind: barKey, path: window.location.pathname, layout: layoutNow() })
         }
       }
     }
@@ -123,7 +152,7 @@ export default function MobileBottomBar(props: MobileBottomBarProps) {
   // Keep a focused field clear of the bar (WCAG 2.4.11) while it shows.
   useEffect(() => {
     const root = document.documentElement
-    root.style.scrollPaddingBottom = shown ? '116px' : ''
+    root.style.scrollPaddingBottom = shown ? `${layoutNow() === 'dock' ? DOCK_HEIGHT + 34 : BAR_HEIGHT + 24}px` : ''
     return () => {
       root.style.scrollPaddingBottom = ''
     }
@@ -137,7 +166,7 @@ export default function MobileBottomBar(props: MobileBottomBarProps) {
 
   const onClose = () => {
     dismiss(window.localStorage, barKey, Date.now())
-    umamiTrack('bottom_bar_dismissed', { kind: barKey, path: window.location.pathname })
+    umamiTrack('bottom_bar_dismissed', { kind: barKey, path: window.location.pathname, layout: layoutNow() })
     leave()
   }
 
@@ -178,7 +207,7 @@ export default function MobileBottomBar(props: MobileBottomBarProps) {
         throw new Error(body?.error || `Submission failed (${res.status})`)
       }
       markSubscribed(window.localStorage, props.list)
-      umamiTrack('bottom_bar_signup', { kind: barKey, path: window.location.pathname })
+      umamiTrack('bottom_bar_signup', { kind: barKey, path: window.location.pathname, layout: layoutNow() })
       umamiTrack(props.event, { source: `bottom-bar:${window.location.pathname}` })
       setStatus('submitted')
       focusedRef.current = false
@@ -191,38 +220,27 @@ export default function MobileBottomBar(props: MobileBottomBarProps) {
 
   if (!active) return null
 
-  const lineStyle: React.CSSProperties = {
-    fontSize: 13.5,
-    fontWeight: 500,
-    lineHeight: 1.4,
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    paddingRight: 26,
-  }
-
   let body: React.ReactNode
   if (props.kind === 'link') {
     body = (
-      <>
-        <div style={lineStyle}>{props.line}</div>
-        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+      <div className="kbar-body">
+        <div className="kbar-line">{props.line}</div>
+        <div className="kbar-row">
           <a
             href={props.href}
-            className="btn-soft-accent"
-            style={compactButton}
-            onClick={() => umamiTrack('bottom_bar_link_click', { kind: barKey, path: window.location.pathname })}
+            className="btn-soft-accent kbar-cta"
+            onClick={() => umamiTrack('bottom_bar_link_click', { kind: barKey, path: window.location.pathname, layout: layoutNow() })}
           >
             {props.button}
           </a>
         </div>
-      </>
+      </div>
     )
   } else if (status === 'submitted') {
-    body = <div style={{ fontSize: 14, lineHeight: 1.45, color: '#67e8f9', paddingRight: 24 }}>{props.thanks}</div>
+    body = <div className="kbar-note kbar-thanks">{props.thanks}</div>
   } else if (status === 'forward_failed') {
     body = (
-      <div style={{ fontSize: 13.5, lineHeight: 1.45, paddingRight: 24 }}>
+      <div className="kbar-note">
         The sign-up did not go through from here.{' '}
         <a href={props.fallbackUrl} style={{ color: '#67e8f9' }}>
           Get it at sidequesthq.co/charter
@@ -232,11 +250,11 @@ export default function MobileBottomBar(props: MobileBottomBarProps) {
     )
   } else {
     body = (
-      <>
-        <div style={{ ...lineStyle, color: status === 'error' ? 'rgba(240, 130, 110, 0.95)' : undefined }}>
+      <div className="kbar-body">
+        <div className="kbar-line" style={status === 'error' ? { color: 'rgba(240, 130, 110, 0.95)' } : undefined}>
           {status === 'error' && errorMessage ? errorMessage : props.line}
         </div>
-        <form onSubmit={onSignup} noValidate style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+        <form onSubmit={onSignup} noValidate className="kbar-form">
           <input
             type="email"
             required
@@ -245,19 +263,7 @@ export default function MobileBottomBar(props: MobileBottomBarProps) {
             placeholder={props.placeholder}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            style={{
-              flex: 1,
-              minWidth: 0,
-              height: 38,
-              padding: '0 12px',
-              borderRadius: 8,
-              background: COLORS.field,
-              border: `1px solid ${COLORS.fieldBorder}`,
-              color: COLORS.text,
-              fontFamily: 'var(--font-body)',
-              fontSize: 16, // 16px or more, or iOS Safari zooms the page on focus
-              outline: 'none',
-            }}
+            className="kbar-field" // 16px or more, or iOS Safari zooms the page on focus
           />
           <input
             type="text"
@@ -269,11 +275,11 @@ export default function MobileBottomBar(props: MobileBottomBarProps) {
             onChange={(e) => setWebsite(e.target.value)}
             style={{ position: 'absolute', left: -10000, width: 1, height: 1, overflow: 'hidden' }}
           />
-          <button type="submit" className="btn-soft-accent" disabled={status === 'submitting'} style={{ ...compactButton, opacity: status === 'submitting' ? 0.6 : 1 }}>
+          <button type="submit" className="btn-soft-accent kbar-cta" disabled={status === 'submitting'} style={status === 'submitting' ? { opacity: 0.6 } : undefined}>
             {status === 'submitting' ? '...' : props.button}
           </button>
         </form>
-      </>
+      </div>
     )
   }
 
@@ -282,67 +288,19 @@ export default function MobileBottomBar(props: MobileBottomBarProps) {
   return createPortal(
     <div
       ref={barRef}
-      // display lives in the class, not the style: an inline display outranks md:hidden
-      className="flex md:hidden kingdom-bottom-bar kbar-frame"
+      className="kingdom-bottom-bar kbar-frame"
       role="region"
       aria-label={props.line}
       onFocusCapture={onFocusCapture}
       onBlurCapture={onBlurCapture}
       style={{
-        position: 'fixed',
-        left: 10,
-        right: 10,
-        bottom: 'calc(10px + env(safe-area-inset-bottom, 0px))',
-        zIndex: 40,
-        minHeight: 92,
-        padding: '12px 16px 13px',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        gap: 6,
-        borderRadius: 14,
-        background: COLORS.surface,
-        backdropFilter: 'blur(10px)',
-        WebkitBackdropFilter: 'blur(10px)',
-        border: `1px solid ${COLORS.hairline}`,
-        boxShadow: '0 10px 34px rgba(0, 0, 0, 0.55)',
-        color: COLORS.text,
-        fontFamily: 'var(--font-body)',
         opacity: shown ? 1 : 0,
         visibility: shown ? 'visible' : 'hidden',
         transition: shown ? 'opacity 260ms ease, visibility 0s linear 0s' : 'opacity 260ms ease, visibility 0s linear 260ms',
       }}
     >
-      <style>{`
-        .kingdom-bottom-bar input::placeholder { color: rgba(226, 232, 240, 0.45); }
-        .kingdom-bottom-bar input:focus { border-color: rgba(34, 211, 238, 0.5) !important; }
-        /* the static free-action frame (globals.css .action-card): defined and still, no rotating shimmer */
-        .kingdom-bottom-bar.kbar-frame {
-          border: 1px solid rgba(34, 211, 238, 0.3) !important;
-          border-left: 2px solid #22d3ee !important;
-          background: linear-gradient(rgba(34, 211, 238, 0.05), rgba(34, 211, 238, 0.05)), rgba(10, 10, 24, 0.95) !important;
-        }
-      `}</style>
-      <button
-        type="button"
-        aria-label="Close"
-        onClick={onClose}
-        style={{
-          position: 'absolute',
-          top: 4,
-          right: 4,
-          width: 28,
-          height: 28,
-          display: 'grid',
-          placeItems: 'center',
-          background: 'none',
-          border: 0,
-          padding: 0,
-          color: COLORS.muted,
-          fontSize: 17,
-          lineHeight: 1,
-          cursor: 'pointer',
-        }}
-      >
+      <style>{SHEET}</style>
+      <button type="button" aria-label="Close" onClick={onClose} className="kbar-x">
         &times;
       </button>
       {body}

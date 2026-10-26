@@ -15,11 +15,10 @@ export type BarInput = {
   focused: boolean // the bar's own field has focus
   dismissed: boolean
   subscribed: boolean
-  wide: boolean // the screen is wider than a phone (768px and up); the bar is phones only
+  wide: boolean // 768px and up, where the bar is the dock; the rules are the same at every width
 }
 
 export type BarReason =
-  | 'wide'
   | 'subscribed'
   | 'dismissed'
   | 'focused'
@@ -30,7 +29,6 @@ export type BarReason =
   | 'resting'
 
 export function nextBarState(prev: boolean, i: BarInput): { shown: boolean; reason: BarReason } {
-  if (i.wide) return { shown: false, reason: 'wide' }
   if (i.subscribed) return { shown: false, reason: 'subscribed' }
   if (i.dismissed) return { shown: false, reason: 'dismissed' }
   if (i.focused) return { shown: prev, reason: 'focused' }
