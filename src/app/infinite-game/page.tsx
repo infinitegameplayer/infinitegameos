@@ -52,7 +52,7 @@ const articleSchema = {
   mainEntityOfPage: 'https://www.infinitegameos.io/infinite-game',
   license: 'https://creativecommons.org/licenses/by/4.0/',
   datePublished: '2026-04-14',
-  dateModified: '2026-09-24',
+  dateModified: '2026-10-28',
 }
 
 const breadcrumbSchema = {
@@ -270,6 +270,17 @@ export default function InfiniteGamePage() {
                     >
                       {item.a}
                     </p>
+                    {item.link && (
+                      <p
+                        style={{
+                          fontFamily: 'var(--font-body)',
+                          fontSize: '0.875rem',
+                          marginTop: '0.75rem',
+                        }}
+                      >
+                        <a href={item.link.href}>{item.link.label} &rarr;</a>
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>

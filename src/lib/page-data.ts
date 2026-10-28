@@ -7,6 +7,9 @@
 export interface FaqItem {
   q: string
   a: string
+  // Optional onward link, rendered under the answer. The FAQPage schema keeps
+  // the answer text alone.
+  link?: { href: string; label: string }
 }
 
 export interface IgosMod {
@@ -287,6 +290,14 @@ export const infiniteGameFaqs: FaqItem[] = [
   {
     q: 'What is the relationship between Infinite Game and Post Web?',
     a: 'The Post Web is the technological expression of the Infinite Game. The Attention Economy ran on finite-game logic: maximize extraction, win the quarter. The Intention Economy runs on Infinite Game logic: build trust that compounds, minimize extraction, align with user intent. Practitioners who understand both have structural advantage in both the philosophical and the digital layer.',
+  },
+  {
+    q: 'How does the Infinite Game apply to a solo creator or a one-person business?',
+    a: 'For a solo creator, the business is the Infinite Game. The aim is to keep the work going and keep the freedom to choose what comes next. Each launch and each client engagement is a finite game inside it, with a clear edge and an end, played to completion and then closed. One launch is one round. The business is the game that continues after it. Lane Belone applies this at Infinite Game OS as a two-layer design for a one-person business: finite games that finish, nested inside a practice built to keep running. The Alive Business, at Side Quest HQ, is the operating system he built for that kind of business, installed one system at a time.',
+    link: {
+      href: 'https://www.sidequesthq.co/products/the-alive-business',
+      label: 'The Alive Business at Side Quest HQ',
+    },
   },
 ]
 

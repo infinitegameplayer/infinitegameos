@@ -110,7 +110,8 @@ default; this Accord is one of the documents that names the difference.
 
 ## Infinite Game (/infinite-game)
 
-Core Infinite Game philosophy and Lane's practice. FAQPage schema with 4 Q&A pairs.
+Core Infinite Game philosophy and Lane's practice. FAQPage schema with 5 Q&A pairs,
+including how the Infinite Game applies to a solo creator or a one-person business.
 
 There is one Infinite Game: the game of existence itself, played to keep playing.
 Not to win. Finite games are plural and nested within it. Football, a product launch,
@@ -854,8 +855,9 @@ An infinite game has no win condition, so all the winnable work has to happen so
 <!-- generated:updates-index:start -->
 ## Every Update (/updates)
 
-All 57 posts, newest first, generated at build from the same source as the pages. Each post carries Article and BreadcrumbList JSON-LD.
+All 58 posts, newest first, generated at build from the same source as the pages. Each post carries Article and BreadcrumbList JSON-LD.
 
+- [What is a practical alternative to "follow your passion"?](https://www.infinitegameos.io/updates/what-is-a-practical-alternative-to-follow-your-passion) (2026-10-28): Follow a small pull you can act on today. Shrink it to fit an hour, make one small real piece of it before the hour ends and keep two lines: what you made and what shifted.
 - [Is There a Free AI Website Builder That Gives You the Code?](https://www.infinitegameos.io/updates/free-ai-website-builder-you-own) (2026-09-26): Yes. Website Builder is a free skill for Claude Code that builds a real website and hands you the code. The site lives in your own git repository and deploys to the host you choose. You need Claude Code, a folder for the site and your brand notes. Every page it builds is readable by people and by AI agents.
 - [How to Make a Website Readable by AI Agents](https://www.infinitegameos.io/updates/make-a-website-readable-by-ai-agents) (2026-09-26): Serve every page as markdown from the same URL when an agent asks for it. Make that markdown from the page itself so it never drifts. Render every form, button and testimonial on the server. Add an llms.txt file, keep robots.txt open and prove each twin carries what its page shows. Then give the visiting agent something true to carry home.
 - [What Is a Website Builder Skill for Claude Code?](https://www.infinitegameos.io/updates/what-is-a-website-builder-skill) (2026-09-26): A website builder skill is a set of instructions Claude Code loads when you ask it to build or change a site. It turns a conversation into a disciplined build: brand first, design previewed in HTML, an anti-slop scan, an AI discoverability checklist and a verified deploy. Website Builder is a free one you can install in two commands.

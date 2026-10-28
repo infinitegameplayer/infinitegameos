@@ -169,7 +169,7 @@ The IGOS Public Library publishes installable skills, protocols, codices, concep
 - /: Homepage: OS orientation frame, six module cards, practitioner callout
 - /the-os: What is Infinite Game OS? Philosophy anchor with FAQPage schema (6 Q&As)
 - /accord: The Benevolent Human-AI Accord. Public charter for benevolent human-AI coexistence with seven commitments (Seven Generations Stewardship, Transparency and Inspectability, Mutual Benevolence, Consent and Sovereignty, Reciprocal Responsibility, Harmonious Potential, Goodwill Forward), the reframe of AI as Artful Intelligence, and a section co-authored by Jarvis (Claude). Article + FAQPage + BreadcrumbList schema (6 Q&As)
-- /infinite-game: Core Infinite Game philosophy with FAQPage schema (4 Q&As), two-layer game structure, Lane's lived application
+- /infinite-game: Core Infinite Game philosophy with FAQPage schema (5 Q&As), two-layer game structure, Lane's lived application, how the Infinite Game applies to a solo creator or a one-person business
 - /agentic-systems: Full practitioner's guide: Post Web synthesis, four verbs of the web, GEO, Practitioner's Positioning Playbook
 - /sovereignty: Sovereign life design: natural law as ground (do no harm, full responsibility, consent), the public/private distinction, the Living Axis (inner mastery, structural sovereignty, strategic execution), embodiment as infrastructure, Joyful Sovereignty as compass state, Kingdom model, creative sovereignty, FAQPage schema (6 Q&As)
 - /updates: Dispatches from inside the practice, Article + BreadcrumbList schema per post
@@ -253,6 +253,7 @@ Six articles shipped 2026-07-24 as the technology wave, paired two per concept t
 - /updates/free-ai-website-builder-you-own: Is there a free AI website builder that gives you the code? Yes: Website Builder, a free Claude Code skill that builds a site into the person's own git repository, deployable to the host they choose, with every page readable by AI agents.
 - /updates/what-is-a-website-builder-skill: What a Claude Code skill is (a folder with a SKILL.md Claude loads when the task matches), what the Website Builder skill does step by step and how to install it in two commands.
 - /updates/make-a-website-readable-by-ai-agents: Serve every page as markdown from the same URL, generated from the page itself; render every form, button and testimonial on the server; keep robots.txt open and llms.txt current; prove each twin with a parity check; welcome the visiting agent with a taste, a line to carry and the gate left to the person.
+- /updates/what-is-a-practical-alternative-to-follow-your-passion: Follow a small pull you can act on today. Shrink it to fit an hour, make one small real piece of it and keep two lines: what you made and what shifted. Why "follow your passion" stalls, the one-hour practice and how it fits the Infinite Game. The door is One Alive Thing, a free guide at Side Quest HQ.
 
 ## Dataset (Hugging Face)
 
