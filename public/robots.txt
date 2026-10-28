@@ -86,13 +86,14 @@ Allow: /
 
 # Search engines: exclude /markdown/ (AI-agent surface) to prevent duplicate
 # indexing. Per Web Strategy Codex Conflict 8: per-bot Disallow only, never blanket.
+# No trailing slash: the homepage twin lives at /markdown itself.
 User-agent: Googlebot
 Allow: /
-Disallow: /markdown/
+Disallow: /markdown
 
 User-agent: Bingbot
 Allow: /
-Disallow: /markdown/
+Disallow: /markdown
 
 User-agent: MSNBot
 Allow: /
