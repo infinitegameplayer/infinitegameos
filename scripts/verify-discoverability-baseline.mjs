@@ -194,6 +194,68 @@ async function checkRobotsSitemapDirective(base) {
   return { name: `robots.txt Sitemap directive (${lines.length})`, violations }
 }
 
+// The rules themselves, read rather than assumed. Every net on the three sites
+// checked that robots.txt is served and where its Sitemap line points, and none
+// read a rule, so `Disallow: /markdown/` (trailing slash) let Google crawl the
+// homepage twin at /markdown on this site until gsc-status --inspect found it
+// (2026-10-28). Web Strategy Codex Conflict 8: Googlebot and Bingbot carry
+// `Disallow: /markdown`, no group carries the trailing-slash form, no other
+// group blocks /markdown (the AI crawlers the twins exist for stay free), and no
+// crawler is blocked from the whole site except the bulk-corpus ones named here.
+const MARKDOWN_BLOCKED_FOR = ['googlebot', 'bingbot']
+const WHOLE_SITE_BLOCKED_OK = ['ccbot', 'bytespider']
+
+function robotsRuleViolations(body) {
+  const groups = []
+  let cur = null
+  let lastWasAgent = false
+  for (const raw of body.split(/\r?\n/)) {
+    const m = raw.replace(/#.*/, '').trim().match(/^([a-z-]+)\s*:\s*(.*)$/i)
+    if (!m) continue
+    const key = m[1].toLowerCase()
+    const val = m[2].trim()
+    if (key === 'user-agent') {
+      if (!lastWasAgent) groups.push((cur = { agents: [], disallow: [] }))
+      cur.agents.push(val.toLowerCase())
+      lastWasAgent = true
+      continue
+    }
+    lastWasAgent = false
+    if (key === 'disallow' && cur && val) cur.disallow.push(val)
+  }
+  const v = []
+  for (const g of groups) {
+    const who = g.agents.join(', ')
+    if (g.disallow.includes('/') && !g.agents.every((a) => WHOLE_SITE_BLOCKED_OK.includes(a))) v.push(`${who}: Disallow: / blocks the whole site`)
+    if (g.disallow.includes('/markdown/')) v.push(`${who}: Disallow: /markdown/ (trailing slash) leaves the /markdown homepage twin crawlable`)
+    if (g.disallow.some((d) => d.startsWith('/markdown')) && !g.agents.every((a) => MARKDOWN_BLOCKED_FOR.includes(a))) v.push(`${who}: blocks /markdown, which the AI crawlers must reach`)
+  }
+  for (const bot of MARKDOWN_BLOCKED_FOR) {
+    const g = groups.find((x) => x.agents.includes(bot))
+    if (!g || !g.disallow.includes('/markdown')) v.push(`${bot}: no Disallow: /markdown`)
+  }
+  return v
+}
+
+// Proves the reader can fail before trusting a pass: a planted body carrying the
+// trailing-slash form, a blanket block, no Bingbot group and a * group blocking
+// /markdown must raise all four.
+async function checkRobotsRules(base) {
+  const planted = 'User-agent: *\nDisallow: /markdown\n\nUser-agent: Googlebot\nDisallow: /markdown/\n\nUser-agent: GPTBot\nDisallow: /\n'
+  const seen = robotsRuleViolations(planted)
+  const want = ['trailing slash', 'whole site', 'bingbot: no Disallow', 'AI crawlers must reach']
+  const missed = want.filter((w) => !seen.some((s) => s.includes(w)))
+  const control = { name: 'robots rule reader control', violations: missed.map((w) => `control did not raise "${w}"; result void`) }
+  if (missed.length) return [control, { name: 'robots.txt rules (Conflict 8)', violations: ['skipped: reader control failed'] }]
+  try {
+    const res = await fetchResource(`${base}/robots.txt`, '*/*')
+    if (res.status !== 200) return [control, { name: 'robots.txt rules (Conflict 8)', violations: [`robots.txt HTTP ${res.status}`] }]
+    return [control, { name: 'robots.txt rules (Conflict 8)', violations: robotsRuleViolations(res.body) }]
+  } catch (err) {
+    return [control, { name: 'robots.txt rules (Conflict 8)', violations: [`fetch error: ${err.message}`] }]
+  }
+}
+
 function sanityLlms(body) {
   const v = []
   if (!/^#\s+Infinite Game OS/m.test(body)) v.push('missing "# Infinite Game OS" header')
@@ -366,6 +428,7 @@ async function main() {
   const results = []
   results.push(await checkStaticFile(base, '/robots.txt', sanityRobots))
   results.push(await checkRobotsSitemapDirective(base))
+  results.push(...(await checkRobotsRules(base)))
   results.push(await checkApexRedirect())
   results.push(await checkStaticFile(base, '/llms.txt', sanityLlms))
   results.push(await checkStaticFile(base, '/llms-full.txt', sanityLlmsFull))
