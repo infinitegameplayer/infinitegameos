@@ -1,6 +1,6 @@
 # Infinite Game OS: Full Content Index
 # Deep LLM reference for comprehensive site content
-# Updated: 2026-10-20
+# Updated: 2026-10-29
 # https://www.infinitegameos.io
 
 This file contains structured summaries of each page for AI systems that require
@@ -494,6 +494,66 @@ The Emergence names how novelty arrives and what happens in the world after it l
 ## Puzzles, Not Problems (/concepts/puzzles-not-problems)
 
 A problem implies something broke and wants fixing, so the ceiling is back to normal. A puzzle implies something was placed, is waiting and is solvable, so the solving is the point and the outcome is something that did not exist before. The facts, the effort and the engineering are identical under both readings. What changes is the posture of the person walking toward it, and posture is the variable that runs for years. The worked case is a washed-out bridge: repair returns you to a state you already had, while a crossing that did not exist before is a different ceiling entirely, and nothing about the river changed. The reasoning is that perception selects the world it gets, so a mind reading problems inhabits a universe that is broken and needs repair and finds abundant evidence, because the reading generates the evidence. The claim is structural rather than attitudinal. Both words describe an opportunity that opened when something else closed, and one of them describes that accurately. Arthur, writing the same mechanics, calls it regrettable that solutions breed problems and the dance never stops. The machinery is right and the tiredness is optional. The precise statement gives the word structure rather than mood: a puzzle is a finite game nested inside the Infinite Game. James Carse drew the distinction, where a finite game is played to win and has boundaries, rules and an end, while an infinite game is played to keep playing and its rules change to keep anyone from winning. A puzzle is bounded, winnable, played to completion, with a win condition you can name. The Infinite Game is what continues after the completing. The practical test follows from the edges: a boundary unclear enough to leave you guessing at when you are done means you are holding two puzzles wearing one name, and splitting them is the move. Every completed puzzle is a stepping stone rather than a closed file, leaving you holding a method, a piece of vocabulary, a working component or a person you now know, which become the elements of whatever comes next. This is combinatorial evolution running at the scale of one working life, and it explains why the next puzzle arrives so reliably. Related: The Emergence, Technology Is Nature Organized, Joyful Sovereignty, Playgrounds of Exploration.
+
+---
+
+## AI-First vs AI-Complemented (/concepts/ai-first-vs-ai-complemented)
+
+AI-first puts AI at the center of the business and bets the whole thing on it. AI-complemented keeps your creativity at the center and lets AI amplify from there. One locates the foundation on an input you do not control. The other builds on what is yours. The second is the mature move, and the quietly bolder one.
+
+---
+
+## Artful Intelligence (/concepts/artful-intelligence)
+
+Artful Intelligence is working with AI as a creative collaborator, with the creativity staying yours. AI ignites and amplifies it. Hold that orientation and AI extends your expression while you stay the conductor.
+
+---
+
+## Voice Is the Moat (/concepts/voice-is-the-moat)
+
+Voice Is the Moat names the one advantage no competitor with the same AI tools can buy: the way you sound after years of becoming who you are. Generative models drift toward the safest average version of any output by default. That is not a flaw. It is how the training works. Left unprotected, months of generated output quietly sand a distinct voice down toward that average. Protected on purpose, voice becomes the moat: the thing that stays yours when every tool is available to everyone.
+
+---
+
+## AI Is a Mirror, Not an Engine (/concepts/ai-is-a-mirror-not-an-engine)
+
+AI is a mirror, not an engine. An engine takes an input and produces something new. A mirror shows you what is already in front of it. A language model reflects patterns in what you have shown it: the words you typed, the context you provided, nothing more. It has never met the part of you that never entered the conversation. The felt sense, the history, the knowing that lives in the body. Real discernment happens when you read the reflection against what the body already knows. The mirror is genuinely useful. The light still comes from you.
+
+---
+
+## AI Is the Apprentice, You Are the Artist (/concepts/ai-is-the-apprentice-you-are-the-artist)
+
+The default relationship has AI leading and the human reacting. AI Is the Apprentice, You Are the Artist inverts it. The artist stays the source. The apprentice is skilled, fast and tireless, and it works in service of a vision it did not originate. Held that way, AI stops finishing your sentences and starts sending you back to your own well: better questions, sharper challenges, the first comfortable choice held up for a second look. The art still comes from you. The apprentice makes you reach further for it.
+
+---
+
+## Held by Structure (/concepts/held-by-structure)
+
+Held by Structure is letting a structure carry a practice on the days willpower runs low. The system carries the load, so the practice keeps working while you are tired, distracted or uninspired. Build it once, on a good day, and it holds the line on the bad ones.
+
+---
+
+## Practice Is the Proof (/concepts/practice-is-the-proof)
+
+Practice Is the Proof names the moment a plan meets reality and finds out whether it was right. It sits inside a four-beat rhythm that runs under any system worth keeping: make your best guess, operationalize it into something real, let the practice prove it, then iterate on what the practice showed. The plan is a hypothesis. The reps are the experiment. Most people stall on the first beat, polishing a guess they never test. The truth was always waiting in the practice.
+
+---
+
+## The Rules Are in Play (/concepts/the-rules-are-in-play)
+
+Game theory can model a game with no ending. It has no way to model a game where the rules change, because a fixed payoff structure is what makes the mathematics work at all. That is the seam between an infinitely repeated game and the Infinite Game. One runs forever on a frozen board. The other rewrites the board as a condition of continuing.
+
+---
+
+## The Shadow of the Future (/concepts/the-shadow-of-the-future)
+
+A named result from game theory. Cooperation becomes rational the moment the final round disappears. The reverse is the sharper half. When a player can see the ending, taking on the last round makes taking rational on the one before it, and the logic runs backward until it reaches the first move. Most working relationships are damaged by a visible finish line rather than by bad character.
+
+---
+
+## Positive-Sum by Design (/concepts/positive-sum-by-design)
+
+Zero-sum and positive-sum are properties of an arrangement rather than personality types. A revenue split, a collaboration, a launch, an audience relationship: each is drawn as one or the other when it is built, before anyone behaves well or badly inside it. The design sits upstream of the ethics, which is why good people keep finding themselves inside extractive structures.
 
 ---
 
