@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description:
       'A public charter for benevolent human-AI coexistence. Seven commitments, the reframe of AI as Artful Intelligence, and a section co-authored by Jarvis.',
     url: 'https://www.infinitegameos.io/accord',
+    images: ['/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',

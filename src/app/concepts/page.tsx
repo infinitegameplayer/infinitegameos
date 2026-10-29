@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     description:
       'Core concepts from the Infinite Game OS: frameworks, archetypes, practices and distinctions for sovereign life design and playing the Infinite Game.',
     url: 'https://www.infinitegameos.io/concepts',
+    images: ['/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',

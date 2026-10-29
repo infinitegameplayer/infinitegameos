@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     description:
       'Installable skills from the Infinite Game OS. Source-level patterns for Claude Code: harvest, planning, debugging, plan execution, skill authoring and research.',
     url: `${SITE}/skills`,
+    images: ['/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',

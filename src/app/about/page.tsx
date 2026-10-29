@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description:
       'Lane Belone is a writer on the Infinite Game, a former Green Beret and co-author of Unleash Your Humble Alpha. He builds Infinite Game OS in the open: concepts, skills and bundles from inside his own practice, free to use with credit.',
     url: 'https://www.infinitegameos.io/about',
+    images: ['/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',

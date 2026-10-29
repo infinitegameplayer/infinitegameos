@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description:
       'The Infinite Game is the one game played to keep playing. Not to win. Explore the philosophy, the practice and how Lane Belone lives it as the architecture of a sovereign creative life.',
     url: 'https://www.infinitegameos.io/infinite-game',
+    images: ['/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',

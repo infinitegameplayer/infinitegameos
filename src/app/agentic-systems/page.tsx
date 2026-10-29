@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description:
       'The internet is shifting from an Attention Economy to an Intention Economy. AI agents now generate 3.6x more web requests than Googlebot. This is what that means for practitioners.',
     url: 'https://www.infinitegameos.io/agentic-systems',
+    images: ['/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',

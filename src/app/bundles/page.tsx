@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     description:
       'Avatar bundles from the Infinite Game OS. Pre-composed skill stacks installed in one command, organized by creator avatar.',
     url: `${SITE}/bundles`,
+    images: ['/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',

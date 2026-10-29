@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     title: 'Game Theory and the Infinite Game',
     description: DESCRIPTION,
     url: 'https://www.infinitegameos.io/game-theory',
+    images: ['/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',

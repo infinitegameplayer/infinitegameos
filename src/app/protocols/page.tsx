@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     description:
       'Procedural sequences and governing postures from the Infinite Game OS. Read by AI agents, harvested into working systems.',
     url: `${SITE}/protocols`,
+    images: ['/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',

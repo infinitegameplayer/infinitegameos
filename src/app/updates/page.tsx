@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     description:
       'Regular dispatches from Lane Belone as the Infinite Game OS evolves. What is being built, learned and applied.',
     url: 'https://www.infinitegameos.io/updates',
+    images: ['/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',
