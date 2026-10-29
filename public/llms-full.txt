@@ -144,6 +144,12 @@ extraction, win the quarter). The Intention Economy runs on Infinite Game logic
 
 ---
 
+## Game Theory (/game-theory)
+
+Game theory is a mathematics of winning. The Infinite Game is not. Where the two genuinely meet, where the popular business version gets it wrong and what the distinction changes for a working life.
+
+---
+
 ## Agentic Systems (/agentic-systems)
 
 Full-length practitioner's guide: "The Post Web and the Infinite Game." By Lane Belone.
@@ -774,6 +780,22 @@ Install method: one-line `curl -sSL https://www.infinitegameos.io/bundles/the-wr
 Use cases: newsletter operator publishing weekly (Voice Ghostwriter calibration against the back issues, Humanizer detect-mode on the draft, Multi-Format adaptation for LinkedIn and Twitter); ghostwriter managing multiple clients (per-client calibration prevents voice contamination across projects); essayist writing long-arc work (Plan Challenger on the outline, Voice Ghostwriter calibration against the archive, Humanizer rebuild of drift sections); indie author maintaining voice across 50,000 words (per-chapter calibration locks tonal consistency); threadwriter feeding a newsletter (Multi-Format template runs in reverse, thread becomes seed for the long-form version).
 
 Why this bundle exists for the Writer. Voice consistency over thousands of pieces is the central problem. Voice drift is the most expensive failure mode for the archetype; readers feel the drift without diagnosing it and unsubscribe before the writer notices. Finite games ask how to get this piece done; the Infinite Game asks how to stay recognizably yourself across ten thousand pieces. The bundle is a finite-game tool aimed at the Infinite question. Aliveness is the engine the bundle protects by removing friction (research, voice-matching, AI-pattern detection, multi-format adaptation) that would otherwise erode the parts of writing that require presence.
+
+### The Performer Bundle (/bundles/the-performer)
+
+Claude Code skills for YouTubers, podcasters, livestreamers and short-form video creators in 2026. Two avatar-specific skills (YouTube Channel Manager, Video Watcher) plus a video production chapter already inside the Foundational substrate.
+
+### The Teacher Bundle (/bundles/the-teacher)
+
+Claude Code resources for course creators, cohort leaders, tutorial channel operators and knowledge product builders in 2026. The smallest avatar bundle by design. The Foundational Creator Bundle covers most of the Teacher's working surface; the Teacher layer adds one companion-install link to a deep pedagogy library and the framing that turns the universal stack into curriculum-shaped work.
+
+### The Curator Bundle (/bundles/the-curator)
+
+Claude Code skills for newsletter curators, industry digest writers, taste-forward recommendation creators and link aggregators in 2026. Two avatar-specific skills (Tech Digest, Newsletter Creation and Curation) on top of the Foundational Creator Bundle substrate.
+
+### The Strategist Bundle (/bundles/the-strategist)
+
+Claude Code skills for independent management consultants, fractional executives, frameworks writers, growth strategists, decision-systems authors and applied operators in 2026. Two avatar-specific skills (Management Consulting, Decision Toolkit) on top of the Foundational Creator Bundle substrate.
 
 ---
 

@@ -9,8 +9,26 @@ export const metadata: Metadata = {
   title: 'Bundles',
   description:
     'Avatar bundles from the Infinite Game OS. Pre-composed skill stacks installed in one command, organized by creator avatar.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Infinite Game OS',
+    locale: 'en_US',
+    title: 'Bundles',
+    description:
+      'Avatar bundles from the Infinite Game OS. Pre-composed skill stacks installed in one command, organized by creator avatar.',
+    url: `${SITE}/bundles`,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/twitter-image'],
+    title: 'Bundles',
+    description: 'Avatar bundles from the Infinite Game OS. Pre-composed skill stacks installed in one command, organized by creator avatar.',
+  },
   alternates: {
     canonical: `${SITE}/bundles`,
+    types: {
+      'text/markdown': `${SITE}/markdown/bundles`,
+    },
   },
 }
 

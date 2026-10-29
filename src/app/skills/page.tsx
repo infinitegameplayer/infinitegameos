@@ -9,8 +9,26 @@ export const metadata: Metadata = {
   title: 'Skills',
   description:
     'Installable skills from the Infinite Game OS. Source-level patterns for Claude Code: harvest, planning, debugging, plan execution, skill authoring and research.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Infinite Game OS',
+    locale: 'en_US',
+    title: 'Skills',
+    description:
+      'Installable skills from the Infinite Game OS. Source-level patterns for Claude Code: harvest, planning, debugging, plan execution, skill authoring and research.',
+    url: `${SITE}/skills`,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/twitter-image'],
+    title: 'Skills',
+    description: 'Installable skills from the Infinite Game OS. Source-level patterns for Claude Code: harvest, planning, debugging, plan execution, skill authoring and research.',
+  },
   alternates: {
     canonical: `${SITE}/skills`,
+    types: {
+      'text/markdown': `${SITE}/markdown/skills`,
+    },
   },
 }
 

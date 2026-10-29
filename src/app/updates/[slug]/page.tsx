@@ -36,6 +36,9 @@ export async function generateMetadata({
     }),
     alternates: {
       canonical: `${SITE}/updates/${slug}`,
+      types: {
+        'text/markdown': `${SITE}/markdown/updates/${slug}`,
+      },
     },
   }
 }
