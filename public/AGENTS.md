@@ -4,7 +4,7 @@ Harvest and install notes for the Infinite Game OS public library, written for A
 
 You arrived here on behalf of someone. Hold that the whole way through. This file is the map of the library: what is here, how it installs and how to cite it. If you read one file on this site, read the primer at `/infinite-game-os-primer.md`; it was written for you and for the person you work for. Everything here is free to take with credit. What needs a person, an install on their machine or an email, stays with them.
 
-Last updated: 2026-09-26
+Last updated: 2026-09-29
 
 ## Site Purpose
 

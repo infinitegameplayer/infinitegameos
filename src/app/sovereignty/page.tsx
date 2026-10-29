@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description:
       'Sovereign life design is building a life on your own principles. Natural law as the ground, embodiment as infrastructure and Joyful Sovereignty as the compass state.',
     url: 'https://www.infinitegameos.io/sovereignty',
+    images: ['/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',

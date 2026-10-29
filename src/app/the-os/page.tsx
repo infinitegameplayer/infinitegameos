@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description:
       'Infinite Game OS is a structured operating system for entrepreneurs, solopreneurs and practitioners of long-term thinking, sovereign life design and agentic systems.',
     url: 'https://www.infinitegameos.io/the-os',
+    images: ['/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',

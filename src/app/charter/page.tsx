@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     title: "Your AI's Charter",
     description: DESCRIPTION,
     url: URL,
+    images: ['/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',

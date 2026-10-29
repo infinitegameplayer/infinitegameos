@@ -2,38 +2,18 @@ import type { MetadataRoute } from 'next'
 import { getAllUpdates } from '@/lib/updates'
 import { concepts } from '@/data/concepts'
 import { getAssetsByType } from '@/data/library'
+import routeDates from '@/lib/route-dates.json'
 
-// Dates for pages whose content is static and tracked manually.
-// Update these when the page content changes rather than leaving them
-// as hardcoded launch-day timestamps. Per codex V.8: lastModified must
-// reflect actual page-data timestamps, not deployment boilerplate.
-const PAGE_DATES: Record<string, string> = {
-  // 2026-07-01: HX Design Refresh (6 phases) reworked every page's
-  // presentation (cards, buttons, motion, nav, type scale, spacing,
-  // mobile), verified per-page via git log.
-  '/':                   '2026-07-01',
-  '/the-os':             '2026-07-01',
-  '/accord':             '2026-07-01',
-  '/infinite-game':      '2026-10-13',
-  '/agentic-systems':    '2026-07-01',
-  '/sovereignty':        '2026-07-01',
-  '/about':              '2026-07-01',
-  '/concepts':           '2026-07-01',
-  '/protocols':          '2026-07-01',
-  '/sovereign-ecosystem': '2026-07-01',
-  '/play-your-own-game': '2026-07-01',
-  '/design-your-day':    '2026-07-01',
-  '/creator-business-without-performing': '2026-07-01',
-  // 2026-08-16: shipped with the game theory surface (Gate 1).
-  '/game-theory':        '2026-08-16',
-  // 2026-09-29: Your AI's Charter and the privacy page shipped.
-  '/charter':            '2026-09-29',
-  '/privacy':            '2026-09-29',
-}
-
+// lastModified for static pages comes from src/lib/route-dates.json, written by
+// scripts/route-dates.mjs (prebuild) from the last commit that touched each
+// page or a module it imports. A static route with no date fails the build on
+// purpose, so a new route is added to scripts/route-dates.mjs ROUTES in the
+// same change (Web Strategy Codex V.8: lastModified from page data).
+const dates = routeDates as Record<string, string>
 function pageDate(path: string): Date {
-  const d = PAGE_DATES[path]
-  return d ? new Date(d + 'T00:00:00.000Z') : new Date()
+  const iso = dates[path]
+  if (!iso) throw new Error(`sitemap: no date for ${path} in src/lib/route-dates.json (add it to scripts/route-dates.mjs ROUTES and run npm run route-dates)`)
+  return new Date(iso)
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -134,6 +114,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://www.infinitegameos.io/protocols',
       lastModified: pageDate('/protocols'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.infinitegameos.io/skills',
+      lastModified: pageDate('/skills'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.infinitegameos.io/bundles',
+      lastModified: pageDate('/bundles'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },

@@ -18,6 +18,22 @@ export const metadata: Metadata = {
   title: 'Concepts',
   description:
     'Core concepts from the Infinite Game OS: frameworks, archetypes, practices and distinctions for sovereign life design and playing the Infinite Game.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Infinite Game OS',
+    locale: 'en_US',
+    title: 'Concepts',
+    description:
+      'Core concepts from the Infinite Game OS: frameworks, archetypes, practices and distinctions for sovereign life design and playing the Infinite Game.',
+    url: 'https://www.infinitegameos.io/concepts',
+    images: ['/opengraph-image'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/twitter-image'],
+    title: 'Concepts',
+    description: 'Core concepts from the Infinite Game OS: frameworks, archetypes, practices and distinctions for sovereign life design and playing the Infinite Game.',
+  },
   alternates: {
     canonical: 'https://www.infinitegameos.io/concepts',
     types: {

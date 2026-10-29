@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     description:
       'The Sovereign Ecosystem is a foundational Obsidian + Claude Code workspace template. Directory structure, governance scaffolding, North Star template, a working skill set and safety checks that come with tests that prove they work. The three-tier stack origin for sovereign-first AI practitioners.',
     url: 'https://www.infinitegameos.io/sovereign-ecosystem',
+    images: ['/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',

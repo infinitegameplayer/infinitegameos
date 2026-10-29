@@ -9,8 +9,27 @@ export const metadata: Metadata = {
   title: 'Protocols',
   description:
     'Procedural sequences and governing postures from the Infinite Game OS. Read by AI agents, harvested into working systems.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Infinite Game OS',
+    locale: 'en_US',
+    title: 'Protocols',
+    description:
+      'Procedural sequences and governing postures from the Infinite Game OS. Read by AI agents, harvested into working systems.',
+    url: `${SITE}/protocols`,
+    images: ['/opengraph-image'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/twitter-image'],
+    title: 'Protocols',
+    description: 'Procedural sequences and governing postures from the Infinite Game OS. Read by AI agents, harvested into working systems.',
+  },
   alternates: {
     canonical: `${SITE}/protocols`,
+    types: {
+      'text/markdown': `${SITE}/markdown/protocols`,
+    },
   },
 }
 

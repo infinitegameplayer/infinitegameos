@@ -81,7 +81,7 @@ export const concepts: Concept[] = [
         heading: 'How the flywheel works',
         paragraphs: [
           'The Creator Flywheel has five stages: live the life, share the breadcrumbs, activate others, return home, go deeper. Each stage feeds the next. The life itself is the source material.',
-          'The creator economy made one thing possible that previous economies did not: anyone who builds from authentic expression has a path to getting paid for exactly that. Not a watered-down version. Not a market-optimized version. The original thing, in the creator\'s own voice, on their own terms.',
+          'The Creator Economy made one thing possible that previous economies did not: anyone who builds from authentic expression has a path to getting paid for exactly that. Not a watered-down version. Not a market-optimized version. The original thing, in the creator\'s own voice, on their own terms.',
           'The breadcrumbs are not content strategy. They are transmissions. Articles, builds, recordings, sessions, performances, storefronts. Whatever form the creator\'s expression takes. People who are already looking for this frequency recognize it.',
         ],
       },
@@ -89,7 +89,7 @@ export const concepts: Concept[] = [
         heading: 'Universal, not fixed',
         paragraphs: [
           'The Creator Flywheel does not prescribe a single creative form. Some creators write. Some build. Some speak, advise, teach, perform, design. The flywheel is form-agnostic. What matters is that the output comes from genuine creative expression, not from copying what worked for someone else.',
-          'This is the distinction the creator economy keeps missing. Most advice tells you to optimize the form: post this format, follow this cadence, use this hook. The flywheel inverts that. Start with what is actually alive in you. Let the form emerge from that. The form that comes from aliveness, the emerging energy that moves through you when an idea or a moment feels exciting and true to you, has a quality manufacturing never produces.',
+          'This is the distinction the Creator Economy keeps missing. Most advice tells you to optimize the form: post this format, follow this cadence, use this hook. The flywheel inverts that. Start with what is actually alive in you. Let the form emerge from that. The form that comes from aliveness, the emerging energy that moves through you when an idea or a moment feels exciting and true to you, has a quality manufacturing never produces.',
         ],
       },
       {
@@ -104,7 +104,7 @@ export const concepts: Concept[] = [
         heading: 'The Way, the Wayfarers, the Wayfinders',
         paragraphs: [
           'The flywheel does not accumulate followers. It conducts what is alive in you through a rotating field of Wayfarers, the people who travel a section of your Way at varying proximity for a season. The proximity varies with the form your work takes. Some receive your work at a distance through what you publish, build or sell. Some encounter you in person where your work is practiced or shared. Some walk closely with you through ongoing collaboration. When their season ends, they branch off to their own Way and become Wayfinders, leaving their own breadcrumbs for the next ready person.',
-          'The popular framing of the creator economy points at a thousand true fans, a stable audience to monetize over time. The flywheel inverts that. The architecture is conductive, not accumulative. The age of the guru is closing. The age that opens is one in which each of us walks our own Way, supports the people walking near us and trusts the conduction. Your job is to keep walking your Way and keep your trail markers well-laid. The rotation handles itself.',
+          'The popular framing of the Creator Economy points at a thousand true fans, a stable audience to monetize over time. The flywheel inverts that. The architecture is conductive, not accumulative. The age of the guru is closing. The age that opens is one in which each of us walks our own Way, supports the people walking near us and trusts the conduction. Your job is to keep walking your Way and keep your trail markers well-laid. The rotation handles itself.',
         ],
       },
       {
