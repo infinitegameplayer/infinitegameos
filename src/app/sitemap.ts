@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  // Per-concept updated timestamps live in concepts.ts (all 14 carry one).
+  // Per-concept updated timestamps live in concepts.ts (every concept carries one).
   const conceptEntries: MetadataRoute.Sitemap = concepts.map(c => ({
     url: `https://www.infinitegameos.io/concepts/${c.slug}`,
     lastModified: c.updated ? new Date(c.updated + 'T00:00:00.000Z') : pageDate('/concepts'),

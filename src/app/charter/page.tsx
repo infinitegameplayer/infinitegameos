@@ -140,11 +140,12 @@ const creativeWorkSchema = {
   version: '1.0',
   dateCreated: '2026-09-29',
   datePublished: '2026-09-29',
+  dateModified: '2026-09-29',
   isAccessibleForFree: true,
   license: 'https://creativecommons.org/licenses/by/4.0/',
   encodingFormat: 'text/markdown',
   author: { '@id': 'https://infinitegameos.io/#person' },
-  publisher: { '@id': 'https://www.infinitegameos.io/#website' },
+  publisher: { '@id': 'https://www.infinitegameos.io/#organization' },
   sameAs: REPO_URL,
 }
 

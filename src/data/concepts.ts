@@ -40,6 +40,9 @@ export interface Concept {
   // updated: ISO date of last meaningful revision. Feeds dateModified in the
   // Article JSON-LD and the visible "Updated [month year]" freshness line.
   updated: string
+  // published: ISO date the concept first shipped, taken from the first commit
+  // that added its slug to this file. Feeds datePublished in the Article JSON-LD.
+  published: string
   capsule: string
   subtitle: string
   sections: ConceptSection[]
@@ -70,6 +73,7 @@ export const concepts: Concept[] = [
   {
     slug: 'creator-flywheel',
     updated: '2026-06-04',
+    published: '2026-04-24',
     title: 'The Creator Flywheel',
     label: 'Framework',
     capsule:
@@ -165,6 +169,7 @@ export const concepts: Concept[] = [
   {
     slug: 'the-pioneer',
     updated: '2026-09-25',
+    published: '2026-04-19',
     title: 'The Pioneer',
     label: 'Archetype',
     capsule:
@@ -243,6 +248,7 @@ export const concepts: Concept[] = [
   {
     slug: 'joyful-sovereignty',
     updated: '2026-09-25',
+    published: '2026-04-19',
     title: 'Joyful Sovereignty',
     label: 'Philosophy',
     capsule:
@@ -310,6 +316,7 @@ export const concepts: Concept[] = [
   {
     slug: 'conditioned-vs-authentic-identity',
     updated: '2026-06-04',
+    published: '2026-04-19',
     title: 'Conditioned vs Authentic Identity',
     label: 'Core Distinction',
     capsule:
@@ -382,6 +389,7 @@ export const concepts: Concept[] = [
   {
     slug: 'ideal-month',
     updated: '2026-06-04',
+    published: '2026-04-19',
     title: 'The Ideal Month',
     label: 'Practice',
     capsule:
@@ -459,6 +467,7 @@ export const concepts: Concept[] = [
   {
     slug: 'playgrounds-of-exploration',
     updated: '2026-09-25',
+    published: '2026-04-23',
     title: 'Playgrounds of Exploration',
     label: 'Framework',
     capsule:
@@ -538,6 +547,7 @@ export const concepts: Concept[] = [
   {
     slug: 'infinite-playlist',
     updated: '2026-09-25',
+    published: '2026-04-23',
     title: 'The Infinite Playlist',
     label: 'Framework',
     capsule:
@@ -616,6 +626,7 @@ export const concepts: Concept[] = [
   {
     slug: 'data-sovereignty',
     updated: '2026-07-01',
+    published: '2026-05-02',
     title: 'Data Sovereignty',
     label: 'Foundation',
     capsule:
@@ -705,6 +716,7 @@ export const concepts: Concept[] = [
   {
     slug: 'the-north-star',
     updated: '2026-06-04',
+    published: '2026-05-02',
     title: 'The North Star',
     label: 'Practice',
     capsule:
@@ -795,6 +807,7 @@ export const concepts: Concept[] = [
   {
     slug: 'ai-second-brain',
     updated: '2026-10-08',
+    published: '2026-05-02',
     title: 'The AI Second Brain',
     label: 'Framework',
     capsule:
@@ -902,6 +915,7 @@ export const concepts: Concept[] = [
   {
     slug: 'sovereign-capture',
     updated: '2026-09-25',
+    published: '2026-05-28',
     title: 'Sovereign Capture',
     label: 'Practice',
     capsule:
@@ -989,6 +1003,7 @@ export const concepts: Concept[] = [
   {
     slug: 'contemplative-question-practice',
     updated: '2026-06-04',
+    published: '2026-05-28',
     title: 'The Contemplative Question Practice',
     label: 'Practice',
     capsule:
@@ -1057,6 +1072,7 @@ export const concepts: Concept[] = [
   {
     slug: 'ai-first-vs-ai-complemented',
     updated: '2026-07-24',
+    published: '2026-06-24',
     title: 'AI-First vs AI-Complemented',
     label: 'Core Distinction',
     capsule:
@@ -1147,6 +1163,7 @@ export const concepts: Concept[] = [
   {
     slug: 'artful-intelligence',
     updated: '2026-09-25',
+    published: '2026-06-24',
     title: 'Artful Intelligence',
     label: 'Philosophy',
     capsule:
@@ -1236,6 +1253,7 @@ export const concepts: Concept[] = [
   {
     slug: 'voice-is-the-moat',
     updated: '2026-07-09',
+    published: '2026-07-09',
     title: 'Voice Is the Moat',
     label: 'Core Distinction',
     capsule:
@@ -1320,6 +1338,7 @@ export const concepts: Concept[] = [
   {
     slug: 'ai-is-a-mirror-not-an-engine',
     updated: '2026-07-24',
+    published: '2026-07-09',
     title: 'AI Is a Mirror, Not an Engine',
     label: 'Core Distinction',
     capsule:
@@ -1404,6 +1423,7 @@ export const concepts: Concept[] = [
   {
     slug: 'ai-is-the-apprentice-you-are-the-artist',
     updated: '2026-07-09',
+    published: '2026-07-09',
     title: 'AI Is the Apprentice, You Are the Artist',
     label: 'Core Distinction',
     capsule:
@@ -1482,6 +1502,7 @@ export const concepts: Concept[] = [
   {
     slug: 'held-by-structure',
     updated: '2026-09-25',
+    published: '2026-07-09',
     title: 'Held by Structure',
     label: 'Practice',
     capsule:
@@ -1560,6 +1581,7 @@ export const concepts: Concept[] = [
   {
     slug: 'practice-is-the-proof',
     updated: '2026-07-09',
+    published: '2026-07-09',
     title: 'Practice Is the Proof',
     label: 'Practice',
     capsule:
@@ -1638,6 +1660,7 @@ export const concepts: Concept[] = [
   {
     slug: 'read-the-refusal',
     updated: '2026-07-21',
+    published: '2026-07-21',
     title: 'Read the Refusal',
     label: 'Practice',
     capsule:
@@ -1771,6 +1794,7 @@ export const concepts: Concept[] = [
   {
     slug: 'technology-is-nature-organized',
     updated: '2026-07-24',
+    published: '2026-07-24',
     title: 'Technology Is Nature Organized',
     label: 'Foundation',
     capsule:
@@ -1878,6 +1902,7 @@ export const concepts: Concept[] = [
   {
     slug: 'the-emergence',
     updated: '2026-07-24',
+    published: '2026-07-24',
     title: 'The Emergence',
     label: 'Framework',
     capsule:
@@ -1993,6 +2018,7 @@ export const concepts: Concept[] = [
   {
     slug: 'puzzles-not-problems',
     updated: '2026-07-24',
+    published: '2026-07-24',
     title: 'Puzzles, Not Problems',
     label: 'Core Distinction',
     capsule:
@@ -2108,6 +2134,7 @@ export const concepts: Concept[] = [
   {
     slug: 'the-rules-are-in-play',
     updated: '2026-08-16',
+    published: '2026-08-16',
     title: 'The Rules Are in Play',
     label: 'Core Distinction',
     capsule:
@@ -2218,6 +2245,7 @@ export const concepts: Concept[] = [
   {
     slug: 'the-shadow-of-the-future',
     updated: '2026-08-16',
+    published: '2026-08-16',
     title: 'The Shadow of the Future',
     label: 'Core Distinction',
     capsule:
@@ -2332,6 +2360,7 @@ export const concepts: Concept[] = [
   {
     slug: 'positive-sum-by-design',
     updated: '2026-08-16',
+    published: '2026-08-16',
     title: 'Positive-Sum by Design',
     label: 'Core Distinction',
     capsule:

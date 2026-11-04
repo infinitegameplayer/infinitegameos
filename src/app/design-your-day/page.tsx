@@ -48,7 +48,8 @@ const articleSchema = {
   description:
     'Designing a day around what you actually want starts with a different question than most planning methods ask. Build a day from desire, energy and identity rather than goals and output.',
   author: { '@id': 'https://infinitegameos.io/#person' },
-  publisher: { '@id': 'https://www.infinitegameos.io/#website' },
+  publisher: { '@id': 'https://www.infinitegameos.io/#organization' },
+  image: 'https://www.infinitegameos.io/opengraph-image',
   url: 'https://www.infinitegameos.io/design-your-day',
   mainEntityOfPage: 'https://www.infinitegameos.io/design-your-day',
   license: 'https://creativecommons.org/licenses/by/4.0/',

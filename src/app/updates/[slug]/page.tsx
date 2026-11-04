@@ -10,6 +10,10 @@ import { twitterCard } from '@/lib/metadata'
 
 const SITE = 'https://www.infinitegameos.io'
 
+// Pages under a measurement window. Their JSON-LD stays exactly as it was
+// until the window closes, so the template's schema fixes skip them.
+const MEASUREMENT_HOLD = new Set(['what-is-a-practical-alternative-to-follow-your-passion'])
+
 export function generateStaticParams() {
   return getAllUpdates().map(u => ({ slug: u.slug }))
 }
@@ -72,14 +76,19 @@ export default async function UpdatePage({
     ],
   }
 
+  const held = MEASUREMENT_HOLD.has(update.slug)
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: update.title,
     description: update.summary,
     datePublished: `${update.date}T00:00:00Z`,
+    // No update carries a revision date yet, so dateModified is the frontmatter
+    // date, the one date the repository knows for each post.
+    ...(held ? {} : { dateModified: `${update.date}T00:00:00Z` }),
     author: { '@id': 'https://infinitegameos.io/#person' },
-    publisher: { '@id': 'https://www.infinitegameos.io/#website' },
+    publisher: { '@id': held ? 'https://www.infinitegameos.io/#website' : 'https://www.infinitegameos.io/#organization' },
+    ...(held ? {} : { image: `https://www.infinitegameos.io/updates/${update.slug}/opengraph-image` }),
     url: `https://www.infinitegameos.io/updates/${update.slug}`,
     mainEntityOfPage: `https://www.infinitegameos.io/updates/${update.slug}`,
     inLanguage: 'en-US',
