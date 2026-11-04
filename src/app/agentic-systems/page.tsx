@@ -38,7 +38,8 @@ const articleSchema = {
   description:
     'The internet is shifting from an Attention Economy to an Intention Economy. AI agents now generate 3.6x more web requests than Googlebot. This is what that means for practitioners.',
   author: { '@id': 'https://infinitegameos.io/#person' },
-  publisher: { '@id': 'https://www.infinitegameos.io/#website' },
+  publisher: { '@id': 'https://www.infinitegameos.io/#organization' },
+  image: 'https://www.infinitegameos.io/opengraph-image',
   url: 'https://www.infinitegameos.io/agentic-systems',
   mainEntityOfPage: 'https://www.infinitegameos.io/agentic-systems',
   license: 'https://creativecommons.org/licenses/by/4.0/',

@@ -25,15 +25,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const asset = getAssetBySlug(slug, 'bundle')
   if (!asset) return {}
 
+  // Bundle titles already end in "Bundle"; the suffix is added only when absent.
+  const pageTitle = /\bBundle$/.test(asset.title) ? asset.title : `${asset.title}: Bundle`
+
   return {
-    title: `${asset.title}: Bundle`,
+    title: pageTitle,
     description: asset.description,
     openGraph: {
-      title: `${asset.title}: Bundle`,
+      title: pageTitle,
       url: `${SITE}/bundles/${asset.slug}`,
     },
     twitter: twitterCard({
-      title: `${asset.title}: Bundle`,
+      title: pageTitle,
       description: asset.description,
       imageUrl: `${SITE}/bundles/${asset.slug}/opengraph-image`,
     }),
@@ -77,7 +80,8 @@ export default async function BundlePage({ params }: PageProps) {
     headline: asset.title,
     description: asset.description,
     author: { '@id': 'https://infinitegameos.io/#person' },
-    publisher: { '@id': `${SITE}/#website` },
+    publisher: { '@id': `${SITE}/#organization` },
+    image: `${SITE}/bundles/${asset.slug}/opengraph-image`,
     url: `${SITE}/bundles/${asset.slug}`,
     mainEntityOfPage: `${SITE}/bundles/${asset.slug}`,
     datePublished: asset.updated,

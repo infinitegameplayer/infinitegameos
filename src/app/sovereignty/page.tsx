@@ -37,7 +37,8 @@ const articleSchema = {
   description:
     'Sovereign life design is building a life on your own principles. Natural law as the ground, embodiment as infrastructure and Joyful Sovereignty as the compass state.',
   author: { '@id': 'https://infinitegameos.io/#person' },
-  publisher: { '@id': 'https://www.infinitegameos.io/#website' },
+  publisher: { '@id': 'https://www.infinitegameos.io/#organization' },
+  image: 'https://www.infinitegameos.io/opengraph-image',
   url: 'https://www.infinitegameos.io/sovereignty',
   mainEntityOfPage: 'https://www.infinitegameos.io/sovereignty',
   license: 'https://creativecommons.org/licenses/by/4.0/',

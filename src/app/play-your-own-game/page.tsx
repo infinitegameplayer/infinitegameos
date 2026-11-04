@@ -48,7 +48,8 @@ const articleSchema = {
   description:
     'Playing your own game begins with identifying which game you are currently playing. A forensic game-audit approach for anyone at the edge of their own discovery who senses the script is ready to change.',
   author: { '@id': 'https://infinitegameos.io/#person' },
-  publisher: { '@id': 'https://www.infinitegameos.io/#website' },
+  publisher: { '@id': 'https://www.infinitegameos.io/#organization' },
+  image: 'https://www.infinitegameos.io/opengraph-image',
   url: 'https://www.infinitegameos.io/play-your-own-game',
   mainEntityOfPage: 'https://www.infinitegameos.io/play-your-own-game',
   license: 'https://creativecommons.org/licenses/by/4.0/',
