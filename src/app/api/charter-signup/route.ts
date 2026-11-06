@@ -20,7 +20,7 @@ const TIMEOUT_MS = 10000
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function POST(req: NextRequest) {
-  const blocked = await refuseBots()
+  const blocked = await refuseBots({ route: '/api/charter-signup' })
   if (blocked) return blocked
   let body: { email?: unknown; firstName?: unknown; honeypot?: unknown; openedAt?: unknown }
   try {
