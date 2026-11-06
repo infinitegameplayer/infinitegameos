@@ -1,5 +1,15 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { readFileSync } from 'node:fs'
+
+// The policy reads its analytics hosts from env when the module loads. Vercel
+// sets NEXT_PUBLIC_UMAMI_URL at build, so this test failed the first build that
+// ran it (2026-11-05). It checks the policy's shape, so it clears both before
+// csp.ts is imported; csp-loads.test.ts covers the env-sourced hosts.
+vi.hoisted(() => {
+  delete process.env.NEXT_PUBLIC_UMAMI_URL
+  delete process.env.NEXT_PUBLIC_POSTHOG_HOST
+})
+
 import { NONCE_ROUTES, contentSecurityPolicy, generateNonce } from './csp'
 
 describe('contentSecurityPolicy', () => {

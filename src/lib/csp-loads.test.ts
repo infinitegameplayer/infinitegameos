@@ -70,7 +70,10 @@ function originsOnLoaderLines(text: string): string[] {
 let policy = ''
 
 beforeAll(async () => {
+  // Pin both env-read hosts, so the test reads the same policy on a laptop and
+  // on a Vercel build (an empty PostHog host falls back to the default).
   vi.stubEnv('NEXT_PUBLIC_UMAMI_URL', UMAMI_SAMPLE)
+  vi.stubEnv('NEXT_PUBLIC_POSTHOG_HOST', '')
   vi.resetModules()
   policy = (await import('./csp')).contentSecurityPolicy()
 })
