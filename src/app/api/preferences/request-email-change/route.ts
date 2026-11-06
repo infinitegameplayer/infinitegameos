@@ -20,7 +20,7 @@ const FROM = 'Lane Belone <play@infinitegameos.io>'
 const REPLY_TO = 'play@infinitegameos.io'
 
 export async function POST(req: NextRequest) {
-  const blocked = await refuseBots()
+  const blocked = await refuseBots({ route: '/api/preferences/request-email-change' })
   if (blocked) return blocked
   let body: { email?: string; token?: string; newEmail?: string }
   try {

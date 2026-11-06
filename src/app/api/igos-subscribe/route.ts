@@ -131,7 +131,7 @@ async function applySupabaseMirror(opts: {
 }
 
 export async function POST(req: NextRequest) {
-  const blocked = await refuseBots()
+  const blocked = await refuseBots({ route: '/api/igos-subscribe' })
   if (blocked) return blocked
   try {
     const { email, firstName, honeypot, openedAt, source } = await req.json()
