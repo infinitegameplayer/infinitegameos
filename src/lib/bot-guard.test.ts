@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, afterEach } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { refuseBots } from './bot-guard'
+import { botVerdict, refuseBots } from './bot-guard'
 import { BOTID_PROTECTED } from './botid-routes'
 
 vi.mock('botid/server', () => ({ checkBotId: async () => ({ isBot: false }) }))
@@ -32,6 +32,21 @@ describe('refuseBots', () => {
   it('lets the request through when BotID itself fails', async () => {
     vi.spyOn(console, 'error').mockImplementation(() => {})
     expect(await refuseBots({ route: '/api/preferences/request-link' }, async () => { throw new Error('vendor down') })).toBeNull()
+  })
+})
+
+describe('botVerdict, for actions a page takes by itself', () => {
+  it('reads a person as human', async () => {
+    expect(await botVerdict({ route: '/api/igos-subscribe' }, async () => ({ isBot: false }))).toBe('human')
+  })
+  it('reads a flagged visitor as bot and logs it', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {})
+    expect(await botVerdict({ route: '/api/igos-subscribe' }, async () => ({ isBot: true }))).toBe('bot')
+    expect(warn).toHaveBeenCalled()
+  })
+  it('reads a BotID failure as unchecked, never as human', async () => {
+    vi.spyOn(console, 'error').mockImplementation(() => {})
+    expect(await botVerdict({ route: '/api/igos-subscribe' }, async () => { throw new Error('vendor down') })).toBe('unchecked')
   })
 })
 
