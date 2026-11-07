@@ -135,6 +135,9 @@ export async function POST(req: NextRequest) {
   if (blocked) return blocked
   try {
     const { email, firstName, honeypot, openedAt, source } = await req.json()
+    // The fill-time check below catches scripts that post a typed form faster
+    // than a person can type. The one-tap join page (/updates/join) arrives
+    // prefilled, so its client sends no openedAt and a quick tap is not dropped.
 
     if (typeof honeypot === 'string' && honeypot.trim().length > 0) {
       return NextResponse.json({ ok: true }, { status: 200 })
@@ -172,7 +175,7 @@ export async function POST(req: NextRequest) {
     try {
       const { data: prior } = await getSupabaseAdmin()
         .from('contacts')
-        .select('unsubscribed, first_name')
+        .select('unsubscribed, first_name, tags')
         .eq('email', normalizedEmail)
         .maybeSingle()
       if (prior?.unsubscribed === true) {
@@ -190,6 +193,11 @@ export async function POST(req: NextRequest) {
           }),
         })
         return NextResponse.json({ ok: true }, { status: 200 })
+      }
+      // Already on this list: no second welcome email. The one-tap join page
+      // from an email letter shows the reader a friendly "already on the list".
+      if (prior && Array.isArray(prior.tags) && prior.tags.includes(TAG)) {
+        return NextResponse.json({ ok: true, alreadySubscribed: true }, { status: 200 })
       }
     } catch (err) {
       const m = err instanceof Error ? err.message : 'Unknown error'
