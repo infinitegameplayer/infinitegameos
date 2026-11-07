@@ -73,6 +73,7 @@ const EMAIL_LINK_PAGES = [
   'src/app/articles/leave/LeaveClient.tsx',
   'src/app/letter/join/JoinClient.tsx',
   'src/app/letter/leave/LeaveClient.tsx',
+  'src/app/unsubscribe/UnsubscribeClient.tsx',
 ]
 const present = EMAIL_LINK_PAGES.filter((f) => existsSync(join(process.cwd(), f)))
 
@@ -86,6 +87,8 @@ describe('the email-link pages use the gate', () => {
       const src = readFileSync(join(process.cwd(), file), 'utf8')
       expect(src).toContain('useAutoAction(')
       expect(src).toContain("'auto'")
+      // Its own effect could post on mount past the gate, the pattern the gate retired.
+      expect(src).not.toContain('useEffect')
     })
   }
 })
