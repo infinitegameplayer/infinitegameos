@@ -94,6 +94,12 @@ export default function SubscribeForm({ prefilledEmail }: { prefilledEmail?: str
         }),
       })
       if (!res.ok) {
+        // A tap from an email letter's join page that the bot check refuses is
+        // still a person most of the time (a corporate proxy can hide the
+        // signals). They get a way in rather than a dead end (2026-11-07).
+        if (res.status === 403 && prefilledEmail) {
+          throw new Error('Something on this connection stopped the join. Reply to the letter that brought you here and you will be added by hand.')
+        }
         const body = await res.json().catch(() => ({}))
         throw new Error(body?.error || `Submission failed (${res.status})`)
       }

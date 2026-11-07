@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { refuseBots } from '@/lib/bot-guard'
+import { botVerdict, refuseBots } from '@/lib/bot-guard'
+import { autoJoinAllowed, cleanGateReport } from '@/lib/auto-action-gate'
 import { Resend } from 'resend'
 import { getSupabaseAdmin } from '@/lib/supabase'
 import { signEmailToken, signExpiringToken } from '@/lib/unsubscribe-token'
@@ -35,9 +36,12 @@ function cleanName(raw?: unknown): string | undefined {
   return name.length > 0 ? name : undefined
 }
 
-function buildWelcomeHtml(opts: { unsubscribeUrl: string; preferencesUrl: string; firstName?: string }) {
+function buildWelcomeHtml(opts: { unsubscribeUrl: string; preferencesUrl: string; leaveUrl: string; firstName?: string }) {
   const name = cleanName(opts.firstName)
   const greeting = name ? `Hey ${name},` : 'Hey there,'
+  // The undo line (King-ruled 2026-11-07): a join can start from one click on
+  // an email link, so the welcome carries a one-click way back. Its page
+  // (/updates/leave) acts under the same checks as the join page.
   const body = `
     <p>${greeting}</p>
     <p>You signed up for Infinite Game OS updates. The real ones, from inside the practice. New skills as they ship. Concepts as they cohere. Playbooks as they prove out.</p>
@@ -46,6 +50,7 @@ function buildWelcomeHtml(opts: { unsubscribeUrl: string; preferencesUrl: string
     <p>The Updates page lives here:<br><a href="${SITE_URL}/updates" style="color:#22d3ee;text-decoration:none">${SITE_URL}/updates</a></p>
     <p style="margin-top:2rem">With Joyful Sovereignty,</p>
     <p style="margin-top:0">Lane</p>
+    <p style="margin-top:2rem;font-size:13px;color:#94a3b8">Not you? <a href="${opts.leaveUrl}" style="color:#94a3b8">One click to undo.</a></p>
   `
   return renderEmailShell({
     body,
@@ -131,10 +136,40 @@ async function applySupabaseMirror(opts: {
 }
 
 export async function POST(req: NextRequest) {
-  const blocked = await refuseBots({ route: '/api/igos-subscribe' })
-  if (blocked) return blocked
+  let payload: Record<string, unknown>
   try {
-    const { email, firstName, honeypot, openedAt, source } = await req.json()
+    payload = (await req.json()) as Record<string, unknown>
+  } catch {
+    return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 })
+  }
+  const auto = payload?.mode === 'auto'
+
+  // The automatic join from an email link (/updates/join, auto-action-gate.ts)
+  // acts only when BotID vouches for the visitor and the address is already a
+  // Kingdom contact. Anything else answers needsTap and the page shows its
+  // one-tap button. A typed form or a tap keeps the ordinary check below.
+  if (auto) {
+    const verdict = await botVerdict({ route: '/api/igos-subscribe' })
+    const autoEmail = typeof payload.email === 'string' ? payload.email.trim().toLowerCase() : ''
+    let contact: { unsubscribed: boolean | null } | null = null
+    if (verdict === 'human' && EMAIL_REGEX.test(autoEmail)) {
+      const { data, error } = await getSupabaseAdmin()
+        .from('contacts')
+        .select('unsubscribed')
+        .eq('email', autoEmail)
+        .maybeSingle()
+      if (!error) contact = data
+    }
+    const allowed = autoJoinAllowed(verdict, contact)
+    console.log(`auto-join ${JSON.stringify({ route: '/api/igos-subscribe', verdict, known: contact !== null, allowed, gate: cleanGateReport(payload.gate) })}`)
+    if (!allowed) return NextResponse.json({ ok: true, needsTap: true }, { status: 200 })
+  } else {
+    const blocked = await refuseBots({ route: '/api/igos-subscribe' })
+    if (blocked) return blocked
+  }
+
+  try {
+    const { email, firstName, honeypot, openedAt, source } = payload
     // The fill-time check below catches scripts that post a typed form faster
     // than a person can type. The one-tap join page (/updates/join) arrives
     // prefilled, so its client sends no openedAt and a quick tap is not dropped.
@@ -166,7 +201,7 @@ export async function POST(req: NextRequest) {
 
     const normalizedEmail = email.trim().toLowerCase()
     const normalizedFirstName = cleanName(firstName)
-    const sourceForm = pathToSource(source)
+    const sourceForm = auto ? 'one-click:updates-join' : pathToSource(source)
 
     // An address that unsubscribed is not re-added from this form. It gets one
     // welcome-back email and the response stays the same, so the form never
@@ -231,12 +266,13 @@ export async function POST(req: NextRequest) {
       const token = signEmailToken(normalizedEmail)
       const unsubscribeUrl = `${SITE_URL}/unsubscribe?email=${encodeURIComponent(normalizedEmail)}&token=${token}`
       const preferencesUrl = `${SITE_URL}/preferences?email=${encodeURIComponent(normalizedEmail)}&token=${signExpiringToken(normalizedEmail)}`
+      const leaveUrl = `${SITE_URL}/updates/leave?email=${encodeURIComponent(normalizedEmail)}&token=${token}`
       await resend.emails.send({
         from: FROM,
         replyTo: REPLY_TO,
         to: normalizedEmail,
         subject: WELCOME_SUBJECT,
-        html: buildWelcomeHtml({ unsubscribeUrl, preferencesUrl, firstName: normalizedFirstName }),
+        html: buildWelcomeHtml({ unsubscribeUrl, preferencesUrl, leaveUrl, firstName: normalizedFirstName }),
       })
     } catch (err) {
       const m = err instanceof Error ? err.message : 'Unknown error'

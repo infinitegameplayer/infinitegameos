@@ -30,13 +30,19 @@ export type BotVerification = {
 
 type Check = () => Promise<BotVerification>
 
-export async function refuseBots(
+// What BotID said about the visitor. 'unchecked' means BotID itself failed.
+// refuseBots lets an unchecked request through (a form a person typed into).
+// An automatic action from an email link (auto-action-gate.ts) acts only on
+// 'human' and otherwise hands the page its one-tap button (2026-11-07).
+export type BotVerdict = 'human' | 'bot' | 'unchecked'
+
+export async function botVerdict(
   options: { route?: string } = {},
   check: Check = checkBotId as Check
-): Promise<NextResponse | null> {
+): Promise<BotVerdict> {
   try {
     const v = await check()
-    if (!v.isBot) return null
+    if (!v.isBot) return 'human'
     const line = JSON.stringify({
       route: options.route ?? 'unknown', // a caller that names no route still logs; the line just reads less precisely
       verified: v.isVerifiedBot === true,
@@ -44,9 +50,18 @@ export async function refuseBots(
       category: v.verifiedBotCategory ?? null,
     })
     console.warn(`botid refused ${line}`)
-    return NextResponse.json({ error: 'Access denied' }, { status: 403 })
+    return 'bot'
   } catch (err) {
-    console.error('botid check failed, request allowed:', err instanceof Error ? err.message : err)
+    console.error('botid check failed:', err instanceof Error ? err.message : err)
+    return 'unchecked'
   }
+}
+
+export async function refuseBots(
+  options: { route?: string } = {},
+  check: Check = checkBotId as Check
+): Promise<NextResponse | null> {
+  const verdict = await botVerdict(options, check)
+  if (verdict === 'bot') return NextResponse.json({ error: 'Access denied' }, { status: 403 })
   return null
 }

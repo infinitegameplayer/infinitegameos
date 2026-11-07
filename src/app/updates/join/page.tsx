@@ -1,13 +1,15 @@
-// One-tap join for readers of the email letters. The link in the email carries
+// One-click join for readers of the email letters. The link in the email carries
 // the reader's address: /updates/join?email=... When the page opens it reads
 // whether that address is already on the list (the check before the tap,
-// 2026-11-07). A reader already on it is told so and sees no button. Everyone
-// else sees the address and one confirming tap. Nothing is written on open, so
-// an email link scanner that opens the link joins no one. The button posts to
-// the ordinary /api/igos-subscribe route, which carries the BotID check.
+// 2026-11-07). A reader already on it is told so and nothing else happens.
+// Everyone else meets JoinClient, which joins them with no button once a person
+// is plainly on the page (the scanner-proof one-click, King-ruled 2026-11-07),
+// and shows the one-tap button whenever it cannot tell. The server renders
+// nothing that writes, so a scanner that only fetches the link joins no one.
 
 import Link from 'next/link'
 import SubscribeForm from '@/components/SubscribeForm'
+import JoinClient from './JoinClient'
 import { getContactMembership } from '@/lib/email-lists'
 import { joinStatus } from '@/lib/join-status'
 
@@ -53,12 +55,7 @@ export default async function JoinPage({
     <main style={{ minHeight: '70vh', padding: '7rem 1.5rem 4rem', maxWidth: '640px', margin: '0 auto' }}>
       <h1 style={{ fontSize: '1.75rem', margin: 0 }}>Join the Infinite Game OS updates</h1>
       {email ? (
-        <>
-          <p style={lead}>
-            Real releases and real lessons from inside the practice, sent when there is one. One tap and this address is on the list.
-          </p>
-          <SubscribeForm prefilledEmail={email} />
-        </>
+        <JoinClient email={email} />
       ) : (
         <>
           <p style={lead}>
