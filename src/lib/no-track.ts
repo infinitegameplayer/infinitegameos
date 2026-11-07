@@ -3,7 +3,7 @@
 // live signed token, so no pageview, session recording, pixel or click tracker
 // may observe it. Mirror of the lanebelone and IGOS copies. Keep byte-identical.
 
-export const NO_TRACK_PREFIXES = ['/preferences']
+export const NO_TRACK_PREFIXES = ['/preferences', '/updates/join']
 
 export function isNoTrackPath(pathname: string | null | undefined): boolean {
   if (!pathname) return false
