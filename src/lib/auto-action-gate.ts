@@ -40,8 +40,18 @@ export type GateReading = {
   automated: boolean
 }
 
-export function gateOpen(r: GateReading): boolean {
-  return r.visible && r.focused && !r.automated
+// A join acts without the focus check; a leave keeps it (King-ruled
+// 2026-11-07, option A). Brave on iOS showed a page to the King yet reported it
+// unfocused, with no focus event, on two of four taps, so a join waited on a
+// button. Every headless probe that day reported itself focused, so the check
+// stopped no scanner; the automation check and BotID did. A wrongful join is
+// cheap (a known contact, BotID's human verdict, a welcome that carries its
+// undo), while a wrongful leave quietly loses a reader, so leaves stay strict.
+// A page that names no kind gets the strict gate.
+export type GateKind = 'join' | 'leave'
+
+export function gateOpen(r: GateReading, kind: GateKind = 'leave'): boolean {
+  return r.visible && !r.automated && (kind === 'join' || r.focused)
 }
 
 // What the page reports to the server with an automatic request, so every

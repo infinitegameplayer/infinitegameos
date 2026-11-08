@@ -37,6 +37,23 @@ describe('gateOpen, the page acts only when a person is plainly there', () => {
   })
 })
 
+// King-ruled 2026-11-07, option A: Brave on iOS reported the King's own page
+// unfocused, so a join drops the focus check and a leave keeps it.
+describe('gateOpen by kind', () => {
+  const braveReading = { visible: true, focused: false, automated: false }
+  it('a join acts on a visible page Brave reports unfocused', () => {
+    expect(gateOpen(braveReading, 'join')).toBe(true)
+  })
+  it('a leave still waits for focus', () => {
+    expect(gateOpen(braveReading, 'leave')).toBe(false)
+    expect(gateOpen(braveReading)).toBe(false)
+  })
+  it('a join still needs the page on screen and an ordinary browser', () => {
+    expect(gateOpen({ visible: false, focused: false, automated: false }, 'join')).toBe(false)
+    expect(gateOpen({ visible: true, focused: true, automated: true }, 'join')).toBe(false)
+  })
+})
+
 describe('the timing', () => {
   it('shows the button only after the dwell has had its chance', () => {
     expect(TAP_AFTER_MS).toBeGreaterThan(DWELL_MS * 2)
@@ -123,6 +140,13 @@ describe('the email-link pages use the gate', () => {
       expect(src).toContain("'auto'")
       // Its own effect could post on mount past the gate, the pattern the gate retired.
       expect(src).not.toContain('useEffect')
+    })
+    // A join page names itself, so it acts without the focus check; any other
+    // page (an undo, an unsubscribe) never does (option A, 2026-11-07).
+    it(`${file} ${file.includes('/join/') ? 'asks for the join gate' : 'keeps the strict gate'}`, () => {
+      const src = readFileSync(join(process.cwd(), file), 'utf8')
+      if (file.includes('/join/')) expect(src).toContain("}, true, 'join')")
+      else expect(src).not.toContain("'join')")
     })
   }
 })

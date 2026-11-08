@@ -31,7 +31,7 @@ export default function JoinClient({ email }: { email: string }) {
       /* analytics unavailable */
     }
     return body?.alreadySubscribed ? 'already' : 'done'
-  })
+  }, true, 'join')
 
   if (phase === 'tap') {
     return (

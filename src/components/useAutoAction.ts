@@ -5,7 +5,7 @@
 // numbers live in src/lib/auto-action-gate.ts. Mirror across the three sites.
 
 import { useEffect, useState } from 'react'
-import { DWELL_MS, REQUEST_TIMEOUT_MS, TAP_AFTER_MS, gateOpen, type GateCause, type GateReading, type GateReport } from '@/lib/auto-action-gate'
+import { DWELL_MS, REQUEST_TIMEOUT_MS, TAP_AFTER_MS, gateOpen, type GateCause, type GateKind, type GateReading, type GateReport } from '@/lib/auto-action-gate'
 import { isAutomatedBrowser } from '@/lib/no-track'
 
 export type AutoOutcome = 'done' | 'already' | 'tap'
@@ -56,7 +56,9 @@ function reportGate(
   } catch {}
 }
 
-export function useAutoAction(run: (report: GateReport) => Promise<AutoOutcome>, enabled = true): AutoPhase {
+// kind: 'join' for a page that adds the reader to a list, which acts without
+// the focus check; anything else keeps the strict gate (auto-action-gate.ts).
+export function useAutoAction(run: (report: GateReport) => Promise<AutoOutcome>, enabled = true, kind: GateKind = 'leave'): AutoPhase {
   const [phase, setPhase] = useState<AutoPhase>(enabled ? 'waiting' : 'tap')
 
   useEffect(() => {
@@ -81,7 +83,7 @@ export function useAutoAction(run: (report: GateReport) => Promise<AutoOutcome>,
     const fire = () => {
       dwellTimer = null
       const reading = read()
-      if (settled || !gateOpen(reading)) return
+      if (settled || !gateOpen(reading, kind)) return
       settled = true
       clear()
       setPhase('working')
@@ -115,7 +117,7 @@ export function useAutoAction(run: (report: GateReport) => Promise<AutoOutcome>,
       if (settled) return
       const reading = read()
       if (!firstReading) firstReading = reading
-      if (gateOpen(reading)) {
+      if (gateOpen(reading, kind)) {
         // A person is here: the dwell runs and the button waits, so focus that
         // arrives late (some in-app mail browsers) still gets the one click.
         if (tapTimer) {
