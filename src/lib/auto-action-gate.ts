@@ -62,3 +62,74 @@ export function cleanGateReport(raw: unknown): GateReport | null {
     sinceLoadMs: num(r.sinceLoadMs),
   }
 }
+
+// The gate's own reading when the button appears for a reason the server never
+// saw (2026-11-07, after Brave on iOS held the gate closed and a closed gate
+// logged nothing). The page sends it to /api/gate-reading, which writes one
+// `gate-reading` line. Why the button showed:
+//   gate-closed      the checks never passed (which one is in the reading)
+//   request-threw    the automatic request died in the browser before it left
+//   request-timeout  the automatic request never answered
+// A request the server answered with needsTap already logged its auto-join or
+// auto-leave line, so it sends nothing here. The page's path goes, never its
+// query: the address and its token stay on the page.
+export type GateCause = 'gate-closed' | 'request-threw' | 'request-timeout'
+const GATE_CAUSES: GateCause[] = ['gate-closed', 'request-threw', 'request-timeout']
+
+export type GateBeacon = GateReading & {
+  cause: GateCause
+  page: string
+  webdriver: boolean
+  headless: boolean
+  brave: boolean
+  firstReading: GateReading | null
+  events: number
+  sinceLoadMs: number
+  error: string | null
+  transport: 'fetch' | 'beacon'
+}
+
+export function cleanGateBeacon(raw: unknown): GateBeacon | null {
+  if (!raw || typeof raw !== 'object') return null
+  const r = raw as Record<string, unknown>
+  if (!GATE_CAUSES.includes(r.cause as GateCause)) return null
+  const num = (v: unknown) => (typeof v === 'number' && Number.isFinite(v) ? Math.max(0, Math.round(v)) : -1)
+  const reading = (v: unknown): GateReading | null => {
+    if (!v || typeof v !== 'object') return null
+    const x = v as Record<string, unknown>
+    return { visible: x.visible === true, focused: x.focused === true, automated: x.automated === true }
+  }
+  const page = typeof r.page === 'string' && /^\/[a-z0-9/_-]{0,60}$/i.test(r.page) ? r.page : 'unknown'
+  const error = typeof r.error === 'string' ? r.error.replace(/[^\w .:,'()-]/g, '').slice(0, 80) : null
+  return {
+    cause: r.cause as GateCause,
+    page,
+    visible: r.visible === true,
+    focused: r.focused === true,
+    automated: r.automated === true,
+    webdriver: r.webdriver === true,
+    headless: r.headless === true,
+    brave: r.brave === true,
+    firstReading: reading(r.firstReading),
+    events: num(r.events),
+    sinceLoadMs: num(r.sinceLoadMs),
+    error,
+    transport: r.transport === 'beacon' ? 'beacon' : 'fetch',
+  }
+}
+
+// A coarse name for the browser, from its user agent. Brave on iOS sends the
+// same user agent as Safari, so the page's own `brave` flag tells them apart.
+export function uaFamily(ua: string | null): string {
+  if (!ua) return 'none'
+  if (/HeadlessChrome/i.test(ua)) return 'headless-chrome'
+  if (/CriOS/.test(ua)) return 'chrome-ios'
+  if (/FxiOS/.test(ua)) return 'firefox-ios'
+  if (/EdgiOS/.test(ua)) return 'edge-ios'
+  if (/iPhone|iPad|iPod/.test(ua)) return 'ios-webkit'
+  if (/Edg\//.test(ua)) return 'edge'
+  if (/Firefox\//.test(ua)) return 'firefox'
+  if (/Chrome\//.test(ua)) return 'chrome'
+  if (/Safari\//.test(ua)) return 'safari'
+  return 'other'
+}

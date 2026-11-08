@@ -235,7 +235,9 @@ export async function POST(req: NextRequest) {
     }
     try {
       // create leaves an existing contact as it was, so a reader who left and rejoins stayed unsubscribed in Resend until the next reconcile (observed 2026-11-07). update clears it, as flipAudience does.
-      await resend.contacts.update({ audienceId: AUDIENCE_ID, email: normalizedEmail, unsubscribed: false })
+      const { error: updateError } = await resend.contacts.update({ audienceId: AUDIENCE_ID, email: normalizedEmail, unsubscribed: false })
+      // The SDK returns an API error rather than throwing it, so it is read here.
+      if (updateError) console.error('igos-subscribe contacts.update error:', updateError.message)
     } catch (err) {
       const m = err instanceof Error ? err.message : 'Unknown error'
       console.error('igos-subscribe contacts.update error:', m)
