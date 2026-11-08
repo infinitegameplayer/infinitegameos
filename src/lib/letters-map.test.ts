@@ -38,4 +38,11 @@ describe('the letters map', () => {
     expect(lettersMapHtml({ omit: 'personal', email: 'a@x.co', ...colors })).toContain('The letters')
     expect(lettersMapHtml({ omit: CANON.map((c) => c[0]), email: 'a@x.co', ...colors })).toBe('')
   })
+  // King-chosen 2026-11-07 (option 1): the names alone did not read as joins.
+  it('says the names are joins, between the title and the first name', () => {
+    const html = lettersMapHtml({ omit: 'personal', email: 'a@x.co', ...colors })
+    const hint = html.indexOf('Click a name to join that letter.')
+    expect(hint).toBeGreaterThan(html.indexOf('The letters'))
+    expect(hint).toBeLessThan(html.indexOf('<strong>'))
+  })
 })

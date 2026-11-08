@@ -19,6 +19,9 @@ export const LETTERS: { key: LetterKey; name: string; line: string; join: string
 ]
 
 export const LETTERS_MAP_TITLE = 'The letters'
+// The line under the title that says the names are joins (King-chosen,
+// option 1, 2026-11-07: the names alone did not read as one-click joins).
+export const LETTERS_MAP_HINT = 'Click a name to join that letter.'
 
 // A broadcast is rendered once, so its links carry Resend's merge tag and each
 // reader's address fills in at send time. A one-to-one email (a welcome) passes
@@ -44,5 +47,6 @@ export function lettersMapHtml({
   )
   if (!lines.length) return ''
   return `<p style="margin:28px 0 12px 0;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:${textColor}">${LETTERS_MAP_TITLE}</p>
+<p style="margin:0 0 12px 0;font-size:14px;line-height:1.55;color:${textColor}">${LETTERS_MAP_HINT}</p>
 ${lines.join('\n')}`
 }
