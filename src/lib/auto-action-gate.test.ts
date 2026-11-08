@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { autoJoinAllowed, cleanGateReport, gateOpen, DWELL_MS, REQUEST_TIMEOUT_MS, TAP_AFTER_MS } from './auto-action-gate'
+import { autoJoinAllowed, cleanGateBeacon, cleanGateReport, gateOpen, uaFamily, DWELL_MS, REQUEST_TIMEOUT_MS, TAP_AFTER_MS } from './auto-action-gate'
 
 describe('autoJoinAllowed, the server half', () => {
   it('acts for a known contact BotID vouched for', () => {
@@ -62,6 +62,38 @@ describe('cleanGateReport, what the server writes to its log', () => {
   })
 })
 
+describe('cleanGateBeacon, the reading a closed gate sends', () => {
+  const brave = {
+    cause: 'gate-closed', page: '/personal/join', visible: true, focused: false, automated: false,
+    webdriver: false, headless: false, brave: true, firstReading: { visible: true, focused: false, automated: false },
+    events: 0, sinceLoadMs: 2503.7, error: null, transport: 'fetch',
+  }
+  it('keeps a well-formed reading', () => {
+    expect(cleanGateBeacon(brave)).toEqual({ ...brave, sinceLoadMs: 2504 })
+  })
+  it('refuses a reading with no known cause', () => {
+    expect(cleanGateBeacon({ ...brave, cause: 'anything' })).toBeNull()
+    expect(cleanGateBeacon('gate-closed')).toBeNull()
+  })
+  it('never logs a query string, so the address and its token stay on the page', () => {
+    expect(cleanGateBeacon({ ...brave, page: '/personal/join?email=a@b.co&token=x' })?.page).toBe('unknown')
+  })
+  it('trims the browser error to plain text', () => {
+    const r = cleanGateBeacon({ ...brave, cause: 'request-threw', error: 'TypeError: Load failed <img src=x>' + 'y'.repeat(200) })
+    expect(r?.error).toMatch(/^TypeError: Load failed img srcx/)
+    expect(r?.error?.length).toBeLessThanOrEqual(80)
+  })
+})
+
+describe('uaFamily', () => {
+  it('names the browsers the King taps from', () => {
+    expect(uaFamily('Mozilla/5.0 (iPhone; CPU iPhone OS 18_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.1 Mobile/15E148 Safari/604.1')).toBe('ios-webkit')
+    expect(uaFamily('Mozilla/5.0 (iPhone; CPU iPhone OS 18_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/131.0 Mobile/15E148 Safari/604.1')).toBe('chrome-ios')
+    expect(uaFamily('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/131.0 Safari/537.36')).toBe('headless-chrome')
+    expect(uaFamily(null)).toBe('none')
+  })
+})
+
 // The join and undo pages must reach the server in automatic mode only through
 // the gate. Read from source so a page that drops the hook fails here. The list
 // names every site's pages, so this file stays identical on all three; each
@@ -74,6 +106,8 @@ const EMAIL_LINK_PAGES = [
   'src/app/letter/join/JoinClient.tsx',
   'src/app/letter/leave/LeaveClient.tsx',
   'src/app/unsubscribe/UnsubscribeClient.tsx',
+  'src/app/personal/join/JoinClient.tsx',
+  'src/app/personal/leave/LeaveClient.tsx',
 ]
 const present = EMAIL_LINK_PAGES.filter((f) => existsSync(join(process.cwd(), f)))
 
