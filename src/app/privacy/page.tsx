@@ -31,7 +31,7 @@ const sections = [
   {
     h: 'Analytics',
     p: [
-      'This site uses Umami and PostHog to understand how people find and use it: pages viewed, clicks and, in PostHog, recordings of how a page is used, with everything typed into a form masked. PostHog keeps an identifier in your browser. Umami sets no cookies.',
+      'This site uses Umami and PostHog to understand how people find and use it: pages viewed, clicks and, in PostHog, recordings of how a page is used, with everything typed into a form masked. PostHog keeps an identifier in your browser. Umami sets no cookies. The site also keeps a short note in your browser of how you first arrived (a link’s campaign tags and the site that sent you) for up to a year, and passes it along when you follow a link to lanebelone.com or sidequesthq.co.',
       'When you sign up for updates or for the Charter, your email is linked to your analytics activity, so we can see which pages lead to a signup. Neither tool runs on the email preferences page.',
     ],
   },
@@ -79,7 +79,7 @@ export default function PrivacyPage() {
             Privacy
           </p>
           <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: '0.75rem' }}>Privacy</h1>
-          <p style={{ color: 'var(--color-muted)', fontSize: '0.9rem' }}>Effective date: September 2026</p>
+          <p style={{ color: 'var(--color-muted)', fontSize: '0.9rem' }}>Effective date: November 2026</p>
           {sections.map((s) => (
             <section key={s.h}>
               <h2>{s.h}</h2>
