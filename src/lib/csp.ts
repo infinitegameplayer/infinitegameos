@@ -49,7 +49,8 @@ export function contentSecurityPolicy(nonce?: string): string {
     `script-src ${["'self'", inline, POSTHOG_HOST, POSTHOG_ASSETS, UMAMI_URL].filter(Boolean).join(' ')}`,
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data: https:",
-    "font-src 'self' data: https://fonts.gstatic.com",
+    // next/font/google self-hosts at build time, so no font host is named.
+    "font-src 'self' data:",
     `connect-src ${["'self'", POSTHOG_HOST, POSTHOG_ASSETS, UMAMI_URL].filter(Boolean).join(' ')}`,
     // PostHog session recording compresses in a blob worker.
     "worker-src 'self' blob:",

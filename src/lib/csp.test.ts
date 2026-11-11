@@ -1,11 +1,22 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { readFileSync } from 'node:fs'
+
+// The policy reads its analytics hosts from env when the module loads. Vercel
+// sets NEXT_PUBLIC_UMAMI_URL at build, so this test failed the first build that
+// ran it (2026-11-05). It checks the policy's shape, so it clears both before
+// csp.ts is imported; csp-loads.test.ts covers the env-sourced hosts.
+vi.hoisted(() => {
+  delete process.env.NEXT_PUBLIC_UMAMI_URL
+  delete process.env.NEXT_PUBLIC_POSTHOG_HOST
+})
+
 import { NONCE_ROUTES, contentSecurityPolicy, generateNonce } from './csp'
 
 describe('contentSecurityPolicy', () => {
+  // fonts.gstatic.com left font-src on 2026-11-05 (Site Update): next/font/google self-hosts.
   it('keeps the static policy byte-identical to the one served before the nonce routes', () => {
     expect(contentSecurityPolicy()).toBe(
-      "default-src 'self'; script-src 'self' 'unsafe-inline' https://us.i.posthog.com https://us-assets.i.posthog.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://us.i.posthog.com https://us-assets.i.posthog.com; worker-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+      "default-src 'self'; script-src 'self' 'unsafe-inline' https://us.i.posthog.com https://us-assets.i.posthog.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://us.i.posthog.com https://us-assets.i.posthog.com; worker-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
     )
   })
 

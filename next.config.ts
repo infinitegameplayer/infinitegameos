@@ -123,7 +123,7 @@ const nextConfig: NextConfig = {
       // site default. The two sources are mutually exclusive, so exactly one
       // Referrer-Policy header lands per path (Next emits every matching source).
       {
-        source: '/((?!preferences).*)',
+        source: '/((?!preferences|updates/join).*)',
         headers: [{ key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' }],
       },
       {
@@ -132,6 +132,11 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/preferences/:path*',
+        headers: [{ key: 'Referrer-Policy', value: 'no-referrer' }],
+      },
+      // The one-tap join link from an email letter carries the reader's address.
+      {
+        source: '/updates/join',
         headers: [{ key: 'Referrer-Policy', value: 'no-referrer' }],
       },
     ]

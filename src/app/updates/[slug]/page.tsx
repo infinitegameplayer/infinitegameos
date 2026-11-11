@@ -106,6 +106,7 @@ export default async function UpdatePage({
   const dateLabel = new Date(update.date + 'T00:00:00Z').toLocaleDateString('en-US', {
     month: 'long',
     year: 'numeric',
+    timeZone: 'UTC',
   })
 
   return (

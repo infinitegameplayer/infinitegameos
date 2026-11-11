@@ -336,7 +336,7 @@ export default function HomePage() {
                 <Link href={`/updates/${update.slug}`} style={{ display: 'block', textDecoration: 'none' }}>
                   <article className="card" style={{ height: '100%' }}>
                     <p className="label" style={{ marginBottom: '0.75rem' }}>
-                      {new Date(update.date + 'T00:00:00Z').toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                      {new Date(update.date + 'T00:00:00Z').toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' })}
                     </p>
                     <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.6rem' }}>{update.title}</h3>
                     <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-muted)', lineHeight: 1.65 }}>{update.summary}</p>
