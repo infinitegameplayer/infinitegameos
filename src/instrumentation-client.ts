@@ -35,6 +35,9 @@ if (!isNoTrackPath(window.location.pathname) && !isNonPublicHost(window.location
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
     api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com',
     person_profiles: 'identified_only',
+    // posthog-js's own default, pinned: first touch is kept exactly this long
+    // (FIRST_TOUCH_TTL_MS in src/lib/client-attribution.ts)
+    cookie_expiration: 365,
     capture_pageview: false,
     capture_pageleave: true,
     capture_heatmaps: true,
