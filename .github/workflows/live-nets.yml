@@ -22,7 +22,7 @@ on:
 
 permissions:
   contents: read
-  issues: write
+  issues: write # opens or comments on the one live-net issue when a net fails
 
 jobs:
   probe:
