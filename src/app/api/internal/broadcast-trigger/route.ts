@@ -11,6 +11,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { renderEmailShell } from '@/lib/email-shell'
+import { buildBroadcastBody, type Article } from '@/lib/igos-broadcast'
 import { createBroadcast, sendBroadcast } from '@/lib/resend-broadcast'
 
 const SITE_URL = 'https://www.infinitegameos.io'
@@ -22,13 +23,6 @@ const RESEND_UNSUBSCRIBE_PLACEHOLDER = '{{{RESEND_UNSUBSCRIBE_URL}}}'
 // per recipient at send time, so an expiring HMAC token cannot be minted here.
 // The link lands on the secure fresh-link fallback.
 const PREFERENCES_MERGE_URL = `${SITE_URL}/preferences?email={{{contact.email}}}`
-
-type Article = {
-  slug: string
-  title: string
-  summary: string
-  date: string
-}
 
 type RequestBody = {
   slug?: string
@@ -51,51 +45,6 @@ function loadArticle(slug: string): Article | null {
     }
   }
   return null
-}
-
-function escapeHtml(input: string): string {
-  return input
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;')
-}
-
-function buildBroadcastBody(articles: Article[]): string {
-  if (articles.length === 1) {
-    const a = articles[0]
-    const title = escapeHtml(a.title)
-    const summary = escapeHtml(a.summary)
-    const url = `${SITE_URL}/updates/${a.slug}`
-    return `
-    <p>Hi.</p>
-    <p>A new piece just landed on Infinite Game OS.</p>
-    <p style="margin-top:1.5rem"><a href="${url}" style="color:#22d3ee;text-decoration:none;font-weight:600">${title}</a></p>
-    <p>${summary}</p>
-    <p style="margin-top:1.5rem">Read it here:<br><a href="${url}" style="color:#22d3ee;text-decoration:none">${url}</a></p>
-    <p style="margin-top:2rem">With Joyful Sovereignty,</p>
-    <p style="margin-top:0">Lane</p>
-  `
-  }
-  const items = articles
-    .map((a) => {
-      const title = escapeHtml(a.title)
-      const summary = escapeHtml(a.summary)
-      const url = `${SITE_URL}/updates/${a.slug}`
-      return `
-    <p style="margin-top:1.5rem"><a href="${url}" style="color:#22d3ee;text-decoration:none;font-weight:600">${title}</a></p>
-    <p>${summary}</p>
-    <p><a href="${url}" style="color:rgba(34,211,238,0.7);text-decoration:none;font-size:14px">${url}</a></p>`
-    })
-    .join('')
-  return `
-    <p>Hi.</p>
-    <p>New pieces just landed on Infinite Game OS.</p>
-    ${items}
-    <p style="margin-top:2rem">With Joyful Sovereignty,</p>
-    <p style="margin-top:0">Lane</p>
-  `
 }
 
 function buildSubject(articles: Article[]): string {

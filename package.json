@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/route-dates.mjs && node scripts/check-title-lengths.mjs && node scripts/generate-llms-updates.mjs",
+    "prebuild": "node scripts/route-dates.mjs && node scripts/check-title-lengths.mjs && node scripts/generate-llms-updates.mjs && npm run test:guards",
+    "test:guards": "vitest run src/lib/csp.test.ts src/lib/csp-loads.test.ts src/lib/redirects.test.ts",
     "route-dates": "node scripts/route-dates.mjs",
     "check:llms": "node scripts/generate-llms-updates.mjs --check",
     "build": "next build",
@@ -18,13 +19,13 @@
     "botid": "1.5.11",
     "geist": "^1.8.2",
     "gray-matter": "^4.0.3",
-    "next": "^16.4.2",
+    "next": "^16.4.5",
     "next-mdx-remote": "^6.0.0",
     "node-html-markdown": "^2.0.0",
     "node-html-parser": "^6.1.13",
     "posthog-js": "^1.438.20",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
+    "react": "19.2.9",
+    "react-dom": "19.2.9",
     "resend": "^6.34.1"
   },
   "devDependencies": {
@@ -33,7 +34,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.4.2",
+    "eslint-config-next": "^16.4.5",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^4.1.12"

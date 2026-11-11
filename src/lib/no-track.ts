@@ -3,7 +3,18 @@
 // live signed token, so no pageview, session recording, pixel or click tracker
 // may observe it. Mirror of the lanebelone and IGOS copies. Keep byte-identical.
 
-export const NO_TRACK_PREFIXES = ['/preferences']
+// The join and undo pages from email links carry the reader's address (and the
+// undo page a signed token), so they are privacy surfaces too. One list names
+// every site's pages, so the three copies stay identical (2026-11-07).
+export const NO_TRACK_PREFIXES = [
+  '/preferences',
+  '/updates/join',
+  '/updates/leave',
+  '/articles/join',
+  '/articles/leave',
+  '/letter/join',
+  '/letter/leave',
+]
 
 export function isNoTrackPath(pathname: string | null | undefined): boolean {
   if (!pathname) return false

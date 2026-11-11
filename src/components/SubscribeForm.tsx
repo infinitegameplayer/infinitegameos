@@ -41,10 +41,11 @@ const buttonStyle: React.CSSProperties = {
 
 const styleId = 'igos-subscribe-style'
 
-export default function SubscribeForm() {
+export default function SubscribeForm({ prefilledEmail }: { prefilledEmail?: string } = {}) {
   const posthog = usePostHog()
   const [firstName, setFirstName] = useState('')
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState(prefilledEmail ?? '')
+  const [already, setAlready] = useState(false)
   const [website, setWebsite] = useState('')
   const [openedAt] = useState(() => Date.now())
   const [status, setStatus] = useState<'idle' | 'submitting' | 'submitted' | 'error'>('idle')
@@ -83,7 +84,9 @@ export default function SubscribeForm() {
           email: email.trim(),
           firstName: firstName.trim() || undefined,
           honeypot: website,
-          openedAt,
+          // A prefilled one-tap join has no typing time to measure, and the
+          // route skips its fill-time check when openedAt is absent.
+          openedAt: prefilledEmail ? undefined : openedAt,
           source:
             typeof window !== 'undefined'
               ? window.location.pathname
@@ -91,9 +94,17 @@ export default function SubscribeForm() {
         }),
       })
       if (!res.ok) {
+        // A tap from an email letter's join page that the bot check refuses is
+        // still a person most of the time (a corporate proxy can hide the
+        // signals). They get a way in rather than a dead end (2026-11-07).
+        if (res.status === 403 && prefilledEmail) {
+          throw new Error('Something on this connection stopped the join. Reply to the letter that brought you here and you will be added by hand.')
+        }
         const body = await res.json().catch(() => ({}))
         throw new Error(body?.error || `Submission failed (${res.status})`)
       }
+      const result = await res.json().catch(() => ({}))
+      setAlready(result?.alreadySubscribed === true)
       setStatus('submitted')
       markSubscribed(window.localStorage, 'igos-subscribe')
       try {
@@ -136,7 +147,9 @@ export default function SubscribeForm() {
             margin: 0,
           }}
         >
-          You are in. The welcome note is landing now. The next dispatch arrives from inside the practice.
+          {already
+            ? 'You are already on the list. The next dispatch arrives from inside the practice.'
+            : 'You are in. The welcome note is landing now. The next dispatch arrives from inside the practice.'}
         </p>
       </div>
     )
@@ -169,26 +182,42 @@ export default function SubscribeForm() {
         New dispatches as they ship, from inside the practice.
       </p>
       <form onSubmit={handleSubmit} noValidate data-bar-anchor="">
-        <input
-          className="igos-subscribe-input"
-          type="text"
-          autoComplete="given-name"
-          placeholder="First name (optional)"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-          style={{ ...inputStyle, marginBottom: '0.75rem' }}
-        />
-        <input
-          className="igos-subscribe-input"
-          type="email"
-          aria-label="Email"
-          required
-          autoComplete="email"
-          placeholder="you@example.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          style={{ ...inputStyle, marginBottom: '0.75rem' }}
-        />
+        {prefilledEmail ? (
+          <p
+            style={{
+              fontFamily: 'var(--font-body), Inter, system-ui, sans-serif',
+              fontSize: '1rem',
+              color: 'var(--color-text)',
+              margin: '0 0 1rem',
+              wordBreak: 'break-all',
+            }}
+          >
+            {prefilledEmail}
+          </p>
+        ) : (
+          <>
+            <input
+              className="igos-subscribe-input"
+              type="text"
+              autoComplete="given-name"
+              placeholder="First name (optional)"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              style={{ ...inputStyle, marginBottom: '0.75rem' }}
+            />
+            <input
+              className="igos-subscribe-input"
+              type="email"
+              aria-label="Email"
+              required
+              autoComplete="email"
+              placeholder="you@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              style={{ ...inputStyle, marginBottom: '0.75rem' }}
+            />
+          </>
+        )}
         <input
           className="igos-subscribe-honeypot"
           type="text"
@@ -217,7 +246,7 @@ export default function SubscribeForm() {
           disabled={status === 'submitting'}
           style={{ ...buttonStyle, opacity: status === 'submitting' ? 0.6 : 1 }}
         >
-          {status === 'submitting' ? 'Subscribing…' : 'Subscribe'}
+          {status === 'submitting' ? 'Subscribing…' : prefilledEmail ? 'Yes, send me the updates' : 'Subscribe'}
         </button>
         <p
           style={{

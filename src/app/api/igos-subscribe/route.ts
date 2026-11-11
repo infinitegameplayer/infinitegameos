@@ -1,9 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { refuseBots } from '@/lib/bot-guard'
+import { botVerdict, refuseBots } from '@/lib/bot-guard'
+import { autoJoinAllowed, cleanGateReport } from '@/lib/auto-action-gate'
 import { Resend } from 'resend'
 import { getSupabaseAdmin } from '@/lib/supabase'
 import { signEmailToken, signExpiringToken } from '@/lib/unsubscribe-token'
 import { renderEmailShell } from '@/lib/email-shell'
+import { leftThisListBefore } from '@/lib/list-return'
+import {
+  LIST_WELCOME_BACK_SUBJECT,
+  WELCOME_SUBJECT,
+  buildListWelcomeBackHtml,
+  buildWelcomeHtml,
+  cleanName,
+} from '@/lib/igos-welcome'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 const AUDIENCE_ID = process.env.RESEND_AUDIENCE_INFINITE_GAME_ID
@@ -16,44 +25,7 @@ const TAG = 'infinite_game_subscriber'
 const SOURCE_SITE = 'igos'
 const SITE_URL = 'https://www.infinitegameos.io'
 
-const WELCOME_SUBJECT = 'Welcome to Infinite Game OS updates'
-const WELCOME_PREVIEW =
-  'Dispatches from the practice will arrive as the OS evolves.'
-
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
-// A visitor's name is set into the welcome email's HTML, so it is cleaned
-// first: letters, marks, spaces, hyphens and apostrophes only, at most 40
-// characters. Tags, links and domains cannot ride a name into a real email
-// from this address (Site Defensibility Read 2026-10-25). Built at runtime
-// because the ES2017 target rejects a Unicode property escape in a literal.
-const NAME_STRIP = new RegExp("[^\\p{L}\\p{M}\\s'\\u2019-]", 'gu')
-
-function cleanName(raw?: unknown): string | undefined {
-  if (typeof raw !== 'string') return undefined
-  const name = raw.normalize('NFC').replace(NAME_STRIP, '').replace(/\s+/g, ' ').trim().slice(0, 40).trim()
-  return name.length > 0 ? name : undefined
-}
-
-function buildWelcomeHtml(opts: { unsubscribeUrl: string; preferencesUrl: string; firstName?: string }) {
-  const name = cleanName(opts.firstName)
-  const greeting = name ? `Hey ${name},` : 'Hey there,'
-  const body = `
-    <p>${greeting}</p>
-    <p>You signed up for Infinite Game OS updates. The real ones, from inside the practice. New skills as they ship. Concepts as they cohere. Playbooks as they prove out.</p>
-    <p>Each one is a real release or a real lesson, sent when there is one.</p>
-    <p>If a piece is useful, forward it. The unsubscribe link sits on every send.</p>
-    <p>The Updates page lives here:<br><a href="${SITE_URL}/updates" style="color:#22d3ee;text-decoration:none">${SITE_URL}/updates</a></p>
-    <p style="margin-top:2rem">With Joyful Sovereignty,</p>
-    <p style="margin-top:0">Lane</p>
-  `
-  return renderEmailShell({
-    body,
-    unsubscribeUrl: opts.unsubscribeUrl,
-    preferencesUrl: opts.preferencesUrl,
-    preview: WELCOME_PREVIEW,
-  })
-}
 
 const WELCOME_BACK_SUBJECT = 'Want back in?'
 const WELCOME_BACK_PREVIEW = 'One click and you are back.'
@@ -131,10 +103,43 @@ async function applySupabaseMirror(opts: {
 }
 
 export async function POST(req: NextRequest) {
-  const blocked = await refuseBots()
-  if (blocked) return blocked
+  let payload: Record<string, unknown>
   try {
-    const { email, firstName, honeypot, openedAt, source } = await req.json()
+    payload = (await req.json()) as Record<string, unknown>
+  } catch {
+    return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 })
+  }
+  const auto = payload?.mode === 'auto'
+
+  // The automatic join from an email link (/updates/join, auto-action-gate.ts)
+  // acts only when BotID vouches for the visitor and the address is already a
+  // Kingdom contact. Anything else answers needsTap and the page shows its
+  // one-tap button. A typed form or a tap keeps the ordinary check below.
+  if (auto) {
+    const verdict = await botVerdict({ route: '/api/igos-subscribe' })
+    const autoEmail = typeof payload.email === 'string' ? payload.email.trim().toLowerCase() : ''
+    let contact: { unsubscribed: boolean | null } | null = null
+    if (verdict === 'human' && EMAIL_REGEX.test(autoEmail)) {
+      const { data, error } = await getSupabaseAdmin()
+        .from('contacts')
+        .select('unsubscribed')
+        .eq('email', autoEmail)
+        .maybeSingle()
+      if (!error) contact = data
+    }
+    const allowed = autoJoinAllowed(verdict, contact)
+    console.log(`auto-join ${JSON.stringify({ route: '/api/igos-subscribe', verdict, known: contact !== null, allowed, gate: cleanGateReport(payload.gate) })}`)
+    if (!allowed) return NextResponse.json({ ok: true, needsTap: true }, { status: 200 })
+  } else {
+    const blocked = await refuseBots({ route: '/api/igos-subscribe' })
+    if (blocked) return blocked
+  }
+
+  try {
+    const { email, firstName, honeypot, openedAt, source } = payload
+    // The fill-time check below catches scripts that post a typed form faster
+    // than a person can type. The one-tap join page (/updates/join) arrives
+    // prefilled, so its client sends no openedAt and a quick tap is not dropped.
 
     if (typeof honeypot === 'string' && honeypot.trim().length > 0) {
       return NextResponse.json({ ok: true }, { status: 200 })
@@ -163,16 +168,17 @@ export async function POST(req: NextRequest) {
 
     const normalizedEmail = email.trim().toLowerCase()
     const normalizedFirstName = cleanName(firstName)
-    const sourceForm = pathToSource(source)
+    const sourceForm = auto ? 'one-click:updates-join' : pathToSource(source)
 
     // An address that unsubscribed is not re-added from this form. It gets one
     // welcome-back email and the response stays the same, so the form never
     // reveals who opted out. A lookup failure falls through to the ordinary
     // path, as the mirror below already tolerates its own failure.
+    let returning = false
     try {
       const { data: prior } = await getSupabaseAdmin()
         .from('contacts')
-        .select('unsubscribed, first_name')
+        .select('unsubscribed, first_name, tags')
         .eq('email', normalizedEmail)
         .maybeSingle()
       if (prior?.unsubscribed === true) {
@@ -191,6 +197,15 @@ export async function POST(req: NextRequest) {
         })
         return NextResponse.json({ ok: true }, { status: 200 })
       }
+      // Already on this list: no second welcome email. The one-tap join page
+      // from an email letter shows the reader a friendly "already on the list".
+      if (prior && Array.isArray(prior.tags) && prior.tags.includes(TAG)) {
+        return NextResponse.json({ ok: true, alreadySubscribed: true }, { status: 200 })
+      }
+      // An existing contact being added here: if they left this list before,
+      // they get "Welcome back" in place of the first welcome. A brand new
+      // contact never queries it.
+      if (prior) returning = await leftThisListBefore(getSupabaseAdmin(), normalizedEmail, 'infinite_game')
     } catch (err) {
       const m = err instanceof Error ? err.message : 'Unknown error'
       console.error('igos-subscribe opt-out check error:', m)
@@ -218,17 +233,28 @@ export async function POST(req: NextRequest) {
         console.error('igos-subscribe contacts.create error:', m)
       }
     }
+    try {
+      // create leaves an existing contact as it was, so a reader who left and rejoins stayed unsubscribed in Resend until the next reconcile (observed 2026-11-07). update clears it, as flipAudience does.
+      const { error: updateError } = await resend.contacts.update({ audienceId: AUDIENCE_ID, email: normalizedEmail, unsubscribed: false })
+      // The SDK returns an API error rather than throwing it, so it is read here.
+      if (updateError) console.error('igos-subscribe contacts.update error:', updateError.message)
+    } catch (err) {
+      const m = err instanceof Error ? err.message : 'Unknown error'
+      console.error('igos-subscribe contacts.update error:', m)
+    }
 
     try {
       const token = signEmailToken(normalizedEmail)
       const unsubscribeUrl = `${SITE_URL}/unsubscribe?email=${encodeURIComponent(normalizedEmail)}&token=${token}`
       const preferencesUrl = `${SITE_URL}/preferences?email=${encodeURIComponent(normalizedEmail)}&token=${signExpiringToken(normalizedEmail)}`
+      const leaveUrl = `${SITE_URL}/updates/leave?email=${encodeURIComponent(normalizedEmail)}&token=${token}`
+      const welcomeOpts = { unsubscribeUrl, preferencesUrl, leaveUrl, email: normalizedEmail, firstName: normalizedFirstName }
       await resend.emails.send({
         from: FROM,
         replyTo: REPLY_TO,
         to: normalizedEmail,
-        subject: WELCOME_SUBJECT,
-        html: buildWelcomeHtml({ unsubscribeUrl, preferencesUrl, firstName: normalizedFirstName }),
+        subject: returning ? LIST_WELCOME_BACK_SUBJECT : WELCOME_SUBJECT,
+        html: returning ? buildListWelcomeBackHtml(welcomeOpts) : buildWelcomeHtml(welcomeOpts),
       })
     } catch (err) {
       const m = err instanceof Error ? err.message : 'Unknown error'

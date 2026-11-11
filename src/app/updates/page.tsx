@@ -99,6 +99,7 @@ export default function UpdatesPage() {
                     {new Date(update.date + 'T00:00:00Z').toLocaleDateString('en-US', {
                       month: 'long',
                       year: 'numeric',
+                      timeZone: 'UTC',
                     })}
                   </p>
                   <h2 className="card-title card-title-lg">{update.title}</h2>
