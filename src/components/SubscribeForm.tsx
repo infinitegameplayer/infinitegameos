@@ -179,7 +179,9 @@ export default function SubscribeForm({ prefilledEmail }: { prefilledEmail?: str
           marginBottom: '1.25rem',
         }}
       >
-        New dispatches as they ship, from inside the practice.
+        {/* The letter's promise (PendingPlan - IGOS Web of Intrigue, audit ruling 2):
+            what arrives and from whom. Jarvis-drafted 2026-11-11, for the King's edit. */}
+        A short letter from Lane each time something new lands in the lab: tools for building with AI and ideas for playing a longer game.
       </p>
       <form onSubmit={handleSubmit} noValidate data-bar-anchor="">
         {prefilledEmail ? (
