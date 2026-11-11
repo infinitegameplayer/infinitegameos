@@ -48,7 +48,8 @@ const articleSchema = {
   description:
     'A public charter for benevolent human-AI coexistence. Seven commitments, the reframe of AI as Artful Intelligence, and a section co-authored by Jarvis.',
   author: { '@id': 'https://infinitegameos.io/#person' },
-  publisher: { '@id': 'https://www.infinitegameos.io/#website' },
+  publisher: { '@id': 'https://www.infinitegameos.io/#organization' },
+  image: 'https://www.infinitegameos.io/opengraph-image',
   url: 'https://www.infinitegameos.io/accord',
   mainEntityOfPage: 'https://www.infinitegameos.io/accord',
   license: 'https://creativecommons.org/licenses/by/4.0/',

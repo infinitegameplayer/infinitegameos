@@ -34,6 +34,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://www.infinitegameos.io/sovereign-ecosystem',
+    types: {
+      'text/markdown': 'https://www.infinitegameos.io/markdown/sovereign-ecosystem',
+    },
   },
 }
 
@@ -54,7 +57,8 @@ const articleSchema = {
   description:
     'The Sovereign Ecosystem is a foundational Obsidian + Claude Code workspace template. Directory structure, governance scaffolding, North Star template, a working skill set and safety checks that come with tests that prove they work. The three-tier stack origin for sovereign-first AI practitioners.',
   author: { '@id': 'https://infinitegameos.io/#person' },
-  publisher: { '@id': 'https://www.infinitegameos.io/#website' },
+  publisher: { '@id': 'https://www.infinitegameos.io/#organization' },
+  image: 'https://www.infinitegameos.io/opengraph-image',
   url: 'https://www.infinitegameos.io/sovereign-ecosystem',
   mainEntityOfPage: 'https://www.infinitegameos.io/sovereign-ecosystem',
   license: 'https://creativecommons.org/licenses/by/4.0/',

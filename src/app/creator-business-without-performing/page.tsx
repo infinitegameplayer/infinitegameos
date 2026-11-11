@@ -48,7 +48,8 @@ const articleSchema = {
   description:
     'A Creator business built on structure does not require daily visibility to grow. Stop treating performance as the price of growth. Treat it as a cost to be designed down.',
   author: { '@id': 'https://infinitegameos.io/#person' },
-  publisher: { '@id': 'https://www.infinitegameos.io/#website' },
+  publisher: { '@id': 'https://www.infinitegameos.io/#organization' },
+  image: 'https://www.infinitegameos.io/opengraph-image',
   url: 'https://www.infinitegameos.io/creator-business-without-performing',
   mainEntityOfPage: 'https://www.infinitegameos.io/creator-business-without-performing',
   license: 'https://creativecommons.org/licenses/by/4.0/',
