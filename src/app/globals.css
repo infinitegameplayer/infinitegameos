@@ -62,13 +62,22 @@ body {
 .section { padding: 5rem 1.5rem; max-width: 1100px; margin: 0 auto; }
 @media (min-width: 768px) { .section { padding: 7rem 2rem; } }
 
+/* Section kicker. Sentence case at 14px rather than a tiny tracked label:
+   the Kingdom Design Codex Labels rule (2026-11-05) floors labels at 13px and
+   allows at most two on a page, so the many section eyebrows read as small
+   headings instead. The true label is .label-caps, kept for a page's hero. */
 .label {
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.875rem;
   font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--color-accent);
+}
+.label-caps,
+.label.hero-eyebrow {
+  font-size: 0.8125rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-accent);
 }
 
 .accent-line {
@@ -98,9 +107,8 @@ body {
    inline across four files. Option A "Quiet Life": the title warms to teal on
    hover and the eyebrow tick extends. Austere with life, not commercial. */
 .card-eyebrow {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
   color: var(--color-accent);
   margin-bottom: 0.75rem;
   display: flex;

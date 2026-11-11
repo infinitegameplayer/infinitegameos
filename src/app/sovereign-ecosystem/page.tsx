@@ -554,10 +554,9 @@ export default function SovereignEcosystemPage() {
                 <p
                   style={{
                     fontFamily: 'var(--font-body)',
-                    fontSize: '0.8rem',
+                    fontSize: '0.8125rem',
                     color: 'var(--color-muted)',
-                    letterSpacing: '0.05em',
-                    textTransform: 'uppercase',
+                    letterSpacing: '0.01em',
                   }}
                 >
                   Frank A. / Sovereign Ecosystem Install

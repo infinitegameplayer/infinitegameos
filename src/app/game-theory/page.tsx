@@ -296,9 +296,8 @@ export default function GameTheoryPage() {
                         textAlign: 'left',
                         padding: '0.85rem 1rem',
                         borderBottom: '1px solid var(--color-border)',
-                        fontSize: '0.7rem',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.12em',
+                        fontSize: '0.8125rem',
+                        letterSpacing: '0.01em',
                         color: 'var(--color-muted)',
                         fontWeight: 500,
                       }}
