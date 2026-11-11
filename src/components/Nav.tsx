@@ -91,10 +91,9 @@ export default function Nav() {
             href="/updates"
             style={{
               fontFamily: 'var(--font-body)',
-              fontSize: '0.75rem',
+              fontSize: '0.8125rem',
               fontWeight: 600,
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
+              letterSpacing: '0.01em',
               color: 'var(--color-accent)',
               padding: '0.4rem 0.9rem',
               borderRadius: 'var(--radius)',

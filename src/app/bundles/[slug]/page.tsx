@@ -274,9 +274,8 @@ export default async function BundlePage({ params }: PageProps) {
                     <>
                       <p
                         style={{
-                          fontSize: '0.7rem',
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.12em',
+                          fontSize: '0.8125rem',
+                          letterSpacing: '0.01em',
                           color: 'var(--color-accent)',
                           marginBottom: '0.5rem',
                         }}
@@ -412,9 +411,8 @@ export default async function BundlePage({ params }: PageProps) {
                     >
                       <p
                         style={{
-                          fontSize: '0.7rem',
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.12em',
+                          fontSize: '0.8125rem',
+                          letterSpacing: '0.01em',
                           color: 'var(--color-accent)',
                           marginBottom: '0.5rem',
                         }}
