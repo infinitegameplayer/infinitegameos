@@ -129,11 +129,6 @@ export const igosAssets: IGOSAsset[] = [
           label: 'The Sovereign Ecosystem',
           note: 'a free workspace template, and a good first thing to harvest',
         },
-        {
-          href: 'https://www.sidequesthq.co/products/the-alive-business',
-          label: 'The Alive Business',
-          note: 'its Friday review is where a harvest becomes one rule change',
-        },
       ],
     },
     taste: {
@@ -1707,11 +1702,6 @@ export const igosAssets: IGOSAsset[] = [
           href: '/sovereign-ecosystem',
           label: 'The Sovereign Ecosystem',
           note: 'a free Obsidian and Claude Code workspace to build from',
-        },
-        {
-          href: 'https://www.sidequesthq.co/products/the-alive-business',
-          label: 'The Alive Business',
-          note: 'its Brand Blueprint holds the story, voice and audience Step 1 loads',
         },
       ],
     },
