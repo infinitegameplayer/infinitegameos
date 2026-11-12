@@ -9,7 +9,7 @@
     {
       "name": "source-harvest",
       "description": "Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate what serves your system.",
-      "version": "1.4.0",
+      "version": "1.5.0",
       "category": "skill",
       "source": {
         "source": "git-subdir",

@@ -107,8 +107,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Source Harvest',
     label: 'Skill',
-    version: '1.4',
-    updated: '2026-10-20',
+    version: '1.5',
+    updated: '2026-11-12',
     description:
       'Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate.',
     tags: ['harvest', 'extraction', 'governance', 'kingdom-skill'],
