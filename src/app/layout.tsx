@@ -9,6 +9,7 @@ import { PostHogProvider } from './providers'
 import { PostHogPageView } from './PostHogPageView'
 import { CrossSiteLinkTracker } from '@/components/CrossSiteLinkTracker'
 import { UmamiAnalytics } from '@/components/UmamiAnalytics'
+import RailGlint from '@/components/design/RailGlint'
 import { ENDORSEMENT, personJsonLd, personRef } from '@/lib/identity'
 
 const spaceGrotesk = Space_Grotesk({
@@ -139,6 +140,7 @@ export default function RootLayout({
           </Suspense>
           <CrossSiteLinkTracker />
           <UmamiAnalytics />
+          <RailGlint />
           <Nav />
           <main>{children}</main>
           <Footer />

@@ -75,7 +75,6 @@ export default function HomePage() {
 
       {/* 1. Hero */}
       <section
-        className="grid-bg"
         style={{
           minHeight: '100vh',
           display: 'flex',
@@ -87,20 +86,6 @@ export default function HomePage() {
           position: 'relative',
         }}
       >
-        <div
-          style={{
-            position: 'absolute',
-            top: '30%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            // Capped at the section width so the glow never widens a phone screen.
-            width: 'min(600px, 100%)',
-            height: '400px',
-            borderRadius: '50%',
-            background: 'radial-gradient(ellipse, rgba(34, 211, 238, 0.06) 0%, transparent 70%)',
-            pointerEvents: 'none',
-          }}
-        />
         <div style={{ position: 'relative', maxWidth: '720px' }}>
           <p className="label hero-eyebrow hero-line hero-line-1" style={{ marginBottom: '1.75rem' }}>Infinite Game OS</p>
           <h1
@@ -156,7 +141,7 @@ export default function HomePage() {
                   event="thread_card"
                   from="/"
                   slot="reframe"
-                  className="card"
+                  className="card thread"
                   style={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -263,7 +248,7 @@ export default function HomePage() {
         {/* The free Charter door, before the skills. King-approved 2026-09-29. */}
         <SectionReveal>
           <div style={{ marginBottom: '3rem' }}>
-            <CharterCallout marginTop="0" bar="none" body="Start before the first skill. Your AI’s Charter is a free CLAUDE.md for how Claude works with you: what it runs on its own, what it asks you first and how it acts in your name." />
+            <CharterCallout marginTop="0" bar="none" ring body="Start before the first skill. Your AI’s Charter is a free CLAUDE.md for how Claude works with you: what it runs on its own, what it asks you first and how it acts in your name." />
           </div>
         </SectionReveal>
 
