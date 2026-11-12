@@ -67,6 +67,22 @@ export default async function SkillPage({ params }: PageProps) {
     ? relatedAssets.map(a => resolvePage(`/${a.type}s/${a.slug}`)).filter((p): p is ResolvedPage => Boolean(p))
     : []
 
+  const glanceEl = asset.glance ? (
+    <p
+      style={{
+        fontFamily: 'var(--font-body)',
+        fontSize: '1rem',
+        color: 'var(--color-muted)',
+        maxWidth: '60ch',
+        lineHeight: 1.75,
+        marginTop: '1.25rem',
+        marginBottom: '0',
+      }}
+    >
+      {asset.glance}
+    </p>
+  ) : null
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -161,21 +177,9 @@ export default async function SkillPage({ params }: PageProps) {
             >
               {asset.capsule}
             </p>
-            {asset.glance && (
-              <p
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '1rem',
-                  color: 'var(--color-muted)',
-                  maxWidth: '60ch',
-                  lineHeight: 1.75,
-                  marginTop: '1.25rem',
-                  marginBottom: '0',
-                }}
-              >
-                {asset.glance}
-              </p>
-            )}
+            {/* On a woven page the glance follows the top door, so the door
+                reaches the phone's first screen (Web of Intrigue samples). */}
+            {!thread && glanceEl}
           </SectionReveal>
         </header>
 
@@ -250,6 +254,11 @@ export default async function SkillPage({ params }: PageProps) {
                 </ul>
               </div>
             </SectionReveal>
+          </div>
+        )}
+        {thread && glanceEl && (
+          <div className="section" style={{ paddingTop: 0, paddingBottom: '2rem' }}>
+            <SectionReveal>{glanceEl}</SectionReveal>
           </div>
         )}
 

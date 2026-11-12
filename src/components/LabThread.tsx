@@ -166,7 +166,8 @@ function CloseCard({ slot, card, from }: { slot: Exclude<ThreadSlot, 'top'>; car
             background: 'rgba(0, 0, 0, 0.4)',
             padding: '0.85rem',
             borderRadius: '6px',
-            overflowX: 'auto',
+            whiteSpace: 'pre-wrap',
+            wordBreak: 'break-all',
             fontSize: '0.75rem',
             lineHeight: 1.6,
             margin: '0 0 1rem',
@@ -206,7 +207,9 @@ export function LabClose({ thread, from, also }: { thread: Thread; from: string;
           <h2 className="label" style={{ marginBottom: '1.25rem' }}>
             {CLOSE_TITLE}
           </h2>
+          {/* An anchor, so the bottom bar gives way while the cards are on screen. */}
           <div
+            data-bar-anchor=""
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',

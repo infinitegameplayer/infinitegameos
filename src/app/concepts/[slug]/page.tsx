@@ -81,6 +81,33 @@ export default async function ConceptPage({ params }: PageProps) {
     timeZone: 'UTC',
   })
 
+  const subtitleEl = (
+    <>
+      <p
+        style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: '1rem',
+          color: 'var(--color-muted)',
+          maxWidth: '56ch',
+          lineHeight: 1.7,
+        }}
+      >
+        {concept.subtitle}
+      </p>
+      <p
+        style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: '0.8rem',
+          color: 'var(--color-muted)',
+          marginTop: '1.25rem',
+          opacity: 0.8,
+        }}
+      >
+        Updated {updatedLabel}
+      </p>
+    </>
+  )
+
   const definedTermSchema = {
     '@context': 'https://schema.org',
     '@type': 'DefinedTerm',
@@ -192,28 +219,9 @@ export default async function ConceptPage({ params }: PageProps) {
             >
               {concept.capsule}
             </p>
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '1rem',
-                color: 'var(--color-muted)',
-                maxWidth: '56ch',
-                lineHeight: 1.7,
-              }}
-            >
-              {concept.subtitle}
-            </p>
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.8rem',
-                color: 'var(--color-muted)',
-                marginTop: '1.25rem',
-                opacity: 0.8,
-              }}
-            >
-              Updated {updatedLabel}
-            </p>
+            {/* On a woven page the subtitle follows the top door, so the door
+                reaches the phone's first screen (Web of Intrigue samples). */}
+            {!thread && subtitleEl}
           </SectionReveal>
         </header>
 
@@ -290,6 +298,11 @@ export default async function ConceptPage({ params }: PageProps) {
         )}
 
         {thread?.top && !concept.pathBridge && <TopCard card={thread.top} from={threadFrom} />}
+        {thread && (
+          <div className="section" style={{ paddingTop: '1rem', paddingBottom: '1rem' }}>
+            <SectionReveal>{subtitleEl}</SectionReveal>
+          </div>
+        )}
 
         <div className="section" style={{ paddingTop: '1rem' }}>
           <div className="prose">
