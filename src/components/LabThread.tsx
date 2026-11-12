@@ -215,10 +215,10 @@ function CloseCard({ slot, card, from }: { slot: Exclude<ThreadSlot, 'top'>; car
 }
 
 // The close: the three cards, the updates letter, then "Also in the lab". The
-// also-list drops any page a card already leads to.
+// also-list drops any page a card already leads to, the top card's included.
 export function LabClose({ thread, from, also }: { thread: Thread; from: string; also: ResolvedPage[] }) {
   const carded = new Set(
-    [thread.deeper, thread.angle, thread.home].flatMap(c => (c.kind === 'page' ? [c.href] : [])),
+    [thread.top, thread.deeper, thread.angle, thread.home].flatMap(c => (c?.kind === 'page' ? [c.href] : [])),
   )
   const alsoList = also.filter((p, i, all) => !carded.has(p.href) && all.findIndex(q => q.href === p.href) === i)
 
