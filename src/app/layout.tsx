@@ -10,6 +10,7 @@ import { PostHogPageView } from './PostHogPageView'
 import { CrossSiteLinkTracker } from '@/components/CrossSiteLinkTracker'
 import { UmamiAnalytics } from '@/components/UmamiAnalytics'
 import RailGlint from '@/components/design/RailGlint'
+import SkyField from '@/components/design/SkyField'
 import { ENDORSEMENT, personJsonLd, personRef } from '@/lib/identity'
 
 const spaceGrotesk = Space_Grotesk({
@@ -141,6 +142,7 @@ export default function RootLayout({
           <CrossSiteLinkTracker />
           <UmamiAnalytics />
           <RailGlint />
+          <SkyField />
           <Nav />
           <main>{children}</main>
           <Footer />

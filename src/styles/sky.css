@@ -1,1 +1,137 @@
-/* sky.css: owned by the sky words unit. Later units add the sky layer rules here. */
+/* sky.css: the sky words. A word carries the nebula sky inside its letters.
+   SkyField (client) sets --sky-sz, --sky-x and --sky-y on each word and writes
+   --sky-scroll on the root while a word is near the viewport. While a glint
+   runs it adds .sw-glint and sets --gl-x, --gl-w and --gl-h on the word. */
+
+.sw,
+.swn {
+  color: inherit;
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .sw {
+    /* Default before the controller runs: the sky centred in the word. */
+    background-size: 220% auto, 200% 100%;
+    background-position: 50% 50%, 50% 0;
+    background-blend-mode: screen;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: 0 0.04em;
+    margin: 0 -0.04em;
+    filter: drop-shadow(0 0 6px rgba(185, 148, 194, 0.225))
+      drop-shadow(0 0 18px rgba(20, 223, 247, 0.11));
+  }
+
+  /* The image per range. The plain url() declaration is the fallback for a
+     browser that cannot parse image-set() with type(); the @supports block
+     upgrades it to AVIF. The floor gradient is written literally, never through
+     var(), so it survives either way. (The minifier drops a same-block fallback
+     declaration, so the fallback lives in its own rule.) */
+  .sw {
+    background-image: url(/sky/sky-vivid-1280.webp), linear-gradient(90deg, #12b4c8 0%, #6f8bd8 25%, #8477bc 50%, #b56fa5 75%, #c96a98 100%);
+  }
+  @supports (background-image: image-set(url(/sky/sky-vivid-1280.webp) type("image/webp"))) {
+    .sw {
+      background-image: image-set(url(/sky/sky-vivid-1280.avif) type("image/avif"), url(/sky/sky-vivid-1280.webp) type("image/webp")), linear-gradient(90deg, #12b4c8 0%, #6f8bd8 25%, #8477bc 50%, #b56fa5 75%, #c96a98 100%);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .sw {
+      background-image: url(/sky/sky-vivid-1920.webp), linear-gradient(90deg, #12b4c8 0%, #6f8bd8 25%, #8477bc 50%, #b56fa5 75%, #c96a98 100%);
+    }
+    @supports (background-image: image-set(url(/sky/sky-vivid-1280.webp) type("image/webp"))) {
+      .sw {
+        background-image: image-set(url(/sky/sky-vivid-1920.avif) type("image/avif"), url(/sky/sky-vivid-1920.webp) type("image/webp")), linear-gradient(90deg, #12b4c8 0%, #6f8bd8 25%, #8477bc 50%, #b56fa5 75%, #c96a98 100%);
+      }
+    }
+  }
+
+  @media (min-width: 1921px) {
+    .sw {
+      background-image: url(/sky/sky-vivid-2560.webp), linear-gradient(90deg, #12b4c8 0%, #6f8bd8 25%, #8477bc 50%, #b56fa5 75%, #c96a98 100%);
+    }
+    @supports (background-image: image-set(url(/sky/sky-vivid-1280.webp) type("image/webp"))) {
+      .sw {
+        background-image: image-set(url(/sky/sky-vivid-2560.avif) type("image/avif"), url(/sky/sky-vivid-2560.webp) type("image/webp")), linear-gradient(90deg, #12b4c8 0%, #6f8bd8 25%, #8477bc 50%, #b56fa5 75%, #c96a98 100%);
+      }
+    }
+  }
+
+  /* Added by SkyField once it has measured the word. */
+  .sw.sw-ready {
+    background-size: calc(var(--sky-sz, 1600) * 1px) auto, 200% 100%;
+    background-position:
+      calc(var(--sky-x, 0) * 1px) calc((var(--sky-y, 0) + var(--sky-scroll, 0)) * 1px),
+      50% 0;
+  }
+
+  /* The glint: a bright sweep as an extra first layer, with the sky layers
+     keeping their size and position. Added by SkyField for 1.5 s. */
+  .sw.sw-glint {
+    background-repeat: no-repeat, repeat, repeat;
+    background-size:
+      calc(var(--gl-w, 60) * 1px) calc(var(--gl-h, 80) * 1px),
+      calc(var(--sky-sz, 1600) * 1px) auto,
+      200% 100%;
+    background-position:
+      calc(var(--gl-x, -60) * 1px) 0,
+      calc(var(--sky-x, 0) * 1px) calc((var(--sky-y, 0) + var(--sky-scroll, 0)) * 1px),
+      50% 0;
+  }
+
+  /* The glint images, per range, same fallback structure. */
+  .sw.sw-glint {
+    background-image: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(233, 220, 255, 0.5) 36%, rgba(255, 255, 255, 0.95) 50%, rgba(233, 220, 255, 0.5) 64%, rgba(255, 255, 255, 0) 100%), url(/sky/sky-vivid-1280.webp), linear-gradient(90deg, #12b4c8 0%, #6f8bd8 25%, #8477bc 50%, #b56fa5 75%, #c96a98 100%);
+  }
+  @supports (background-image: image-set(url(/sky/sky-vivid-1280.webp) type("image/webp"))) {
+    .sw.sw-glint {
+      background-image: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(233, 220, 255, 0.5) 36%, rgba(255, 255, 255, 0.95) 50%, rgba(233, 220, 255, 0.5) 64%, rgba(255, 255, 255, 0) 100%), image-set(url(/sky/sky-vivid-1280.avif) type("image/avif"), url(/sky/sky-vivid-1280.webp) type("image/webp")), linear-gradient(90deg, #12b4c8 0%, #6f8bd8 25%, #8477bc 50%, #b56fa5 75%, #c96a98 100%);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .sw.sw-glint {
+      background-image: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(233, 220, 255, 0.5) 36%, rgba(255, 255, 255, 0.95) 50%, rgba(233, 220, 255, 0.5) 64%, rgba(255, 255, 255, 0) 100%), url(/sky/sky-vivid-1920.webp), linear-gradient(90deg, #12b4c8 0%, #6f8bd8 25%, #8477bc 50%, #b56fa5 75%, #c96a98 100%);
+    }
+    @supports (background-image: image-set(url(/sky/sky-vivid-1280.webp) type("image/webp"))) {
+      .sw.sw-glint {
+        background-image: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(233, 220, 255, 0.5) 36%, rgba(255, 255, 255, 0.95) 50%, rgba(233, 220, 255, 0.5) 64%, rgba(255, 255, 255, 0) 100%), image-set(url(/sky/sky-vivid-1920.avif) type("image/avif"), url(/sky/sky-vivid-1920.webp) type("image/webp")), linear-gradient(90deg, #12b4c8 0%, #6f8bd8 25%, #8477bc 50%, #b56fa5 75%, #c96a98 100%);
+      }
+    }
+  }
+
+  @media (min-width: 1921px) {
+    .sw.sw-glint {
+      background-image: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(233, 220, 255, 0.5) 36%, rgba(255, 255, 255, 0.95) 50%, rgba(233, 220, 255, 0.5) 64%, rgba(255, 255, 255, 0) 100%), url(/sky/sky-vivid-2560.webp), linear-gradient(90deg, #12b4c8 0%, #6f8bd8 25%, #8477bc 50%, #b56fa5 75%, #c96a98 100%);
+    }
+    @supports (background-image: image-set(url(/sky/sky-vivid-1280.webp) type("image/webp"))) {
+      .sw.sw-glint {
+        background-image: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(233, 220, 255, 0.5) 36%, rgba(255, 255, 255, 0.95) 50%, rgba(233, 220, 255, 0.5) 64%, rgba(255, 255, 255, 0) 100%), image-set(url(/sky/sky-vivid-2560.avif) type("image/avif"), url(/sky/sky-vivid-2560.webp) type("image/webp")), linear-gradient(90deg, #12b4c8 0%, #6f8bd8 25%, #8477bc 50%, #b56fa5 75%, #c96a98 100%);
+      }
+    }
+  }
+
+  .swn {
+    background-image: var(--neb-line);
+    background-size: 100% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+
+@media (forced-colors: active) {
+  .sw,
+  .swn {
+    background: none !important;
+    filter: none !important;
+    -webkit-text-fill-color: currentColor !important;
+    color: CanvasText !important;
+  }
+}

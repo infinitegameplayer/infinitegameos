@@ -3,6 +3,7 @@ import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import CharterCallout from '@/components/CharterCallout'
 import ThreadLink from '@/components/ThreadLink'
+import SkyWord from '@/components/design/SkyWord'
 import { UpdatesLetter } from '@/components/LabThread'
 import { HOMEPAGE_REFRAMES } from '@/data/threads'
 import { resolvePage } from '@/lib/thread-resolve'
@@ -89,6 +90,7 @@ export default function HomePage() {
         <div style={{ position: 'relative', maxWidth: '720px' }}>
           <p className="label hero-eyebrow hero-line hero-line-1" style={{ marginBottom: '1.75rem' }}>Infinite Game OS</p>
           <h1
+            data-sky-center
             className="hero-line hero-line-2"
             style={{
               fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
@@ -98,7 +100,7 @@ export default function HomePage() {
               lineHeight: 1.1,
             }}
           >
-            Play a longer game.
+            <SkyWord>Play</SkyWord> a longer game.
           </h1>
           <p
             className="hero-line hero-line-3"
