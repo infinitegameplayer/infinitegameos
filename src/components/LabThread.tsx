@@ -167,13 +167,13 @@ function CloseCard({ slot, card, from }: { slot: Exclude<ThreadSlot, 'top'>; car
             padding: '0.85rem',
             borderRadius: '6px',
             whiteSpace: 'pre-wrap',
-            wordBreak: 'break-all',
+            overflowWrap: 'anywhere',
             fontSize: '0.75rem',
             lineHeight: 1.6,
             margin: '0 0 1rem',
           }}
         >
-          <code>{lines}</code>
+          <code style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}>{lines}</code>
         </pre>
         <div style={{ marginTop: 'auto' }}>
           <CopyButton text={lines} label="Copy both lines" />
