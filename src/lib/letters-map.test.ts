@@ -8,7 +8,7 @@ import { LETTERS, MERGE_EMAIL, lettersMapHtml, type LetterKey } from './letters-
 const CANON: [LetterKey, string, string, string][] = [
   ['personal', 'Personal notes', "life, inner thoughts and what I'm learning, sent when there's something worth sending.", 'https://www.lanebelone.com/personal/join'],
   ['sqhq', 'The Side Quest Letter', "the business side of things: what I'm building, what I'm testing and what's next, a couple of times a month.", 'https://www.sidequesthq.co/letter/join'],
-  ['infinite_game', 'Infinite Game OS', 'the AI and agent practice from the inside, for people building with it, sent as each piece ships.', 'https://www.infinitegameos.io/updates/join'],
+  ['infinite_game', 'Infinite Game OS', "the tools I'm building with AI and the ideas for playing a longer game, sent as each piece ships.", 'https://www.infinitegameos.io/updates/join'],
   ['articles', 'Articles', 'each long-form piece in full, the day it publishes.', 'https://www.lanebelone.com/articles/join'],
 ]
 const colors = { linkColor: '#111', textColor: '#222' }
