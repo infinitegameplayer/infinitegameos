@@ -51,7 +51,7 @@ export function buildWelcomeHtml(opts: {
   const greeting = name ? `Hey ${name},` : 'Hey there,'
   const body = `
     <p>${greeting}</p>
-    <p>You signed up for Infinite Game OS updates. The real ones, from inside the practice. New skills as they ship. Concepts as they cohere. Playbooks as they prove out.</p>
+    <p>You signed up for Infinite Game OS updates. The real ones, from inside the practice. Skills as they ship. Ideas as they cohere, on building with AI and on playing a longer game. Practices as they prove out.</p>
     <p>Each one is a real release or a real lesson, sent when there is one.</p>
     <p>If a piece is useful, forward it. The unsubscribe link sits on every send.</p>
     <p>The Updates page lives here:<br><a href="${SITE_URL}/updates" style="color:${LINK};text-decoration:none">${SITE_URL}/updates</a></p>

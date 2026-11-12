@@ -14,7 +14,7 @@ export type LetterKey = 'personal' | 'sqhq' | 'infinite_game' | 'articles'
 export const LETTERS: { key: LetterKey; name: string; line: string; join: string }[] = [
   { key: 'personal', name: 'Personal notes', line: "life, inner thoughts and what I'm learning, sent when there's something worth sending.", join: 'https://www.lanebelone.com/personal/join' },
   { key: 'sqhq', name: 'The Side Quest Letter', line: "the business side of things: what I'm building, what I'm testing and what's next, a couple of times a month.", join: 'https://www.sidequesthq.co/letter/join' },
-  { key: 'infinite_game', name: 'Infinite Game OS', line: 'the AI and agent practice from the inside, for people building with it, sent as each piece ships.', join: 'https://www.infinitegameos.io/updates/join' },
+  { key: 'infinite_game', name: 'Infinite Game OS', line: "the tools I'm building with AI and the ideas for playing a longer game, sent as each piece ships.", join: 'https://www.infinitegameos.io/updates/join' },
   { key: 'articles', name: 'Articles', line: 'each long-form piece in full, the day it publishes.', join: 'https://www.lanebelone.com/articles/join' },
 ]
 
