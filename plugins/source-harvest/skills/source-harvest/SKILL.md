@@ -53,7 +53,7 @@ Fetch and list all components. Typical targets:
 - Protocol or governance documents
 - Supporting scripts
 
-Record the commit read for each repo, its SHA and date, in the inventory and in the report. A quote checked against a branch can fail against next week's text with nothing to say why, and a pinned commit lets anyone re-read the same bytes. Size each repo from its tree, never from its README: a description's counts are a claim.
+Record the commit read for each repo, its SHA and date, in the inventory and in the report. A quote checked against a branch can fail against next week's text with nothing to say why, and a pinned commit lets anyone re-read the same bytes. Size each repo from its tree, never from its README: a description's counts are a claim. Count files, not tree entries: a recursive tree lists directories too, so filter to `type == "blob"` or count `git ls-files` in a clone. A website has no commit, so its pin is its saved pages: keep the raw HTML and the converted text with the harvest under a dated folder, and check quotes against that folder.
 
 Present the inventory to the operator: "Found [N] components: [brief list by category]." Confirm before proceeding to classification.
 
@@ -65,6 +65,8 @@ For large repos (20+ components), group by category and read the most relevant o
 
 When a source names a primary source (a canon, an archive, a dataset, a scripture), fetch the primary source before classifying. The harvest's real value often sits one citation upstream (see Refinements, 2026-08-19).
 
+Before classifying, read the "Reading the source" section of references/harvest-lessons.md.
+
 ### Step 4. Classify Each Component
 
 For each component, assign a disposition (Adopt / Enrich / Defer / Ignore) and write one to three lines of rationale:
@@ -72,12 +74,16 @@ For each component, assign a disposition (Adopt / Enrich / Defer / Ignore) and w
 - Which existing skill or protocol is the comparison point?
 - What specifically is novel, and what is already covered?
 
-Five checks before a disposition stands (see Refinements, 2026-07-29, 2026-08-19 and 2026-10-06):
+Seven checks before a disposition stands (see Refinements, 2026-07-29, 2026-08-19 and 2026-10-06):
 - Is the source's problem statement true? Verify the diagnosis as well as the solution. A harvest that accepts a source's premises imports them.
 - If a finding implies a weakness in your system, open the file and confirm the weakness exists before classifying.
 - If a pattern arrives with a blocker attached, search your system for how it already solves that problem before accepting the blocker.
 - When checking whether your system already has an equivalent, search for what the thing does in your own words, never only in the source's vocabulary. A search for the source's name for a tool finds the source's name (see Refinements, 2026-10-06).
 - Before marking anything "covered", open the mechanism in your system said to cover it and read its scope. Covered is a claim (see Refinements, 2026-10-06).
+- Whose is it? Separate what the author decided from what the author's tools supply (a plugin's scaffold, a template, a framework default, a co-author). Credit only the decisions to the person. A pattern that comes from the tool is classified as the tool's, with the person's use of it noted. A narrator is not always the author: check who the "I" is before crediting a life story.
+- Why does the source do it? Each pattern carries the reason the source states, quoted with where it is stated, or "reason unstated" with any inference marked as one. A pattern harvested without its reason lands as a rule with no purpose, and a rule with no purpose cannot tell where it applies.
+
+The "Classifying" section of references/harvest-lessons.md holds further traps. Read it before a disposition stands.
 
 ### Step 5. Draft Harvest Report
 
@@ -98,7 +104,9 @@ For each Enrich: specify the exact change to the target file (what to add, where
 For each Adopt: draft the adapted version in outline or propose a follow-up plan if scope requires more than one session.
 For each Enrich that seeds one pattern into several files: list every file. They are one unit of work, and a later fix to one is incomplete until all are swept (see Refinements, 2026-07-13).
 For each Ignore: mark it covered (already solved here) or contrast (your system chose differently). Record a contrast with one line on the road not taken (see Refinements, 2026-07-29).
-Before the report quotes the source, check every quote against the source text with an instrument that carries a known-present and a known-absent control, and trust its counts only after the present control is found and the absent one is not (see Refinements, 2026-10-06).
+Before the report quotes the source, check every quote against the source text with an instrument that carries a known-present and a known-absent control, and trust its counts only after the present control is found and the absent one is not (see Refinements, 2026-10-06). If your checker reads one quotation style only, every worker brief tells readers to quote in that style. A report quoted in another style comes back as zero found, which reads like failure and means unchecked.
+
+The "Verifying the report" section of references/harvest-lessons.md holds the counting and attribution checks.
 
 ### Step 6. Approval Gate
 
