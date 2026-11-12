@@ -14,6 +14,7 @@ export default function ThreadLink({
   slot,
   className,
   style,
+  anchor,
   children,
 }: {
   href: string
@@ -22,6 +23,8 @@ export default function ThreadLink({
   slot?: string
   className?: string
   style?: CSSProperties
+  /** Names the card for the homepage circuit, which measures its layout box. */
+  anchor?: string
   children: ReactNode
 }) {
   const onClick = () => {
@@ -32,7 +35,7 @@ export default function ThreadLink({
     }
   }
   return (
-    <Link href={href} className={className} style={style} onClick={onClick}>
+    <Link href={href} className={className} style={style} onClick={onClick} data-c={anchor}>
       {children}
     </Link>
   )

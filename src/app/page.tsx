@@ -4,6 +4,9 @@ import SectionReveal from '@/components/SectionReveal'
 import CharterCallout from '@/components/CharterCallout'
 import ThreadLink from '@/components/ThreadLink'
 import SkyWord from '@/components/design/SkyWord'
+import HeroBoard from '@/components/design/HeroBoard'
+import HomeCircuit from '@/components/design/HomeCircuit'
+import { ChipArt, JunctionRule, PhoneOrbit } from '@/components/design/HomeArt'
 import { UpdatesLetter } from '@/components/LabThread'
 import { HOMEPAGE_REFRAMES } from '@/data/threads'
 import { resolvePage } from '@/lib/thread-resolve'
@@ -74,20 +77,14 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
+      {/* The circuit: one line from the hero to the footer, drawn from the
+          data-c anchors below. Decorative; renders nothing until measured. */}
+      <HomeCircuit />
+
       {/* 1. Hero */}
-      <section
-        style={{
-          minHeight: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '8rem 1.5rem 5rem',
-          textAlign: 'center',
-          position: 'relative',
-        }}
-      >
-        <div style={{ position: 'relative', maxWidth: '720px' }}>
+      <section className="hero" data-c="hero">
+        <HeroBoard />
+        <div className="hero-in">
           <p className="label hero-eyebrow hero-line hero-line-1" style={{ marginBottom: '1.75rem' }}>Infinite Game OS</p>
           <h1
             data-sky-center
@@ -129,7 +126,10 @@ export default function HomePage() {
           moved down into "Skills to install". */}
       {reframes.length > 0 && (
         <section className="section" style={{ paddingTop: '0', paddingBottom: '2rem' }}>
+          <div className="fan-sp" data-art="" aria-hidden="true" />
           <div
+            className="reframes"
+            data-c="reframes"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
@@ -143,6 +143,7 @@ export default function HomePage() {
                   event="thread_card"
                   from="/"
                   slot="reframe"
+                  anchor="reframe-card"
                   className="card thread"
                   style={{
                     display: 'flex',
@@ -184,12 +185,14 @@ export default function HomePage() {
       )}
 
       {/* 2. Thin philosophy beat */}
-      <section className="section">
+      <JunctionRule />
+      <section className="section" data-c="orient">
+        <PhoneOrbit />
         <SectionReveal>
           <div style={{ maxWidth: '720px' }}>
             <p className="label" style={{ marginBottom: '0.75rem' }}>The orientation</p>
             <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', marginBottom: '1.25rem', maxWidth: '24ch' }}>
-              Built on the Infinite Game and the Accord.
+              Built on the <SkyWord>Infinite Game</SkyWord> and the Accord.
             </h2>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'rgba(226, 232, 240, 0.75)', lineHeight: 1.7, marginBottom: '1.75rem' }}>
               The Infinite Game is the cause, the practice, the creative life with no endpoint. The Accord is the public charter for the human-AI partnership running underneath the work. Both are the philosophical ground this OS is built on.
@@ -203,21 +206,22 @@ export default function HomePage() {
       </section>
 
       {/* 3. The thinking: featured Concepts */}
-      <section className="section" style={{ paddingTop: '1rem' }}>
+      <JunctionRule />
+      <section className="section" data-c="thinking" style={{ paddingTop: '1rem' }}>
         <SectionReveal>
-          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '2.5rem' }}>
+          <div data-c="thinking-head" style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '2.5rem' }}>
             <div>
               <p className="label" style={{ marginBottom: '0.75rem' }}>The thinking</p>
               <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', maxWidth: '32ch' }}>
-                Concepts to think with.
+                Concepts to <SkyWord>think</SkyWord> with.
               </h2>
             </div>
-            <Link href="/concepts" className="link-more">
+            <Link href="/concepts" className="link-more" data-c="thinking-link">
               Browse all concepts →
             </Link>
           </div>
         </SectionReveal>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.25rem' }}>
+        <div data-c="thinking-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.25rem' }}>
           {homeFeaturedConcepts.map((mod, i) => (
             <SectionReveal key={mod.href} delay={i * 60}>
               <FeaturedCard mod={mod} />
@@ -227,13 +231,16 @@ export default function HomePage() {
       </section>
 
       {/* 4. The doing: featured Skills + Bundles */}
+      <div className="sec" data-c="doing">
+      <div className="sheetband" data-art="" aria-hidden="true" />
+      <JunctionRule />
       <section className="section" style={{ paddingTop: '1rem' }}>
         <SectionReveal>
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '2.5rem' }}>
             <div>
               <p className="label" style={{ marginBottom: '0.75rem' }}>The doing</p>
               <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', maxWidth: '32ch' }}>
-                Skills to install. Bundles to run.
+                Skills to <SkyWord>install</SkyWord>. Bundles to run.
               </h2>
             </div>
             <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
@@ -249,12 +256,14 @@ export default function HomePage() {
 
         {/* The free Charter door, before the skills. King-approved 2026-09-29. */}
         <SectionReveal>
-          <div style={{ marginBottom: '3rem' }}>
+          <div data-c="charter" style={{ marginBottom: '3rem' }}>
             <CharterCallout marginTop="0" bar="none" ring body="Start before the first skill. Your AI’s Charter is a free CLAUDE.md for how Claude works with you: what it runs on its own, what it asks you first and how it acts in your name." />
           </div>
         </SectionReveal>
 
-        {/* The install lines, moved here from under the hero. */}
+        {/* The install lines, moved here from under the hero. The row also holds
+            the dimension lines and the chip (decorative, desktop chip only). */}
+        <div className="installrow" data-c="installrow">
         <SectionReveal>
           <div className="action-card" style={{ padding: '1.75rem', maxWidth: '640px', marginBottom: '3rem' }}>
             <p
@@ -287,6 +296,10 @@ export default function HomePage() {
             </Link>
           </div>
         </SectionReveal>
+        <div className="dimh" data-art="" aria-hidden="true" />
+        <div className="dimv" data-art="" aria-hidden="true" />
+        <ChipArt />
+        </div>
 
         <SectionReveal>
           <p className="label" style={{ marginBottom: '1rem', opacity: 0.7 }}>Featured skills</p>
@@ -310,26 +323,13 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      </div>
 
       {/* 5. The foundation */}
+      <JunctionRule />
       <SectionReveal>
-        <section
-          style={{
-            borderTop: '1px solid var(--color-border)',
-            padding: '3rem 1.5rem',
-          }}
-        >
-          <div
-            style={{
-              maxWidth: '1100px',
-              margin: '0 auto',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '2rem',
-            }}
-          >
+        <section className="band" data-c="foundation">
+          <div className="row">
             <div style={{ maxWidth: '52ch' }}>
               <p className="label" style={{ marginBottom: '0.75rem' }}>The foundation</p>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'rgba(226, 232, 240, 0.75)', lineHeight: 1.7 }}>
@@ -343,18 +343,15 @@ export default function HomePage() {
 
       {/* 6. The Creator beat */}
       <SectionReveal>
-        <section
-          style={{
-            borderTop: '1px solid var(--color-border)',
-            borderBottom: '1px solid var(--color-border)',
-            padding: '5rem 1.5rem',
-            background: 'rgba(34, 211, 238, 0.02)',
-          }}
-        >
-          <div style={{ maxWidth: '720px', margin: '0 auto' }}>
+        <section className="horizon" data-c="horizon">
+          <i className="hz-line t" data-art="" aria-hidden="true" />
+          <i className="hz-line b" data-art="" aria-hidden="true" />
+          <i className="hz-glow t" data-art="" aria-hidden="true" />
+          <i className="hz-glow b" data-art="" aria-hidden="true" />
+          <div className="in">
             <p className="label" style={{ marginBottom: '0.75rem' }}>The invitation</p>
             <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', marginBottom: '1.5rem', maxWidth: '28ch', lineHeight: 1.2 }}>
-              Be yourself. Build the life. Let the structure receive on your behalf.
+              Be yourself. Build the <SkyWord>life</SkyWord>. Let the structure receive on your behalf.
             </h2>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'rgba(226, 232, 240, 0.78)', lineHeight: 1.75, marginBottom: '1.25rem' }}>
               The work is to bring what is genuinely alive in you to the world in whatever form your creativity takes. Build, write, speak, advise, design, make. Whatever the form, bring it fully.
@@ -369,7 +366,9 @@ export default function HomePage() {
 
       {/* 6. Recent updates */}
       {recentUpdates.length > 0 && (
-        <section className="section">
+        <>
+        <JunctionRule />
+        <section className="section" data-c="dispatches">
           <SectionReveal>
             <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '2.5rem' }}>
               <div>
@@ -399,33 +398,20 @@ export default function HomePage() {
             ))}
           </div>
         </section>
+        </>
       )}
 
       {/* The updates letter, after the dispatches; its bar replaces the Charter bar. */}
-      <section className="section" style={{ paddingTop: '1rem' }}>
+      <JunctionRule />
+      <section className="section" data-c="letter" style={{ paddingTop: '1rem' }}>
         <UpdatesLetter />
       </section>
 
       {/* 7. Practitioner */}
+      <JunctionRule />
       <SectionReveal>
-        <section
-          style={{
-            borderTop: '1px solid var(--color-border)',
-            borderBottom: '1px solid var(--color-border)',
-            padding: '4rem 1.5rem',
-          }}
-        >
-          <div
-            style={{
-              maxWidth: '1100px',
-              margin: '0 auto',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '2rem',
-            }}
-          >
+        <section className="band pract" data-c="practitioner">
+          <div className="row">
             <div style={{ maxWidth: '52ch' }}>
               <p className="label" style={{ marginBottom: '0.75rem' }}>The practitioner</p>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'rgba(226, 232, 240, 0.75)', lineHeight: 1.7 }}>{igosBio}</p>
@@ -434,6 +420,7 @@ export default function HomePage() {
           </div>
         </section>
       </SectionReveal>
+      <JunctionRule flip />
     </>
   )
 }
