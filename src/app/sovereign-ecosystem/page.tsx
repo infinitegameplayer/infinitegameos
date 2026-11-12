@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import CharterCallout from '@/components/CharterCallout'
+import { UpdatesBar } from '@/components/LabThread'
 import { sovereignEcosystemFaqs } from '@/lib/page-data'
 import {
   upstreamVersion,
@@ -660,7 +661,8 @@ export default function SovereignEcosystemPage() {
           </SectionReveal>
 
           <SectionReveal delay={390}>
-            <CharterCallout body="The Sovereign Ecosystem gives your AI a place to work. Your AI’s Charter tells it how to work with you: what it runs on its own, what it asks you first and how it acts in your name. One free file, and it sits beside any template." />
+            <CharterCallout bar="none" body="The Sovereign Ecosystem gives your AI a place to work. Your AI’s Charter tells it how to work with you: what it runs on its own, what it asks you first and how it acts in your name. One free file, and it sits beside any template." />
+            <UpdatesBar />
           </SectionReveal>
 
           <SectionReveal delay={400}>

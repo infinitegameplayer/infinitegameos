@@ -6,6 +6,9 @@ import MobileBottomBar from '@/components/MobileBottomBar'
 import { concepts, getConceptBySlug, getAllConceptSlugs } from '@/data/concepts'
 import { getAllUpdates } from '@/lib/updates'
 import { twitterCard } from '@/lib/metadata'
+import { getThread } from '@/data/threads'
+import { TrailLine, TopCard, LabClose } from '@/components/LabThread'
+import { resolvePage, type ResolvedPage } from '@/lib/thread-resolve'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -58,11 +61,52 @@ export default async function ConceptPage({ params }: PageProps) {
     .map(s => allUpdates.find(u => u.slug === s))
     .filter((u): u is NonNullable<typeof u> => Boolean(u))
 
+  // The web of intrigue: a page with a thread-map entry gets the trail line, the
+  // top card and the close in place of its closing blocks (PendingPlan - IGOS
+  // Web of Intrigue). Pages without one render as before.
+  const threadFrom = `/concepts/${concept.slug}`
+  const thread = getThread(threadFrom)
+  const alsoInLab: ResolvedPage[] = thread
+    ? [
+        ...concept.relatedSlugs.map(s => `/concepts/${s}`),
+        ...(concept.relatedUpdateSlugs ?? []).map(s => `/updates/${s}`),
+      ]
+        .map(resolvePage)
+        .filter((p): p is ResolvedPage => Boolean(p))
+    : []
+
   const updatedLabel = new Date(`${concept.updated}T00:00:00Z`).toLocaleDateString('en-US', {
     month: 'long',
     year: 'numeric',
     timeZone: 'UTC',
   })
+
+  const subtitleEl = (
+    <>
+      <p
+        style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: '1rem',
+          color: 'var(--color-muted)',
+          maxWidth: '56ch',
+          lineHeight: 1.7,
+        }}
+      >
+        {concept.subtitle}
+      </p>
+      <p
+        style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: '0.8rem',
+          color: 'var(--color-muted)',
+          marginTop: '1.25rem',
+          opacity: 0.8,
+        }}
+      >
+        Updated {updatedLabel}
+      </p>
+    </>
+  )
 
   const definedTermSchema = {
     '@context': 'https://schema.org',
@@ -150,6 +194,7 @@ export default async function ConceptPage({ params }: PageProps) {
       <article style={{ paddingTop: '7rem' }}>
         <header className="section" style={{ paddingBottom: '2rem' }}>
           <SectionReveal>
+            {thread && <TrailLine section="Concepts" sectionHref="/concepts" from={threadFrom} />}
             <p className="label" style={{ marginBottom: '1rem' }}>
               {concept.label}
             </p>
@@ -174,28 +219,9 @@ export default async function ConceptPage({ params }: PageProps) {
             >
               {concept.capsule}
             </p>
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '1rem',
-                color: 'var(--color-muted)',
-                maxWidth: '56ch',
-                lineHeight: 1.7,
-              }}
-            >
-              {concept.subtitle}
-            </p>
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.8rem',
-                color: 'var(--color-muted)',
-                marginTop: '1.25rem',
-                opacity: 0.8,
-              }}
-            >
-              Updated {updatedLabel}
-            </p>
+            {/* On a woven page the subtitle follows the top door, so the door
+                reaches the phone's first screen (Web of Intrigue samples). */}
+            {!thread && subtitleEl}
           </SectionReveal>
         </header>
 
@@ -271,6 +297,13 @@ export default async function ConceptPage({ params }: PageProps) {
           </div>
         )}
 
+        {thread?.top && !concept.pathBridge && <TopCard card={thread.top} from={threadFrom} />}
+        {thread && (
+          <div className="section" style={{ paddingTop: '1rem', paddingBottom: '1rem' }}>
+            <SectionReveal>{subtitleEl}</SectionReveal>
+          </div>
+        )}
+
         <div className="section" style={{ paddingTop: '1rem' }}>
           <div className="prose">
             {concept.sections.map((section, i) => (
@@ -283,7 +316,7 @@ export default async function ConceptPage({ params }: PageProps) {
             ))}
           </div>
 
-          {concept.kitCallout && (
+          {!thread && concept.kitCallout && (
             <SectionReveal delay={concept.sections.length * 80}>
               <div
                 data-bar-anchor=""
@@ -314,7 +347,7 @@ export default async function ConceptPage({ params }: PageProps) {
               </div>
             </SectionReveal>
           )}
-          {concept.kitCallout?.ctaHref.includes('sidequesthq.co/one-alive-thing') && (
+          {!thread && concept.kitCallout?.ctaHref.includes('sidequesthq.co/one-alive-thing') && (
             <MobileBottomBar
               kind="link"
               barId="one-alive-thing"
@@ -324,7 +357,7 @@ export default async function ConceptPage({ params }: PageProps) {
             />
           )}
 
-          {concept.productCard && (
+          {!thread && concept.productCard && (
             <SectionReveal delay={concept.sections.length * 80}>
               <div
                 className={concept.productCard.quiet ? undefined : 'shimmer-card'}
@@ -382,7 +415,9 @@ export default async function ConceptPage({ params }: PageProps) {
             </SectionReveal>
           )}
 
-          {relatedConcepts.length > 0 && (
+          {thread && <LabClose thread={thread} from={threadFrom} also={alsoInLab} />}
+
+          {!thread && relatedConcepts.length > 0 && (
             <SectionReveal delay={concept.sections.length * 80}>
               <div
                 style={{
@@ -451,7 +486,7 @@ export default async function ConceptPage({ params }: PageProps) {
             </SectionReveal>
           )}
 
-          {relatedUpdates.length > 0 && (
+          {!thread && relatedUpdates.length > 0 && (
             <SectionReveal delay={concept.sections.length * 80}>
               <div
                 style={{
@@ -520,6 +555,7 @@ export default async function ConceptPage({ params }: PageProps) {
             </SectionReveal>
           )}
 
+          {!thread && (
           <SectionReveal delay={(concept.sections.length + 1) * 80}>
             <div
               style={{
@@ -540,6 +576,7 @@ export default async function ConceptPage({ params }: PageProps) {
               ))}
             </div>
           </SectionReveal>
+          )}
         </div>
       </article>
     </>

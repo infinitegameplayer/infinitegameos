@@ -10,7 +10,18 @@ import MobileBottomBar from '@/components/MobileBottomBar'
 const DEFAULT_BODY =
   'Before your AI runs anything for you, give it a charter. Your AI’s Charter is a free CLAUDE.md for how Claude works with you: what it runs on its own, what it asks you first and how it acts in your name.'
 
-export default function CharterCallout({ body = DEFAULT_BODY, marginTop = '3.5rem' }: { body?: string; marginTop?: string }) {
+// `bar="none"` renders the callout without its Charter bottom bar, for the pages
+// where the updates letter holds the bar instead (the homepage, Agentic
+// Systems, Sovereign Ecosystem).
+export default function CharterCallout({
+  body = DEFAULT_BODY,
+  marginTop = '3.5rem',
+  bar = 'charter',
+}: {
+  body?: string
+  marginTop?: string
+  bar?: 'charter' | 'none'
+}) {
   return (
     <>
     <div
@@ -43,17 +54,19 @@ export default function CharterCallout({ body = DEFAULT_BODY, marginTop = '3.5re
       </Link>
     </div>
     {/* Every page carrying the Charter door also carries the mobile bottom bar for it. */}
-    <MobileBottomBar
-      kind="signup"
-      list="igos-charter"
-      endpoint="/api/charter-signup"
-      event="charter_signup"
-      line="Your AI’s Charter · free"
-      button="Get the Charter"
-      placeholder="you@example.com"
-      thanks="You are in. The file and the guide are on their way from Side Quest HQ."
-      fallbackUrl="https://www.sidequesthq.co/charter"
-    />
+    {bar === 'charter' && (
+      <MobileBottomBar
+        kind="signup"
+        list="igos-charter"
+        endpoint="/api/charter-signup"
+        event="charter_signup"
+        line="Your AI’s Charter · free"
+        button="Get the Charter"
+        placeholder="you@example.com"
+        thanks="You are in. The file and the guide are on their way from Side Quest HQ."
+        fallbackUrl="https://www.sidequesthq.co/charter"
+      />
+    )}
     </>
   )
 }

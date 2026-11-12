@@ -2,6 +2,10 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import CharterCallout from '@/components/CharterCallout'
+import ThreadLink from '@/components/ThreadLink'
+import { UpdatesLetter } from '@/components/LabThread'
+import { HOMEPAGE_REFRAMES } from '@/data/threads'
+import { resolvePage } from '@/lib/thread-resolve'
 import {
   igosBio,
   homeFeaturedConcepts,
@@ -58,6 +62,12 @@ function FeaturedCard({ mod }: { mod: { href: string; label: string; title: stri
 
 export default function HomePage() {
   const recentUpdates = getAllUpdates().slice(0, 3)
+  // The three reframes under the hero: each a door, titled by its destination's
+  // own data. A reframe whose destination can't be found renders nothing.
+  const reframes = HOMEPAGE_REFRAMES.flatMap(r => {
+    const dest = resolvePage(r.href)
+    return dest ? [{ question: r.question, dest }] : []
+  })
 
   return (
     <>
@@ -128,41 +138,63 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 1a. Install CTA: compact command block, first screen after hero */}
-      <section className="section" style={{ paddingTop: '0', paddingBottom: '2rem' }}>
-        <SectionReveal>
-          <div className="action-card" style={{ padding: '1.75rem', maxWidth: '640px', margin: '0 auto' }}>
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.9rem',
-                color: 'var(--color-muted)',
-                marginBottom: '1rem',
-              }}
-            >
-              Already running Claude Code? Install a skill straight from your terminal.
-            </p>
-            <pre
-              style={{
-                background: 'rgba(0, 0, 0, 0.4)',
-                padding: '1rem',
-                borderRadius: '6px',
-                overflowX: 'auto',
-                fontSize: '0.85rem',
-                lineHeight: 1.6,
-              }}
-            >
-              <code>
-{`/plugin marketplace add https://www.infinitegameos.io/marketplace.json
-/plugin install <skill-name>@igos-library`}
-              </code>
-            </pre>
-            <Link href="/skills" className="link-more" style={{ marginTop: '1rem' }}>
-              Browse the library →
-            </Link>
+      {/* 1a. Three reframes, each a door (Web of Intrigue). The install lines
+          moved down into "Skills to install". */}
+      {reframes.length > 0 && (
+        <section className="section" style={{ paddingTop: '0', paddingBottom: '2rem' }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              gap: '1rem',
+            }}
+          >
+            {reframes.map(({ question, dest }, i) => (
+              <SectionReveal key={dest.href} delay={i * 60}>
+                <ThreadLink
+                  href={dest.href}
+                  event="thread_card"
+                  from="/"
+                  slot="reframe"
+                  className="card"
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: '100%',
+                    boxSizing: 'border-box',
+                    textDecoration: 'none',
+                  }}
+                >
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontWeight: 500,
+                      fontSize: '1.3rem',
+                      lineHeight: 1.35,
+                      color: 'var(--color-text)',
+                      margin: '0 0 1rem',
+                    }}
+                  >
+                    {question}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      fontSize: '0.9rem',
+                      lineHeight: 1.5,
+                      color: 'var(--color-accent)',
+                      margin: 'auto 0 0',
+                    }}
+                  >
+                    <span aria-hidden style={{ marginRight: '0.5rem' }}>→</span>
+                    {dest.title}
+                  </p>
+                </ThreadLink>
+              </SectionReveal>
+            ))}
           </div>
-        </SectionReveal>
-      </section>
+        </section>
+      )}
 
       {/* 2. Thin philosophy beat */}
       <section className="section">
@@ -231,7 +263,41 @@ export default function HomePage() {
         {/* The free Charter door, before the skills. King-approved 2026-09-29. */}
         <SectionReveal>
           <div style={{ marginBottom: '3rem' }}>
-            <CharterCallout marginTop="0" body="Start before the first skill. Your AI’s Charter is a free CLAUDE.md for how Claude works with you: what it runs on its own, what it asks you first and how it acts in your name." />
+            <CharterCallout marginTop="0" bar="none" body="Start before the first skill. Your AI’s Charter is a free CLAUDE.md for how Claude works with you: what it runs on its own, what it asks you first and how it acts in your name." />
+          </div>
+        </SectionReveal>
+
+        {/* The install lines, moved here from under the hero. */}
+        <SectionReveal>
+          <div className="action-card" style={{ padding: '1.75rem', maxWidth: '640px', marginBottom: '3rem' }}>
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '0.9rem',
+                color: 'var(--color-muted)',
+                marginBottom: '1rem',
+              }}
+            >
+              Already running Claude Code? Install a skill straight from your terminal.
+            </p>
+            <pre
+              style={{
+                background: 'rgba(0, 0, 0, 0.4)',
+                padding: '1rem',
+                borderRadius: '6px',
+                overflowX: 'auto',
+                fontSize: '0.85rem',
+                lineHeight: 1.6,
+              }}
+            >
+              <code>
+{`/plugin marketplace add https://www.infinitegameos.io/marketplace.json
+/plugin install <skill-name>@igos-library`}
+              </code>
+            </pre>
+            <Link href="/skills" className="link-more" style={{ marginTop: '1rem' }}>
+              Browse the library →
+            </Link>
           </div>
         </SectionReveal>
 
@@ -347,6 +413,11 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
+      {/* The updates letter, after the dispatches; its bar replaces the Charter bar. */}
+      <section className="section" style={{ paddingTop: '1rem' }}>
+        <UpdatesLetter />
+      </section>
 
       {/* 7. Practitioner */}
       <SectionReveal>

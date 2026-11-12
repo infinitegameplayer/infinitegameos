@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import { theOsFaqs } from '@/lib/page-data'
+import { getThread } from '@/data/threads'
+import { TrailLine, TopCard, LabClose } from '@/components/LabThread'
+import { resolvePage, type ResolvedPage } from '@/lib/thread-resolve'
 
 export const metadata: Metadata = {
   title: 'What is Infinite Game OS?',
@@ -85,6 +88,29 @@ const breadcrumbSchema = {
 }
 
 export default function TheOsPage() {
+  // The web of intrigue (PendingPlan - IGOS Web of Intrigue): with a thread-map
+  // entry the page gets the trail line, the top card and the close in place of
+  // its closing links. Without one it renders as before.
+  const threadFrom = '/the-os'
+  const thread = getThread(threadFrom)
+  const alsoInLab: ResolvedPage[] = thread
+    ? ['/infinite-game', '/agentic-systems'].map(resolvePage).filter((p): p is ResolvedPage => Boolean(p))
+    : []
+  const subtitleEl = (
+    <p
+      style={{
+        fontFamily: 'var(--font-body)',
+        fontSize: '1.1rem',
+        color: 'var(--color-muted)',
+        maxWidth: '56ch',
+        lineHeight: 1.7,
+      }}
+    >
+      A structured operating system for practitioners who have chosen an
+      infinite game.
+    </p>
+  )
+
   return (
     <>
       <script
@@ -103,6 +129,7 @@ export default function TheOsPage() {
       <article style={{ paddingTop: '7rem' }}>
         <header className="section" style={{ paddingBottom: '2rem' }}>
           <SectionReveal>
+            {thread && <TrailLine current="The OS" from={threadFrom} />}
             <p className="label" style={{ marginBottom: '1rem' }}>
               The OS
             </p>
@@ -115,20 +142,17 @@ export default function TheOsPage() {
             >
               What is Infinite Game OS?
             </h1>
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '1.1rem',
-                color: 'var(--color-muted)',
-                maxWidth: '56ch',
-                lineHeight: 1.7,
-              }}
-            >
-              A structured operating system for practitioners who have chosen an
-              infinite game.
-            </p>
+            {/* On a woven page the subtitle follows the top door. */}
+            {!thread && subtitleEl}
           </SectionReveal>
         </header>
+
+        {thread?.top && <TopCard card={thread.top} from={threadFrom} />}
+        {thread && (
+          <div className="section" style={{ paddingTop: '1rem', paddingBottom: '1rem' }}>
+            <SectionReveal>{subtitleEl}</SectionReveal>
+          </div>
+        )}
 
         <div className="section" style={{ paddingTop: '1rem' }}>
           <div className="prose">
@@ -273,23 +297,26 @@ export default function TheOsPage() {
             </section>
           </SectionReveal>
 
-          <SectionReveal delay={220}>
-            <div
-              style={{
-                marginTop: '3rem',
-                display: 'flex',
-                gap: '1rem',
-                flexWrap: 'wrap',
-              }}
-            >
-              <Link href="/infinite-game" className="btn-soft-accent">
-                The Infinite Game
-              </Link>
-              <Link href="/agentic-systems" className="btn-outline">
-                Agentic Systems
-              </Link>
-            </div>
-          </SectionReveal>
+          {thread && <LabClose thread={thread} from={threadFrom} also={alsoInLab} />}
+          {!thread && (
+            <SectionReveal delay={220}>
+              <div
+                style={{
+                  marginTop: '3rem',
+                  display: 'flex',
+                  gap: '1rem',
+                  flexWrap: 'wrap',
+                }}
+              >
+                <Link href="/infinite-game" className="btn-soft-accent">
+                  The Infinite Game
+                </Link>
+                <Link href="/agentic-systems" className="btn-outline">
+                  Agentic Systems
+                </Link>
+              </div>
+            </SectionReveal>
+          )}
         </div>
       </article>
     </>

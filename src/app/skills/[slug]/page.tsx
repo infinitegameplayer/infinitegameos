@@ -9,6 +9,9 @@ import {
   getAssetsByType,
 } from '@/data/library'
 import { twitterCard } from '@/lib/metadata'
+import { getThread } from '@/data/threads'
+import { TrailLine, TopCard, LabClose } from '@/components/LabThread'
+import { resolvePage, type ResolvedPage } from '@/lib/thread-resolve'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -55,6 +58,30 @@ export default async function SkillPage({ params }: PageProps) {
   const relatedAssets = (asset.relatedSlugs ?? [])
     .map(s => igosAssets.find(a => a.slug === s))
     .filter((a): a is NonNullable<typeof a> => Boolean(a))
+
+  // The web of intrigue (PendingPlan - IGOS Web of Intrigue): with a thread-map
+  // entry, the close replaces Related, the Charter callout and the soft hook.
+  const threadFrom = `/skills/${asset.slug}`
+  const thread = getThread(threadFrom)
+  const alsoInLab: ResolvedPage[] = thread
+    ? relatedAssets.map(a => resolvePage(`/${a.type}s/${a.slug}`)).filter((p): p is ResolvedPage => Boolean(p))
+    : []
+
+  const glanceEl = asset.glance ? (
+    <p
+      style={{
+        fontFamily: 'var(--font-body)',
+        fontSize: '1rem',
+        color: 'var(--color-muted)',
+        maxWidth: '60ch',
+        lineHeight: 1.75,
+        marginTop: '1.25rem',
+        marginBottom: '0',
+      }}
+    >
+      {asset.glance}
+    </p>
+  ) : null
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -125,6 +152,7 @@ export default async function SkillPage({ params }: PageProps) {
         {/* Zone 1: Citation-shaped opening */}
         <header className="section" style={{ paddingBottom: '2rem' }}>
           <SectionReveal>
+            {thread && <TrailLine section="Skills" sectionHref="/skills" from={threadFrom} />}
             <p className="label" style={{ marginBottom: '1rem' }}>
               {asset.label} · v{asset.version}
             </p>
@@ -149,25 +177,14 @@ export default async function SkillPage({ params }: PageProps) {
             >
               {asset.capsule}
             </p>
-            {asset.glance && (
-              <p
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '1rem',
-                  color: 'var(--color-muted)',
-                  maxWidth: '60ch',
-                  lineHeight: 1.75,
-                  marginTop: '1.25rem',
-                  marginBottom: '0',
-                }}
-              >
-                {asset.glance}
-              </p>
-            )}
+            {/* On a woven page the glance follows the top door, so the door
+                reaches the phone's first screen (Web of Intrigue samples). */}
+            {!thread && glanceEl}
           </SectionReveal>
         </header>
 
         {/* Zone 1.5: Above-the-fold onward path */}
+        {thread?.top && !asset.pathBridge && <TopCard card={thread.top} from={threadFrom} />}
         {asset.pathBridge && (
           <div className="section" style={{ paddingTop: 0, paddingBottom: '1rem' }}>
             <SectionReveal>
@@ -237,6 +254,11 @@ export default async function SkillPage({ params }: PageProps) {
                 </ul>
               </div>
             </SectionReveal>
+          </div>
+        )}
+        {thread && glanceEl && (
+          <div className="section" style={{ paddingTop: 0, paddingBottom: '2rem' }}>
+            <SectionReveal>{glanceEl}</SectionReveal>
           </div>
         )}
 
@@ -560,7 +582,9 @@ aider --read ${asset.slug}.md`}</code>
             </SectionReveal>
           )}
 
-          {relatedAssets.length > 0 && (
+          {thread && <LabClose thread={thread} from={threadFrom} also={alsoInLab} />}
+
+          {!thread && relatedAssets.length > 0 && (
             <SectionReveal>
               <div
                 style={{
@@ -623,11 +647,14 @@ aider --read ${asset.slug}.md`}</code>
           )}
 
           {/* Zone 3b: the free Charter door, before the paid soft hook. King-approved 2026-09-29. */}
+          {!thread && (
           <SectionReveal>
             <CharterCallout body="Before you install a skill, give your AI a charter. Your AI’s Charter is a free CLAUDE.md for how Claude works with you: what it runs on its own, what it asks you first and how it acts in your name." />
           </SectionReveal>
+          )}
 
           {/* Zone 4: Soft hook */}
+          {!thread && (
           <SectionReveal>
             <div
               style={{
@@ -660,6 +687,7 @@ aider --read ${asset.slug}.md`}</code>
               )}
             </div>
           </SectionReveal>
+          )}
         </div>
       </article>
     </>
