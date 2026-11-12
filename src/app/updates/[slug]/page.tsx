@@ -7,6 +7,10 @@ import SubscribeForm from '@/components/SubscribeForm'
 import MobileBottomBar from '@/components/MobileBottomBar'
 import { getAllUpdates, getUpdate } from '@/lib/updates'
 import { twitterCard } from '@/lib/metadata'
+import { concepts } from '@/data/concepts'
+import { getThread } from '@/data/threads'
+import { TrailLine, TopCard, LabClose, AlsoInLab } from '@/components/LabThread'
+import { resolvePage, type ResolvedPage } from '@/lib/thread-resolve'
 
 const SITE = 'https://www.infinitegameos.io'
 
@@ -112,6 +116,16 @@ export default async function UpdatePage({
     ? [breadcrumbSchema, articleSchema, faqSchema]
     : [breadcrumbSchema, articleSchema]
 
+  // The web of intrigue: a threaded update gets the trail line, the top card and
+  // the close. An unwoven one keeps its letter and buttons and gains an "Also in
+  // the lab" list of the concepts that name it. No list when none does.
+  const threadFrom = `/updates/${update.slug}`
+  const thread = getThread(threadFrom)
+  const alsoInLab: ResolvedPage[] = concepts
+    .filter(c => (c.relatedUpdateSlugs ?? []).includes(update.slug))
+    .map(c => resolvePage(`/concepts/${c.slug}`))
+    .filter((p): p is ResolvedPage => Boolean(p))
+
   const dateLabel = new Date(update.date + 'T00:00:00Z').toLocaleDateString('en-US', {
     month: 'long',
     year: 'numeric',
@@ -127,6 +141,7 @@ export default async function UpdatePage({
 
       <article style={{ paddingTop: '7rem' }}>
         <header className="section" style={{ paddingBottom: '2rem' }}>
+          {thread && <TrailLine section="Updates" sectionHref="/updates" from={threadFrom} />}
           <SectionReveal>
             <p className="label" style={{ marginBottom: '1rem' }}>
               {dateLabel}
@@ -142,6 +157,8 @@ export default async function UpdatePage({
             </h1>
           </SectionReveal>
         </header>
+
+        {thread?.top && <TopCard card={thread.top} from={threadFrom} />}
 
         <div className="section" style={{ paddingTop: '0' }}>
           <div className="prose">
@@ -169,6 +186,10 @@ export default async function UpdatePage({
             </SectionReveal>
           )}
 
+          {thread && <LabClose thread={thread} from={threadFrom} also={alsoInLab} />}
+
+          {!thread && (
+          <>
           <SectionReveal delay={80}>
             <SubscribeForm />
           </SectionReveal>
@@ -184,6 +205,8 @@ export default async function UpdatePage({
             thanks="You are in. The welcome note is landing now."
           />
 
+          <AlsoInLab pages={alsoInLab} />
+
           <SectionReveal delay={140}>
             <div
               style={{ marginTop: '3rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
@@ -196,6 +219,8 @@ export default async function UpdatePage({
               </Link>
             </div>
           </SectionReveal>
+          </>
+          )}
         </div>
       </article>
     </>

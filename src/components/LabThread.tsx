@@ -238,33 +238,41 @@ export function LabClose({ thread, from, also }: { thread: Thread; from: string;
         thanks="You are in. The welcome note is landing now."
       />
 
-      {alsoList.length > 0 && (
-        <SectionReveal>
-          <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid var(--color-border)' }}>
-            <h2 className="label" style={{ marginBottom: '1.25rem' }}>
-              Also in the lab
-            </h2>
-            <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'grid', gap: '1rem' }}>
-              {alsoList.map(p => (
-                <li key={p.href} style={{ fontFamily: 'var(--font-body)', lineHeight: 1.55 }}>
-                  <Link
-                    href={p.href}
-                    style={{
-                      fontFamily: 'var(--font-display)',
-                      fontWeight: 500,
-                      color: 'var(--color-accent)',
-                      textDecoration: 'none',
-                    }}
-                  >
-                    {p.title}
-                  </Link>
-                  <span style={{ display: 'block', fontSize: '0.9rem', color: 'var(--color-muted)' }}>{p.line}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </SectionReveal>
-      )}
+      <AlsoInLab pages={alsoList} />
     </>
+  )
+}
+
+// "Also in the lab": a title link and one muted line per page. One
+// implementation, used by the close and by the unwoven update fallback. Renders
+// nothing for an empty list.
+export function AlsoInLab({ pages }: { pages: ResolvedPage[] }) {
+  if (pages.length === 0) return null
+  return (
+    <SectionReveal>
+      <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid var(--color-border)' }}>
+        <h2 className="label" style={{ marginBottom: '1.25rem' }}>
+          Also in the lab
+        </h2>
+        <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'grid', gap: '1rem' }}>
+          {pages.map(p => (
+            <li key={p.href} style={{ fontFamily: 'var(--font-body)', lineHeight: 1.55 }}>
+              <Link
+                href={p.href}
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontWeight: 500,
+                  color: 'var(--color-accent)',
+                  textDecoration: 'none',
+                }}
+              >
+                {p.title}
+              </Link>
+              <span style={{ display: 'block', fontSize: '0.9rem', color: 'var(--color-muted)' }}>{p.line}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </SectionReveal>
   )
 }

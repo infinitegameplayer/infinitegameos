@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "prebuild": "node scripts/route-dates.mjs && node scripts/check-title-lengths.mjs && node scripts/generate-llms-updates.mjs && npm run test:guards",
-    "test:guards": "vitest run src/lib/csp.test.ts src/lib/csp-loads.test.ts src/lib/redirects.test.ts",
+    "test:guards": "vitest run src/lib/csp.test.ts src/lib/csp-loads.test.ts src/lib/redirects.test.ts src/data/threads.test.ts",
     "route-dates": "node scripts/route-dates.mjs",
     "check:llms": "node scripts/generate-llms-updates.mjs --check",
     "build": "next build",
