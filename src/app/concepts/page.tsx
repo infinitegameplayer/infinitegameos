@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
+import { UpdatesLetter } from '@/components/LabThread'
 import { concepts } from '@/data/concepts'
 
 // Display order: lead with the AI Second Brain cluster (the search and
@@ -160,6 +161,8 @@ export default function ConceptsIndexPage() {
               </Link>
             </div>
           </SectionReveal>
+
+          <UpdatesLetter />
         </div>
       </article>
     </>

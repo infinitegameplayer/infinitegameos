@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import { gameTheoryFaqs } from '@/lib/page-data'
+import { getThread } from '@/data/threads'
+import { TrailLine, TopCard, LabClose } from '@/components/LabThread'
+import { resolvePage, type ResolvedPage } from '@/lib/thread-resolve'
 
 const DESCRIPTION =
   'Game theory is a mathematics of winning. The Infinite Game is not. Where the two genuinely meet, where the popular business version gets it wrong and what the distinction changes for a working life.'
@@ -99,6 +102,44 @@ const COMPARISON = [
 ]
 
 export default function GameTheoryPage() {
+  // The web of intrigue (PendingPlan - IGOS Web of Intrigue): with a thread-map
+  // entry the page gets the trail line, the top card and the close in place of
+  // its closing links. Without one it renders as before.
+  const threadFrom = '/game-theory'
+  const thread = getThread(threadFrom)
+  const alsoInLab: ResolvedPage[] = thread
+    ? ['/concepts/the-rules-are-in-play', '/infinite-game']
+        .map(resolvePage)
+        .filter((p): p is ResolvedPage => Boolean(p))
+    : []
+  const subtitleEl = (
+    <>
+      <p
+        style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: '1rem',
+          color: 'var(--color-muted)',
+          maxWidth: '56ch',
+          lineHeight: 1.7,
+        }}
+      >
+        Four moves. The first two are game theory doing its own work. The third is
+        where it reaches its edge. The fourth is what lies past it.
+      </p>
+      <p
+        style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: '0.8rem',
+          color: 'var(--color-muted)',
+          marginTop: '1.25rem',
+          opacity: 0.8,
+        }}
+      >
+        Updated August 2026
+      </p>
+    </>
+  )
+
   return (
     <>
       <script
@@ -117,6 +158,7 @@ export default function GameTheoryPage() {
       <article style={{ paddingTop: '7rem' }}>
         <header className="section" style={{ paddingBottom: '2rem' }}>
           <SectionReveal>
+            {thread && <TrailLine current="Game Theory" from={threadFrom} />}
             <p className="label" style={{ marginBottom: '1rem' }}>
               Audience Search
             </p>
@@ -145,31 +187,17 @@ export default function GameTheoryPage() {
               game theory turns out to prove something useful about long horizons right
               up to the point where it stops being able to follow.
             </p>
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '1rem',
-                color: 'var(--color-muted)',
-                maxWidth: '56ch',
-                lineHeight: 1.7,
-              }}
-            >
-              Four moves. The first two are game theory doing its own work. The third is
-              where it reaches its edge. The fourth is what lies past it.
-            </p>
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.8rem',
-                color: 'var(--color-muted)',
-                marginTop: '1.25rem',
-                opacity: 0.8,
-              }}
-            >
-              Updated August 2026
-            </p>
+            {/* On a woven page these lines follow the top door. */}
+            {!thread && subtitleEl}
           </SectionReveal>
         </header>
+
+        {thread?.top && <TopCard card={thread.top} from={threadFrom} />}
+        {thread && (
+          <div className="section" style={{ paddingTop: '1rem', paddingBottom: '1rem' }}>
+            <SectionReveal>{subtitleEl}</SectionReveal>
+          </div>
+        )}
 
         <div className="section" style={{ paddingTop: '1rem' }}>
           <div className="prose">
@@ -436,26 +464,29 @@ export default function GameTheoryPage() {
             </SectionReveal>
           </div>
 
-          <SectionReveal delay={380}>
-            <div
-              style={{
-                marginTop: '3rem',
-                display: 'flex',
-                gap: '1rem',
-                flexWrap: 'wrap',
-              }}
-            >
-              <Link href="/concepts/the-rules-are-in-play" className="btn-soft-accent">
-                The Rules Are in Play
-              </Link>
-              <Link href="/infinite-game" className="btn-outline">
-                The Infinite Game
-              </Link>
-              <Link href="/concepts" className="btn-outline">
-                All concepts
-              </Link>
-            </div>
-          </SectionReveal>
+          {thread && <LabClose thread={thread} from={threadFrom} also={alsoInLab} />}
+          {!thread && (
+            <SectionReveal delay={380}>
+              <div
+                style={{
+                  marginTop: '3rem',
+                  display: 'flex',
+                  gap: '1rem',
+                  flexWrap: 'wrap',
+                }}
+              >
+                <Link href="/concepts/the-rules-are-in-play" className="btn-soft-accent">
+                  The Rules Are in Play
+                </Link>
+                <Link href="/infinite-game" className="btn-outline">
+                  The Infinite Game
+                </Link>
+                <Link href="/concepts" className="btn-outline">
+                  All concepts
+                </Link>
+              </div>
+            </SectionReveal>
+          )}
         </div>
       </article>
     </>

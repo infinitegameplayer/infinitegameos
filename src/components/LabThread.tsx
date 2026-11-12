@@ -16,7 +16,19 @@ const SITE = 'https://www.infinitegameos.io'
 
 // The trail line: where the page sits, in the same order as its BreadcrumbList
 // JSON-LD (Home, section, page). The page itself is the H1 below it.
-export function TrailLine({ section, sectionHref, from }: { section: string; sectionHref: string; from: string }) {
+// A page whose BreadcrumbList is just Home and itself (the-os, game-theory)
+// passes `current` instead of a section: the page's own short name as plain text.
+export function TrailLine({
+  section,
+  sectionHref,
+  current,
+  from,
+}: {
+  section?: string
+  sectionHref?: string
+  current?: string
+  from: string
+}) {
   const link = { color: 'var(--color-muted)', textDecoration: 'none' }
   return (
     <nav aria-label="Breadcrumb" style={{ marginBottom: '1.25rem' }}>
@@ -38,12 +50,22 @@ export function TrailLine({ section, sectionHref, from }: { section: string; sec
             Infinite Game OS
           </ThreadLink>
         </li>
-        <li aria-hidden>›</li>
-        <li>
-          <ThreadLink href={sectionHref} event="trail_click" from={from} style={link}>
-            {section}
-          </ThreadLink>
-        </li>
+        {section && sectionHref && (
+          <>
+            <li aria-hidden>›</li>
+            <li>
+              <ThreadLink href={sectionHref} event="trail_click" from={from} style={link}>
+                {section}
+              </ThreadLink>
+            </li>
+          </>
+        )}
+        {current && (
+          <>
+            <li aria-hidden>›</li>
+            <li aria-current="page">{current}</li>
+          </>
+        )}
       </ol>
     </nav>
   )
@@ -223,22 +245,39 @@ export function LabClose({ thread, from, also }: { thread: Thread; from: string;
         </div>
       </SectionReveal>
 
+      <UpdatesLetter />
+
+      <AlsoInLab pages={alsoList} />
+    </>
+  )
+}
+
+// The updates letter's mobile bottom bar. One definition, so the close, the
+// homepage, the indexes and the Charter-callout swap all carry the same bar.
+export function UpdatesBar() {
+  return (
+    <MobileBottomBar
+      kind="signup"
+      list="igos-subscribe"
+      endpoint="/api/igos-subscribe"
+      event="igos_subscribe"
+      sendSource
+      line="New dispatches as they ship"
+      button="Subscribe"
+      placeholder="you@example.com"
+      thanks="You are in. The welcome note is landing now."
+    />
+  )
+}
+
+// The updates letter: the form and its bottom bar.
+export function UpdatesLetter({ bar = true }: { bar?: boolean }) {
+  return (
+    <>
       <SectionReveal>
         <SubscribeForm />
       </SectionReveal>
-      <MobileBottomBar
-        kind="signup"
-        list="igos-subscribe"
-        endpoint="/api/igos-subscribe"
-        event="igos_subscribe"
-        sendSource
-        line="New dispatches as they ship"
-        button="Subscribe"
-        placeholder="you@example.com"
-        thanks="You are in. The welcome note is landing now."
-      />
-
-      <AlsoInLab pages={alsoList} />
+      {bar && <UpdatesBar />}
     </>
   )
 }

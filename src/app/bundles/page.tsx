@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
+import { UpdatesLetter } from '@/components/LabThread'
 import { getAssetsByType } from '@/data/library'
 
 const SITE = 'https://www.infinitegameos.io'
@@ -146,6 +147,8 @@ export default function BundlesIndexPage() {
               </Link>
             </div>
           </SectionReveal>
+
+          <UpdatesLetter />
         </div>
       </article>
     </>
