@@ -26,7 +26,11 @@ import {
 // listener is attached.
 
 const SEGLEN = 144
-const WIDE = 1280
+// The route switches on the same media query as the art in circuit.css. A media
+// query counts a classic scrollbar and clientWidth does not, so choosing by
+// clientWidth drew the phone route under the desktop art from 1280 to about
+// 1294px on a desktop with a 15px scrollbar (PR #55 review, round 1).
+const WIDE_MQ = '(min-width: 1280px)'
 const STEP = 6
 const REDUCED = '(prefers-reduced-motion: reduce)'
 
@@ -70,7 +74,7 @@ function measure(): Drawn | null {
   const H = footer.b
 
   let route: Route | null
-  const desk = W >= WIDE
+  const desk = window.matchMedia(WIDE_MQ).matches
   if (desk) {
     const els = {
       orient: one('orient'),

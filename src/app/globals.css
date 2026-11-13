@@ -28,8 +28,9 @@
 
 /* Nebula palette and trace tokens. Plain custom properties, outside @theme, so
    Tailwind does not generate utilities for them. The nebula line and floor are
-   the site's one gradient language. --lit is the single gold, reserved for the
-   hero eyebrow and never used on a button. */
+   the site's one gradient language. --lit is the single gold: the light, never
+   the ink. It marks the hero eyebrow and its ticks and at most three lit vias
+   per screen, and never reaches a button (scheme C, ruling 9). */
 :root {
   --neb-steel: #6792bf;
   --neb-cyan: #14dff7;
@@ -102,7 +103,8 @@ body {
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
-/* The hero eyebrow is the one gold on the site (--lit). */
+/* The hero eyebrow is the one gold label on the site (--lit); the lit vias in
+   the circuits share the colour. */
 .label.hero-eyebrow { color: var(--lit); }
 
 .accent-line {

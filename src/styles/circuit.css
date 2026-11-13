@@ -225,6 +225,12 @@ svg.b .glow { stroke: none; }
   mask-image: linear-gradient(180deg, transparent 0, #000 16%, #000 70%, transparent 100%);
 }
 .iband.ag { height: 216px; }
+/* From 768 to 1023 a long H1 runs under the band's right side, and on a page
+   with no breadcrumb its first line starts at about 265px: the band ends,
+   faded out, by 256px there (line-under-text, /design-your-day at 768 and 820). */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .iband, .iband.ag { height: 192px; }
+}
 .iband .clip {
   position: absolute;
   inset: 0;

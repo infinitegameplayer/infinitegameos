@@ -13,8 +13,8 @@ import { skySize, skyX, skyY0, skyYParked } from './sky-math'
 // --sky-scroll on the root. When no word is near it writes nothing.
 //
 // Parked (reduced motion): --sky-y is written once per word, --sky-scroll is
-// set to 0 once, no scroll listener and no glint. Nothing writes after that
-// until a resize.
+// set to 0 once, no scroll listener and no glint. After that the words are
+// measured again only when the fonts finish loading and on a resize.
 
 const SEL = '.sw'
 const REDUCED = '(prefers-reduced-motion: reduce)'
