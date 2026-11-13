@@ -85,11 +85,21 @@ export const TOKENS_ONLY = [
   '/infinite-game',
 ] as const
 
-// An update leans agentic when its title speaks of AI, agents, code, sites,
-// skills or models. Everything else leans cosmic.
-export const AGENTIC_TITLE = /\b(AI|agents?|agentic|Claude|LLMs?|code|coding|websites?|skills?|models?)\b/i
+// Updates follow their subject (ruling 3). An update about a page the ruling
+// names takes that page's lean; the rest lean agentic when the title speaks of
+// AI, agents, code, sites or skills, and cosmic otherwise. "model" is left out:
+// it read "a positive-sum business model" as agentic.
+export const UPDATE_SUBJECT_LEAN: Record<string, Lean> = {
+  'what-is-the-benevolent-human-ai-accord': 'cosmic',
+  'infinite-game-os-architecture': 'agentic',
+  'what-is-a-sovereign-ecosystem-for-creators': 'agentic',
+}
 
-export function updateLean(title: string): Lean {
+export const AGENTIC_TITLE = /\b(AI|agents?|agentic|Claude|LLMs?|code|coding|websites?|skills?)\b/i
+
+export function updateLean(title: string, slug?: string): Lean {
+  const bySubject = slug ? UPDATE_SUBJECT_LEAN[slug] : undefined
+  if (bySubject) return bySubject
   return AGENTIC_TITLE.test(title) ? 'agentic' : 'cosmic'
 }
 
@@ -116,7 +126,7 @@ export function treatmentFor(path: string, title?: string): Treatment {
     if (section === 'updates') {
       // /updates/join and /updates/leave are utility pages, not posts.
       if (MEASUREMENT_HOLD.has(slug) || slug === 'join' || slug === 'leave') return NONE
-      const lean = updateLean(title ?? '')
+      const lean = updateLean(title ?? '', slug)
       return { lean, word: null, kind: lean === 'cosmic' ? 'sky' : 'line' }
     }
   }

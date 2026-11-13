@@ -74,6 +74,16 @@ describe('design map', () => {
     // Whole words only: "said" and "email" carry no match.
     expect(AGENTIC_TITLE.test('Said and mailed')).toBe(false)
   })
+
+  it('reads a business model as cosmic, not agentic', () => {
+    expect(updateLean('What is a positive-sum business model?')).toBe('cosmic')
+  })
+
+  it('gives an update about a ruled page that page’s lean (ruling 3)', () => {
+    expect(treatmentFor('/updates/what-is-the-benevolent-human-ai-accord', 'What is the Benevolent Human-AI Accord?').lean).toBe('cosmic')
+    expect(treatmentFor('/updates/what-is-a-sovereign-ecosystem-for-creators', 'What is a sovereign ecosystem for creators?').lean).toBe('agentic')
+    expect(treatmentFor('/updates/infinite-game-os-architecture', 'Infinite Game OS architecture').lean).toBe('agentic')
+  })
 })
 
 describe('page wiring agrees with the map', () => {
