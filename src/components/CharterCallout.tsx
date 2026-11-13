@@ -17,22 +17,31 @@ export default function CharterCallout({
   body = DEFAULT_BODY,
   marginTop = '3.5rem',
   bar = 'charter',
+  ring = false,
 }: {
   body?: string
   marginTop?: string
   bar?: 'charter' | 'none'
+  // The rotating nebula ring, with the inner fill on the base colour. The
+  // homepage door only (IGOS Design Pass ruling 26, King-ruled 2026-11-12).
+  ring?: boolean
 }) {
   return (
     <>
     <div
       data-bar-anchor=""
-      style={{
-        marginTop,
-        padding: '2rem',
-        border: '1px solid rgba(34, 211, 238, 0.18)',
-        borderRadius: '12px',
-        background: 'rgba(34, 211, 238, 0.04)',
-      }}
+      className={ring ? 'shimmer-card' : undefined}
+      style={
+        ring
+          ? { marginTop, padding: '2rem' }
+          : {
+              marginTop,
+              padding: '2rem',
+              border: '1px solid rgba(34, 211, 238, 0.18)',
+              borderRadius: '12px',
+              background: 'rgba(34, 211, 238, 0.04)',
+            }
+      }
     >
       <p className="label" style={{ marginBottom: '0.75rem' }}>
         Free · Your AI&rsquo;s Charter

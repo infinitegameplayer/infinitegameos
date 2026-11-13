@@ -1,19 +1,22 @@
 @import "tailwindcss";
+@import "../styles/sky.css";
+@import "../styles/circuit.css";
 
 /* -----------------------------------------------
    Design tokens: Tailwind 4 CSS-first config
    Utilities auto-generated: --color-accent -> bg-accent, text-accent
 ----------------------------------------------- */
 @theme {
-  --color-bg: #0a0a18;
-  --color-surface: rgba(14, 14, 32, 0.8);
-  --color-surface-hover: rgba(18, 18, 40, 0.9);
+  --color-bg: #0b0a22;
+  --color-bg-well: #07061a;
+  --color-surface: rgba(22, 20, 52, 0.86);
+  --color-surface-hover: rgba(28, 25, 64, 0.92);
   --color-accent: #22d3ee;
   --color-accent-hover: #67e8f9;
   --color-accent-dim: #0891b2;
   --color-text: #e2e8f0;
-  --color-muted: #7a7a9e;
-  --color-border: rgba(226, 232, 240, 0.07);
+  --color-muted: #9794ba;
+  --color-border: rgba(185, 180, 255, 0.16);
   --color-border-subtle: rgba(226, 232, 240, 0.04);
   --color-gold: #c9a84c;
   --color-gold-light: #f0d080;
@@ -21,6 +24,27 @@
   --font-body: var(--font-geist-sans), var(--font-inter), system-ui, sans-serif;
   --radius: 6px;
   --ease-entrance: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Nebula palette and trace tokens. Plain custom properties, outside @theme, so
+   Tailwind does not generate utilities for them. The nebula line and floor are
+   the site's one gradient language. --lit is the single gold: the light, never
+   the ink. It marks the hero eyebrow and its ticks and at most three lit vias
+   per screen, and never reaches a button (scheme C, ruling 9). */
+:root {
+  --neb-steel: #6792bf;
+  --neb-cyan: #14dff7;
+  --neb-violet: #8477bc;
+  --neb-lilac: #b994c2;
+  --neb-magenta: #cb7abd;
+  --neb-rose: #db7ba9;
+  --neb-core: #e9dcff;
+  --trace-faint: rgba(34, 211, 238, 0.10);
+  --trace: rgba(34, 211, 238, 0.22);
+  --trace-live: rgba(103, 232, 249, 0.45);
+  --neb-line: linear-gradient(90deg, #14dff7 0%, #6792bf 22%, #b994c2 50%, #cb7abd 76%, #db7ba9 100%);
+  --neb-floor: linear-gradient(90deg, #12b4c8 0%, #6f8bd8 25%, #8477bc 50%, #b56fa5 75%, #c96a98 100%);
+  --lit: #f0d080;
 }
 
 /* Element rules live in the base layer. Tailwind 4 puts utilities in a cascade
@@ -79,6 +103,9 @@ body {
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
+/* The hero eyebrow is the one gold label on the site (--lit); the lit vias in
+   the circuits share the colour. */
+.label.hero-eyebrow { color: var(--lit); }
 
 .accent-line {
   display: block;
@@ -89,6 +116,7 @@ body {
 }
 
 .card {
+  position: relative;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
@@ -142,25 +170,116 @@ body {
 /* Update-card variant: the card family plus its signature left teal rail and a
    larger type scale. Folds the former bespoke update card into the shared
    language while keeping the rail as its identity. */
-.card-rail { border-left: 2px solid var(--color-accent); padding: 2.5rem; }
+.card-rail { padding: 2.5rem; }
 .card-title-lg { font-size: 1.5rem; font-weight: 600; }
 .card-desc-lg { font-size: 0.95rem; color: rgba(226, 232, 240, 0.75); line-height: 1.7; }
 
-/* Action card: a static teal accent frame for a page's primary free action
-   (skill and bundle install blocks). Defined and focal, no rotating shimmer.
-   The rotating .shimmer-card stays reserved for paid conversion cards. */
+/* Thread cards: a wired lead rising 24px from the card's top-left corner to a
+   small via. On hover or keyboard focus the lead lights in the nebula and the
+   via takes the lilac glow. No ancestor may clip the lead (no overflow hidden
+   on a thread card's parent). Pure CSS, no motion beyond a colour transition. */
+.thread { position: relative; }
+.thread::before {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: -24px;
+  width: 1px;
+  height: 24px;
+  background: var(--trace);
+  transition: background 0.25s var(--ease-entrance);
+}
+.thread::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: -28px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 1.5px solid var(--trace-live);
+  transition: border-color 0.25s var(--ease-entrance), box-shadow 0.25s var(--ease-entrance);
+}
+.thread:hover::before,
+.thread:focus-visible::before { background: linear-gradient(180deg, #db7ba9, #b994c2, #14dff7); }
+.thread:hover::after,
+.thread:focus-visible::after { border-color: #b994c2; box-shadow: 0 0 8px rgba(185, 148, 194, 0.5); }
+.thread:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+/* Action card: a static frame for a page's primary free action (skill and
+   bundle install blocks) with a 5px nebula rail on its left edge. Defined and
+   focal, no rotating shimmer. The rotating .shimmer-card stays reserved for
+   paid conversion cards (and the one free Charter door, below). The update
+   card (.card-rail) wears the same rail. overflow hidden keeps the rail inside
+   the rounded corners; code blocks inside scroll on their own overflow-x. */
+.action-card,
+.card-rail {
+  position: relative;
+  overflow: hidden;
+}
 .action-card {
   border: 1px solid rgba(34, 211, 238, 0.22);
-  border-left: 2px solid var(--color-accent);
   border-radius: 12px;
   background: rgba(34, 211, 238, 0.03);
 }
+.action-card::before,
+.card-rail::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(180deg, #14dff7, #b994c2, #cb7abd);
+}
+/* The glint: a bright band sliding down the rail. Hidden at rest. It runs once
+   on arrival (RailGlint adds .glint at 60 percent in view), and replays on
+   hover (fine pointers only) and on focus within. Motion only, so the whole
+   block sits behind no-preference and the reduced-motion lane hides it. */
+.action-card::after,
+.card-rail::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 40%;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-100%);
+  background: linear-gradient(180deg, transparent, rgba(233, 220, 255, 0.7) 50%, transparent);
+}
+@keyframes railGlint {
+  0% { transform: translateY(-100%); opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { transform: translateY(250%); opacity: 0; }
+}
+@keyframes railGlintReplay {
+  0% { transform: translateY(-100%); opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { transform: translateY(250%); opacity: 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .action-card.glint::after,
+  .card-rail.glint::after { animation: railGlint 1.7s var(--ease-entrance) 1 both; }
+  .action-card:focus-within::after,
+  .card-rail:focus-within::after { animation: railGlintReplay 1.4s var(--ease-entrance) 1 both; }
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  .action-card:hover::after,
+  .card-rail:hover::after { animation: railGlintReplay 1.4s var(--ease-entrance) 1 both; }
+}
 
-/* Teal shimmer frame for the one primary conversion card per page. A slow
-   rotating conic rim, masked to a thin border so it reads as a tasteful
-   attention draw, not a slot machine. Site-wide standard: one per page.
-   The Gleam level (King-ruled 2026-10-08, the same on all three sites): 95% at
-   the bright point, one lap every 6s, a 2px rim. */
+/* Nebula shimmer frame. The rotating ring is reserved for paid conversion
+   cards, with one exception: the free Charter door on the homepage (King-ruled
+   2026-11-12, IGOS Design Pass ruling 26). A slow rotating conic rim, masked to
+   a thin border so it reads as a tasteful attention draw, not a slot machine.
+   The hue is now the nebula ring (cyan to core to magenta); the Gleam level is
+   unchanged (King-ruled 2026-10-08, the same on all three sites): 95% at the
+   bright point, one lap every 6s, a 2px rim. No static base rim. */
 .shimmer-card {
   position: relative;
   border-radius: 12px;
@@ -174,9 +293,9 @@ body {
   background: conic-gradient(
     from 0deg,
     transparent 0deg,
-    rgba(34, 211, 238, 0.74) 40deg,
-    rgba(103, 232, 249, 0.95) 70deg,
-    rgba(34, 211, 238, 0.74) 100deg,
+    rgba(20, 223, 247, 0.74) 40deg,
+    rgba(233, 220, 255, 0.95) 70deg,
+    rgba(203, 122, 189, 0.74) 100deg,
     transparent 150deg,
     transparent 360deg
   );
@@ -291,17 +410,27 @@ body {
 .hero-line-3 { animation-delay: 0.32s; }
 .hero-line-4 { animation-delay: 0.44s; }
 
-/* Hero eyebrow tick. A centered symmetric pair of short teal rules flanking the
-   eyebrow, tying the hero to the .card-eyebrow tick language site-wide. Static,
-   so the reduced-motion lane needs no entry. */
-.hero-eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; }
+/* Hero eyebrow tick. A symmetric pair of 2rem lines flanking the eyebrow, each
+   ending in a small ring (a via) toward the text, in the eyebrow's own colour.
+   Static, so the reduced-motion lane needs no entry. */
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 0.7rem; }
 .hero-eyebrow::before,
 .hero-eyebrow::after {
   content: '';
-  width: 1.5rem;
-  height: 1px;
-  background: var(--color-accent);
-  opacity: 0.6;
+  width: 2rem;
+  height: 7px;
+  flex: none;
+  opacity: 0.8;
+}
+.hero-eyebrow::before {
+  background:
+    linear-gradient(currentColor, currentColor) 0 50% / calc(100% - 7px) 1px no-repeat,
+    radial-gradient(circle, transparent 1.4px, currentColor 1.7px 3px, transparent 3.3px) 100% 50% / 7px 7px no-repeat;
+}
+.hero-eyebrow::after {
+  background:
+    linear-gradient(currentColor, currentColor) 100% 50% / calc(100% - 7px) 1px no-repeat,
+    radial-gradient(circle, transparent 1.4px, currentColor 1.7px 3px, transparent 3.3px) 0 50% / 7px 7px no-repeat;
 }
 
 .reveal {
@@ -443,7 +572,11 @@ pre code {
 @media (prefers-reduced-motion: reduce) {
   .hero-line { opacity: 1; animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .shimmer-card::before { animation: none; }
+  .shimmer-card::before { animation: none; transform: rotate(270deg); }
+  .action-card::after,
+  .card-rail::after { display: none; }
+  .thread::before,
+  .thread::after { transition: none; }
   .card,
   .card-title,
   .card-eyebrow::before,

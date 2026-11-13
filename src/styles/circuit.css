@@ -1,0 +1,278 @@
+/* circuit.css: the boards, the circuit, the bands and the meld. Everything here
+   is decorative line art or the layout that makes room for it. Each decorative
+   element carries data-art in the markup, so the line-under-text instrument can
+   hide it and tell line art from text. */
+
+:root {
+  /* The hero flank boards fade out around the words: 380px either side of
+     centre is clear, full strength beyond 460px. */
+  --clear-zone: linear-gradient(90deg, #000 0, #000 calc(50% - 460px), transparent calc(50% - 380px), transparent calc(50% + 380px), #000 calc(50% + 460px), #000 100%);
+}
+
+/* ---- shared board rules ---- */
+svg.b { position: absolute; overflow: visible; pointer-events: none; shape-rendering: geometricPrecision; }
+svg.b * { vector-effect: non-scaling-stroke; }
+svg.b .ink { stroke: var(--trace); fill: none; stroke-width: 1; stroke-linecap: square; }
+svg.b .ink4 { stroke: var(--trace); fill: none; stroke-width: 4; stroke-linecap: square; }
+svg.b .ink6 { stroke: var(--trace); fill: none; stroke-width: 6; }
+svg.b .light { fill: none; stroke-linecap: square; }
+svg.b .via { fill: var(--color-bg); stroke: rgba(34, 211, 238, 0.45); stroke-width: 1.5; }
+svg.b .via.lit { stroke: var(--lit); stroke-opacity: 0.9; }
+svg.b .pad { fill: rgba(34, 211, 238, 0.45); stroke: none; }
+svg.b .xh { stroke: rgba(34, 211, 238, 0.3); stroke-width: 1; fill: none; }
+/* The glow of a lit via is a circle filled with a radial gradient (set in the
+   markup), never a blur filter: WebKit draws a blurred SVG circle as a flat grey disc. */
+svg.b .glow { stroke: none; }
+
+/* ---- junction rules: below 1280 only, where the circuit runs the page edges ---- */
+.jr { position: relative; height: 24px; max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+.jr svg { position: absolute; left: 1.5rem; top: 0; }
+.jr i { position: absolute; left: calc(1.5rem + 74px); right: 1.5rem; top: 23px; height: 1px; background: var(--trace); }
+.jr.flip i { top: 0; }
+.jr.flip svg { transform: scaleY(-1); }
+@media (min-width: 768px) {
+  .jr { padding: 0 2rem; }
+  .jr svg { left: 2rem; }
+  .jr i { left: calc(2rem + 74px); right: 2rem; }
+}
+@media (min-width: 1280px) { .jr { display: none !important; } }
+
+/* ---- hero ---- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10rem 1.5rem 10rem;
+  text-align: center;
+}
+.hero-in { position: relative; max-width: 720px; z-index: 2; }
+/* The board clips to the hero, so the 390px phone boards never widen a 320px screen. */
+.board { position: absolute; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
+.board-desk {
+  display: none;
+  -webkit-mask-image: var(--clear-zone), linear-gradient(180deg, #000 0, #000 80%, transparent 100%);
+  mask-image: var(--clear-zone), linear-gradient(180deg, #000 0, #000 80%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+.board-desk svg.l { left: 0; top: 0; }
+.board-desk svg.r { right: 0; top: 0; }
+.board-phone { display: block; }
+.board-phone svg.t { left: 50%; top: 0; transform: translateX(-50%); }
+.board-phone svg.u { left: 50%; bottom: 0; transform: translateX(-50%); }
+/* One breakpoint for the board and the circuit: 1280. The desktop hero is at
+   least 820px tall so the left board's lit via (672px down) always has the
+   circuit's leaving lead beneath it. */
+@media (min-width: 1280px) {
+  .hero { padding: 8rem 1.5rem 5rem; min-height: max(100vh, 820px); }
+  .board-desk { display: block; }
+  .board-phone { display: none; }
+}
+
+/* ---- reframes: the fan spacer above the cards, the cards offset for their leads ---- */
+.fan-sp { height: 40px; }
+@media (min-width: 1280px) { .fan-sp { height: 96px; } }
+.reframes { margin-top: -24px; }
+.reframes > .reveal { margin-top: 24px; }
+
+/* ---- orientation: the phone orbit (desktop draws the orbit in the circuit) ---- */
+/* The orbit clips at the screen edge: below 768px it reaches through the
+   section's 1.5rem padding, so the arcs bleed to the edge and never past it. */
+.orb2-phone { display: block; height: 180px; position: relative; margin: -1rem 0 1.5rem; overflow: hidden; }
+@media (max-width: 767px) { .orb2-phone { margin-right: -1.5rem; } }
+.orb2-phone svg { left: 0; top: 0; }
+@media (min-width: 1280px) { .orb2-phone { display: none; } }
+
+/* ---- the doing ---- */
+.sec { position: relative; }
+.sec .section { position: relative; }
+.sheetband {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 360px;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, transparent 42%, #000 72%), linear-gradient(180deg, #000 calc(100% - 200px), transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, transparent 42%, #000 72%), linear-gradient(180deg, #000 calc(100% - 200px), transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+@media (max-width: 767px) {
+  .sheetband {
+    height: 120px;
+    -webkit-mask-image: linear-gradient(180deg, #000 40%, transparent);
+    mask-image: linear-gradient(180deg, #000 40%, transparent);
+  }
+}
+/* Below 1280 the junction rule takes the band's first 24px, so the grid starts
+   24px down to keep its lines off the head's link row, as it does on desktop. */
+@media (max-width: 1279px) { .sheetband { background-position: 0 24px; } }
+.installrow { position: relative; }
+.dimh {
+  position: relative;
+  height: 13px;
+  width: 640px;
+  max-width: 100%;
+  margin: -2.25rem 0 3rem;
+  background:
+    linear-gradient(var(--trace), var(--trace)) 0 50% / 100% 1px no-repeat,
+    linear-gradient(var(--trace), var(--trace)) 0 0 / 1px 100% no-repeat,
+    linear-gradient(var(--trace), var(--trace)) 100% 0 / 1px 100% no-repeat;
+}
+.dimv, .chipwrap { display: none; }
+@media (min-width: 1280px) {
+  .chipwrap { display: block; position: absolute; left: 760px; top: -0.5rem; width: 192px; height: 150px; }
+  .dimv {
+    display: block;
+    position: absolute;
+    left: 664px;
+    width: 13px;
+    top: 0;
+    bottom: 3rem;
+    background:
+      linear-gradient(var(--trace), var(--trace)) 50% 0 / 1px 100% no-repeat,
+      linear-gradient(var(--trace), var(--trace)) 0 0 / 100% 1px no-repeat,
+      linear-gradient(var(--trace), var(--trace)) 0 100% / 100% 1px no-repeat;
+  }
+}
+
+/* ---- the foundation and the practitioner: bands with no borders ---- */
+.band { padding: 3rem 1.5rem; }
+.band .row {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+}
+.pract { padding: 4rem 1.5rem; }
+
+/* ---- the invitation: a horizon of two nebula hairlines with a glow strip each ---- */
+.horizon { position: relative; padding: 5rem 1.5rem; }
+.hz-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: var(--neb-line);
+  opacity: 0.85;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
+}
+.hz-line.t { top: 0; }
+.hz-line.b { bottom: 0; }
+.hz-glow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 18px;
+  pointer-events: none;
+  background: var(--neb-line);
+  opacity: 0.3;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 50%, transparent), linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
+  mask-image: linear-gradient(180deg, transparent, #000 50%, transparent), linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+.hz-glow.t { top: -8.25px; }
+.hz-glow.b { bottom: -8.25px; }
+.horizon .in { max-width: 720px; margin: 0 auto; position: relative; }
+
+/* ---- the circuit: one line from the hero to the footer, under the content ---- */
+.hcirc { position: absolute; left: 0; top: 0; z-index: -1; overflow: hidden; pointer-events: none; shape-rendering: geometricPrecision; }
+.hcirc .cbase, .hcirc .cdec { fill: none; stroke: var(--trace); stroke-width: 1; stroke-linecap: square; }
+.hcirc .clit { fill: none; stroke-width: 1.5; stroke-linecap: square; }
+.hcirc .via { fill: var(--color-bg); stroke: rgba(34, 211, 238, 0.45); stroke-width: 1.5; }
+/* The light: a 144px dash under a moving gradient. The group sits at .8
+   (subdued 20 percent, ruling 30). The component does not render it at all
+   under reduced motion. */
+.hlight { opacity: 0.8; }
+.hl-glow, .hl-core { fill: none; stroke: url(#hc-light); stroke-linecap: round; }
+.hl-glow { stroke-width: 6; opacity: 0.25; }
+.hl-core { stroke-width: 2.5; }
+
+/* Forced colors: decorative art may hide. */
+@media (forced-colors: active) {
+  [data-art] { display: none !important; }
+}
+
+/* ---- interior pages: the header band, the gutter circuit and its light ---- */
+/* An article that carries an interior mount is the positioned box the band and
+   the circuit are measured against. The band and the circuit sit under the
+   text (z-index -1) and clip at the article's edges, so no screen scrolls
+   sideways. */
+.iart { position: relative; }
+.iband {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 64px;
+  height: 256px;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 16%, #000 70%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 16%, #000 70%, transparent 100%);
+}
+.iband.ag { height: 216px; }
+/* From 768 to 1023 a long H1 runs under the band's right side, and on a page
+   with no breadcrumb its first line starts at about 265px: the band ends,
+   faded out, by 256px there (line-under-text, /design-your-day at 768 and 820). */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .iband, .iband.ag { height: 192px; }
+}
+.iband .clip {
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, transparent 58%, #000 70%);
+  mask-image: linear-gradient(90deg, transparent 0, transparent 58%, #000 70%);
+}
+.iband svg.dk { right: 0; top: -64px; }
+.iband svg.ph { display: none; left: 50%; top: 0; transform: translateX(-50%); }
+.iband .sheetq {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: right top;
+}
+.iband .sheetp {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: linear-gradient(180deg, #000, transparent);
+  mask-image: linear-gradient(180deg, #000, transparent);
+}
+@media (max-width: 767px) {
+  .iband, .iband.ag { top: 0; height: 130px; -webkit-mask-image: none; mask-image: none; }
+  .iband .clip { -webkit-mask-image: none; mask-image: none; }
+  .iband svg.dk { display: none; }
+  .iband svg.ph { display: block; }
+  .iband .sheetq { display: none; }
+  .iband .sheetp { display: block; }
+}
+.icirc { max-width: 100%; }
+.icirc .ring { fill: none; stroke: var(--trace); stroke-width: 1; }
+.icirc .pad { fill: rgba(34, 211, 238, 0.45); stroke: none; }
+/* The light: the homepage's grammar (a 144px dash under a moving gradient, a
+   6px glow at .25 and a 2.5px core, the group at .8). The component does not
+   render it at all under reduced motion. */
+.il-glow, .il-core { fill: none; stroke: url(#ic-light); stroke-linecap: round; }
+.il-glow { stroke-width: 6; opacity: 0.25; }
+.il-core { stroke-width: 2.5; }

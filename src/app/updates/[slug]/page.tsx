@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import SectionReveal from '@/components/SectionReveal'
+import InteriorArt from '@/components/design/InteriorArt'
+import { MEASUREMENT_HOLD, treatmentFor } from '@/data/design-map'
 import SubscribeForm from '@/components/SubscribeForm'
 import MobileBottomBar from '@/components/MobileBottomBar'
 import { getAllUpdates, getUpdate } from '@/lib/updates'
@@ -14,9 +16,9 @@ import { resolvePage, type ResolvedPage } from '@/lib/thread-resolve'
 
 const SITE = 'https://www.infinitegameos.io'
 
-// Pages under a measurement window. Their JSON-LD stays exactly as it was
-// until the window closes, so the template's schema fixes skip them.
-const MEASUREMENT_HOLD = new Set(['what-is-a-practical-alternative-to-follow-your-passion'])
+// MEASUREMENT_HOLD (src/data/design-map.ts): pages under a measurement window.
+// Their JSON-LD stays exactly as it was until the window closes, so the
+// template's schema fixes skip them.
 
 export function generateStaticParams() {
   return getAllUpdates().map(u => ({ slug: u.slug }))
@@ -81,6 +83,7 @@ export default async function UpdatePage({
   }
 
   const held = MEASUREMENT_HOLD.has(update.slug)
+  const look = treatmentFor('/updates/' + update.slug, update.title)
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -139,7 +142,8 @@ export default async function UpdatePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
 
-      <article style={{ paddingTop: '7rem' }}>
+      <article className="iart" style={{ paddingTop: '7rem' }}>
+        {look.lean && <InteriorArt lean={look.lean} />}
         <header className="section" style={{ paddingBottom: '2rem' }}>
           {thread && <TrailLine section="Updates" sectionHref="/updates" from={threadFrom} />}
           <SectionReveal>

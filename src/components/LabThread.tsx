@@ -109,6 +109,7 @@ export function TopCard({ card, from }: { card: NonNullable<Thread['top']>; from
           event="thread_card"
           from={from}
           slot="top"
+          className="thread"
           style={{
             display: 'block',
             textDecoration: 'none',
@@ -152,7 +153,7 @@ function CloseCard({ slot, card, from }: { slot: Exclude<ThreadSlot, 'top'>; car
     const dest = resolvePage(card.href)
     if (!dest) return null
     return (
-      <ThreadLink href={dest.href} event="thread_card" from={from} slot={slot} className="card" style={cardFrame}>
+      <ThreadLink href={dest.href} event="thread_card" from={from} slot={slot} className="card thread" style={cardFrame}>
         {kicker}
         <p style={questionStyle}>{card.question}</p>
         <p style={{ ...titleStyle, marginTop: 'auto', color: 'var(--color-accent)' }}>

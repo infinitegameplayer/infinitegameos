@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
 import SectionReveal from '@/components/SectionReveal'
+import InteriorArt from '@/components/design/InteriorArt'
+import SkyWord from '@/components/design/SkyWord'
 import CharterForm from '@/components/CharterForm'
 import CopyButton from '@/components/CopyButton'
 
@@ -189,14 +191,15 @@ export default function CharterPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      <article style={{ paddingTop: '7rem' }}>
+      <article className="iart" style={{ paddingTop: '7rem' }}>
+        <InteriorArt lean="agentic" />
         <header className="section" style={{ paddingBottom: '2rem' }}>
           <SectionReveal>
             <p className="label" style={{ marginBottom: '1rem' }}>
               Free and open
             </p>
             <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', maxWidth: '22ch', marginBottom: '1rem' }}>
-              Your AI&rsquo;s Charter
+              Your AI&rsquo;s <SkyWord kind="line">Charter</SkyWord>
             </h1>
             <p
               style={{

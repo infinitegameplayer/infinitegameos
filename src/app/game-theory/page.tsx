@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
+import InteriorArt from '@/components/design/InteriorArt'
+import SkyWord from '@/components/design/SkyWord'
 import { gameTheoryFaqs } from '@/lib/page-data'
 import { getThread } from '@/data/threads'
 import { TrailLine, TopCard, LabClose } from '@/components/LabThread'
@@ -155,7 +157,8 @@ export default function GameTheoryPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <article style={{ paddingTop: '7rem' }}>
+      <article className="iart" style={{ paddingTop: '7rem' }}>
+        <InteriorArt lean="cosmic" />
         <header className="section" style={{ paddingBottom: '2rem' }}>
           <SectionReveal>
             {thread && <TrailLine current="Game Theory" from={threadFrom} />}
@@ -169,7 +172,7 @@ export default function GameTheoryPage() {
                 marginBottom: '1.5rem',
               }}
             >
-              Game theory and the Infinite Game
+              Game theory and the <SkyWord>Infinite Game</SkyWord>
             </h1>
             <p
               style={{

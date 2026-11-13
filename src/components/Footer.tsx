@@ -66,10 +66,25 @@ export default function Footer() {
   return (
     <footer
       style={{
-        borderTop: '1px solid var(--color-border)',
+        position: 'relative',
+        background: 'var(--color-bg-well)',
         marginTop: '5rem',
       }}
     >
+      {/* Full-width nebula hairline at the top edge. Decorative. */}
+      <span
+        aria-hidden
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '1px',
+          background: 'var(--neb-line)',
+          opacity: 0.4,
+          pointerEvents: 'none',
+        }}
+      />
       <div
         style={{
           maxWidth: '1100px',

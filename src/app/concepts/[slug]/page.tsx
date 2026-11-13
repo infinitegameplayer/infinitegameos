@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import SectionReveal from '@/components/SectionReveal'
+import InteriorArt from '@/components/design/InteriorArt'
+import { skyTitle } from '@/components/design/skyTitle'
+import { treatmentFor } from '@/data/design-map'
 import MobileBottomBar from '@/components/MobileBottomBar'
 import { concepts, getConceptBySlug, getAllConceptSlugs } from '@/data/concepts'
 import { getAllUpdates } from '@/lib/updates'
@@ -51,6 +54,8 @@ export default async function ConceptPage({ params }: PageProps) {
   const { slug } = await params
   const concept = getConceptBySlug(slug)
   if (!concept) notFound()
+
+  const look = treatmentFor(`/concepts/${concept.slug}`)
 
   const relatedConcepts = concept.relatedSlugs
     .map(s => concepts.find(c => c.slug === s))
@@ -191,7 +196,8 @@ export default async function ConceptPage({ params }: PageProps) {
         }}
       />
 
-      <article style={{ paddingTop: '7rem' }}>
+      <article className="iart" style={{ paddingTop: '7rem' }}>
+        <InteriorArt lean="cosmic" />
         <header className="section" style={{ paddingBottom: '2rem' }}>
           <SectionReveal>
             {thread && <TrailLine section="Concepts" sectionHref="/concepts" from={threadFrom} />}
@@ -205,7 +211,7 @@ export default async function ConceptPage({ params }: PageProps) {
                 marginBottom: '1.5rem',
               }}
             >
-              {concept.title}
+              {skyTitle(concept.title, look.word, look.kind)}
             </h1>
             <p
               style={{

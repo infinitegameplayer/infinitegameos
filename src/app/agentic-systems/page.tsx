@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
+import InteriorArt from '@/components/design/InteriorArt'
+import SkyWord from '@/components/design/SkyWord'
 import CharterCallout from '@/components/CharterCallout'
 import { UpdatesBar } from '@/components/LabThread'
 
@@ -74,7 +76,8 @@ export default function AgenticSystemsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <article style={{ paddingTop: '7rem' }}>
+      <article className="iart" style={{ paddingTop: '7rem' }}>
+        <InteriorArt lean="agentic" />
         <header className="section" style={{ paddingBottom: '2rem' }}>
           <SectionReveal>
             <p className="label" style={{ marginBottom: '1rem' }}>
@@ -87,7 +90,7 @@ export default function AgenticSystemsPage() {
                 marginBottom: '1.5rem',
               }}
             >
-              The Post Web and the Infinite Game: A Practitioner&apos;s Guide
+              The <SkyWord kind="line">Post Web</SkyWord> and the Infinite Game: A Practitioner&apos;s Guide
             </h1>
             <p
               style={{
