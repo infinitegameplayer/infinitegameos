@@ -78,7 +78,11 @@ describe('/updates article JSON-LD', () => {
   })
 
   it('keeps the measurement-window article out of the schema changes', () => {
-    expect(src).toMatch(new RegExp(`MEASUREMENT_HOLD = new Set\\(\\['${HELD_UPDATE}'\\]\\)`))
+    // The hold lives in src/data/design-map.ts (the design pass reads it too);
+    // the page imports it.
+    const map = readFileSync(join(process.cwd(), 'src', 'data', 'design-map.ts'), 'utf8')
+    expect(map).toMatch(new RegExp(`MEASUREMENT_HOLD = new Set\\(\\['${HELD_UPDATE}'\\]\\)`))
+    expect(src).toMatch(/import \{[^}]*MEASUREMENT_HOLD[^}]*\} from '@\/data\/design-map'/)
   })
 })
 

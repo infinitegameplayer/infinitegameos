@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
+import InteriorArt from '@/components/design/InteriorArt'
+import SkyWord from '@/components/design/SkyWord'
 import { theOsFaqs } from '@/lib/page-data'
 import { getThread } from '@/data/threads'
 import { TrailLine, TopCard, LabClose } from '@/components/LabThread'
@@ -126,7 +128,8 @@ export default function TheOsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <article style={{ paddingTop: '7rem' }}>
+      <article className="iart" style={{ paddingTop: '7rem' }}>
+        <InteriorArt lean="agentic" />
         <header className="section" style={{ paddingBottom: '2rem' }}>
           <SectionReveal>
             {thread && <TrailLine current="The OS" from={threadFrom} />}
@@ -140,7 +143,7 @@ export default function TheOsPage() {
                 marginBottom: '1.5rem',
               }}
             >
-              What is Infinite Game OS?
+              What is <SkyWord kind="line">Infinite Game OS</SkyWord>?
             </h1>
             {/* On a woven page the subtitle follows the top door. */}
             {!thread && subtitleEl}

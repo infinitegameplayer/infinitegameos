@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import SectionReveal from '@/components/SectionReveal'
+import InteriorArt from '@/components/design/InteriorArt'
 import CharterCallout from '@/components/CharterCallout'
 import {
   igosAssets,
@@ -117,7 +118,8 @@ export default async function ProtocolPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
 
-      <article style={{ paddingTop: '7rem' }}>
+      <article className="iart" style={{ paddingTop: '7rem' }}>
+        <InteriorArt lean="agentic" />
         {/* Zone 1: Citation-shaped opening */}
         <header className="section" style={{ paddingBottom: '2rem' }}>
           <SectionReveal>

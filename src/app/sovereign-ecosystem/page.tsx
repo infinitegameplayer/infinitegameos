@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
+import InteriorArt from '@/components/design/InteriorArt'
+import SkyWord from '@/components/design/SkyWord'
 import CharterCallout from '@/components/CharterCallout'
 import { UpdatesBar } from '@/components/LabThread'
 import { sovereignEcosystemFaqs } from '@/lib/page-data'
@@ -113,7 +115,8 @@ export default function SovereignEcosystemPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(offerSchema) }}
       />
 
-      <article style={{ paddingTop: '7rem' }}>
+      <article className="iart" style={{ paddingTop: '7rem' }}>
+        <InteriorArt lean="agentic" />
         <header className="section" style={{ paddingBottom: '2rem' }}>
           <SectionReveal>
             <p className="label" style={{ marginBottom: '1rem' }}>
@@ -126,7 +129,7 @@ export default function SovereignEcosystemPage() {
                 marginBottom: '1.5rem',
               }}
             >
-              The foundational workspace template
+              The foundational <SkyWord kind="line">workspace</SkyWord> template
             </h1>
             <p
               style={{

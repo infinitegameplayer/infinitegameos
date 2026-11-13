@@ -205,3 +205,68 @@ svg.b .glow { stroke: none; }
 @media (forced-colors: active) {
   [data-art] { display: none !important; }
 }
+
+/* ---- interior pages: the header band, the gutter circuit and its light ---- */
+/* An article that carries an interior mount is the positioned box the band and
+   the circuit are measured against. The band and the circuit sit under the
+   text (z-index -1) and clip at the article's edges, so no screen scrolls
+   sideways. */
+.iart { position: relative; }
+.iband {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 64px;
+  height: 256px;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 16%, #000 70%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 16%, #000 70%, transparent 100%);
+}
+.iband.ag { height: 216px; }
+.iband .clip {
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, transparent 58%, #000 70%);
+  mask-image: linear-gradient(90deg, transparent 0, transparent 58%, #000 70%);
+}
+.iband svg.dk { right: 0; top: -64px; }
+.iband svg.ph { display: none; left: 50%; top: 0; transform: translateX(-50%); }
+.iband .sheetq {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: right top;
+}
+.iband .sheetp {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: linear-gradient(180deg, #000, transparent);
+  mask-image: linear-gradient(180deg, #000, transparent);
+}
+@media (max-width: 767px) {
+  .iband, .iband.ag { top: 0; height: 130px; -webkit-mask-image: none; mask-image: none; }
+  .iband .clip { -webkit-mask-image: none; mask-image: none; }
+  .iband svg.dk { display: none; }
+  .iband svg.ph { display: block; }
+  .iband .sheetq { display: none; }
+  .iband .sheetp { display: block; }
+}
+.icirc { max-width: 100%; }
+.icirc .ring { fill: none; stroke: var(--trace); stroke-width: 1; }
+.icirc .pad { fill: rgba(34, 211, 238, 0.45); stroke: none; }
+/* The light: the homepage's grammar (a 144px dash under a moving gradient, a
+   6px glow at .25 and a 2.5px core, the group at .8). The component does not
+   render it at all under reduced motion. */
+.il-glow, .il-core { fill: none; stroke: url(#ic-light); stroke-linecap: round; }
+.il-glow { stroke-width: 6; opacity: 0.25; }
+.il-core { stroke-width: 2.5; }

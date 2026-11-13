@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
+import InteriorArt from '@/components/design/InteriorArt'
+import SkyWord from '@/components/design/SkyWord'
 import { playYourOwnGameFaqs } from '@/lib/page-data'
 
 export const metadata: Metadata = {
@@ -87,7 +89,8 @@ export default function PlayYourOwnGamePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <article style={{ paddingTop: '7rem' }}>
+      <article className="iart" style={{ paddingTop: '7rem' }}>
+        <InteriorArt lean="cosmic" />
         <header className="section" style={{ paddingBottom: '2rem' }}>
           <SectionReveal>
             <p className="label" style={{ marginBottom: '1rem' }}>
@@ -100,7 +103,7 @@ export default function PlayYourOwnGamePage() {
                 marginBottom: '1.5rem',
               }}
             >
-              How to play your own game
+              How to <SkyWord>play</SkyWord> your own game
             </h1>
             <p
               style={{
