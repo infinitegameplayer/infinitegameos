@@ -33,8 +33,10 @@ export function isNoTrackPath(pathname: string | null | undefined): boolean {
 // values leave as "redacted" wherever an address appears: the current URL, the
 // referrer, an autocaptured link and the person properties (sidequesthq
 // Security Posture Ledger, 2026-11-18). Session replay is switched off instead
-// on any page whose address carries one (instrumentation-client.ts), because a
-// replay batch holds the page itself and is too large to walk on every send.
+// for a visit whose first page loads with one in its address
+// (instrumentation-client.ts reads the address once, at start; a success page
+// arrives that way, by a full redirect from Stripe), because a replay batch
+// holds the page itself and is too large to walk on every send.
 export const PRIVATE_PARAMS = ['session_id', 'token', 'email', 'exp']
 const PRIVATE_PARAM_SOURCE = `([?&](?:${PRIVATE_PARAMS.join('|')})=)[^&#"'\\s]*`
 

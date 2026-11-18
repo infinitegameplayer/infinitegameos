@@ -48,7 +48,7 @@ if (!isNoTrackPath(window.location.pathname) && !isNonPublicHost(window.location
     capture_exceptions: true,
     // PostHog stamps the page address on every event. A paid session_id, a
     // signed token, its expiry or an email in that address leaves as
-    // "redacted", and a page carrying one records no replay (src/lib/no-track.ts).
+    // "redacted", and a visit that loads with one records no replay (src/lib/no-track.ts).
     before_send: scrubAnalyticsEvent,
     disable_session_recording: carriesPrivateParams(window.location.href),
     session_recording: {

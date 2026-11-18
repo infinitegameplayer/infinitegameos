@@ -73,7 +73,7 @@ describe('scrubAnalyticsEvent', () => {
     expect(scrubAnalyticsEvent(null)).toBeNull()
   })
 
-  it('leaves a session replay batch untouched, since replay is off on any page with a credential', () => {
+  it('leaves a session replay batch untouched, since replay is off for a visit that loads with a credential', () => {
     const snapshot = { event: '$snapshot', properties: { $snapshot_data: [{ data: { href: 'https://www.example.org/' } }] } }
     expect(scrubAnalyticsEvent(snapshot)).toBe(snapshot)
   })
