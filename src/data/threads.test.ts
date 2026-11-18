@@ -78,9 +78,13 @@ describe('thread map', () => {
   it('has entries to check', () => {
     expect(Object.keys(threads).length).toBeGreaterThan(0)
   })
+  // Walks every card against the live route tree: 1.4 to 4.4 s on a quiet
+  // machine, and past Vitest's 5 s default (5.5 to 9.6 s) six times on
+  // 2026-11-18 when other sessions loaded it, on master and on branches that
+  // never touched this map. The limit is the machine's, not the map's.
   it('every card is well formed and every page card leads to a live route', () => {
     expect(checkCards(threads, ctx)).toEqual([])
-  })
+  }, 30_000)
   it('every listed page is itself a live route', () => {
     expect(checkKeys(threads, ctx)).toEqual([])
   })
