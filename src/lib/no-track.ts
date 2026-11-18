@@ -31,7 +31,8 @@ export function isNoTrackPath(pathname: string | null | undefined): boolean {
 // and an email. PostHog stamps the full page address on every event it sends,
 // not only the pageview, so its before_send runs scrubAnalyticsEvent and these
 // values leave as "redacted" wherever an address appears: the current URL, the
-// referrer, an autocaptured link and the person properties (sidequesthq
+// referrer, an autocaptured link, the person properties and the page address
+// heatmap points are filed under, which is an object key (sidequesthq
 // Security Posture Ledger, 2026-11-18). Session replay is switched off instead
 // for a visit whose first page loads with one in its address
 // (instrumentation-client.ts reads the address once, at start; a success page
@@ -56,7 +57,8 @@ function redactDeep(value: unknown): unknown {
   const proto = value !== null && typeof value === 'object' ? Object.getPrototypeOf(value) : undefined
   if (proto === Object.prototype || proto === null) {
     const out: Record<string, unknown> = {}
-    for (const [k, v] of Object.entries(value as Record<string, unknown>)) out[k] = redactDeep(v)
+    // Keys too: posthog-js files heatmap points under the page's full address.
+    for (const [k, v] of Object.entries(value as Record<string, unknown>)) out[redactPrivateParams(k)] = redactDeep(v)
     return out
   }
   return value
