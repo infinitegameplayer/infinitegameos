@@ -17,7 +17,7 @@
 
 import posthog from 'posthog-js'
 import { initBotId } from 'botid/client/core'
-import { isNoTrackPath, isNonPublicHost } from '@/lib/no-track'
+import { isNoTrackPath, isNonPublicHost, carriesPrivateParams, scrubAnalyticsEvent } from '@/lib/no-track'
 import { BOTID_PROTECTED } from '@/lib/botid-routes'
 
 // Vercel BotID attaches its browser signal to this site's form, checkout and
@@ -46,7 +46,11 @@ if (!isNoTrackPath(window.location.pathname) && !isNonPublicHost(window.location
     // Error tracking. JavaScript exceptions on a product or checkout page are
     // otherwise invisible: the reader leaves and nothing records why.
     capture_exceptions: true,
-    disable_session_recording: false,
+    // PostHog stamps the page address on every event. A paid session_id, a
+    // signed token, its expiry or an email in that address leaves as
+    // "redacted", and a page carrying one records no replay (src/lib/no-track.ts).
+    before_send: scrubAnalyticsEvent,
+    disable_session_recording: carriesPrivateParams(window.location.href),
     session_recording: {
       maskAllInputs: true,
       maskTextSelector: '[data-private]',
