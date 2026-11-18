@@ -61,6 +61,21 @@ describe('scrubAnalyticsEvent', () => {
     expect(out?.properties?.price).toBe(37)
   })
 
+  // posthog-js files heatmap points under the page's full address as an object
+  // key ($heatmap_data: { [href]: points }), so keys are redacted too. Before
+  // this case, $$heatmap events carried the credential past the filter (live
+  // probe, 2026-11-18).
+  it('redacts a credential in an object key and keeps what is filed under it', () => {
+    const secret = 'cs_live_secret'
+    const out = scrubAnalyticsEvent({
+      event: '$$heatmap',
+      properties: { $heatmap_data: { [`https://www.example.org/x?session_id=${secret}&utm_source=letter`]: [{ x: 1, y: 2 }] } },
+    })
+    expect(JSON.stringify(out)).not.toContain(secret)
+    const data = out?.properties?.$heatmap_data as Record<string, unknown>
+    expect(data['https://www.example.org/x?session_id=redacted&utm_source=letter']).toEqual([{ x: 1, y: 2 }])
+  })
+
   it('keeps a Date timestamp a Date and a null property null', () => {
     const timestamp = new Date('2026-11-18T12:00:00Z')
     const out = scrubAnalyticsEvent({ event: '$pageleave', timestamp, properties: { $current_url: '/x?token=t', $set: null } })
