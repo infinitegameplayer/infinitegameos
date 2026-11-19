@@ -893,6 +893,7 @@ export const concepts: Concept[] = [
       'calm-capture-ai-second-brain',
       'local-first-second-brain',
       'how-to-build-an-ai-second-brain',
+      'what-sources-should-an-ai-second-brain-draw-from',
       'what-is-data-sovereignty-for-creators',
     ],
     ctaLinks: [
