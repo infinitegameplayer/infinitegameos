@@ -194,6 +194,31 @@ export const threads: Record<string, Thread> = {
     },
   },
 
+  // Building. Born woven at the 2026-11-19 light pass; its way in is the
+  // concept page's related updates. No bridge, so one card at the top.
+  '/updates/what-sources-should-an-ai-second-brain-draw-from': {
+    top: {
+      kind: 'page',
+      href: '/updates/how-to-build-an-ai-second-brain',
+      question: 'Once the sources are in, what does the whole system look like?',
+    },
+    deeper: {
+      kind: 'page',
+      href: '/updates/local-first-second-brain',
+      question: 'Where should the raw folder live so it stays yours?',
+    },
+    angle: {
+      kind: 'page',
+      href: '/concepts/data-sovereignty',
+      question: 'Who decides what the AI gets to read?',
+    },
+    home: {
+      kind: 'page',
+      href: '/updates/calm-capture-ai-second-brain',
+      question: 'How do new sources arrive without becoming one more inbox to manage?',
+    },
+  },
+
   // Building. The pillar update; no bridge, so one card at the top.
   '/updates/how-to-build-an-ai-second-brain': {
     top: {
