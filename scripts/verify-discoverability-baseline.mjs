@@ -396,6 +396,61 @@ async function checkSitemapUrls(base) {
   return results
 }
 
+// Every sitemap page names itself as canonical. Added 2026-11-19 (Site Update
+// coverage rotation): the net read the homepage canonical and no other page, and
+// no net asked whether a page the sitemap advertises tells a crawler that some
+// other URL is the real one. A sitemap URL whose canonical points elsewhere asks
+// Google to index a page it is told to drop. Exactly one canonical tag is
+// required, since two conflicting tags make Google ignore both.
+const CANONICAL_TAG_RE = /<link\b[^>]*\brel=["']canonical["'][^>]*>/gi
+
+function canonicalViolations(url, html) {
+  const hrefs = [...html.matchAll(CANONICAL_TAG_RE)].map(
+    (m) => (m[0].match(/\bhref=["']([^"']+)["']/i) ?? [])[1]
+  )
+  if (hrefs.length === 0) return ['no canonical link element']
+  const out = []
+  if (hrefs.length > 1) out.push(`${hrefs.length} canonical tags: ${hrefs.join(' | ')}`)
+  const strip = (u) => (u ?? '').replace(/\/$/, '')
+  if (strip(hrefs[0]) !== strip(url)) out.push(`canonical is ${hrefs[0]}`)
+  return out
+}
+
+async function checkSitemapCanonicals(base) {
+  // Positive control: the detector must flag a page canonical to another URL and
+  // a page with none, and pass a self-canonical page, or its clean result is void.
+  const page = `${base}/control`
+  const controlOk =
+    canonicalViolations(page, `<link rel="canonical" href="${base}/elsewhere">`).length === 1 &&
+    canonicalViolations(page, '<title>x</title>').length === 1 &&
+    canonicalViolations(page, `<link rel="canonical" href="${page}"/>`).length === 0
+  const controlResult = {
+    name: 'canonical detector control',
+    violations: controlOk ? [] : ['control did not flag a foreign or missing canonical; result void'],
+  }
+  if (!controlOk) return [controlResult, { name: 'sitemap canonicals', violations: ['skipped: detector control failed'] }]
+
+  let locs
+  try {
+    const res = await fetchResource(`${base}/sitemap.xml`, '*/*')
+    locs = [...res.body.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim())
+  } catch (err) {
+    return [controlResult, { name: 'sitemap canonicals', violations: [`sitemap fetch error: ${err.message}`] }]
+  }
+  if (locs.length === 0) return [controlResult, { name: 'sitemap canonicals', violations: ['no <loc> entries'] }]
+
+  const bad = []
+  for (const url of locs) {
+    try {
+      const res = await fetchResource(url, 'text/html')
+      for (const v of canonicalViolations(url, res.body)) bad.push(`${new URL(url).pathname}: ${v}`)
+    } catch (err) {
+      bad.push(`${url} -> ${err.message}`)
+    }
+  }
+  return [controlResult, { name: `sitemap canonicals (${locs.length} pages, self-referencing)`, violations: bad }]
+}
+
 // The redirect control accepts any 3xx because it only proves the detector can
 // see a redirect. Codex V.9 is stricter: the apex answers 308 to the www host,
 // and a 307 is a fail. Nothing checked that on the wire until 2026-10-08.
@@ -437,6 +492,7 @@ async function main() {
   results.push(await checkStaticFile(base, '/rss.xml', sanityRss))
   results.push(...(await checkHomepage(base)))
   if (!args.skipSitemap) results.push(...(await checkSitemapUrls(base)))
+  if (!args.skipSitemap) results.push(...(await checkSitemapCanonicals(base)))
 
   const failed = results.filter((r) => r.violations.length > 0)
 
