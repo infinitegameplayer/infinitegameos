@@ -96,6 +96,8 @@ export default function MobileBottomBar(props: MobileBottomBarProps) {
     const s = window.localStorage
     if (isDismissed(s, barKey, Date.now())) return
     if (props.kind === 'signup' && isSubscribed(s, props.list)) return
+    // localStorage exists only in the browser, so it is read after mount: the server render and the first client render agree.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setActive(true)
   }, [barKey]) // eslint-disable-line react-hooks/exhaustive-deps
 
