@@ -403,8 +403,8 @@ export const igosAssets: IGOSAsset[] = [
     type: 'skill',
     title: 'Systematic Debugging',
     label: 'Skill',
-    version: '1.2',
-    updated: '2026-10-02',
+    version: '1.3',
+    updated: '2026-11-19',
     description:
       'Root-cause investigation discipline. Use before proposing fixes. The Iron Law: no fixes without Phase 1 complete.',
     tags: ['debugging', 'diagnostics', 'root-cause', 'discipline'],
