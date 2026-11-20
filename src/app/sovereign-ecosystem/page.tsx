@@ -369,7 +369,10 @@ export default function SovereignEcosystemPage() {
                   <strong>Guards that ship with their proof.</strong> Hooks that
                   refuse an unapproved deletion, ask before a connected service
                   acts outside your vault, catch encoding corruption and flag
-                  links left dangling after a move. Every one travels with
+                  links left dangling after a move. Others name every edit to a
+                  file your sessions trust, from any tool, refuse a commit that
+                  would sweep up another session&apos;s unfinished work and ask
+                  before a git command that throws work away. Every one travels with
                   a control that fires it, because a guard you have read is not
                   a guard you have fired. Continuous integration runs those
                   controls on every change, and runs a negative control that
