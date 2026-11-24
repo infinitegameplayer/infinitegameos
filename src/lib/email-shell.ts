@@ -46,7 +46,7 @@ export function renderEmailShell({ body, unsubscribeUrl, preview, preferencesUrl
           <tr>
             <td style="padding-top:36px;border-top:1px solid rgba(226,232,240,0.07)">
               <p style="margin:0;font-size:13px;color:rgba(226,232,240,0.45);font-family:Arial,sans-serif">
-                Infinite Game OS &middot; <a href="${SITE_URL}" style="color:rgba(34,211,238,0.7);text-decoration:none">infinitegameos.io</a>${preferencesFragment} &middot; <a href="${unsubscribeUrl}" style="color:rgba(34,211,238,0.6);text-decoration:none">one-click unsubscribe</a>
+                Infinite Game OS &middot; <a href="${SITE_URL}" style="color:rgba(34,211,238,0.7);text-decoration:none">infinitegameos.io</a>${preferencesFragment} &middot; <a href="${unsubscribeUrl}" style="color:rgba(34,211,238,0.6);text-decoration:none">unsubscribe</a>
               </p>
               <p style="margin:10px 0 0;font-size:12px;color:rgba(226,232,240,0.3);font-family:Arial,sans-serif">
                 ${POSTAL_ADDRESS}

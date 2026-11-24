@@ -33,11 +33,11 @@ function map(email: string) {
   return lettersMapHtml({ omit: 'infinite_game', email, linkColor: LINK, textColor: MUTED })
 }
 
-// The undo line (King-ruled 2026-11-07): a join can start from one click on
-// an email link, so the welcome carries a one-click way back. Its page
-// (/updates/leave) acts under the same checks as the join page.
+// The undo line (King-ruled 2026-11-07, worded "Undo it here." 2026-11-24): a
+// join can start from an email link, so the welcome carries a way back. Its
+// page (/updates/leave) acts only on a press, as the join page does.
 function undoLine(leaveUrl: string) {
-  return `<p style="margin-top:2rem;font-size:13px;color:${MUTED}">Not you? <a href="${leaveUrl}" style="color:${MUTED}">One click to undo.</a></p>`
+  return `<p style="margin-top:2rem;font-size:13px;color:${MUTED}">Not you? <a href="${leaveUrl}" style="color:${MUTED}">Undo it here.</a></p>`
 }
 
 export function buildWelcomeHtml(opts: {

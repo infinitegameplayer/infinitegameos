@@ -97,7 +97,7 @@ describe('the welcomes carry the map without the IGOS list', () => {
       expect(html).toContain('The letters')
       expect(html).not.toContain('<strong>Infinite Game OS</strong>')
       expect(html).toContain('join?email=a%40x.co')
-      expect(html.indexOf('The letters')).toBeLessThan(html.indexOf('One click to undo.'))
+      expect(html.indexOf('The letters')).toBeLessThan(html.indexOf('Undo it here.'))
     })
   }
   it('Welcome back keeps the approved draft', () => {
@@ -118,7 +118,7 @@ describe('the broadcast carries the map', () => {
       expect(html).toContain('The letters')
       expect(html).toContain('join?email={{{contact.email}}}')
       expect(html).not.toContain('<strong>Infinite Game OS</strong>')
-      expect(html.indexOf('The letters')).toBeLessThan(html.indexOf('one-click unsubscribe'))
+      expect(html.indexOf('The letters')).toBeLessThan(html.indexOf('>unsubscribe</a>'))
     })
   }
 })

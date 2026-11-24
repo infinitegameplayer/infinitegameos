@@ -106,7 +106,7 @@ export default function UnsubscribeClient({
           fontFamily: 'var(--font-body), Inter, system-ui, sans-serif',
         }}
       >
-        Didn&apos;t mean to part ways just yet? Resubscribing is one click.
+        Didn&apos;t mean to part ways just yet? Resubscribing is as easy as a click.
       </p>
       <button type="button" onClick={handleResubscribe} style={buttonStyle}>
         Resubscribe
