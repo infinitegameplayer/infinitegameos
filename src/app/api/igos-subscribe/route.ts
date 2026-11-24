@@ -28,7 +28,7 @@ const SITE_URL = 'https://www.infinitegameos.io'
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const WELCOME_BACK_SUBJECT = 'Want back in?'
-const WELCOME_BACK_PREVIEW = 'One click and you are back.'
+const WELCOME_BACK_PREVIEW = 'Pick what you want to receive.'
 
 // Sent instead of a silent re-add when an address that unsubscribed signs up
 // again through this public form, which cannot prove the person asked. The
