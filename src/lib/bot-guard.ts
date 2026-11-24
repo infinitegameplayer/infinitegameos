@@ -32,8 +32,6 @@ type Check = () => Promise<BotVerification>
 
 // What BotID said about the visitor. 'unchecked' means BotID itself failed.
 // refuseBots lets an unchecked request through (a form a person typed into).
-// An automatic action from an email link (auto-action-gate.ts) acts only on
-// 'human' and otherwise hands the page its one-tap button (2026-11-07).
 export type BotVerdict = 'human' | 'bot' | 'unchecked'
 
 export async function botVerdict(

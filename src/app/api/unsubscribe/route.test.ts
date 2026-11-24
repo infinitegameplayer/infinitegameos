@@ -1,8 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 
-// The footer unsubscribe acts by itself only on BotID's human verdict (Email
-// Codex Section 12). A scanner's automatic request, or one BotID could not
-// check, writes nothing and hands the page its button.
+// The footer unsubscribe acts only on a person's press (Email Codex Section 12,
+// press-only.ts). An automatic request writes nothing, whatever BotID says, and
+// hands the page its button.
 
 vi.hoisted(() => {
   process.env.RESEND_API_KEY = 'test-key'
@@ -46,13 +46,14 @@ describe('/api/unsubscribe', () => {
     expect(update).not.toHaveBeenCalled()
   })
 
-  it('acts on an automatic request BotID reads as human', async () => {
-    const res = await post({ email: 'a@x.com', token: 'good', mode: 'auto' })
+  it('acts on a press BotID reads as human', async () => {
+    const res = await post({ email: 'a@x.com', token: 'good', mode: 'tap' })
     expect(await res.json()).toEqual({ ok: true })
     expect(update).toHaveBeenCalledTimes(1)
   })
 
-  for (const v of ['bot', 'unchecked'] as const) {
+  // human is the case that let the 2026-11-09 scanner through.
+  for (const v of ['human', 'bot', 'unchecked'] as const) {
     it(`hands an automatic request BotID reads as ${v} the button, writing nothing`, async () => {
       verdict = v
       const res = await post({ email: 'a@x.com', token: 'good', mode: 'auto' })
@@ -76,10 +77,9 @@ describe('/api/unsubscribe', () => {
     expect(update).not.toHaveBeenCalled()
   })
 
-  it('logs one auto-leave line with the verdict', async () => {
+  it('logs one auto-refused line for an automatic request', async () => {
     const log = vi.spyOn(console, 'log').mockImplementation(() => {})
-    verdict = 'bot'
     await post({ email: 'a@x.com', token: 'good', mode: 'auto' })
-    expect(log.mock.calls.some(([l]) => typeof l === 'string' && l.startsWith('auto-leave ') && l.includes('"verdict":"bot"'))).toBe(true)
+    expect(log.mock.calls.some(([l]) => typeof l === 'string' && l.startsWith('auto-refused ') && l.includes('/api/unsubscribe'))).toBe(true)
   })
 })

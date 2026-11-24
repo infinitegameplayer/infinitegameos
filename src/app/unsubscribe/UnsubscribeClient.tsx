@@ -1,12 +1,11 @@
 'use client'
 
-// The footer unsubscribe. Takes the address off every list once a person is
-// plainly on the page (useAutoAction), or shows one button when it cannot tell,
-// so a mail scanner that runs the page never unsubscribes a reader (Email
-// Codex Section 12, 2026-11-07).
+// The footer unsubscribe. The page shows one button and takes the address off
+// every list only when a person presses it (Email Codex Section 12,
+// press-only.ts), so a mail scanner that opens the link never unsubscribes a
+// reader.
 
 import { useState } from 'react'
-import { useAutoAction, type AutoOutcome } from '@/components/useAutoAction'
 
 export type LinkState = 'ready' | 'already' | 'missing' | 'invalid'
 
@@ -34,11 +33,11 @@ const buttonStyle: React.CSSProperties = {
   cursor: 'pointer',
 }
 
-async function unsubscribe(email: string, token: string, mode: 'auto' | 'tap', gate?: unknown): Promise<Response> {
+async function unsubscribe(email: string, token: string): Promise<Response> {
   return fetch('/api/unsubscribe', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, token, mode, gate }),
+    body: JSON.stringify({ email, token, mode: 'tap' }),
   })
 }
 
@@ -56,19 +55,12 @@ export default function UnsubscribeClient({
   // A failed tap keeps the button on screen, with this line under it.
   const [tapError, setTapError] = useState('')
 
-  const phase = useAutoAction(async (gate): Promise<AutoOutcome> => {
-    const res = await unsubscribe(email, token, 'auto', gate)
-    if (!res.ok) return 'tap'
-    const body = await res.json().catch(() => ({}))
-    return body?.needsTap ? 'tap' : 'done'
-  }, state === 'ready')
-
   const onTap = async () => {
     if (status === 'working') return
     setStatus('working')
     setTapError('')
     try {
-      const res = await unsubscribe(email, token, 'tap')
+      const res = await unsubscribe(email, token)
       if (res.ok) {
         setStatus('success')
       } else {
@@ -150,7 +142,7 @@ export default function UnsubscribeClient({
         {resubscribeBlock}
       </>
     )
-  } else if (phase === 'done' || status === 'success') {
+  } else if (status === 'success') {
     body = (
       <>
         <p style={text}>You&apos;re unsubscribed. No more emails to {email}.</p>
@@ -167,7 +159,7 @@ export default function UnsubscribeClient({
         {resubscribeBlock}
       </>
     )
-  } else if (phase === 'tap') {
+  } else {
     body = (
       <>
         <p style={{ ...text, wordBreak: 'break-all' }}>{email}</p>
@@ -180,20 +172,14 @@ export default function UnsubscribeClient({
         >
           {status === 'working' ? 'Unsubscribing…' : 'Unsubscribe me'}
         </button>
-        {tapError && (
-          <p style={{ ...text, fontSize: '0.85rem', color: 'rgba(220,80,80,0.85)', marginTop: '0.75rem' }}>{tapError}</p>
-        )}
-      </>
-    )
-  } else {
-    body = (
-      <>
-        <p style={text} aria-live="polite">Unsubscribing...</p>
         <noscript>
           <p style={{ ...text, marginTop: '1rem' }}>
             This page needs JavaScript to unsubscribe you. Reply to any email from here and it will be handled by hand.
           </p>
         </noscript>
+        {tapError && (
+          <p style={{ ...text, fontSize: '0.85rem', color: 'rgba(220,80,80,0.85)', marginTop: '0.75rem' }}>{tapError}</p>
+        )}
       </>
     )
   }
