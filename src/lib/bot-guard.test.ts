@@ -35,7 +35,7 @@ describe('refuseBots', () => {
   })
 })
 
-describe('botVerdict, for actions a page takes by itself', () => {
+describe('botVerdict, the reading refuseBots acts on', () => {
   it('reads a person as human', async () => {
     expect(await botVerdict({ route: '/api/igos-subscribe' }, async () => ({ isBot: false }))).toBe('human')
   })

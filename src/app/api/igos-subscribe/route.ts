@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { botVerdict, refuseBots } from '@/lib/bot-guard'
-import { autoJoinAllowed, cleanGateReport } from '@/lib/auto-action-gate'
+import { refuseBots } from '@/lib/bot-guard'
+import { refuseAutomatic } from '@/lib/press-only'
 import { Resend } from 'resend'
 import { getSupabaseAdmin } from '@/lib/supabase'
 import { signEmailToken, signExpiringToken } from '@/lib/unsubscribe-token'
@@ -109,31 +109,13 @@ export async function POST(req: NextRequest) {
   } catch {
     return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 })
   }
-  const auto = payload?.mode === 'auto'
-
-  // The automatic join from an email link (/updates/join, auto-action-gate.ts)
-  // acts only when BotID vouches for the visitor and the address is already a
-  // Kingdom contact. Anything else answers needsTap and the page shows its
-  // one-tap button. A typed form or a tap keeps the ordinary check below.
-  if (auto) {
-    const verdict = await botVerdict({ route: '/api/igos-subscribe' })
-    const autoEmail = typeof payload.email === 'string' ? payload.email.trim().toLowerCase() : ''
-    let contact: { unsubscribed: boolean | null } | null = null
-    if (verdict === 'human' && EMAIL_REGEX.test(autoEmail)) {
-      const { data, error } = await getSupabaseAdmin()
-        .from('contacts')
-        .select('unsubscribed')
-        .eq('email', autoEmail)
-        .maybeSingle()
-      if (!error) contact = data
-    }
-    const allowed = autoJoinAllowed(verdict, contact)
-    console.log(`auto-join ${JSON.stringify({ route: '/api/igos-subscribe', verdict, known: contact !== null, allowed, gate: cleanGateReport(payload.gate) })}`)
-    if (!allowed) return NextResponse.json({ ok: true, needsTap: true }, { status: 200 })
-  } else {
-    const blocked = await refuseBots({ route: '/api/igos-subscribe' })
-    if (blocked) return blocked
-  }
+  // The join from an email link (/updates/join) acts only on a person's press
+  // (press-only.ts): an automatic request changes nothing. A typed form or a
+  // press passes the ordinary BotID check.
+  const refused = refuseAutomatic('/api/igos-subscribe', payload?.mode)
+  if (refused) return refused
+  const blocked = await refuseBots({ route: '/api/igos-subscribe' })
+  if (blocked) return blocked
 
   try {
     const { email, firstName, honeypot, openedAt, source } = payload
@@ -168,7 +150,7 @@ export async function POST(req: NextRequest) {
 
     const normalizedEmail = email.trim().toLowerCase()
     const normalizedFirstName = cleanName(firstName)
-    const sourceForm = auto ? 'one-click:updates-join' : pathToSource(source)
+    const sourceForm = pathToSource(source)
 
     // An address that unsubscribed is not re-added from this form. It gets one
     // welcome-back email and the response stays the same, so the form never
