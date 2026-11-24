@@ -2,10 +2,9 @@
 // the reader's address: /updates/join?email=... When the page opens it reads
 // whether that address is already on the list (the check before the tap,
 // 2026-11-07). A reader already on it is told so and nothing else happens.
-// Everyone else meets JoinClient, which joins them with no button once a person
-// is plainly on the page (the scanner-proof one-click, King-ruled 2026-11-07),
-// and shows the one-tap button whenever it cannot tell. The server renders
-// nothing that writes, so a scanner that only fetches the link joins no one.
+// Everyone else meets JoinClient's button, and only the press joins them
+// (press-only.ts, 2026-11-24). Nothing on the page writes by itself, so a
+// scanner that fetches the link or runs its scripts joins no one.
 
 import Link from 'next/link'
 import SubscribeForm from '@/components/SubscribeForm'

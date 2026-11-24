@@ -1,8 +1,8 @@
 // The footer unsubscribe link lands here: /unsubscribe?email=...&token=...
 // Opening the page writes nothing. The server checks the signed token and
-// whether the address has already left, and UnsubscribeClient takes it off
-// every list once a person is plainly on the page, or shows one button when it
-// cannot tell (Email Codex Section 12, the scanner-proof gate, 2026-11-07).
+// whether the address has already left. UnsubscribeClient shows one button, and
+// only the press takes the address off every list (Email Codex Section 12,
+// press-only.ts).
 // Mirrors the lanebelone pattern with the IGOS visual register.
 
 import { getContactMembership } from '@/lib/email-lists'
