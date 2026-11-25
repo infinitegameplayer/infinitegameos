@@ -5,8 +5,8 @@
   "description": "Installable skills, protocols, codices, concepts and strategies for practitioners of long-term thinking, sovereign life design and agentic systems.",
   "url": "https://www.infinitegameos.io",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "updated_at": "2026-11-19",
-  "upstream_version": "3.25.0",
+  "updated_at": "2026-11-25",
+  "upstream_version": "3.26.0",
   "upstream_repo": "https://github.com/infinitegameplayer/sovereign-ecosystem",
   "template_dual_distribution": [
     "Source Harvest",
@@ -56,7 +56,7 @@
       "id": "source-harvest",
       "name": "Source Harvest",
       "type": "skill",
-      "version": "1.5",
+      "version": "1.6",
       "description": "Systematic pattern extraction from any external repo or tool at source level. Classify, extract, integrate what serves your system.",
       "tags": [
         "harvest",
@@ -179,7 +179,7 @@
       "id": "pending-plan-implementation",
       "name": "Pending Plan Implementation",
       "type": "skill",
-      "version": "1.2",
+      "version": "1.3",
       "description": "Execute approved plans with checkpoint gates, breadcrumb logging and outcome summaries.",
       "tags": [
         "planning",
@@ -237,7 +237,7 @@
       "id": "researcher",
       "name": "Researcher",
       "type": "skill",
-      "version": "1.3",
+      "version": "1.4",
       "description": "Parallel sub-agent research on a topic, aggregated into a structured report. Up to 4 independent workers, synthesized output.",
       "tags": [
         "research",
@@ -978,7 +978,7 @@
       "id": "external-worker-routing",
       "name": "External Worker Routing",
       "type": "protocol",
-      "version": "1.0",
+      "version": "1.1",
       "description": "Routing discipline for deterministic, no-judgment work to secondary AI providers. Provider catalog, five-condition eligibility test and the dispatch script.",
       "tags": [
         "protocol",
@@ -1044,7 +1044,7 @@
       "id": "session-closeout",
       "name": "Session Closeout",
       "type": "skill",
-      "version": "1.4",
+      "version": "1.5",
       "description": "Fast session close: decisions ruled first, breadcrumb what you touched, refresh your handoff note, commit with a readable body and a paste-ready prompt when the work continues.",
       "tags": [
         "session",
@@ -1077,7 +1077,7 @@
       "id": "playwright",
       "name": "Playwright",
       "type": "skill",
-      "version": "1.2",
+      "version": "1.3",
       "description": "Browser automation via headless Chromium. Scrape pages, extract structured data, interact with web interfaces. Returns clean JSON not screenshots.",
       "tags": [
         "automation",
@@ -1110,7 +1110,7 @@
       "id": "anti-ai-edit-pass",
       "name": "Anti-AI Edit Pass",
       "type": "skill",
-      "version": "1.3",
+      "version": "1.4",
       "description": "Structured editing pass that finds and removes AI writing tells from long-form manuscripts. Eight sweep categories, Sovereign review gate, verified application.",
       "tags": [
         "editing",
@@ -1200,7 +1200,7 @@
       "id": "autonomous-improvement-session",
       "name": "Autonomous Improvement Session",
       "type": "skill",
-      "version": "2.0",
+      "version": "2.1",
       "description": "Set your system improving on its own when you have spare capacity. Every menu item carries one verb (Acts, Reports or Proposes), two bundles run per run and the decision board arrives inline, with a permanent floor of actions it never takes on its own.",
       "tags": [
         "autonomy",

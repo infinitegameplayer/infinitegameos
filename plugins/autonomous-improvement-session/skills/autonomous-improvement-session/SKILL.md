@@ -88,7 +88,7 @@ Glob your codices or reference files. For each with an active status marker, che
 Eligibility: condition-based. Eligible whenever an active reference file is absent from the index.
 
 **T1-6: Superseded-artifact sweep.** Verb: Acts.
-Grep active containers for files marked `status: superseded` or `status: retired` that still sit outside your archive. For each with an explicit superseded-by pointer or clear archival destination, archive it, run the reference-repoint sweep (grep for the old path and repoint active references to the canonical superseder, not the archive) and regenerate any affected index. Park only a superseded file with no destination pointer.
+Grep active containers for files marked `status: superseded` or `status: retired` that still sit outside your archive. For each with an explicit superseded-by pointer or clear archival destination, archive it, run the reference-repoint sweep (grep for the old path and repoint active references to the canonical superseder, not the archive) and regenerate any affected index. Park only a superseded file with no destination pointer and any superseded governance document, since moving one needs your approval. Skip a file retired in place on purpose: a body that opens with a retirement notice saying it is kept as history or as a reference, or a file a prior run's ruling named as kept in place. Otherwise the same files re-flag every run. Repoint resolvable inbound path references even when the referencing document sits in an archive context, so the link keeps resolving. A prose mention of the moved file's name stays as intentional history.
 Eligibility: condition-based. Eligible whenever a superseded or retired file sits in an active container.
 
 **T1-7: Runtime log rotation.** Verb: Acts.
@@ -102,6 +102,14 @@ Eligibility: condition-based. Eligible whenever the inbox holds unrouted items.
 **T2-8: Breadcrumb propagation and stale-reference sweep.** Verb: Reports.
 Gather changed governance artifacts from recent version history (last 14 days). For each, grep the system for inbound references and documents that enumerate the same subject, and check whether they reflect the change or carry a now-stale claim. Check version history before calling a mismatch drift: mismatches often have intentional history. Propose each reconciliation; do not apply it.
 Eligibility: not run in 14+ days.
+
+**T2-61: Skill self-review, every 8 runs.** Verb: Reports.
+The look back at the skill as a whole: is it getting better, run over run? Each item judges its own target. This one judges the skill. Eight runs is two full bundle cycles, so every bundled item has run at least twice inside the window.
+1. Gather (orchestrator). The window is the last eight run entries in the log, newest first. Collect the paths and line ranges: each entry's board, Research line, Patterns Noticed, Errors and blockers and return-session section; the `menu_state` scorecards; the refinements log since the previous self-review; and the `rulings` ledger.
+2. Dispatch one read-only worker (model set explicitly, single-context, no subagents) with those paths and six questions. (a) Which items yield nothing or mostly noise across the window, and should retire or merge? (b) Which Patterns Noticed lines or errors recur in two or more runs with no action taken? (c) Which rulings do you keep making by hand that a catalog rule could make? A decision made the same way twice is a missing rule. (d) Research yield, fix rate and acceptance by category across the window. (e) Which board entries came back unanswered, reversed or reopened, and why? (f) Where did the skill's own instruments fail: fix checks that came back unverifiable, workers that stopped at their turn limit, scorecards that never filled? Every answer cites the run entry and line it rests on.
+3. Look outward only when a question points there. When an answer turns on how others run self-improving agent loops, one worker with web access returns sourced practice (URLs), scoped to that question.
+4. Synthesize. Each finding that survives the ground-truth gate becomes a Your-decisions skill refinement or a retire or merge proposal, only the recommended ones, each with its Verified line. The run never edits the skill. The return session lands what you accept, under the self-edit rule.
+Eligibility: every 8 runs. Due when `run_counter` is 8 or more above the run number in the newest `### Self-review` section of the log (never run: due at run 8). Output: Your-decisions entries and a `### Self-review` section in the run entry: the window (run numbers), one line per question and the recurring items named.
 
 ### B1: Skills
 
@@ -207,6 +215,8 @@ Run each Acts item one at a time on the orchestrator, so no two edits collide. A
 ### Step 4: Reports items, in parallel
 
 Dispatch one read-only worker per due bundle and one per standalone Reports item or small group. A read-only worker holds no write tools. Every worker prompt says: run single-context, do not spawn subagents. A worker that fans out returns narration about its children instead of findings, and per-item results get lost in the hop.
+
+**A read-only worker never runs a script that has no dry-run flag, not even with `--help`.** Many scripts ignore unknown arguments and write anyway, and an index-building script may rewrite its index whatever arguments it gets. A scan that needs to know what such a script produces reads its output file and its source, never runs it.
 
 **Every scan returns, per item, a count, the instrument used and a reason if it did not run.** A quiet monitor is a claim of health. A worker that stops at its turn limit before returning every item is resumed once; an item still missing after that is logged as not run. Every finding carries its path, its class and the offending line verbatim, so it can be matched against your ledger of rulings. A finding that needs your ruling becomes a Your-decisions entry, never a decision buried in a report.
 
@@ -363,6 +373,8 @@ Two classes of action, both additive or corrective, never voice-bound, always re
 
 Read a repo's default branch before opening a pull request. Never assume it is called main.
 
+**Build in the worktree from a fresh `npm ci`.** A bundler may refuse a `node_modules` junction pointing back to the main checkout, so a junctioned worktree build fails on the link and says nothing about the change.
+
 **Optional extension: external-surface triage.** If your system maintains external repos with issue tracking, add a triage to Step 0 that queries open monitor-filed issues, clusters them by type and priority and routes each into safe-now, fix-via-PR and judgment lanes. Close a monitor-filed issue only when the condition that filed it has cleared, with the evidence in the closing comment. A finding still true stays open, and the monitor comments on it rather than filing again. This extension stays off until you run external repos.
 
 ### Operational Constraints
@@ -373,6 +385,7 @@ Read a repo's default branch before opening a pull request. Never assume it is c
 - An item that errors is logged in the run entry and skipped; the run continues.
 - A missing or malformed log halts the run at Step 1.
 - Stage and commit only the paths this run touched.
+- Never open a secrets file (`.env` or equivalent). A scan that needs to know whether a key is set checks for a documented placeholder and lists each required key by name for you to confirm.
 
 ---
 

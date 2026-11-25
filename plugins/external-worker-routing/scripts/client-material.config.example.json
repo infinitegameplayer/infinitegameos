@@ -1,0 +1,5 @@
+{
+  "_readme": "Copy this file to client-material.config.json (same folder) to add rules. Both arrays ADD to the defaults and never remove one. blockedPrefixes: folders, relative to the project the plugin runs in, whose files never go to an outside model (Collaborations/ is always blocked). names: full names that must never appear in text sent to an outside model, matched ignoring case and spacing. Every folder with a space in its name directly under Collaborations/ is already a name. A config that does not parse or has the wrong shape makes every check refuse until you fix it.",
+  "blockedPrefixes": ["Clients/", "Private/Legal/"],
+  "names": ["Jane Example", "Example Holdings"]
+}

@@ -46,6 +46,8 @@ Separate workers that read the open web from workers that read your private file
 
 Report-to-file dispatch: a worker with long findings writes them to a file and returns the path plus a short gist. A web worker with no file access returns its claims inline, and you write the file.
 
+A background worker's task output file can be empty (0 bytes) even when its report arrived in full through the hand-back. Write each worker's findings into the saved report from the hand-back itself, and check a file's size before treating it as a source.
+
 **Phase 3: Synthesize**
 
 Aggregate all worker outputs into a single structured report.
@@ -80,6 +82,8 @@ Date: [YYYY-MM-DD]
 
 Before presenting, check the claims the report rests on against current files and repos. Report anything unchecked as unverified, never as fact.
 
+A quote the report leans on is verified to the end of its sentence, since a cut sentence can reverse its sense. Every quote carries how it was read: "verified" (a separate reader or checker confirmed it, listed in a verification record filed beside the report) or "worker extract". A sealed reader's hand-back is written to that record in the same session, since it exists only inline.
+
 **Phase 5: Save and present**
 
 Save the report to a research folder, or the plan's own support folder, and state the path. A report only in the transcript is evidence with no path back.
@@ -106,6 +110,7 @@ Audit gate: when the synthesized report will inform a major plan or decision, of
 
 - Research output is always a structured report for operator review. Never auto-implement findings
 - External web research (WebSearch, WebFetch) is allowed. External writes are not
+- After one failed fetch (timeout, dead host, redirect or size cap), do not retry it. Switch to search snippets or another source and report the gap in the findings
 - If research surfaces a candidate plan, propose it. Do not create it without approval
 - Sub-agent depth is max 1 (no nested sub-agents within workers)
 

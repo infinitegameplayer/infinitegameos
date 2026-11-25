@@ -11,6 +11,9 @@
  *  - Auto-injects an ambassador orientation block as the system prompt
  *  - Returns model output to stdout. Plain text by default, JSON envelope when --format json
  *  - Logs dispatch metadata to .runtime/external-worker-log.txt (relative to your working directory)
+ *  - Refuses partner and client material (client-material-guard.mjs, no override) and
+ *    scans for sensitive patterns (redaction gate, --allow-sensitive logs an override).
+ *    Both run before the key check and before any network send.
  *  - Fails loud on missing keys, network errors and rate-limit errors. No silent fallback.
  *  - Handles stop_reason "refusal" explicitly. An HTTP 200 with stop_reason "refusal" is
  *    not a successful completion. It exits with code 2 and logs the refusal.
@@ -40,7 +43,8 @@
 import { createHash } from 'crypto';
 import { appendFileSync, mkdirSync, readFileSync } from 'fs';
 import { dirname, join, resolve } from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
+import { ClientMaterialError, assertNotClientPath, assertNoClientNames } from './client-material-guard.mjs';
 
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
 const LOG_PATH = resolve(process.cwd(), '.runtime', 'external-worker-log.txt');
@@ -48,7 +52,8 @@ const LOG_PATH = resolve(process.cwd(), '.runtime', 'external-worker-log.txt');
 // Load .env from this script's own directory.
 // Any key already in process.env takes precedence, allowing shell overrides.
 // A missing .env file is not fatal here: keys can also be exported directly in
-// the shell. The per-provider check below is what actually fails loud.
+// the shell. The content gates must refuse with no key present, and the
+// missing-key check in main() names the variable to add.
 
 const envPath = join(SCRIPT_DIR, '.env');
 try {
@@ -63,8 +68,8 @@ try {
     if (!(k in process.env)) process.env[k] = v;
   }
 } catch {
-  // No .env file here is fine as long as the required key is already in the
-  // environment. The provider-specific check below is the real gate.
+  // No .env file here is fine. The content gates run first and the
+  // missing-key check in main() names the variable to add.
 }
 
 // Provider registry.
@@ -149,6 +154,7 @@ function usage() {
     [--max-tokens 4096] \\
     [--temperature 0.7] \\
     [--format json] \\
+    [--allow-sensitive] \\
     [--trace]`;
 }
 
@@ -167,6 +173,8 @@ function buildSystemPrompt() {
 function buildUserPrompt(prompt, contextPackPath) {
   if (!contextPackPath) return prompt;
   const abs = resolve(process.cwd(), contextPackPath);
+  // Refuse a protected path before reading it. No override.
+  assertNotClientPath(abs);
   let pack;
   try {
     pack = readFileSync(abs, 'utf8');
@@ -178,6 +186,29 @@ function buildUserPrompt(prompt, contextPackPath) {
 
 function hashPrompt(systemPrompt, userPrompt) {
   return createHash('sha256').update(`${systemPrompt}\n---\n${userPrompt}`).digest('hex').slice(0, 16);
+}
+
+// Redaction gate.
+// A technical content filter that backs your own judgment about what may leave
+// the machine. Prompts and context packs bound for an outside provider are
+// scanned for sensitive patterns before dispatch. The block names the pattern
+// class, never the value. --allow-sensitive overrides with a logged acknowledgement.
+
+const SENSITIVE_PATTERNS = [
+  ['email address', /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/],
+  ['Stripe id', /\b(?:cus|sub|pi|price|prod)_[A-Za-z0-9]{8,}\b/],
+  ['card-adjacent digit run', /\b(?:\d[ -]?){13,19}\b/],
+  ['api-key-shaped string', /(?:sk-[A-Za-z0-9]{16,}|sk_live_[A-Za-z0-9]{16,}|re_[A-Za-z0-9]{12,}|sbp_[A-Za-z0-9]{16,})/],
+  ['long base64 blob', /[A-Za-z0-9+/]{40,}={0,2}/],
+];
+
+// Returns the list of pattern-class names present in text. Empty when clean.
+export function scanForSensitive(text) {
+  const found = [];
+  for (const [name, re] of SENSITIVE_PATTERNS) {
+    if (re.test(text)) found.push(name);
+  }
+  return found;
 }
 
 // OpenAI-compatible adapter.
@@ -308,19 +339,47 @@ async function main() {
     fail(`Unknown --provider "${providerKey}". Expected one of: ${Object.keys(PROVIDERS).join(', ')}.`);
   }
 
-  const key = process.env[provider.envVar];
-  if (!key) {
-    fail(`Missing ${provider.envVar}. Add it to this plugin's scripts/.env or export it in your shell before dispatching to ${provider.label}.`);
-  }
-
   const maxTokens = Number(args['max-tokens'] || 4096);
   const temperature = Number(args.temperature ?? 0.7);
   const format = args.format === 'json' ? 'json' : 'text';
   const trace = args.trace === true;
 
+  // The content gates run before the key check, so a refusal never depends on a
+  // key being present and a fresh install with no .env can watch every gate refuse.
   const systemPrompt = buildSystemPrompt();
-  const userPrompt = buildUserPrompt(prompt, args['context-pack']);
+  let userPrompt;
+  try {
+    // Refuses a --context-pack under a protected folder before reading it.
+    userPrompt = buildUserPrompt(prompt, args['context-pack']);
+    // Partner and client material gate. No override: the rule has no exceptions.
+    assertNoClientNames(userPrompt);
+  } catch (err) {
+    if (err instanceof ClientMaterialError) fail(err.message);
+    throw err;
+  }
   const promptHash = hashPrompt(systemPrompt, userPrompt);
+
+  // Redaction gate. Runs before any network send so sensitive content never
+  // leaves the machine on a block. The override is loud and logged.
+  const allowSensitive = args['allow-sensitive'] === true;
+  const sensitiveClasses = scanForSensitive(userPrompt);
+  if (sensitiveClasses.length > 0) {
+    if (!allowSensitive) {
+      fail(`Redaction gate blocked dispatch to an outside provider. The context contains: ${sensitiveClasses.join(', ')}. Pass --allow-sensitive to override with a logged acknowledgement.`);
+    }
+    process.stderr.write(`external-worker: WARNING redaction gate overridden (--allow-sensitive). Pattern classes present: ${sensitiveClasses.join(', ')}. Proceeding to ${provider.label}.\n`);
+    try {
+      mkdirSync(dirname(LOG_PATH), { recursive: true });
+      appendFileSync(LOG_PATH, `${new Date().toISOString()}\tredaction-override\tprovider=${provider.label}\tclasses=${sensitiveClasses.join('|')}\n`);
+    } catch {
+      process.stderr.write(`external-worker: redaction-override log write failed at ${LOG_PATH}\n`);
+    }
+  }
+
+  const key = process.env[provider.envVar];
+  if (!key) {
+    fail(`Missing ${provider.envVar}. Add it to this plugin's scripts/.env or export it in your shell before dispatching to ${provider.label}.`);
+  }
 
   if (trace) {
     process.stderr.write(`external-worker: provider=${provider.label} model=${model} prompt-hash=${promptHash} max-tokens=${maxTokens} temperature=${temperature}\n`);
@@ -365,7 +424,12 @@ async function main() {
   }
 }
 
-main().catch(err => {
-  process.stderr.write(`external-worker: unhandled error: ${err?.stack || err?.message || String(err)}\n`);
-  process.exit(3);
-});
+// Auto-run only when invoked directly. Guarding the run lets a test harness
+// import scanForSensitive without dispatching.
+const invokedDirectly = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+if (invokedDirectly) {
+  main().catch(err => {
+    process.stderr.write(`external-worker: unhandled error: ${err?.stack || err?.message || String(err)}\n`);
+    process.exit(3);
+  });
+}

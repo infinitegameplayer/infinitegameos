@@ -45,14 +45,22 @@ Run these gates before Step 1. All must pass before execution begins.
 
 1. Confirm the target plan and read back plan intent, risk, affected areas and current breadcrumb context.
 
+   **Is this the version approved?** Compare the plan's current scope with the scope the operator approved: check the approval fingerprint if the plan carries one, otherwise read the plan's history since the approval date. If the scope changed after approval, show the operator what moved and execute only after their yes. If the plan was approved before it carried a fingerprint, read the scope back as usual and pin it at the next approval.
+
    Surface the plan's stated goal and its "Distinct from" contrast if one is present. "Building toward X. Distinct from Y." This is the within-session drift detection point. If the plan does not have an explicit contrast, ask the operator to name one before execution begins.
 2. Document `Implementation Snapshot (When Executing)` and `Approved Execution Scope (This Run)`. Record the starting commit with `git rev-parse HEAD` in each repo the run will touch. The Step 5 alignment check diffs from it.
 3. Confirm exactly what is approved to implement now and what remains out of scope.
+
+   **A plan is implementable within days or weeks.** When the work runs months, ship the doable part, then place a checkpoint, milestone or trigger in a durable home that starts the follow-on phase. The plan closes with its known unknowns rather than staying active for months.
 4. Execute approved work and log actions in `Implementation Actions (Execution Log)`.
 
    **Skill Handover Map.** Before executing, scan the plan for a `## Skill Handover Map` section. If present, treat it as canonical phase-by-phase orchestration. For each named phase, invoke the specified skill with the context payload the map provides, and capture output before advancing to the next phase. Plans without a Skill Handover Map execute normally through the steps below.
 
    **Archival discipline.** When the plan includes a file archival step, never write a new copy and delete the original as two separate operations. Move or rename directly. `rm` commands are for actual deletions only, not for clearing a replaced copy.
+
+   **Edit discipline.** Edit failures come from a stale Read or a thin `old_string`. Read the exact region right before each Edit, and give `old_string` enough surrounding context to be unique.
+
+   **A just-written agent type is not dispatchable in the session that wrote it.** The agent registry loads at session start. A plan step that dispatches a just-written agent type runs in the next session, or uses a general-purpose agent with the agent file's text as its brief.
 5. Update `Evidence / Implementation Refs` and `Implementation Outcome (This Run)`.
 
    **Plan-alignment check (every run that changed files).** Before writing the Outcome, hand a fresh agent three inputs: the approved scope, the plan's design decisions and the diff since the starting commit recorded in Step 2. Never self-check, because the orchestrator wrote the diff and self-agreement is not verification. The question: does this implementation match the plan that authorized it, and where it deviates, is the deviation a justified improvement or a quiet departure? Fix departures in the run, or list them in the Outcome as open with a done-check. A run that changed no files skips the check and says so in one line.
@@ -81,11 +89,13 @@ Run these gates before Step 1. All must pass before execution begins.
 - `#learning`
 - `#decision`
 
+A decision line may also name the option turned down (`Rejected:`) and what would reopen it (`Revisit when:`).
+
 ## Software Build Protocol
 
 Use this block for plans that involve building or modifying software. Skip it for documentation, governance and content plans.
 
-**Phase 0: Documentation Discovery.** Before planning any implementation that touches an external API, library or tool, find the actual current API reference. Do not plan against assumed method signatures or remembered behavior. A single documentation pass at the start prevents cascading rework.
+**Phase 0: Documentation Discovery.** Before planning any implementation that touches an external API, library or tool, find the actual current API reference. Do not plan against assumed method signatures or remembered behavior. A single documentation pass at the start prevents cascading rework. Also read the interface of each future caller the plan names (a later unit's tests, fixtures and ids) before writing the function they will call, so this unit's fixtures already match what later tests use.
 
 **Phase 0.5: The idempotency check.** Before starting any unit, check whether its work already shipped and matches the plan. It may have landed in a prior session or on a prior branch. If it matches, mark the unit done and move on. Never silently reimplement. A retry re-inspects, never redoes.
 
@@ -97,6 +107,8 @@ Use this block for plans that involve building or modifying software. Skip it fo
 
 **Worker Dispatch Contract.** When dispatching implementation workers, give each a bounded unit packet: the goal, the definition of done, its one unit's section and the cited excerpts. Never hand a worker the whole plan. Each worker returns changed file paths and verification evidence: what behavior changed, which tests were inspected or added, whether the failure was observed before the fix and any deliberate exception. Those fields cannot be rebuilt from the tree afterward, and a guessed "tests passed" is a fabricated claim. Workers never commit. Your AI interface, as orchestrator, inspects the actual tree, never trusting reported paths alone, and owns all staging and committing.
 
+**A finding about a later unit goes into that unit's section, in the same run.** Each worker reads only its own unit, so a fact a later unit must follow (a value, a format, a rule, an interface change) lands in that unit's section of the plan, not in this run's log or report. The report says it was carried, and where.
+
 **Parallel Safety Check.** Before any parallel dispatch, remember that file overlap is necessary and insufficient. Also serialize on contention that no file list shows: shared types, database migrations, generated artifacts, lockfiles and environment singletons such as one dev server, one port, one database or one browser session. Cap concurrency at three to five workers. Over-parallelizing costs more in merge and integration than it saves.
 
 **Per-Phase Verification Before Commit.** Before committing each phase's output, grep for the anti-patterns identified in Phase 0 documentation discovery. Do not advance phases on unverified work. Verification is part of the phase, not an optional close step.
@@ -105,7 +117,7 @@ Use this block for plans that involve building or modifying software. Skip it fo
 
 **Simplify at phase boundaries, not per unit.** Early patterns may look duplicated and then intentionally diverge in later units. Wait for two or three units or a natural boundary.
 
-**The durable sink rule.** Any known issue, deferred finding or accepted residual goes into a durable record before the run closes. For code repos that record lives in the repo, not only in the plan log, because the repo is where the next agent will be standing. A defer that produces no durable artifact is data loss.
+**The durable sink rule.** Any known issue, deferred finding or accepted residual goes into a durable record before the run closes. For code repos that record lives in the repo, not only in the plan log, because the repo is where the next agent will be standing. A defer that produces no durable artifact is data loss. Each accepted residual names the later check that would catch it, or says none exists.
 
 **Compound before close.** A software build run closes by asking whether it produced a learning worth keeping: a verified non-trivial fix, or a decision worth not relitigating. If yes, write it to your repo's learnings folder, one learning per file, and check it for overlap against existing entries first. A build that banks nothing has spent the effort and kept none of it.
 

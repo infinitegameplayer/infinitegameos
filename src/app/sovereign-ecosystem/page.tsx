@@ -372,7 +372,9 @@ export default function SovereignEcosystemPage() {
                   links left dangling after a move. Others name every edit to a
                   file your sessions trust, from any tool, refuse a commit that
                   would sweep up another session&apos;s unfinished work and ask
-                  before a git command that throws work away. Every one travels with
+                  before a git command that throws work away. The browser skill
+                  refuses to fetch your own machine or network when a page hands
+                  it a local address. Every one travels with
                   a control that fires it, because a guard you have read is not
                   a guard you have fired. Continuous integration runs those
                   controls on every change, and runs a negative control that
@@ -394,7 +396,11 @@ export default function SovereignEcosystemPage() {
                 Current release: <strong>{upstreamVersion}</strong>. Each
                 release carries an update package written as specification plus
                 test rather than a patch, so a vault you have already
-                customized can still take the change.
+                customized can still take the change. The update check inside
+                the template reads those packages for you. Before 3.26.0 it
+                fetched an address that never held them, so if you installed
+                earlier, read the changelog from your version forward and apply
+                3.26.0 by hand once.
               </p>
             </SectionReveal>
 

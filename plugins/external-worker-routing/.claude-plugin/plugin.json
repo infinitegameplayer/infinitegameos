@@ -1,7 +1,7 @@
 {
   "name": "external-worker-routing",
   "description": "Routing discipline for deterministic, no-judgment work to secondary AI providers. Provider catalog, five-condition eligibility test and the dispatch script.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Lane Belone",
     "email": "howdy@lanebelone.com"
