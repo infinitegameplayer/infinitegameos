@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { FEED_TYPES } from '@/lib/metadata'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import InteriorArt from '@/components/design/InteriorArt'
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.infinitegameos.io/agentic-systems',
     types: {
+      ...FEED_TYPES,
       'text/markdown': 'https://www.infinitegameos.io/markdown/agentic-systems',
     },
   },

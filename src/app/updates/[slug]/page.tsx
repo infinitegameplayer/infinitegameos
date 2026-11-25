@@ -8,7 +8,7 @@ import { MEASUREMENT_HOLD, treatmentFor } from '@/data/design-map'
 import SubscribeForm from '@/components/SubscribeForm'
 import MobileBottomBar from '@/components/MobileBottomBar'
 import { getAllUpdates, getUpdate } from '@/lib/updates'
-import { twitterCard } from '@/lib/metadata'
+import { FEED_TYPES, twitterCard } from '@/lib/metadata'
 import { concepts } from '@/data/concepts'
 import { getThread } from '@/data/threads'
 import { TrailLine, TopCard, LabClose, AlsoInLab } from '@/components/LabThread'
@@ -47,6 +47,7 @@ export async function generateMetadata({
     alternates: {
       canonical: `${SITE}/updates/${slug}`,
       types: {
+        ...FEED_TYPES,
         'text/markdown': `${SITE}/markdown/updates/${slug}`,
       },
     },

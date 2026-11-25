@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { FEED_TYPES } from '@/lib/metadata'
 import SectionReveal from '@/components/SectionReveal'
 import { igosExpertise, igosEcosystemLinks } from '@/lib/page-data'
 
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.infinitegameos.io/about',
     types: {
+      ...FEED_TYPES,
       'text/markdown': 'https://www.infinitegameos.io/markdown/about',
     },
   },
