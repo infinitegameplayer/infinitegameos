@@ -402,7 +402,8 @@ export default function SovereignEcosystemPage() {
                 the template reads those packages for you. Before 3.26.0 it
                 fetched an address that never held them, so if you installed
                 earlier, read the changelog from your version forward and apply
-                3.26.0 by hand once.
+                3.26.0 and 3.26.1 by hand once. From 3.26.1 the first check
+                starts from the version you installed.
               </p>
             </SectionReveal>
 
