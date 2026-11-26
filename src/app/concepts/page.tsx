@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { FEED_TYPES } from '@/lib/metadata'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import { UpdatesLetter } from '@/components/LabThread'
@@ -38,6 +39,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.infinitegameos.io/concepts',
     types: {
+      ...FEED_TYPES,
       'text/markdown': 'https://www.infinitegameos.io/markdown/concepts',
     },
   },

@@ -86,6 +86,18 @@ const STANDALONE: Record<string, { title: string; description: string }> = {
   },
 }
 
+// The update list, read once per process. getAllUpdates() reads and parses every
+// content/updates file, and resolvePage runs once per thread card, so uncached
+// the thread-map guard grew with every update published until it timed out in
+// the build (Site Update 2026-11-25; #60 had raised one test's limit on
+// 2026-11-18). Content is baked into each deploy, so one read is the truth for
+// the process. `next dev` reads fresh so a new update shows without a restart.
+let updatesOnce: ReturnType<typeof getAllUpdates> | undefined
+function updates() {
+  if (process.env.NODE_ENV === 'development') return getAllUpdates()
+  return (updatesOnce ??= getAllUpdates())
+}
+
 export function resolvePage(href: string): ResolvedPage | undefined {
   const standalone = STANDALONE[href]
   if (standalone) return { href, title: standalone.title, line: firstSentence(standalone.description) }
@@ -95,7 +107,7 @@ export function resolvePage(href: string): ResolvedPage | undefined {
     return c && { href, title: c.title, line: firstSentence(c.subtitle) }
   }
   if (section === 'updates') {
-    const u = getAllUpdates().find(x => x.slug === slug)
+    const u = updates().find(x => x.slug === slug)
     return u && { href, title: u.title, line: firstSentence(u.summary) }
   }
   if (section === 'skills' || section === 'protocols' || section === 'bundles') {

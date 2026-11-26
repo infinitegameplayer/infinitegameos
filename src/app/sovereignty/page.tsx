@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { FEED_TYPES } from '@/lib/metadata'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.infinitegameos.io/sovereignty',
     types: {
+      ...FEED_TYPES,
       'text/markdown': 'https://www.infinitegameos.io/markdown/sovereignty',
     },
   },

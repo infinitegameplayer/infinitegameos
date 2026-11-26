@@ -12,6 +12,7 @@ import { UmamiAnalytics } from '@/components/UmamiAnalytics'
 import RailGlint from '@/components/design/RailGlint'
 import SkyField from '@/components/design/SkyField'
 import { ENDORSEMENT, personJsonLd, personRef } from '@/lib/identity'
+import { FEED_TYPES } from '@/lib/metadata'
 
 const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
@@ -34,9 +35,7 @@ export const metadata: Metadata = {
     'Infinite Game OS is a structured knowledge base for practitioners playing the long game. Concepts, skills and frameworks for sovereign creative life. Built by Lane Belone from inside the practice.',
   metadataBase: new URL('https://www.infinitegameos.io'),
   alternates: {
-    types: {
-      'application/rss+xml': 'https://www.infinitegameos.io/rss.xml',
-    },
+    types: { ...FEED_TYPES },
   },
   openGraph: {
     type: 'website',

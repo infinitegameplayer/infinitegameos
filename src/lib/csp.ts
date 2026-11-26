@@ -57,5 +57,7 @@ export function contentSecurityPolicy(nonce?: string): string {
     "frame-ancestors 'none'",
     "base-uri 'self'",
     "form-action 'self'",
+    // No plugin content anywhere; sidequesthq and lanebelone send the same (Site Update 2026-11-25).
+    "object-src 'none'",
   ].join('; ')
 }

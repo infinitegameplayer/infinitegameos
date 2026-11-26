@@ -14,9 +14,10 @@ import { NONCE_ROUTES, contentSecurityPolicy, generateNonce } from './csp'
 
 describe('contentSecurityPolicy', () => {
   // fonts.gstatic.com left font-src on 2026-11-05 (Site Update): next/font/google self-hosts.
+  // object-src 'none' joined on 2026-11-25 (Site Update), for parity with the other two sites.
   it('keeps the static policy byte-identical to the one served before the nonce routes', () => {
     expect(contentSecurityPolicy()).toBe(
-      "default-src 'self'; script-src 'self' 'unsafe-inline' https://us.i.posthog.com https://us-assets.i.posthog.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://us.i.posthog.com https://us-assets.i.posthog.com; worker-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+      "default-src 'self'; script-src 'self' 'unsafe-inline' https://us.i.posthog.com https://us-assets.i.posthog.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://us.i.posthog.com https://us-assets.i.posthog.com; worker-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'"
     )
   })
 

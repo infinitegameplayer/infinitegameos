@@ -416,6 +416,24 @@ function canonicalViolations(url, html) {
   return out
 }
 
+// Every sitemap page advertises the site's one RSS feed. Added 2026-11-25 (Site
+// Update coverage rotation): Next.js replaces a page's `alternates` wholesale, so
+// a page that sets its own canonical drops the root layout's feed link. Every
+// infinitegameos page and two lanebelone pages had, while /rss.xml served 200
+// and every net passed. Exactly one RSS link, pointing at the site's /rss.xml.
+const ALTERNATE_TAG_RE = /<link\b[^>]*\brel=["']alternate["'][^>]*>/gi
+
+function feedLinkViolations(feedUrl, html) {
+  const hrefs = [...html.matchAll(ALTERNATE_TAG_RE)]
+    .filter((m) => /\btype=["']application\/rss\+xml["']/i.test(m[0]))
+    .map((m) => (m[0].match(/\bhref=["']([^"']+)["']/i) ?? [])[1])
+  if (hrefs.length === 0) return ['no RSS feed link']
+  const out = []
+  if (hrefs.length > 1) out.push(`${hrefs.length} RSS feed links: ${hrefs.join(' | ')}`)
+  if (hrefs[0] !== feedUrl) out.push(`feed link is ${hrefs[0]}`)
+  return out
+}
+
 async function checkSitemapCanonicals(base) {
   // Positive control: the detector must flag a page canonical to another URL and
   // a page with none, and pass a self-canonical page, or its clean result is void.
@@ -439,16 +457,40 @@ async function checkSitemapCanonicals(base) {
   }
   if (locs.length === 0) return [controlResult, { name: 'sitemap canonicals', violations: ['no <loc> entries'] }]
 
+  // Feed control: a page with no feed link, one pointing elsewhere and a non-RSS
+  // alternate are each flagged; the right link passes.
+  const feed = `${base}/rss.xml`
+  const feedControlOk =
+    feedLinkViolations(feed, '<title>x</title>').length === 1 &&
+    feedLinkViolations(feed, `<link rel="alternate" type="application/rss+xml" href="${base}/other.xml">`).length === 1 &&
+    feedLinkViolations(feed, `<link rel="alternate" type="text/markdown" href="${base}/markdown">`).length === 1 &&
+    feedLinkViolations(feed, `<link rel="alternate" type="application/rss+xml" href="${feed}"/>`).length === 0
+  const feedControl = {
+    name: 'feed link detector control',
+    violations: feedControlOk ? [] : ['control did not flag a missing, foreign or non-RSS feed link; result void'],
+  }
+
   const bad = []
+  const feedBad = []
   for (const url of locs) {
     try {
       const res = await fetchResource(url, 'text/html')
-      for (const v of canonicalViolations(url, res.body)) bad.push(`${new URL(url).pathname}: ${v}`)
+      const at = new URL(url).pathname
+      for (const v of canonicalViolations(url, res.body)) bad.push(`${at}: ${v}`)
+      for (const v of feedLinkViolations(new URL('/rss.xml', url).href, res.body)) feedBad.push(`${at}: ${v}`)
     } catch (err) {
       bad.push(`${url} -> ${err.message}`)
     }
   }
-  return [controlResult, { name: `sitemap canonicals (${locs.length} pages, self-referencing)`, violations: bad }]
+  return [
+    controlResult,
+    { name: `sitemap canonicals (${locs.length} pages, self-referencing)`, violations: bad },
+    feedControl,
+    {
+      name: `sitemap feed links (${locs.length} pages, one RSS link each)`,
+      violations: feedControlOk ? feedBad : ['skipped: detector control failed'],
+    },
+  ]
 }
 
 // The redirect control accepts any 3xx because it only proves the detector can

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { FEED_TYPES } from '@/lib/metadata'
 import Link from 'next/link'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: URL,
-    types: { 'text/markdown': 'https://www.infinitegameos.io/markdown/charter' },
+    types: { ...FEED_TYPES, 'text/markdown': 'https://www.infinitegameos.io/markdown/charter' },
   },
 }
 

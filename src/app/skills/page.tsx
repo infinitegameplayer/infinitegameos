@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { FEED_TYPES } from '@/lib/metadata'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import { UpdatesLetter } from '@/components/LabThread'
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${SITE}/skills`,
     types: {
+      ...FEED_TYPES,
       'text/markdown': `${SITE}/markdown/skills`,
     },
   },

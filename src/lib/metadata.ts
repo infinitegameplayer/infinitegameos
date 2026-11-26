@@ -21,3 +21,14 @@ export function twitterCard(input: {
     images: [input.imageUrl],
   }
 }
+
+// The site's RSS feed, as an `alternates.types` entry.
+//
+// Next.js replaces a route's `alternates` object wholesale rather than merging
+// it with the root layout's, so a page that declares its own canonical drops
+// the layout's feed link. Every page that sets `alternates` spreads this into
+// its `types`, or the page stops advertising the feed. Found 2026-11-25: all
+// 140 sitemap pages served no feed link while /rss.xml was live.
+export const FEED_TYPES = {
+  'application/rss+xml': 'https://www.infinitegameos.io/rss.xml',
+} as const
