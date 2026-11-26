@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { FEED_TYPES } from '@/lib/metadata'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import InteriorArt from '@/components/design/InteriorArt'
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.infinitegameos.io/creator-business-without-performing',
     types: {
+      ...FEED_TYPES,
       'text/markdown': 'https://www.infinitegameos.io/markdown/creator-business-without-performing',
     },
   },

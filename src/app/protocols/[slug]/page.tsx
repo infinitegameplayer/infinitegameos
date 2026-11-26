@@ -9,7 +9,7 @@ import {
   getAssetBySlug,
   getAssetsByType,
 } from '@/data/library'
-import { twitterCard } from '@/lib/metadata'
+import { FEED_TYPES, twitterCard } from '@/lib/metadata'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -41,6 +41,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     alternates: {
       canonical: `${SITE}/protocols/${asset.slug}`,
       types: {
+        ...FEED_TYPES,
         'text/markdown': `${SITE}/markdown/protocols/${asset.slug}`,
       },
     },

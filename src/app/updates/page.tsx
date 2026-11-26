@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { FEED_TYPES } from '@/lib/metadata'
 import Link from 'next/link'
 import SectionReveal from '@/components/SectionReveal'
 import SubscribeForm from '@/components/SubscribeForm'
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.infinitegameos.io/updates',
     types: {
+      ...FEED_TYPES,
       'text/markdown': 'https://www.infinitegameos.io/markdown/updates',
     },
   },

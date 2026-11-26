@@ -10,7 +10,7 @@ import {
   getAssetBySlug,
   getAssetsByType,
 } from '@/data/library'
-import { twitterCard } from '@/lib/metadata'
+import { FEED_TYPES, twitterCard } from '@/lib/metadata'
 import { getThread } from '@/data/threads'
 import { TrailLine, TopCard, LabClose } from '@/components/LabThread'
 import { resolvePage, type ResolvedPage } from '@/lib/thread-resolve'
@@ -46,6 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     alternates: {
       canonical: `${SITE}/skills/${asset.slug}`,
       types: {
+        ...FEED_TYPES,
         'text/markdown': `${SITE}/markdown/skills/${asset.slug}`,
       },
     },

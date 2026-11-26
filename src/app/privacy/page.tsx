@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { FEED_TYPES } from '@/lib/metadata'
 
 // Privacy for infinitegameos.io. King-directed 2026-09-29 with the Charter
 // build: the site collected emails for its Updates list with no privacy page,
@@ -12,7 +13,7 @@ const URL = 'https://www.infinitegameos.io/privacy'
 export const metadata: Metadata = {
   title: 'Privacy',
   description: 'What infinitegameos.io collects, why and where it goes: the Updates list, the Your AI’s Charter signup and site analytics.',
-  alternates: { canonical: URL },
+  alternates: { canonical: URL, types: { ...FEED_TYPES } },
 }
 
 const sections = [
