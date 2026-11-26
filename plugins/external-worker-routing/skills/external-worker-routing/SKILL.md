@@ -2,7 +2,7 @@
 name: external-worker-routing
 description: Use when deciding whether a piece of deterministic, no-judgment work should route to a secondary AI provider instead of your primary interface. Covers the provider catalog, the five-condition eligibility test and the dispatch script.
 status: active
-version: 1.0
+version: 1.1
 ---
 
 # External Worker Routing
@@ -103,6 +103,8 @@ plugins/external-worker-routing/scripts/external-worker.mjs
 - Logs dispatch metadata (provider, model, prompt hash, latency, token count) to `.runtime/external-worker-log.txt`.
 - Fails loud on missing keys, network errors and rate-limit errors. No silent fallback to another provider.
 - Treats a `stop_reason` or `finish_reason` of `"refusal"` as a failed dispatch even though the HTTP status is 200. A response handler that only checks the status code will misread a refusal as a success. This script does not make that mistake, and neither should any code that wraps it.
+
+**Two gates run before the key check, so a refusal never depends on a key being present.** The first is a partner-material guard (`client-material-guard.mjs`, beside the script). It refuses a `--context-pack` under a `Collaborations/` folder in the project you run from, and refuses any prompt or pack that carries the full name of a partner (each folder with a space in its name under `Collaborations/`). Copy `client-material.config.example.json` to `client-material.config.json` beside the script to add folders and names. With no such folder and no config, this check has nothing to match and passes. A config that does not parse refuses. There is no override. The second is a redaction gate that scans the assembled prompt for email addresses, card-like digit runs, payment ids, key-shaped strings and long encoded blobs. A refusal names the class, never the value. `--allow-sensitive` passes the redaction gate with a warning and a logged line in `.runtime/external-worker-log.txt`; it never passes the partner guard. `node scripts/client-material-guard-selftest.mjs` proves both gates refuse.
 
 ## Constraints
 

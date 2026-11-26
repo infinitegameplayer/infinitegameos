@@ -46,6 +46,13 @@ Output format:
 }
 ```
 
+**The address guard is always on.** Only http and https, and never a local name (`localhost`, `*.local`, `*.internal`), loopback, private, link-local, CGNAT or cloud metadata address, in IPv4, IPv6 or IPv4-mapped form. It is checked on the URL, after DNS, and on every request the page makes, redirect hops and iframes included. A refusal prints `{"error": "refused: ...", "guard": true}` and exits 1; a request stopped mid-page is listed in `guard_blocked`. The reason: the URLs this skill fetches often come out of web pages and other intake, so a planted `http://169.254.169.254/` or `http://127.0.0.1/admin` must never read your machine or your network into the agent's context.
+
+- To test a site running on your own machine, pass `--allow-private`, and only for that.
+- `--guard-only` runs the address check and exits (0 pass, 1 refused) without fetching anything.
+- `<path-to-plugin>/scripts/guard-plants.mjs` fires every case and prints expected beside actual; `--offline` runs the address cases with no browser installed.
+- What it cannot see: a name that resolves to a public address at the check and a private one at the connect (DNS rebinding), and anything the page sends to a public address.
+
 ## Requirements
 
 Playwright must be installed before first use. Run these once from the plugin's `scripts/` directory:

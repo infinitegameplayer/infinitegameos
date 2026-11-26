@@ -373,6 +373,8 @@ Output: edit application log, with file:line of every change applied.
 
 Re-run a lightweight version of Steps 3, 5, 7 and 10 against the edited manuscript. Confirm fixes landed and did not introduce new tells. Replacement sentences should not themselves contain em dashes, Oxford commas or new AI-pattern entries.
 
+**Fact preservation.** Diff the pre-edit and post-edit text for every quotation, number and proper name. Each one survives unchanged, or its change is listed in the edit packet for the operator with the reason. An anti-AI pass is the same kind of tool as a text humanizer and carries the same risk of altering or dropping such a unit. A unit that changed without a listed reason fails the pass.
+
 If verification surfaces new findings, loop back to Step 12 with a second-pass edit packet (typically much smaller than the first).
 
 Output: verification report. Pass/fail per category.
