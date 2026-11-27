@@ -13,10 +13,13 @@
 #   - $CONFIG_DIR/skills/tech-digest/  (copied from camilleroux/tech-digest)
 #       - RSS aggregation, scoring, dedup. /digest 7 for weekly recap or
 #         /digest 3 for tighter window. YAML feed list is fully swappable.
-#   - $CONFIG_DIR/skills/newsletter-creation-curation/  (copied from
-#         BrianRWagner/ai-marketing-claude-code-skills/newsletter-creation-curation)
-#       - Editorial production layer. Industry-adaptive newsletter framing,
-#         subject lines and synthesis paragraphs.
+#
+# Note on Newsletter Creation and Curation (Shashwat Ghosh, Helix GTM
+# Consulting, https://github.com/shashwatgtm/newsletter-creation-curation):
+# the editorial production layer of the bundle. Its repository does not
+# specify a license, so this script does not install it. Add it by hand if
+# you want it: copy its SKILL.md into
+# $CONFIG_DIR/skills/newsletter-creation-curation/.
 #
 # Note on Content Research Writer (ComposioHQ): omitted from v1 pending
 # license confirmation on the upstream repo. Queued for a Kingdom-native
@@ -24,11 +27,11 @@
 # deeper analytical context in the meantime.
 #
 # Source: https://www.infinitegameos.io/bundles/the-curator
-# Licenses: MIT (tech-digest, ai-marketing-claude-code-skills); CC BY 4.0 (this script)
+# Licenses: MIT (tech-digest); CC BY 4.0 (this script)
 
 set -euo pipefail
 
-BUNDLE_VERSION="1.0"
+BUNDLE_VERSION="1.1"
 BUNDLE_NAME="The Curator Bundle"
 BUNDLE_URL="https://www.infinitegameos.io/bundles/the-curator"
 
@@ -54,10 +57,11 @@ cat <<EOF
 ${C_BOLD}${BUNDLE_NAME}${C_RESET} (v${BUNDLE_VERSION})
 ${C_DIM}${BUNDLE_URL}${C_RESET}
 
-Two avatar-specific Claude Code skills for selection-first creators:
-Tech Digest (RSS aggregation, scoring, dedup, structured shortlist) and
-Newsletter Creation and Curation (editorial production, framing and
-synthesis).
+The avatar-specific Claude Code layer for selection-first creators.
+This script installs Tech Digest (RSS aggregation, scoring, dedup,
+structured shortlist). Newsletter Creation and Curation (editorial
+production, framing and synthesis) is an optional add-on you copy in by
+hand; the closing notes say how.
 
 Assumes the Foundational Creator Bundle is already installed. If not, run
 ${C_DIM}https://www.infinitegameos.io/bundles/foundational-creator${C_RESET} first.
@@ -80,7 +84,7 @@ if [ ! -d "$SKILLS_DIR" ]; then
   ok "Created $SKILLS_DIR"
 fi
 
-# 2. Verify git (required for both clones).
+# 2. Verify git (required for the clone).
 if ! command -v git >/dev/null 2>&1; then
   err "git is required but not installed."
   echo
@@ -125,49 +129,25 @@ else
   exit 1
 fi
 
-# 5. Install Newsletter Creation and Curation via clone-to-temp + copy.
 NEWSLETTER_DIR="$SKILLS_DIR/newsletter-creation-curation"
-step "Installing Newsletter Creation and Curation to $NEWSLETTER_DIR"
-
-if [ -e "$NEWSLETTER_DIR" ]; then
-  BACKUP_NEWS="${NEWSLETTER_DIR}.the-curator-bundle.bak.$(date +%Y%m%d-%H%M%S)"
-  mv "$NEWSLETTER_DIR" "$BACKUP_NEWS"
-  ok "Existing $NEWSLETTER_DIR moved to $BACKUP_NEWS"
-fi
-
-mkdir -p "$NEWSLETTER_DIR"
-
-if git clone --single-branch --depth 1 --quiet \
-    https://github.com/BrianRWagner/ai-marketing-claude-code-skills.git \
-    "$TMP_DIR/ai-marketing"; then
-  ok "ai-marketing-claude-code-skills repository fetched"
-else
-  err "ai-marketing-claude-code-skills clone failed. Check network and re-run."
-  exit 1
-fi
-
-if [ -d "$TMP_DIR/ai-marketing/newsletter-creation-curation" ]; then
-  cp -R "$TMP_DIR/ai-marketing/newsletter-creation-curation/." "$NEWSLETTER_DIR/"
-  ok "Newsletter Creation and Curation installed"
-else
-  err "Expected newsletter-creation-curation directory not found in upstream repo."
-  echo "Repository layout may have changed. Inspect:"
-  echo "  $TMP_DIR/ai-marketing"
-  exit 1
-fi
 
 cat <<EOF
 
 ${C_BOLD}Done.${C_RESET}
 
-${C_BOLD}Next step:${C_RESET} restart Claude Code to load the new skills.
+${C_BOLD}Next step:${C_RESET} restart Claude Code to load the new skill.
   - CLI: exit and re-launch \`claude\`.
   - VS Code / JetBrains: reload the editor window.
 
 ${C_BOLD}Verify:${C_RESET}
   Try \`/digest 7\` to confirm Tech Digest is loaded.
-  Ask Claude to draft an editorial frame for a curated link to confirm
-  Newsletter Creation and Curation is wired up.
+
+${C_BOLD}Optional add-on, Newsletter Creation and Curation:${C_RESET}
+  The editorial production layer, by Shashwat Ghosh of Helix GTM
+  Consulting: https://github.com/shashwatgtm/newsletter-creation-curation
+  Its repository does not specify a license, so this script leaves it
+  out. To add it, copy its SKILL.md into ${NEWSLETTER_DIR}/
+  and restart Claude Code.
 
 ${C_BOLD}First-run configuration:${C_RESET}
   Tech Digest ships with developer-niche feed defaults (Hacker News,
@@ -183,7 +163,7 @@ ${C_BOLD}On the deferred third skill:${C_RESET}
 
 ${C_BOLD}Rollback:${C_RESET}
   - Tech Digest: rm -rf "$TECH_DIGEST_DIR"
-  - Newsletter Creation and Curation: rm -rf "$NEWSLETTER_DIR"
+  - Newsletter Creation and Curation, if you added it: rm -rf "$NEWSLETTER_DIR"
 
 ${C_BOLD}Read more:${C_RESET} ${BUNDLE_URL}
 

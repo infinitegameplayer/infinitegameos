@@ -879,9 +879,9 @@
         },
         {
           "title": "Newsletter Creation and Curation (editorial framing, synthesis, subject lines)",
-          "source": "BrianRWagner/ai-marketing-claude-code-skills",
-          "license": "MIT",
-          "url": "https://github.com/BrianRWagner/ai-marketing-claude-code-skills/tree/main/newsletter-creation-curation"
+          "source": "shashwatgtm/newsletter-creation-curation",
+          "license": "No license specified (optional manual add-on, not installed by the script)",
+          "url": "https://github.com/shashwatgtm/newsletter-creation-curation"
         }
       ],
       "related": [
@@ -893,7 +893,7 @@
       "article_url": "https://www.infinitegameos.io/bundles/the-curator",
       "repo": null,
       "license": "https://creativecommons.org/licenses/by/4.0/",
-      "updated_at": "2026-05-02",
+      "updated_at": "2026-11-27",
       "changelog_url": null
     },
     {
