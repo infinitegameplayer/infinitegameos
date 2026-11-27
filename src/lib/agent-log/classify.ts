@@ -7,7 +7,9 @@ import ranges from './ranges.json'
 import { compileCidr, inRanges, parseIp, type CompiledRange, type ParsedIp } from './ip'
 
 export type Kind = 'declared' | 'declared_other' | 'provider_range' | 'likely_human' | 'unknown'
-export type RangeVerdict = 'in_range' | 'out_of_range' | 'no_complete_list'
+// no_address: the request carried no readable address, so nothing was checked
+// (never read as an impostor).
+export type RangeVerdict = 'in_range' | 'out_of_range' | 'no_complete_list' | 'no_address'
 
 export type ClassifyInput = {
   userAgent: string | null
@@ -73,16 +75,24 @@ export function classify(input: ClassifyInput): Classification {
     const own = LISTS.filter((l) => l.agents.includes(name) && l.status !== 'none')
     const hit = firstListContaining(ip, own)
     let range_verdict: RangeVerdict
-    if (hit) range_verdict = 'in_range'
+    if (!ip) range_verdict = 'no_address'
+    else if (hit) range_verdict = 'in_range'
     else if (own.some((l) => l.status === 'complete')) range_verdict = 'out_of_range'
     else range_verdict = 'no_complete_list'
     return { kind: 'declared', agent_name: name, signature_present, range_provider: hit?.id ?? null, range_verdict }
   }
 
   const anyHit = firstListContaining(ip, LISTS)
-  const range = { range_provider: anyHit?.id ?? null, range_verdict: (anyHit ? 'in_range' : 'out_of_range') as RangeVerdict }
+  const range = {
+    range_provider: anyHit?.id ?? null,
+    range_verdict: (!ip ? 'no_address' : anyHit ? 'in_range' : 'out_of_range') as RangeVerdict,
+  }
 
-  if (ua && GENERIC.test(ua)) return { kind: 'declared_other', agent_name: null, signature_present, ...range }
+  // A browser-shaped user agent names its device in its first parentheses, and
+  // some phone models end in "bot" (CUBOT). The generic test skips that part
+  // for a browser shape; a bot that names itself later in the string is caught.
+  const genericText = BROWSER.test(ua) ? ua.replace(/\([^)]*\)/, '') : ua
+  if (ua && GENERIC.test(genericText)) return { kind: 'declared_other', agent_name: null, signature_present, ...range }
   if (anyHit) return { kind: 'provider_range', agent_name: null, signature_present, ...range }
   if (BROWSER.test(ua) && (input.secFetchDest || input.secFetchMode)) {
     return { kind: 'likely_human', agent_name: null, signature_present, ...range }

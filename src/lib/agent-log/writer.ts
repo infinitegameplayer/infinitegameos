@@ -8,7 +8,11 @@
 // - AGENT_LOG=off is the kill switch, read at request time.
 // - A per-instance cap on writes per minute; writes past it are dropped,
 //   counted and reported in one runtime-log line when the minute turns.
-// - A failed write logs one line to the runtime log and nothing else.
+// - A failed write logs one line to the runtime log and nothing else: the
+//   first failure of each minute at once, the rest as a count when it turns.
+// - The 100 MB size ceiling is enforced by the database: a statement trigger on
+//   page_requests refuses inserts past it, so a flood fails here as a counted
+//   write failure and never fills the database commerce shares.
 // Plain fetch to the Supabase REST endpoint, no client library in the proxy.
 
 import type { NextFetchEvent, NextRequest } from 'next/server'
@@ -17,7 +21,9 @@ import { createSaltSource, visitorDay, type SaltRecord } from './salt'
 
 const SITE: Site = 'infinitegameos'
 const TIMEOUT_MS = 2_500
-const DEFAULT_CAP_PER_MINUTE = 300
+// 120 a minute is at most 172,800 rows a day per instance; the database
+// ceiling stops the rest (Fable seat S1, 2026-11-27).
+const DEFAULT_CAP_PER_MINUTE = 120
 
 type EnvVars = Record<string, string | undefined>
 type FetchImpl = (url: string, init?: RequestInit) => Promise<Response>
@@ -33,6 +39,12 @@ export function createLogger(deps: {
   let minute = -1
   let written = 0
   let dropped = 0
+  let failed = 0
+
+  function fail(what: string) {
+    failed++
+    if (failed === 1) console.error(`agent-log: write failed (${what})`)
+  }
 
   function headers(key: string): Record<string, string> {
     return { apikey: key, Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' }
@@ -57,9 +69,11 @@ export function createLogger(deps: {
     const m = Math.floor(now.getTime() / 60_000)
     if (m !== minute) {
       if (dropped > 0) console.error(`agent-log: dropped ${dropped} rows in the last minute (cap ${cap})`)
+      if (failed > 1) console.error(`agent-log: ${failed} writes failed in the last minute`)
       minute = m
       written = 0
       dropped = 0
+      failed = 0
     }
     if (written >= cap) {
       dropped++
@@ -91,10 +105,10 @@ export function createLogger(deps: {
           body: JSON.stringify(row),
           signal: AbortSignal.timeout(TIMEOUT_MS),
         })
-        if (!res.ok) console.error(`agent-log: write failed with status ${res.status}`)
+        if (!res.ok) fail(`status ${res.status}`)
       } catch (err) {
-        // One line, never the row and never the address.
-        console.error(`agent-log: write failed (${err instanceof Error ? err.name : 'error'})`)
+        // Never the row and never the address: the error's name only.
+        fail(err instanceof Error ? err.name : 'error')
       }
     },
   }

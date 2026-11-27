@@ -115,9 +115,18 @@ describe('classify', () => {
     expect(classify(facts({ ip: GPTBOT_V4 })).kind).toBe('provider_range')
   })
 
-  it('treats an unreadable address as outside every list', () => {
+  it('marks an unreadable address no_address, never out of range', () => {
     expect(parseIp('not-an-ip')).toBeNull()
-    expect(classify(facts({ ip: null })).range_verdict).toBe('out_of_range')
+    expect(classify(facts({ ip: null })).range_verdict).toBe('no_address')
+    expect(classify(facts({ userAgent: 'GPTBot/1.2', ip: null })).range_verdict).toBe('no_address')
+    expect(classify(facts({ userAgent: 'GPTBot/1.2', ip: 'garbage' })).range_verdict).toBe('no_address')
+  })
+
+  it('never reads a phone model ending in bot as a bot', () => {
+    const cubot = 'Mozilla/5.0 (Linux; Android 13; CUBOT KINGKONG 9) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36'
+    expect(classify(facts({ userAgent: cubot })).kind).toBe('likely_human')
+    // A bot naming itself after the platform part is still caught.
+    expect(classify(facts({ userAgent: CHROME + ' (compatible; AcmeBot/1.0)' })).kind).toBe('declared_other')
   })
 })
 
@@ -181,6 +190,7 @@ describe('buildRow', () => {
   it('blanks the daily marker on a no-track path', () => {
     expect(buildRow(facts({ pathname: '/preferences' }), base).visitor_day).toBeNull()
     expect(buildRow(facts({ pathname: '/updates/join' }), base).visitor_day).toBeNull()
+    expect(buildRow(facts({ pathname: '/unsubscribe' }), base).visitor_day).toBeNull()
     expect(buildRow(facts(), base).visitor_day).toBe('a1b2c3d4e5f60718')
   })
 })
@@ -210,14 +220,18 @@ describe('salt and the daily marker', () => {
     expect(fetchSalt).toHaveBeenCalledTimes(1)
   })
 
-  it('returns null and retries later when the salt cannot be read', async () => {
+  it('returns null, says so once per window and retries later when the salt cannot be read', async () => {
+    const errors = vi.spyOn(console, 'error').mockImplementation(() => {})
     const fetchSalt = vi.fn(async () => { throw new Error('down') })
     const source = createSaltSource(fetchSalt)
     expect(await source.get(new Date('2026-11-27T12:00:00Z'))).toBeNull()
     expect(await source.get(new Date('2026-11-27T12:00:30Z'))).toBeNull()
     expect(fetchSalt).toHaveBeenCalledTimes(1)
+    expect(errors).toHaveBeenCalledTimes(1)
     await source.get(new Date('2026-11-27T12:01:31Z'))
     expect(fetchSalt).toHaveBeenCalledTimes(2)
+    expect(errors).toHaveBeenCalledTimes(2)
+    errors.mockRestore()
   })
 
   it('makes a 16-hex marker that leaves out the site and changes with the salt', async () => {
@@ -310,6 +324,19 @@ describe('the proxy matcher', () => {
     }
   })
 
+  it('reaches every non-asset file anywhere under public/, and no asset file', () => {
+    const ASSET = /\.(png|jpe?g|gif|webp|avif|svg|ico|woff2?|ttf|otf|eot|css|js|mjs|map)$/i
+    const files = (readdirSync('public', { recursive: true, withFileTypes: true }) as import('node:fs').Dirent[])
+      .filter((d) => d.isFile())
+      .map((d) => `${d.parentPath ?? (d as unknown as { path: string }).path}/${d.name}`.replace(/\\/g, '/').replace(/^public/, ''))
+    expect(files.length).toBeGreaterThan(10)
+    for (const f of files) expect(reaches(f), f).toBe(!ASSET.test(f))
+  })
+
+  it('reaches every app route that serves a non-HTML file', () => {
+    for (const p of ['/sitemap.xml', '/rss.xml', '/install/cursor/igos.mdc']) expect(reaches(p), p).toBe(true)
+  })
+
   it('reaches pages, and HEAD and markdown requests to them', () => {
     for (const p of ['/', '/the-os', '/concepts/creator-flywheel', '/preferences', '/opengraph-image']) expect(reaches(p), p).toBe(true)
     expect(reaches('/the-os', { accept: 'text/markdown' })).toBe(true)
@@ -321,5 +348,9 @@ describe('the proxy matcher', () => {
     }
     expect(reaches('/the-os', { 'next-router-prefetch': '1' })).toBe(false)
     expect(reaches('/the-os', { purpose: 'prefetch' })).toBe(false)
+    expect(reaches('/the-os', { 'sec-purpose': 'prefetch' })).toBe(false)
+    expect(reaches('/the-os', { 'sec-purpose': 'prefetch;prerender' })).toBe(false)
+    expect(reaches('/markdown')).toBe(false)
+    expect(reaches('/markdowns-are-fine')).toBe(true)
   })
 })

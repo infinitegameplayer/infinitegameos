@@ -25,8 +25,10 @@ export function createSaltSource(fetchSalt: () => Promise<SaltRecord>) {
       const expires = Date.parse(`${rec.day}T00:00:00Z`) + 86_400_000
       cached = { salt: rec.salt, expires }
       return rec.salt
-    } catch {
+    } catch (err) {
       // A missing salt costs only the marker on this minute's rows; retry later.
+      // One line per failure window, the error's name only, never the salt.
+      console.error(`agent-log: salt unavailable (${err instanceof Error ? err.message.slice(0, 40) : 'error'}), markers blank for a minute`)
       failedUntil = nowMs + RETRY_AFTER_MS
       return null
     }

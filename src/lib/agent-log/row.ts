@@ -7,6 +7,7 @@
 
 import { classify, RANGES_DATE, type Kind, type RangeVerdict } from './classify'
 import { isNoTrackPath } from '@/lib/no-track'
+import { isNonceRoute } from '@/lib/csp'
 
 export type RequestFacts = {
   method: string
@@ -159,7 +160,10 @@ export function buildRow(
     accept: acceptBucket(f.accept),
     referrer_host: referrerHost(f.referer),
     country,
-    visitor_day: isNoTrackPath(path) ? null : opts.visitorDay,
+    // No marker where the page is opened from an email link that names the
+    // reader: the no-track pages, and the nonce routes (/unsubscribe is not in
+    // the shared no-track list, which stays byte-identical across the sites).
+    visitor_day: isNoTrackPath(path) || isNonceRoute(path) ? null : opts.visitorDay,
     ranges_date: RANGES_DATE,
   }
 }

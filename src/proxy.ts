@@ -47,10 +47,11 @@ export function proxy(request: NextRequest, event?: NextFetchEvent) {
 export const config = {
   matcher: [
     {
-      source: '/((?!api/|_next/|markdown/|.*\\.(?:png|jpe?g|gif|webp|avif|svg|ico|woff2?|ttf|otf|eot|css|js|mjs|map)$).*)',
+      source: '/((?!api/|_next/|markdown(?:/|$)|.*\\.(?:png|jpe?g|gif|webp|avif|svg|ico|woff2?|ttf|otf|eot|css|js|mjs|map)$).*)',
       missing: [
         { type: 'header', key: 'next-router-prefetch' },
         { type: 'header', key: 'purpose', value: 'prefetch' },
+        { type: 'header', key: 'sec-purpose', value: '.*prefetch.*' },
       ],
     },
   ],
