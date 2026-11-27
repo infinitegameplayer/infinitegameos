@@ -172,6 +172,20 @@ describe('buildRow', () => {
     expect(row.user_agent!.length).toBeLessThanOrEqual(300)
   })
 
+  it('keeps only the browser family for any browser-shaped row that is not a named agent', () => {
+    // The privacy page promises the browser family. A browser sending no
+    // Sec-Fetch headers reads unknown, and its full string can name a phone model.
+    const phone = 'Mozilla/5.0 (Linux; Android 14; SM-S921B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36'
+    const unknownRow = buildRow(facts({ userAgent: phone, secFetchDest: null, secFetchMode: null }), base)
+    expect(unknownRow.kind).toBe('unknown')
+    expect(unknownRow.user_agent).toBe('Chrome 131 / Android')
+    const rangeRow = buildRow(facts({ ip: GPTBOT_V4 }), base)
+    expect(rangeRow.kind).toBe('provider_range')
+    expect(rangeRow.user_agent).toBe('Chrome 131 / Windows')
+    // Software keeps its own string: that is how its kind is recorded.
+    expect(buildRow(facts({ userAgent: 'curl/8.18.0' }), base).user_agent).toBe('curl/8.18.0')
+  })
+
   it('reduces a browser string to family, major version and OS', () => {
     expect(reduceUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.1 Safari/605.1.15')).toBe('Safari 18 / macOS')
     expect(reduceUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0')).toBe('Firefox 133 / Windows')

@@ -1,5 +1,6 @@
 // Every file an agent reads to discover this site. The proxy matcher reaches
-// each one (it excludes only asset extensions), and agent-log.test.ts holds
+// each one (none sits under /api/, /_next/ or /markdown, and none carries an
+// asset extension, the matcher's only exclusions), and agent-log.test.ts holds
 // this list against public/ and the app directory, so a new discovery file
 // cannot ship unlisted. `source` is the file that serves the path.
 

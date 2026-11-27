@@ -53,6 +53,11 @@ const BROWSER = /^Mozilla\/5\.0 .*(Chrome|Firefox|Safari|Edg)\//
 
 export const RANGES_DATE: string = ranges.generated.slice(0, 10)
 
+// A user agent shaped like an ordinary browser's.
+export function isBrowserShaped(ua: string | null | undefined): boolean {
+  return BROWSER.test(ua ?? '')
+}
+
 function declaredName(ua: string): string | null {
   const lower = ua.toLowerCase()
   for (const n of NAMES) if (lower.includes(n.lower)) return n.name

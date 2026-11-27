@@ -5,7 +5,7 @@
 // truncated and stripped of control characters, because the log is data that
 // a reader later prints, never instruction.
 
-import { classify, RANGES_DATE, type Kind, type RangeVerdict } from './classify'
+import { classify, isBrowserShaped, RANGES_DATE, type Kind, type RangeVerdict } from './classify'
 import { isNoTrackPath } from '@/lib/no-track'
 import { isNonceRoute } from '@/lib/csp'
 
@@ -137,6 +137,12 @@ export function buildRow(
 ): PageRequestRow {
   const c = classify(f)
   const human = c.kind === 'likely_human'
+  // The privacy page promises the browser family. Any browser-shaped request
+  // that does not name itself as software keeps only that, whatever its kind:
+  // a browser with no Sec-Fetch headers reads unknown, and its full string can
+  // name a phone model. Software keeps its own string; that is its kind.
+  const named = c.kind === 'declared' || c.kind === 'declared_other'
+  const reduceUa = human || (!named && isBrowserShaped(f.userAgent))
   const ts = new Date(opts.now)
   ts.setUTCMilliseconds(0)
   if (human) ts.setUTCSeconds(0)
@@ -149,7 +155,7 @@ export function buildRow(
     site: opts.site,
     path,
     method: f.method === 'HEAD' ? 'HEAD' : 'GET',
-    user_agent: human ? reduceUserAgent(f.userAgent ?? '') : cleanText(f.userAgent, 300),
+    user_agent: reduceUa ? reduceUserAgent(f.userAgent ?? '') : cleanText(f.userAgent, 300),
     kind: c.kind,
     agent_name: c.agent_name,
     signature_present: c.signature_present,
