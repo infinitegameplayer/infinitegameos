@@ -33,7 +33,9 @@ form-action 'self'
 
 `src/proxy.ts` replaces the policy on four exact paths, all `force-dynamic` already: `/preferences`, `/preferences/cancel-email-change`, `/preferences/confirm-email-change` and `/unsubscribe`. On those, `script-src` swaps `'unsafe-inline'` for `'nonce-<value>'`, a fresh 16-byte value per request. Every other directive stays the same. No `'strict-dynamic'`, so the host list still governs external scripts. Next.js reads the nonce from the request header and stamps it on every executable inline script and every chunk during the render.
 
-The matcher lists exact paths, not `/preferences/:path*`. An unknown `/preferences/<slug>` is answered with the prerendered 404 page, which carries no nonce, so it keeps the static policy. The proxy also checks the pathname against `NONCE_ROUTES` before acting, and `contentSecurityPolicy()` throws on a malformed nonce. A route joins `NONCE_ROUTES` only once its page renders per request. `src/lib/csp.test.ts` holds both the static policy and the matcher in step.
+The nonce rule is `isNonceRoute()` in `src/lib/csp.ts`: exact paths only, never a `/preferences/:path*` prefix. An unknown `/preferences/<slug>` is answered with the prerendered 404 page, which carries no nonce, so it keeps the static policy. `contentSecurityPolicy()` throws on a malformed nonce. A route joins `NONCE_ROUTES` only once its page renders per request.
+
+Since 2026-11-27 the proxy matcher reaches every page and agent discovery file, not only the nonce routes, because the proxy also runs the agent log (`src/lib/agent-log/`, which stores no IP address). So the matcher is no longer the nonce list: the proxy acts on the policy only where `isNonceRoute()` is true, and the logging runs in its own try block, so it can never change a response. `src/lib/csp.test.ts` holds the static policy, `isNonceRoute()`, the matcher's reach of every nonce route and the proxy's nonce-only-where-listed behavior, including when the logger throws.
 
 ### Inline script inventory (2026-10-25, Next.js 16.4.2, Turbopack build)
 
