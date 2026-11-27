@@ -1,6 +1,6 @@
 # Infinite Game OS: llms.txt
 # Structured manifest for AI systems and language model crawlers
-# Last updated: 2026-10-20
+# Last updated: 2026-11-26
 # https://www.infinitegameos.io
 
 ## Site Identity
@@ -221,6 +221,7 @@ Twenty concept-connector reference-register articles shipped 2026-05-19 as one w
 - /updates/structural-safeguards-against-ai-eroding-self: Keeping your sense of self through daily AI use. Two structural safeguards: the Wardrobe (wear the mode, take it off cleanly) and the Anti-Vision (draw the lines before the pressure).
 - /updates/from-automations-to-a-working-flywheel: Turning scattered automations into a compounding loop. The three laws (Smooth Transition, Easier Rotation, Increased Output) and building for column-two output that keeps working after you stop touching it.
 - /updates/repairing-a-fragmented-ai-practice: Repairing a practice too many AI tools pulled apart. The real cost is the decision tax; the repair is consolidate onto an owned foundation, route capture through one second brain, let structure hold it.
+- /updates/what-sources-should-an-ai-second-brain-draw-from: Your own words first: notes, voice memos and drafts. Then what you chose to keep from others: highlights, saved articles and transcripts of conversations you took part in. Keep the raw sources in one folder, let the AI help keep one set of notes current from them and give every note a link back to where it came from.
 
 Thirteen earlier articles, live in the sitemap since their original publish dates and added to this index in the 2026-07-24 catalog sync:
 
