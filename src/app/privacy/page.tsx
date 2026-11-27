@@ -6,6 +6,9 @@ import { FEED_TYPES } from '@/lib/metadata'
 // and the Charter signup now passes an email to Side Quest HQ. Every line here
 // is checked against the code that does the thing: igos-subscribe,
 // charter-signup, instrumentation-client.ts, UmamiAnalytics and no-track.ts.
+// The server-record paragraph (King-approved 2026-11-27) is checked against
+// src/lib/agent-log/row.ts: path without query, ts, kind, the reduced browser
+// string, referrer_host, country and visitor_day; no column holds the address.
 // Outward, the Side Quest HQ list is the Side Quest Letter (King-ruled).
 
 const URL = 'https://www.infinitegameos.io/privacy'
@@ -34,6 +37,7 @@ const sections = [
     p: [
       'This site uses Umami and PostHog to understand how people find and use it: pages viewed, clicks and, in PostHog, recordings of how a page is used, with everything typed into a form masked. PostHog keeps an identifier in your browser. Umami sets no cookies. The site also keeps a short note in your browser of how you first arrived (a link’s campaign tags and the site that sent you) for up to a year, and passes it along when you follow a link to lanebelone.com or sidequesthq.co.',
       'When you sign up for updates or for the Charter, your email is linked to your analytics activity, so we can see which pages lead to a signup. Neither tool runs on the email preferences page.',
+      'Our server also keeps a short record of each page request: the page, the time, the kind of software that asked for it (a browser, a search engine or an AI agent), the browser family, the site that linked to it, the country and a marker that changes every day, so a visit can be counted without knowing who made it. Your IP address is never stored.',
     ],
   },
   {
