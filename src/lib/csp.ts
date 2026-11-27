@@ -26,6 +26,13 @@ export const NONCE_ROUTES: ReadonlySet<string> = new Set([
   '/unsubscribe',
 ])
 
+// The one nonce rule, shared by the proxy and its tests. Since the Agent Visit
+// Log (2026-11-27) the proxy matcher reaches every page, so this, not the
+// matcher, decides where the nonce policy goes.
+export function isNonceRoute(pathname: string): boolean {
+  return NONCE_ROUTES.has(pathname)
+}
+
 // Base64 of 16 random bytes. Anything else is refused, so a caller can never
 // build a nonce policy around an empty or malformed value.
 const NONCE_PATTERN = /^[A-Za-z0-9+/]{22}==$/

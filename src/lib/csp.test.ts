@@ -10,7 +10,13 @@ vi.hoisted(() => {
   delete process.env.NEXT_PUBLIC_POSTHOG_HOST
 })
 
-import { NONCE_ROUTES, contentSecurityPolicy, generateNonce } from './csp'
+const { logSpy } = vi.hoisted(() => ({ logSpy: vi.fn() }))
+vi.mock('@/lib/agent-log/writer', () => ({ logPageRequest: logSpy }))
+
+import { NextRequest, type NextFetchEvent } from 'next/server'
+import { unstable_doesMiddlewareMatch } from 'next/experimental/testing/server'
+import { NONCE_ROUTES, contentSecurityPolicy, generateNonce, isNonceRoute } from './csp'
+import { config, proxy } from '@/proxy'
 
 describe('contentSecurityPolicy', () => {
   // fonts.gstatic.com left font-src on 2026-11-05 (Site Update): next/font/google self-hosts.
@@ -52,10 +58,46 @@ describe('NONCE_ROUTES', () => {
     }
   })
 
-  it('matches the proxy matcher exactly', () => {
-    const proxy = readFileSync('src/proxy.ts', 'utf8')
-    const block = proxy.slice(proxy.indexOf('matcher: ['))
-    const matcher = [...block.matchAll(/'(\/[^']*)'/g)].map((m) => m[1])
-    expect(matcher.sort()).toEqual([...NONCE_ROUTES].sort())
+  // Since the Agent Visit Log (2026-11-27) the matcher reaches every page, so it
+  // is no longer the nonce list. isNonceRoute() is, and the proxy reads only it.
+  it('isNonceRoute accepts exactly the listed paths', () => {
+    for (const route of NONCE_ROUTES) expect(isNonceRoute(route)).toBe(true)
+    for (const other of ['/', '/preferences/unknown', '/preferences/', '/unsubscribe/x', '/the-os']) {
+      expect(isNonceRoute(other), other).toBe(false)
+    }
+  })
+
+  it('the matcher reaches every nonce route', () => {
+    for (const route of NONCE_ROUTES) {
+      expect(unstable_doesMiddlewareMatch({ config, url: route, nextConfig: {} }), route).toBe(true)
+    }
+  })
+})
+
+describe('proxy', () => {
+  const req = (path: string) => new NextRequest(new URL(path, 'https://www.infinitegameos.io'))
+
+  it('stamps the nonce policy on a nonce route only', () => {
+    const nonce = proxy(req('/preferences'))
+    const policy = nonce.headers.get('Content-Security-Policy')!
+    expect(policy).toMatch(/'nonce-[A-Za-z0-9+/]{22}=='/)
+    expect(proxy(req('/the-os')).headers.get('Content-Security-Policy')).toBeNull()
+    expect(proxy(req('/preferences/unknown')).headers.get('Content-Security-Policy')).toBeNull()
+  })
+
+  it('passes the request through untouched when logging throws', () => {
+    logSpy.mockImplementationOnce(() => { throw new Error('logger broke') })
+    const res = proxy(req('/the-os'))
+    expect(res.headers.get('x-middleware-next')).toBe('1')
+    expect(res.headers.get('Content-Security-Policy')).toBeNull()
+    logSpy.mockImplementationOnce(() => { throw new Error('logger broke') })
+    expect(proxy(req('/preferences')).headers.get('Content-Security-Policy')).toMatch(/'nonce-/)
+  })
+
+  it('hands every request to the logger with its event', () => {
+    logSpy.mockClear()
+    const event = { waitUntil: vi.fn() } as unknown as NextFetchEvent
+    proxy(req('/llms.txt'), event)
+    expect(logSpy).toHaveBeenCalledWith(expect.anything(), event)
   })
 })
