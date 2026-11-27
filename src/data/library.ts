@@ -2770,13 +2770,13 @@ export const igosAssets: IGOSAsset[] = [
     type: 'bundle',
     title: 'The Curator Bundle',
     label: 'Bundle',
-    version: '1.0',
-    updated: '2026-05-02',
+    version: '1.1',
+    updated: '2026-11-27',
     description:
-      'Claude Code skills for newsletter curators, industry digest writers, taste-forward recommendation creators and link aggregators in 2026. Two avatar-specific skills (Tech Digest, Newsletter Creation and Curation) on top of the Foundational Creator Bundle substrate.',
+      'Claude Code skills for newsletter curators, industry digest writers, taste-forward recommendation creators and link aggregators in 2026. Tech Digest installs in one line on top of the Foundational Creator Bundle substrate. Newsletter Creation and Curation is an optional manual add-on.',
     tags: ['bundle', 'curator', 'newsletter', 'digest', 'rss', 'taste', 'claude-code', 'creator-os', '2026'],
     capsule:
-      'The Curator Bundle is the avatar-specific layer for selection-first creators: industry digest writers, taste-forward newsletter authors, "5 things" personal curators, link aggregators and AI-assisted research digest curators. Taste is the entire value proposition. Skills handle the mechanical layer so the Curator can spend more hours doing the thing only they can do: deciding what earns a slot. Tech Digest aggregates RSS feeds, scores, deduplicates and surfaces a structured shortlist for editorial selection. Newsletter Creation and Curation produces the editorial framing, subject lines and synthesis paragraphs that make a curated list land with credibility. Sits on top of the Foundational Creator Bundle.',
+      'The Curator Bundle is the avatar-specific layer for selection-first creators: industry digest writers, taste-forward newsletter authors, "5 things" personal curators, link aggregators and AI-assisted research digest curators. Taste is the entire value proposition. Skills handle the mechanical layer so the Curator can spend more hours doing the thing only they can do: deciding what earns a slot. Tech Digest aggregates RSS feeds, scores, deduplicates and surfaces a structured shortlist for editorial selection. Newsletter Creation and Curation produces the editorial framing, subject lines and synthesis paragraphs that make a curated list land with credibility. It is an optional add-on you copy in by hand. Sits on top of the Foundational Creator Bundle.',
     bundle: {
       installUrl: 'https://www.infinitegameos.io/bundles/the-curator/install.sh',
       command: 'curl -sSL https://www.infinitegameos.io/bundles/the-curator/install.sh | bash',
@@ -2792,15 +2792,15 @@ export const igosAssets: IGOSAsset[] = [
         {
           title: 'Newsletter Creation and Curation',
           description:
-            'Editorial production layer. Industry-adaptive newsletter creation with stage, role and geography-aware workflows. Handles the one or two sentences per item that explain why each piece matters, the synthesis paragraph that ties an issue together and the subject lines that make the email worth opening. Pairs cleanly with Tech Digest above: aggregation upstream, editorial production downstream. Together they cover the Curator\'s full weekly loop from raw feed to send-ready copy.',
-          source: 'github.com/BrianRWagner/ai-marketing-claude-code-skills',
-          license: 'MIT',
-          externalUrl: 'https://github.com/BrianRWagner/ai-marketing-claude-code-skills/tree/main/newsletter-creation-curation',
+            'Optional add-on, copied in by hand. Editorial production layer. Industry-adaptive newsletter creation with stage, role and geography-aware workflows. Handles the one or two sentences per item that explain why each piece matters, the synthesis paragraph that ties an issue together and the subject lines that make the email worth opening. Pairs cleanly with Tech Digest above: aggregation upstream, editorial production downstream. Together they cover the Curator\'s full weekly loop from raw feed to send-ready copy. By Shashwat Ghosh of Helix GTM Consulting. His repository does not specify a license, so the install script leaves this skill out: it is an optional add-on you copy in by hand.',
+          source: 'github.com/shashwatgtm/newsletter-creation-curation',
+          license: 'No license specified',
+          externalUrl: 'https://github.com/shashwatgtm/newsletter-creation-curation',
         },
       ],
     },
     definition:
-      'The Curator Bundle is the avatar-specific stack for selection-first creators working with Claude Code in 2026. The Foundational Creator Bundle (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging plus Content Strategy and AI SEO) is the assumed pre-install. The Curator layer adds two installable skills. Tech Digest (Camille Roux, MIT) handles RSS intake, scoring, dedup and structured shortlist surfacing. Newsletter Creation and Curation (Brian R Wagner, MIT) handles editorial production, synthesis framing and subject-line authoring. For the Curator, Source Harvest from the Foundational substrate plays a more central role than in any other avatar bundle: the Curator\'s long-term asset is the source map, not the issues. Researcher handles the deeper context-gathering when an issue calls for analytical synthesis rather than just link-plus-sentence framing. Skill Creator lets the Curator encode their selection criteria into custom skills for repeatable quality. Taste is the entire value proposition. Every resource in the bundle either protects taste, extends taste or frees up time to use taste.',
+      'The Curator Bundle is the avatar-specific stack for selection-first creators working with Claude Code in 2026. The Foundational Creator Bundle (Researcher, Plan Challenger, Source Harvest, Skill Creator, Systematic Debugging plus Content Strategy and AI SEO) is the assumed pre-install. The Curator layer adds two skills. Tech Digest (Camille Roux, MIT) installs with the bundle and handles RSS intake, scoring, dedup and structured shortlist surfacing. Newsletter Creation and Curation (Shashwat Ghosh, an optional manual add-on because its repository specifies no license) handles editorial production, synthesis framing and subject-line authoring. For the Curator, Source Harvest from the Foundational substrate plays a more central role than in any other avatar bundle: the Curator\'s long-term asset is the source map, not the issues. Researcher handles the deeper context-gathering when an issue calls for analytical synthesis rather than just link-plus-sentence framing. Skill Creator lets the Curator encode their selection criteria into custom skills for repeatable quality. Taste is the entire value proposition. Every resource in the bundle either protects taste, extends taste or frees up time to use taste.',
     howItWorks: [
       {
         heading: 'Pre-install: the Foundational Creator Bundle',
@@ -2812,9 +2812,10 @@ export const igosAssets: IGOSAsset[] = [
       {
         heading: 'What the install brings',
         paragraphs: [
-          'The install script does two things. First, it clones the Tech Digest repository and copies the digest skill files into the Claude Code skills directory at ~/.claude/skills/tech-digest/. Second, it clones the ai-marketing-claude-code-skills repository and copies the newsletter-creation-curation directory into ~/.claude/skills/newsletter-creation-curation/. Both halves are idempotent. Re-running is safe. The script writes a timestamped backup of any existing skills directory before overwriting.',
-          'After install, restart Claude Code. `/digest` becomes available for any feed list configured in the YAML. The newsletter creation skill activates when the work calls for editorial framing, subject-line authoring or stage-aware sequence design.',
-          'A note on the Content Research Writer skill: an additional skill named in the Curator avatar research (ComposioHQ\'s content-research-writer) is omitted from this v1 install pending license confirmation on the upstream repo. The eight-step research-to-draft model it covers (topic understanding, collaborative outlining, source research, hook improvement, section feedback, voice preservation, citation management, final polish) is queued for a native rebuild in v1.1. Curators who write deeper analytical synthesis can reach for the Foundational substrate\'s Researcher in the meantime.',
+          'The install script clones the Tech Digest repository and copies the digest skill files into the Claude Code skills directory at ~/.claude/skills/tech-digest/. It is idempotent. Re-running is safe. The script writes a timestamped backup of any existing skills directory before overwriting.',
+          'Newsletter Creation and Curation is an optional add-on you install by hand. Its author, Shashwat Ghosh of Helix GTM Consulting, publishes it at github.com/shashwatgtm/newsletter-creation-curation, and the repository does not specify a license, so the script leaves it out. To add it, copy that repository\'s SKILL.md into ~/.claude/skills/newsletter-creation-curation/.',
+          'After install, restart Claude Code. `/digest` becomes available for any feed list configured in the YAML. If you added the newsletter creation skill, it activates when the work calls for editorial framing, subject-line authoring or stage-aware sequence design.',
+          'A note on the Content Research Writer skill: an additional skill named in the Curator avatar research (ComposioHQ\'s content-research-writer) is omitted from this install pending license confirmation on the upstream repo. The eight-step research-to-draft model it covers (topic understanding, collaborative outlining, source research, hook improvement, section feedback, voice preservation, citation management, final polish) is queued for a native rebuild in a later version. Curators who write deeper analytical synthesis can reach for the Foundational substrate\'s Researcher in the meantime.',
         ],
       },
       {
@@ -2857,7 +2858,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         q: 'Does the Curator Bundle include the Foundational Creator Bundle?',
         a:
-          'No. The Curator Bundle assumes the Foundational Bundle is already installed. Install /bundles/foundational-creator first if you have not already. The two-layer architecture means the medium-specific skills (Tech Digest, Newsletter Creation and Curation) install once on top of the universal substrate.',
+          'No. The Curator Bundle assumes the Foundational Bundle is already installed. Install /bundles/foundational-creator first if you have not already. The two-layer architecture means the medium-specific layer (Tech Digest, plus Newsletter Creation and Curation as an optional manual add-on) sits on top of the universal substrate.',
       },
       {
         q: 'I am not a developer. Will Tech Digest still work for my niche?',
@@ -2867,7 +2868,7 @@ export const igosAssets: IGOSAsset[] = [
       {
         q: 'Why is Content Research Writer not in the install script?',
         a:
-          'The ComposioHQ content-research-writer skill named in the Curator avatar research is omitted from v1 pending license confirmation on the upstream repository. The eight-capability research-to-draft model it covers is queued for a native rebuild in v1.1. In the meantime, the Foundational substrate\'s Researcher handles the deeper analytical context that this skill would otherwise cover.',
+          'The ComposioHQ content-research-writer skill named in the Curator avatar research is omitted pending license confirmation on the upstream repository. The eight-capability research-to-draft model it covers is queued for a native rebuild in a later version. In the meantime, the Foundational substrate\'s Researcher handles the deeper analytical context that this skill would otherwise cover.',
       },
       {
         q: 'How is Tech Digest different from a regular RSS reader?',
@@ -2877,12 +2878,12 @@ export const igosAssets: IGOSAsset[] = [
       {
         q: 'What does the install script actually change on my system?',
         a:
-          'It clones github.com/camilleroux/tech-digest into a temp directory and copies the contents of skills/digest/ to ~/.claude/skills/tech-digest/. It clones github.com/BrianRWagner/ai-marketing-claude-code-skills into a temp directory and copies the newsletter-creation-curation directory to ~/.claude/skills/newsletter-creation-curation/. It writes a timestamped backup of any existing files in those skills directories before overwriting. It does not touch settings.json. No system-level changes happen outside ~/.claude.',
+          'It clones github.com/camilleroux/tech-digest into a temp directory and copies the contents of skills/digest/ to ~/.claude/skills/tech-digest/. It writes a timestamped backup of any existing files in that skills directory before overwriting. It does not touch settings.json. No system-level changes happen outside ~/.claude.',
       },
       {
         q: 'Is the install reversible?',
         a:
-          'Yes. To remove Tech Digest, delete ~/.claude/skills/tech-digest. To remove Newsletter Creation and Curation, delete ~/.claude/skills/newsletter-creation-curation. The Foundational Bundle is unaffected by either rollback.',
+          'Yes. To remove Tech Digest, delete ~/.claude/skills/tech-digest. If you added Newsletter Creation and Curation, delete ~/.claude/skills/newsletter-creation-curation to remove it. The Foundational Bundle is unaffected by either rollback.',
       },
       {
         q: 'How does the Curator Bundle relate to the other avatar bundles?',

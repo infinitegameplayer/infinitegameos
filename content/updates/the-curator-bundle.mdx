@@ -3,14 +3,14 @@ title: "The Curator Bundle. Claude Code Skills for Newsletter Curators, Industry
 seoTitle: "The Curator Bundle. Claude Code for Newsletter Curators 2026"
 date: 2026-05-02
 slug: the-curator-bundle
-summary: "Two avatar-specific Claude Code skills for the Curator archetype: Tech Digest (RSS aggregation, scoring, dedup, structured shortlist) and Newsletter Creation and Curation (editorial framing, synthesis paragraphs, subject lines). Sits on top of the Foundational Creator Bundle. Taste is the product for the Curator. The bundle handles the mechanical layer so the Curator can spend more hours doing the thing only they can do: deciding what earns a slot."
+summary: "Two avatar-specific Claude Code skills for the Curator archetype: Tech Digest (RSS aggregation, scoring, dedup, structured shortlist) and Newsletter Creation and Curation (editorial framing, synthesis paragraphs, subject lines). Tech Digest installs with the script. The newsletter skill is an optional manual add-on. Sits on top of the Foundational Creator Bundle. Taste is the product for the Curator. The bundle handles the mechanical layer so the Curator can spend more hours doing the thing only they can do: deciding what earns a slot."
 ---
 
 Tuesday morning. Two hundred unread items in the reader. The newsletter ships Wednesday. The quiet question is which six things deserve someone else's attention this week.
 
 Most curation advice treats this as a productivity problem. Read faster. Use better filters. Outsource the intake to AI summarizers. The advice misses what the work actually depends on. Curation is not a processing task. It is a judgment task. The reader subscribes because of the judgment, not because of the volume processed. The Curator who reads a hundred pieces and publishes only the six that pass their own filter is doing the work that carries the weight. Everything else is logistics.
 
-The Curator Bundle is the avatar-specific stack for selection-first creators inside Infinite Game OS. Two installable skills sit on top of the [Foundational Creator Bundle](/bundles/foundational-creator). The substrate underneath carries research, adversarial review, intelligence extraction, custom-tool authoring, root-cause debugging plus content strategy and AI-era discoverability. The avatar layer adds the resources that protect what the Curator is actually doing: building a relationship at scale through impeccable taste, one issue at a time.
+The Curator Bundle is the avatar-specific stack for selection-first creators inside Infinite Game OS. Two skills sit on top of the [Foundational Creator Bundle](/bundles/foundational-creator). The substrate underneath carries research, adversarial review, intelligence extraction, custom-tool authoring, root-cause debugging plus content strategy and AI-era discoverability. The avatar layer adds the resources that protect what the Curator is actually doing: building a relationship at scale through impeccable taste, one issue at a time.
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2.5rem 0' }}>
   <a href="/bundles/the-curator" className="btn-accent" style={{ fontSize: '1rem', padding: '1rem 2rem' }}>Install the Curator Bundle →</a>
@@ -36,7 +36,7 @@ For Curators using both Claude Code and Claude Desktop, an alternative intake to
 
 ### Newsletter Creation and Curation
 
-[Newsletter Creation and Curation](https://github.com/BrianRWagner/ai-marketing-claude-code-skills/tree/main/newsletter-creation-curation) by Brian R Wagner, MIT-licensed. The editorial production layer. Industry-adaptive newsletter creation with stage, role and geography-aware workflows. Handles the one or two sentences per item that explain why each piece matters, the synthesis paragraph that ties the issue together and the subject line that earns the open.
+[Newsletter Creation and Curation](https://github.com/shashwatgtm/newsletter-creation-curation) by Shashwat Ghosh of Helix GTM Consulting. The upstream repository does not specify a license, so the install script leaves it out and it stays an optional add-on you copy in by hand. The editorial production layer. Industry-adaptive newsletter creation with stage, role and geography-aware workflows. Handles the one or two sentences per item that explain why each piece matters, the synthesis paragraph that ties the issue together and the subject line that earns the open.
 
 The editorial framing move is where the skill earns its place inside the production loop. The Curator selects the six items via Tech Digest's shortlist and their own judgment. The skill then takes the selection and produces the editorial layer: the per-item framing that makes each link feel considered, the synthesis paragraph that gives the issue a center, the subject line tuned to the audience and the format. Stage-aware workflows let the same engine produce a B2B industry digest, a consumer taste-forward newsletter, a "5 things" personal recommendation list or a research digest with the appropriate voice register for each.
 
@@ -100,13 +100,13 @@ A reader who has subscribed for three years already knows what this means. They 
 
 ## Install
 
-The bundle installs in one command. Idempotent. Safe to re-run. Pre-install the Foundational Creator Bundle first if you have not already.
+Tech Digest installs in one command. Idempotent. Safe to re-run. Pre-install the Foundational Creator Bundle first if you have not already.
 
 <div style={{ display: 'flex', justifyContent: 'center', margin: '2.5rem 0' }}>
   <a href="/bundles/the-curator" className="btn-accent" style={{ fontSize: '1rem', padding: '1rem 2rem' }}>Install the Curator Bundle →</a>
 </div>
 
-Two skills install. Tech Digest clones into the Claude Code skills directory at `~/.claude/skills/tech-digest/`. Newsletter Creation and Curation clones into `~/.claude/skills/newsletter-creation-curation/`. Restart Claude Code. The Curator layer is live. First-run configuration: edit the Tech Digest YAML feed list to match your beat.
+Tech Digest installs. It clones into the Claude Code skills directory at `~/.claude/skills/tech-digest/`. To add Newsletter Creation and Curation, copy the `SKILL.md` from [its repository](https://github.com/shashwatgtm/newsletter-creation-curation) into `~/.claude/skills/newsletter-creation-curation/` by hand. Restart Claude Code. The Curator layer is live. First-run configuration: edit the Tech Digest YAML feed list to match your beat.
 
 The reader is here for the taste. The bundle protects the taste so the Curator has room to keep showing up.
 
