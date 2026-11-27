@@ -423,8 +423,9 @@ export default function AgenticSystemsPage() {
               <p style={{ fontSize: '0.85rem', color: 'var(--color-muted)', fontStyle: 'italic' }}>
                 This is the first in a series on the Post Web as a practitioner&apos;s
                 terrain. This article draws on The Post Web Thesis by Outlier Ventures
-                (Jamie Burke et al., 2024). Lane&apos;s synthesis and Infinite Game
-                framing are his own.
+                (Jamie Burke et al., 2024). The term Intention Economy is Doc
+                Searls&apos;s (Linux Journal, 2006; The Intention Economy, 2012).
+                Lane&apos;s synthesis and Infinite Game framing are his own.
               </p>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-muted)' }}>
                 <Link
