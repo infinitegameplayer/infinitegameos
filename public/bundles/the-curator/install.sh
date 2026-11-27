@@ -21,9 +21,9 @@
 # you want it: copy its SKILL.md into
 # $CONFIG_DIR/skills/newsletter-creation-curation/.
 #
-# Note on Content Research Writer (ComposioHQ): omitted from v1 pending
-# license confirmation on the upstream repo. Queued for a Kingdom-native
-# rebuild in v1.1. The Foundational substrate's Researcher covers the
+# Note on Content Research Writer (ComposioHQ): omitted pending license
+# confirmation on the upstream repo. Queued for a Kingdom-native rebuild in
+# a later version. The Foundational substrate's Researcher covers the
 # deeper analytical context in the meantime.
 #
 # Source: https://www.infinitegameos.io/bundles/the-curator
@@ -157,7 +157,7 @@ ${C_BOLD}First-run configuration:${C_RESET}
 ${C_BOLD}On the deferred third skill:${C_RESET}
   The Curator avatar research names a third skill, Content Research Writer
   from ComposioHQ, for deeper analytical synthesis. The upstream repo does
-  not specify a license, so v1 omits it pending confirmation. The eight-
+  not specify a license, so it is omitted pending confirmation. The eight-
   capability research-to-draft model is queued for a Kingdom-native rebuild.
   Until then, the Foundational substrate's Researcher covers deeper context.
 

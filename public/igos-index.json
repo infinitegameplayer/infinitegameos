@@ -852,8 +852,8 @@
       "id": "the-curator",
       "name": "The Curator Bundle",
       "type": "bundle",
-      "version": "1.0",
-      "description": "Two avatar-specific Claude Code skills for newsletter curators, industry digest writers, taste-forward newsletter authors and link aggregators in 2026. Tech Digest and Newsletter Creation and Curation install on top of the Foundational Creator Bundle substrate.",
+      "version": "1.1",
+      "description": "Two avatar-specific Claude Code skills for newsletter curators, industry digest writers, taste-forward newsletter authors and link aggregators in 2026. Tech Digest installs on top of the Foundational Creator Bundle substrate. Newsletter Creation and Curation is an optional manual add-on.",
       "tags": [
         "bundle",
         "curator",
@@ -880,7 +880,7 @@
         {
           "title": "Newsletter Creation and Curation (editorial framing, synthesis, subject lines)",
           "source": "shashwatgtm/newsletter-creation-curation",
-          "license": "No license specified (optional manual add-on, not installed by the script)",
+          "license": "No license specified",
           "url": "https://github.com/shashwatgtm/newsletter-creation-curation"
         }
       ],
